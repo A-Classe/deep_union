@@ -1,2 +1,2 @@
-# release_gravity
-重力ゲームの本番リポジトリ
+# release_control
+ゲーム制作Aチームの本番リポジトリ
