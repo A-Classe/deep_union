@@ -2,9 +2,8 @@ name: Qodana
 on:
   workflow_dispatch:
   pull_request:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: '0 2 * * *'
 
 jobs:
   qodana:
@@ -19,6 +18,7 @@ jobs:
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@main
         with:
+          args: --project-dir,./src
           upload-result: false
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
