@@ -1,11 +1,25 @@
-﻿using VContainer.Unity;
+﻿using System.Spawner;
+using GameSystem;
+using VContainer;
+using VContainer.Unity;
 
 namespace System
 {
     public class GameRouter : IStartable
     {
-        public GameRouter() { }
+        private readonly SpawnParam spawnParam;
+        private readonly WorkerSpawner workerSpawner;
 
-        public void Start() { }
+        [Inject]
+        public GameRouter(SpawnParam spawnParam,WorkerSpawner workerSpawner)
+        {
+            this.spawnParam = spawnParam;
+            this.workerSpawner = workerSpawner;
+        }
+
+        public void Start()
+        {
+            workerSpawner.Spawn(spawnParam.SpawnCount);
+        }
     }
 }

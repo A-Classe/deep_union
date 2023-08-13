@@ -10,6 +10,7 @@ public class WorkerFactory
     private static readonly string ArgCharacterPath = "Worker";
     private readonly GameObject prefab;
 
+    [Inject]
     public WorkerFactory()
     {
         prefab = Resources.Load<GameObject>(ArgCharacterPath);
