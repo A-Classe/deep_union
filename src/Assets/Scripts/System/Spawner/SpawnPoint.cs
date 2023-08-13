@@ -2,10 +2,5 @@
 
 namespace GameSystem
 {
-    public class SpawnPoint : MonoBehaviour
-    {
-        [SerializeField] private float spawnRange;
-
-        public float SpawnRange => spawnRange;
-    }
+    public class SpawnPoint : MonoBehaviour { }
 }
