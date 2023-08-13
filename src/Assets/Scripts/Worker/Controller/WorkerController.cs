@@ -32,15 +32,20 @@ namespace Controller
             assignEvent.Canceled += Release;
         }
 
-        private void Release(InputAction.CallbackContext ctx)
-        {
-            DoRelease = ctx.started;
-        }
-
         private void FixedUpdate()
         {
             //速度の更新
             UpdateVelocity();
+        }
+
+        public Vector3 GetPosition()
+        {
+            return transform.position;
+        }
+
+        private void Release(InputAction.CallbackContext ctx)
+        {
+            DoRelease = ctx.started;
         }
 
         private void UpdateVelocity()
