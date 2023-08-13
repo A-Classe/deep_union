@@ -18,6 +18,7 @@ jobs:
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@main
         with:
+          args: --project-dir,./src
           upload-result: false
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
