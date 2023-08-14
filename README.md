@@ -7,5 +7,9 @@
 ```
 git config commit.template .commit_template
 ```
+- submodule
+```
+git submodule update -i
+```
 
 ### [Qodana Cloud](https://qodana.cloud/organizations/Al5q1/teams/zxNOM)
