@@ -106,13 +106,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3517807995307944587}
-  - component: {fileID: 4638216132182515816}
   - component: {fileID: 3517807995307944586}
   - component: {fileID: 3517807995307944585}
   - component: {fileID: 3517807995307944584}
-  - component: {fileID: 3517807995307944588}
+  - component: {fileID: 8091928949468316494}
   m_Layer: 7
-  m_Name: Worker
+  m_Name: Worker2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,19 +133,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4638216132182515816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3517807995307944583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7035d78dc3c8ecc44985541b5ca6baeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enableAgentOnStart: 1
 --- !u!33 &3517807995307944586
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -211,25 +197,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!195 &3517807995307944588
-NavMeshAgent:
+--- !u!54 &8091928949468316494
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3517807995307944583}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.65
-  m_Speed: 12
-  m_Acceleration: 1000
-  avoidancePriority: 50
-  m_AngularSpeed: 1200
-  m_StoppingDistance: 2.5
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

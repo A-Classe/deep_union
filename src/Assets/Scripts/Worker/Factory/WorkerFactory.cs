@@ -24,6 +24,10 @@ public class WorkerFactory
         }
 
         GameObject instance = Object.Instantiate(prefab, model.Position, Quaternion.identity, model.Parent);
-        return instance.GetComponent<TaskWorker>();
+        TaskWorker taskWorker= instance.GetComponent<TaskWorker>();
+
+        taskWorker.OnSpawn(model.SpawnPoint);
+        
+        return taskWorker;
     }
 }

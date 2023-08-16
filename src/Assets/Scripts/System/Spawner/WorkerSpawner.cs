@@ -39,7 +39,8 @@ namespace GameSystem
                 Vector3 spawnPos = Vector3.Scale(Random.insideUnitSphere, scaleTarget);
 
                 //Factoryに渡してWorkerを生成
-                WorkerCreateModel createModel = new WorkerCreateModel(WorkerState.Stay, spawnPos, spawnPoint.transform);
+                WorkerCreateModel createModel =
+                    new WorkerCreateModel(WorkerState.Stay, spawnPoint.transform.position, spawnPos, spawnPoint.transform);
                 TaskWorker worker = factory.CreateWorker(createModel);
 
                 taskWorkers.Add(worker);
