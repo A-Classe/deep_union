@@ -19,7 +19,8 @@ jobs:
         uses: JetBrains/qodana-action@main
         with:
           args: --project-dir,./src
-          upload-result: false
+          upload-result: true
+          pr-mode: false
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
       - name: Upload logs
