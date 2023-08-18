@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Worker
+namespace Module.Worker
 {
     [RequireComponent(typeof(NavMeshAgent))]
-    public class TaskWorker : MonoBehaviour
+    public class Worker : MonoBehaviour
     {
         private NavMeshAgent navMeshAgent;
         private Vector3 offset;

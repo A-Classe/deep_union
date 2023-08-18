@@ -1,4 +1,4 @@
-﻿namespace Worker.Factory
+﻿namespace Module.Worker.Factory
 {
     public enum WorkerState
     {

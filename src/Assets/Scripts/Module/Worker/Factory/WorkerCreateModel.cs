@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Worker.Factory
+namespace Module.Worker.Factory
 {
     public readonly struct WorkerCreateModel
     {
