@@ -1,8 +1,8 @@
 using System;
 using UnityEngine;
 using VContainer;
-using Worker;
-using Worker.Factory;
+using Module.Worker;
+using Module.Worker.Factory;
 using Object = UnityEngine.Object;
 
 public class WorkerFactory
@@ -16,7 +16,7 @@ public class WorkerFactory
         prefab = Resources.Load<GameObject>(ArgCharacterPath);
     }
 
-    public TaskWorker CreateWorker(WorkerCreateModel model)
+    public Module.Worker.Worker CreateWorker(WorkerCreateModel model)
     {
         if (prefab == null)
         {
@@ -24,6 +24,10 @@ public class WorkerFactory
         }
 
         GameObject instance = Object.Instantiate(prefab, model.Position, Quaternion.identity, model.Parent);
-        return instance.GetComponent<TaskWorker>();
+        Module.Worker.Worker worker= instance.GetComponent<Module.Worker.Worker>();
+
+        worker.OnSpawn(model.SpawnPoint);
+        
+        return worker;
     }
 }

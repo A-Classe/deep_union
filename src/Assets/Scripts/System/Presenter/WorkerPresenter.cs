@@ -3,7 +3,7 @@ using GameSystem;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
-using Worker;
+using Module.Worker;
 
 namespace System
 {
@@ -28,7 +28,7 @@ namespace System
         void UpdateFollowPosition()
         {
             Vector3 position = workerController.GetPosition();
-            foreach (TaskWorker worker in workerSpawner.TaskWorkers)
+            foreach (Module.Worker.Worker worker in workerSpawner.TaskWorkers)
             {
                 worker.SetFollowPoint(position);
             }
