@@ -1,6 +1,6 @@
-﻿using System.Spawner;
-using Controller;
-using GameSystem;
+﻿using Module.Worker;
+using Module.Worker.Controller;
+using Module.Worker.Factory;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -19,10 +19,9 @@ namespace System.Container
         protected override void Configure(IContainerBuilder builder)
         {
             builder.RegisterEntryPoint<GameRouter>();
-            builder.RegisterEntryPoint<WorkerPresenter>();
 
             builder.Register<WorkerSpawner>(Lifetime.Singleton);
-            builder.Register<WorkerFactory>(Lifetime.Singleton);
+            builder.Register<WorkerAgent>(Lifetime.Singleton);
 
             builder.RegisterInstance(spawnPoint);
             builder.RegisterInstance(spawnParam);

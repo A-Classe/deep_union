@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace System.Spawner
+namespace Module.Worker.Factory
 {
     [CreateAssetMenu(menuName = "SpawnParam")]
     public class SpawnParam : ScriptableObject

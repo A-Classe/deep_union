@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Module.Worker.State;
+using UnityEngine;
 
 namespace Module.Worker.Factory
 {
@@ -11,13 +12,12 @@ namespace Module.Worker.Factory
 
         public WorkerCreateModel(
             WorkerState state,
-            Vector3 spawnPoint,
             Vector3 position,
             Transform parent
         )
         {
             this.Position = position;
-            this.SpawnPoint = spawnPoint;
+            this.SpawnPoint = parent.position;
             this.State = state;
             this.Parent = parent;
         }

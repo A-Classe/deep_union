@@ -1,8 +1,10 @@
+using System.Collections.Generic;
 using Core.Input;
+using Module.Worker.State;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Controller
+namespace Module.Worker.Controller
 {
     /// <summary>
     /// 群体を操作するクラス
@@ -13,16 +15,18 @@ namespace Controller
 
         private InputEvent controlEvent;
         private InputEvent assignEvent;
-        private Rigidbody rb = default;
+        private Rigidbody leaderRb = default;
+        private List<Worker> workers;
 
         /// <summary>
         /// リリース状態か
         /// </summary>
         public bool DoRelease { get; private set; }
 
-        private void Start()
+        private void Awake()
         {
-            rb = GetComponent<Rigidbody>();
+            leaderRb = GetComponent<Rigidbody>();
+            workers = new List<Worker>();
 
             //入力イベントの生成
             controlEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Control);
@@ -32,15 +36,23 @@ namespace Controller
             assignEvent.Canceled += Release;
         }
 
-        private void FixedUpdate()
+        public void SetWorkers(IEnumerable<Worker> workers)
         {
-            //速度の更新
-            UpdateVelocity();
+            this.workers.AddRange(workers);
+
+            foreach (Worker worker in this.workers)
+            {
+                worker.SetWorkerState(WorkerState.Following);
+            }
         }
 
-        public Vector3 GetPosition()
+        private void FixedUpdate()
         {
-            return transform.position;
+            //リーダーの速度の更新
+            UpdateLeaderVelocity();
+
+            //ワーカーのターゲット更新
+            UpdateWorkersFollowPoint();
         }
 
         private void Release(InputAction.CallbackContext ctx)
@@ -48,15 +60,23 @@ namespace Controller
             DoRelease = ctx.started;
         }
 
-        private void UpdateVelocity()
+        private void UpdateLeaderVelocity()
         {
             Vector2 input = controlEvent.ReadValue<Vector2>();
 
-            Vector3 velocity = rb.velocity;
+            Vector3 velocity = leaderRb.velocity;
             velocity.x += input.x * controlSpeed;
             velocity.z += input.y * controlSpeed;
 
-            rb.velocity = velocity;
+            leaderRb.velocity = velocity;
+        }
+
+        private void UpdateWorkersFollowPoint()
+        {
+            foreach (Worker worker in workers)
+            {
+                worker.SetFollowPoint(leaderRb.position);
+            }
         }
     }
 }

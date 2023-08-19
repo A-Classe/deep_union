@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace GameSystem
+namespace Module.Worker.Factory
 {
     public class SpawnPoint : MonoBehaviour { }
 }
