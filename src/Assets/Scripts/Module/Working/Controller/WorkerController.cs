@@ -17,14 +17,8 @@ namespace Module.Working.Controller
         [Header("移動速度")] [SerializeField] private float controlSpeed;
 
         private InputEvent controlEvent;
-        private InputEvent assignEvent;
         private Rigidbody leaderRb = default;
         private List<Worker> workers;
-
-        /// <summary>
-        /// リリース状態か
-        /// </summary>
-        public bool DoRelease { get; private set; }
 
         private void Awake()
         {
@@ -33,10 +27,6 @@ namespace Module.Working.Controller
 
             //入力イベントの生成
             controlEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Control);
-            assignEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Assign);
-
-            assignEvent.Started += Release;
-            assignEvent.Canceled += Release;
         }
 
         public void EnqueueWorker(Worker worker)
@@ -51,11 +41,11 @@ namespace Module.Working.Controller
         {
             if (workers.Count == 0)
                 return null;
-            
+
             Worker worker = workers.OrderBy(worker => (position - worker.transform.position).sqrMagnitude).First();
             int index = workers.IndexOf(worker);
             workers.RemoveAt(index);
-            
+
             return worker;
         }
 
@@ -63,11 +53,6 @@ namespace Module.Working.Controller
         {
             //リーダーの速度の更新
             UpdateLeaderVelocity();
-        }
-
-        private void Release(InputAction.CallbackContext ctx)
-        {
-            DoRelease = ctx.started;
         }
 
         private void UpdateLeaderVelocity()
