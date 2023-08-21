@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -10,12 +11,12 @@ namespace Module.Task
     /// </summary>
     public class TaskSystemLoop : IStartable, ITickable
     {
-        private readonly List<ITaskSystem> taskSystems = default;
+        private readonly ITaskSystem[] taskSystems;
 
         [Inject]
         public TaskSystemLoop()
         {
-            taskSystems = new List<ITaskSystem>();
+            taskSystems = TaskUtil.FindSceneTasks<ITaskSystem>();
         }
 
         public void Start()
@@ -34,7 +35,7 @@ namespace Module.Task
             //タスクの更新
             foreach (ITaskSystem taskSystem in taskSystems)
             {
-                taskSystem.Update(delta);
+                taskSystem.ManagedUpdate(delta);
             }
         }
     }

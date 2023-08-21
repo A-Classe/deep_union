@@ -6,6 +6,6 @@ namespace Module.Task
     public interface ITaskSystem
     {
         void Initialize();
-        void Update(float deltaTime);
+        void ManagedUpdate(float deltaTime);
     }
 }
