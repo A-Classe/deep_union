@@ -7,6 +7,7 @@ namespace Module.Task
     /// 全てのタスクのベースクラス
     /// </summary>
     [RequireComponent(typeof(SphereCollider))]
+    [DisallowMultipleComponent]
     public abstract class BaseTask : MonoBehaviour, ITaskSystem, IJobHandle
     {
         [Header("検出されるタスクの半径")]
