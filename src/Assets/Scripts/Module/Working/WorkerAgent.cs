@@ -51,14 +51,10 @@ namespace Module.Working
         /// <summary>
         /// Workerを指定数削除します
         /// </summary>
-        public void Remove(int count)
+        public void Remove(Worker worker)
         {
-            for (int i = activeWorkers.Count - count; i < count; i++)
-            {
-                workerPool.Release(activeWorkers[i]);
-            }
-
-            activeWorkers.RemoveRange(activeWorkers.Count - count, count);
+            workerPool.Release(worker);
+            activeWorkers.Remove(worker);
         }
 
         Worker CreateWorker()
