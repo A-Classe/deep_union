@@ -8,20 +8,20 @@ namespace GameMain.Presenter
 {
     public readonly struct Assignment : IEquatable<Assignment>
     {
-        public readonly IJobHandle JobHandle;
+        public readonly BaseTask Task;
         public readonly Transform Target;
         public readonly List<Worker> Workers;
 
-        public Assignment(IJobHandle jobHandle, Transform target)
+        public Assignment(BaseTask task, Transform target)
         {
-            JobHandle = jobHandle;
+            Task = task;
             Target = target;
             Workers = new List<Worker>(64);
         }
 
         public bool Equals(Assignment other)
         {
-            return JobHandle == other.JobHandle && Workers == other.Workers;
+            return Task == other.Task && Workers == other.Workers;
         }
 
         public override bool Equals(object obj)
@@ -31,7 +31,7 @@ namespace GameMain.Presenter
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(JobHandle, Workers);
+            return HashCode.Combine(Task, Workers);
         }
     }
 }

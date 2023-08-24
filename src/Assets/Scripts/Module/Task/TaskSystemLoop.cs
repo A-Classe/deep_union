@@ -35,7 +35,10 @@ namespace Module.Task
             //タスクの更新
             foreach (ITaskSystem taskSystem in taskSystems)
             {
-                taskSystem.ManagedUpdate(delta);
+                if (taskSystem.State != TaskState.InProgress)
+                    continue;
+
+                taskSystem.TaskSystemUpdate(delta);
             }
         }
     }

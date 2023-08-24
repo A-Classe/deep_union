@@ -5,7 +5,9 @@ namespace Module.Task
     /// </summary>
     public interface ITaskSystem
     {
+        TaskState State { get; }
+
         void Initialize();
-        void ManagedUpdate(float deltaTime);
+        void TaskSystemUpdate(float deltaTime);
     }
 }

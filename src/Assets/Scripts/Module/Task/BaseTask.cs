@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
+using Wanna.DebugEx;
 
 namespace Module.Task
 {
@@ -8,20 +10,53 @@ namespace Module.Task
     /// </summary>
     [RequireComponent(typeof(SphereCollider))]
     [DisallowMultipleComponent]
-    public abstract class BaseTask : MonoBehaviour, ITaskSystem, IJobHandle
+    public abstract class BaseTask : MonoBehaviour, ITaskSystem
     {
         [Header("検出されるタスクの半径")]
         [SerializeField]
         [Range(0f, 6f)]
         private float taskSize = 1f;
 
+        [Header("タスクのMonoWork")]
+        [SerializeField]
+        private float mw;
+
         public TaskState State => state;
-        [SerializeField] protected TaskState state = TaskState.Idle;
+
+        /// <summary>
+        /// 現在割り当てられている作業量
+        /// </summary>
+        public float Mw
+        {
+            set
+            {
+                prevMw = currentMw;
+                currentMw = Mathf.Clamp(value, 0f, mw);
+                OnMonoWorkUpdated();
+            }
+            get { return currentMw; }
+        }
+
+        public float Progress => currentProgress;
+
+        public event Action<TaskState> OnStateChanged;
+
+        [Header("!デバッグ用 書き換え禁止!")]
+        [SerializeField]
+        protected TaskState state = TaskState.Idle;
+
+        [SerializeField] [Range(0f, 1f)] private float currentProgress;
+        [SerializeField] private float currentMw;
+        [SerializeField] private float progressMw;
+        private float prevMw;
 
         private void OnValidate()
         {
             SphereCollider col = GetComponent<SphereCollider>();
             col.radius = taskSize;
+            
+            //作業量は最低1以上とする
+            mw = Mathf.Clamp(mw, 1f, float.MaxValue);
         }
 
         /// <summary>
@@ -30,15 +65,67 @@ namespace Module.Task
         public virtual void Initialize() { }
 
         /// <summary>
+        /// Taskの状態を更新するUpdate
+        /// </summary>
+        /// <param name="deltaTime">Time.deltaTime</param>
+        void ITaskSystem.TaskSystemUpdate(float deltaTime)
+        {
+            UpdateProgress(deltaTime);
+            ManagedUpdate(deltaTime);
+        }
+
+        /// <summary>
         /// ゲームの状態によって管理されるUpdate
         /// </summary>
         /// <param name="deltaTime">Time.deltaTime</param>
-        public virtual void ManagedUpdate(float deltaTime) { }
+        protected virtual void ManagedUpdate(float deltaTime) { }
 
-        /// <summary>
-        /// ワーカーからJobを受信された際に実行される
-        /// </summary>
-        public abstract void ExecuteJob();
+        private void UpdateProgress(float deltaTime)
+        {
+            if (state == TaskState.Completed || currentMw == 0f)
+                return;
+
+            progressMw = Mathf.Clamp(progressMw + currentMw * deltaTime, 0f, mw);
+            currentProgress = Mathf.InverseLerp(0f, mw, progressMw);
+
+            //進捗が1に到達したら完了
+            if (currentProgress >= 1f)
+            {
+                ChangeState(TaskState.Completed);
+                OnComplete();
+            }
+        }
+
+        private void OnMonoWorkUpdated()
+        {
+            if (state == TaskState.Completed)
+                return;
+
+            //作業量が0より大きくなったら開始
+            if (prevMw == 0f && currentMw > prevMw)
+            {
+                ChangeState(TaskState.InProgress);
+                OnStart();
+            }
+            //作業量が0になったらキャンセル
+            else if (prevMw > 0f && currentMw == 0f)
+            {
+                ChangeState(TaskState.Idle);
+                OnCancel();
+            }
+        }
+
+        private void ChangeState(TaskState state)
+        {
+            this.state = state;
+            OnStateChanged?.Invoke(state);
+        }
+
+        protected virtual void OnStart() { }
+
+        protected virtual void OnCancel() { }
+
+        protected virtual void OnComplete() { }
 
         private void OnDrawGizmos()
         {
