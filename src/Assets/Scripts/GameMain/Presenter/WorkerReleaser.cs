@@ -28,6 +28,23 @@ namespace GameMain.Presenter
             releaseEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Release);
             releaseEvent.Started += _ => workerConnector.StartLoop(Release).Forget();
             releaseEvent.Canceled += _ => workerConnector.CancelLoop();
+
+            RegisterReleaseEvents();
+        }
+
+        void RegisterReleaseEvents()
+        {
+            foreach (Assignment assignment in assignments)
+            {
+                assignment.Task.OnStateChanged += state =>
+                {
+                    //タスクが完了したら全てを開放する
+                    if (state == TaskState.Completed)
+                    {
+                        ReleaseAll(assignment.Task);
+                    }
+                };
+            }
         }
 
         void Release(BaseTask nearestTask)
@@ -53,6 +70,32 @@ namespace GameMain.Presenter
                     //コントローラーに登録
                     workerController.EnqueueWorker(worker);
                 }
+            }
+            catch (Exception e)
+            {
+                DebugEx.LogWarning("タスクが登録されていません!");
+                DebugEx.LogException(e);
+                throw;
+            }
+        }
+
+        void ReleaseAll(BaseTask baseTask)
+        {
+            try
+            {
+                Assignment assignment = assignments.First(connect => connect.Task == baseTask);
+
+                //コントローラーに登録
+                foreach (Worker worker in assignment.Workers)
+                {
+                    workerController.EnqueueWorker(worker);
+                }
+
+                //タスクからワーカーを削除
+                assignment.Workers.Clear();
+
+                //作業量の更新
+                assignment.Task.Mw = 0f;
             }
             catch (Exception e)
             {
