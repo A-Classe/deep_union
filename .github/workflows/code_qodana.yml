@@ -11,14 +11,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-#          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
       - name: 'Remove post-checkout hook'
         run: rm -rf .git/hooks/post-checkout
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@main
         with:
-          args: --project-dir,./src
+          args: --project-dir,./src,--source-directory,Assets/Scripts
           upload-result: true
           pr-mode: false
         env:
