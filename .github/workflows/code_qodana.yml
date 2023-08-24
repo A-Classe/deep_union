@@ -18,7 +18,7 @@ jobs:
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@main
         with:
-          args: --project-dir,./src,--source-directory,Assets/Scripts
+          args: --project-dir,./src,--source-directory,./src/Assets/Scripts
           upload-result: true
           pr-mode: false
         env:
