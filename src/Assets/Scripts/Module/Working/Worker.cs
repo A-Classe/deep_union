@@ -8,13 +8,13 @@ using Wanna.DebugEx;
 namespace Module.Working
 {
     /// <summary>
-    /// ワーカーの状態を管理するクラス
+    ///     ワーカーの状態を管理するクラス
     /// </summary>
     [RequireComponent(typeof(NavMeshAgent))]
     public class Worker : MonoBehaviour
     {
-        private IWorkerState[] workerStates;
         private IWorkerState currentState;
+        private IWorkerState[] workerStates;
 
         public Transform Target { get; private set; }
 
@@ -29,7 +29,7 @@ namespace Module.Working
             {
                 new IdleState(this),
                 new FollowState(this, spawnPos),
-                new WorkState(this),
+                new WorkState(this)
             };
 
             SetWorkerState(WorkerState.Idle);
@@ -51,7 +51,7 @@ namespace Module.Working
 
         public void SetFollowTarget(Transform target)
         {
-            this.Target = target;
+            Target = target;
         }
 
         public void Enable()

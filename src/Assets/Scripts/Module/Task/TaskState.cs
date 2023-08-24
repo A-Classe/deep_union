@@ -1,7 +1,7 @@
 namespace Module.Task
 {
     /// <summary>
-    /// タスクの状態
+    ///     タスクの状態
     /// </summary>
     public enum TaskState
     {

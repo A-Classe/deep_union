@@ -5,19 +5,18 @@ using Core.Input;
 using Module.Task;
 using Module.Working;
 using Module.Working.Controller;
-using UnityEngine;
 using Wanna.DebugEx;
 
 namespace GameMain.Presenter
 {
     /// <summary>
-    /// ワーカーのリリース処理を行うクラス
+    ///     ワーカーのリリース処理を行うクラス
     /// </summary>
     public class WorkerReleaser
     {
-        private readonly WorkerController workerController;
         private readonly IReadOnlyList<Assignment> assignments;
         private readonly InputEvent releaseEvent;
+        private readonly WorkerController workerController;
 
         public WorkerReleaser(WorkerConnector workerConnector, WorkerController workerController)
         {
@@ -32,33 +31,28 @@ namespace GameMain.Presenter
             RegisterReleaseEvents();
         }
 
-        void RegisterReleaseEvents()
+        private void RegisterReleaseEvents()
         {
-            foreach (Assignment assignment in assignments)
-            {
+            foreach (var assignment in assignments)
                 assignment.Task.OnStateChanged += state =>
                 {
                     //タスクが完了したら全てを開放する
-                    if (state == TaskState.Completed)
-                    {
-                        ReleaseAll(assignment.Task);
-                    }
+                    if (state == TaskState.Completed) ReleaseAll(assignment.Task);
                 };
-            }
         }
 
-        void Release(BaseTask nearestTask)
+        private void Release(BaseTask nearestTask)
         {
             try
             {
-                Assignment assignment = assignments.First(connect => connect.Task == nearestTask);
+                var assignment = assignments.First(connect => connect.Task == nearestTask);
 
                 //タスクで働いてるワーカーが居なければ終了
                 if (assignment.Workers.Count == 0)
                     return;
 
                 //タスクからワーカーを削除
-                Worker worker = GetNearestWorker(assignment);
+                var worker = GetNearestWorker(assignment);
 
                 if (worker != null)
                 {
@@ -79,17 +73,14 @@ namespace GameMain.Presenter
             }
         }
 
-        void ReleaseAll(BaseTask baseTask)
+        private void ReleaseAll(BaseTask baseTask)
         {
             try
             {
-                Assignment assignment = assignments.First(connect => connect.Task == baseTask);
+                var assignment = assignments.First(connect => connect.Task == baseTask);
 
                 //コントローラーに登録
-                foreach (Worker worker in assignment.Workers)
-                {
-                    workerController.EnqueueWorker(worker);
-                }
+                foreach (var worker in assignment.Workers) workerController.EnqueueWorker(worker);
 
                 //タスクからワーカーを削除
                 assignment.Workers.Clear();
@@ -106,9 +97,9 @@ namespace GameMain.Presenter
         }
 
 
-        Worker GetNearestWorker(Assignment assignment)
+        private Worker GetNearestWorker(Assignment assignment)
         {
-            Vector3 origin = workerController.transform.position;
+            var origin = workerController.transform.position;
             return assignment.Workers.OrderBy(worker => (origin - worker.transform.position).sqrMagnitude).First();
         }
     }

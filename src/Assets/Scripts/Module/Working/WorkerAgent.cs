@@ -10,13 +10,13 @@ using Object = UnityEngine.Object;
 namespace Module.Working
 {
     /// <summary>
-    /// Workerのインスタンスを管理するクラス
+    ///     Workerのインスタンスを管理するクラス
     /// </summary>
     public class WorkerAgent
     {
         private const int workersCapacity = 128;
-        private readonly ObjectPool<Worker> workerPool;
         private readonly List<Worker> activeWorkers;
+        private readonly ObjectPool<Worker> workerPool;
         private readonly GameObject workerPrefab;
 
         [Inject]
@@ -24,10 +24,10 @@ namespace Module.Working
         {
             //プーリングする
             workerPool = new ObjectPool<Worker>(
-                createFunc: CreateWorker,
-                actionOnGet: OnWorkerGet,
-                actionOnRelease: OnWorkerRelease,
-                actionOnDestroy: OnWorkerDestroy,
+                CreateWorker,
+                OnWorkerGet,
+                OnWorkerRelease,
+                OnWorkerDestroy,
                 defaultCapacity: workersCapacity);
 
             activeWorkers = new List<Worker>(workersCapacity);
@@ -35,13 +35,13 @@ namespace Module.Working
         }
 
         /// <summary>
-        /// Workerを指定数追加します
+        ///     Workerを指定数追加します
         /// </summary>
         public Span<Worker> Add(int count)
         {
-            for (int i = 0; i < count; i++)
+            for (var i = 0; i < count; i++)
             {
-                Worker worker = workerPool.Get();
+                var worker = workerPool.Get();
                 activeWorkers.Add(worker);
             }
 
@@ -49,7 +49,7 @@ namespace Module.Working
         }
 
         /// <summary>
-        /// Workerを指定数削除します
+        ///     Workerを指定数削除します
         /// </summary>
         public void Remove(Worker worker)
         {
@@ -57,31 +57,28 @@ namespace Module.Working
             activeWorkers.Remove(worker);
         }
 
-        Worker CreateWorker()
+        private Worker CreateWorker()
         {
-            GameObject obj = Object.Instantiate(workerPrefab);
+            var obj = Object.Instantiate(workerPrefab);
             obj.name = $"Worker_{workerPool.CountAll}";
 
-            if (obj.TryGetComponent(out Worker worker))
-            {
-                return worker;
-            }
+            if (obj.TryGetComponent(out Worker worker)) return worker;
 
             DebugEx.LogWarning($"WorkerAgent: {obj.name}に{nameof(Worker)}コンポーネントがアタッチされていません");
             return null;
         }
 
-        void OnWorkerGet(Worker worker)
+        private void OnWorkerGet(Worker worker)
         {
             worker.Enable();
         }
 
-        void OnWorkerRelease(Worker worker)
+        private void OnWorkerRelease(Worker worker)
         {
             worker.Disable();
         }
 
-        void OnWorkerDestroy(Worker worker)
+        private void OnWorkerDestroy(Worker worker)
         {
             worker.Dispose();
         }

@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -7,7 +5,7 @@ using VContainer.Unity;
 namespace Module.Task
 {
     /// <summary>
-    /// タスクのゲームループを行うクラス
+    ///     タスクのゲームループを行うクラス
     /// </summary>
     public class TaskSystemLoop : IStartable, ITickable
     {
@@ -22,18 +20,15 @@ namespace Module.Task
         public void Start()
         {
             //タスクの初期化
-            foreach (ITaskSystem taskSystem in taskSystems)
-            {
-                taskSystem.Initialize();
-            }
+            foreach (var taskSystem in taskSystems) taskSystem.Initialize();
         }
 
         public void Tick()
         {
-            float delta = Time.deltaTime;
+            var delta = Time.deltaTime;
 
             //タスクの更新
-            foreach (ITaskSystem taskSystem in taskSystems)
+            foreach (var taskSystem in taskSystems)
             {
                 if (taskSystem.State != TaskState.InProgress)
                     continue;

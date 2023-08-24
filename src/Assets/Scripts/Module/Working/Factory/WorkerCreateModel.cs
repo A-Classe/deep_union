@@ -16,10 +16,10 @@ namespace Module.Working.Factory
             Transform parent
         )
         {
-            this.Position = position;
-            this.SpawnPoint = parent.position;
-            this.State = state;
-            this.Parent = parent;
+            Position = position;
+            SpawnPoint = parent.position;
+            State = state;
+            Parent = parent;
         }
     }
 }
