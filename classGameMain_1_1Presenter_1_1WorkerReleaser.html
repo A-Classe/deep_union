@@ -81,7 +81,13 @@ $(function() {
 GameMain.Presenter.WorkerReleaser 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classGameMain_1_1Presenter_1_1WorkerReleaser__coll__graph.png" border="0" usemap="#aGameMain_8Presenter_8WorkerReleaser_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<map name="aGameMain_8Presenter_8WorkerReleaser_coll__map" id="aGameMain_8Presenter_8WorkerReleaser_coll__map">
+<area shape="rect" title="ワーカーのリリース処理を行うクラス" alt="" coords="5,461,212,612"/>
+<area shape="rect" href="classCore_1_1Input_1_1InputEvent.html" title="InputActionのラッパークラス" alt="" coords="12,5,203,156"/>
+<area shape="rect" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html" title="群体を操作するクラス" alt="" coords="207,219,408,399"/>
+<area shape="rect" title=" " alt="" coords="245,42,369,119"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
@@ -110,6 +116,8 @@ GameMain.Presenter.WorkerReleaser 連携図</div>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>ワーカーのリリース処理を行うクラス </p>
+
+<p class="definition"> <a class="el" href="WorkerReleaser_8cs_source.html">WorkerReleaser.cs</a> の <a class="el" href="WorkerReleaser_8cs_source.html#l00016">16</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
 <a id="ac2e1ecee00e96c2989b9c57884a8f447"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac2e1ecee00e96c2989b9c57884a8f447">&#9670;&nbsp;</a></span>WorkerReleaser()</h2>
@@ -144,6 +152,8 @@ GameMain.Presenter.WorkerReleaser 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="WorkerReleaser_8cs_source.html">WorkerReleaser.cs</a> の <a class="el" href="WorkerReleaser_8cs_source.html#l00022">22</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            this.workerController = <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a7fd139bfec217c0cf347f16342e864b3">workerController</a>;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#ad748c151a3c47bbc4f0d2238eb5e7cae">assignments</a> = workerConnector.Assignments;</div>
@@ -155,22 +165,36 @@ GameMain.Presenter.WorkerReleaser 連携図</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a758ccbe75d8d7be04fb24e52299ae33d">RegisterReleaseEvents</a>();</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
-<div class="ttc" id="aclassCore_1_1Input_1_1ActionGuid_html"><div class="ttname"><a href="classCore_1_1Input_1_1ActionGuid.html">Core.Input.ActionGuid</a></div><div class="ttdef"><b>Definition:</b> ActionGuid.cs:10</div></div>
-<div class="ttc" id="aclassCore_1_1Input_1_1ActionGuid_html_a56b0dde7a31d3149dd1291919ad9095f"><div class="ttname"><a href="classCore_1_1Input_1_1ActionGuid.html#a56b0dde7a31d3149dd1291919ad9095f">Core.Input.ActionGuid.InGame</a></div><div class="ttdeci">static readonly InGame InGame</div><div class="ttdef"><b>Definition:</b> ActionGuid.cs:11</div></div>
-<div class="ttc" id="aclassCore_1_1Input_1_1InGame_html_a5258266bb36e73f412c5e6d6e7808f0e"><div class="ttname"><a href="classCore_1_1Input_1_1InGame.html#a5258266bb36e73f412c5e6d6e7808f0e">Core.Input.InGame.Release</a></div><div class="ttdeci">readonly Guid Release</div><div class="ttdef"><b>Definition:</b> ActionGuid.cs:18</div></div>
-<div class="ttc" id="aclassCore_1_1Input_1_1InputActionProvider_html"><div class="ttname"><a href="classCore_1_1Input_1_1InputActionProvider.html">Core.Input.InputActionProvider</a></div><div class="ttdoc">登録解除不要なInputActionを提供するクラス</div><div class="ttdef"><b>Definition:</b> InputActionProvider.cs:12</div></div>
-<div class="ttc" id="aclassCore_1_1Input_1_1InputEvent_html_a38ded2cbcefd054bfaf50c6fec84f963"><div class="ttname"><a href="classCore_1_1Input_1_1InputEvent.html#a38ded2cbcefd054bfaf50c6fec84f963">Core.Input.InputEvent.Canceled</a></div><div class="ttdeci">Action&lt; InputAction.CallbackContext &gt; Canceled</div><div class="ttdef"><b>Definition:</b> InputEvent.cs:15</div></div>
-<div class="ttc" id="aclassCore_1_1Input_1_1InputEvent_html_a6083757a734e5cbebda39c604cfc2d9f"><div class="ttname"><a href="classCore_1_1Input_1_1InputEvent.html#a6083757a734e5cbebda39c604cfc2d9f">Core.Input.InputEvent.Started</a></div><div class="ttdeci">Action&lt; InputAction.CallbackContext &gt; Started</div><div class="ttdef"><b>Definition:</b> InputEvent.cs:13</div></div>
-<div class="ttc" id="aclassCore_1_1Input_1_1SingletonMonoBehaviour_html_abe9d85521c1adf0cc8870497504118ae"><div class="ttname"><a href="classCore_1_1Input_1_1SingletonMonoBehaviour.html#abe9d85521c1adf0cc8870497504118ae">Core.Input.SingletonMonoBehaviour.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition:</b> SingletonMonobehaviour.cs:14</div></div>
-<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_html_a0e598128044176b40b815ab0768a2b39"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a0e598128044176b40b815ab0768a2b39">GameMain.Presenter.WorkerReleaser.releaseEvent</a></div><div class="ttdeci">readonly InputEvent releaseEvent</div><div class="ttdef"><b>Definition:</b> WorkerReleaser.cs:20</div></div>
-<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_html_a46869b365c16164da5e35fa54c8a9f2d"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a46869b365c16164da5e35fa54c8a9f2d">GameMain.Presenter.WorkerReleaser.Release</a></div><div class="ttdeci">void Release(BaseTask nearestTask)</div><div class="ttdef"><b>Definition:</b> WorkerReleaser.cs:50</div></div>
-<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_html_a758ccbe75d8d7be04fb24e52299ae33d"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a758ccbe75d8d7be04fb24e52299ae33d">GameMain.Presenter.WorkerReleaser.RegisterReleaseEvents</a></div><div class="ttdeci">void RegisterReleaseEvents()</div><div class="ttdef"><b>Definition:</b> WorkerReleaser.cs:35</div></div>
-<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_html_a7fd139bfec217c0cf347f16342e864b3"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a7fd139bfec217c0cf347f16342e864b3">GameMain.Presenter.WorkerReleaser.workerController</a></div><div class="ttdeci">readonly WorkerController workerController</div><div class="ttdef"><b>Definition:</b> WorkerReleaser.cs:18</div></div>
-<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_html_ad748c151a3c47bbc4f0d2238eb5e7cae"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#ad748c151a3c47bbc4f0d2238eb5e7cae">GameMain.Presenter.WorkerReleaser.assignments</a></div><div class="ttdeci">readonly IReadOnlyList&lt; Assignment &gt; assignments</div><div class="ttdef"><b>Definition:</b> WorkerReleaser.cs:19</div></div>
+<div class="ttc" id="aclassCore_1_1Input_1_1ActionGuid_html"><div class="ttname"><a href="classCore_1_1Input_1_1ActionGuid.html">Core.Input.ActionGuid</a></div><div class="ttdef"><b>Definition:</b> <a href="ActionGuid_8cs_source.html#l00009">ActionGuid.cs:10</a></div></div>
+<div class="ttc" id="aclassCore_1_1Input_1_1ActionGuid_html_a56b0dde7a31d3149dd1291919ad9095f"><div class="ttname"><a href="classCore_1_1Input_1_1ActionGuid.html#a56b0dde7a31d3149dd1291919ad9095f">Core.Input.ActionGuid.InGame</a></div><div class="ttdeci">static readonly InGame InGame</div><div class="ttdef"><b>Definition:</b> <a href="ActionGuid_8cs_source.html#l00011">ActionGuid.cs:11</a></div></div>
+<div class="ttc" id="aclassCore_1_1Input_1_1InGame_html_a5258266bb36e73f412c5e6d6e7808f0e"><div class="ttname"><a href="classCore_1_1Input_1_1InGame.html#a5258266bb36e73f412c5e6d6e7808f0e">Core.Input.InGame.Release</a></div><div class="ttdeci">readonly Guid Release</div><div class="ttdef"><b>Definition:</b> <a href="ActionGuid_8cs_source.html#l00018">ActionGuid.cs:18</a></div></div>
+<div class="ttc" id="aclassCore_1_1Input_1_1InputActionProvider_html"><div class="ttname"><a href="classCore_1_1Input_1_1InputActionProvider.html">Core.Input.InputActionProvider</a></div><div class="ttdoc">登録解除不要なInputActionを提供するクラス</div><div class="ttdef"><b>Definition:</b> <a href="InputActionProvider_8cs_source.html#l00011">InputActionProvider.cs:12</a></div></div>
+<div class="ttc" id="aclassCore_1_1Input_1_1InputEvent_html_a38ded2cbcefd054bfaf50c6fec84f963"><div class="ttname"><a href="classCore_1_1Input_1_1InputEvent.html#a38ded2cbcefd054bfaf50c6fec84f963">Core.Input.InputEvent.Canceled</a></div><div class="ttdeci">Action&lt; InputAction.CallbackContext &gt; Canceled</div><div class="ttdef"><b>Definition:</b> <a href="InputEvent_8cs_source.html#l00015">InputEvent.cs:15</a></div></div>
+<div class="ttc" id="aclassCore_1_1Input_1_1InputEvent_html_a6083757a734e5cbebda39c604cfc2d9f"><div class="ttname"><a href="classCore_1_1Input_1_1InputEvent.html#a6083757a734e5cbebda39c604cfc2d9f">Core.Input.InputEvent.Started</a></div><div class="ttdeci">Action&lt; InputAction.CallbackContext &gt; Started</div><div class="ttdef"><b>Definition:</b> <a href="InputEvent_8cs_source.html#l00013">InputEvent.cs:13</a></div></div>
+<div class="ttc" id="aclassCore_1_1Input_1_1SingletonMonoBehaviour_html_abe9d85521c1adf0cc8870497504118ae"><div class="ttname"><a href="classCore_1_1Input_1_1SingletonMonoBehaviour.html#abe9d85521c1adf0cc8870497504118ae">Core.Input.SingletonMonoBehaviour.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition:</b> <a href="SingletonMonobehaviour_8cs_source.html#l00013">SingletonMonobehaviour.cs:14</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_html_a0e598128044176b40b815ab0768a2b39"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a0e598128044176b40b815ab0768a2b39">GameMain.Presenter.WorkerReleaser.releaseEvent</a></div><div class="ttdeci">readonly InputEvent releaseEvent</div><div class="ttdef"><b>Definition:</b> <a href="WorkerReleaser_8cs_source.html#l00020">WorkerReleaser.cs:20</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_html_a46869b365c16164da5e35fa54c8a9f2d"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a46869b365c16164da5e35fa54c8a9f2d">GameMain.Presenter.WorkerReleaser.Release</a></div><div class="ttdeci">void Release(BaseTask nearestTask)</div><div class="ttdef"><b>Definition:</b> <a href="WorkerReleaser_8cs_source.html#l00050">WorkerReleaser.cs:50</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_html_a758ccbe75d8d7be04fb24e52299ae33d"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a758ccbe75d8d7be04fb24e52299ae33d">GameMain.Presenter.WorkerReleaser.RegisterReleaseEvents</a></div><div class="ttdeci">void RegisterReleaseEvents()</div><div class="ttdef"><b>Definition:</b> <a href="WorkerReleaser_8cs_source.html#l00035">WorkerReleaser.cs:35</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_html_a7fd139bfec217c0cf347f16342e864b3"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a7fd139bfec217c0cf347f16342e864b3">GameMain.Presenter.WorkerReleaser.workerController</a></div><div class="ttdeci">readonly WorkerController workerController</div><div class="ttdef"><b>Definition:</b> <a href="WorkerReleaser_8cs_source.html#l00018">WorkerReleaser.cs:18</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_html_ad748c151a3c47bbc4f0d2238eb5e7cae"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#ad748c151a3c47bbc4f0d2238eb5e7cae">GameMain.Presenter.WorkerReleaser.assignments</a></div><div class="ttdeci">readonly IReadOnlyList&lt; Assignment &gt; assignments</div><div class="ttdef"><b>Definition:</b> <a href="WorkerReleaser_8cs_source.html#l00019">WorkerReleaser.cs:19</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classGameMain_1_1Presenter_1_1WorkerReleaser_ac2e1ecee00e96c2989b9c57884a8f447_cgraph.png" border="0" usemap="#aclassGameMain_1_1Presenter_1_1WorkerReleaser_ac2e1ecee00e96c2989b9c57884a8f447_cgraph" alt=""/></div>
+<map name="aclassGameMain_1_1Presenter_1_1WorkerReleaser_ac2e1ecee00e96c2989b9c57884a8f447_cgraph" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_ac2e1ecee00e96c2989b9c57884a8f447_cgraph">
+<area shape="rect" title=" " alt="" coords="5,157,212,199"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerConnector.html#aee1bbf4af858c1f098b1ce0b9d395489" title=" " alt="" coords="540,192,747,233"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a758ccbe75d8d7be04fb24e52299ae33d" title=" " alt="" coords="260,36,492,77"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a46869b365c16164da5e35fa54c8a9f2d" title=" " alt="" coords="273,127,479,168"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerConnector.html#a2d99a5a96da4fca9663eeef4d790463d" title=" " alt="" coords="273,251,479,292"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a6b727baaf9b8ee42df31adf6a1ee58e9" title=" " alt="" coords="540,9,747,51"/>
+<area shape="rect" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a0355752b983414821acb34c3bc51e724" title=" " alt="" coords="795,39,1029,80"/>
+<area shape="rect" href="classModule_1_1Working_1_1Worker.html#a922af18e66b8d55d75df97f832bb3879" title=" " alt="" coords="1077,5,1277,47"/>
+<area shape="rect" href="classModule_1_1Working_1_1Worker.html#aef8170fa48e94cf709f865386be24688" title=" " alt="" coords="1077,71,1277,112"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a3be13fefa2a8ac385becda75f3283788" title=" " alt="" coords="540,127,747,168"/>
+<area shape="rect" href="classModule_1_1Task_1_1TaskDetector.html#a9772acfba56971fbf388b479cdcd24a3" title="親オブジェクトの座標に最も近いタスクを取得します" alt="" coords="546,257,741,299"/>
+<area shape="rect" href="classModule_1_1Task_1_1TaskDetector.html#ac444c7dfee7ca59d9252817520a3da73" title="検出処理を更新します" alt="" coords="546,323,741,364"/>
+</map>
 </div>
 
 </div>
@@ -199,6 +223,8 @@ GameMain.Presenter.WorkerReleaser 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="WorkerReleaser_8cs_source.html">WorkerReleaser.cs</a> の <a class="el" href="WorkerReleaser_8cs_source.html#l00109">109</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        {</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            Vector3 origin = <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a7fd139bfec217c0cf347f16342e864b3">workerController</a>.transform.position;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">return</span> assignment.Workers.OrderBy(worker =&gt; (origin - worker.transform.position).sqrMagnitude).First();</div>
@@ -207,6 +233,11 @@ GameMain.Presenter.WorkerReleaser 連携図</div>
 被呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classGameMain_1_1Presenter_1_1WorkerReleaser_a3be13fefa2a8ac385becda75f3283788_icgraph.png" border="0" usemap="#aclassGameMain_1_1Presenter_1_1WorkerReleaser_a3be13fefa2a8ac385becda75f3283788_icgraph" alt=""/></div>
+<map name="aclassGameMain_1_1Presenter_1_1WorkerReleaser_a3be13fefa2a8ac385becda75f3283788_icgraph" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_a3be13fefa2a8ac385becda75f3283788_icgraph">
+<area shape="rect" title=" " alt="" coords="515,5,721,47"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a46869b365c16164da5e35fa54c8a9f2d" title=" " alt="" coords="260,5,467,47"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#ac2e1ecee00e96c2989b9c57884a8f447" title=" " alt="" coords="5,5,212,47"/>
+</map>
 </div>
 
 </div>
@@ -233,6 +264,8 @@ GameMain.Presenter.WorkerReleaser 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="WorkerReleaser_8cs_source.html">WorkerReleaser.cs</a> の <a class="el" href="WorkerReleaser_8cs_source.html#l00035">35</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">foreach</span> (Assignment assignment <span class="keywordflow">in</span> <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#ad748c151a3c47bbc4f0d2238eb5e7cae">assignments</a>)</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            {</div>
@@ -246,17 +279,28 @@ GameMain.Presenter.WorkerReleaser 連携図</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                };</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            }</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
-<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_html_a6b727baaf9b8ee42df31adf6a1ee58e9"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a6b727baaf9b8ee42df31adf6a1ee58e9">GameMain.Presenter.WorkerReleaser.ReleaseAll</a></div><div class="ttdeci">void ReleaseAll(BaseTask baseTask)</div><div class="ttdef"><b>Definition:</b> WorkerReleaser.cs:82</div></div>
-<div class="ttc" id="anamespaceModule_1_1Task_html_a5559ca3b155ae70ee91b579e8e01f985"><div class="ttname"><a href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">Module.Task.TaskState</a></div><div class="ttdeci">TaskState</div><div class="ttdoc">タスクの状態</div><div class="ttdef"><b>Definition:</b> TaskState.cs:7</div></div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_html_a6b727baaf9b8ee42df31adf6a1ee58e9"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a6b727baaf9b8ee42df31adf6a1ee58e9">GameMain.Presenter.WorkerReleaser.ReleaseAll</a></div><div class="ttdeci">void ReleaseAll(BaseTask baseTask)</div><div class="ttdef"><b>Definition:</b> <a href="WorkerReleaser_8cs_source.html#l00082">WorkerReleaser.cs:82</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Task_html_a5559ca3b155ae70ee91b579e8e01f985"><div class="ttname"><a href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">Module.Task.TaskState</a></div><div class="ttdeci">TaskState</div><div class="ttdoc">タスクの状態</div><div class="ttdef"><b>Definition:</b> <a href="TaskState_8cs_source.html#l00006">TaskState.cs:7</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classGameMain_1_1Presenter_1_1WorkerReleaser_a758ccbe75d8d7be04fb24e52299ae33d_cgraph.png" border="0" usemap="#aclassGameMain_1_1Presenter_1_1WorkerReleaser_a758ccbe75d8d7be04fb24e52299ae33d_cgraph" alt=""/></div>
+<map name="aclassGameMain_1_1Presenter_1_1WorkerReleaser_a758ccbe75d8d7be04fb24e52299ae33d_cgraph" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_a758ccbe75d8d7be04fb24e52299ae33d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,237,80"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a6b727baaf9b8ee42df31adf6a1ee58e9" title=" " alt="" coords="285,39,492,80"/>
+<area shape="rect" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a0355752b983414821acb34c3bc51e724" title=" " alt="" coords="540,39,775,80"/>
+<area shape="rect" href="classModule_1_1Working_1_1Worker.html#a922af18e66b8d55d75df97f832bb3879" title=" " alt="" coords="823,5,1023,47"/>
+<area shape="rect" href="classModule_1_1Working_1_1Worker.html#aef8170fa48e94cf709f865386be24688" title=" " alt="" coords="823,71,1023,112"/>
+</map>
 </div>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classGameMain_1_1Presenter_1_1WorkerReleaser_a758ccbe75d8d7be04fb24e52299ae33d_icgraph.png" border="0" usemap="#aclassGameMain_1_1Presenter_1_1WorkerReleaser_a758ccbe75d8d7be04fb24e52299ae33d_icgraph" alt=""/></div>
+<map name="aclassGameMain_1_1Presenter_1_1WorkerReleaser_a758ccbe75d8d7be04fb24e52299ae33d_icgraph" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_a758ccbe75d8d7be04fb24e52299ae33d_icgraph">
+<area shape="rect" title=" " alt="" coords="260,5,492,47"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#ac2e1ecee00e96c2989b9c57884a8f447" title=" " alt="" coords="5,5,212,47"/>
+</map>
 </div>
 
 </div>
@@ -284,6 +328,8 @@ GameMain.Presenter.WorkerReleaser 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="WorkerReleaser_8cs_source.html">WorkerReleaser.cs</a> の <a class="el" href="WorkerReleaser_8cs_source.html#l00050">50</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">try</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            {</div>
@@ -314,18 +360,29 @@ GameMain.Presenter.WorkerReleaser 連携図</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keywordflow">throw</span>;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            }</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
-<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_html_a3be13fefa2a8ac385becda75f3283788"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a3be13fefa2a8ac385becda75f3283788">GameMain.Presenter.WorkerReleaser.GetNearestWorker</a></div><div class="ttdeci">Worker GetNearestWorker(Assignment assignment)</div><div class="ttdef"><b>Definition:</b> WorkerReleaser.cs:109</div></div>
-<div class="ttc" id="aclassModule_1_1Working_1_1Controller_1_1WorkerController_html_a0355752b983414821acb34c3bc51e724"><div class="ttname"><a href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a0355752b983414821acb34c3bc51e724">Module.Working.Controller.WorkerController.EnqueueWorker</a></div><div class="ttdeci">void EnqueueWorker(Worker worker)</div><div class="ttdef"><b>Definition:</b> WorkerController.cs:29</div></div>
-<div class="ttc" id="aclassModule_1_1Working_1_1Worker_html"><div class="ttname"><a href="classModule_1_1Working_1_1Worker.html">Module.Working.Worker</a></div><div class="ttdoc">ワーカーの状態を管理するクラス</div><div class="ttdef"><b>Definition:</b> Worker.cs:15</div></div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_html_a3be13fefa2a8ac385becda75f3283788"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a3be13fefa2a8ac385becda75f3283788">GameMain.Presenter.WorkerReleaser.GetNearestWorker</a></div><div class="ttdeci">Worker GetNearestWorker(Assignment assignment)</div><div class="ttdef"><b>Definition:</b> <a href="WorkerReleaser_8cs_source.html#l00109">WorkerReleaser.cs:109</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Controller_1_1WorkerController_html_a0355752b983414821acb34c3bc51e724"><div class="ttname"><a href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a0355752b983414821acb34c3bc51e724">Module.Working.Controller.WorkerController.EnqueueWorker</a></div><div class="ttdeci">void EnqueueWorker(Worker worker)</div><div class="ttdef"><b>Definition:</b> <a href="WorkerController_8cs_source.html#l00029">WorkerController.cs:29</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Worker_html"><div class="ttname"><a href="classModule_1_1Working_1_1Worker.html">Module.Working.Worker</a></div><div class="ttdoc">ワーカーの状態を管理するクラス</div><div class="ttdef"><b>Definition:</b> <a href="Worker_8cs_source.html#l00014">Worker.cs:15</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classGameMain_1_1Presenter_1_1WorkerReleaser_a46869b365c16164da5e35fa54c8a9f2d_cgraph.png" border="0" usemap="#aclassGameMain_1_1Presenter_1_1WorkerReleaser_a46869b365c16164da5e35fa54c8a9f2d_cgraph" alt=""/></div>
+<map name="aclassGameMain_1_1Presenter_1_1WorkerReleaser_a46869b365c16164da5e35fa54c8a9f2d_cgraph" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_a46869b365c16164da5e35fa54c8a9f2d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,71,212,112"/>
+<area shape="rect" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a0355752b983414821acb34c3bc51e724" title=" " alt="" coords="260,37,495,79"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a3be13fefa2a8ac385becda75f3283788" title=" " alt="" coords="274,103,481,144"/>
+<area shape="rect" href="classModule_1_1Working_1_1Worker.html#a922af18e66b8d55d75df97f832bb3879" title=" " alt="" coords="543,5,743,47"/>
+<area shape="rect" href="classModule_1_1Working_1_1Worker.html#aef8170fa48e94cf709f865386be24688" title=" " alt="" coords="543,71,743,112"/>
+</map>
 </div>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classGameMain_1_1Presenter_1_1WorkerReleaser_a46869b365c16164da5e35fa54c8a9f2d_icgraph.png" border="0" usemap="#aclassGameMain_1_1Presenter_1_1WorkerReleaser_a46869b365c16164da5e35fa54c8a9f2d_icgraph" alt=""/></div>
+<map name="aclassGameMain_1_1Presenter_1_1WorkerReleaser_a46869b365c16164da5e35fa54c8a9f2d_icgraph" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_a46869b365c16164da5e35fa54c8a9f2d_icgraph">
+<area shape="rect" title=" " alt="" coords="260,5,467,47"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#ac2e1ecee00e96c2989b9c57884a8f447" title=" " alt="" coords="5,5,212,47"/>
+</map>
 </div>
 
 </div>
@@ -353,6 +410,8 @@ GameMain.Presenter.WorkerReleaser 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="WorkerReleaser_8cs_source.html">WorkerReleaser.cs</a> の <a class="el" href="WorkerReleaser_8cs_source.html#l00082">82</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        {</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">try</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            {</div>
@@ -381,11 +440,22 @@ GameMain.Presenter.WorkerReleaser 連携図</div>
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classGameMain_1_1Presenter_1_1WorkerReleaser_a6b727baaf9b8ee42df31adf6a1ee58e9_cgraph.png" border="0" usemap="#aclassGameMain_1_1Presenter_1_1WorkerReleaser_a6b727baaf9b8ee42df31adf6a1ee58e9_cgraph" alt=""/></div>
+<map name="aclassGameMain_1_1Presenter_1_1WorkerReleaser_a6b727baaf9b8ee42df31adf6a1ee58e9_cgraph" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_a6b727baaf9b8ee42df31adf6a1ee58e9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,212,80"/>
+<area shape="rect" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a0355752b983414821acb34c3bc51e724" title=" " alt="" coords="260,39,495,80"/>
+<area shape="rect" href="classModule_1_1Working_1_1Worker.html#a922af18e66b8d55d75df97f832bb3879" title=" " alt="" coords="543,5,743,47"/>
+<area shape="rect" href="classModule_1_1Working_1_1Worker.html#aef8170fa48e94cf709f865386be24688" title=" " alt="" coords="543,71,743,112"/>
+</map>
 </div>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classGameMain_1_1Presenter_1_1WorkerReleaser_a6b727baaf9b8ee42df31adf6a1ee58e9_icgraph.png" border="0" usemap="#aclassGameMain_1_1Presenter_1_1WorkerReleaser_a6b727baaf9b8ee42df31adf6a1ee58e9_icgraph" alt=""/></div>
+<map name="aclassGameMain_1_1Presenter_1_1WorkerReleaser_a6b727baaf9b8ee42df31adf6a1ee58e9_icgraph" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_a6b727baaf9b8ee42df31adf6a1ee58e9_icgraph">
+<area shape="rect" title=" " alt="" coords="540,5,747,47"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a758ccbe75d8d7be04fb24e52299ae33d" title=" " alt="" coords="260,5,492,47"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#ac2e1ecee00e96c2989b9c57884a8f447" title=" " alt="" coords="5,5,212,47"/>
+</map>
 </div>
 
 </div>
@@ -411,6 +481,8 @@ GameMain.Presenter.WorkerReleaser 連携図</div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition"> <a class="el" href="WorkerReleaser_8cs_source.html">WorkerReleaser.cs</a> の <a class="el" href="WorkerReleaser_8cs_source.html#l00019">19</a> 行目に定義があります。</p>
+
 </div>
 </div>
 <a id="a0e598128044176b40b815ab0768a2b39"></a>
@@ -432,6 +504,8 @@ GameMain.Presenter.WorkerReleaser 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="WorkerReleaser_8cs_source.html">WorkerReleaser.cs</a> の <a class="el" href="WorkerReleaser_8cs_source.html#l00020">20</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -455,10 +529,12 @@ GameMain.Presenter.WorkerReleaser 連携図</div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition"> <a class="el" href="WorkerReleaser_8cs_source.html">WorkerReleaser.cs</a> の <a class="el" href="WorkerReleaser_8cs_source.html#l00018">18</a> 行目に定義があります。</p>
+
 </div>
 </div>
 <hr/>このクラス詳解は次のファイルから抽出されました:<ul>
-<li>src/Assets/Scripts/GameMain/Presenter/<a class="el" href="WorkerReleaser_8cs.html">WorkerReleaser.cs</a></li>
+<li>src/Assets/Scripts/GameMain/Presenter/<a class="el" href="WorkerReleaser_8cs_source.html">WorkerReleaser.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

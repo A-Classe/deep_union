@@ -77,12 +77,23 @@ $(function() {
 GameMain.Presenter.Assignment の継承関係図</div>
 <div class="dyncontent">
 <div class="center"><img src="structGameMain_1_1Presenter_1_1Assignment__inherit__graph.png" border="0" usemap="#aGameMain_8Presenter_8Assignment_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<map name="aGameMain_8Presenter_8Assignment_inherit__map" id="aGameMain_8Presenter_8Assignment_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,131,244,281"/>
+<area shape="rect" title=" " alt="" coords="25,5,224,83"/>
+</map>
+</div>
 <div class="dynheader">
 GameMain.Presenter.Assignment 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="structGameMain_1_1Presenter_1_1Assignment__coll__graph.png" border="0" usemap="#aGameMain_8Presenter_8Assignment_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<map name="aGameMain_8Presenter_8Assignment_coll__map" id="aGameMain_8Presenter_8Assignment_coll__map">
+<area shape="rect" title=" " alt="" coords="49,565,288,701"/>
+<area shape="rect" title=" " alt="" coords="5,286,204,363"/>
+<area shape="rect" href="classModule_1_1Task_1_1BaseTask.html" title="全てのタスクのベースクラス" alt="" coords="228,147,411,503"/>
+<area shape="rect" title=" " alt="" coords="171,13,295,90"/>
+<area shape="rect" href="interfaceModule_1_1Task_1_1ITaskSystem.html" title="タスクにゲームループを適用するインターフェース" alt="" coords="319,5,491,97"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
@@ -104,7 +115,10 @@ GameMain.Presenter.Assignment 連携図</div>
 <tr class="memitem:a4a84493538b2f9dbb34d557336de83e3"><td class="memItemLeft" align="right" valign="top">readonly List&lt; <a class="el" href="classModule_1_1Working_1_1Worker.html">Worker</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGameMain_1_1Presenter_1_1Assignment.html#a4a84493538b2f9dbb34d557336de83e3">Workers</a></td></tr>
 <tr class="separator:a4a84493538b2f9dbb34d557336de83e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">構築子と解体子</h2>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="Assignment_8cs_source.html">Assignment.cs</a> の <a class="el" href="Assignment_8cs_source.html#l00009">9</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
 <a id="a5ecda26bf056185943d634605b4ee438"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5ecda26bf056185943d634605b4ee438">&#9670;&nbsp;</a></span>Assignment()</h2>
 
@@ -138,14 +152,16 @@ GameMain.Presenter.Assignment 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Assignment_8cs_source.html">Assignment.cs</a> の <a class="el" href="Assignment_8cs_source.html#l00015">15</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <a class="code" href="structGameMain_1_1Presenter_1_1Assignment.html#add20b6132f7fc7e2c218b4a7a53542db">Task</a> = task;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <a class="code" href="structGameMain_1_1Presenter_1_1Assignment.html#a760faf139d4d6bbb7db367b992381472">Target</a> = target;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <a class="code" href="structGameMain_1_1Presenter_1_1Assignment.html#a4a84493538b2f9dbb34d557336de83e3">Workers</a> = <span class="keyword">new</span> List&lt;Worker&gt;(64);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        }</div>
-<div class="ttc" id="astructGameMain_1_1Presenter_1_1Assignment_html_a4a84493538b2f9dbb34d557336de83e3"><div class="ttname"><a href="structGameMain_1_1Presenter_1_1Assignment.html#a4a84493538b2f9dbb34d557336de83e3">GameMain.Presenter.Assignment.Workers</a></div><div class="ttdeci">readonly List&lt; Worker &gt; Workers</div><div class="ttdef"><b>Definition:</b> Assignment.cs:13</div></div>
-<div class="ttc" id="astructGameMain_1_1Presenter_1_1Assignment_html_a760faf139d4d6bbb7db367b992381472"><div class="ttname"><a href="structGameMain_1_1Presenter_1_1Assignment.html#a760faf139d4d6bbb7db367b992381472">GameMain.Presenter.Assignment.Target</a></div><div class="ttdeci">readonly Transform Target</div><div class="ttdef"><b>Definition:</b> Assignment.cs:12</div></div>
-<div class="ttc" id="astructGameMain_1_1Presenter_1_1Assignment_html_add20b6132f7fc7e2c218b4a7a53542db"><div class="ttname"><a href="structGameMain_1_1Presenter_1_1Assignment.html#add20b6132f7fc7e2c218b4a7a53542db">GameMain.Presenter.Assignment.Task</a></div><div class="ttdeci">readonly BaseTask Task</div><div class="ttdef"><b>Definition:</b> Assignment.cs:11</div></div>
+<div class="ttc" id="astructGameMain_1_1Presenter_1_1Assignment_html_a4a84493538b2f9dbb34d557336de83e3"><div class="ttname"><a href="structGameMain_1_1Presenter_1_1Assignment.html#a4a84493538b2f9dbb34d557336de83e3">GameMain.Presenter.Assignment.Workers</a></div><div class="ttdeci">readonly List&lt; Worker &gt; Workers</div><div class="ttdef"><b>Definition:</b> <a href="Assignment_8cs_source.html#l00013">Assignment.cs:13</a></div></div>
+<div class="ttc" id="astructGameMain_1_1Presenter_1_1Assignment_html_a760faf139d4d6bbb7db367b992381472"><div class="ttname"><a href="structGameMain_1_1Presenter_1_1Assignment.html#a760faf139d4d6bbb7db367b992381472">GameMain.Presenter.Assignment.Target</a></div><div class="ttdeci">readonly Transform Target</div><div class="ttdef"><b>Definition:</b> <a href="Assignment_8cs_source.html#l00012">Assignment.cs:12</a></div></div>
+<div class="ttc" id="astructGameMain_1_1Presenter_1_1Assignment_html_add20b6132f7fc7e2c218b4a7a53542db"><div class="ttname"><a href="structGameMain_1_1Presenter_1_1Assignment.html#add20b6132f7fc7e2c218b4a7a53542db">GameMain.Presenter.Assignment.Task</a></div><div class="ttdeci">readonly BaseTask Task</div><div class="ttdef"><b>Definition:</b> <a href="Assignment_8cs_source.html#l00011">Assignment.cs:11</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -173,6 +189,8 @@ GameMain.Presenter.Assignment 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Assignment_8cs_source.html">Assignment.cs</a> の <a class="el" href="Assignment_8cs_source.html#l00022">22</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="structGameMain_1_1Presenter_1_1Assignment.html#add20b6132f7fc7e2c218b4a7a53542db">Task</a> == other.Task &amp;&amp; <a class="code" href="structGameMain_1_1Presenter_1_1Assignment.html#a4a84493538b2f9dbb34d557336de83e3">Workers</a> == other.Workers;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
@@ -180,6 +198,10 @@ GameMain.Presenter.Assignment 連携図</div>
 被呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="structGameMain_1_1Presenter_1_1Assignment_a79ae06e4bfedebfd81b590f1395ffe5b_icgraph.png" border="0" usemap="#astructGameMain_1_1Presenter_1_1Assignment_a79ae06e4bfedebfd81b590f1395ffe5b_icgraph" alt=""/></div>
+<map name="astructGameMain_1_1Presenter_1_1Assignment_a79ae06e4bfedebfd81b590f1395ffe5b_icgraph" id="astructGameMain_1_1Presenter_1_1Assignment_a79ae06e4bfedebfd81b590f1395ffe5b_icgraph">
+<area shape="rect" title=" " alt="" coords="296,5,539,47"/>
+<area shape="rect" href="structGameMain_1_1Presenter_1_1Assignment.html#ac24c6d58df75c890f9cffc836440aa63" title=" " alt="" coords="5,5,248,47"/>
+</map>
 </div>
 
 </div>
@@ -207,15 +229,21 @@ GameMain.Presenter.Assignment 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Assignment_8cs_source.html">Assignment.cs</a> の <a class="el" href="Assignment_8cs_source.html#l00027">27</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        {</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">return</span> obj is <a class="code" href="structGameMain_1_1Presenter_1_1Assignment.html#a5ecda26bf056185943d634605b4ee438">Assignment</a> other &amp;&amp; <a class="code" href="structGameMain_1_1Presenter_1_1Assignment.html#a79ae06e4bfedebfd81b590f1395ffe5b">Equals</a>(other);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
-<div class="ttc" id="astructGameMain_1_1Presenter_1_1Assignment_html_a5ecda26bf056185943d634605b4ee438"><div class="ttname"><a href="structGameMain_1_1Presenter_1_1Assignment.html#a5ecda26bf056185943d634605b4ee438">GameMain.Presenter.Assignment.Assignment</a></div><div class="ttdeci">Assignment(BaseTask task, Transform target)</div><div class="ttdef"><b>Definition:</b> Assignment.cs:15</div></div>
-<div class="ttc" id="astructGameMain_1_1Presenter_1_1Assignment_html_a79ae06e4bfedebfd81b590f1395ffe5b"><div class="ttname"><a href="structGameMain_1_1Presenter_1_1Assignment.html#a79ae06e4bfedebfd81b590f1395ffe5b">GameMain.Presenter.Assignment.Equals</a></div><div class="ttdeci">bool Equals(Assignment other)</div><div class="ttdef"><b>Definition:</b> Assignment.cs:22</div></div>
+<div class="ttc" id="astructGameMain_1_1Presenter_1_1Assignment_html_a5ecda26bf056185943d634605b4ee438"><div class="ttname"><a href="structGameMain_1_1Presenter_1_1Assignment.html#a5ecda26bf056185943d634605b4ee438">GameMain.Presenter.Assignment.Assignment</a></div><div class="ttdeci">Assignment(BaseTask task, Transform target)</div><div class="ttdef"><b>Definition:</b> <a href="Assignment_8cs_source.html#l00015">Assignment.cs:15</a></div></div>
+<div class="ttc" id="astructGameMain_1_1Presenter_1_1Assignment_html_a79ae06e4bfedebfd81b590f1395ffe5b"><div class="ttname"><a href="structGameMain_1_1Presenter_1_1Assignment.html#a79ae06e4bfedebfd81b590f1395ffe5b">GameMain.Presenter.Assignment.Equals</a></div><div class="ttdeci">bool Equals(Assignment other)</div><div class="ttdef"><b>Definition:</b> <a href="Assignment_8cs_source.html#l00022">Assignment.cs:22</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="structGameMain_1_1Presenter_1_1Assignment_ac24c6d58df75c890f9cffc836440aa63_cgraph.png" border="0" usemap="#astructGameMain_1_1Presenter_1_1Assignment_ac24c6d58df75c890f9cffc836440aa63_cgraph" alt=""/></div>
+<map name="astructGameMain_1_1Presenter_1_1Assignment_ac24c6d58df75c890f9cffc836440aa63_cgraph" id="astructGameMain_1_1Presenter_1_1Assignment_ac24c6d58df75c890f9cffc836440aa63_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,248,47"/>
+<area shape="rect" href="structGameMain_1_1Presenter_1_1Assignment.html#a79ae06e4bfedebfd81b590f1395ffe5b" title=" " alt="" coords="296,5,539,47"/>
+</map>
 </div>
 
 </div>
@@ -242,6 +270,8 @@ GameMain.Presenter.Assignment 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Assignment_8cs_source.html">Assignment.cs</a> の <a class="el" href="Assignment_8cs_source.html#l00032">32</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">return</span> HashCode.Combine(<a class="code" href="structGameMain_1_1Presenter_1_1Assignment.html#add20b6132f7fc7e2c218b4a7a53542db">Task</a>, <a class="code" href="structGameMain_1_1Presenter_1_1Assignment.html#a4a84493538b2f9dbb34d557336de83e3">Workers</a>);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
@@ -261,6 +291,8 @@ GameMain.Presenter.Assignment 連携図</div>
       </table>
 </div><div class="memdoc">
 
+<p class="definition"> <a class="el" href="Assignment_8cs_source.html">Assignment.cs</a> の <a class="el" href="Assignment_8cs_source.html#l00012">12</a> 行目に定義があります。</p>
+
 </div>
 </div>
 <a id="add20b6132f7fc7e2c218b4a7a53542db"></a>
@@ -274,6 +306,8 @@ GameMain.Presenter.Assignment 連携図</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Assignment_8cs_source.html">Assignment.cs</a> の <a class="el" href="Assignment_8cs_source.html#l00011">11</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -289,10 +323,12 @@ GameMain.Presenter.Assignment 連携図</div>
       </table>
 </div><div class="memdoc">
 
+<p class="definition"> <a class="el" href="Assignment_8cs_source.html">Assignment.cs</a> の <a class="el" href="Assignment_8cs_source.html#l00013">13</a> 行目に定義があります。</p>
+
 </div>
 </div>
 <hr/>この構造体詳解は次のファイルから抽出されました:<ul>
-<li>src/Assets/Scripts/GameMain/Presenter/<a class="el" href="Assignment_8cs.html">Assignment.cs</a></li>
+<li>src/Assets/Scripts/GameMain/Presenter/<a class="el" href="Assignment_8cs_source.html">Assignment.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

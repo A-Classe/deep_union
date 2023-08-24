@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: src/Assets/Scripts/Editor/TaskGenerator.cs ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_26e2c2fb9e22fc47fbc400fd26fd9da8.html">Editor</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">TaskGenerator.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="TaskGenerator_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> System;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> System.IO;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> UnityEditor;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceEditor.html">Editor</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classEditor_1_1TaskGenerator.html">   11</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">class </span><a class="code" href="classEditor_1_1TaskGenerator.html">TaskGenerator</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classEditor_1_1TaskGenerator.html#ae3aa2aa632175e3e2ea2baf609c30691">   13</a></span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> readonly <span class="keywordtype">string</span> <a class="code" href="classEditor_1_1TaskGenerator.html#ae3aa2aa632175e3e2ea2baf609c30691">TaskPath</a> = <span class="stringliteral">@&quot;Scripts\GameMain\Task&quot;</span>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        [MenuItem(<span class="stringliteral">&quot;GameObject/Task&quot;</span>, priority = -100000)]</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classEditor_1_1TaskGenerator.html#a6effff942d3e5a27620663c4a2c75b9b">   16</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classEditor_1_1TaskGenerator.html#a6effff942d3e5a27620663c4a2c75b9b">GenerateTask</a>()</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordtype">string</span> dirPath = Path.Combine(Application.dataPath, <a class="code" href="classEditor_1_1TaskGenerator.html#ae3aa2aa632175e3e2ea2baf609c30691">TaskPath</a>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keywordtype">string</span> fileName = <a class="code" href="classEditor_1_1TaskGenerator.html#a23020b679059524dfec1a49b04edc853">CreateFileName</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keywordtype">string</span> filePath = Path.Combine(dirPath, fileName);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordtype">string</span> className = Path.ChangeExtension(fileName, <span class="keyword">null</span>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keyword">using</span> (FileStream fs = File.Create(filePath))</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <span class="keyword">using</span> (StreamWriter sw = <span class="keyword">new</span> StreamWriter(fs))</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                    <span class="keywordtype">string</span> code = <a class="code" href="classEditor_1_1TaskGenerator.html#adbf11293021a16d303c87436bdd29695">CreateCode</a>(className);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    sw.Write(code);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <a class="code" href="classEditor_1_1GeneratingFlagHolder.html">GeneratingFlagHolder</a>.instance.<a class="code" href="classEditor_1_1GeneratingFlagHolder.html#a304f4e5a015d50a3d200b475dd63f519">IsGenerating</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="classEditor_1_1GeneratingFlagHolder.html">GeneratingFlagHolder</a>.instance.<a class="code" href="classEditor_1_1GeneratingFlagHolder.html#a624f28d5dcbb510916c1cccbad185802">ClassName</a> = className;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            AssetDatabase.Refresh();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        [InitializeOnLoadMethod]</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classEditor_1_1TaskGenerator.html#af436c110a129aa6f5c218b250c75b385">   40</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classEditor_1_1TaskGenerator.html#af436c110a129aa6f5c218b250c75b385">OnCompileScripts</a>()</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classEditor_1_1GeneratingFlagHolder.html">GeneratingFlagHolder</a>.instance.<a class="code" href="classEditor_1_1GeneratingFlagHolder.html#a304f4e5a015d50a3d200b475dd63f519">IsGenerating</a>)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            GameObject gameObject = <span class="keyword">new</span> GameObject(<span class="stringliteral">&quot;Task&quot;</span>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            gameObject.tag = <span class="stringliteral">&quot;Task&quot;</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            gameObject.layer = LayerMask.NameToLayer(<span class="stringliteral">&quot;Task&quot;</span>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            gameObject.isStatic = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            gameObject.AddComponent(<a class="code" href="classEditor_1_1TaskGenerator.html#a8e0c246656b5439975666ec18674b937">FindGeneratedType</a>());</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            gameObject.AddComponent&lt;SphereCollider&gt;();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="classEditor_1_1GeneratingFlagHolder.html">GeneratingFlagHolder</a>.instance.<a class="code" href="classEditor_1_1GeneratingFlagHolder.html#a304f4e5a015d50a3d200b475dd63f519">IsGenerating</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classEditor_1_1TaskGenerator.html#a8e0c246656b5439975666ec18674b937">   56</a></span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> Type <a class="code" href="classEditor_1_1TaskGenerator.html#a8e0c246656b5439975666ec18674b937">FindGeneratedType</a>()</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            Type generatedType = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">foreach</span> (System.Reflection.Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordflow">foreach</span> (Type type <span class="keywordflow">in</span> assembly.GetTypes())</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    <span class="keywordflow">if</span> (type.Name == <a class="code" href="classEditor_1_1GeneratingFlagHolder.html">GeneratingFlagHolder</a>.instance.<a class="code" href="classEditor_1_1GeneratingFlagHolder.html#a624f28d5dcbb510916c1cccbad185802">ClassName</a>)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                        generatedType = type;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keywordflow">if</span> (generatedType != <span class="keyword">null</span>)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">return</span> generatedType;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classEditor_1_1TaskGenerator.html#a23020b679059524dfec1a49b04edc853">   77</a></span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code" href="classEditor_1_1TaskGenerator.html#a23020b679059524dfec1a49b04edc853">CreateFileName</a>()</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">return</span> $<span class="stringliteral">&quot;Task_{Guid.NewGuid().ToString(&quot;</span>N<span class="stringliteral">&quot;)}.cs&quot;</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classEditor_1_1TaskGenerator.html#adbf11293021a16d303c87436bdd29695">   82</a></span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code" href="classEditor_1_1TaskGenerator.html#adbf11293021a16d303c87436bdd29695">CreateCode</a>(<span class="keywordtype">string</span> className)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">return</span> $<span class="stringliteral">@&quot;using Module.Task;</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="stringliteral">namespace GameMain.Task</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="stringliteral">{{</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="stringliteral">    public class {className} : BaseTask</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="stringliteral">    {{</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="stringliteral">        public override void ExecuteJob() {{ }}</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="stringliteral">    }}</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="stringliteral">}}</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="stringliteral">&quot;</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classEditor_1_1GeneratingFlagHolder.html">   97</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classEditor_1_1GeneratingFlagHolder.html">GeneratingFlagHolder</a> : ScriptableSingleton&lt;GeneratingFlagHolder&gt;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classEditor_1_1GeneratingFlagHolder.html#a304f4e5a015d50a3d200b475dd63f519">   99</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="classEditor_1_1GeneratingFlagHolder.html#a304f4e5a015d50a3d200b475dd63f519">IsGenerating</a></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keyword">get</span> =&gt; <a class="code" href="classEditor_1_1GeneratingFlagHolder.html#a10fb0f88f6390fb04f75a5b0fb46ef96">isGenerating</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keyword">set</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <a class="code" href="classEditor_1_1GeneratingFlagHolder.html#a10fb0f88f6390fb04f75a5b0fb46ef96">isGenerating</a> = value;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                Save(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="classEditor_1_1GeneratingFlagHolder.html#a624f28d5dcbb510916c1cccbad185802">  109</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code" href="classEditor_1_1GeneratingFlagHolder.html#a624f28d5dcbb510916c1cccbad185802">ClassName</a></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keyword">get</span> =&gt; <a class="code" href="classEditor_1_1GeneratingFlagHolder.html#a6c5a9e4bfb85526c9debecb58ad4b56a">className</a>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keyword">set</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <a class="code" href="classEditor_1_1GeneratingFlagHolder.html#a6c5a9e4bfb85526c9debecb58ad4b56a">className</a> = value;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                Save(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="classEditor_1_1GeneratingFlagHolder.html#a10fb0f88f6390fb04f75a5b0fb46ef96">  119</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">bool</span> <a class="code" href="classEditor_1_1GeneratingFlagHolder.html#a10fb0f88f6390fb04f75a5b0fb46ef96">isGenerating</a>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="classEditor_1_1GeneratingFlagHolder.html#a6c5a9e4bfb85526c9debecb58ad4b56a">  120</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">string</span> <a class="code" href="classEditor_1_1GeneratingFlagHolder.html#a6c5a9e4bfb85526c9debecb58ad4b56a">className</a>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
+<div class="ttc" id="aclassEditor_1_1GeneratingFlagHolder_html"><div class="ttname"><a href="classEditor_1_1GeneratingFlagHolder.html">Editor.GeneratingFlagHolder</a></div><div class="ttdef"><b>Definition:</b> <a href="TaskGenerator_8cs_source.html#l00097">TaskGenerator.cs:98</a></div></div>
+<div class="ttc" id="aclassEditor_1_1GeneratingFlagHolder_html_a10fb0f88f6390fb04f75a5b0fb46ef96"><div class="ttname"><a href="classEditor_1_1GeneratingFlagHolder.html#a10fb0f88f6390fb04f75a5b0fb46ef96">Editor.GeneratingFlagHolder.isGenerating</a></div><div class="ttdeci">bool isGenerating</div><div class="ttdef"><b>Definition:</b> <a href="TaskGenerator_8cs_source.html#l00119">TaskGenerator.cs:119</a></div></div>
+<div class="ttc" id="aclassEditor_1_1GeneratingFlagHolder_html_a304f4e5a015d50a3d200b475dd63f519"><div class="ttname"><a href="classEditor_1_1GeneratingFlagHolder.html#a304f4e5a015d50a3d200b475dd63f519">Editor.GeneratingFlagHolder.IsGenerating</a></div><div class="ttdeci">bool IsGenerating</div><div class="ttdef"><b>Definition:</b> <a href="TaskGenerator_8cs_source.html#l00099">TaskGenerator.cs:100</a></div></div>
+<div class="ttc" id="aclassEditor_1_1GeneratingFlagHolder_html_a624f28d5dcbb510916c1cccbad185802"><div class="ttname"><a href="classEditor_1_1GeneratingFlagHolder.html#a624f28d5dcbb510916c1cccbad185802">Editor.GeneratingFlagHolder.ClassName</a></div><div class="ttdeci">string ClassName</div><div class="ttdef"><b>Definition:</b> <a href="TaskGenerator_8cs_source.html#l00109">TaskGenerator.cs:110</a></div></div>
+<div class="ttc" id="aclassEditor_1_1GeneratingFlagHolder_html_a6c5a9e4bfb85526c9debecb58ad4b56a"><div class="ttname"><a href="classEditor_1_1GeneratingFlagHolder.html#a6c5a9e4bfb85526c9debecb58ad4b56a">Editor.GeneratingFlagHolder.className</a></div><div class="ttdeci">string className</div><div class="ttdef"><b>Definition:</b> <a href="TaskGenerator_8cs_source.html#l00120">TaskGenerator.cs:120</a></div></div>
+<div class="ttc" id="aclassEditor_1_1TaskGenerator_html"><div class="ttname"><a href="classEditor_1_1TaskGenerator.html">Editor.TaskGenerator</a></div><div class="ttdoc">タスクを自動生成するクラス</div><div class="ttdef"><b>Definition:</b> <a href="TaskGenerator_8cs_source.html#l00011">TaskGenerator.cs:12</a></div></div>
+<div class="ttc" id="aclassEditor_1_1TaskGenerator_html_a23020b679059524dfec1a49b04edc853"><div class="ttname"><a href="classEditor_1_1TaskGenerator.html#a23020b679059524dfec1a49b04edc853">Editor.TaskGenerator.CreateFileName</a></div><div class="ttdeci">static string CreateFileName()</div><div class="ttdef"><b>Definition:</b> <a href="TaskGenerator_8cs_source.html#l00077">TaskGenerator.cs:77</a></div></div>
+<div class="ttc" id="aclassEditor_1_1TaskGenerator_html_a6effff942d3e5a27620663c4a2c75b9b"><div class="ttname"><a href="classEditor_1_1TaskGenerator.html#a6effff942d3e5a27620663c4a2c75b9b">Editor.TaskGenerator.GenerateTask</a></div><div class="ttdeci">static void GenerateTask()</div><div class="ttdef"><b>Definition:</b> <a href="TaskGenerator_8cs_source.html#l00016">TaskGenerator.cs:16</a></div></div>
+<div class="ttc" id="aclassEditor_1_1TaskGenerator_html_a8e0c246656b5439975666ec18674b937"><div class="ttname"><a href="classEditor_1_1TaskGenerator.html#a8e0c246656b5439975666ec18674b937">Editor.TaskGenerator.FindGeneratedType</a></div><div class="ttdeci">static Type FindGeneratedType()</div><div class="ttdef"><b>Definition:</b> <a href="TaskGenerator_8cs_source.html#l00056">TaskGenerator.cs:56</a></div></div>
+<div class="ttc" id="aclassEditor_1_1TaskGenerator_html_adbf11293021a16d303c87436bdd29695"><div class="ttname"><a href="classEditor_1_1TaskGenerator.html#adbf11293021a16d303c87436bdd29695">Editor.TaskGenerator.CreateCode</a></div><div class="ttdeci">static string CreateCode(string className)</div><div class="ttdef"><b>Definition:</b> <a href="TaskGenerator_8cs_source.html#l00082">TaskGenerator.cs:82</a></div></div>
+<div class="ttc" id="aclassEditor_1_1TaskGenerator_html_ae3aa2aa632175e3e2ea2baf609c30691"><div class="ttname"><a href="classEditor_1_1TaskGenerator.html#ae3aa2aa632175e3e2ea2baf609c30691">Editor.TaskGenerator.TaskPath</a></div><div class="ttdeci">static readonly string TaskPath</div><div class="ttdef"><b>Definition:</b> <a href="TaskGenerator_8cs_source.html#l00013">TaskGenerator.cs:13</a></div></div>
+<div class="ttc" id="aclassEditor_1_1TaskGenerator_html_af436c110a129aa6f5c218b250c75b385"><div class="ttname"><a href="classEditor_1_1TaskGenerator.html#af436c110a129aa6f5c218b250c75b385">Editor.TaskGenerator.OnCompileScripts</a></div><div class="ttdeci">static void OnCompileScripts()</div><div class="ttdef"><b>Definition:</b> <a href="TaskGenerator_8cs_source.html#l00040">TaskGenerator.cs:40</a></div></div>
+<div class="ttc" id="anamespaceEditor_html"><div class="ttname"><a href="namespaceEditor.html">Editor</a></div><div class="ttdef"><b>Definition:</b> <a href="NavMeshForceCleaner_8cs_source.html#l00005">NavMeshForceCleaner.cs:6</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

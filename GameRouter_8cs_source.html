@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: src/Assets/Scripts/GameMain/GameRouter.cs ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_2663a91e34b059a736b32b20a5ff248b.html">GameMain</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">GameRouter.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="GameRouter_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> System;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceCore.html">Core</a>.<a class="code" href="namespaceCore_1_1Utility.html">Utility</a>;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceModule.html">Module</a>.<a class="code" href="namespaceModule_1_1Working.html">Working</a>;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceModule.html">Module</a>.<a class="code" href="namespaceModule_1_1Working.html">Working</a>.<a class="code" href="namespaceModule_1_1Working_1_1Controller.html">Controller</a>;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceModule.html">Module</a>.<a class="code" href="namespaceModule_1_1Working.html">Working</a>.<a class="code" href="namespaceModule_1_1Working_1_1Factory.html">Factory</a>;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using</span> VContainer;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using</span> VContainer.Unity;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceGameMain.html">GameMain</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classGameMain_1_1GameRouter.html">   11</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classGameMain_1_1GameRouter.html">GameRouter</a> : IStartable</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classGameMain_1_1GameRouter.html#ac63cff938c910acce29aa0ed8f50ee2a">   13</a></span>&#160;        <span class="keyword">private</span> readonly <a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnParam.html">SpawnParam</a> <a class="code" href="classGameMain_1_1GameRouter.html#ac63cff938c910acce29aa0ed8f50ee2a">spawnParam</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classGameMain_1_1GameRouter.html#ab31d05cf4f6e90ccc9d83b7918ceb290">   14</a></span>&#160;        <span class="keyword">private</span> readonly <a class="code" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html">WorkerSpawner</a> <a class="code" href="classGameMain_1_1GameRouter.html#ab31d05cf4f6e90ccc9d83b7918ceb290">workerSpawner</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classGameMain_1_1GameRouter.html#a3e4e242a68863590ad1393808afaba6e">   15</a></span>&#160;        <span class="keyword">private</span> readonly <a class="code" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html">WorkerController</a> <a class="code" href="classGameMain_1_1GameRouter.html#a3e4e242a68863590ad1393808afaba6e">workerController</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        [Inject]</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classGameMain_1_1GameRouter.html#a1dbf9e02e5b1898d6a822ecb5aff349d">   18</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="classGameMain_1_1GameRouter.html#a1dbf9e02e5b1898d6a822ecb5aff349d">GameRouter</a>(<a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnParam.html">SpawnParam</a> <a class="code" href="classGameMain_1_1GameRouter.html#ac63cff938c910acce29aa0ed8f50ee2a">spawnParam</a>, <a class="code" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html">WorkerSpawner</a> <a class="code" href="classGameMain_1_1GameRouter.html#ab31d05cf4f6e90ccc9d83b7918ceb290">workerSpawner</a>, <a class="code" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html">WorkerController</a> <a class="code" href="classGameMain_1_1GameRouter.html#a3e4e242a68863590ad1393808afaba6e">workerController</a>)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            this.spawnParam = <a class="code" href="classGameMain_1_1GameRouter.html#ac63cff938c910acce29aa0ed8f50ee2a">spawnParam</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            this.workerSpawner = <a class="code" href="classGameMain_1_1GameRouter.html#ab31d05cf4f6e90ccc9d83b7918ceb290">workerSpawner</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            this.workerController = <a class="code" href="classGameMain_1_1GameRouter.html#a3e4e242a68863590ad1393808afaba6e">workerController</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classGameMain_1_1GameRouter.html#a6454f04e22fe74080dbb46da0f8927be">   25</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classGameMain_1_1GameRouter.html#a6454f04e22fe74080dbb46da0f8927be">Start</a>()</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            Span&lt;Worker&gt; workers = <a class="code" href="classGameMain_1_1GameRouter.html#ab31d05cf4f6e90ccc9d83b7918ceb290">workerSpawner</a>.<a class="code" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#ac966f5863bd7a545801886ed8d14dba3">Spawn</a>(<a class="code" href="classGameMain_1_1GameRouter.html#ac63cff938c910acce29aa0ed8f50ee2a">spawnParam</a>.<a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnParam.html#a178624960a39ab6b8b185cbfcb0a17c6">SpawnCount</a>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">foreach</span> (<a class="code" href="classModule_1_1Working_1_1Worker.html">Worker</a> worker <span class="keywordflow">in</span> workers)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <a class="code" href="classGameMain_1_1GameRouter.html#a3e4e242a68863590ad1393808afaba6e">workerController</a>.<a class="code" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a0355752b983414821acb34c3bc51e724">EnqueueWorker</a>(worker);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="ttc" id="aclassGameMain_1_1GameRouter_html"><div class="ttname"><a href="classGameMain_1_1GameRouter.html">GameMain.GameRouter</a></div><div class="ttdef"><b>Definition:</b> <a href="GameRouter_8cs_source.html#l00011">GameRouter.cs:12</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1GameRouter_html_a1dbf9e02e5b1898d6a822ecb5aff349d"><div class="ttname"><a href="classGameMain_1_1GameRouter.html#a1dbf9e02e5b1898d6a822ecb5aff349d">GameMain.GameRouter.GameRouter</a></div><div class="ttdeci">GameRouter(SpawnParam spawnParam, WorkerSpawner workerSpawner, WorkerController workerController)</div><div class="ttdef"><b>Definition:</b> <a href="GameRouter_8cs_source.html#l00018">GameRouter.cs:18</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1GameRouter_html_a3e4e242a68863590ad1393808afaba6e"><div class="ttname"><a href="classGameMain_1_1GameRouter.html#a3e4e242a68863590ad1393808afaba6e">GameMain.GameRouter.workerController</a></div><div class="ttdeci">readonly WorkerController workerController</div><div class="ttdef"><b>Definition:</b> <a href="GameRouter_8cs_source.html#l00015">GameRouter.cs:15</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1GameRouter_html_a6454f04e22fe74080dbb46da0f8927be"><div class="ttname"><a href="classGameMain_1_1GameRouter.html#a6454f04e22fe74080dbb46da0f8927be">GameMain.GameRouter.Start</a></div><div class="ttdeci">void Start()</div><div class="ttdef"><b>Definition:</b> <a href="GameRouter_8cs_source.html#l00025">GameRouter.cs:25</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1GameRouter_html_ab31d05cf4f6e90ccc9d83b7918ceb290"><div class="ttname"><a href="classGameMain_1_1GameRouter.html#ab31d05cf4f6e90ccc9d83b7918ceb290">GameMain.GameRouter.workerSpawner</a></div><div class="ttdeci">readonly WorkerSpawner workerSpawner</div><div class="ttdef"><b>Definition:</b> <a href="GameRouter_8cs_source.html#l00014">GameRouter.cs:14</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1GameRouter_html_ac63cff938c910acce29aa0ed8f50ee2a"><div class="ttname"><a href="classGameMain_1_1GameRouter.html#ac63cff938c910acce29aa0ed8f50ee2a">GameMain.GameRouter.spawnParam</a></div><div class="ttdeci">readonly SpawnParam spawnParam</div><div class="ttdef"><b>Definition:</b> <a href="GameRouter_8cs_source.html#l00013">GameRouter.cs:13</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Controller_1_1WorkerController_html"><div class="ttname"><a href="classModule_1_1Working_1_1Controller_1_1WorkerController.html">Module.Working.Controller.WorkerController</a></div><div class="ttdoc">群体を操作するクラス</div><div class="ttdef"><b>Definition:</b> <a href="WorkerController_8cs_source.html#l00012">WorkerController.cs:13</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Controller_1_1WorkerController_html_a0355752b983414821acb34c3bc51e724"><div class="ttname"><a href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a0355752b983414821acb34c3bc51e724">Module.Working.Controller.WorkerController.EnqueueWorker</a></div><div class="ttdeci">void EnqueueWorker(Worker worker)</div><div class="ttdef"><b>Definition:</b> <a href="WorkerController_8cs_source.html#l00029">WorkerController.cs:29</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Factory_1_1SpawnParam_html"><div class="ttname"><a href="classModule_1_1Working_1_1Factory_1_1SpawnParam.html">Module.Working.Factory.SpawnParam</a></div><div class="ttdef"><b>Definition:</b> <a href="SpawnParam_8cs_source.html#l00006">SpawnParam.cs:7</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Factory_1_1SpawnParam_html_a178624960a39ab6b8b185cbfcb0a17c6"><div class="ttname"><a href="classModule_1_1Working_1_1Factory_1_1SpawnParam.html#a178624960a39ab6b8b185cbfcb0a17c6">Module.Working.Factory.SpawnParam.SpawnCount</a></div><div class="ttdeci">int SpawnCount</div><div class="ttdef"><b>Definition:</b> <a href="SpawnParam_8cs_source.html#l00008">SpawnParam.cs:8</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Factory_1_1WorkerSpawner_html"><div class="ttname"><a href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html">Module.Working.Factory.WorkerSpawner</a></div><div class="ttdef"><b>Definition:</b> <a href="WorkerSpawner_8cs_source.html#l00009">WorkerSpawner.cs:10</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Factory_1_1WorkerSpawner_html_ac966f5863bd7a545801886ed8d14dba3"><div class="ttname"><a href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#ac966f5863bd7a545801886ed8d14dba3">Module.Working.Factory.WorkerSpawner.Spawn</a></div><div class="ttdeci">Span&lt; Worker &gt; Spawn(int spawnCount)</div><div class="ttdef"><b>Definition:</b> <a href="WorkerSpawner_8cs_source.html#l00023">WorkerSpawner.cs:23</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Worker_html"><div class="ttname"><a href="classModule_1_1Working_1_1Worker.html">Module.Working.Worker</a></div><div class="ttdoc">ワーカーの状態を管理するクラス</div><div class="ttdef"><b>Definition:</b> <a href="Worker_8cs_source.html#l00014">Worker.cs:15</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1Utility_html"><div class="ttname"><a href="namespaceCore_1_1Utility.html">Core.Utility</a></div><div class="ttdef"><b>Definition:</b> <a href="ListSegment_8cs_source.html#l00008">ListSegment.cs:9</a></div></div>
+<div class="ttc" id="anamespaceCore_html"><div class="ttname"><a href="namespaceCore.html">Core</a></div><div class="ttdef"><b>Definition:</b> <a href="InputActionAssetProfile_8cs_source.html#l00004">InputActionAssetProfile.cs:5</a></div></div>
+<div class="ttc" id="anamespaceGameMain_html"><div class="ttname"><a href="namespaceGameMain.html">GameMain</a></div><div class="ttdef"><b>Definition:</b> <a href="InGameContainer_8cs_source.html#l00011">InGameContainer.cs:12</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Working_1_1Controller_html"><div class="ttname"><a href="namespaceModule_1_1Working_1_1Controller.html">Module.Working.Controller</a></div><div class="ttdef"><b>Definition:</b> <a href="WorkerController_8cs_source.html#l00007">WorkerController.cs:8</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Working_1_1Factory_html"><div class="ttname"><a href="namespaceModule_1_1Working_1_1Factory.html">Module.Working.Factory</a></div><div class="ttdef"><b>Definition:</b> <a href="SpawnParam_8cs_source.html#l00003">SpawnParam.cs:4</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Working_html"><div class="ttname"><a href="namespaceModule_1_1Working.html">Module.Working</a></div><div class="ttdef"><b>Definition:</b> <a href="WorkerController_8cs_source.html#l00007">WorkerController.cs:8</a></div></div>
+<div class="ttc" id="anamespaceModule_html"><div class="ttname"><a href="namespaceModule.html">Module</a></div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00006">BaseTask.cs:7</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

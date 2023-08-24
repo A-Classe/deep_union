@@ -81,12 +81,20 @@ $(function() {
 Module.Task.TaskDetector の継承関係図</div>
 <div class="dyncontent">
 <div class="center"><img src="classModule_1_1Task_1_1TaskDetector__inherit__graph.png" border="0" usemap="#aModule_8Task_8TaskDetector_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<map name="aModule_8Task_8TaskDetector_inherit__map" id="aModule_8Task_8TaskDetector_inherit__map">
+<area shape="rect" title="タスクを検出するクラス" alt="" coords="5,131,197,281"/>
+<area shape="rect" title=" " alt="" coords="39,5,163,83"/>
+</map>
+</div>
 <div class="dynheader">
 Module.Task.TaskDetector 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classModule_1_1Task_1_1TaskDetector__coll__graph.png" border="0" usemap="#aModule_8Task_8TaskDetector_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<map name="aModule_8Task_8TaskDetector_coll__map" id="aModule_8Task_8TaskDetector_coll__map">
+<area shape="rect" title="タスクを検出するクラス" alt="" coords="5,131,197,281"/>
+<area shape="rect" title=" " alt="" coords="39,5,163,83"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
@@ -115,6 +123,8 @@ Module.Task.TaskDetector 連携図</div>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>タスクを検出するクラス </p>
+
+<p class="definition"> <a class="el" href="TaskDetector_8cs_source.html">TaskDetector.cs</a> の <a class="el" href="TaskDetector_8cs_source.html#l00011">11</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">関数詳解</h2>
 <a id="a9772acfba56971fbf388b479cdcd24a3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9772acfba56971fbf388b479cdcd24a3">&#9670;&nbsp;</a></span>GetNearestTask()</h2>
@@ -141,6 +151,8 @@ Module.Task.TaskDetector 連携図</div>
 
 <p>親オブジェクトの座標に最も近いタスクを取得します </p>
 <dl class="section return"><dt>戻り値</dt><dd>検出したタスク</dd></dl>
+
+<p class="definition"> <a class="el" href="TaskDetector_8cs_source.html">TaskDetector.cs</a> の <a class="el" href="TaskDetector_8cs_source.html#l00022">22</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Task_1_1TaskDetector.html#a8db4e8332bd873e81880d549edfa929a">detectedTasks</a>.Count == 0)</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
@@ -161,11 +173,17 @@ Module.Task.TaskDetector 連携図</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">return</span> nearestTask;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
-<div class="ttc" id="aclassModule_1_1Task_1_1TaskDetector_html_a8db4e8332bd873e81880d549edfa929a"><div class="ttname"><a href="classModule_1_1Task_1_1TaskDetector.html#a8db4e8332bd873e81880d549edfa929a">Module.Task.TaskDetector.detectedTasks</a></div><div class="ttdeci">readonly List&lt; BaseTask &gt; detectedTasks</div><div class="ttdef"><b>Definition:</b> TaskDetector.cs:16</div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1TaskDetector_html_a8db4e8332bd873e81880d549edfa929a"><div class="ttname"><a href="classModule_1_1Task_1_1TaskDetector.html#a8db4e8332bd873e81880d549edfa929a">Module.Task.TaskDetector.detectedTasks</a></div><div class="ttdeci">readonly List&lt; BaseTask &gt; detectedTasks</div><div class="ttdef"><b>Definition:</b> <a href="TaskDetector_8cs_source.html#l00016">TaskDetector.cs:16</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classModule_1_1Task_1_1TaskDetector_a9772acfba56971fbf388b479cdcd24a3_icgraph.png" border="0" usemap="#aclassModule_1_1Task_1_1TaskDetector_a9772acfba56971fbf388b479cdcd24a3_icgraph" alt=""/></div>
+<map name="aclassModule_1_1Task_1_1TaskDetector_a9772acfba56971fbf388b479cdcd24a3_icgraph" id="aclassModule_1_1Task_1_1TaskDetector_a9772acfba56971fbf388b479cdcd24a3_icgraph">
+<area shape="rect" title="親オブジェクトの座標に最も近いタスクを取得します" alt="" coords="515,39,709,80"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerConnector.html#a2d99a5a96da4fca9663eeef4d790463d" title=" " alt="" coords="260,39,467,80"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerAssigner.html#a47df0c1c72a7e62dce944ff8ce20c176" title=" " alt="" coords="5,5,212,47"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#ac2e1ecee00e96c2989b9c57884a8f447" title=" " alt="" coords="5,71,212,112"/>
+</map>
 </div>
 
 </div>
@@ -192,6 +210,8 @@ Module.Task.TaskDetector 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="TaskDetector_8cs_source.html">TaskDetector.cs</a> の <a class="el" href="TaskDetector_8cs_source.html#l00064">64</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        {</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            Gizmos.color = <span class="keyword">new</span> Color(1f, 0.92f, 0.02f, 0.51f);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            Gizmos.DrawSphere(transform.position, <a class="code" href="classModule_1_1Task_1_1TaskDetector.html#a7ee3682c595e04ec0aad47ba5ee5e842">detectRadius</a>);</div>
@@ -199,7 +219,7 @@ Module.Task.TaskDetector 連携図</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            Gizmos.color = Color.yellow;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            Gizmos.DrawWireSphere(transform.position, <a class="code" href="classModule_1_1Task_1_1TaskDetector.html#a7ee3682c595e04ec0aad47ba5ee5e842">detectRadius</a>);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
-<div class="ttc" id="aclassModule_1_1Task_1_1TaskDetector_html_a7ee3682c595e04ec0aad47ba5ee5e842"><div class="ttname"><a href="classModule_1_1Task_1_1TaskDetector.html#a7ee3682c595e04ec0aad47ba5ee5e842">Module.Task.TaskDetector.detectRadius</a></div><div class="ttdeci">float detectRadius</div><div class="ttdef"><b>Definition:</b> TaskDetector.cs:13</div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1TaskDetector_html_a7ee3682c595e04ec0aad47ba5ee5e842"><div class="ttname"><a href="classModule_1_1Task_1_1TaskDetector.html#a7ee3682c595e04ec0aad47ba5ee5e842">Module.Task.TaskDetector.detectRadius</a></div><div class="ttdeci">float detectRadius</div><div class="ttdef"><b>Definition:</b> <a href="TaskDetector_8cs_source.html#l00013">TaskDetector.cs:13</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -227,6 +247,8 @@ Module.Task.TaskDetector 連携図</div>
 </div><div class="memdoc">
 
 <p>検出処理を更新します </p>
+
+<p class="definition"> <a class="el" href="TaskDetector_8cs_source.html">TaskDetector.cs</a> の <a class="el" href="TaskDetector_8cs_source.html#l00049">49</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordtype">int</span> count = Physics.OverlapSphereNonAlloc(transform.position, <a class="code" href="classModule_1_1Task_1_1TaskDetector.html#a7ee3682c595e04ec0aad47ba5ee5e842">detectRadius</a>, <a class="code" href="classModule_1_1Task_1_1TaskDetector.html#a370cf5201e8e816e3c8d1c35d21e68d1">colliderBuffer</a>, <a class="code" href="classModule_1_1Task_1_1TaskDetector.html#acc4b120732af760c65b314bde9f2bd99">detectLayer</a>);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
@@ -240,12 +262,18 @@ Module.Task.TaskDetector 連携図</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            }</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div>
-<div class="ttc" id="aclassModule_1_1Task_1_1TaskDetector_html_a370cf5201e8e816e3c8d1c35d21e68d1"><div class="ttname"><a href="classModule_1_1Task_1_1TaskDetector.html#a370cf5201e8e816e3c8d1c35d21e68d1">Module.Task.TaskDetector.colliderBuffer</a></div><div class="ttdeci">readonly Collider[] colliderBuffer</div><div class="ttdef"><b>Definition:</b> TaskDetector.cs:44</div></div>
-<div class="ttc" id="aclassModule_1_1Task_1_1TaskDetector_html_acc4b120732af760c65b314bde9f2bd99"><div class="ttname"><a href="classModule_1_1Task_1_1TaskDetector.html#acc4b120732af760c65b314bde9f2bd99">Module.Task.TaskDetector.detectLayer</a></div><div class="ttdeci">LayerMask detectLayer</div><div class="ttdef"><b>Definition:</b> TaskDetector.cs:14</div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1TaskDetector_html_a370cf5201e8e816e3c8d1c35d21e68d1"><div class="ttname"><a href="classModule_1_1Task_1_1TaskDetector.html#a370cf5201e8e816e3c8d1c35d21e68d1">Module.Task.TaskDetector.colliderBuffer</a></div><div class="ttdeci">readonly Collider[] colliderBuffer</div><div class="ttdef"><b>Definition:</b> <a href="TaskDetector_8cs_source.html#l00044">TaskDetector.cs:44</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1TaskDetector_html_acc4b120732af760c65b314bde9f2bd99"><div class="ttname"><a href="classModule_1_1Task_1_1TaskDetector.html#acc4b120732af760c65b314bde9f2bd99">Module.Task.TaskDetector.detectLayer</a></div><div class="ttdeci">LayerMask detectLayer</div><div class="ttdef"><b>Definition:</b> <a href="TaskDetector_8cs_source.html#l00014">TaskDetector.cs:14</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classModule_1_1Task_1_1TaskDetector_ac444c7dfee7ca59d9252817520a3da73_icgraph.png" border="0" usemap="#aclassModule_1_1Task_1_1TaskDetector_ac444c7dfee7ca59d9252817520a3da73_icgraph" alt=""/></div>
+<map name="aclassModule_1_1Task_1_1TaskDetector_ac444c7dfee7ca59d9252817520a3da73_icgraph" id="aclassModule_1_1Task_1_1TaskDetector_ac444c7dfee7ca59d9252817520a3da73_icgraph">
+<area shape="rect" title="検出処理を更新します" alt="" coords="515,39,709,80"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerConnector.html#a2d99a5a96da4fca9663eeef4d790463d" title=" " alt="" coords="260,39,467,80"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerAssigner.html#a47df0c1c72a7e62dce944ff8ce20c176" title=" " alt="" coords="5,5,212,47"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#ac2e1ecee00e96c2989b9c57884a8f447" title=" " alt="" coords="5,71,212,112"/>
+</map>
 </div>
 
 </div>
@@ -271,6 +299,8 @@ Module.Task.TaskDetector 連携図</div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition"> <a class="el" href="TaskDetector_8cs_source.html">TaskDetector.cs</a> の <a class="el" href="TaskDetector_8cs_source.html#l00044">44</a> 行目に定義があります。</p>
+
 </div>
 </div>
 <a id="a8db4e8332bd873e81880d549edfa929a"></a>
@@ -292,6 +322,8 @@ Module.Task.TaskDetector 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="TaskDetector_8cs_source.html">TaskDetector.cs</a> の <a class="el" href="TaskDetector_8cs_source.html#l00016">16</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -315,6 +347,8 @@ Module.Task.TaskDetector 連携図</div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition"> <a class="el" href="TaskDetector_8cs_source.html">TaskDetector.cs</a> の <a class="el" href="TaskDetector_8cs_source.html#l00014">14</a> 行目に定義があります。</p>
+
 </div>
 </div>
 <a id="a7ee3682c595e04ec0aad47ba5ee5e842"></a>
@@ -337,10 +371,12 @@ Module.Task.TaskDetector 連携図</div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition"> <a class="el" href="TaskDetector_8cs_source.html">TaskDetector.cs</a> の <a class="el" href="TaskDetector_8cs_source.html#l00013">13</a> 行目に定義があります。</p>
+
 </div>
 </div>
 <hr/>このクラス詳解は次のファイルから抽出されました:<ul>
-<li>src/Assets/Scripts/Module/Task/<a class="el" href="TaskDetector_8cs.html">TaskDetector.cs</a></li>
+<li>src/Assets/Scripts/Module/Task/<a class="el" href="TaskDetector_8cs_source.html">TaskDetector.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

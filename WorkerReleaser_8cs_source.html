@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: src/Assets/Scripts/GameMain/Presenter/WorkerReleaser.cs ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_2663a91e34b059a736b32b20a5ff248b.html">GameMain</a></li><li class="navelem"><a class="el" href="dir_2f51d8dfcc318125e70ac040d77ce0c3.html">Presenter</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">WorkerReleaser.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="WorkerReleaser_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> System;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> System.Collections.Generic;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> System.Linq;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceCore.html">Core</a>.<a class="code" href="namespaceCore_1_1Input.html">Input</a>;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceModule.html">Module</a>.<a class="code" href="namespaceModule_1_1Task.html">Task</a>;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceModule.html">Module</a>.<a class="code" href="namespaceModule_1_1Working.html">Working</a>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceModule.html">Module</a>.<a class="code" href="namespaceModule_1_1Working.html">Working</a>.<a class="code" href="namespaceModule_1_1Working_1_1Controller.html">Controller</a>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using</span> Wanna.DebugEx;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceGameMain_1_1Presenter.html">GameMain.Presenter</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html">   16</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html">WorkerReleaser</a></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a7fd139bfec217c0cf347f16342e864b3">   18</a></span>&#160;        <span class="keyword">private</span> readonly <a class="code" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html">WorkerController</a> <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a7fd139bfec217c0cf347f16342e864b3">workerController</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#ad748c151a3c47bbc4f0d2238eb5e7cae">   19</a></span>&#160;        <span class="keyword">private</span> readonly IReadOnlyList&lt;Assignment&gt; <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#ad748c151a3c47bbc4f0d2238eb5e7cae">assignments</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a0e598128044176b40b815ab0768a2b39">   20</a></span>&#160;        <span class="keyword">private</span> readonly <a class="code" href="classCore_1_1Input_1_1InputEvent.html">InputEvent</a> <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a0e598128044176b40b815ab0768a2b39">releaseEvent</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#ac2e1ecee00e96c2989b9c57884a8f447">   22</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#ac2e1ecee00e96c2989b9c57884a8f447">WorkerReleaser</a>(<a class="code" href="classGameMain_1_1Presenter_1_1WorkerConnector.html">WorkerConnector</a> workerConnector, <a class="code" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html">WorkerController</a> <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a7fd139bfec217c0cf347f16342e864b3">workerController</a>)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            this.workerController = <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a7fd139bfec217c0cf347f16342e864b3">workerController</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#ad748c151a3c47bbc4f0d2238eb5e7cae">assignments</a> = workerConnector.<a class="code" href="classGameMain_1_1Presenter_1_1WorkerConnector.html#a01f09082102b32e110f33354ef727963">Assignments</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="comment">//入力の登録</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a0e598128044176b40b815ab0768a2b39">releaseEvent</a> = <a class="code" href="classCore_1_1Input_1_1InputActionProvider.html">InputActionProvider</a>.<a class="code" href="classCore_1_1Input_1_1SingletonMonoBehaviour.html#abe9d85521c1adf0cc8870497504118ae">Instance</a>.CreateEvent(<a class="code" href="classCore_1_1Input_1_1ActionGuid.html">ActionGuid</a>.<a class="code" href="classCore_1_1Input_1_1ActionGuid.html#a56b0dde7a31d3149dd1291919ad9095f">InGame</a>.<a class="code" href="classCore_1_1Input_1_1InGame.html#a5258266bb36e73f412c5e6d6e7808f0e">Release</a>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a0e598128044176b40b815ab0768a2b39">releaseEvent</a>.<a class="code" href="classCore_1_1Input_1_1InputEvent.html#a6083757a734e5cbebda39c604cfc2d9f">Started</a> += _ =&gt; workerConnector.<a class="code" href="classGameMain_1_1Presenter_1_1WorkerConnector.html#a2d99a5a96da4fca9663eeef4d790463d">StartLoop</a>(<a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a46869b365c16164da5e35fa54c8a9f2d">Release</a>).Forget();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a0e598128044176b40b815ab0768a2b39">releaseEvent</a>.<a class="code" href="classCore_1_1Input_1_1InputEvent.html#a38ded2cbcefd054bfaf50c6fec84f963">Canceled</a> += _ =&gt; workerConnector.<a class="code" href="classGameMain_1_1Presenter_1_1WorkerConnector.html#aee1bbf4af858c1f098b1ce0b9d395489">CancelLoop</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a758ccbe75d8d7be04fb24e52299ae33d">RegisterReleaseEvents</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a758ccbe75d8d7be04fb24e52299ae33d">   35</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a758ccbe75d8d7be04fb24e52299ae33d">RegisterReleaseEvents</a>()</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">foreach</span> (<a class="code" href="structGameMain_1_1Presenter_1_1Assignment.html">Assignment</a> assignment <span class="keywordflow">in</span> <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#ad748c151a3c47bbc4f0d2238eb5e7cae">assignments</a>)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                assignment.<a class="code" href="structGameMain_1_1Presenter_1_1Assignment.html#add20b6132f7fc7e2c218b4a7a53542db">Task</a>.<a class="code" href="classModule_1_1Task_1_1BaseTask.html#a1b4e4e9e8b80cddd3d79b7872ac0d5b6">OnStateChanged</a> += state =&gt;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                    <span class="comment">//タスクが完了したら全てを開放する</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    <span class="keywordflow">if</span> (state == <a class="code" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a>.Completed)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                        <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a6b727baaf9b8ee42df31adf6a1ee58e9">ReleaseAll</a>(assignment.<a class="code" href="structGameMain_1_1Presenter_1_1Assignment.html#add20b6132f7fc7e2c218b4a7a53542db">Task</a>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                };</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a46869b365c16164da5e35fa54c8a9f2d">   50</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a46869b365c16164da5e35fa54c8a9f2d">Release</a>(<a class="code" href="classModule_1_1Task_1_1BaseTask.html">BaseTask</a> nearestTask)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">try</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <a class="code" href="structGameMain_1_1Presenter_1_1Assignment.html">Assignment</a> assignment = <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#ad748c151a3c47bbc4f0d2238eb5e7cae">assignments</a>.First(connect =&gt; connect.Task == nearestTask);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="comment">//タスクで働いてるワーカーが居なければ終了</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">if</span> (assignment.<a class="code" href="structGameMain_1_1Presenter_1_1Assignment.html#a4a84493538b2f9dbb34d557336de83e3">Workers</a>.Count == 0)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="comment">//タスクからワーカーを削除</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <a class="code" href="classModule_1_1Working_1_1Worker.html">Worker</a> worker = <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a3be13fefa2a8ac385becda75f3283788">GetNearestWorker</a>(assignment);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">if</span> (worker != <span class="keyword">null</span>)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    assignment.<a class="code" href="structGameMain_1_1Presenter_1_1Assignment.html#a4a84493538b2f9dbb34d557336de83e3">Workers</a>.Remove(worker);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    <span class="comment">//作業量の更新</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    assignment.<a class="code" href="structGameMain_1_1Presenter_1_1Assignment.html#add20b6132f7fc7e2c218b4a7a53542db">Task</a>.<a class="code" href="classModule_1_1Task_1_1BaseTask.html#aaaec697f4b6cb5731930685280338e12">Mw</a> -= 1;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                    <span class="comment">//コントローラーに登録</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a7fd139bfec217c0cf347f16342e864b3">workerController</a>.<a class="code" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a0355752b983414821acb34c3bc51e724">EnqueueWorker</a>(worker);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">catch</span> (Exception e)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                DebugEx.LogWarning(<span class="stringliteral">&quot;タスクが登録されていません!&quot;</span>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                DebugEx.LogException(e);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keywordflow">throw</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a6b727baaf9b8ee42df31adf6a1ee58e9">   82</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a6b727baaf9b8ee42df31adf6a1ee58e9">ReleaseAll</a>(<a class="code" href="classModule_1_1Task_1_1BaseTask.html">BaseTask</a> baseTask)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">try</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <a class="code" href="structGameMain_1_1Presenter_1_1Assignment.html">Assignment</a> assignment = <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#ad748c151a3c47bbc4f0d2238eb5e7cae">assignments</a>.First(connect =&gt; connect.Task == baseTask);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="comment">//コントローラーに登録</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="keywordflow">foreach</span> (<a class="code" href="classModule_1_1Working_1_1Worker.html">Worker</a> worker <span class="keywordflow">in</span> assignment.<a class="code" href="structGameMain_1_1Presenter_1_1Assignment.html#a4a84493538b2f9dbb34d557336de83e3">Workers</a>)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a7fd139bfec217c0cf347f16342e864b3">workerController</a>.<a class="code" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a0355752b983414821acb34c3bc51e724">EnqueueWorker</a>(worker);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="comment">//タスクからワーカーを削除</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                assignment.<a class="code" href="structGameMain_1_1Presenter_1_1Assignment.html#a4a84493538b2f9dbb34d557336de83e3">Workers</a>.Clear();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <span class="comment">//作業量の更新</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                assignment.<a class="code" href="structGameMain_1_1Presenter_1_1Assignment.html#add20b6132f7fc7e2c218b4a7a53542db">Task</a>.<a class="code" href="classModule_1_1Task_1_1BaseTask.html#aaaec697f4b6cb5731930685280338e12">Mw</a> = 0f;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">catch</span> (Exception e)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                DebugEx.LogWarning(<span class="stringliteral">&quot;タスクが登録されていません!&quot;</span>);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                DebugEx.LogException(e);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <span class="keywordflow">throw</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a3be13fefa2a8ac385becda75f3283788">  109</a></span>&#160;        <a class="code" href="classModule_1_1Working_1_1Worker.html">Worker</a> <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a3be13fefa2a8ac385becda75f3283788">GetNearestWorker</a>(<a class="code" href="structGameMain_1_1Presenter_1_1Assignment.html">Assignment</a> assignment)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            Vector3 origin = <a class="code" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a7fd139bfec217c0cf347f16342e864b3">workerController</a>.transform.position;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">return</span> assignment.<a class="code" href="structGameMain_1_1Presenter_1_1Assignment.html#a4a84493538b2f9dbb34d557336de83e3">Workers</a>.OrderBy(worker =&gt; (origin - worker.transform.position).sqrMagnitude).First();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+<div class="ttc" id="aclassCore_1_1Input_1_1ActionGuid_html"><div class="ttname"><a href="classCore_1_1Input_1_1ActionGuid.html">Core.Input.ActionGuid</a></div><div class="ttdef"><b>Definition:</b> <a href="ActionGuid_8cs_source.html#l00009">ActionGuid.cs:10</a></div></div>
+<div class="ttc" id="aclassCore_1_1Input_1_1ActionGuid_html_a56b0dde7a31d3149dd1291919ad9095f"><div class="ttname"><a href="classCore_1_1Input_1_1ActionGuid.html#a56b0dde7a31d3149dd1291919ad9095f">Core.Input.ActionGuid.InGame</a></div><div class="ttdeci">static readonly InGame InGame</div><div class="ttdef"><b>Definition:</b> <a href="ActionGuid_8cs_source.html#l00011">ActionGuid.cs:11</a></div></div>
+<div class="ttc" id="aclassCore_1_1Input_1_1InGame_html_a5258266bb36e73f412c5e6d6e7808f0e"><div class="ttname"><a href="classCore_1_1Input_1_1InGame.html#a5258266bb36e73f412c5e6d6e7808f0e">Core.Input.InGame.Release</a></div><div class="ttdeci">readonly Guid Release</div><div class="ttdef"><b>Definition:</b> <a href="ActionGuid_8cs_source.html#l00018">ActionGuid.cs:18</a></div></div>
+<div class="ttc" id="aclassCore_1_1Input_1_1InputActionProvider_html"><div class="ttname"><a href="classCore_1_1Input_1_1InputActionProvider.html">Core.Input.InputActionProvider</a></div><div class="ttdoc">登録解除不要なInputActionを提供するクラス</div><div class="ttdef"><b>Definition:</b> <a href="InputActionProvider_8cs_source.html#l00011">InputActionProvider.cs:12</a></div></div>
+<div class="ttc" id="aclassCore_1_1Input_1_1InputEvent_html"><div class="ttname"><a href="classCore_1_1Input_1_1InputEvent.html">Core.Input.InputEvent</a></div><div class="ttdoc">InputActionのラッパークラス</div><div class="ttdef"><b>Definition:</b> <a href="InputEvent_8cs_source.html#l00009">InputEvent.cs:10</a></div></div>
+<div class="ttc" id="aclassCore_1_1Input_1_1InputEvent_html_a38ded2cbcefd054bfaf50c6fec84f963"><div class="ttname"><a href="classCore_1_1Input_1_1InputEvent.html#a38ded2cbcefd054bfaf50c6fec84f963">Core.Input.InputEvent.Canceled</a></div><div class="ttdeci">Action&lt; InputAction.CallbackContext &gt; Canceled</div><div class="ttdef"><b>Definition:</b> <a href="InputEvent_8cs_source.html#l00015">InputEvent.cs:15</a></div></div>
+<div class="ttc" id="aclassCore_1_1Input_1_1InputEvent_html_a6083757a734e5cbebda39c604cfc2d9f"><div class="ttname"><a href="classCore_1_1Input_1_1InputEvent.html#a6083757a734e5cbebda39c604cfc2d9f">Core.Input.InputEvent.Started</a></div><div class="ttdeci">Action&lt; InputAction.CallbackContext &gt; Started</div><div class="ttdef"><b>Definition:</b> <a href="InputEvent_8cs_source.html#l00013">InputEvent.cs:13</a></div></div>
+<div class="ttc" id="aclassCore_1_1Input_1_1SingletonMonoBehaviour_html_abe9d85521c1adf0cc8870497504118ae"><div class="ttname"><a href="classCore_1_1Input_1_1SingletonMonoBehaviour.html#abe9d85521c1adf0cc8870497504118ae">Core.Input.SingletonMonoBehaviour.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition:</b> <a href="SingletonMonobehaviour_8cs_source.html#l00013">SingletonMonobehaviour.cs:14</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerConnector_html"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerConnector.html">GameMain.Presenter.WorkerConnector</a></div><div class="ttdoc">ワーカーとタスクを仲介するクラス</div><div class="ttdef"><b>Definition:</b> <a href="WorkerConnector_8cs_source.html#l00015">WorkerConnector.cs:16</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerConnector_html_a01f09082102b32e110f33354ef727963"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerConnector.html#a01f09082102b32e110f33354ef727963">GameMain.Presenter.WorkerConnector.Assignments</a></div><div class="ttdeci">IReadOnlyList&lt; Assignment &gt; Assignments</div><div class="ttdef"><b>Definition:</b> <a href="WorkerConnector_8cs_source.html#l00025">WorkerConnector.cs:25</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerConnector_html_a2d99a5a96da4fca9663eeef4d790463d"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerConnector.html#a2d99a5a96da4fca9663eeef4d790463d">GameMain.Presenter.WorkerConnector.StartLoop</a></div><div class="ttdeci">async UniTaskVoid StartLoop(Action&lt; BaseTask &gt; loopAction)</div><div class="ttdef"><b>Definition:</b> <a href="WorkerConnector_8cs_source.html#l00049">WorkerConnector.cs:49</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerConnector_html_aee1bbf4af858c1f098b1ce0b9d395489"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerConnector.html#aee1bbf4af858c1f098b1ce0b9d395489">GameMain.Presenter.WorkerConnector.CancelLoop</a></div><div class="ttdeci">void CancelLoop()</div><div class="ttdef"><b>Definition:</b> <a href="WorkerConnector_8cs_source.html#l00072">WorkerConnector.cs:72</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_html"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerReleaser.html">GameMain.Presenter.WorkerReleaser</a></div><div class="ttdoc">ワーカーのリリース処理を行うクラス</div><div class="ttdef"><b>Definition:</b> <a href="WorkerReleaser_8cs_source.html#l00016">WorkerReleaser.cs:17</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_html_a0e598128044176b40b815ab0768a2b39"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a0e598128044176b40b815ab0768a2b39">GameMain.Presenter.WorkerReleaser.releaseEvent</a></div><div class="ttdeci">readonly InputEvent releaseEvent</div><div class="ttdef"><b>Definition:</b> <a href="WorkerReleaser_8cs_source.html#l00020">WorkerReleaser.cs:20</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_html_a3be13fefa2a8ac385becda75f3283788"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a3be13fefa2a8ac385becda75f3283788">GameMain.Presenter.WorkerReleaser.GetNearestWorker</a></div><div class="ttdeci">Worker GetNearestWorker(Assignment assignment)</div><div class="ttdef"><b>Definition:</b> <a href="WorkerReleaser_8cs_source.html#l00109">WorkerReleaser.cs:109</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_html_a46869b365c16164da5e35fa54c8a9f2d"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a46869b365c16164da5e35fa54c8a9f2d">GameMain.Presenter.WorkerReleaser.Release</a></div><div class="ttdeci">void Release(BaseTask nearestTask)</div><div class="ttdef"><b>Definition:</b> <a href="WorkerReleaser_8cs_source.html#l00050">WorkerReleaser.cs:50</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_html_a6b727baaf9b8ee42df31adf6a1ee58e9"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a6b727baaf9b8ee42df31adf6a1ee58e9">GameMain.Presenter.WorkerReleaser.ReleaseAll</a></div><div class="ttdeci">void ReleaseAll(BaseTask baseTask)</div><div class="ttdef"><b>Definition:</b> <a href="WorkerReleaser_8cs_source.html#l00082">WorkerReleaser.cs:82</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_html_a758ccbe75d8d7be04fb24e52299ae33d"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a758ccbe75d8d7be04fb24e52299ae33d">GameMain.Presenter.WorkerReleaser.RegisterReleaseEvents</a></div><div class="ttdeci">void RegisterReleaseEvents()</div><div class="ttdef"><b>Definition:</b> <a href="WorkerReleaser_8cs_source.html#l00035">WorkerReleaser.cs:35</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_html_a7fd139bfec217c0cf347f16342e864b3"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a7fd139bfec217c0cf347f16342e864b3">GameMain.Presenter.WorkerReleaser.workerController</a></div><div class="ttdeci">readonly WorkerController workerController</div><div class="ttdef"><b>Definition:</b> <a href="WorkerReleaser_8cs_source.html#l00018">WorkerReleaser.cs:18</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_html_ac2e1ecee00e96c2989b9c57884a8f447"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#ac2e1ecee00e96c2989b9c57884a8f447">GameMain.Presenter.WorkerReleaser.WorkerReleaser</a></div><div class="ttdeci">WorkerReleaser(WorkerConnector workerConnector, WorkerController workerController)</div><div class="ttdef"><b>Definition:</b> <a href="WorkerReleaser_8cs_source.html#l00022">WorkerReleaser.cs:22</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1WorkerReleaser_html_ad748c151a3c47bbc4f0d2238eb5e7cae"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#ad748c151a3c47bbc4f0d2238eb5e7cae">GameMain.Presenter.WorkerReleaser.assignments</a></div><div class="ttdeci">readonly IReadOnlyList&lt; Assignment &gt; assignments</div><div class="ttdef"><b>Definition:</b> <a href="WorkerReleaser_8cs_source.html#l00019">WorkerReleaser.cs:19</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html">Module.Task.BaseTask</a></div><div class="ttdoc">全てのタスクのベースクラス</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00013">BaseTask.cs:14</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a1b4e4e9e8b80cddd3d79b7872ac0d5b6"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a1b4e4e9e8b80cddd3d79b7872ac0d5b6">Module.Task.BaseTask.OnStateChanged</a></div><div class="ttdeci">Action&lt; TaskState &gt; OnStateChanged</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00042">BaseTask.cs:42</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_aaaec697f4b6cb5731930685280338e12"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#aaaec697f4b6cb5731930685280338e12">Module.Task.BaseTask.Mw</a></div><div class="ttdeci">float Mw</div><div class="ttdoc">現在割り当てられている作業量</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00029">BaseTask.cs:30</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Controller_1_1WorkerController_html"><div class="ttname"><a href="classModule_1_1Working_1_1Controller_1_1WorkerController.html">Module.Working.Controller.WorkerController</a></div><div class="ttdoc">群体を操作するクラス</div><div class="ttdef"><b>Definition:</b> <a href="WorkerController_8cs_source.html#l00012">WorkerController.cs:13</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Controller_1_1WorkerController_html_a0355752b983414821acb34c3bc51e724"><div class="ttname"><a href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a0355752b983414821acb34c3bc51e724">Module.Working.Controller.WorkerController.EnqueueWorker</a></div><div class="ttdeci">void EnqueueWorker(Worker worker)</div><div class="ttdef"><b>Definition:</b> <a href="WorkerController_8cs_source.html#l00029">WorkerController.cs:29</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Worker_html"><div class="ttname"><a href="classModule_1_1Working_1_1Worker.html">Module.Working.Worker</a></div><div class="ttdoc">ワーカーの状態を管理するクラス</div><div class="ttdef"><b>Definition:</b> <a href="Worker_8cs_source.html#l00014">Worker.cs:15</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1Input_html"><div class="ttname"><a href="namespaceCore_1_1Input.html">Core.Input</a></div><div class="ttdef"><b>Definition:</b> <a href="InputActionAssetProfile_8cs_source.html#l00004">InputActionAssetProfile.cs:5</a></div></div>
+<div class="ttc" id="anamespaceCore_html"><div class="ttname"><a href="namespaceCore.html">Core</a></div><div class="ttdef"><b>Definition:</b> <a href="InputActionAssetProfile_8cs_source.html#l00004">InputActionAssetProfile.cs:5</a></div></div>
+<div class="ttc" id="anamespaceGameMain_1_1Presenter_html"><div class="ttname"><a href="namespaceGameMain_1_1Presenter.html">GameMain.Presenter</a></div><div class="ttdef"><b>Definition:</b> <a href="Assignment_8cs_source.html#l00007">Assignment.cs:8</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Task_html"><div class="ttname"><a href="namespaceModule_1_1Task.html">Module.Task</a></div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00006">BaseTask.cs:7</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Task_html_a5559ca3b155ae70ee91b579e8e01f985"><div class="ttname"><a href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">Module.Task.TaskState</a></div><div class="ttdeci">TaskState</div><div class="ttdoc">タスクの状態</div><div class="ttdef"><b>Definition:</b> <a href="TaskState_8cs_source.html#l00006">TaskState.cs:7</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Working_1_1Controller_html"><div class="ttname"><a href="namespaceModule_1_1Working_1_1Controller.html">Module.Working.Controller</a></div><div class="ttdef"><b>Definition:</b> <a href="WorkerController_8cs_source.html#l00007">WorkerController.cs:8</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Working_html"><div class="ttname"><a href="namespaceModule_1_1Working.html">Module.Working</a></div><div class="ttdef"><b>Definition:</b> <a href="WorkerController_8cs_source.html#l00007">WorkerController.cs:8</a></div></div>
+<div class="ttc" id="anamespaceModule_html"><div class="ttname"><a href="namespaceModule.html">Module</a></div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00006">BaseTask.cs:7</a></div></div>
+<div class="ttc" id="astructGameMain_1_1Presenter_1_1Assignment_html"><div class="ttname"><a href="structGameMain_1_1Presenter_1_1Assignment.html">GameMain.Presenter.Assignment</a></div><div class="ttdef"><b>Definition:</b> <a href="Assignment_8cs_source.html#l00009">Assignment.cs:10</a></div></div>
+<div class="ttc" id="astructGameMain_1_1Presenter_1_1Assignment_html_a4a84493538b2f9dbb34d557336de83e3"><div class="ttname"><a href="structGameMain_1_1Presenter_1_1Assignment.html#a4a84493538b2f9dbb34d557336de83e3">GameMain.Presenter.Assignment.Workers</a></div><div class="ttdeci">readonly List&lt; Worker &gt; Workers</div><div class="ttdef"><b>Definition:</b> <a href="Assignment_8cs_source.html#l00013">Assignment.cs:13</a></div></div>
+<div class="ttc" id="astructGameMain_1_1Presenter_1_1Assignment_html_add20b6132f7fc7e2c218b4a7a53542db"><div class="ttname"><a href="structGameMain_1_1Presenter_1_1Assignment.html#add20b6132f7fc7e2c218b4a7a53542db">GameMain.Presenter.Assignment.Task</a></div><div class="ttdeci">readonly BaseTask Task</div><div class="ttdef"><b>Definition:</b> <a href="Assignment_8cs_source.html#l00011">Assignment.cs:11</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

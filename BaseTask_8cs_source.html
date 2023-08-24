@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: src/Assets/Scripts/Module/Task/BaseTask.cs ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_b90377121573af7cb25ee89fc5236601.html">Module</a></li><li class="navelem"><a class="el" href="dir_280db5ad9fbb25709e83c09934ceebe4.html">Task</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">BaseTask.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="BaseTask_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> System;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> UnityEngine.Serialization;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> Wanna.DebugEx;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="namespaceModule.html">    6</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceModule_1_1Task.html">Module.Task</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    [RequireComponent(typeof(SphereCollider))]</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    [DisallowMultipleComponent]</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1BaseTask.html">   13</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class </span><a class="code" href="classModule_1_1Task_1_1BaseTask.html">BaseTask</a> : MonoBehaviour, <a class="code" href="interfaceModule_1_1Task_1_1ITaskSystem.html">ITaskSystem</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        [Header(<span class="stringliteral">&quot;検出されるタスクの半径&quot;</span>)]</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        [SerializeField]</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        [Range(0f, 6f)]</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1BaseTask.html#a14fa7fd9dfc3aa98f679c399c3c3967e">   18</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a14fa7fd9dfc3aa98f679c399c3c3967e">taskSize</a> = 1f;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        [Header(<span class="stringliteral">&quot;タスクのMonoWork&quot;</span>)]</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        [SerializeField]</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1BaseTask.html#a35801d0ce16ade36be744b980b000280">   22</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a35801d0ce16ade36be744b980b000280">mw</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1BaseTask.html#a497cfd73c40753ae68cd917dd9500398">   24</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a> <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a497cfd73c40753ae68cd917dd9500398">State</a> =&gt; <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a95eba1abd7be6b67609c7fe3e8980930">state</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1BaseTask.html#aaaec697f4b6cb5731930685280338e12">   29</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code" href="classModule_1_1Task_1_1BaseTask.html#aaaec697f4b6cb5731930685280338e12">Mw</a></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keyword">set</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a93556c2f4caa3de09473d69cc8bbd254">prevMw</a> = <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a506547b607ba83f4b0e0b302a1797bbd">currentMw</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a506547b607ba83f4b0e0b302a1797bbd">currentMw</a> = Mathf.Clamp(value, 0f, <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a35801d0ce16ade36be744b980b000280">mw</a>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a5a5eed78761e97d3e6376b6240c8719d">OnMonoWorkUpdated</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a506547b607ba83f4b0e0b302a1797bbd">currentMw</a>; }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1BaseTask.html#a75876410e40af75b65fa24567311ef6e">   40</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a75876410e40af75b65fa24567311ef6e">Progress</a> =&gt; <a class="code" href="classModule_1_1Task_1_1BaseTask.html#adf401b66c1fb2d799d739a853975832f">currentProgress</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1BaseTask.html#a1b4e4e9e8b80cddd3d79b7872ac0d5b6">   42</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">event</span> Action&lt;TaskState&gt; <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a1b4e4e9e8b80cddd3d79b7872ac0d5b6">OnStateChanged</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        [Header(<span class="stringliteral">&quot;!デバッグ用 書き換え禁止!&quot;</span>)]</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        [SerializeField]</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1BaseTask.html#a95eba1abd7be6b67609c7fe3e8980930">   46</a></span>&#160;        <span class="keyword">protected</span> <a class="code" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a> <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a95eba1abd7be6b67609c7fe3e8980930">state</a> = <a class="code" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a>.Idle;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1BaseTask.html#adf401b66c1fb2d799d739a853975832f">   48</a></span>&#160;        [SerializeField] [Range(0f, 1f)] <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code" href="classModule_1_1Task_1_1BaseTask.html#adf401b66c1fb2d799d739a853975832f">currentProgress</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1BaseTask.html#a506547b607ba83f4b0e0b302a1797bbd">   49</a></span>&#160;        [SerializeField] <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a506547b607ba83f4b0e0b302a1797bbd">currentMw</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1BaseTask.html#a21b95f9ee00aebb1b8e47a992db6569c">   50</a></span>&#160;        [SerializeField] <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a21b95f9ee00aebb1b8e47a992db6569c">progressMw</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1BaseTask.html#a93556c2f4caa3de09473d69cc8bbd254">   51</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a93556c2f4caa3de09473d69cc8bbd254">prevMw</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1BaseTask.html#a28c792bb0e5a2117c4ea1339bf912d26">   53</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a28c792bb0e5a2117c4ea1339bf912d26">OnValidate</a>()</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            SphereCollider col = GetComponent&lt;SphereCollider&gt;();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            col.radius = <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a14fa7fd9dfc3aa98f679c399c3c3967e">taskSize</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="comment">//作業量は最低1以上とする</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a35801d0ce16ade36be744b980b000280">mw</a> = Mathf.Clamp(<a class="code" href="classModule_1_1Task_1_1BaseTask.html#a35801d0ce16ade36be744b980b000280">mw</a>, 1f, <span class="keywordtype">float</span>.MaxValue);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1BaseTask.html#ad06331a22daef7d8c145f529da53aa95">   65</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Task_1_1BaseTask.html#ad06331a22daef7d8c145f529da53aa95">Initialize</a>() { }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1BaseTask.html#a4d039a21b62a8203fbb9e4379ecc5a63">   71</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="interfaceModule_1_1Task_1_1ITaskSystem.html">ITaskSystem</a>.<a class="code" href="interfaceModule_1_1Task_1_1ITaskSystem.html#a46ace119fcf9b022abb65fbf955986f1">TaskSystemUpdate</a>(<span class="keywordtype">float</span> deltaTime)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a81a5a6f69b5538ab5a09757bc6f34bbe">UpdateProgress</a>(deltaTime);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a5abab8d99a1af399a24ee46a58395c17">ManagedUpdate</a>(deltaTime);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1BaseTask.html#a5abab8d99a1af399a24ee46a58395c17">   81</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a5abab8d99a1af399a24ee46a58395c17">ManagedUpdate</a>(<span class="keywordtype">float</span> deltaTime) { }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1BaseTask.html#a81a5a6f69b5538ab5a09757bc6f34bbe">   83</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a81a5a6f69b5538ab5a09757bc6f34bbe">UpdateProgress</a>(<span class="keywordtype">float</span> deltaTime)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Task_1_1BaseTask.html#a95eba1abd7be6b67609c7fe3e8980930">state</a> == <a class="code" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a>.Completed || <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a506547b607ba83f4b0e0b302a1797bbd">currentMw</a> == 0f)</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a21b95f9ee00aebb1b8e47a992db6569c">progressMw</a> = Mathf.Clamp(<a class="code" href="classModule_1_1Task_1_1BaseTask.html#a21b95f9ee00aebb1b8e47a992db6569c">progressMw</a> + <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a506547b607ba83f4b0e0b302a1797bbd">currentMw</a> * deltaTime, 0f, <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a35801d0ce16ade36be744b980b000280">mw</a>);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <a class="code" href="classModule_1_1Task_1_1BaseTask.html#adf401b66c1fb2d799d739a853975832f">currentProgress</a> = Mathf.InverseLerp(0f, <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a35801d0ce16ade36be744b980b000280">mw</a>, <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a21b95f9ee00aebb1b8e47a992db6569c">progressMw</a>);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="comment">//進捗が1に到達したら完了</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Task_1_1BaseTask.html#adf401b66c1fb2d799d739a853975832f">currentProgress</a> &gt;= 1f)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a871d1f342934de436416e5fed9cd3bc9">ChangeState</a>(<a class="code" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a>.Completed);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <a class="code" href="classModule_1_1Task_1_1BaseTask.html#aecef9fa0a5d27bea4c305ce753c97a1b">OnComplete</a>();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1BaseTask.html#a5a5eed78761e97d3e6376b6240c8719d">   99</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a5a5eed78761e97d3e6376b6240c8719d">OnMonoWorkUpdated</a>()</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Task_1_1BaseTask.html#a95eba1abd7be6b67609c7fe3e8980930">state</a> == <a class="code" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a>.Completed)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="comment">//作業量が0より大きくなったら開始</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Task_1_1BaseTask.html#a93556c2f4caa3de09473d69cc8bbd254">prevMw</a> == 0f &amp;&amp; <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a506547b607ba83f4b0e0b302a1797bbd">currentMw</a> &gt; <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a93556c2f4caa3de09473d69cc8bbd254">prevMw</a>)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a871d1f342934de436416e5fed9cd3bc9">ChangeState</a>(<a class="code" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a>.InProgress);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a5e42e6ebbdf859cc1c16e01d9d77e7cf">OnStart</a>();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="comment">//作業量が0になったらキャンセル</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Task_1_1BaseTask.html#a93556c2f4caa3de09473d69cc8bbd254">prevMw</a> &gt; 0f &amp;&amp; <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a506547b607ba83f4b0e0b302a1797bbd">currentMw</a> == 0f)</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a871d1f342934de436416e5fed9cd3bc9">ChangeState</a>(<a class="code" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a>.Idle);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a7d685a0de356fcc8f1973b3ca5cdddf3">OnCancel</a>();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1BaseTask.html#a871d1f342934de436416e5fed9cd3bc9">  118</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a871d1f342934de436416e5fed9cd3bc9">ChangeState</a>(<a class="code" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a> <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a95eba1abd7be6b67609c7fe3e8980930">state</a>)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            this.state = <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a95eba1abd7be6b67609c7fe3e8980930">state</a>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a1b4e4e9e8b80cddd3d79b7872ac0d5b6">OnStateChanged</a>?.Invoke(<a class="code" href="classModule_1_1Task_1_1BaseTask.html#a95eba1abd7be6b67609c7fe3e8980930">state</a>);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1BaseTask.html#a5e42e6ebbdf859cc1c16e01d9d77e7cf">  124</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a5e42e6ebbdf859cc1c16e01d9d77e7cf">OnStart</a>() { }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1BaseTask.html#a7d685a0de356fcc8f1973b3ca5cdddf3">  126</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a7d685a0de356fcc8f1973b3ca5cdddf3">OnCancel</a>() { }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1BaseTask.html#aecef9fa0a5d27bea4c305ce753c97a1b">  128</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Task_1_1BaseTask.html#aecef9fa0a5d27bea4c305ce753c97a1b">OnComplete</a>() { }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1BaseTask.html#a0aa6daf0e8faa7631c9f6c956559ab1e">  130</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a0aa6daf0e8faa7631c9f6c956559ab1e">OnDrawGizmos</a>()</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            Gizmos.color = <span class="keyword">new</span> Color(0f, 0.83f, 0f, 0.41f);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            Gizmos.DrawSphere(transform.position, <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a14fa7fd9dfc3aa98f679c399c3c3967e">taskSize</a>);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html">Module.Task.BaseTask</a></div><div class="ttdoc">全てのタスクのベースクラス</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00013">BaseTask.cs:14</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a0aa6daf0e8faa7631c9f6c956559ab1e"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a0aa6daf0e8faa7631c9f6c956559ab1e">Module.Task.BaseTask.OnDrawGizmos</a></div><div class="ttdeci">void OnDrawGizmos()</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00130">BaseTask.cs:130</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a14fa7fd9dfc3aa98f679c399c3c3967e"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a14fa7fd9dfc3aa98f679c399c3c3967e">Module.Task.BaseTask.taskSize</a></div><div class="ttdeci">float taskSize</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00018">BaseTask.cs:18</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a1b4e4e9e8b80cddd3d79b7872ac0d5b6"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a1b4e4e9e8b80cddd3d79b7872ac0d5b6">Module.Task.BaseTask.OnStateChanged</a></div><div class="ttdeci">Action&lt; TaskState &gt; OnStateChanged</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00042">BaseTask.cs:42</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a21b95f9ee00aebb1b8e47a992db6569c"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a21b95f9ee00aebb1b8e47a992db6569c">Module.Task.BaseTask.progressMw</a></div><div class="ttdeci">float progressMw</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00050">BaseTask.cs:50</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a28c792bb0e5a2117c4ea1339bf912d26"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a28c792bb0e5a2117c4ea1339bf912d26">Module.Task.BaseTask.OnValidate</a></div><div class="ttdeci">void OnValidate()</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00053">BaseTask.cs:53</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a35801d0ce16ade36be744b980b000280"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a35801d0ce16ade36be744b980b000280">Module.Task.BaseTask.mw</a></div><div class="ttdeci">float mw</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00022">BaseTask.cs:22</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a497cfd73c40753ae68cd917dd9500398"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a497cfd73c40753ae68cd917dd9500398">Module.Task.BaseTask.State</a></div><div class="ttdeci">TaskState State</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00024">BaseTask.cs:24</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a506547b607ba83f4b0e0b302a1797bbd"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a506547b607ba83f4b0e0b302a1797bbd">Module.Task.BaseTask.currentMw</a></div><div class="ttdeci">float currentMw</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00049">BaseTask.cs:49</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a5a5eed78761e97d3e6376b6240c8719d"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a5a5eed78761e97d3e6376b6240c8719d">Module.Task.BaseTask.OnMonoWorkUpdated</a></div><div class="ttdeci">void OnMonoWorkUpdated()</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00099">BaseTask.cs:99</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a5abab8d99a1af399a24ee46a58395c17"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a5abab8d99a1af399a24ee46a58395c17">Module.Task.BaseTask.ManagedUpdate</a></div><div class="ttdeci">virtual void ManagedUpdate(float deltaTime)</div><div class="ttdoc">ゲームの状態によって管理されるUpdate</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00081">BaseTask.cs:81</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a5e42e6ebbdf859cc1c16e01d9d77e7cf"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a5e42e6ebbdf859cc1c16e01d9d77e7cf">Module.Task.BaseTask.OnStart</a></div><div class="ttdeci">virtual void OnStart()</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00124">BaseTask.cs:124</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a75876410e40af75b65fa24567311ef6e"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a75876410e40af75b65fa24567311ef6e">Module.Task.BaseTask.Progress</a></div><div class="ttdeci">float Progress</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00040">BaseTask.cs:40</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a7d685a0de356fcc8f1973b3ca5cdddf3"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a7d685a0de356fcc8f1973b3ca5cdddf3">Module.Task.BaseTask.OnCancel</a></div><div class="ttdeci">virtual void OnCancel()</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00126">BaseTask.cs:126</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a81a5a6f69b5538ab5a09757bc6f34bbe"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a81a5a6f69b5538ab5a09757bc6f34bbe">Module.Task.BaseTask.UpdateProgress</a></div><div class="ttdeci">void UpdateProgress(float deltaTime)</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00083">BaseTask.cs:83</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a871d1f342934de436416e5fed9cd3bc9"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a871d1f342934de436416e5fed9cd3bc9">Module.Task.BaseTask.ChangeState</a></div><div class="ttdeci">void ChangeState(TaskState state)</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00118">BaseTask.cs:118</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a93556c2f4caa3de09473d69cc8bbd254"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a93556c2f4caa3de09473d69cc8bbd254">Module.Task.BaseTask.prevMw</a></div><div class="ttdeci">float prevMw</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00051">BaseTask.cs:51</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a95eba1abd7be6b67609c7fe3e8980930"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a95eba1abd7be6b67609c7fe3e8980930">Module.Task.BaseTask.state</a></div><div class="ttdeci">TaskState state</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00046">BaseTask.cs:46</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_aaaec697f4b6cb5731930685280338e12"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#aaaec697f4b6cb5731930685280338e12">Module.Task.BaseTask.Mw</a></div><div class="ttdeci">float Mw</div><div class="ttdoc">現在割り当てられている作業量</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00029">BaseTask.cs:30</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_ad06331a22daef7d8c145f529da53aa95"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#ad06331a22daef7d8c145f529da53aa95">Module.Task.BaseTask.Initialize</a></div><div class="ttdeci">virtual void Initialize()</div><div class="ttdoc">ゲーム開始時の初期化関数</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00065">BaseTask.cs:65</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_adf401b66c1fb2d799d739a853975832f"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#adf401b66c1fb2d799d739a853975832f">Module.Task.BaseTask.currentProgress</a></div><div class="ttdeci">float currentProgress</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00048">BaseTask.cs:48</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_aecef9fa0a5d27bea4c305ce753c97a1b"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#aecef9fa0a5d27bea4c305ce753c97a1b">Module.Task.BaseTask.OnComplete</a></div><div class="ttdeci">virtual void OnComplete()</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00128">BaseTask.cs:128</a></div></div>
+<div class="ttc" id="ainterfaceModule_1_1Task_1_1ITaskSystem_html"><div class="ttname"><a href="interfaceModule_1_1Task_1_1ITaskSystem.html">Module.Task.ITaskSystem</a></div><div class="ttdoc">タスクにゲームループを適用するインターフェース</div><div class="ttdef"><b>Definition:</b> <a href="ITaskSystem_8cs_source.html#l00006">ITaskSystem.cs:7</a></div></div>
+<div class="ttc" id="ainterfaceModule_1_1Task_1_1ITaskSystem_html_a46ace119fcf9b022abb65fbf955986f1"><div class="ttname"><a href="interfaceModule_1_1Task_1_1ITaskSystem.html#a46ace119fcf9b022abb65fbf955986f1">Module.Task.ITaskSystem.TaskSystemUpdate</a></div><div class="ttdeci">void TaskSystemUpdate(float deltaTime)</div></div>
+<div class="ttc" id="anamespaceModule_1_1Task_html"><div class="ttname"><a href="namespaceModule_1_1Task.html">Module.Task</a></div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00006">BaseTask.cs:7</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Task_html_a5559ca3b155ae70ee91b579e8e01f985"><div class="ttname"><a href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">Module.Task.TaskState</a></div><div class="ttdeci">TaskState</div><div class="ttdoc">タスクの状態</div><div class="ttdef"><b>Definition:</b> <a href="TaskState_8cs_source.html#l00006">TaskState.cs:7</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

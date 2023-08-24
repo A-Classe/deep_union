@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: src/Assets/Scripts/Module/Working/Factory/WorkerSpawner.cs ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_b90377121573af7cb25ee89fc5236601.html">Module</a></li><li class="navelem"><a class="el" href="dir_4a7a8ba31c7a2ab8772923ccccbb07a0.html">Working</a></li><li class="navelem"><a class="el" href="dir_00048ff915c9cbaac8e4d572bfb5ef57.html">Factory</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">WorkerSpawner.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="WorkerSpawner_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> System;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceModule.html">Module</a>.<a class="code" href="namespaceModule_1_1Working.html">Working</a>.<a class="code" href="namespaceModule_1_1Working_1_1State.html">State</a>;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> VContainer;</div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="WorkerSpawner_8cs.html#a832e8f52fca5a678819ec96269dcb532">    5</a></span>&#160;<span class="keyword">using</span> <a class="code" href="WorkerSpawner_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a> = UnityEngine.Random;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceModule_1_1Working_1_1Factory.html">Module.Working.Factory</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html">    9</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html">WorkerSpawner</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#a12192edfb8bc498d4693abbf1081e8ef">   11</a></span>&#160;        <span class="keyword">private</span> readonly <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html">WorkerAgent</a> <a class="code" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#a12192edfb8bc498d4693abbf1081e8ef">workerAgent</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#aac970aab5bacb6fd516cab1b579b795d">   12</a></span>&#160;        <span class="keyword">private</span> readonly <a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html">SpawnPoint</a> <a class="code" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#aac970aab5bacb6fd516cab1b579b795d">spawnPoint</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#a839893831273aed7787a4ea8afd4858e">   13</a></span>&#160;        <span class="keyword">private</span> readonly <a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnParam.html">SpawnParam</a> <a class="code" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#a839893831273aed7787a4ea8afd4858e">spawnParam</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        [Inject]</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#a25c7a2ed618c1fedf687ec03357a1567">   16</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#a25c7a2ed618c1fedf687ec03357a1567">WorkerSpawner</a>(<a class="code" href="classModule_1_1Working_1_1WorkerAgent.html">WorkerAgent</a> <a class="code" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#a12192edfb8bc498d4693abbf1081e8ef">workerAgent</a>, <a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html">SpawnPoint</a> <a class="code" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#aac970aab5bacb6fd516cab1b579b795d">spawnPoint</a>, <a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnParam.html">SpawnParam</a> <a class="code" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#a839893831273aed7787a4ea8afd4858e">spawnParam</a>)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            this.workerAgent = <a class="code" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#a12192edfb8bc498d4693abbf1081e8ef">workerAgent</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            this.spawnPoint = <a class="code" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#aac970aab5bacb6fd516cab1b579b795d">spawnPoint</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            this.spawnParam = <a class="code" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#a839893831273aed7787a4ea8afd4858e">spawnParam</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#ac966f5863bd7a545801886ed8d14dba3">   23</a></span>&#160;        <span class="keyword">public</span> Span&lt;Worker&gt; <a class="code" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#ac966f5863bd7a545801886ed8d14dba3">Spawn</a>(<span class="keywordtype">int</span> spawnCount)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            Span&lt;Worker&gt; addedWorkers = <a class="code" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#a12192edfb8bc498d4693abbf1081e8ef">workerAgent</a>.<a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a806460d3337bc23946793811ef0153f8">Add</a>(spawnCount);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">foreach</span> (<a class="code" href="classModule_1_1Working_1_1Worker.html">Worker</a> worker <span class="keywordflow">in</span> addedWorkers)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <span class="comment">//円状のランダム座標を取得</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                Vector3 scaleTarget = <span class="keyword">new</span> Vector3(<a class="code" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#a839893831273aed7787a4ea8afd4858e">spawnParam</a>.<a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnParam.html#adf824f3aa403c4789ebe44b1c7047d04">SpawnRange</a>, 0f, <a class="code" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#a839893831273aed7787a4ea8afd4858e">spawnParam</a>.<a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnParam.html#adf824f3aa403c4789ebe44b1c7047d04">SpawnRange</a>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                Vector3 spawnPosition = Vector3.Scale(<a class="code" href="WorkerSpawner_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a>.insideUnitSphere, scaleTarget);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="comment">//Workerの初期化</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <a class="code" href="structModule_1_1Working_1_1Factory_1_1WorkerCreateModel.html">WorkerCreateModel</a> createModel = <span class="keyword">new</span> <a class="code" href="structModule_1_1Working_1_1Factory_1_1WorkerCreateModel.html">WorkerCreateModel</a>(<a class="code" href="namespaceModule_1_1Working_1_1State.html#a6741b3bd2dd67b25e9e0477f35e01082">WorkerState</a>.Idle, spawnPosition, <a class="code" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#aac970aab5bacb6fd516cab1b579b795d">spawnPoint</a>.transform);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <a class="code" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#a3bd1eddf8ed6d085685b07cd670fc708">InitWorker</a>(worker, createModel);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">return</span> addedWorkers;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#a3bd1eddf8ed6d085685b07cd670fc708">   41</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#a3bd1eddf8ed6d085685b07cd670fc708">InitWorker</a>(<a class="code" href="classModule_1_1Working_1_1Worker.html">Worker</a> worker, <a class="code" href="structModule_1_1Working_1_1Factory_1_1WorkerCreateModel.html">WorkerCreateModel</a> createModel)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            Transform transform = worker.transform;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            transform.position = createModel.<a class="code" href="structModule_1_1Working_1_1Factory_1_1WorkerCreateModel.html#a470bee432de2635d655fa185bf182f28">Position</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            transform.SetParent(createModel.<a class="code" href="structModule_1_1Working_1_1Factory_1_1WorkerCreateModel.html#a6f8bf1ba263e40fa98b97a24012d02e5">Parent</a>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            worker.<a class="code" href="classModule_1_1Working_1_1Worker.html#a269c989987eb8bffc23d6dd73b725077">OnSpawn</a>(createModel.<a class="code" href="structModule_1_1Working_1_1Factory_1_1WorkerCreateModel.html#a0d9eef1f716a58e8e647ed2bb9d84238">SpawnPoint</a>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            worker.<a class="code" href="classModule_1_1Working_1_1Worker.html#aef8170fa48e94cf709f865386be24688">SetWorkerState</a>(createModel.<a class="code" href="structModule_1_1Working_1_1Factory_1_1WorkerCreateModel.html#a27ab94a8e0a4c52bf855596afd49e6a0">State</a>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="ttc" id="aWorkerSpawner_8cs_html_a832e8f52fca5a678819ec96269dcb532"><div class="ttname"><a href="WorkerSpawner_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a></div><div class="ttdeci">UnityEngine.Random Random</div><div class="ttdef"><b>Definition:</b> <a href="WorkerSpawner_8cs_source.html#l00005">WorkerSpawner.cs:5</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Factory_1_1SpawnParam_html"><div class="ttname"><a href="classModule_1_1Working_1_1Factory_1_1SpawnParam.html">Module.Working.Factory.SpawnParam</a></div><div class="ttdef"><b>Definition:</b> <a href="SpawnParam_8cs_source.html#l00006">SpawnParam.cs:7</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Factory_1_1SpawnParam_html_adf824f3aa403c4789ebe44b1c7047d04"><div class="ttname"><a href="classModule_1_1Working_1_1Factory_1_1SpawnParam.html#adf824f3aa403c4789ebe44b1c7047d04">Module.Working.Factory.SpawnParam.SpawnRange</a></div><div class="ttdeci">float SpawnRange</div><div class="ttdef"><b>Definition:</b> <a href="SpawnParam_8cs_source.html#l00009">SpawnParam.cs:9</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Factory_1_1SpawnPoint_html"><div class="ttname"><a href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html">Module.Working.Factory.SpawnPoint</a></div><div class="ttdef"><b>Definition:</b> <a href="SpawnPoint_8cs_source.html#l00005">SpawnPoint.cs:5</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Factory_1_1WorkerSpawner_html"><div class="ttname"><a href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html">Module.Working.Factory.WorkerSpawner</a></div><div class="ttdef"><b>Definition:</b> <a href="WorkerSpawner_8cs_source.html#l00009">WorkerSpawner.cs:10</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Factory_1_1WorkerSpawner_html_a12192edfb8bc498d4693abbf1081e8ef"><div class="ttname"><a href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#a12192edfb8bc498d4693abbf1081e8ef">Module.Working.Factory.WorkerSpawner.workerAgent</a></div><div class="ttdeci">readonly WorkerAgent workerAgent</div><div class="ttdef"><b>Definition:</b> <a href="WorkerSpawner_8cs_source.html#l00011">WorkerSpawner.cs:11</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Factory_1_1WorkerSpawner_html_a25c7a2ed618c1fedf687ec03357a1567"><div class="ttname"><a href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#a25c7a2ed618c1fedf687ec03357a1567">Module.Working.Factory.WorkerSpawner.WorkerSpawner</a></div><div class="ttdeci">WorkerSpawner(WorkerAgent workerAgent, SpawnPoint spawnPoint, SpawnParam spawnParam)</div><div class="ttdef"><b>Definition:</b> <a href="WorkerSpawner_8cs_source.html#l00016">WorkerSpawner.cs:16</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Factory_1_1WorkerSpawner_html_a3bd1eddf8ed6d085685b07cd670fc708"><div class="ttname"><a href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#a3bd1eddf8ed6d085685b07cd670fc708">Module.Working.Factory.WorkerSpawner.InitWorker</a></div><div class="ttdeci">void InitWorker(Worker worker, WorkerCreateModel createModel)</div><div class="ttdef"><b>Definition:</b> <a href="WorkerSpawner_8cs_source.html#l00041">WorkerSpawner.cs:41</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Factory_1_1WorkerSpawner_html_a839893831273aed7787a4ea8afd4858e"><div class="ttname"><a href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#a839893831273aed7787a4ea8afd4858e">Module.Working.Factory.WorkerSpawner.spawnParam</a></div><div class="ttdeci">readonly SpawnParam spawnParam</div><div class="ttdef"><b>Definition:</b> <a href="WorkerSpawner_8cs_source.html#l00013">WorkerSpawner.cs:13</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Factory_1_1WorkerSpawner_html_aac970aab5bacb6fd516cab1b579b795d"><div class="ttname"><a href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#aac970aab5bacb6fd516cab1b579b795d">Module.Working.Factory.WorkerSpawner.spawnPoint</a></div><div class="ttdeci">readonly SpawnPoint spawnPoint</div><div class="ttdef"><b>Definition:</b> <a href="WorkerSpawner_8cs_source.html#l00012">WorkerSpawner.cs:12</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Factory_1_1WorkerSpawner_html_ac966f5863bd7a545801886ed8d14dba3"><div class="ttname"><a href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#ac966f5863bd7a545801886ed8d14dba3">Module.Working.Factory.WorkerSpawner.Spawn</a></div><div class="ttdeci">Span&lt; Worker &gt; Spawn(int spawnCount)</div><div class="ttdef"><b>Definition:</b> <a href="WorkerSpawner_8cs_source.html#l00023">WorkerSpawner.cs:23</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1WorkerAgent_html"><div class="ttname"><a href="classModule_1_1Working_1_1WorkerAgent.html">Module.Working.WorkerAgent</a></div><div class="ttdoc">Workerのインスタンスを管理するクラス</div><div class="ttdef"><b>Definition:</b> <a href="WorkerAgent_8cs_source.html#l00015">WorkerAgent.cs:16</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1WorkerAgent_html_a806460d3337bc23946793811ef0153f8"><div class="ttname"><a href="classModule_1_1Working_1_1WorkerAgent.html#a806460d3337bc23946793811ef0153f8">Module.Working.WorkerAgent.Add</a></div><div class="ttdeci">Span&lt; Worker &gt; Add(int count)</div><div class="ttdoc">Workerを指定数追加します</div><div class="ttdef"><b>Definition:</b> <a href="WorkerAgent_8cs_source.html#l00040">WorkerAgent.cs:40</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Worker_html"><div class="ttname"><a href="classModule_1_1Working_1_1Worker.html">Module.Working.Worker</a></div><div class="ttdoc">ワーカーの状態を管理するクラス</div><div class="ttdef"><b>Definition:</b> <a href="Worker_8cs_source.html#l00014">Worker.cs:15</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Worker_html_a269c989987eb8bffc23d6dd73b725077"><div class="ttname"><a href="classModule_1_1Working_1_1Worker.html#a269c989987eb8bffc23d6dd73b725077">Module.Working.Worker.OnSpawn</a></div><div class="ttdeci">void OnSpawn(Vector3 spawnPos)</div><div class="ttdef"><b>Definition:</b> <a href="Worker_8cs_source.html#l00026">Worker.cs:26</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Worker_html_aef8170fa48e94cf709f865386be24688"><div class="ttname"><a href="classModule_1_1Working_1_1Worker.html#aef8170fa48e94cf709f865386be24688">Module.Working.Worker.SetWorkerState</a></div><div class="ttdeci">void SetWorkerState(WorkerState workerState)</div><div class="ttdef"><b>Definition:</b> <a href="Worker_8cs_source.html#l00038">Worker.cs:38</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Working_1_1Factory_html"><div class="ttname"><a href="namespaceModule_1_1Working_1_1Factory.html">Module.Working.Factory</a></div><div class="ttdef"><b>Definition:</b> <a href="SpawnParam_8cs_source.html#l00003">SpawnParam.cs:4</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Working_1_1State_html"><div class="ttname"><a href="namespaceModule_1_1Working_1_1State.html">Module.Working.State</a></div><div class="ttdef"><b>Definition:</b> <a href="FollowState_8cs_source.html#l00004">FollowState.cs:5</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Working_1_1State_html_a6741b3bd2dd67b25e9e0477f35e01082"><div class="ttname"><a href="namespaceModule_1_1Working_1_1State.html#a6741b3bd2dd67b25e9e0477f35e01082">Module.Working.State.WorkerState</a></div><div class="ttdeci">WorkerState</div><div class="ttdoc">ワーカーの状態</div><div class="ttdef"><b>Definition:</b> <a href="WorkerState_8cs_source.html#l00006">WorkerState.cs:7</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Working_html"><div class="ttname"><a href="namespaceModule_1_1Working.html">Module.Working</a></div><div class="ttdef"><b>Definition:</b> <a href="WorkerController_8cs_source.html#l00007">WorkerController.cs:8</a></div></div>
+<div class="ttc" id="anamespaceModule_html"><div class="ttname"><a href="namespaceModule.html">Module</a></div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00006">BaseTask.cs:7</a></div></div>
+<div class="ttc" id="astructModule_1_1Working_1_1Factory_1_1WorkerCreateModel_html"><div class="ttname"><a href="structModule_1_1Working_1_1Factory_1_1WorkerCreateModel.html">Module.Working.Factory.WorkerCreateModel</a></div><div class="ttdef"><b>Definition:</b> <a href="WorkerCreateModel_8cs_source.html#l00006">WorkerCreateModel.cs:7</a></div></div>
+<div class="ttc" id="astructModule_1_1Working_1_1Factory_1_1WorkerCreateModel_html_a0d9eef1f716a58e8e647ed2bb9d84238"><div class="ttname"><a href="structModule_1_1Working_1_1Factory_1_1WorkerCreateModel.html#a0d9eef1f716a58e8e647ed2bb9d84238">Module.Working.Factory.WorkerCreateModel.SpawnPoint</a></div><div class="ttdeci">readonly Vector3 SpawnPoint</div><div class="ttdef"><b>Definition:</b> <a href="WorkerCreateModel_8cs_source.html#l00009">WorkerCreateModel.cs:9</a></div></div>
+<div class="ttc" id="astructModule_1_1Working_1_1Factory_1_1WorkerCreateModel_html_a27ab94a8e0a4c52bf855596afd49e6a0"><div class="ttname"><a href="structModule_1_1Working_1_1Factory_1_1WorkerCreateModel.html#a27ab94a8e0a4c52bf855596afd49e6a0">Module.Working.Factory.WorkerCreateModel.State</a></div><div class="ttdeci">readonly WorkerState State</div><div class="ttdef"><b>Definition:</b> <a href="WorkerCreateModel_8cs_source.html#l00010">WorkerCreateModel.cs:10</a></div></div>
+<div class="ttc" id="astructModule_1_1Working_1_1Factory_1_1WorkerCreateModel_html_a470bee432de2635d655fa185bf182f28"><div class="ttname"><a href="structModule_1_1Working_1_1Factory_1_1WorkerCreateModel.html#a470bee432de2635d655fa185bf182f28">Module.Working.Factory.WorkerCreateModel.Position</a></div><div class="ttdeci">readonly Vector3 Position</div><div class="ttdef"><b>Definition:</b> <a href="WorkerCreateModel_8cs_source.html#l00008">WorkerCreateModel.cs:8</a></div></div>
+<div class="ttc" id="astructModule_1_1Working_1_1Factory_1_1WorkerCreateModel_html_a6f8bf1ba263e40fa98b97a24012d02e5"><div class="ttname"><a href="structModule_1_1Working_1_1Factory_1_1WorkerCreateModel.html#a6f8bf1ba263e40fa98b97a24012d02e5">Module.Working.Factory.WorkerCreateModel.Parent</a></div><div class="ttdeci">readonly Transform Parent</div><div class="ttdef"><b>Definition:</b> <a href="WorkerCreateModel_8cs_source.html#l00011">WorkerCreateModel.cs:11</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
