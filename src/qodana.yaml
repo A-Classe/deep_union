@@ -2,6 +2,8 @@ version: "1.0"
 linter: jetbrains/qodana-dotnet:2023.2
 profile:
   name: qodana.recommended
+dotnet:
+  project: GameMain.csproj,ModuleTask.csproj,Module.Worker.csproj,Core.Utility.csproj,Editor.csproj
 exclude:
   - name: All
     paths:
