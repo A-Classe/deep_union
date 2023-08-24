@@ -3,7 +3,7 @@ linter: jetbrains/qodana-dotnet:2023.2
 profile:
   name: qodana.recommended
 dotnet:
-  project: GameMain.csproj,ModuleTask.csproj,Module.Worker.csproj,Core.Utility.csproj,Editor.csproj
+  solution: src.sln
 exclude:
   - name: All
     paths:
