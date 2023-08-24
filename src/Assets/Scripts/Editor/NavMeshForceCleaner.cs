@@ -2,14 +2,17 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class NavMeshForceCleaner : MonoBehaviour
+namespace Editor
 {
-    [MenuItem("Tools/Force Cleanup NavMesh")]
-    public static void ForceCleanupNavMesh()
+    public class NavMeshForceCleaner : MonoBehaviour
     {
-        if (Application.isPlaying)
-            return;
+        [MenuItem("Tools/Force Cleanup NavMesh")]
+        public static void ForceCleanupNavMesh()
+        {
+            if (Application.isPlaying)
+                return;
 
-        NavMesh.RemoveAllNavMeshData();
+            NavMesh.RemoveAllNavMeshData();
+        }
     }
 }
