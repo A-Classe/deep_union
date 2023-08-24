@@ -14,7 +14,9 @@ git config commit.template .commit_template
 git submodule update -i
 ```
 
-### [Qodana Cloud](https://qodana.cloud/organizations/Al5q1/teams/zxNOM)
+### Code Quality 
+- [Qodana Cloud](https://qodana.cloud/organizations/Al5q1/teams/zxNOM)
 
 
-### [Code Documentation](https://a-classe.github.io/release_control/index.html)
+### Code Documentation
+- [In generate doxygen](https://a-classe.github.io/release_control/index.html)
