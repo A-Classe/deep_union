@@ -20,7 +20,7 @@ jobs:
         run: sudo apt-get install graphviz
 
       - name: Generate documentation
-        run: doxygen Doxyfile
+        run: doxygen doc/Doxyfile
       # Publish to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
