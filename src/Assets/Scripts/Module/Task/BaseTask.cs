@@ -54,6 +54,9 @@ namespace Module.Task
         {
             SphereCollider col = GetComponent<SphereCollider>();
             col.radius = taskSize;
+            
+            //作業量は最低1以上とする
+            mw = Mathf.Clamp(mw, 1f, float.MaxValue);
         }
 
         /// <summary>
