@@ -33,6 +33,10 @@ namespace GameMain.Presenter
 
         void Assign(BaseTask nearestTask)
         {
+            //タスクが完了していたらアサインしない
+            if (nearestTask.State == TaskState.Completed)
+                return;
+
             Vector3 position = nearestTask.transform.position;
             Worker nearestWorker = workerController.DequeueNearestWorker(position);
 
@@ -44,7 +48,7 @@ namespace GameMain.Presenter
                 //ワーカーリストに登録
                 Assignment assignment = assignments.First(connect => connect.Task == nearestTask);
                 assignment.Workers.Add(nearestWorker);
-                
+
                 //作業量の更新
                 assignment.Task.Mw += 1;
 
