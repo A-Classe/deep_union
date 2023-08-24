@@ -1,7 +1,10 @@
 name: Qodana
 on:
   pull_request:
-
+permissions:
+  contents: write
+  pull-requests: write
+  checks: write
 jobs:
   qodana:
     runs-on: ubuntu-latest
@@ -15,13 +18,14 @@ jobs:
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@main
         with:
-          args: --project-dir,./src,--apply-fixes
+#          args: --project-dir,./src,--apply-fixes
+          args: --project-dir,./src
           upload-result: false
           pr-mode: false
-          push-fixes: pull-request
+#          push-fixes: pull-request
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+#          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
       - name: Upload logs
         if: failure()
         uses: actions/upload-artifact@v2
