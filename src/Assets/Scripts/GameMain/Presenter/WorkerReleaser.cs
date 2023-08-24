@@ -10,7 +10,6 @@ using Wanna.DebugEx;
 
 namespace GameMain.Presenter
 {
-    
     /// <summary>
     /// ワーカーのリリース処理を行うクラス
     /// </summary>
@@ -33,11 +32,9 @@ namespace GameMain.Presenter
 
         void Release(BaseTask nearestTask)
         {
-            IJobHandle jobHandle = nearestTask as IJobHandle;
-
             try
             {
-                Assignment assignment = assignments.First(connect => connect.JobHandle == jobHandle);
+                Assignment assignment = assignments.First(connect => connect.Task == nearestTask);
 
                 //タスクで働いてるワーカーが居なければ終了
                 if (assignment.Workers.Count == 0)
@@ -49,6 +46,9 @@ namespace GameMain.Presenter
                 if (worker != null)
                 {
                     assignment.Workers.Remove(worker);
+
+                    //作業量の更新
+                    assignment.Task.Mw -= 1;
 
                     //コントローラーに登録
                     workerController.EnqueueWorker(worker);

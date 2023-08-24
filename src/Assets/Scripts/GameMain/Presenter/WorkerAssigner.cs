@@ -35,7 +35,6 @@ namespace GameMain.Presenter
         {
             Vector3 position = nearestTask.transform.position;
             Worker nearestWorker = workerController.DequeueNearestWorker(position);
-            IJobHandle jobHandle = nearestTask as IJobHandle;
 
             if (nearestWorker == null)
                 return;
@@ -43,8 +42,11 @@ namespace GameMain.Presenter
             try
             {
                 //ワーカーリストに登録
-                Assignment assignment = assignments.First(connect => connect.JobHandle == jobHandle);
+                Assignment assignment = assignments.First(connect => connect.Task == nearestTask);
                 assignment.Workers.Add(nearestWorker);
+                
+                //作業量の更新
+                assignment.Task.Mw += 1;
 
                 nearestWorker.SetFollowTarget(assignment.Target);
                 nearestWorker.SetWorkerState(WorkerState.Working);

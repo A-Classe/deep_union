@@ -25,6 +25,7 @@ namespace GameMain.Container
         protected override void Configure(IContainerBuilder builder)
         {
             builder.RegisterEntryPoint<GameRouter>();
+            builder.RegisterEntryPoint<TaskSystemLoop>();
             builder.RegisterEntryPoint<WorkerConnector>();
 
             builder.Register<WorkerSpawner>(Lifetime.Singleton);
