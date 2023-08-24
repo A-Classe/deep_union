@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+#          ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
       - name: 'Remove post-checkout hook'
         run: rm -rf .git/hooks/post-checkout
@@ -19,6 +19,13 @@ jobs:
         uses: JetBrains/qodana-action@main
         with:
           args: --project-dir,./src
-          upload-result: false
+          upload-result: true
+          pr-mode: false
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
+      - name: Upload logs
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: logs
+          path: ${{ runner.temp }}/qodana/results
