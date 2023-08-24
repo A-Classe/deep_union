@@ -1,0 +1,32 @@
+digraph "GameMain.Presenter.WorkerReleaser.WorkerReleaser"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="GameMain.Presenter.Worker\lReleaser.WorkerReleaser",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="GameMain.Presenter.Worker\lConnector.CancelLoop",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGameMain_1_1Presenter_1_1WorkerConnector.html#aee1bbf4af858c1f098b1ce0b9d395489",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="GameMain.Presenter.Worker\lReleaser.RegisterReleaseEvents",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGameMain_1_1Presenter_1_1WorkerReleaser.html#a758ccbe75d8d7be04fb24e52299ae33d",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="GameMain.Presenter.Worker\lReleaser.ReleaseAll",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGameMain_1_1Presenter_1_1WorkerReleaser.html#a6b727baaf9b8ee42df31adf6a1ee58e9",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Module.Working.Controller.\lWorkerController.EnqueueWorker",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classModule_1_1Working_1_1Controller_1_1WorkerController.html#a0355752b983414821acb34c3bc51e724",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Module.Working.Worker.Set\lFollowTarget",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classModule_1_1Working_1_1Worker.html#a922af18e66b8d55d75df97f832bb3879",tooltip=" "];
+  Node5 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Module.Working.Worker.Set\lWorkerState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classModule_1_1Working_1_1Worker.html#aef8170fa48e94cf709f865386be24688",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="GameMain.Presenter.Worker\lReleaser.Release",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGameMain_1_1Presenter_1_1WorkerReleaser.html#a46869b365c16164da5e35fa54c8a9f2d",tooltip=" "];
+  Node8 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="GameMain.Presenter.Worker\lReleaser.GetNearestWorker",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGameMain_1_1Presenter_1_1WorkerReleaser.html#a3be13fefa2a8ac385becda75f3283788",tooltip=" "];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="GameMain.Presenter.Worker\lConnector.StartLoop",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGameMain_1_1Presenter_1_1WorkerConnector.html#a2d99a5a96da4fca9663eeef4d790463d",tooltip=" "];
+  Node10 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="Module.Task.TaskDetector.\lGetNearestTask",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classModule_1_1Task_1_1TaskDetector.html#a9772acfba56971fbf388b479cdcd24a3",tooltip="親オブジェクトの座標に最も近いタスクを取得します"];
+  Node10 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="Module.Task.TaskDetector.\lUpdateDetection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classModule_1_1Task_1_1TaskDetector.html#ac444c7dfee7ca59d9252817520a3da73",tooltip="検出処理を更新します"];
+}

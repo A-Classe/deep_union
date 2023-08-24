@@ -1,0 +1,14 @@
+digraph "Module.Task.TaskDetector.GetNearestTask"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="Module.Task.TaskDetector.\lGetNearestTask",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="親オブジェクトの座標に最も近いタスクを取得します"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="GameMain.Presenter.Worker\lConnector.StartLoop",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGameMain_1_1Presenter_1_1WorkerConnector.html#a2d99a5a96da4fca9663eeef4d790463d",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="GameMain.Presenter.Worker\lAssigner.WorkerAssigner",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGameMain_1_1Presenter_1_1WorkerAssigner.html#a47df0c1c72a7e62dce944ff8ce20c176",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="GameMain.Presenter.Worker\lReleaser.WorkerReleaser",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGameMain_1_1Presenter_1_1WorkerReleaser.html#ac2e1ecee00e96c2989b9c57884a8f447",tooltip=" "];
+}

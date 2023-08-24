@@ -1,0 +1,19 @@
+digraph "Module.Working.Controller.WorkerController.EnqueueWorker"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="Module.Working.Controller.\lWorkerController.EnqueueWorker",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="GameMain.Presenter.Worker\lReleaser.Release",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGameMain_1_1Presenter_1_1WorkerReleaser.html#a46869b365c16164da5e35fa54c8a9f2d",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="GameMain.Presenter.Worker\lReleaser.WorkerReleaser",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGameMain_1_1Presenter_1_1WorkerReleaser.html#ac2e1ecee00e96c2989b9c57884a8f447",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="GameMain.Presenter.Worker\lReleaser.ReleaseAll",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGameMain_1_1Presenter_1_1WorkerReleaser.html#a6b727baaf9b8ee42df31adf6a1ee58e9",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="GameMain.Presenter.Worker\lReleaser.RegisterReleaseEvents",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGameMain_1_1Presenter_1_1WorkerReleaser.html#a758ccbe75d8d7be04fb24e52299ae33d",tooltip=" "];
+  Node5 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="GameMain.GameRouter.Start",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGameMain_1_1GameRouter.html#a6454f04e22fe74080dbb46da0f8927be",tooltip=" "];
+}

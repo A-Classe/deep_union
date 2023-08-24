@@ -1,0 +1,573 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: Core.Utility.ListSegment&lt; T &gt; 構造体テンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceCore.html">Core</a></li><li class="navelem"><a class="el" href="namespaceCore_1_1Utility.html">Utility</a></li><li class="navelem"><a class="el" href="structCore_1_1Utility_1_1ListSegment.html">ListSegment</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#properties">プロパティ</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="structCore_1_1Utility_1_1ListSegment-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">Core.Utility.ListSegment&lt; T &gt; 構造体テンプレート</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>ArraySegmentのList版 リストの性質上、親リストが変更されるとセグメントの内容も変わるので注意 また、バージョン変更を監視しないため、イテレート時にコレクションを変更しないでください  
+ <a href="structCore_1_1Utility_1_1ListSegment.html#details">[詳解]</a></p>
+<div class="dynheader">
+Core.Utility.ListSegment&lt; T &gt; の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="structCore_1_1Utility_1_1ListSegment__inherit__graph.png" border="0" usemap="#aCore_8Utility_8ListSegment_3_01T_01_4_inherit__map" alt="Inheritance graph"/></div>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+Core.Utility.ListSegment&lt; T &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="structCore_1_1Utility_1_1ListSegment__coll__graph.png" border="0" usemap="#aCore_8Utility_8ListSegment_3_01T_01_4_coll__map" alt="Collaboration graph"/></div>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCore_1_1Utility_1_1ListSegment_1_1Enumerator.html">Enumerator</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:ac718e1567fbb58d57c0bae5dfa346658"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCore_1_1Utility_1_1ListSegment.html#ac718e1567fbb58d57c0bae5dfa346658">ListSegment</a> (IList&lt; T &gt; <a class="el" href="structCore_1_1Utility_1_1ListSegment.html#ad10b98648f4ae035b398936b718ea389">list</a>, int <a class="el" href="structCore_1_1Utility_1_1ListSegment.html#ae1c9ff8729fe5d670558b14bc83d3573">startIndex</a>, int offset)</td></tr>
+<tr class="separator:ac718e1567fbb58d57c0bae5dfa346658"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad157d2750164e5a394156ee0e3417fe3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCore_1_1Utility_1_1ListSegment.html#ad157d2750164e5a394156ee0e3417fe3">IndexOf</a> (T item)</td></tr>
+<tr class="separator:ad157d2750164e5a394156ee0e3417fe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b8337650e2a21ae44145ecf6284fcb3"><td class="memItemLeft" align="right" valign="top">void IList&lt; T &gt;.&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCore_1_1Utility_1_1ListSegment.html#a2b8337650e2a21ae44145ecf6284fcb3">Insert</a> (int index, T item)</td></tr>
+<tr class="separator:a2b8337650e2a21ae44145ecf6284fcb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f3f83d94c37fd7e4bde16f25f4d73ea"><td class="memItemLeft" align="right" valign="top">void IList&lt; T &gt;.&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCore_1_1Utility_1_1ListSegment.html#a9f3f83d94c37fd7e4bde16f25f4d73ea">RemoveAt</a> (int index)</td></tr>
+<tr class="separator:a9f3f83d94c37fd7e4bde16f25f4d73ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60ff1bca3a5ed0021c66a22e58077b34"><td class="memItemLeft" align="right" valign="top">void ICollection&lt; T &gt;.&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCore_1_1Utility_1_1ListSegment.html#a60ff1bca3a5ed0021c66a22e58077b34">Add</a> (T item)</td></tr>
+<tr class="separator:a60ff1bca3a5ed0021c66a22e58077b34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73b8497a64b3633d989ed0113135c3d4"><td class="memItemLeft" align="right" valign="top">void ICollection&lt; T &gt;.&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCore_1_1Utility_1_1ListSegment.html#a73b8497a64b3633d989ed0113135c3d4">Clear</a> ()</td></tr>
+<tr class="separator:a73b8497a64b3633d989ed0113135c3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fd8158c6d9f8c00c4fc0bb4143619b9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCore_1_1Utility_1_1ListSegment.html#a1fd8158c6d9f8c00c4fc0bb4143619b9">Contains</a> (T item)</td></tr>
+<tr class="separator:a1fd8158c6d9f8c00c4fc0bb4143619b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22c5417dd9170428c8c27745693327b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCore_1_1Utility_1_1ListSegment.html#a22c5417dd9170428c8c27745693327b2">CopyTo</a> (T[] array, int arrayIndex)</td></tr>
+<tr class="separator:a22c5417dd9170428c8c27745693327b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f00fca9b6b686142c832a63498ef372"><td class="memItemLeft" align="right" valign="top">bool ICollection&lt; T &gt;.&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCore_1_1Utility_1_1ListSegment.html#a8f00fca9b6b686142c832a63498ef372">Remove</a> (T item)</td></tr>
+<tr class="separator:a8f00fca9b6b686142c832a63498ef372"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94d9b42aa7bc79ca1ec601c9ed6e3757"><td class="memItemLeft" align="right" valign="top">IEnumerator&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCore_1_1Utility_1_1ListSegment.html#a94d9b42aa7bc79ca1ec601c9ed6e3757">GetEnumerator</a> ()</td></tr>
+<tr class="separator:a94d9b42aa7bc79ca1ec601c9ed6e3757"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68080e9798fca5d83cd536a24df35f1f"><td class="memItemLeft" align="right" valign="top">IEnumerator IEnumerable.&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCore_1_1Utility_1_1ListSegment.html#a68080e9798fca5d83cd536a24df35f1f">GetEnumerator</a> ()</td></tr>
+<tr class="separator:a68080e9798fca5d83cd536a24df35f1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+プロパティ</h2></td></tr>
+<tr class="memitem:a6d9718e6f37dcbbced5fcb974cd7414f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCore_1_1Utility_1_1ListSegment.html#a6d9718e6f37dcbbced5fcb974cd7414f">Count</a><code> [get]</code></td></tr>
+<tr class="separator:a6d9718e6f37dcbbced5fcb974cd7414f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97389ea3bb7b7bd19829c7a30efe9e88"><td class="memItemLeft" align="right" valign="top">bool ICollection&lt; T &gt;.&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCore_1_1Utility_1_1ListSegment.html#a97389ea3bb7b7bd19829c7a30efe9e88">IsReadOnly</a><code> [get]</code></td></tr>
+<tr class="separator:a97389ea3bb7b7bd19829c7a30efe9e88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c4e24592b558cc8ff782c547c6f7924"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCore_1_1Utility_1_1ListSegment.html#a9c4e24592b558cc8ff782c547c6f7924">this[int index]</a><code> [get, set]</code></td></tr>
+<tr class="separator:a9c4e24592b558cc8ff782c547c6f7924"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:ae1c9ff8729fe5d670558b14bc83d3573"><td class="memItemLeft" align="right" valign="top">readonly int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCore_1_1Utility_1_1ListSegment.html#ae1c9ff8729fe5d670558b14bc83d3573">startIndex</a></td></tr>
+<tr class="separator:ae1c9ff8729fe5d670558b14bc83d3573"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad10b98648f4ae035b398936b718ea389"><td class="memItemLeft" align="right" valign="top">readonly IList&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCore_1_1Utility_1_1ListSegment.html#ad10b98648f4ae035b398936b718ea389">list</a></td></tr>
+<tr class="separator:ad10b98648f4ae035b398936b718ea389"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>ArraySegmentのList版 リストの性質上、親リストが変更されるとセグメントの内容も変わるので注意 また、バージョン変更を監視しないため、イテレート時にコレクションを変更しないでください </p>
+<dl class="tparams"><dt>テンプレート引数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>要素の型</td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="ac718e1567fbb58d57c0bae5dfa346658"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac718e1567fbb58d57c0bae5dfa346658">&#9670;&nbsp;</a></span>ListSegment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structCore_1_1Utility_1_1ListSegment.html">Core.Utility.ListSegment</a>&lt; T &gt;.<a class="el" href="structCore_1_1Utility_1_1ListSegment.html">ListSegment</a> </td>
+          <td>(</td>
+          <td class="paramtype">IList&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>startIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            this.<a class="code" href="structCore_1_1Utility_1_1ListSegment.html#ad10b98648f4ae035b398936b718ea389">list</a> = <a class="code" href="structCore_1_1Utility_1_1ListSegment.html#ad10b98648f4ae035b398936b718ea389">list</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            this.<a class="code" href="structCore_1_1Utility_1_1ListSegment.html#ae1c9ff8729fe5d670558b14bc83d3573">startIndex</a> = <a class="code" href="structCore_1_1Utility_1_1ListSegment.html#ae1c9ff8729fe5d670558b14bc83d3573">startIndex</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <a class="code" href="structCore_1_1Utility_1_1ListSegment.html#a6d9718e6f37dcbbced5fcb974cd7414f">Count</a> = offset;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
+<div class="ttc" id="astructCore_1_1Utility_1_1ListSegment_html_a6d9718e6f37dcbbced5fcb974cd7414f"><div class="ttname"><a href="structCore_1_1Utility_1_1ListSegment.html#a6d9718e6f37dcbbced5fcb974cd7414f">Core.Utility.ListSegment.Count</a></div><div class="ttdeci">int Count</div><div class="ttdef"><b>Definition:</b> ListSegment.cs:18</div></div>
+<div class="ttc" id="astructCore_1_1Utility_1_1ListSegment_html_ad10b98648f4ae035b398936b718ea389"><div class="ttname"><a href="structCore_1_1Utility_1_1ListSegment.html#ad10b98648f4ae035b398936b718ea389">Core.Utility.ListSegment.list</a></div><div class="ttdeci">readonly IList&lt; T &gt; list</div><div class="ttdef"><b>Definition:</b> ListSegment.cs:21</div></div>
+<div class="ttc" id="astructCore_1_1Utility_1_1ListSegment_html_ae1c9ff8729fe5d670558b14bc83d3573"><div class="ttname"><a href="structCore_1_1Utility_1_1ListSegment.html#ae1c9ff8729fe5d670558b14bc83d3573">Core.Utility.ListSegment.startIndex</a></div><div class="ttdeci">readonly int startIndex</div><div class="ttdef"><b>Definition:</b> ListSegment.cs:20</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a60ff1bca3a5ed0021c66a22e58077b34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60ff1bca3a5ed0021c66a22e58077b34">&#9670;&nbsp;</a></span>Add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ICollection&lt;T&gt;. <a class="el" href="structCore_1_1Utility_1_1ListSegment.html">Core.Utility.ListSegment</a>&lt; T &gt;.Add </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a73b8497a64b3633d989ed0113135c3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73b8497a64b3633d989ed0113135c3d4">&#9670;&nbsp;</a></span>Clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ICollection&lt;T&gt;. <a class="el" href="structCore_1_1Utility_1_1ListSegment.html">Core.Utility.ListSegment</a>&lt; T &gt;.Clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1fd8158c6d9f8c00c4fc0bb4143619b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fd8158c6d9f8c00c4fc0bb4143619b9">&#9670;&nbsp;</a></span>Contains()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="structCore_1_1Utility_1_1ListSegment.html">Core.Utility.ListSegment</a>&lt; T &gt;.Contains </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a22c5417dd9170428c8c27745693327b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22c5417dd9170428c8c27745693327b2">&#9670;&nbsp;</a></span>CopyTo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structCore_1_1Utility_1_1ListSegment.html">Core.Utility.ListSegment</a>&lt; T &gt;.CopyTo </td>
+          <td>(</td>
+          <td class="paramtype">T[]&#160;</td>
+          <td class="paramname"><em>array</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>arrayIndex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">switch</span> (<a class="code" href="structCore_1_1Utility_1_1ListSegment.html#ad10b98648f4ae035b398936b718ea389">list</a>)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordflow">case</span> List&lt;T&gt; typedList:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    typedList.CopyTo(<a class="code" href="structCore_1_1Utility_1_1ListSegment.html#ae1c9ff8729fe5d670558b14bc83d3573">startIndex</a>, array, arrayIndex, <a class="code" href="structCore_1_1Utility_1_1ListSegment.html#a6d9718e6f37dcbbced5fcb974cd7414f">Count</a>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keywordflow">case</span> T[] source:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    Array.Copy(source, <a class="code" href="structCore_1_1Utility_1_1ListSegment.html#ae1c9ff8729fe5d670558b14bc83d3573">startIndex</a>, array, arrayIndex, <a class="code" href="structCore_1_1Utility_1_1ListSegment.html#a6d9718e6f37dcbbced5fcb974cd7414f">Count</a>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="structCore_1_1Utility_1_1ListSegment.html#a6d9718e6f37dcbbced5fcb974cd7414f">Count</a>; i++)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        array[i] = <a class="code" href="structCore_1_1Utility_1_1ListSegment.html#ad10b98648f4ae035b398936b718ea389">list</a>[i + <a class="code" href="structCore_1_1Utility_1_1ListSegment.html#ae1c9ff8729fe5d670558b14bc83d3573">startIndex</a>];</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a94d9b42aa7bc79ca1ec601c9ed6e3757"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94d9b42aa7bc79ca1ec601c9ed6e3757">&#9670;&nbsp;</a></span>GetEnumerator() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerator&lt;T&gt; <a class="el" href="structCore_1_1Utility_1_1ListSegment.html">Core.Utility.ListSegment</a>&lt; T &gt;.GetEnumerator </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">new</span> Enumerator(<a class="code" href="structCore_1_1Utility_1_1ListSegment.html#ad10b98648f4ae035b398936b718ea389">list</a>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a68080e9798fca5d83cd536a24df35f1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68080e9798fca5d83cd536a24df35f1f">&#9670;&nbsp;</a></span>GetEnumerator() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerator IEnumerable. <a class="el" href="structCore_1_1Utility_1_1ListSegment.html">Core.Utility.ListSegment</a>&lt; T &gt;.GetEnumerator </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad157d2750164e5a394156ee0e3417fe3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad157d2750164e5a394156ee0e3417fe3">&#9670;&nbsp;</a></span>IndexOf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structCore_1_1Utility_1_1ListSegment.html">Core.Utility.ListSegment</a>&lt; T &gt;.IndexOf </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordtype">int</span> index = <a class="code" href="structCore_1_1Utility_1_1ListSegment.html#ad10b98648f4ae035b398936b718ea389">list</a>.IndexOf(item);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="structCore_1_1Utility_1_1ListSegment.html#ae1c9ff8729fe5d670558b14bc83d3573">startIndex</a> &lt;= index &amp;&amp; index &lt;= <a class="code" href="structCore_1_1Utility_1_1ListSegment.html#ae1c9ff8729fe5d670558b14bc83d3573">startIndex</a> + <a class="code" href="structCore_1_1Utility_1_1ListSegment.html#a6d9718e6f37dcbbced5fcb974cd7414f">Count</a>)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordflow">return</span> index - <a class="code" href="structCore_1_1Utility_1_1ListSegment.html#ae1c9ff8729fe5d670558b14bc83d3573">startIndex</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2b8337650e2a21ae44145ecf6284fcb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b8337650e2a21ae44145ecf6284fcb3">&#9670;&nbsp;</a></span>Insert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IList&lt;T&gt;. <a class="el" href="structCore_1_1Utility_1_1ListSegment.html">Core.Utility.ListSegment</a>&lt; T &gt;.Insert </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>item</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8f00fca9b6b686142c832a63498ef372"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f00fca9b6b686142c832a63498ef372">&#9670;&nbsp;</a></span>Remove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ICollection&lt;T&gt;. <a class="el" href="structCore_1_1Utility_1_1ListSegment.html">Core.Utility.ListSegment</a>&lt; T &gt;.Remove </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9f3f83d94c37fd7e4bde16f25f4d73ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f3f83d94c37fd7e4bde16f25f4d73ea">&#9670;&nbsp;</a></span>RemoveAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IList&lt;T&gt;. <a class="el" href="structCore_1_1Utility_1_1ListSegment.html">Core.Utility.ListSegment</a>&lt; T &gt;.RemoveAt </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="ad10b98648f4ae035b398936b718ea389"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad10b98648f4ae035b398936b718ea389">&#9670;&nbsp;</a></span>list</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly IList&lt;T&gt; <a class="el" href="structCore_1_1Utility_1_1ListSegment.html">Core.Utility.ListSegment</a>&lt; T &gt;.list</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae1c9ff8729fe5d670558b14bc83d3573"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1c9ff8729fe5d670558b14bc83d3573">&#9670;&nbsp;</a></span>startIndex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly int <a class="el" href="structCore_1_1Utility_1_1ListSegment.html">Core.Utility.ListSegment</a>&lt; T &gt;.startIndex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">プロパティ詳解</h2>
+<a id="a6d9718e6f37dcbbced5fcb974cd7414f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d9718e6f37dcbbced5fcb974cd7414f">&#9670;&nbsp;</a></span>Count</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structCore_1_1Utility_1_1ListSegment.html">Core.Utility.ListSegment</a>&lt; T &gt;.Count</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{ <span class="keyword">get</span>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a97389ea3bb7b7bd19829c7a30efe9e88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97389ea3bb7b7bd19829c7a30efe9e88">&#9670;&nbsp;</a></span>IsReadOnly</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ICollection&lt;T&gt;. <a class="el" href="structCore_1_1Utility_1_1ListSegment.html">Core.Utility.ListSegment</a>&lt; T &gt;.IsReadOnly</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9c4e24592b558cc8ff782c547c6f7924"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c4e24592b558cc8ff782c547c6f7924">&#9670;&nbsp;</a></span>this[int index]</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="structCore_1_1Utility_1_1ListSegment.html">Core.Utility.ListSegment</a>&lt; T &gt;.this[int index]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keyword">get</span> =&gt; <a class="code" href="structCore_1_1Utility_1_1ListSegment.html#ad10b98648f4ae035b398936b718ea389">list</a>[<a class="code" href="structCore_1_1Utility_1_1ListSegment.html#ae1c9ff8729fe5d670558b14bc83d3573">startIndex</a> + index];</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keyword">set</span> =&gt; <a class="code" href="structCore_1_1Utility_1_1ListSegment.html#ad10b98648f4ae035b398936b718ea389">list</a>[<a class="code" href="structCore_1_1Utility_1_1ListSegment.html#ae1c9ff8729fe5d670558b14bc83d3573">startIndex</a> + index] = value;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li>src/Assets/Scripts/Core/Utility/<a class="el" href="ListSegment_8cs.html">ListSegment.cs</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
