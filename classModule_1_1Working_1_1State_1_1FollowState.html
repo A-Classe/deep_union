@@ -113,12 +113,12 @@ Module.Working.State.FollowState 連携図</div>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 非公開変数類</h2></td></tr>
-<tr class="memitem:a2f48c93eeddefbeeb3ed6b8ea54ecefc"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="classModule_1_1Working_1_1Worker.html">Worker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1State_1_1FollowState.html#a2f48c93eeddefbeeb3ed6b8ea54ecefc">worker</a></td></tr>
-<tr class="separator:a2f48c93eeddefbeeb3ed6b8ea54ecefc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6cbc34d68ca65289b9ecbacd56b8cbb"><td class="memItemLeft" align="right" valign="top">readonly Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1State_1_1FollowState.html#ac6cbc34d68ca65289b9ecbacd56b8cbb">offset</a></td></tr>
-<tr class="separator:ac6cbc34d68ca65289b9ecbacd56b8cbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a947cc4c2b71394d9c6eaf7655de81c6a"><td class="memItemLeft" align="right" valign="top">readonly NavMeshAgent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1State_1_1FollowState.html#a947cc4c2b71394d9c6eaf7655de81c6a">navMeshAgent</a></td></tr>
 <tr class="separator:a947cc4c2b71394d9c6eaf7655de81c6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6cbc34d68ca65289b9ecbacd56b8cbb"><td class="memItemLeft" align="right" valign="top">readonly Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1State_1_1FollowState.html#ac6cbc34d68ca65289b9ecbacd56b8cbb">offset</a></td></tr>
+<tr class="separator:ac6cbc34d68ca65289b9ecbacd56b8cbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f48c93eeddefbeeb3ed6b8ea54ecefc"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="classModule_1_1Working_1_1Worker.html">Worker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1State_1_1FollowState.html#a2f48c93eeddefbeeb3ed6b8ea54ecefc">worker</a></td></tr>
+<tr class="separator:a2f48c93eeddefbeeb3ed6b8ea54ecefc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock">
@@ -158,15 +158,15 @@ Module.Working.State.FollowState 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="FollowState_8cs_source.html">FollowState.cs</a> の <a class="el" href="FollowState_8cs_source.html#l00014">14</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            this.<a class="code" href="classModule_1_1Working_1_1State_1_1FollowState.html#a2f48c93eeddefbeeb3ed6b8ea54ecefc">worker</a> = <a class="code" href="classModule_1_1Working_1_1State_1_1FollowState.html#a2f48c93eeddefbeeb3ed6b8ea54ecefc">worker</a>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            this.<a class="code" href="classModule_1_1Working_1_1State_1_1FollowState.html#ac6cbc34d68ca65289b9ecbacd56b8cbb">offset</a> = spawnPos - <a class="code" href="classModule_1_1Working_1_1State_1_1FollowState.html#a2f48c93eeddefbeeb3ed6b8ea54ecefc">worker</a>.transform.position;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <a class="code" href="classModule_1_1Working_1_1State_1_1FollowState.html#a947cc4c2b71394d9c6eaf7655de81c6a">navMeshAgent</a> = <a class="code" href="classModule_1_1Working_1_1State_1_1FollowState.html#a2f48c93eeddefbeeb3ed6b8ea54ecefc">worker</a>.GetComponent&lt;NavMeshAgent&gt;();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div>
-<div class="ttc" id="aclassModule_1_1Working_1_1State_1_1FollowState_html_a2f48c93eeddefbeeb3ed6b8ea54ecefc"><div class="ttname"><a href="classModule_1_1Working_1_1State_1_1FollowState.html#a2f48c93eeddefbeeb3ed6b8ea54ecefc">Module.Working.State.FollowState.worker</a></div><div class="ttdeci">readonly Worker worker</div><div class="ttdef"><b>Definition:</b> <a href="FollowState_8cs_source.html#l00010">FollowState.cs:10</a></div></div>
-<div class="ttc" id="aclassModule_1_1Working_1_1State_1_1FollowState_html_a947cc4c2b71394d9c6eaf7655de81c6a"><div class="ttname"><a href="classModule_1_1Working_1_1State_1_1FollowState.html#a947cc4c2b71394d9c6eaf7655de81c6a">Module.Working.State.FollowState.navMeshAgent</a></div><div class="ttdeci">readonly NavMeshAgent navMeshAgent</div><div class="ttdef"><b>Definition:</b> <a href="FollowState_8cs_source.html#l00012">FollowState.cs:12</a></div></div>
-<div class="ttc" id="aclassModule_1_1Working_1_1State_1_1FollowState_html_ac6cbc34d68ca65289b9ecbacd56b8cbb"><div class="ttname"><a href="classModule_1_1Working_1_1State_1_1FollowState.html#ac6cbc34d68ca65289b9ecbacd56b8cbb">Module.Working.State.FollowState.offset</a></div><div class="ttdeci">readonly Vector3 offset</div><div class="ttdef"><b>Definition:</b> <a href="FollowState_8cs_source.html#l00011">FollowState.cs:11</a></div></div>
+<p class="definition"> <a class="el" href="FollowState_8cs_source.html">FollowState.cs</a> の <a class="el" href="FollowState_8cs_source.html#l00013">13</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            this.<a class="code" href="classModule_1_1Working_1_1State_1_1FollowState.html#a2f48c93eeddefbeeb3ed6b8ea54ecefc">worker</a> = <a class="code" href="classModule_1_1Working_1_1State_1_1FollowState.html#a2f48c93eeddefbeeb3ed6b8ea54ecefc">worker</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <a class="code" href="classModule_1_1Working_1_1State_1_1FollowState.html#ac6cbc34d68ca65289b9ecbacd56b8cbb">offset</a> = spawnPos - <a class="code" href="classModule_1_1Working_1_1State_1_1FollowState.html#a2f48c93eeddefbeeb3ed6b8ea54ecefc">worker</a>.transform.position;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <a class="code" href="classModule_1_1Working_1_1State_1_1FollowState.html#a947cc4c2b71394d9c6eaf7655de81c6a">navMeshAgent</a> = <a class="code" href="classModule_1_1Working_1_1State_1_1FollowState.html#a2f48c93eeddefbeeb3ed6b8ea54ecefc">worker</a>.GetComponent&lt;NavMeshAgent&gt;();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Working_1_1State_1_1FollowState_html_a2f48c93eeddefbeeb3ed6b8ea54ecefc"><div class="ttname"><a href="classModule_1_1Working_1_1State_1_1FollowState.html#a2f48c93eeddefbeeb3ed6b8ea54ecefc">Module.Working.State.FollowState.worker</a></div><div class="ttdeci">readonly Worker worker</div><div class="ttdef"><b>Definition:</b> <a href="FollowState_8cs_source.html#l00011">FollowState.cs:11</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1State_1_1FollowState_html_a947cc4c2b71394d9c6eaf7655de81c6a"><div class="ttname"><a href="classModule_1_1Working_1_1State_1_1FollowState.html#a947cc4c2b71394d9c6eaf7655de81c6a">Module.Working.State.FollowState.navMeshAgent</a></div><div class="ttdeci">readonly NavMeshAgent navMeshAgent</div><div class="ttdef"><b>Definition:</b> <a href="FollowState_8cs_source.html#l00008">FollowState.cs:8</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1State_1_1FollowState_html_ac6cbc34d68ca65289b9ecbacd56b8cbb"><div class="ttname"><a href="classModule_1_1Working_1_1State_1_1FollowState.html#ac6cbc34d68ca65289b9ecbacd56b8cbb">Module.Working.State.FollowState.offset</a></div><div class="ttdeci">readonly Vector3 offset</div><div class="ttdef"><b>Definition:</b> <a href="FollowState_8cs_source.html#l00009">FollowState.cs:9</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -196,10 +196,10 @@ Module.Working.State.FollowState 連携図</div>
 
 <p><a class="el" href="interfaceModule_1_1Working_1_1State_1_1IWorkerState.html#a68114b846297948996d1ab4956f2c827">Module.Working.State.IWorkerState</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="FollowState_8cs_source.html">FollowState.cs</a> の <a class="el" href="FollowState_8cs_source.html#l00021">21</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="classModule_1_1Working_1_1State_1_1FollowState.html#a947cc4c2b71394d9c6eaf7655de81c6a">navMeshAgent</a>.SetDestination(<a class="code" href="classModule_1_1Working_1_1State_1_1FollowState.html#a2f48c93eeddefbeeb3ed6b8ea54ecefc">worker</a>.<a class="code" href="classModule_1_1Working_1_1Worker.html#ae80493041ff328d79f95ea51854f8e6a">Target</a>.position + <a class="code" href="classModule_1_1Working_1_1State_1_1FollowState.html#ac6cbc34d68ca65289b9ecbacd56b8cbb">offset</a>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
+<p class="definition"> <a class="el" href="FollowState_8cs_source.html">FollowState.cs</a> の <a class="el" href="FollowState_8cs_source.html#l00022">22</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <a class="code" href="classModule_1_1Working_1_1State_1_1FollowState.html#a947cc4c2b71394d9c6eaf7655de81c6a">navMeshAgent</a>.SetDestination(<a class="code" href="classModule_1_1Working_1_1State_1_1FollowState.html#a2f48c93eeddefbeeb3ed6b8ea54ecefc">worker</a>.<a class="code" href="classModule_1_1Working_1_1Worker.html#ae80493041ff328d79f95ea51854f8e6a">Target</a>.position + <a class="code" href="classModule_1_1Working_1_1State_1_1FollowState.html#ac6cbc34d68ca65289b9ecbacd56b8cbb">offset</a>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
 <div class="ttc" id="aclassModule_1_1Working_1_1Worker_html_ae80493041ff328d79f95ea51854f8e6a"><div class="ttname"><a href="classModule_1_1Working_1_1Worker.html#ae80493041ff328d79f95ea51854f8e6a">Module.Working.Worker.Target</a></div><div class="ttdeci">Transform Target</div><div class="ttdef"><b>Definition:</b> <a href="Worker_8cs_source.html#l00019">Worker.cs:19</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -225,7 +225,7 @@ Module.Working.State.FollowState 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="FollowState_8cs_source.html">FollowState.cs</a> の <a class="el" href="FollowState_8cs_source.html#l00012">12</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="FollowState_8cs_source.html">FollowState.cs</a> の <a class="el" href="FollowState_8cs_source.html#l00008">8</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -249,7 +249,7 @@ Module.Working.State.FollowState 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="FollowState_8cs_source.html">FollowState.cs</a> の <a class="el" href="FollowState_8cs_source.html#l00011">11</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="FollowState_8cs_source.html">FollowState.cs</a> の <a class="el" href="FollowState_8cs_source.html#l00009">9</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -273,7 +273,7 @@ Module.Working.State.FollowState 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="FollowState_8cs_source.html">FollowState.cs</a> の <a class="el" href="FollowState_8cs_source.html#l00010">10</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="FollowState_8cs_source.html">FollowState.cs</a> の <a class="el" href="FollowState_8cs_source.html#l00011">11</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -298,7 +298,7 @@ Module.Working.State.FollowState 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="FollowState_8cs_source.html">FollowState.cs</a> の <a class="el" href="FollowState_8cs_source.html#l00008">8</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="FollowState_8cs_source.html">FollowState.cs</a> の <a class="el" href="FollowState_8cs_source.html#l00020">20</a> 行目に定義があります。</p>
 
 </div>
 </div>

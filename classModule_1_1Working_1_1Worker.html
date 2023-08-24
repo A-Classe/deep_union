@@ -125,10 +125,10 @@ Module.Working.Worker 連携図</div>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 非公開変数類</h2></td></tr>
-<tr class="memitem:a74e8da3809334388762a851de233bbc5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfaceModule_1_1Working_1_1State_1_1IWorkerState.html">IWorkerState</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1Worker.html#a74e8da3809334388762a851de233bbc5">workerStates</a></td></tr>
-<tr class="separator:a74e8da3809334388762a851de233bbc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcad6ebaed1f04816e286e66b356077d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfaceModule_1_1Working_1_1State_1_1IWorkerState.html">IWorkerState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1Worker.html#abcad6ebaed1f04816e286e66b356077d">currentState</a></td></tr>
 <tr class="separator:abcad6ebaed1f04816e286e66b356077d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74e8da3809334388762a851de233bbc5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfaceModule_1_1Working_1_1State_1_1IWorkerState.html">IWorkerState</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1Worker.html#a74e8da3809334388762a851de233bbc5">workerStates</a></td></tr>
+<tr class="separator:a74e8da3809334388762a851de233bbc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>ワーカーの状態を管理するクラス </p>
@@ -285,7 +285,7 @@ Module.Working.Worker 連携図</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                <span class="keyword">new</span> <a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html">IdleState</a>(<span class="keyword">this</span>),</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="keyword">new</span> <a class="code" href="classModule_1_1Working_1_1State_1_1FollowState.html">FollowState</a>(<span class="keyword">this</span>, spawnPos),</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keyword">new</span> <a class="code" href="classModule_1_1Working_1_1State_1_1WorkState.html">WorkState</a>(<span class="keyword">this</span>),</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keyword">new</span> <a class="code" href="classModule_1_1Working_1_1State_1_1WorkState.html">WorkState</a>(<span class="keyword">this</span>)</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            };</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <a class="code" href="classModule_1_1Working_1_1Worker.html#aef8170fa48e94cf709f865386be24688">SetWorkerState</a>(<a class="code" href="namespaceModule_1_1Working_1_1State.html#a6741b3bd2dd67b25e9e0477f35e01082">WorkerState</a>.Idle);</div>
@@ -293,7 +293,7 @@ Module.Working.Worker 連携図</div>
 <div class="ttc" id="aclassModule_1_1Working_1_1State_1_1FollowState_html"><div class="ttname"><a href="classModule_1_1Working_1_1State_1_1FollowState.html">Module.Working.State.FollowState</a></div><div class="ttdef"><b>Definition:</b> <a href="FollowState_8cs_source.html#l00006">FollowState.cs:7</a></div></div>
 <div class="ttc" id="aclassModule_1_1Working_1_1State_1_1IdleState_html"><div class="ttname"><a href="classModule_1_1Working_1_1State_1_1IdleState.html">Module.Working.State.IdleState</a></div><div class="ttdef"><b>Definition:</b> <a href="IdleState_8cs_source.html#l00003">IdleState.cs:4</a></div></div>
 <div class="ttc" id="aclassModule_1_1Working_1_1State_1_1WorkState_html"><div class="ttname"><a href="classModule_1_1Working_1_1State_1_1WorkState.html">Module.Working.State.WorkState</a></div><div class="ttdef"><b>Definition:</b> <a href="WorkState_8cs_source.html#l00005">WorkState.cs:6</a></div></div>
-<div class="ttc" id="aclassModule_1_1Working_1_1Worker_html_a74e8da3809334388762a851de233bbc5"><div class="ttname"><a href="classModule_1_1Working_1_1Worker.html#a74e8da3809334388762a851de233bbc5">Module.Working.Worker.workerStates</a></div><div class="ttdeci">IWorkerState[] workerStates</div><div class="ttdef"><b>Definition:</b> <a href="Worker_8cs_source.html#l00016">Worker.cs:16</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Worker_html_a74e8da3809334388762a851de233bbc5"><div class="ttname"><a href="classModule_1_1Working_1_1Worker.html#a74e8da3809334388762a851de233bbc5">Module.Working.Worker.workerStates</a></div><div class="ttdeci">IWorkerState[] workerStates</div><div class="ttdef"><b>Definition:</b> <a href="Worker_8cs_source.html#l00017">Worker.cs:17</a></div></div>
 <div class="ttc" id="aclassModule_1_1Working_1_1Worker_html_aef8170fa48e94cf709f865386be24688"><div class="ttname"><a href="classModule_1_1Working_1_1Worker.html#aef8170fa48e94cf709f865386be24688">Module.Working.Worker.SetWorkerState</a></div><div class="ttdeci">void SetWorkerState(WorkerState workerState)</div><div class="ttdef"><b>Definition:</b> <a href="Worker_8cs_source.html#l00038">Worker.cs:38</a></div></div>
 <div class="ttc" id="ainterfaceModule_1_1Working_1_1State_1_1IWorkerState_html"><div class="ttname"><a href="interfaceModule_1_1Working_1_1State_1_1IWorkerState.html">Module.Working.State.IWorkerState</a></div><div class="ttdef"><b>Definition:</b> <a href="IWorkerState_8cs_source.html#l00003">IWorkerState.cs:4</a></div></div>
 <div class="ttc" id="anamespaceModule_1_1Working_1_1State_html_a6741b3bd2dd67b25e9e0477f35e01082"><div class="ttname"><a href="namespaceModule_1_1Working_1_1State.html#a6741b3bd2dd67b25e9e0477f35e01082">Module.Working.State.WorkerState</a></div><div class="ttdeci">WorkerState</div><div class="ttdoc">ワーカーの状態</div><div class="ttdef"><b>Definition:</b> <a href="WorkerState_8cs_source.html#l00006">WorkerState.cs:7</a></div></div>
@@ -346,7 +346,7 @@ Module.Working.Worker 連携図</div>
 
 <p class="definition"> <a class="el" href="Worker_8cs_source.html">Worker.cs</a> の <a class="el" href="Worker_8cs_source.html#l00052">52</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            this.<a class="code" href="classModule_1_1Working_1_1Worker.html#ae80493041ff328d79f95ea51854f8e6a">Target</a> = target;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="classModule_1_1Working_1_1Worker.html#ae80493041ff328d79f95ea51854f8e6a">Target</a> = target;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
 <div class="ttc" id="aclassModule_1_1Working_1_1Worker_html_ae80493041ff328d79f95ea51854f8e6a"><div class="ttname"><a href="classModule_1_1Working_1_1Worker.html#ae80493041ff328d79f95ea51854f8e6a">Module.Working.Worker.Target</a></div><div class="ttdeci">Transform Target</div><div class="ttdef"><b>Definition:</b> <a href="Worker_8cs_source.html#l00019">Worker.cs:19</a></div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -354,15 +354,13 @@ Module.Working.Worker 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classModule_1_1Working_1_1Worker_a922af18e66b8d55d75df97f832bb3879_icgraph.png" border="0" usemap="#aclassModule_1_1Working_1_1Worker_a922af18e66b8d55d75df97f832bb3879_icgraph" alt=""/></div>
 <map name="aclassModule_1_1Working_1_1Worker_a922af18e66b8d55d75df97f832bb3879_icgraph" id="aclassModule_1_1Working_1_1Worker_a922af18e66b8d55d75df97f832bb3879_icgraph">
-<area shape="rect" title=" " alt="" coords="1084,65,1284,107"/>
-<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerAssigner.html#a8c49082adf98d57848a250206012333b" title=" " alt="" coords="815,19,1022,60"/>
-<area shape="rect" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a0355752b983414821acb34c3bc51e724" title=" " alt="" coords="801,97,1036,139"/>
-<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerAssigner.html#a47df0c1c72a7e62dce944ff8ce20c176" title=" " alt="" coords="543,5,750,47"/>
-<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a46869b365c16164da5e35fa54c8a9f2d" title=" " alt="" coords="273,60,479,101"/>
-<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a6b727baaf9b8ee42df31adf6a1ee58e9" title=" " alt="" coords="543,123,750,164"/>
-<area shape="rect" href="classGameMain_1_1GameRouter.html#a6454f04e22fe74080dbb46da0f8927be" title=" " alt="" coords="540,189,753,215"/>
-<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#ac2e1ecee00e96c2989b9c57884a8f447" title=" " alt="" coords="5,93,212,135"/>
-<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a758ccbe75d8d7be04fb24e52299ae33d" title=" " alt="" coords="260,125,492,167"/>
+<area shape="rect" title=" " alt="" coords="1084,69,1284,111"/>
+<area shape="rect" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a0355752b983414821acb34c3bc51e724" title=" " alt="" coords="801,69,1036,111"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a46869b365c16164da5e35fa54c8a9f2d" title=" " alt="" coords="273,5,479,47"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a6b727baaf9b8ee42df31adf6a1ee58e9" title=" " alt="" coords="543,69,750,111"/>
+<area shape="rect" href="classGameMain_1_1GameRouter.html#a6454f04e22fe74080dbb46da0f8927be" title=" " alt="" coords="540,135,753,162"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#ac2e1ecee00e96c2989b9c57884a8f447" title=" " alt="" coords="5,39,212,80"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a758ccbe75d8d7be04fb24e52299ae33d" title=" " alt="" coords="260,71,492,112"/>
 </map>
 </div>
 
@@ -405,24 +403,22 @@ Module.Working.Worker 連携図</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordflow">throw</span>;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
-<div class="ttc" id="aclassModule_1_1Working_1_1Worker_html_abcad6ebaed1f04816e286e66b356077d"><div class="ttname"><a href="classModule_1_1Working_1_1Worker.html#abcad6ebaed1f04816e286e66b356077d">Module.Working.Worker.currentState</a></div><div class="ttdeci">IWorkerState currentState</div><div class="ttdef"><b>Definition:</b> <a href="Worker_8cs_source.html#l00017">Worker.cs:17</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Worker_html_abcad6ebaed1f04816e286e66b356077d"><div class="ttname"><a href="classModule_1_1Working_1_1Worker.html#abcad6ebaed1f04816e286e66b356077d">Module.Working.Worker.currentState</a></div><div class="ttdeci">IWorkerState currentState</div><div class="ttdef"><b>Definition:</b> <a href="Worker_8cs_source.html#l00016">Worker.cs:16</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classModule_1_1Working_1_1Worker_aef8170fa48e94cf709f865386be24688_icgraph.png" border="0" usemap="#aclassModule_1_1Working_1_1Worker_aef8170fa48e94cf709f865386be24688_icgraph" alt=""/></div>
 <map name="aclassModule_1_1Working_1_1Worker_aef8170fa48e94cf709f865386be24688_icgraph" id="aclassModule_1_1Working_1_1Worker_aef8170fa48e94cf709f865386be24688_icgraph">
-<area shape="rect" title=" " alt="" coords="1103,152,1303,193"/>
-<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerAssigner.html#a8c49082adf98d57848a250206012333b" title=" " alt="" coords="834,32,1041,73"/>
-<area shape="rect" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a0355752b983414821acb34c3bc51e724" title=" " alt="" coords="820,123,1055,164"/>
-<area shape="rect" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#a3bd1eddf8ed6d085685b07cd670fc708" title=" " alt="" coords="547,240,772,281"/>
-<area shape="rect" href="classModule_1_1Working_1_1Worker.html#a269c989987eb8bffc23d6dd73b725077" title=" " alt="" coords="839,240,1036,281"/>
-<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerAssigner.html#a47df0c1c72a7e62dce944ff8ce20c176" title=" " alt="" coords="556,5,763,47"/>
-<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a46869b365c16164da5e35fa54c8a9f2d" title=" " alt="" coords="279,57,486,99"/>
-<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a6b727baaf9b8ee42df31adf6a1ee58e9" title=" " alt="" coords="556,123,763,164"/>
-<area shape="rect" href="classGameMain_1_1GameRouter.html#a6454f04e22fe74080dbb46da0f8927be" title=" " alt="" coords="5,203,219,230"/>
-<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#ac2e1ecee00e96c2989b9c57884a8f447" title=" " alt="" coords="9,108,215,149"/>
-<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a758ccbe75d8d7be04fb24e52299ae33d" title=" " alt="" coords="267,123,499,164"/>
-<area shape="rect" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#ac966f5863bd7a545801886ed8d14dba3" title=" " alt="" coords="270,240,495,281"/>
+<area shape="rect" title=" " alt="" coords="1103,129,1303,171"/>
+<area shape="rect" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a0355752b983414821acb34c3bc51e724" title=" " alt="" coords="820,71,1055,112"/>
+<area shape="rect" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#a3bd1eddf8ed6d085685b07cd670fc708" title=" " alt="" coords="547,188,772,229"/>
+<area shape="rect" href="classModule_1_1Working_1_1Worker.html#a269c989987eb8bffc23d6dd73b725077" title=" " alt="" coords="839,188,1036,229"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a46869b365c16164da5e35fa54c8a9f2d" title=" " alt="" coords="279,5,486,47"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a6b727baaf9b8ee42df31adf6a1ee58e9" title=" " alt="" coords="556,71,763,112"/>
+<area shape="rect" href="classGameMain_1_1GameRouter.html#a6454f04e22fe74080dbb46da0f8927be" title=" " alt="" coords="5,151,219,178"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#ac2e1ecee00e96c2989b9c57884a8f447" title=" " alt="" coords="9,56,215,97"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a758ccbe75d8d7be04fb24e52299ae33d" title=" " alt="" coords="267,71,499,112"/>
+<area shape="rect" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#ac966f5863bd7a545801886ed8d14dba3" title=" " alt="" coords="270,188,495,229"/>
 </map>
 </div>
 
@@ -489,7 +485,7 @@ Module.Working.Worker 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Worker_8cs_source.html">Worker.cs</a> の <a class="el" href="Worker_8cs_source.html#l00017">17</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Worker_8cs_source.html">Worker.cs</a> の <a class="el" href="Worker_8cs_source.html#l00016">16</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -513,7 +509,7 @@ Module.Working.Worker 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Worker_8cs_source.html">Worker.cs</a> の <a class="el" href="Worker_8cs_source.html#l00016">16</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Worker_8cs_source.html">Worker.cs</a> の <a class="el" href="Worker_8cs_source.html#l00017">17</a> 行目に定義があります。</p>
 
 </div>
 </div>

@@ -119,7 +119,7 @@ Module.Working.Controller.WorkerController 連携図</div>
 <tr class="separator:a7a55d5c4ba3e6c540ea0a5acaba7f863"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa914bd3703cc8fa26a7179c80c60724e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCore_1_1Input_1_1InputEvent.html">InputEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#aa914bd3703cc8fa26a7179c80c60724e">controlEvent</a></td></tr>
 <tr class="separator:aa914bd3703cc8fa26a7179c80c60724e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7e9a418d51d148617266e65519801f1"><td class="memItemLeft" align="right" valign="top">Rigidbody&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#ab7e9a418d51d148617266e65519801f1">leaderRb</a> = default</td></tr>
+<tr class="memitem:ab7e9a418d51d148617266e65519801f1"><td class="memItemLeft" align="right" valign="top">Rigidbody&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#ab7e9a418d51d148617266e65519801f1">leaderRb</a></td></tr>
 <tr class="separator:ab7e9a418d51d148617266e65519801f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a189246bf9b6d72abc465f11e07c6b854"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classModule_1_1Working_1_1Worker.html">Worker</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a189246bf9b6d72abc465f11e07c6b854">workers</a></td></tr>
 <tr class="separator:a189246bf9b6d72abc465f11e07c6b854"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -195,17 +195,17 @@ Module.Working.Controller.WorkerController 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="WorkerController_8cs_source.html">WorkerController.cs</a> の <a class="el" href="WorkerController_8cs_source.html#l00037">37</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a189246bf9b6d72abc465f11e07c6b854">workers</a>.Count == 0)</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            Worker worker = <a class="code" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a189246bf9b6d72abc465f11e07c6b854">workers</a>.OrderBy(worker =&gt; (position - worker.transform.position).sqrMagnitude).First();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordtype">int</span> index = <a class="code" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a189246bf9b6d72abc465f11e07c6b854">workers</a>.IndexOf(worker);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <a class="code" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a189246bf9b6d72abc465f11e07c6b854">workers</a>.RemoveAt(index);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">return</span> worker;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
+<p class="definition"> <a class="el" href="WorkerController_8cs_source.html">WorkerController.cs</a> の <a class="el" href="WorkerController_8cs_source.html#l00043">43</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a189246bf9b6d72abc465f11e07c6b854">workers</a>.Count == 0)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            var worker = <a class="code" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a189246bf9b6d72abc465f11e07c6b854">workers</a>.OrderBy(worker =&gt; (position - worker.transform.position).sqrMagnitude).First();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            var index = <a class="code" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a189246bf9b6d72abc465f11e07c6b854">workers</a>.IndexOf(worker);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a189246bf9b6d72abc465f11e07c6b854">workers</a>.RemoveAt(index);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">return</span> worker;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
 </div><!-- fragment --><div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -243,13 +243,13 @@ Module.Working.Controller.WorkerController 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="WorkerController_8cs_source.html">WorkerController.cs</a> の <a class="el" href="WorkerController_8cs_source.html#l00029">29</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <a class="code" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a189246bf9b6d72abc465f11e07c6b854">workers</a>.Add(worker);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            worker.SetFollowTarget(transform);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            worker.SetWorkerState(<a class="code" href="namespaceModule_1_1Working_1_1State.html#a6741b3bd2dd67b25e9e0477f35e01082">WorkerState</a>.Following);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
+<p class="definition"> <a class="el" href="WorkerController_8cs_source.html">WorkerController.cs</a> の <a class="el" href="WorkerController_8cs_source.html#l00035">35</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <a class="code" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a189246bf9b6d72abc465f11e07c6b854">workers</a>.Add(worker);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            worker.SetFollowTarget(transform);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            worker.SetWorkerState(<a class="code" href="namespaceModule_1_1Working_1_1State.html#a6741b3bd2dd67b25e9e0477f35e01082">WorkerState</a>.Following);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
 <div class="ttc" id="anamespaceModule_1_1Working_1_1State_html_a6741b3bd2dd67b25e9e0477f35e01082"><div class="ttname"><a href="namespaceModule_1_1Working_1_1State.html#a6741b3bd2dd67b25e9e0477f35e01082">Module.Working.State.WorkerState</a></div><div class="ttdeci">WorkerState</div><div class="ttdoc">ワーカーの状態</div><div class="ttdef"><b>Definition:</b> <a href="WorkerState_8cs_source.html#l00006">WorkerState.cs:7</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 呼び出し関係図:</div>
@@ -300,11 +300,11 @@ Module.Working.Controller.WorkerController 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="WorkerController_8cs_source.html">WorkerController.cs</a> の <a class="el" href="WorkerController_8cs_source.html#l00049">49</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="comment">//リーダーの速度の更新</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#ab0758e641ece3185f0a39aeb0f402111">UpdateLeaderVelocity</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
+<p class="definition"> <a class="el" href="WorkerController_8cs_source.html">WorkerController.cs</a> の <a class="el" href="WorkerController_8cs_source.html#l00029">29</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="comment">//リーダーの速度の更新</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <a class="code" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#ab0758e641ece3185f0a39aeb0f402111">UpdateLeaderVelocity</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
 <div class="ttc" id="aclassModule_1_1Working_1_1Controller_1_1WorkerController_html_ab0758e641ece3185f0a39aeb0f402111"><div class="ttname"><a href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#ab0758e641ece3185f0a39aeb0f402111">Module.Working.Controller.WorkerController.UpdateLeaderVelocity</a></div><div class="ttdeci">void UpdateLeaderVelocity()</div><div class="ttdef"><b>Definition:</b> <a href="WorkerController_8cs_source.html#l00055">WorkerController.cs:55</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 呼び出し関係図:</div>
@@ -343,9 +343,9 @@ Module.Working.Controller.WorkerController 連携図</div>
 
 <p class="definition"> <a class="el" href="WorkerController_8cs_source.html">WorkerController.cs</a> の <a class="el" href="WorkerController_8cs_source.html#l00055">55</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            Vector2 input = <a class="code" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#aa914bd3703cc8fa26a7179c80c60724e">controlEvent</a>.ReadValue&lt;Vector2&gt;();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            var input = <a class="code" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#aa914bd3703cc8fa26a7179c80c60724e">controlEvent</a>.ReadValue&lt;Vector2&gt;();</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            Vector3 velocity = <a class="code" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#ab7e9a418d51d148617266e65519801f1">leaderRb</a>.velocity;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            var velocity = <a class="code" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#ab7e9a418d51d148617266e65519801f1">leaderRb</a>.velocity;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            velocity.x += input.x * <a class="code" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a7a55d5c4ba3e6c540ea0a5acaba7f863">controlSpeed</a>;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            velocity.z += input.y * <a class="code" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a7a55d5c4ba3e6c540ea0a5acaba7f863">controlSpeed</a>;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
@@ -423,7 +423,7 @@ Module.Working.Controller.WorkerController 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Rigidbody Module.Working.Controller.WorkerController.leaderRb = default</td>
+          <td class="memname">Rigidbody Module.Working.Controller.WorkerController.leaderRb</td>
         </tr>
       </table>
   </td>
