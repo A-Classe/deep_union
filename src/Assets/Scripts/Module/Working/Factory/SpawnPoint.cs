@@ -1,46 +1,77 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using Wanna.DebugEx;
+using Random = UnityEngine.Random;
 
 namespace Module.Working.Factory
 {
     public class SpawnPoint : MonoBehaviour
     {
-        [SerializeField] private SpawnParam spawnParam;
-
         [System.Serializable]
         public class LayerSettings
         {
-            public GameObject objectToPlace;
-            public int numberOfObjects = 10;
+            public int count = 10;
             public float radius = 5.0f;
-            public float maxOffset = 1.0f; // 追加される最大オフセット
         }
 
-        public List<LayerSettings> layers = new List<LayerSettings>();
-        public Vector3 centerPosition;
+        [SerializeField] private List<LayerSettings> layers;
+        [SerializeField] float randomRange = 1.0f;
 
-        private void Start()
+        public IEnumerable<Vector3> GetSpawnPoints(int count)
         {
-            PlaceObjectsInLayers();
-        }
+            if (layers.Sum(layer => layer.count) < count)
+            {
+                DebugEx.LogError("設定されたスポーンポイントをオーバーしています");
+                yield break;
+            }
 
-        private void PlaceObjectsInLayers()
-        {
+            Vector3 center = transform.position;
+            int currentCount = 1;
+
+            yield return Randomize(center);
+
             foreach (LayerSettings layer in layers)
             {
-                for (int i = 0; i < layer.numberOfObjects; i++)
+                for (int i = 0; i < layer.count; i++)
                 {
-                    float angle = i * (360.0f / layer.numberOfObjects);
-                    float x = centerPosition.x + layer.radius * Mathf.Cos(Mathf.Deg2Rad * angle);
-                    float z = centerPosition.z + layer.radius * Mathf.Sin(Mathf.Deg2Rad * angle);
+                    float angle = i * (360.0f / layer.count) * Mathf.Deg2Rad;
+                    float x = center.x + layer.radius * Mathf.Cos(angle);
+                    float z = center.z + layer.radius * Mathf.Sin(angle);
 
-                    // ランダムなオフセットを生成
-                    float xOffset = Random.Range(-layer.maxOffset, layer.maxOffset);
-                    float zOffset = Random.Range(-layer.maxOffset, layer.maxOffset);
+                    yield return Randomize(center + new Vector3(x, 0f, z));
 
-                    Vector3 spawnPosition = new Vector3(x + xOffset, centerPosition.y, z + zOffset);
+                    if (currentCount == count)
+                        yield break;
+                }
+            }
 
-                    Instantiate(layer.objectToPlace, spawnPosition, Quaternion.identity);
+            Vector3 Randomize(Vector3 position)
+            {
+                float xOffset = Random.Range(-randomRange, randomRange);
+                float zOffset = Random.Range(-randomRange, randomRange);
+
+                return new Vector3(position.x + xOffset, 0f, position.z + zOffset);
+            }
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.red;
+
+            Vector3 center = transform.position;
+
+            Gizmos.DrawSphere(center, 0.3f);
+
+            foreach (LayerSettings layer in layers)
+            {
+                for (int i = 0; i < layer.count; i++)
+                {
+                    float angle = i * (360.0f / layer.count) * Mathf.Deg2Rad;
+                    float x = center.x + layer.radius * Mathf.Cos(angle);
+                    float z = center.z + layer.radius * Mathf.Sin(angle);
+
+                    Gizmos.DrawSphere(center + new Vector3(x, 0f, z), 0.3f);
                 }
             }
         }

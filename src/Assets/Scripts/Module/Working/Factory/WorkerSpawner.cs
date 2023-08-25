@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Module.Working.State;
 using UnityEngine;
 using VContainer;
@@ -23,16 +25,12 @@ namespace Module.Working.Factory
         public Span<Worker> Spawn(int spawnCount)
         {
             Span<Worker> addedWorkers = workerAgent.Add(spawnCount);
+            Vector3[] spawnPoints = spawnPoint.GetSpawnPoints(spawnCount).ToArray();
 
-            foreach (Worker worker in addedWorkers)
+            for (int i = 0; i < addedWorkers.Length; i++)
             {
-                //円状のランダム座標を取得
-                Vector3 scaleTarget = new Vector3(spawnParam.SpawnRange, 0f, spawnParam.SpawnRange);
-                Vector3 spawnPosition = Vector3.Scale(Random.insideUnitSphere, scaleTarget);
-
-                //Workerの初期化
-                WorkerCreateModel createModel = new WorkerCreateModel(WorkerState.Idle, spawnPosition, spawnPoint.transform);
-                InitWorker(worker, createModel);
+                WorkerCreateModel createModel = new WorkerCreateModel(WorkerState.Idle, spawnPoints[i], spawnPoint.transform);
+                InitWorker(addedWorkers[i], createModel);
             }
 
             return addedWorkers;
