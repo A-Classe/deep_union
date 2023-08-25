@@ -18,6 +18,7 @@ namespace Module.Working
         private NavMeshAgent navMeshAgent;
 
         public Transform Target { get; private set; }
+        public Vector3 Offset { get; private set; }
 
         public bool IsLocked { get; private set; }
 
@@ -31,12 +32,12 @@ namespace Module.Working
             currentState?.Update();
         }
 
-        public void OnSpawn(Vector3 spawnPos)
+        public void OnSpawn()
         {
             workerStates = new IWorkerState[]
             {
                 new IdleState(this),
-                new FollowState(this, spawnPos),
+                new FollowState(this),
                 new WorkState(this)
             };
 
@@ -61,9 +62,10 @@ namespace Module.Working
             }
         }
 
-        public void SetFollowTarget(Transform target)
+        public void SetFollowTarget(Transform target, Vector3 offset)
         {
             Target = target;
+            Offset = offset;
         }
 
         public void SetLockState(bool isLocked)

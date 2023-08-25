@@ -15,14 +15,10 @@ namespace GameMain.Task
 
         private WorkerController workerController;
 
-        [Inject]
-        private void Construct(WorkerController workerController)
+        public override void Initialize(IObjectResolver container)
         {
-            this.workerController = workerController;
-        }
+            workerController = container.Resolve<WorkerController>();
 
-        public override void Initialize()
-        {
             foreach (Worker worker in imprisonedWorkers)
             {
                 worker.SetLockState(true);
