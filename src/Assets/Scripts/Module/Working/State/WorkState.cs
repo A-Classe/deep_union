@@ -4,16 +4,17 @@ namespace Module.Working.State
 {
     public class WorkState : IWorkerState
     {
-        public WorkerState WorkerState => WorkerState.Working;
+        private readonly NavMeshAgent navMeshAgent;
 
         private readonly Worker worker;
-        private readonly NavMeshAgent navMeshAgent;
 
         public WorkState(Worker worker)
         {
             this.worker = worker;
             navMeshAgent = worker.GetComponent<NavMeshAgent>();
         }
+
+        public WorkerState WorkerState => WorkerState.Working;
 
         public void Update()
         {

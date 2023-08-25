@@ -7,14 +7,14 @@ using UnityEngine;
 namespace Module.Working.Controller
 {
     /// <summary>
-    /// 群体を操作するクラス
+    ///     群体を操作するクラス
     /// </summary>
     public class WorkerController : MonoBehaviour
     {
         [Header("移動速度")] [SerializeField] private float controlSpeed;
 
         private InputEvent controlEvent;
-        private Rigidbody leaderRb = default;
+        private Rigidbody leaderRb;
         private List<Worker> workers;
 
         private void Awake()
@@ -24,6 +24,12 @@ namespace Module.Working.Controller
 
             //入力イベントの生成
             controlEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Control);
+        }
+
+        private void FixedUpdate()
+        {
+            //リーダーの速度の更新
+            UpdateLeaderVelocity();
         }
 
         public void EnqueueWorker(Worker worker)
@@ -39,24 +45,18 @@ namespace Module.Working.Controller
             if (workers.Count == 0)
                 return null;
 
-            Worker worker = workers.OrderBy(worker => (position - worker.transform.position).sqrMagnitude).First();
-            int index = workers.IndexOf(worker);
+            var worker = workers.OrderBy(worker => (position - worker.transform.position).sqrMagnitude).First();
+            var index = workers.IndexOf(worker);
             workers.RemoveAt(index);
 
             return worker;
         }
 
-        private void FixedUpdate()
-        {
-            //リーダーの速度の更新
-            UpdateLeaderVelocity();
-        }
-
         private void UpdateLeaderVelocity()
         {
-            Vector2 input = controlEvent.ReadValue<Vector2>();
+            var input = controlEvent.ReadValue<Vector2>();
 
-            Vector3 velocity = leaderRb.velocity;
+            var velocity = leaderRb.velocity;
             velocity.x += input.x * controlSpeed;
             velocity.z += input.y * controlSpeed;
 

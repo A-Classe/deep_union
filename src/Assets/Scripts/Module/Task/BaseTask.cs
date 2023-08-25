@@ -1,12 +1,10 @@
 using System;
 using UnityEngine;
-using UnityEngine.Serialization;
-using Wanna.DebugEx;
 
 namespace Module.Task
 {
     /// <summary>
-    /// 全てのタスクのベースクラス
+    ///     全てのタスクのベースクラス
     /// </summary>
     [RequireComponent(typeof(SphereCollider))]
     [DisallowMultipleComponent]
@@ -21,26 +19,6 @@ namespace Module.Task
         [SerializeField]
         private float mw;
 
-        public TaskState State => state;
-
-        /// <summary>
-        /// 現在割り当てられている作業量
-        /// </summary>
-        public float Mw
-        {
-            set
-            {
-                prevMw = currentMw;
-                currentMw = Mathf.Clamp(value, 0f, mw);
-                OnMonoWorkUpdated();
-            }
-            get { return currentMw; }
-        }
-
-        public float Progress => currentProgress;
-
-        public event Action<TaskState> OnStateChanged;
-
         [Header("!デバッグ用 書き換え禁止!")]
         [SerializeField]
         protected TaskState state = TaskState.Idle;
@@ -50,22 +28,46 @@ namespace Module.Task
         [SerializeField] private float progressMw;
         private float prevMw;
 
+        /// <summary>
+        ///     現在割り当てられている作業量
+        /// </summary>
+        public float Mw
+        {
+            set
+            {
+                prevMw = currentMw;
+                currentMw = Mathf.Clamp(value, 0f, mw);
+                OnMonoWorkUpdated();
+            }
+            get => currentMw;
+        }
+
+        public float Progress => currentProgress;
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = new Color(0f, 0.83f, 0f, 0.41f);
+            Gizmos.DrawSphere(transform.position, taskSize);
+        }
+
         private void OnValidate()
         {
-            SphereCollider col = GetComponent<SphereCollider>();
+            var col = GetComponent<SphereCollider>();
             col.radius = taskSize;
-            
+
             //作業量は最低1以上とする
             mw = Mathf.Clamp(mw, 1f, float.MaxValue);
         }
 
+        public TaskState State => state;
+
         /// <summary>
-        /// ゲーム開始時の初期化関数
+        ///     ゲーム開始時の初期化関数
         /// </summary>
         public virtual void Initialize() { }
 
         /// <summary>
-        /// Taskの状態を更新するUpdate
+        ///     Taskの状態を更新するUpdate
         /// </summary>
         /// <param name="deltaTime">Time.deltaTime</param>
         void ITaskSystem.TaskSystemUpdate(float deltaTime)
@@ -74,8 +76,10 @@ namespace Module.Task
             ManagedUpdate(deltaTime);
         }
 
+        public event Action<TaskState> OnStateChanged;
+
         /// <summary>
-        /// ゲームの状態によって管理されるUpdate
+        ///     ゲームの状態によって管理されるUpdate
         /// </summary>
         /// <param name="deltaTime">Time.deltaTime</param>
         protected virtual void ManagedUpdate(float deltaTime) { }
@@ -126,11 +130,5 @@ namespace Module.Task
         protected virtual void OnCancel() { }
 
         protected virtual void OnComplete() { }
-
-        private void OnDrawGizmos()
-        {
-            Gizmos.color = new Color(0f, 0.83f, 0f, 0.41f);
-            Gizmos.DrawSphere(transform.position, taskSize);
-        }
     }
 }

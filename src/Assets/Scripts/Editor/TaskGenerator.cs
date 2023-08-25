@@ -6,25 +6,25 @@ using UnityEngine;
 namespace Editor
 {
     /// <summary>
-    /// タスクを自動生成するクラス
+    ///     タスクを自動生成するクラス
     /// </summary>
-    static class TaskGenerator
+    internal static class TaskGenerator
     {
         private static readonly string TaskPath = @"Scripts\GameMain\Task";
 
         [MenuItem("GameObject/Task", priority = -100000)]
-        static void GenerateTask()
+        private static void GenerateTask()
         {
-            string dirPath = Path.Combine(Application.dataPath, TaskPath);
-            string fileName = CreateFileName();
-            string filePath = Path.Combine(dirPath, fileName);
-            string className = Path.ChangeExtension(fileName, null);
+            var dirPath = Path.Combine(Application.dataPath, TaskPath);
+            var fileName = CreateFileName();
+            var filePath = Path.Combine(dirPath, fileName);
+            var className = Path.ChangeExtension(fileName, null);
 
-            using (FileStream fs = File.Create(filePath))
+            using (var fs = File.Create(filePath))
             {
-                using (StreamWriter sw = new StreamWriter(fs))
+                using (var sw = new StreamWriter(fs))
                 {
-                    string code = CreateCode(className);
+                    var code = CreateCode(className);
                     sw.Write(code);
                 }
             }
@@ -37,12 +37,12 @@ namespace Editor
 
 
         [InitializeOnLoadMethod]
-        static void OnCompileScripts()
+        private static void OnCompileScripts()
         {
             if (!GeneratingFlagHolder.instance.IsGenerating)
                 return;
 
-            GameObject gameObject = new GameObject("Task");
+            var gameObject = new GameObject("Task");
             gameObject.tag = "Task";
             gameObject.layer = LayerMask.NameToLayer("Task");
             gameObject.isStatic = true;
@@ -56,16 +56,14 @@ namespace Editor
         private static Type FindGeneratedType()
         {
             Type generatedType = null;
-            foreach (System.Reflection.Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
+            foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
             {
-                foreach (Type type in assembly.GetTypes())
-                {
+                foreach (var type in assembly.GetTypes())
                     if (type.Name == GeneratingFlagHolder.instance.ClassName)
                     {
                         generatedType = type;
                         break;
                     }
-                }
 
                 if (generatedType != null)
                     break;
@@ -96,6 +94,10 @@ namespace GameMain.Task
 
     public class GeneratingFlagHolder : ScriptableSingleton<GeneratingFlagHolder>
     {
+        private string className;
+
+        private bool isGenerating;
+
         public bool IsGenerating
         {
             get => isGenerating;
@@ -115,8 +117,5 @@ namespace GameMain.Task
                 Save(false);
             }
         }
-
-        private bool isGenerating;
-        private string className;
     }
 }

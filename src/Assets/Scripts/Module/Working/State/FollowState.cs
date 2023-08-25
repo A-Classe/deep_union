@@ -5,18 +5,19 @@ namespace Module.Working.State
 {
     public class FollowState : IWorkerState
     {
-        public WorkerState WorkerState => WorkerState.Following;
+        private readonly NavMeshAgent navMeshAgent;
+        private readonly Vector3 offset;
 
         private readonly Worker worker;
-        private readonly Vector3 offset;
-        private readonly NavMeshAgent navMeshAgent;
 
         public FollowState(Worker worker, Vector3 spawnPos)
         {
             this.worker = worker;
-            this.offset = spawnPos - worker.transform.position;
+            offset = spawnPos - worker.transform.position;
             navMeshAgent = worker.GetComponent<NavMeshAgent>();
         }
+
+        public WorkerState WorkerState => WorkerState.Following;
 
         public void Update()
         {

@@ -10,19 +10,17 @@ using VContainer.Unity;
 namespace GameMain.Presenter
 {
     /// <summary>
-    /// ワーカーとタスクを仲介するクラス
+    ///     ワーカーとタスクを仲介するクラス
     /// </summary>
     public class WorkerConnector : IInitializable
     {
-        private readonly TaskDetector taskDetector;
-        private readonly GameParam gameParam;
         private readonly List<Assignment> assignments;
+        private readonly GameParam gameParam;
+        private readonly TaskDetector taskDetector;
         private readonly WorkerAssigner workerAssigner;
         private readonly WorkerReleaser workerReleaser;
 
         private CancellationTokenSource loopCanceller;
-
-        public IReadOnlyList<Assignment> Assignments => assignments;
 
         [Inject]
         public WorkerConnector(WorkerController workerController, TaskDetector taskDetector, GameParam gameParam)
@@ -38,12 +36,13 @@ namespace GameMain.Presenter
             workerReleaser = new WorkerReleaser(this, workerController);
         }
 
-        void CreateAssignments()
+        public IReadOnlyList<Assignment> Assignments => assignments;
+
+        public void Initialize() { }
+
+        private void CreateAssignments()
         {
-            foreach (BaseTask task in TaskUtil.FindSceneTasks<BaseTask>())
-            {
-                assignments.Add(new Assignment(task, task.transform));
-            }
+            foreach (var task in TaskUtil.FindSceneTasks<BaseTask>()) assignments.Add(new Assignment(task, task.transform));
         }
 
         public async UniTaskVoid StartLoop(Action<BaseTask> loopAction)
@@ -51,19 +50,16 @@ namespace GameMain.Presenter
             //既に行われているループを止める
             CancelLoop();
 
-            TimeSpan delay = TimeSpan.FromSeconds(gameParam.AssignInterval);
+            var delay = TimeSpan.FromSeconds(gameParam.AssignInterval);
 
             while (!loopCanceller.IsCancellationRequested)
             {
                 //タスクの検出
                 taskDetector.UpdateDetection();
 
-                BaseTask nearestTask = taskDetector.GetNearestTask();
+                var nearestTask = taskDetector.GetNearestTask();
 
-                if (nearestTask != null)
-                {
-                    loopAction(nearestTask);
-                }
+                if (nearestTask != null) loopAction(nearestTask);
 
                 await UniTask.Delay(delay, cancellationToken: loopCanceller.Token);
             }
@@ -76,7 +72,5 @@ namespace GameMain.Presenter
 
             loopCanceller = new CancellationTokenSource();
         }
-
-        public void Initialize() { }
     }
 }

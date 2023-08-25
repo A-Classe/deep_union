@@ -3,22 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using Core.Input;
 using Module.Task;
-using Module.Working;
 using Module.Working.Controller;
 using Module.Working.State;
-using UnityEngine;
 using Wanna.DebugEx;
 
 namespace GameMain.Presenter
 {
     /// <summary>
-    /// ワーカーのアサイン処理を行うクラス
+    ///     ワーカーのアサイン処理を行うクラス
     /// </summary>
     public class WorkerAssigner
     {
-        private readonly WorkerController workerController;
-        private readonly IReadOnlyList<Assignment> assignments;
         private readonly InputEvent assignEvent;
+        private readonly IReadOnlyList<Assignment> assignments;
+        private readonly WorkerController workerController;
 
         public WorkerAssigner(WorkerConnector workerConnector, WorkerController workerController)
         {
@@ -31,14 +29,14 @@ namespace GameMain.Presenter
             assignEvent.Canceled += _ => workerConnector.CancelLoop();
         }
 
-        void Assign(BaseTask nearestTask)
+        private void Assign(BaseTask nearestTask)
         {
             //タスクが完了していたらアサインしない
             if (nearestTask.State == TaskState.Completed)
                 return;
 
-            Vector3 position = nearestTask.transform.position;
-            Worker nearestWorker = workerController.DequeueNearestWorker(position);
+            var position = nearestTask.transform.position;
+            var nearestWorker = workerController.DequeueNearestWorker(position);
 
             if (nearestWorker == null)
                 return;
@@ -46,7 +44,7 @@ namespace GameMain.Presenter
             try
             {
                 //ワーカーリストに登録
-                Assignment assignment = assignments.First(connect => connect.Task == nearestTask);
+                var assignment = assignments.First(connect => connect.Task == nearestTask);
                 assignment.Workers.Add(nearestWorker);
 
                 //作業量の更新

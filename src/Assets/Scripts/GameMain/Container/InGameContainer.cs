@@ -4,7 +4,6 @@ using Module.Working;
 using Module.Working.Controller;
 using Module.Working.Factory;
 using UnityEngine;
-using UnityEngine.Serialization;
 using VContainer;
 using VContainer.Unity;
 
