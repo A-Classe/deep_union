@@ -41,18 +41,18 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets/Scripts/Module/Player/Controller/PlayerController.cs" />
-     <Compile Include="Assets/Scripts/Module/Player/State/PlayerState.cs" />
-     <Compile Include="Assets/Scripts/Module/Player/State/IPlayerState.cs" />
-     <Compile Include="Assets/Scripts/Module/Player/State/GoState.cs" />
      <Compile Include="Assets/Scripts/Module/Player/State/WaitState.cs" />
-     <Compile Include="Assets/Scripts/Module/Player/State/PauseState.cs" />
-     <Compile Include="Assets/Scripts/Module/Player/Camera/CameraController.cs" />
+     <Compile Include="Assets/Scripts/Module/Player/State/IPlayerState.cs" />
+     <Compile Include="Assets/Scripts/Module/Player/State/PlayerState.cs" />
+     <Compile Include="Assets/Scripts/Module/Player/Controller/PlayerController.cs" />
      <Compile Include="Assets/Scripts/Module/Player/Camera/State/CameraState.cs" />
-     <Compile Include="Assets/Scripts/Module/Player/Camera/State/ICameraState.cs" />
-     <Compile Include="Assets/Scripts/Module/Player/Camera/State/IStateSystem.cs" />
-     <Compile Include="Assets/Scripts/Module/Player/Camera/State/FollowState.cs" />
      <Compile Include="Assets/Scripts/Module/Player/Camera/State/IdleState.cs" />
+     <Compile Include="Assets/Scripts/Module/Player/Camera/State/IStateSystem.cs" />
+     <Compile Include="Assets/Scripts/Module/Player/Camera/State/ICameraState.cs" />
+     <Compile Include="Assets/Scripts/Module/Player/Camera/CameraController.cs" />
+     <Compile Include="Assets/Scripts/Module/Player/Camera/State/FollowState.cs" />
+     <Compile Include="Assets/Scripts/Module/Player/State/GoState.cs" />
+     <Compile Include="Assets/Scripts/Module/Player/State/PauseState.cs" />
      <None Include="Assets/Scripts/Module/Player/Module.Player.asmdef" />
      <Folder Include="Assets/Scripts/Module/Player/State" />
      <Folder Include="Assets/Scripts/Module/Player/Camera" />

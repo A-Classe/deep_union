@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Core.Input;
+using Core.Utility;
 using Module.Working.State;
 using UnityEngine;
 
@@ -16,6 +18,7 @@ namespace Module.Working.Controller
         private InputEvent controlEvent;
         private Rigidbody leaderRb;
         private List<Worker> workers;
+        private List<Vector3> activePoints;
 
         private void Awake()
         {
@@ -32,11 +35,21 @@ namespace Module.Working.Controller
             UpdateLeaderVelocity();
         }
 
+        public void SetSpawnPoints(Span<Vector3> spawnPoints)
+        {
+            activePoints = new List<Vector3>(spawnPoints.Length);
+
+            foreach (Vector3 point in spawnPoints)
+            {
+                activePoints.Add(point);
+            }
+        }
+
         public void EnqueueWorker(Worker worker)
         {
             workers.Add(worker);
 
-            worker.SetFollowTarget(transform);
+            worker.SetFollowTarget(transform, worker.transform.position - transform.position);
             worker.SetWorkerState(WorkerState.Following);
         }
 

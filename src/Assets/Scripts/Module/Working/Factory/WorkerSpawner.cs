@@ -46,7 +46,7 @@ namespace Module.Working.Factory
             NavMeshAgent agent = worker.GetComponent<NavMeshAgent>();
             agent.Warp(createModel.Position);
 
-            worker.OnSpawn(createModel.SpawnPoint);
+            worker.OnSpawn();
             worker.SetWorkerState(createModel.State);
         }
     }
