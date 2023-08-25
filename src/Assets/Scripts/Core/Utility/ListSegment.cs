@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+// ReSharper disable RedundantExtendsListEntry
 
 // 参考
 // https://github.com/dotnet/dotNext/blob/5c27d9ec80efe3d253bed4a15b70791336e543b8/src/DotNext/Collections/Generic/ListSegment.cs
@@ -90,10 +91,10 @@ namespace Core.Utility
             private T current;
             private int index;
 
-            internal Enumerator(IList<T> list)
+            internal Enumerator(IList<T> ls)
             {
-                this.list = list;
-                this.index = 0;
+                list = ls;
+                index = 0;
 
                 current = default;
             }

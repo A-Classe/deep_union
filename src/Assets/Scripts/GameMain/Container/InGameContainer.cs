@@ -1,4 +1,5 @@
 ﻿using GameMain.Presenter;
+using Module.Player.Controller;
 using Module.Task;
 using Module.Working;
 using Module.Working.Controller;
@@ -20,6 +21,7 @@ namespace GameMain.Container
         [SerializeField] private GameParam gameParam = default!;
         [SerializeField] private WorkerController workerController = default!;
         [SerializeField] private TaskDetector taskDetector = default!;
+        [SerializeField] private PlayerController playerController = default!;
 
         protected override void Configure(IContainerBuilder builder)
         {
@@ -35,6 +37,7 @@ namespace GameMain.Container
             builder.RegisterInstance(gameParam);
             builder.RegisterInstance(taskDetector);
             builder.RegisterInstance(workerController);
+            builder.RegisterInstance(playerController);
         }
     }
 }

@@ -51,6 +51,7 @@ namespace Module.Working
         /// <summary>
         ///     Workerを指定数削除します
         /// </summary>
+        // ReSharper disable once UnusedMember.Global
         public void Remove(Worker worker)
         {
             workerPool.Release(worker);
@@ -68,17 +69,17 @@ namespace Module.Working
             return null;
         }
 
-        private void OnWorkerGet(Worker worker)
+        private static void OnWorkerGet(Worker worker)
         {
             worker.Enable();
         }
 
-        private void OnWorkerRelease(Worker worker)
+        private static void OnWorkerRelease(Worker worker)
         {
             worker.Disable();
         }
 
-        private void OnWorkerDestroy(Worker worker)
+        private static void OnWorkerDestroy(Worker worker)
         {
             worker.Dispose();
         }

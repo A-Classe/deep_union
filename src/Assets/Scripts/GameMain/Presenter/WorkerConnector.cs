@@ -17,7 +17,9 @@ namespace GameMain.Presenter
         private readonly List<Assignment> assignments;
         private readonly GameParam gameParam;
         private readonly TaskDetector taskDetector;
+        // ReSharper disable once NotAccessedField.Local
         private readonly WorkerAssigner workerAssigner;
+        // ReSharper disable once NotAccessedField.Local
         private readonly WorkerReleaser workerReleaser;
 
         private CancellationTokenSource loopCanceller;

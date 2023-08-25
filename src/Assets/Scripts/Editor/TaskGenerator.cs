@@ -10,12 +10,12 @@ namespace Editor
     /// </summary>
     internal static class TaskGenerator
     {
-        private static readonly string TaskPath = @"Scripts\GameMain\Task";
+        private const string taskPath = @"Scripts\GameMain\Task";
 
         [MenuItem("GameObject/Task", priority = -100000)]
         private static void GenerateTask()
         {
-            var dirPath = Path.Combine(Application.dataPath, TaskPath);
+            var dirPath = Path.Combine(Application.dataPath, taskPath);
             var fileName = CreateFileName();
             var filePath = Path.Combine(dirPath, fileName);
             var className = Path.ChangeExtension(fileName, null);
@@ -42,6 +42,7 @@ namespace Editor
             if (!GeneratingFlagHolder.instance.IsGenerating)
                 return;
 
+            // ReSharper disable once UseObjectOrCollectionInitializer
             var gameObject = new GameObject("Task");
             gameObject.tag = "Task";
             gameObject.layer = LayerMask.NameToLayer("Task");
@@ -74,7 +75,7 @@ namespace Editor
 
         private static string CreateFileName()
         {
-            return $"Task_{Guid.NewGuid().ToString("N")}.cs";
+            return $"Task_{Guid.NewGuid():N}.cs";
         }
 
         private static string CreateCode(string className)
