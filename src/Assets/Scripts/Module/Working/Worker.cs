@@ -35,6 +35,10 @@ namespace Module.Working
             SetWorkerState(WorkerState.Idle);
         }
 
+        /// <summary>
+        /// ワーカーの状態をセットします
+        /// </summary>
+        /// <param name="workerState">セットするWorkerState</param>
         public void SetWorkerState(WorkerState workerState)
         {
             try

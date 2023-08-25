@@ -3,29 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using Module.Working.State;
 using UnityEngine;
+using UnityEngine.AI;
 using VContainer;
 using Random = UnityEngine.Random;
 
 namespace Module.Working.Factory
 {
+    /// <summary>
+    /// ワーカーをスポーンするクラス
+    /// </summary>
     public class WorkerSpawner
     {
         private readonly WorkerAgent workerAgent;
         private readonly SpawnPoint spawnPoint;
-        private readonly SpawnParam spawnParam;
 
         [Inject]
-        public WorkerSpawner(WorkerAgent workerAgent, SpawnPoint spawnPoint, SpawnParam spawnParam)
+        public WorkerSpawner(WorkerAgent workerAgent, SpawnPoint spawnPoint)
         {
             this.workerAgent = workerAgent;
             this.spawnPoint = spawnPoint;
-            this.spawnParam = spawnParam;
         }
 
+        /// <summary>
+        /// 指定した数のワーカーをスポーンします
+        /// </summary>
+        /// <param name="spawnCount">スポーンするワーカーの数</param>
+        /// <returns>スポーンしたワーカーのコレクション</returns>
         public Span<Worker> Spawn(int spawnCount)
         {
             Span<Worker> addedWorkers = workerAgent.Add(spawnCount);
-            Vector3[] spawnPoints = spawnPoint.GetSpawnPoints(spawnCount).ToArray();
+            Span<Vector3> spawnPoints = spawnPoint.GetSpawnPoints(spawnCount);
 
             for (int i = 0; i < addedWorkers.Length; i++)
             {
@@ -38,10 +45,9 @@ namespace Module.Working.Factory
 
         void InitWorker(Worker worker, WorkerCreateModel createModel)
         {
-            Transform transform = worker.transform;
-
-            transform.position = createModel.Position;
-            transform.SetParent(createModel.Parent);
+            worker.transform.SetParent(createModel.Parent);
+            NavMeshAgent agent = worker.GetComponent<NavMeshAgent>();
+            agent.Warp(createModel.Position);
 
             worker.OnSpawn(createModel.SpawnPoint);
             worker.SetWorkerState(createModel.State);
