@@ -29,10 +29,12 @@ namespace GameMain
         )
         {
             this.spawnParam = spawnParam;
-            this.workerSpawner = workerSpawner;
+            this.gameParam = gameParam;
+            
             this.workerController = workerController;
             this.playerController = playerController;
-            this.gameParam = gameParam;
+
+            this.workerSpawner = workerSpawner;
         }
 
         public void Start()
