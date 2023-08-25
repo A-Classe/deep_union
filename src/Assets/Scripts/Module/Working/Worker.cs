@@ -15,8 +15,16 @@ namespace Module.Working
     {
         private IWorkerState currentState;
         private IWorkerState[] workerStates;
+        private NavMeshAgent navMeshAgent;
 
         public Transform Target { get; private set; }
+
+        public bool IsLocked { get; private set; }
+
+        private void Awake()
+        {
+            navMeshAgent = GetComponent<NavMeshAgent>();
+        }
 
         private void Update()
         {
@@ -56,6 +64,12 @@ namespace Module.Working
         public void SetFollowTarget(Transform target)
         {
             Target = target;
+        }
+
+        public void SetLockState(bool isLocked)
+        {
+            IsLocked = isLocked;
+            navMeshAgent.enabled = !isLocked;
         }
 
         public void Enable()
