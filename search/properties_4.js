@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['progress_509',['Progress',['../classModule_1_1Task_1_1BaseTask.html#a75876410e40af75b65fa24567311ef6e',1,'Module::Task::BaseTask']]]
+  ['offset_658',['Offset',['../classModule_1_1Working_1_1Worker.html#a42b6b0c772f2feffb8c08d34106cb137',1,'Module::Working::Worker']]]
 ];

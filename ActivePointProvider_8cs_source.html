@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: src/Assets/Scripts/Module/Working/Controller/ActivePointProvider.cs ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_b90377121573af7cb25ee89fc5236601.html">Module</a></li><li class="navelem"><a class="el" href="dir_4a7a8ba31c7a2ab8772923ccccbb07a0.html">Working</a></li><li class="navelem"><a class="el" href="dir_d43352b3df516efb2d695b6dba5986d7.html">Controller</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ActivePointProvider.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ActivePointProvider_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceSystem.html">System</a>.Collections.Generic;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="namespaceModule_1_1Working.html">    4</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceModule_1_1Working_1_1Controller.html">Module.Working.Controller</a></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classModule_1_1Working_1_1Controller_1_1ActivePointProvider.html">    6</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classModule_1_1Working_1_1Controller_1_1ActivePointProvider.html">ActivePointProvider</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    {</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classModule_1_1Working_1_1Controller_1_1ActivePointProvider.html#a438836b71cb40022a566d90d60648c67">    8</a></span>&#160;        <span class="keyword">private</span> readonly Transform <a class="code" href="classModule_1_1Working_1_1Controller_1_1ActivePointProvider.html#a438836b71cb40022a566d90d60648c67">target</a>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classModule_1_1Working_1_1Controller_1_1ActivePointProvider.html#ae67e347d3fb277a87b2bd22fae2b0a8a">    9</a></span>&#160;        <span class="keyword">private</span> readonly IReadOnlyList&lt;Vector3&gt; <a class="code" href="classModule_1_1Working_1_1Controller_1_1ActivePointProvider.html#ae67e347d3fb277a87b2bd22fae2b0a8a">offsets</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classModule_1_1Working_1_1Controller_1_1ActivePointProvider.html#a960b4edf2254227ad3b2287bcefea6cb">   11</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="classModule_1_1Working_1_1Controller_1_1ActivePointProvider.html#a960b4edf2254227ad3b2287bcefea6cb">ActivePointProvider</a>(Transform <a class="code" href="classModule_1_1Working_1_1Controller_1_1ActivePointProvider.html#a438836b71cb40022a566d90d60648c67">target</a>, IReadOnlyList&lt;Vector3&gt; <a class="code" href="classModule_1_1Working_1_1Controller_1_1ActivePointProvider.html#ae67e347d3fb277a87b2bd22fae2b0a8a">offsets</a>)</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            this.target = <a class="code" href="classModule_1_1Working_1_1Controller_1_1ActivePointProvider.html#a438836b71cb40022a566d90d60648c67">target</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            this.offsets = <a class="code" href="classModule_1_1Working_1_1Controller_1_1ActivePointProvider.html#ae67e347d3fb277a87b2bd22fae2b0a8a">offsets</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        }</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structModule_1_1Working_1_1Controller_1_1ActivePointProvider_1_1Point.html">   17</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="structModule_1_1Working_1_1Controller_1_1ActivePointProvider_1_1Point.html">Point</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structModule_1_1Working_1_1Controller_1_1ActivePointProvider_1_1Point.html#ae1c57df37a6cb87d058cd7c38deb63d6">   19</a></span>&#160;            <span class="keyword">private</span> Vector3 <a class="code" href="structModule_1_1Working_1_1Controller_1_1ActivePointProvider_1_1Point.html#ae1c57df37a6cb87d058cd7c38deb63d6">point</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structModule_1_1Working_1_1Controller_1_1ActivePointProvider_1_1Point.html#aebc7a8881f48251c64c630fe28b9d2ce">   20</a></span>&#160;            <span class="keyword">private</span> <a class="code" href="classModule_1_1Working_1_1Worker.html">Worker</a> <a class="code" href="structModule_1_1Working_1_1Controller_1_1ActivePointProvider_1_1Point.html#aebc7a8881f48251c64c630fe28b9d2ce">worker</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Controller_1_1ActivePointProvider_html"><div class="ttname"><a href="classModule_1_1Working_1_1Controller_1_1ActivePointProvider.html">Module.Working.Controller.ActivePointProvider</a></div><div class="ttdef"><b>Definition:</b> <a href="ActivePointProvider_8cs_source.html#l00006">ActivePointProvider.cs:7</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Controller_1_1ActivePointProvider_html_a438836b71cb40022a566d90d60648c67"><div class="ttname"><a href="classModule_1_1Working_1_1Controller_1_1ActivePointProvider.html#a438836b71cb40022a566d90d60648c67">Module.Working.Controller.ActivePointProvider.target</a></div><div class="ttdeci">readonly Transform target</div><div class="ttdef"><b>Definition:</b> <a href="ActivePointProvider_8cs_source.html#l00008">ActivePointProvider.cs:8</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Controller_1_1ActivePointProvider_html_a960b4edf2254227ad3b2287bcefea6cb"><div class="ttname"><a href="classModule_1_1Working_1_1Controller_1_1ActivePointProvider.html#a960b4edf2254227ad3b2287bcefea6cb">Module.Working.Controller.ActivePointProvider.ActivePointProvider</a></div><div class="ttdeci">ActivePointProvider(Transform target, IReadOnlyList&lt; Vector3 &gt; offsets)</div><div class="ttdef"><b>Definition:</b> <a href="ActivePointProvider_8cs_source.html#l00011">ActivePointProvider.cs:11</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Controller_1_1ActivePointProvider_html_ae67e347d3fb277a87b2bd22fae2b0a8a"><div class="ttname"><a href="classModule_1_1Working_1_1Controller_1_1ActivePointProvider.html#ae67e347d3fb277a87b2bd22fae2b0a8a">Module.Working.Controller.ActivePointProvider.offsets</a></div><div class="ttdeci">readonly IReadOnlyList&lt; Vector3 &gt; offsets</div><div class="ttdef"><b>Definition:</b> <a href="ActivePointProvider_8cs_source.html#l00009">ActivePointProvider.cs:9</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Worker_html"><div class="ttname"><a href="classModule_1_1Working_1_1Worker.html">Module.Working.Worker</a></div><div class="ttdoc">ワーカーの状態を管理するクラス</div><div class="ttdef"><b>Definition:</b> <a href="Worker_8cs_source.html#l00014">Worker.cs:15</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Working_1_1Controller_html"><div class="ttname"><a href="namespaceModule_1_1Working_1_1Controller.html">Module.Working.Controller</a></div><div class="ttdef"><b>Definition:</b> <a href="ActivePointProvider_8cs_source.html#l00004">ActivePointProvider.cs:5</a></div></div>
+<div class="ttc" id="anamespaceSystem_html"><div class="ttname"><a href="namespaceSystem.html">System</a></div><div class="ttdef"><b>Definition:</b> <a href="IStateSystem_8cs_source.html#l00001">IStateSystem.cs:2</a></div></div>
+<div class="ttc" id="astructModule_1_1Working_1_1Controller_1_1ActivePointProvider_1_1Point_html"><div class="ttname"><a href="structModule_1_1Working_1_1Controller_1_1ActivePointProvider_1_1Point.html">Module.Working.Controller.ActivePointProvider.Point</a></div><div class="ttdef"><b>Definition:</b> <a href="ActivePointProvider_8cs_source.html#l00017">ActivePointProvider.cs:18</a></div></div>
+<div class="ttc" id="astructModule_1_1Working_1_1Controller_1_1ActivePointProvider_1_1Point_html_ae1c57df37a6cb87d058cd7c38deb63d6"><div class="ttname"><a href="structModule_1_1Working_1_1Controller_1_1ActivePointProvider_1_1Point.html#ae1c57df37a6cb87d058cd7c38deb63d6">Module.Working.Controller.ActivePointProvider.Point.point</a></div><div class="ttdeci">Vector3 point</div><div class="ttdef"><b>Definition:</b> <a href="ActivePointProvider_8cs_source.html#l00019">ActivePointProvider.cs:19</a></div></div>
+<div class="ttc" id="astructModule_1_1Working_1_1Controller_1_1ActivePointProvider_1_1Point_html_aebc7a8881f48251c64c630fe28b9d2ce"><div class="ttname"><a href="structModule_1_1Working_1_1Controller_1_1ActivePointProvider_1_1Point.html#aebc7a8881f48251c64c630fe28b9d2ce">Module.Working.Controller.ActivePointProvider.Point.worker</a></div><div class="ttdeci">Worker worker</div><div class="ttdef"><b>Definition:</b> <a href="ActivePointProvider_8cs_source.html#l00020">ActivePointProvider.cs:20</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

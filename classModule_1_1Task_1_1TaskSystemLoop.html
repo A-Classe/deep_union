@@ -81,7 +81,7 @@ Module.Task.TaskSystemLoop の継承関係図</div>
 <div class="dyncontent">
 <div class="center"><img src="classModule_1_1Task_1_1TaskSystemLoop__inherit__graph.png" border="0" usemap="#aModule_8Task_8TaskSystemLoop_inherit__map" alt="Inheritance graph"/></div>
 <map name="aModule_8Task_8TaskSystemLoop_inherit__map" id="aModule_8Task_8TaskSystemLoop_inherit__map">
-<area shape="rect" title="タスクのゲームループを行うクラス" alt="" coords="5,131,221,237"/>
+<area shape="rect" title="タスクのゲームループを行うクラス" alt="" coords="5,131,221,252"/>
 <area shape="rect" title=" " alt="" coords="17,5,103,83"/>
 <area shape="rect" title=" " alt="" coords="127,5,207,83"/>
 </map>
@@ -100,8 +100,8 @@ Module.Task.TaskSystemLoop 連携図</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:a002a92e2462bdb72d381ee79e38fc8c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Task_1_1TaskSystemLoop.html#a002a92e2462bdb72d381ee79e38fc8c7">TaskSystemLoop</a> ()</td></tr>
-<tr class="separator:a002a92e2462bdb72d381ee79e38fc8c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a940d52e300f5495e61dc92274579afb4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Task_1_1TaskSystemLoop.html#a940d52e300f5495e61dc92274579afb4">TaskSystemLoop</a> (IObjectResolver <a class="el" href="classModule_1_1Task_1_1TaskSystemLoop.html#ab729a2e764aa0b5c93088948559bfaf8">container</a>)</td></tr>
+<tr class="separator:a940d52e300f5495e61dc92274579afb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addfbec52a4fa102cac1a892643621d3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Task_1_1TaskSystemLoop.html#addfbec52a4fa102cac1a892643621d3e">Start</a> ()</td></tr>
 <tr class="separator:addfbec52a4fa102cac1a892643621d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a837880bf9093989c1a47aa365914b2eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Task_1_1TaskSystemLoop.html#a837880bf9093989c1a47aa365914b2eb">Tick</a> ()</td></tr>
@@ -111,14 +111,16 @@ Module.Task.TaskSystemLoop 連携図</div>
 非公開変数類</h2></td></tr>
 <tr class="memitem:a969f4bed05991d26b9011c4b9657d880"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="interfaceModule_1_1Task_1_1ITaskSystem.html">ITaskSystem</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Task_1_1TaskSystemLoop.html#a969f4bed05991d26b9011c4b9657d880">taskSystems</a></td></tr>
 <tr class="separator:a969f4bed05991d26b9011c4b9657d880"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab729a2e764aa0b5c93088948559bfaf8"><td class="memItemLeft" align="right" valign="top">readonly IObjectResolver&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Task_1_1TaskSystemLoop.html#ab729a2e764aa0b5c93088948559bfaf8">container</a></td></tr>
+<tr class="separator:ab729a2e764aa0b5c93088948559bfaf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>タスクのゲームループを行うクラス </p>
 
-<p class="definition"> <a class="el" href="TaskSystemLoop_8cs_source.html">TaskSystemLoop.cs</a> の <a class="el" href="TaskSystemLoop_8cs_source.html#l00010">10</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="TaskSystemLoop_8cs_source.html">TaskSystemLoop.cs</a> の <a class="el" href="TaskSystemLoop_8cs_source.html#l00011">11</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
-<a id="a002a92e2462bdb72d381ee79e38fc8c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a002a92e2462bdb72d381ee79e38fc8c7">&#9670;&nbsp;</a></span>TaskSystemLoop()</h2>
+<a id="a940d52e300f5495e61dc92274579afb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a940d52e300f5495e61dc92274579afb4">&#9670;&nbsp;</a></span>TaskSystemLoop()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -129,7 +131,8 @@ Module.Task.TaskSystemLoop 連携図</div>
         <tr>
           <td class="memname">Module.Task.TaskSystemLoop.TaskSystemLoop </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">IObjectResolver&#160;</td>
+          <td class="paramname"><em>container</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -140,11 +143,13 @@ Module.Task.TaskSystemLoop 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="TaskSystemLoop_8cs_source.html">TaskSystemLoop.cs</a> の <a class="el" href="TaskSystemLoop_8cs_source.html#l00015">15</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <a class="code" href="classModule_1_1Task_1_1TaskSystemLoop.html#a969f4bed05991d26b9011c4b9657d880">taskSystems</a> = TaskUtil.FindSceneTasks&lt;ITaskSystem&gt;();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        }</div>
-<div class="ttc" id="aclassModule_1_1Task_1_1TaskSystemLoop_html_a969f4bed05991d26b9011c4b9657d880"><div class="ttname"><a href="classModule_1_1Task_1_1TaskSystemLoop.html#a969f4bed05991d26b9011c4b9657d880">Module.Task.TaskSystemLoop.taskSystems</a></div><div class="ttdeci">readonly ITaskSystem[] taskSystems</div><div class="ttdef"><b>Definition:</b> <a href="TaskSystemLoop_8cs_source.html#l00012">TaskSystemLoop.cs:12</a></div></div>
+<p class="definition"> <a class="el" href="TaskSystemLoop_8cs_source.html">TaskSystemLoop.cs</a> の <a class="el" href="TaskSystemLoop_8cs_source.html#l00017">17</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <a class="code" href="classModule_1_1Task_1_1TaskSystemLoop.html#a969f4bed05991d26b9011c4b9657d880">taskSystems</a> = TaskUtil.FindSceneTasks&lt;ITaskSystem&gt;();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            this.<a class="code" href="classModule_1_1Task_1_1TaskSystemLoop.html#ab729a2e764aa0b5c93088948559bfaf8">container</a> = <a class="code" href="classModule_1_1Task_1_1TaskSystemLoop.html#ab729a2e764aa0b5c93088948559bfaf8">container</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Task_1_1TaskSystemLoop_html_a969f4bed05991d26b9011c4b9657d880"><div class="ttname"><a href="classModule_1_1Task_1_1TaskSystemLoop.html#a969f4bed05991d26b9011c4b9657d880">Module.Task.TaskSystemLoop.taskSystems</a></div><div class="ttdeci">readonly ITaskSystem[] taskSystems</div><div class="ttdef"><b>Definition:</b> <a href="TaskSystemLoop_8cs_source.html#l00013">TaskSystemLoop.cs:13</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1TaskSystemLoop_html_ab729a2e764aa0b5c93088948559bfaf8"><div class="ttname"><a href="classModule_1_1Task_1_1TaskSystemLoop.html#ab729a2e764aa0b5c93088948559bfaf8">Module.Task.TaskSystemLoop.container</a></div><div class="ttdeci">readonly IObjectResolver container</div><div class="ttdef"><b>Definition:</b> <a href="TaskSystemLoop_8cs_source.html#l00014">TaskSystemLoop.cs:14</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -172,11 +177,14 @@ Module.Task.TaskSystemLoop 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="TaskSystemLoop_8cs_source.html">TaskSystemLoop.cs</a> の <a class="el" href="TaskSystemLoop_8cs_source.html#l00020">20</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="comment">//タスクの初期化</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">foreach</span> (var taskSystem <span class="keywordflow">in</span> <a class="code" href="classModule_1_1Task_1_1TaskSystemLoop.html#a969f4bed05991d26b9011c4b9657d880">taskSystems</a>) taskSystem.Initialize();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
+<p class="definition"> <a class="el" href="TaskSystemLoop_8cs_source.html">TaskSystemLoop.cs</a> の <a class="el" href="TaskSystemLoop_8cs_source.html#l00023">23</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="comment">//タスクの初期化</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordflow">foreach</span> (var taskSystem <span class="keywordflow">in</span> <a class="code" href="classModule_1_1Task_1_1TaskSystemLoop.html#a969f4bed05991d26b9011c4b9657d880">taskSystems</a>)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                taskSystem.Initialize(<a class="code" href="classModule_1_1Task_1_1TaskSystemLoop.html#ab729a2e764aa0b5c93088948559bfaf8">container</a>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -203,24 +211,48 @@ Module.Task.TaskSystemLoop 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="TaskSystemLoop_8cs_source.html">TaskSystemLoop.cs</a> の <a class="el" href="TaskSystemLoop_8cs_source.html#l00026">26</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            var delta = Time.deltaTime;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="comment">//タスクの更新</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordflow">foreach</span> (var taskSystem <span class="keywordflow">in</span> <a class="code" href="classModule_1_1Task_1_1TaskSystemLoop.html#a969f4bed05991d26b9011c4b9657d880">taskSystems</a>)</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="keywordflow">if</span> (taskSystem.State != <a class="code" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a>.InProgress)</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                    <span class="keywordflow">continue</span>;</div>
+<p class="definition"> <a class="el" href="TaskSystemLoop_8cs_source.html">TaskSystemLoop.cs</a> の <a class="el" href="TaskSystemLoop_8cs_source.html#l00032">32</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            var delta = Time.deltaTime;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                taskSystem.TaskSystemUpdate(delta);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="comment">//タスクの更新</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">foreach</span> (var taskSystem <span class="keywordflow">in</span> <a class="code" href="classModule_1_1Task_1_1TaskSystemLoop.html#a969f4bed05991d26b9011c4b9657d880">taskSystems</a>)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keywordflow">if</span> (taskSystem.State != <a class="code" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a>.InProgress)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                taskSystem.TaskSystemUpdate(delta);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
 <div class="ttc" id="anamespaceModule_1_1Task_html_a5559ca3b155ae70ee91b579e8e01f985"><div class="ttname"><a href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">Module.Task.TaskState</a></div><div class="ttdeci">TaskState</div><div class="ttdoc">タスクの状態</div><div class="ttdef"><b>Definition:</b> <a href="TaskState_8cs_source.html#l00006">TaskState.cs:7</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">メンバ詳解</h2>
+<a id="ab729a2e764aa0b5c93088948559bfaf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab729a2e764aa0b5c93088948559bfaf8">&#9670;&nbsp;</a></span>container</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly IObjectResolver Module.Task.TaskSystemLoop.container</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="TaskSystemLoop_8cs_source.html">TaskSystemLoop.cs</a> の <a class="el" href="TaskSystemLoop_8cs_source.html#l00014">14</a> 行目に定義があります。</p>
+
+</div>
+</div>
 <a id="a969f4bed05991d26b9011c4b9657d880"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a969f4bed05991d26b9011c4b9657d880">&#9670;&nbsp;</a></span>taskSystems</h2>
 
@@ -241,7 +273,7 @@ Module.Task.TaskSystemLoop 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="TaskSystemLoop_8cs_source.html">TaskSystemLoop.cs</a> の <a class="el" href="TaskSystemLoop_8cs_source.html#l00012">12</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="TaskSystemLoop_8cs_source.html">TaskSystemLoop.cs</a> の <a class="el" href="TaskSystemLoop_8cs_source.html#l00013">13</a> 行目に定義があります。</p>
 
 </div>
 </div>

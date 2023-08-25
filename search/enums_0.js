@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['taskstate_493',['TaskState',['../namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985',1,'Module::Task']]]
+  ['camerastate_636',['CameraState',['../namespaceModule_1_1Player_1_1Camera_1_1State.html#a706feea038e86118d7428652b300b1cc',1,'Module::Player::Camera::State']]]
 ];

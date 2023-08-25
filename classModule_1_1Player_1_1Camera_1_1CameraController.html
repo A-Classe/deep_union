@@ -1,0 +1,510 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: Module.Player.Camera.CameraController クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceModule.html">Module</a></li><li class="navelem"><a class="el" href="namespaceModule_1_1Player.html">Player</a></li><li class="navelem"><a class="el" href="namespaceModule_1_1Player_1_1Camera.html">Camera</a></li><li class="navelem"><a class="el" href="classModule_1_1Player_1_1Camera_1_1CameraController.html">CameraController</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classModule_1_1Player_1_1Camera_1_1CameraController-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">Module.Player.Camera.CameraController クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Module.Player.Camera.CameraController の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1Player_1_1Camera_1_1CameraController__inherit__graph.png" border="0" usemap="#aModule_8Player_8Camera_8CameraController_inherit__map" alt="Inheritance graph"/></div>
+<map name="aModule_8Player_8Camera_8CameraController_inherit__map" id="aModule_8Player_8Camera_8CameraController_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,131,229,369"/>
+<area shape="rect" title=" " alt="" coords="55,5,179,83"/>
+</map>
+</div>
+<div class="dynheader">
+Module.Player.Camera.CameraController 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1Player_1_1Camera_1_1CameraController__coll__graph.png" border="0" usemap="#aModule_8Player_8Camera_8CameraController_coll__map" alt="Collaboration graph"/></div>
+<map name="aModule_8Player_8Camera_8CameraController_coll__map" id="aModule_8Player_8Camera_8CameraController_coll__map">
+<area shape="rect" title=" " alt="" coords="5,316,229,525"/>
+<area shape="rect" title=" " alt="" coords="34,154,158,231"/>
+<area shape="rect" href="interfaceModule_1_1Player_1_1Camera_1_1State_1_1ICameraState.html" title=" " alt="" coords="183,147,393,239"/>
+<area shape="rect" href="interfaceSystem_1_1IStateSystem.html" title=" " alt="" coords="176,5,400,97"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a9c063bd68baf349e9a25d001c1a078fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a9c063bd68baf349e9a25d001c1a078fa">SetState</a> (<a class="el" href="namespaceModule_1_1Player_1_1Camera_1_1State.html#a706feea038e86118d7428652b300b1cc">CameraState</a> cameraState)</td></tr>
+<tr class="separator:a9c063bd68baf349e9a25d001c1a078fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87e1d62f452c5e141ca3847e3dca12e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a87e1d62f452c5e141ca3847e3dca12e9">InitParam</a> ()</td></tr>
+<tr class="separator:a87e1d62f452c5e141ca3847e3dca12e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a443e67a59c88ec7be1ca1dcdc5979e86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceModule_1_1Player_1_1Camera_1_1State.html#a706feea038e86118d7428652b300b1cc">CameraState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a443e67a59c88ec7be1ca1dcdc5979e86">GetState</a> ()</td></tr>
+<tr class="separator:a443e67a59c88ec7be1ca1dcdc5979e86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a1b8867c32bb78594d8c7860064127f13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a1b8867c32bb78594d8c7860064127f13">Awake</a> ()</td></tr>
+<tr class="separator:a1b8867c32bb78594d8c7860064127f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f60d5a0efdf913d572f298e78e441e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a6f60d5a0efdf913d572f298e78e441e4">FixedUpdate</a> ()</td></tr>
+<tr class="separator:a6f60d5a0efdf913d572f298e78e441e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a385c61f6f6c966b3320ee8fb46179e3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a385c61f6f6c966b3320ee8fb46179e3c">Initialize</a> ()</td></tr>
+<tr class="separator:a385c61f6f6c966b3320ee8fb46179e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a6678650021531a0ac34e926379e650b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfaceModule_1_1Player_1_1Camera_1_1State_1_1ICameraState.html">ICameraState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a6678650021531a0ac34e926379e650b1">currentState</a></td></tr>
+<tr class="separator:a6678650021531a0ac34e926379e650b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d334df801ceb824ff0953aca1838228"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfaceModule_1_1Player_1_1Camera_1_1State_1_1ICameraState.html">ICameraState</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a1d334df801ceb824ff0953aca1838228">states</a></td></tr>
+<tr class="separator:a1d334df801ceb824ff0953aca1838228"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d69d2f6bfb33455cbc8cb91e144a694"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a4d69d2f6bfb33455cbc8cb91e144a694">followTarget</a></td></tr>
+<tr class="separator:a4d69d2f6bfb33455cbc8cb91e144a694"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add9f511f9a50a0ec2d51c58d9c628e0e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#add9f511f9a50a0ec2d51c58d9c628e0e">depth</a></td></tr>
+<tr class="separator:add9f511f9a50a0ec2d51c58d9c628e0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75caf7a3d6af990ea7aeff8c068ed666"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a75caf7a3d6af990ea7aeff8c068ed666">followAngle</a> = 40f</td></tr>
+<tr class="separator:a75caf7a3d6af990ea7aeff8c068ed666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2919720261d25bee174844cb11760a6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#ae2919720261d25bee174844cb11760a6">cameraAngle</a> = 40f</td></tr>
+<tr class="separator:ae2919720261d25bee174844cb11760a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="CameraController_8cs_source.html">CameraController.cs</a> の <a class="el" href="CameraController_8cs_source.html#l00007">7</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="a1b8867c32bb78594d8c7860064127f13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b8867c32bb78594d8c7860064127f13">&#9670;&nbsp;</a></span>Awake()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.Player.Camera.CameraController.Awake </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraController_8cs_source.html">CameraController.cs</a> の <a class="el" href="CameraController_8cs_source.html#l00016">16</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <a class="code" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a385c61f6f6c966b3320ee8fb46179e3c">Initialize</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Player_1_1Camera_1_1CameraController_html_a385c61f6f6c966b3320ee8fb46179e3c"><div class="ttname"><a href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a385c61f6f6c966b3320ee8fb46179e3c">Module.Player.Camera.CameraController.Initialize</a></div><div class="ttdeci">void Initialize()</div><div class="ttdef"><b>Definition:</b> <a href="CameraController_8cs_source.html#l00043">CameraController.cs:43</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1Player_1_1Camera_1_1CameraController_a1b8867c32bb78594d8c7860064127f13_cgraph.png" border="0" usemap="#aclassModule_1_1Player_1_1Camera_1_1CameraController_a1b8867c32bb78594d8c7860064127f13_cgraph" alt=""/></div>
+<map name="aclassModule_1_1Player_1_1Camera_1_1CameraController_a1b8867c32bb78594d8c7860064127f13_cgraph" id="aclassModule_1_1Player_1_1Camera_1_1CameraController_a1b8867c32bb78594d8c7860064127f13_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,229,47"/>
+<area shape="rect" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a385c61f6f6c966b3320ee8fb46179e3c" title=" " alt="" coords="277,5,501,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6f60d5a0efdf913d572f298e78e441e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f60d5a0efdf913d572f298e78e441e4">&#9670;&nbsp;</a></span>FixedUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.Player.Camera.CameraController.FixedUpdate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraController_8cs_source.html">CameraController.cs</a> の <a class="el" href="CameraController_8cs_source.html#l00021">21</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            var angleInRadians = <a class="code" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a75caf7a3d6af990ea7aeff8c068ed666">followAngle</a> * Mathf.Deg2Rad;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            var y = <a class="code" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#add9f511f9a50a0ec2d51c58d9c628e0e">depth</a> * Math.Sin(angleInRadians);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            var horizontalDistance = <a class="code" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#add9f511f9a50a0ec2d51c58d9c628e0e">depth</a> * Math.Cos(angleInRadians);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            Vector3 horizontalOffset = -<a class="code" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a4d69d2f6bfb33455cbc8cb91e144a694">followTarget</a>.forward * (float)horizontalDistance;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            Vector3 targetPosition = <a class="code" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a4d69d2f6bfb33455cbc8cb91e144a694">followTarget</a>.position + horizontalOffset + Vector3.up * (float)y;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;       </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            transform.position = targetPosition;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;         </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(<a class="code" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#ae2919720261d25bee174844cb11760a6">cameraAngle</a>, 0f, 0f), Time.deltaTime);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Player_1_1Camera_1_1CameraController_html_a4d69d2f6bfb33455cbc8cb91e144a694"><div class="ttname"><a href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a4d69d2f6bfb33455cbc8cb91e144a694">Module.Player.Camera.CameraController.followTarget</a></div><div class="ttdeci">Transform followTarget</div><div class="ttdef"><b>Definition:</b> <a href="CameraController_8cs_source.html#l00012">CameraController.cs:12</a></div></div>
+<div class="ttc" id="aclassModule_1_1Player_1_1Camera_1_1CameraController_html_a75caf7a3d6af990ea7aeff8c068ed666"><div class="ttname"><a href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a75caf7a3d6af990ea7aeff8c068ed666">Module.Player.Camera.CameraController.followAngle</a></div><div class="ttdeci">float followAngle</div><div class="ttdef"><b>Definition:</b> <a href="CameraController_8cs_source.html#l00014">CameraController.cs:14</a></div></div>
+<div class="ttc" id="aclassModule_1_1Player_1_1Camera_1_1CameraController_html_add9f511f9a50a0ec2d51c58d9c628e0e"><div class="ttname"><a href="classModule_1_1Player_1_1Camera_1_1CameraController.html#add9f511f9a50a0ec2d51c58d9c628e0e">Module.Player.Camera.CameraController.depth</a></div><div class="ttdeci">float depth</div><div class="ttdef"><b>Definition:</b> <a href="CameraController_8cs_source.html#l00013">CameraController.cs:13</a></div></div>
+<div class="ttc" id="aclassModule_1_1Player_1_1Camera_1_1CameraController_html_ae2919720261d25bee174844cb11760a6"><div class="ttname"><a href="classModule_1_1Player_1_1Camera_1_1CameraController.html#ae2919720261d25bee174844cb11760a6">Module.Player.Camera.CameraController.cameraAngle</a></div><div class="ttdeci">float cameraAngle</div><div class="ttdef"><b>Definition:</b> <a href="CameraController_8cs_source.html#l00015">CameraController.cs:15</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a443e67a59c88ec7be1ca1dcdc5979e86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a443e67a59c88ec7be1ca1dcdc5979e86">&#9670;&nbsp;</a></span>GetState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceModule_1_1Player_1_1Camera_1_1State.html#a706feea038e86118d7428652b300b1cc">CameraState</a> Module.Player.Camera.CameraController.GetState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a385c61f6f6c966b3320ee8fb46179e3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a385c61f6f6c966b3320ee8fb46179e3c">&#9670;&nbsp;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.Player.Camera.CameraController.Initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraController_8cs_source.html">CameraController.cs</a> の <a class="el" href="CameraController_8cs_source.html#l00043">43</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a1d334df801ceb824ff0953aca1838228">states</a> = <span class="keyword">new</span> <a class="code" href="interfaceModule_1_1Player_1_1Camera_1_1State_1_1ICameraState.html">ICameraState</a>[]</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keyword">new</span> FollowState(<span class="keyword">this</span>),</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keyword">new</span> IdleState()</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            };</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Player_1_1Camera_1_1CameraController_html_a1d334df801ceb824ff0953aca1838228"><div class="ttname"><a href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a1d334df801ceb824ff0953aca1838228">Module.Player.Camera.CameraController.states</a></div><div class="ttdeci">ICameraState[] states</div><div class="ttdef"><b>Definition:</b> <a href="CameraController_8cs_source.html#l00010">CameraController.cs:10</a></div></div>
+<div class="ttc" id="ainterfaceModule_1_1Player_1_1Camera_1_1State_1_1ICameraState_html"><div class="ttname"><a href="interfaceModule_1_1Player_1_1Camera_1_1State_1_1ICameraState.html">Module.Player.Camera.State.ICameraState</a></div><div class="ttdef"><b>Definition:</b> <a href="ICameraState_8cs_source.html#l00005">ICameraState.cs:5</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1Player_1_1Camera_1_1CameraController_a385c61f6f6c966b3320ee8fb46179e3c_icgraph.png" border="0" usemap="#aclassModule_1_1Player_1_1Camera_1_1CameraController_a385c61f6f6c966b3320ee8fb46179e3c_icgraph" alt=""/></div>
+<map name="aclassModule_1_1Player_1_1Camera_1_1CameraController_a385c61f6f6c966b3320ee8fb46179e3c_icgraph" id="aclassModule_1_1Player_1_1Camera_1_1CameraController_a385c61f6f6c966b3320ee8fb46179e3c_icgraph">
+<area shape="rect" title=" " alt="" coords="277,5,501,47"/>
+<area shape="rect" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a1b8867c32bb78594d8c7860064127f13" title=" " alt="" coords="5,5,229,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a87e1d62f452c5e141ca3847e3dca12e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87e1d62f452c5e141ca3847e3dca12e9">&#9670;&nbsp;</a></span>InitParam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.Player.Camera.CameraController.InitParam </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraController_8cs_source.html">CameraController.cs</a> の <a class="el" href="CameraController_8cs_source.html#l00062">62</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9c063bd68baf349e9a25d001c1a078fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c063bd68baf349e9a25d001c1a078fa">&#9670;&nbsp;</a></span>SetState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.Player.Camera.CameraController.SetState </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceModule_1_1Player_1_1Camera_1_1State.html#a706feea038e86118d7428652b300b1cc">CameraState</a>&#160;</td>
+          <td class="paramname"><em>cameraState</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraController_8cs_source.html">CameraController.cs</a> の <a class="el" href="CameraController_8cs_source.html#l00052">52</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a6678650021531a0ac34e926379e650b1">currentState</a> = cameraState <span class="keywordflow">switch</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <a class="code" href="namespaceModule_1_1Player_1_1Camera_1_1State.html#a706feea038e86118d7428652b300b1cc">CameraState</a>.Follow =&gt; <a class="code" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a1d334df801ceb824ff0953aca1838228">states</a>[0],</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <a class="code" href="namespaceModule_1_1Player_1_1Camera_1_1State.html#a706feea038e86118d7428652b300b1cc">CameraState</a>.Idle =&gt; <a class="code" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a1d334df801ceb824ff0953aca1838228">states</a>[1],</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                _ =&gt; <span class="keyword">null</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            };</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Player_1_1Camera_1_1CameraController_html_a6678650021531a0ac34e926379e650b1"><div class="ttname"><a href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a6678650021531a0ac34e926379e650b1">Module.Player.Camera.CameraController.currentState</a></div><div class="ttdeci">ICameraState currentState</div><div class="ttdef"><b>Definition:</b> <a href="CameraController_8cs_source.html#l00009">CameraController.cs:9</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Player_1_1Camera_1_1State_html_a706feea038e86118d7428652b300b1cc"><div class="ttname"><a href="namespaceModule_1_1Player_1_1Camera_1_1State.html#a706feea038e86118d7428652b300b1cc">Module.Player.Camera.State.CameraState</a></div><div class="ttdeci">CameraState</div><div class="ttdef"><b>Definition:</b> <a href="CameraState_8cs_source.html#l00003">CameraState.cs:4</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="ae2919720261d25bee174844cb11760a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2919720261d25bee174844cb11760a6">&#9670;&nbsp;</a></span>cameraAngle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Module.Player.Camera.CameraController.cameraAngle = 40f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraController_8cs_source.html">CameraController.cs</a> の <a class="el" href="CameraController_8cs_source.html#l00015">15</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6678650021531a0ac34e926379e650b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6678650021531a0ac34e926379e650b1">&#9670;&nbsp;</a></span>currentState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="interfaceModule_1_1Player_1_1Camera_1_1State_1_1ICameraState.html">ICameraState</a> Module.Player.Camera.CameraController.currentState</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraController_8cs_source.html">CameraController.cs</a> の <a class="el" href="CameraController_8cs_source.html#l00009">9</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="add9f511f9a50a0ec2d51c58d9c628e0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add9f511f9a50a0ec2d51c58d9c628e0e">&#9670;&nbsp;</a></span>depth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Module.Player.Camera.CameraController.depth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraController_8cs_source.html">CameraController.cs</a> の <a class="el" href="CameraController_8cs_source.html#l00013">13</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a75caf7a3d6af990ea7aeff8c068ed666"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75caf7a3d6af990ea7aeff8c068ed666">&#9670;&nbsp;</a></span>followAngle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Module.Player.Camera.CameraController.followAngle = 40f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraController_8cs_source.html">CameraController.cs</a> の <a class="el" href="CameraController_8cs_source.html#l00014">14</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4d69d2f6bfb33455cbc8cb91e144a694"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d69d2f6bfb33455cbc8cb91e144a694">&#9670;&nbsp;</a></span>followTarget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Transform Module.Player.Camera.CameraController.followTarget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraController_8cs_source.html">CameraController.cs</a> の <a class="el" href="CameraController_8cs_source.html#l00012">12</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1d334df801ceb824ff0953aca1838228"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d334df801ceb824ff0953aca1838228">&#9670;&nbsp;</a></span>states</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="interfaceModule_1_1Player_1_1Camera_1_1State_1_1ICameraState.html">ICameraState</a> [] Module.Player.Camera.CameraController.states</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraController_8cs_source.html">CameraController.cs</a> の <a class="el" href="CameraController_8cs_source.html#l00010">10</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>src/Assets/Scripts/Module/Player/Camera/<a class="el" href="CameraController_8cs_source.html">CameraController.cs</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

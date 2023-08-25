@@ -69,8 +69,8 @@ $(function() {
 <div class="title">TaskGenerator.cs</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="TaskGenerator_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> System;</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> System.IO;</div>
+<a href="TaskGenerator_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceSystem.html">System</a>;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceSystem.html">System</a>.IO;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> UnityEditor;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
@@ -78,12 +78,12 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">internal</span> <span class="keyword">static</span> <span class="keyword">class </span>TaskGenerator</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> readonly <span class="keywordtype">string</span> TaskPath = <span class="stringliteral">@&quot;Scripts\GameMain\Task&quot;</span>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">private</span> <span class="keyword">const</span> <span class="keywordtype">string</span> taskPath = <span class="stringliteral">@&quot;Scripts\GameMain\Task&quot;</span>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        [MenuItem(<span class="stringliteral">&quot;GameObject/Task&quot;</span>, priority = -100000)]</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> GenerateTask()</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            var dirPath = Path.Combine(Application.dataPath, TaskPath);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            var dirPath = Path.Combine(Application.dataPath, taskPath);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            var fileName = CreateFileName();</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            var filePath = Path.Combine(dirPath, fileName);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            var className = Path.ChangeExtension(fileName, <span class="keyword">null</span>);</div>
@@ -110,50 +110,50 @@ $(function() {
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">if</span> (!GeneratingFlagHolder.instance.IsGenerating)</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            var gameObject = <span class="keyword">new</span> GameObject(<span class="stringliteral">&quot;Task&quot;</span>);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            gameObject.tag = <span class="stringliteral">&quot;Task&quot;</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            gameObject.layer = LayerMask.NameToLayer(<span class="stringliteral">&quot;Task&quot;</span>);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            gameObject.isStatic = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            gameObject.AddComponent(FindGeneratedType());</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            gameObject.AddComponent&lt;SphereCollider&gt;();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            GeneratingFlagHolder.instance.IsGenerating = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> Type FindGeneratedType()</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            Type generatedType = <span class="keyword">null</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">foreach</span> (var assembly <span class="keywordflow">in</span> AppDomain.CurrentDomain.GetAssemblies())</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordflow">foreach</span> (var type <span class="keywordflow">in</span> assembly.GetTypes())</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                    <span class="keywordflow">if</span> (type.Name == GeneratingFlagHolder.instance.ClassName)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                        generatedType = type;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordflow">if</span> (generatedType != <span class="keyword">null</span>)</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">return</span> generatedType;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">string</span> CreateFileName()</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">return</span> $<span class="stringliteral">&quot;Task_{Guid.NewGuid().ToString(&quot;</span>N<span class="stringliteral">&quot;)}.cs&quot;</span>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">string</span> CreateCode(<span class="keywordtype">string</span> className)</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">return</span> $<span class="stringliteral">@&quot;using Module.Task;</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="stringliteral">namespace GameMain.Task</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="stringliteral">{{</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="stringliteral">    public class {className} : BaseTask</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="stringliteral">    {{</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="stringliteral">        public override void ExecuteJob() {{ }}</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="comment">// ReSharper disable once UseObjectOrCollectionInitializer</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            var gameObject = <span class="keyword">new</span> GameObject(<span class="stringliteral">&quot;Task&quot;</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            gameObject.tag = <span class="stringliteral">&quot;Task&quot;</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            gameObject.layer = LayerMask.NameToLayer(<span class="stringliteral">&quot;Task&quot;</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            gameObject.isStatic = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            gameObject.AddComponent(FindGeneratedType());</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            gameObject.AddComponent&lt;SphereCollider&gt;();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            GeneratingFlagHolder.instance.IsGenerating = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> Type FindGeneratedType()</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            Type generatedType = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">foreach</span> (var assembly <span class="keywordflow">in</span> AppDomain.CurrentDomain.GetAssemblies())</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordflow">foreach</span> (var type <span class="keywordflow">in</span> assembly.GetTypes())</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    <span class="keywordflow">if</span> (type.Name == GeneratingFlagHolder.instance.ClassName)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                        generatedType = type;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="keywordflow">if</span> (generatedType != <span class="keyword">null</span>)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">return</span> generatedType;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">string</span> CreateFileName()</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">return</span> $<span class="stringliteral">&quot;Task_{Guid.NewGuid():N}.cs&quot;</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">string</span> CreateCode(<span class="keywordtype">string</span> className)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordflow">return</span> $<span class="stringliteral">@&quot;using Module.Task;</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="stringliteral">namespace GameMain.Task</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="stringliteral">{{</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="stringliteral">    public class {className} : BaseTask</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="stringliteral">    {{</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="stringliteral">    }}</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="stringliteral">}}</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="stringliteral">&quot;</span>;</div>
@@ -193,6 +193,7 @@ $(function() {
 <div class="ttc" id="aclassEditor_1_1GeneratingFlagHolder_html_a624f28d5dcbb510916c1cccbad185802"><div class="ttname"><a href="classEditor_1_1GeneratingFlagHolder.html#a624f28d5dcbb510916c1cccbad185802">Editor.GeneratingFlagHolder.ClassName</a></div><div class="ttdeci">string ClassName</div><div class="ttdef"><b>Definition:</b> <a href="TaskGenerator_8cs_source.html#l00111">TaskGenerator.cs:112</a></div></div>
 <div class="ttc" id="aclassEditor_1_1GeneratingFlagHolder_html_a6c5a9e4bfb85526c9debecb58ad4b56a"><div class="ttname"><a href="classEditor_1_1GeneratingFlagHolder.html#a6c5a9e4bfb85526c9debecb58ad4b56a">Editor.GeneratingFlagHolder.className</a></div><div class="ttdeci">string className</div><div class="ttdef"><b>Definition:</b> <a href="TaskGenerator_8cs_source.html#l00097">TaskGenerator.cs:97</a></div></div>
 <div class="ttc" id="anamespaceEditor_html"><div class="ttname"><a href="namespaceEditor.html">Editor</a></div><div class="ttdef"><b>Definition:</b> <a href="NavMeshForceCleaner_8cs_source.html#l00005">NavMeshForceCleaner.cs:6</a></div></div>
+<div class="ttc" id="anamespaceSystem_html"><div class="ttname"><a href="namespaceSystem.html">System</a></div><div class="ttdef"><b>Definition:</b> <a href="IStateSystem_8cs_source.html#l00001">IStateSystem.cs:2</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -83,7 +83,7 @@ Module.Working.Factory.SpawnPoint の継承関係図</div>
 <div class="dyncontent">
 <div class="center"><img src="classModule_1_1Working_1_1Factory_1_1SpawnPoint__inherit__graph.png" border="0" usemap="#aModule_8Working_8Factory_8SpawnPoint_inherit__map" alt="Inheritance graph"/></div>
 <map name="aModule_8Working_8Factory_8SpawnPoint_inherit__map" id="aModule_8Working_8Factory_8SpawnPoint_inherit__map">
-<area shape="rect" title="ワーカーのスポーン座標を生成するクラス" alt="" coords="5,131,228,281"/>
+<area shape="rect" title="ワーカーのスポーン座標を生成するクラス" alt="" coords="5,131,228,296"/>
 <area shape="rect" title=" " alt="" coords="55,5,179,83"/>
 </map>
 </div>
@@ -92,7 +92,7 @@ Module.Working.Factory.SpawnPoint 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classModule_1_1Working_1_1Factory_1_1SpawnPoint__coll__graph.png" border="0" usemap="#aModule_8Working_8Factory_8SpawnPoint_coll__map" alt="Collaboration graph"/></div>
 <map name="aModule_8Working_8Factory_8SpawnPoint_coll__map" id="aModule_8Working_8Factory_8SpawnPoint_coll__map">
-<area shape="rect" title="ワーカーのスポーン座標を生成するクラス" alt="" coords="5,131,228,281"/>
+<area shape="rect" title="ワーカーのスポーン座標を生成するクラス" alt="" coords="5,131,228,296"/>
 <area shape="rect" title=" " alt="" coords="55,5,179,83"/>
 </map>
 </div>
@@ -112,6 +112,8 @@ Module.Working.Factory.SpawnPoint 連携図</div>
 非公開メンバ関数</h2></td></tr>
 <tr class="memitem:a28491c30ac0b3c2bd9481e1746ef67fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#a28491c30ac0b3c2bd9481e1746ef67fd">Awake</a> ()</td></tr>
 <tr class="separator:a28491c30ac0b3c2bd9481e1746ef67fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2679a4923e42cf170947f0735742e913"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#a2679a4923e42cf170947f0735742e913">Randomize</a> (Vector3 position)</td></tr>
+<tr class="separator:a2679a4923e42cf170947f0735742e913"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55a488ac550a8ebcb902482e6e1f86d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#a55a488ac550a8ebcb902482e6e1f86d6">OnDrawGizmosSelected</a> ()</td></tr>
 <tr class="separator:a55a488ac550a8ebcb902482e6e1f86d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -202,51 +204,54 @@ Module.Working.Factory.SpawnPoint 連携図</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">return</span> Span&lt;Vector3&gt;.Empty;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            Vector3 center = transform.position;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordtype">int</span> index = 1;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            var center = transform.position;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            var index = 1;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="comment">//中心</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#a81af70b8cf64847a7bfa9f560437dac9">pointsBuffer</a>[index] = Randomize(center);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#a81af70b8cf64847a7bfa9f560437dac9">pointsBuffer</a>[index] = <a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#a2679a4923e42cf170947f0735742e913">Randomize</a>(center);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">foreach</span> (LayerSettings layer <span class="keywordflow">in</span> <a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#ae82269ced3501705f38af976542029bc">layers</a>)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">foreach</span> (var layer <span class="keywordflow">in</span> <a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#ae82269ced3501705f38af976542029bc">layers</a>)</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="comment">//1周分</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; layer.count; i++)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keywordflow">for</span> (var i = 0; i &lt; layer.count; i++)</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                    <span class="keywordtype">float</span> angle = i * (360.0f / layer.count) * Mathf.Deg2Rad;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                    <span class="keywordtype">float</span> x = center.x + layer.radius * Mathf.Cos(angle);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                    <span class="keywordtype">float</span> z = center.z + layer.radius * Mathf.Sin(angle);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                    var angle = i * (360.0f / layer.count) * Mathf.Deg2Rad;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                    var x = center.x + layer.radius * Mathf.Cos(angle);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                    var z = center.z + layer.radius * Mathf.Sin(angle);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                    <span class="comment">//ちょっとだけ座標ずらす</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                    <a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#a81af70b8cf64847a7bfa9f560437dac9">pointsBuffer</a>[index] = Randomize(center + <span class="keyword">new</span> Vector3(x, 0f, z));</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                    <a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#a81af70b8cf64847a7bfa9f560437dac9">pointsBuffer</a>[index] = <a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#a2679a4923e42cf170947f0735742e913">Randomize</a>(center + <span class="keyword">new</span> Vector3(x, 0f, z));</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                    index++;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    <span class="keywordflow">if</span> (index == count)</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#a81af70b8cf64847a7bfa9f560437dac9">pointsBuffer</a>.AsSpan().Slice(0, count);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            Vector3 Randomize(Vector3 position)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="keywordtype">float</span> xOffset = <a class="code" href="SpawnPoint_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a>.Range(-<a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#a713f90c0016bba48dac5b27e7761f33e">randomRange</a>, <a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#a713f90c0016bba48dac5b27e7761f33e">randomRange</a>);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordtype">float</span> zOffset = <a class="code" href="SpawnPoint_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a>.Range(-<a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#a713f90c0016bba48dac5b27e7761f33e">randomRange</a>, <a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#a713f90c0016bba48dac5b27e7761f33e">randomRange</a>);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">new</span> Vector3(position.x + xOffset, 0f, position.z + zOffset);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">return</span> Span&lt;Vector3&gt;.Empty;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
-<div class="ttc" id="aSpawnPoint_8cs_html_a832e8f52fca5a678819ec96269dcb532"><div class="ttname"><a href="SpawnPoint_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a></div><div class="ttdeci">UnityEngine.Random Random</div><div class="ttdef"><b>Definition:</b> <a href="SpawnPoint_8cs_source.html#l00006">SpawnPoint.cs:6</a></div></div>
-<div class="ttc" id="aclassModule_1_1Working_1_1Factory_1_1SpawnPoint_html_a713f90c0016bba48dac5b27e7761f33e"><div class="ttname"><a href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#a713f90c0016bba48dac5b27e7761f33e">Module.Working.Factory.SpawnPoint.randomRange</a></div><div class="ttdeci">float randomRange</div><div class="ttdef"><b>Definition:</b> <a href="SpawnPoint_8cs_source.html#l00023">SpawnPoint.cs:23</a></div></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                        var spawnPoints = <a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#a81af70b8cf64847a7bfa9f560437dac9">pointsBuffer</a>.AsSpan();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        spawnPoints.Slice(0, count);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        <span class="keywordflow">return</span> spawnPoints;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">return</span> Span&lt;Vector3&gt;.Empty;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Factory_1_1SpawnPoint_html_a2679a4923e42cf170947f0735742e913"><div class="ttname"><a href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#a2679a4923e42cf170947f0735742e913">Module.Working.Factory.SpawnPoint.Randomize</a></div><div class="ttdeci">Vector3 Randomize(Vector3 position)</div><div class="ttdef"><b>Definition:</b> <a href="SpawnPoint_8cs_source.html#l00075">SpawnPoint.cs:75</a></div></div>
 </div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1Working_1_1Factory_1_1SpawnPoint_adced3b5c3c697ce4b250ec2db71f8765_cgraph.png" border="0" usemap="#aclassModule_1_1Working_1_1Factory_1_1SpawnPoint_adced3b5c3c697ce4b250ec2db71f8765_cgraph" alt=""/></div>
+<map name="aclassModule_1_1Working_1_1Factory_1_1SpawnPoint_adced3b5c3c697ce4b250ec2db71f8765_cgraph" id="aclassModule_1_1Working_1_1Factory_1_1SpawnPoint_adced3b5c3c697ce4b250ec2db71f8765_cgraph">
+<area shape="rect" title="ワーカーのスポーン座標を返します" alt="" coords="5,5,228,47"/>
+<area shape="rect" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#a2679a4923e42cf170947f0735742e913" title=" " alt="" coords="276,5,499,47"/>
+</map>
+</div>
+<div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classModule_1_1Working_1_1Factory_1_1SpawnPoint_adced3b5c3c697ce4b250ec2db71f8765_icgraph.png" border="0" usemap="#aclassModule_1_1Working_1_1Factory_1_1SpawnPoint_adced3b5c3c697ce4b250ec2db71f8765_icgraph" alt=""/></div>
 <map name="aclassModule_1_1Working_1_1Factory_1_1SpawnPoint_adced3b5c3c697ce4b250ec2db71f8765_icgraph" id="aclassModule_1_1Working_1_1Factory_1_1SpawnPoint_adced3b5c3c697ce4b250ec2db71f8765_icgraph">
-<area shape="rect" title="ワーカーのスポーン座標を返します" alt="" coords="540,5,763,47"/>
-<area shape="rect" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#ac966f5863bd7a545801886ed8d14dba3" title="指定した数のワーカーをスポーンします" alt="" coords="267,5,492,47"/>
+<area shape="rect" title="ワーカーのスポーン座標を返します" alt="" coords="791,5,1013,47"/>
+<area shape="rect" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#ac966f5863bd7a545801886ed8d14dba3" title="指定した数のワーカーをスポーンします" alt="" coords="517,5,743,47"/>
+<area shape="rect" href="classGameMain_1_1GameRouter.html#a9ba3d1ae2e03dd55fd5c3b55c49db185" title="workerのセットアップ" alt="" coords="267,5,469,47"/>
 <area shape="rect" href="classGameMain_1_1GameRouter.html#a6454f04e22fe74080dbb46da0f8927be" title=" " alt="" coords="5,13,219,39"/>
 </map>
 </div>
@@ -276,27 +281,75 @@ Module.Working.Factory.SpawnPoint 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="SpawnPoint_8cs_source.html">SpawnPoint.cs</a> の <a class="el" href="SpawnPoint_8cs_source.html#l00081">81</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            Gizmos.color = Color.red;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            Vector3 center = transform.position;</div>
+<p class="definition"> <a class="el" href="SpawnPoint_8cs_source.html">SpawnPoint.cs</a> の <a class="el" href="SpawnPoint_8cs_source.html#l00083">83</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            Gizmos.color = Color.red;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            Gizmos.DrawSphere(center, 0.3f);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            Vector3 center = transform.position;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">foreach</span> (LayerSettings layer <span class="keywordflow">in</span> <a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#ae82269ced3501705f38af976542029bc">layers</a>)</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; layer.count; i++)</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                    <span class="keywordtype">float</span> angle = i * (360.0f / layer.count) * Mathf.Deg2Rad;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                    <span class="keywordtype">float</span> x = center.x + layer.radius * Mathf.Cos(angle);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                    <span class="keywordtype">float</span> z = center.z + layer.radius * Mathf.Sin(angle);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                    Gizmos.DrawSphere(center + <span class="keyword">new</span> Vector3(x, 0f, z), 0.3f);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            Gizmos.DrawSphere(center, 0.3f);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordflow">foreach</span> (LayerSettings layer <span class="keywordflow">in</span> <a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#ae82269ced3501705f38af976542029bc">layers</a>)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; layer.count; i++)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                    var angle = i * (360.0f / layer.count) * Mathf.Deg2Rad;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                    var x = center.x + layer.radius * Mathf.Cos(angle);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                    var z = center.z + layer.radius * Mathf.Sin(angle);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                    Gizmos.DrawSphere(center + <span class="keyword">new</span> Vector3(x, 0f, z), 0.3f);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="a2679a4923e42cf170947f0735742e913"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2679a4923e42cf170947f0735742e913">&#9670;&nbsp;</a></span>Randomize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector3 Module.Working.Factory.SpawnPoint.Randomize </td>
+          <td>(</td>
+          <td class="paramtype">Vector3&#160;</td>
+          <td class="paramname"><em>position</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="SpawnPoint_8cs_source.html">SpawnPoint.cs</a> の <a class="el" href="SpawnPoint_8cs_source.html#l00075">75</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordtype">float</span> xOffset = <a class="code" href="SpawnPoint_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a>.Range(-<a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#a713f90c0016bba48dac5b27e7761f33e">randomRange</a>, <a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#a713f90c0016bba48dac5b27e7761f33e">randomRange</a>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordtype">float</span> zOffset = <a class="code" href="SpawnPoint_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a>.Range(-<a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#a713f90c0016bba48dac5b27e7761f33e">randomRange</a>, <a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#a713f90c0016bba48dac5b27e7761f33e">randomRange</a>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">new</span> Vector3(position.x + xOffset, 0f, position.z + zOffset);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
+<div class="ttc" id="aSpawnPoint_8cs_html_a832e8f52fca5a678819ec96269dcb532"><div class="ttname"><a href="SpawnPoint_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a></div><div class="ttdeci">UnityEngine.Random Random</div><div class="ttdef"><b>Definition:</b> <a href="SpawnPoint_8cs_source.html#l00006">SpawnPoint.cs:6</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Factory_1_1SpawnPoint_html_a713f90c0016bba48dac5b27e7761f33e"><div class="ttname"><a href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#a713f90c0016bba48dac5b27e7761f33e">Module.Working.Factory.SpawnPoint.randomRange</a></div><div class="ttdeci">float randomRange</div><div class="ttdef"><b>Definition:</b> <a href="SpawnPoint_8cs_source.html#l00023">SpawnPoint.cs:23</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1Working_1_1Factory_1_1SpawnPoint_a2679a4923e42cf170947f0735742e913_icgraph.png" border="0" usemap="#aclassModule_1_1Working_1_1Factory_1_1SpawnPoint_a2679a4923e42cf170947f0735742e913_icgraph" alt=""/></div>
+<map name="aclassModule_1_1Working_1_1Factory_1_1SpawnPoint_a2679a4923e42cf170947f0735742e913_icgraph" id="aclassModule_1_1Working_1_1Factory_1_1SpawnPoint_a2679a4923e42cf170947f0735742e913_icgraph">
+<area shape="rect" title=" " alt="" coords="1061,5,1284,47"/>
+<area shape="rect" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#adced3b5c3c697ce4b250ec2db71f8765" title="ワーカーのスポーン座標を返します" alt="" coords="791,5,1013,47"/>
+<area shape="rect" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#ac966f5863bd7a545801886ed8d14dba3" title="指定した数のワーカーをスポーンします" alt="" coords="517,5,743,47"/>
+<area shape="rect" href="classGameMain_1_1GameRouter.html#a9ba3d1ae2e03dd55fd5c3b55c49db185" title="workerのセットアップ" alt="" coords="267,5,469,47"/>
+<area shape="rect" href="classGameMain_1_1GameRouter.html#a6454f04e22fe74080dbb46da0f8927be" title=" " alt="" coords="5,13,219,39"/>
+</map>
+</div>
+
 </div>
 </div>
 <h2 class="groupheader">メンバ詳解</h2>

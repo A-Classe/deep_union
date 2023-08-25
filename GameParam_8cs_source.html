@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>release control: src/Assets/Scripts/GameMain/Presenter/GameParam.cs ソースファイル</title>
+<title>release control: src/Assets/Scripts/Core/Parameter/GameParam.cs ソースファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_2663a91e34b059a736b32b20a5ff248b.html">GameMain</a></li><li class="navelem"><a class="el" href="dir_2f51d8dfcc318125e70ac040d77ce0c3.html">Presenter</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_fede226f1245c80472226816c0f2cbdb.html">Core</a></li><li class="navelem"><a class="el" href="dir_b22c584b03592e7090703d862b1eb6c5.html">Parameter</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -70,21 +70,20 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="GameParam_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceGameMain_1_1Presenter.html">GameMain.Presenter</a></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    [CreateAssetMenu(fileName = <span class="stringliteral">&quot;GameParam&quot;</span>)]</div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classGameMain_1_1Presenter_1_1GameParam.html">    6</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classGameMain_1_1Presenter_1_1GameParam.html">GameParam</a> : ScriptableObject</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    {</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classGameMain_1_1Presenter_1_1GameParam.html#afa4de5bd5169f3b0d900e78d13151c91">    8</a></span>&#160;        [Header(<span class="stringliteral">&quot;割り当て間隔時間&quot;</span>)] [SerializeField] <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code" href="classGameMain_1_1Presenter_1_1GameParam.html#afa4de5bd5169f3b0d900e78d13151c91">assignInterval</a> = 0.5f;</div>
+<div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="namespaceGameMain.html">    2</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceGameMain_1_1Presenter.html">GameMain.Presenter</a></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;{</div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="classGameMain_1_1Presenter_1_1GameParam.html">    4</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classGameMain_1_1Presenter_1_1GameParam.html">GameParam</a> : ScriptableObject</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    {</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classGameMain_1_1Presenter_1_1GameParam.html#ac0dcd4f19ebcf53ee9250830060b95f4">    6</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code" href="classGameMain_1_1Presenter_1_1GameParam.html#ac0dcd4f19ebcf53ee9250830060b95f4">AssignInterval</a> = 0.1f;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classGameMain_1_1Presenter_1_1GameParam.html#a0a62c600729ea541668116667165d3af">    8</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code" href="classGameMain_1_1Presenter_1_1GameParam.html#a0a62c600729ea541668116667165d3af">PlayerSpeed</a> = 1f;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classGameMain_1_1Presenter_1_1GameParam.html#ac0dcd4f19ebcf53ee9250830060b95f4">   10</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code" href="classGameMain_1_1Presenter_1_1GameParam.html#ac0dcd4f19ebcf53ee9250830060b95f4">AssignInterval</a> =&gt; <a class="code" href="classGameMain_1_1Presenter_1_1GameParam.html#afa4de5bd5169f3b0d900e78d13151c91">assignInterval</a>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    }</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
-<div class="ttc" id="aclassGameMain_1_1Presenter_1_1GameParam_html"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1GameParam.html">GameMain.Presenter.GameParam</a></div><div class="ttdef"><b>Definition:</b> <a href="GameParam_8cs_source.html#l00006">GameParam.cs:7</a></div></div>
-<div class="ttc" id="aclassGameMain_1_1Presenter_1_1GameParam_html_ac0dcd4f19ebcf53ee9250830060b95f4"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1GameParam.html#ac0dcd4f19ebcf53ee9250830060b95f4">GameMain.Presenter.GameParam.AssignInterval</a></div><div class="ttdeci">float AssignInterval</div><div class="ttdef"><b>Definition:</b> <a href="GameParam_8cs_source.html#l00010">GameParam.cs:10</a></div></div>
-<div class="ttc" id="aclassGameMain_1_1Presenter_1_1GameParam_html_afa4de5bd5169f3b0d900e78d13151c91"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1GameParam.html#afa4de5bd5169f3b0d900e78d13151c91">GameMain.Presenter.GameParam.assignInterval</a></div><div class="ttdeci">float assignInterval</div><div class="ttdef"><b>Definition:</b> <a href="GameParam_8cs_source.html#l00008">GameParam.cs:8</a></div></div>
-<div class="ttc" id="anamespaceGameMain_1_1Presenter_html"><div class="ttname"><a href="namespaceGameMain_1_1Presenter.html">GameMain.Presenter</a></div><div class="ttdef"><b>Definition:</b> <a href="Assignment_8cs_source.html#l00007">Assignment.cs:8</a></div></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    }</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1GameParam_html"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1GameParam.html">GameMain.Presenter.GameParam</a></div><div class="ttdef"><b>Definition:</b> <a href="GameParam_8cs_source.html#l00004">GameParam.cs:5</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1GameParam_html_a0a62c600729ea541668116667165d3af"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1GameParam.html#a0a62c600729ea541668116667165d3af">GameMain.Presenter.GameParam.PlayerSpeed</a></div><div class="ttdeci">float PlayerSpeed</div><div class="ttdef"><b>Definition:</b> <a href="GameParam_8cs_source.html#l00008">GameParam.cs:8</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1GameParam_html_ac0dcd4f19ebcf53ee9250830060b95f4"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1GameParam.html#ac0dcd4f19ebcf53ee9250830060b95f4">GameMain.Presenter.GameParam.AssignInterval</a></div><div class="ttdeci">float AssignInterval</div><div class="ttdef"><b>Definition:</b> <a href="GameParam_8cs_source.html#l00006">GameParam.cs:6</a></div></div>
+<div class="ttc" id="anamespaceGameMain_1_1Presenter_html"><div class="ttname"><a href="namespaceGameMain_1_1Presenter.html">GameMain.Presenter</a></div><div class="ttdef"><b>Definition:</b> <a href="GameParam_8cs_source.html#l00002">GameParam.cs:3</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

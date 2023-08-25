@@ -81,11 +81,12 @@ Module.Task.ITaskSystem の継承関係図</div>
 <div class="dyncontent">
 <div class="center"><img src="interfaceModule_1_1Task_1_1ITaskSystem__inherit__graph.png" border="0" usemap="#aModule_8Task_8ITaskSystem_inherit__map" alt="Inheritance graph"/></div>
 <map name="aModule_8Task_8ITaskSystem_inherit__map" id="aModule_8Task_8ITaskSystem_inherit__map">
-<area shape="rect" title="タスクにゲームループを適用するインターフェース" alt="" coords="279,5,468,97"/>
-<area shape="rect" href="classModule_1_1Task_1_1BaseTask.html" title="全てのタスクのベースクラス" alt="" coords="282,145,465,501"/>
-<area shape="rect" href="classGameMain_1_1Task_1_1SampleTask.html" title=" " alt="" coords="5,557,213,634"/>
-<area shape="rect" href="classGameMain_1_1Task_1_1Task__2f7cee7ddfe847859aafd1030d8f8bc4.html" title=" " alt="" coords="238,549,509,641"/>
-<area shape="rect" href="classGameMain_1_1Task_1_1Task__c30f2c718b344d0ab59c237e963d9798.html" title=" " alt="" coords="533,549,811,641"/>
+<area shape="rect" title="タスクにゲームループを適用するインターフェース" alt="" coords="429,5,619,97"/>
+<area shape="rect" href="classModule_1_1Task_1_1BaseTask.html" title="全てのタスクのベースクラス" alt="" coords="433,145,615,501"/>
+<area shape="rect" href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html" title=" " alt="" coords="5,549,264,656"/>
+<area shape="rect" href="classGameMain_1_1Task_1_1SampleTask.html" title=" " alt="" coords="288,564,496,641"/>
+<area shape="rect" href="classGameMain_1_1Task_1_1Task__2f7cee7ddfe847859aafd1030d8f8bc4.html" title=" " alt="" coords="521,557,791,649"/>
+<area shape="rect" href="classGameMain_1_1Task_1_1Task__c30f2c718b344d0ab59c237e963d9798.html" title=" " alt="" coords="815,557,1094,649"/>
 </map>
 </div>
 <div class="dynheader">
@@ -99,8 +100,8 @@ Module.Task.ITaskSystem 連携図</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:ab6a106414d89ae16214938049f71f36a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceModule_1_1Task_1_1ITaskSystem.html#ab6a106414d89ae16214938049f71f36a">Initialize</a> ()</td></tr>
-<tr class="separator:ab6a106414d89ae16214938049f71f36a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45c8c0ecab971698c0a88a0e50998624"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceModule_1_1Task_1_1ITaskSystem.html#a45c8c0ecab971698c0a88a0e50998624">Initialize</a> (IObjectResolver container)</td></tr>
+<tr class="separator:a45c8c0ecab971698c0a88a0e50998624"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46ace119fcf9b022abb65fbf955986f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceModule_1_1Task_1_1ITaskSystem.html#a46ace119fcf9b022abb65fbf955986f1">TaskSystemUpdate</a> (float deltaTime)</td></tr>
 <tr class="separator:a46ace119fcf9b022abb65fbf955986f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -112,10 +113,10 @@ Module.Task.ITaskSystem 連携図</div>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>タスクにゲームループを適用するインターフェース </p>
 
-<p class="definition"> <a class="el" href="ITaskSystem_8cs_source.html">ITaskSystem.cs</a> の <a class="el" href="ITaskSystem_8cs_source.html#l00006">6</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="ITaskSystem_8cs_source.html">ITaskSystem.cs</a> の <a class="el" href="ITaskSystem_8cs_source.html#l00008">8</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">関数詳解</h2>
-<a id="ab6a106414d89ae16214938049f71f36a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6a106414d89ae16214938049f71f36a">&#9670;&nbsp;</a></span>Initialize()</h2>
+<a id="a45c8c0ecab971698c0a88a0e50998624"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45c8c0ecab971698c0a88a0e50998624">&#9670;&nbsp;</a></span>Initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -123,13 +124,14 @@ Module.Task.ITaskSystem 連携図</div>
         <tr>
           <td class="memname">void Module.Task.ITaskSystem.Initialize </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">IObjectResolver&#160;</td>
+          <td class="paramname"><em>container</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classModule_1_1Task_1_1BaseTask.html#ad06331a22daef7d8c145f529da53aa95">Module.Task.BaseTask</a>で実装されています。</p>
+<p><a class="el" href="classModule_1_1Task_1_1BaseTask.html#a1920401ca93b2510521acb57666f9be7">Module.Task.BaseTask</a>, <a class="el" href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#abe9cfa4c8320b9305c081314542e9a52">GameMain.Task.IncreaseWorkerTask</a>で実装されています。</p>
 
 </div>
 </div>
@@ -174,8 +176,8 @@ Module.Task.ITaskSystem 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="ITaskSystem_8cs_source.html">ITaskSystem.cs</a> の <a class="el" href="ITaskSystem_8cs_source.html#l00008">8</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{ <span class="keyword">get</span>; }</div>
+<p class="definition"> <a class="el" href="ITaskSystem_8cs_source.html">ITaskSystem.cs</a> の <a class="el" href="ITaskSystem_8cs_source.html#l00010">10</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{ <span class="keyword">get</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>

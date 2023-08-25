@@ -86,12 +86,13 @@ Module.Task.BaseTask の継承関係図</div>
 <div class="dyncontent">
 <div class="center"><img src="classModule_1_1Task_1_1BaseTask__inherit__graph.png" border="0" usemap="#aModule_8Task_8BaseTask_inherit__map" alt="Inheritance graph"/></div>
 <map name="aModule_8Task_8BaseTask_inherit__map" id="aModule_8Task_8BaseTask_inherit__map">
-<area shape="rect" title="全てのタスクのベースクラス" alt="" coords="282,145,465,501"/>
-<area shape="rect" href="classGameMain_1_1Task_1_1SampleTask.html" title=" " alt="" coords="5,557,213,634"/>
-<area shape="rect" href="classGameMain_1_1Task_1_1Task__2f7cee7ddfe847859aafd1030d8f8bc4.html" title=" " alt="" coords="238,549,509,641"/>
-<area shape="rect" href="classGameMain_1_1Task_1_1Task__c30f2c718b344d0ab59c237e963d9798.html" title=" " alt="" coords="533,549,811,641"/>
-<area shape="rect" title=" " alt="" coords="226,13,350,90"/>
-<area shape="rect" href="interfaceModule_1_1Task_1_1ITaskSystem.html" title="タスクにゲームループを適用するインターフェース" alt="" coords="374,5,546,97"/>
+<area shape="rect" title="全てのタスクのベースクラス" alt="" coords="433,145,615,501"/>
+<area shape="rect" href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html" title=" " alt="" coords="5,549,264,656"/>
+<area shape="rect" href="classGameMain_1_1Task_1_1SampleTask.html" title=" " alt="" coords="288,564,496,641"/>
+<area shape="rect" href="classGameMain_1_1Task_1_1Task__2f7cee7ddfe847859aafd1030d8f8bc4.html" title=" " alt="" coords="521,557,791,649"/>
+<area shape="rect" href="classGameMain_1_1Task_1_1Task__c30f2c718b344d0ab59c237e963d9798.html" title=" " alt="" coords="815,557,1094,649"/>
+<area shape="rect" title=" " alt="" coords="377,13,501,90"/>
+<area shape="rect" href="interfaceModule_1_1Task_1_1ITaskSystem.html" title="タスクにゲームループを適用するインターフェース" alt="" coords="525,5,697,97"/>
 </map>
 </div>
 <div class="dynheader">
@@ -107,9 +108,9 @@ Module.Task.BaseTask 連携図</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:ad06331a22daef7d8c145f529da53aa95"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Task_1_1BaseTask.html#ad06331a22daef7d8c145f529da53aa95">Initialize</a> ()</td></tr>
-<tr class="memdesc:ad06331a22daef7d8c145f529da53aa95"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゲーム開始時の初期化関数  <a href="classModule_1_1Task_1_1BaseTask.html#ad06331a22daef7d8c145f529da53aa95">[詳解]</a><br /></td></tr>
-<tr class="separator:ad06331a22daef7d8c145f529da53aa95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1920401ca93b2510521acb57666f9be7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Task_1_1BaseTask.html#a1920401ca93b2510521acb57666f9be7">Initialize</a> (IObjectResolver container)</td></tr>
+<tr class="memdesc:a1920401ca93b2510521acb57666f9be7"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゲーム開始時の初期化関数  <a href="classModule_1_1Task_1_1BaseTask.html#a1920401ca93b2510521acb57666f9be7">[詳解]</a><br /></td></tr>
+<tr class="separator:a1920401ca93b2510521acb57666f9be7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 限定公開メンバ関数</h2></td></tr>
@@ -180,7 +181,7 @@ Module.Task.BaseTask 連携図</div>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>全てのタスクのベースクラス </p>
 
-<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00011">11</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00012">12</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">関数詳解</h2>
 <a id="a871d1f342934de436416e5fed9cd3bc9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a871d1f342934de436416e5fed9cd3bc9">&#9670;&nbsp;</a></span>ChangeState()</h2>
@@ -206,13 +207,13 @@ Module.Task.BaseTask 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00122">122</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            this.<a class="code" href="classModule_1_1Task_1_1BaseTask.html#a95eba1abd7be6b67609c7fe3e8980930">state</a> = <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a95eba1abd7be6b67609c7fe3e8980930">state</a>;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a1b4e4e9e8b80cddd3d79b7872ac0d5b6">OnStateChanged</a>?.Invoke(<a class="code" href="classModule_1_1Task_1_1BaseTask.html#a95eba1abd7be6b67609c7fe3e8980930">state</a>);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        }</div>
-<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a1b4e4e9e8b80cddd3d79b7872ac0d5b6"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a1b4e4e9e8b80cddd3d79b7872ac0d5b6">Module.Task.BaseTask.OnStateChanged</a></div><div class="ttdeci">Action&lt; TaskState &gt; OnStateChanged</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00079">BaseTask.cs:79</a></div></div>
-<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a95eba1abd7be6b67609c7fe3e8980930"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a95eba1abd7be6b67609c7fe3e8980930">Module.Task.BaseTask.state</a></div><div class="ttdeci">TaskState state</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00024">BaseTask.cs:24</a></div></div>
+<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00127">127</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            this.<a class="code" href="classModule_1_1Task_1_1BaseTask.html#a95eba1abd7be6b67609c7fe3e8980930">state</a> = <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a95eba1abd7be6b67609c7fe3e8980930">state</a>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a1b4e4e9e8b80cddd3d79b7872ac0d5b6">OnStateChanged</a>?.Invoke(<a class="code" href="classModule_1_1Task_1_1BaseTask.html#a95eba1abd7be6b67609c7fe3e8980930">state</a>);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a1b4e4e9e8b80cddd3d79b7872ac0d5b6"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a1b4e4e9e8b80cddd3d79b7872ac0d5b6">Module.Task.BaseTask.OnStateChanged</a></div><div class="ttdeci">Action&lt; TaskState &gt; OnStateChanged</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00082">BaseTask.cs:82</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a95eba1abd7be6b67609c7fe3e8980930"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a95eba1abd7be6b67609c7fe3e8980930">Module.Task.BaseTask.state</a></div><div class="ttdeci">TaskState state</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00025">BaseTask.cs:25</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -227,8 +228,8 @@ Module.Task.BaseTask 連携図</div>
 
 </div>
 </div>
-<a id="ad06331a22daef7d8c145f529da53aa95"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad06331a22daef7d8c145f529da53aa95">&#9670;&nbsp;</a></span>Initialize()</h2>
+<a id="a1920401ca93b2510521acb57666f9be7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1920401ca93b2510521acb57666f9be7">&#9670;&nbsp;</a></span>Initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -239,7 +240,8 @@ Module.Task.BaseTask 連携図</div>
         <tr>
           <td class="memname">virtual void Module.Task.BaseTask.Initialize </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">IObjectResolver&#160;</td>
+          <td class="paramname"><em>container</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -251,11 +253,19 @@ Module.Task.BaseTask 連携図</div>
 </div><div class="memdoc">
 
 <p>ゲーム開始時の初期化関数 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">container</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p><a class="el" href="interfaceModule_1_1Task_1_1ITaskSystem.html#ab6a106414d89ae16214938049f71f36a">Module.Task.ITaskSystem</a>を実装しています。</p>
+<p><a class="el" href="interfaceModule_1_1Task_1_1ITaskSystem.html#a45c8c0ecab971698c0a88a0e50998624">Module.Task.ITaskSystem</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00067">67</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{ }</div>
+<p><a class="el" href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#abe9cfa4c8320b9305c081314542e9a52">GameMain.Task.IncreaseWorkerTask</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00070">70</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -291,8 +301,8 @@ Module.Task.BaseTask 連携図</div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00085">85</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{ }</div>
+<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00088">88</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{ }</div>
 </div><!-- fragment --><div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -328,8 +338,8 @@ Module.Task.BaseTask 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00130">130</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;{ }</div>
+<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00135">135</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;{ }</div>
 </div><!-- fragment --><div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -365,8 +375,10 @@ Module.Task.BaseTask 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00132">132</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;{ }</div>
+<p><a class="el" href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#ae864f3f5ff16dc9657414c8cdfa3d2f4">GameMain.Task.IncreaseWorkerTask</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00137">137</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;{ }</div>
 </div><!-- fragment --><div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -403,12 +415,12 @@ Module.Task.BaseTask 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00047">47</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            Gizmos.color = <span class="keyword">new</span> Color(0f, 0.83f, 0f, 0.41f);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            Gizmos.DrawSphere(transform.position, <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a14fa7fd9dfc3aa98f679c399c3c3967e">taskSize</a>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
-<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a14fa7fd9dfc3aa98f679c399c3c3967e"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a14fa7fd9dfc3aa98f679c399c3c3967e">Module.Task.BaseTask.taskSize</a></div><div class="ttdeci">float taskSize</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00016">BaseTask.cs:16</a></div></div>
+<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00049">49</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            Gizmos.color = <span class="keyword">new</span> Color(0f, 0.83f, 0f, 0.41f);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            Gizmos.DrawSphere(transform.position, <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a14fa7fd9dfc3aa98f679c399c3c3967e">taskSize</a>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a14fa7fd9dfc3aa98f679c399c3c3967e"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a14fa7fd9dfc3aa98f679c399c3c3967e">Module.Task.BaseTask.taskSize</a></div><div class="ttdeci">float taskSize</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00017">BaseTask.cs:17</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -435,29 +447,30 @@ Module.Task.BaseTask 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00103">103</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Task_1_1BaseTask.html#a95eba1abd7be6b67609c7fe3e8980930">state</a> == <a class="code" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a>.Completed)</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="comment">//作業量が0より大きくなったら開始</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Task_1_1BaseTask.html#a93556c2f4caa3de09473d69cc8bbd254">prevMw</a> == 0f &amp;&amp; <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a506547b607ba83f4b0e0b302a1797bbd">currentMw</a> &gt; <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a93556c2f4caa3de09473d69cc8bbd254">prevMw</a>)</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a871d1f342934de436416e5fed9cd3bc9">ChangeState</a>(<a class="code" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a>.InProgress);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a5e42e6ebbdf859cc1c16e01d9d77e7cf">OnStart</a>();</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="comment">//作業量が0になったらキャンセル</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Task_1_1BaseTask.html#a93556c2f4caa3de09473d69cc8bbd254">prevMw</a> &gt; 0f &amp;&amp; <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a506547b607ba83f4b0e0b302a1797bbd">currentMw</a> == 0f)</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a871d1f342934de436416e5fed9cd3bc9">ChangeState</a>(<a class="code" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a>.Idle);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a7d685a0de356fcc8f1973b3ca5cdddf3">OnCancel</a>();</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            }</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        }</div>
-<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a506547b607ba83f4b0e0b302a1797bbd"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a506547b607ba83f4b0e0b302a1797bbd">Module.Task.BaseTask.currentMw</a></div><div class="ttdeci">float currentMw</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00027">BaseTask.cs:27</a></div></div>
-<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a5e42e6ebbdf859cc1c16e01d9d77e7cf"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a5e42e6ebbdf859cc1c16e01d9d77e7cf">Module.Task.BaseTask.OnStart</a></div><div class="ttdeci">virtual void OnStart()</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00128">BaseTask.cs:128</a></div></div>
-<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a7d685a0de356fcc8f1973b3ca5cdddf3"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a7d685a0de356fcc8f1973b3ca5cdddf3">Module.Task.BaseTask.OnCancel</a></div><div class="ttdeci">virtual void OnCancel()</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00130">BaseTask.cs:130</a></div></div>
-<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a871d1f342934de436416e5fed9cd3bc9"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a871d1f342934de436416e5fed9cd3bc9">Module.Task.BaseTask.ChangeState</a></div><div class="ttdeci">void ChangeState(TaskState state)</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00122">BaseTask.cs:122</a></div></div>
-<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a93556c2f4caa3de09473d69cc8bbd254"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a93556c2f4caa3de09473d69cc8bbd254">Module.Task.BaseTask.prevMw</a></div><div class="ttdeci">float prevMw</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00029">BaseTask.cs:29</a></div></div>
+<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00106">106</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Task_1_1BaseTask.html#a95eba1abd7be6b67609c7fe3e8980930">state</a> == <a class="code" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a>.Completed)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">switch</span> (<a class="code" href="classModule_1_1Task_1_1BaseTask.html#a93556c2f4caa3de09473d69cc8bbd254">prevMw</a>)</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <span class="comment">//作業量が0より大きくなったら開始</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <span class="keywordflow">case</span> 0f when <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a506547b607ba83f4b0e0b302a1797bbd">currentMw</a> &gt; <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a93556c2f4caa3de09473d69cc8bbd254">prevMw</a>:</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                    <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a871d1f342934de436416e5fed9cd3bc9">ChangeState</a>(<a class="code" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a>.InProgress);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                    <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a5e42e6ebbdf859cc1c16e01d9d77e7cf">OnStart</a>();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                <span class="comment">//作業量が0になったらキャンセル</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="keywordflow">case</span> &gt; 0f when <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a506547b607ba83f4b0e0b302a1797bbd">currentMw</a> == 0f:</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                    <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a871d1f342934de436416e5fed9cd3bc9">ChangeState</a>(<a class="code" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a>.Idle);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                    <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a7d685a0de356fcc8f1973b3ca5cdddf3">OnCancel</a>();</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a506547b607ba83f4b0e0b302a1797bbd"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a506547b607ba83f4b0e0b302a1797bbd">Module.Task.BaseTask.currentMw</a></div><div class="ttdeci">float currentMw</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00028">BaseTask.cs:28</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a5e42e6ebbdf859cc1c16e01d9d77e7cf"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a5e42e6ebbdf859cc1c16e01d9d77e7cf">Module.Task.BaseTask.OnStart</a></div><div class="ttdeci">virtual void OnStart()</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00133">BaseTask.cs:133</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a7d685a0de356fcc8f1973b3ca5cdddf3"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a7d685a0de356fcc8f1973b3ca5cdddf3">Module.Task.BaseTask.OnCancel</a></div><div class="ttdeci">virtual void OnCancel()</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00135">BaseTask.cs:135</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a871d1f342934de436416e5fed9cd3bc9"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a871d1f342934de436416e5fed9cd3bc9">Module.Task.BaseTask.ChangeState</a></div><div class="ttdeci">void ChangeState(TaskState state)</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00127">BaseTask.cs:127</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a93556c2f4caa3de09473d69cc8bbd254"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a93556c2f4caa3de09473d69cc8bbd254">Module.Task.BaseTask.prevMw</a></div><div class="ttdeci">float prevMw</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00030">BaseTask.cs:30</a></div></div>
 <div class="ttc" id="anamespaceModule_1_1Task_html_a5559ca3b155ae70ee91b579e8e01f985"><div class="ttname"><a href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">Module.Task.TaskState</a></div><div class="ttdeci">TaskState</div><div class="ttdoc">タスクの状態</div><div class="ttdef"><b>Definition:</b> <a href="TaskState_8cs_source.html#l00006">TaskState.cs:7</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 呼び出し関係図:</div>
@@ -496,8 +509,8 @@ Module.Task.BaseTask 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00128">128</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{ }</div>
+<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00133">133</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;{ }</div>
 </div><!-- fragment --><div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -533,15 +546,15 @@ Module.Task.BaseTask 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00053">53</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            var col = GetComponent&lt;SphereCollider&gt;();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            col.radius = <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a14fa7fd9dfc3aa98f679c399c3c3967e">taskSize</a>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="comment">//作業量は最低1以上とする</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a35801d0ce16ade36be744b980b000280">mw</a> = Mathf.Clamp(<a class="code" href="classModule_1_1Task_1_1BaseTask.html#a35801d0ce16ade36be744b980b000280">mw</a>, 1f, <span class="keywordtype">float</span>.MaxValue);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
-<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a35801d0ce16ade36be744b980b000280"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a35801d0ce16ade36be744b980b000280">Module.Task.BaseTask.mw</a></div><div class="ttdeci">float mw</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00020">BaseTask.cs:20</a></div></div>
+<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00055">55</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            var col = GetComponent&lt;SphereCollider&gt;();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            col.radius = <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a14fa7fd9dfc3aa98f679c399c3c3967e">taskSize</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="comment">//作業量は最低1以上とする</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a35801d0ce16ade36be744b980b000280">mw</a> = Mathf.Clamp(<a class="code" href="classModule_1_1Task_1_1BaseTask.html#a35801d0ce16ade36be744b980b000280">mw</a>, 1f, <span class="keywordtype">float</span>.MaxValue);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a35801d0ce16ade36be744b980b000280"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a35801d0ce16ade36be744b980b000280">Module.Task.BaseTask.mw</a></div><div class="ttdeci">float mw</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00021">BaseTask.cs:21</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -579,13 +592,13 @@ Module.Task.BaseTask 連携図</div>
 
 <p><a class="el" href="interfaceModule_1_1Task_1_1ITaskSystem.html#a46ace119fcf9b022abb65fbf955986f1">Module.Task.ITaskSystem</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00073">73</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a81a5a6f69b5538ab5a09757bc6f34bbe">UpdateProgress</a>(deltaTime);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a5abab8d99a1af399a24ee46a58395c17">ManagedUpdate</a>(deltaTime);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
-<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a5abab8d99a1af399a24ee46a58395c17"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a5abab8d99a1af399a24ee46a58395c17">Module.Task.BaseTask.ManagedUpdate</a></div><div class="ttdeci">virtual void ManagedUpdate(float deltaTime)</div><div class="ttdoc">ゲームの状態によって管理されるUpdate</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00085">BaseTask.cs:85</a></div></div>
-<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a81a5a6f69b5538ab5a09757bc6f34bbe"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a81a5a6f69b5538ab5a09757bc6f34bbe">Module.Task.BaseTask.UpdateProgress</a></div><div class="ttdeci">void UpdateProgress(float deltaTime)</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00087">BaseTask.cs:87</a></div></div>
+<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00076">76</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a81a5a6f69b5538ab5a09757bc6f34bbe">UpdateProgress</a>(deltaTime);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a5abab8d99a1af399a24ee46a58395c17">ManagedUpdate</a>(deltaTime);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a5abab8d99a1af399a24ee46a58395c17"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a5abab8d99a1af399a24ee46a58395c17">Module.Task.BaseTask.ManagedUpdate</a></div><div class="ttdeci">virtual void ManagedUpdate(float deltaTime)</div><div class="ttdoc">ゲームの状態によって管理されるUpdate</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00088">BaseTask.cs:88</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a81a5a6f69b5538ab5a09757bc6f34bbe"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a81a5a6f69b5538ab5a09757bc6f34bbe">Module.Task.BaseTask.UpdateProgress</a></div><div class="ttdeci">void UpdateProgress(float deltaTime)</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00090">BaseTask.cs:90</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -625,24 +638,24 @@ Module.Task.BaseTask 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00087">87</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Task_1_1BaseTask.html#a95eba1abd7be6b67609c7fe3e8980930">state</a> == <a class="code" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a>.Completed || <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a506547b607ba83f4b0e0b302a1797bbd">currentMw</a> == 0f)</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a21b95f9ee00aebb1b8e47a992db6569c">progressMw</a> = Mathf.Clamp(<a class="code" href="classModule_1_1Task_1_1BaseTask.html#a21b95f9ee00aebb1b8e47a992db6569c">progressMw</a> + <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a506547b607ba83f4b0e0b302a1797bbd">currentMw</a> * deltaTime, 0f, <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a35801d0ce16ade36be744b980b000280">mw</a>);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <a class="code" href="classModule_1_1Task_1_1BaseTask.html#adf401b66c1fb2d799d739a853975832f">currentProgress</a> = Mathf.InverseLerp(0f, <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a35801d0ce16ade36be744b980b000280">mw</a>, <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a21b95f9ee00aebb1b8e47a992db6569c">progressMw</a>);</div>
+<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00090">90</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Task_1_1BaseTask.html#a95eba1abd7be6b67609c7fe3e8980930">state</a> == <a class="code" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a>.Completed || <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a506547b607ba83f4b0e0b302a1797bbd">currentMw</a> == 0f)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="comment">//進捗が1に到達したら完了</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Task_1_1BaseTask.html#adf401b66c1fb2d799d739a853975832f">currentProgress</a> &gt;= 1f)</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a871d1f342934de436416e5fed9cd3bc9">ChangeState</a>(<a class="code" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a>.Completed);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <a class="code" href="classModule_1_1Task_1_1BaseTask.html#aecef9fa0a5d27bea4c305ce753c97a1b">OnComplete</a>();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
-<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a21b95f9ee00aebb1b8e47a992db6569c"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a21b95f9ee00aebb1b8e47a992db6569c">Module.Task.BaseTask.progressMw</a></div><div class="ttdeci">float progressMw</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00028">BaseTask.cs:28</a></div></div>
-<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_adf401b66c1fb2d799d739a853975832f"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#adf401b66c1fb2d799d739a853975832f">Module.Task.BaseTask.currentProgress</a></div><div class="ttdeci">float currentProgress</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00026">BaseTask.cs:26</a></div></div>
-<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_aecef9fa0a5d27bea4c305ce753c97a1b"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#aecef9fa0a5d27bea4c305ce753c97a1b">Module.Task.BaseTask.OnComplete</a></div><div class="ttdeci">virtual void OnComplete()</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00132">BaseTask.cs:132</a></div></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a21b95f9ee00aebb1b8e47a992db6569c">progressMw</a> = Mathf.Clamp(<a class="code" href="classModule_1_1Task_1_1BaseTask.html#a21b95f9ee00aebb1b8e47a992db6569c">progressMw</a> + <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a506547b607ba83f4b0e0b302a1797bbd">currentMw</a> * deltaTime, 0f, <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a35801d0ce16ade36be744b980b000280">mw</a>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <a class="code" href="classModule_1_1Task_1_1BaseTask.html#adf401b66c1fb2d799d739a853975832f">currentProgress</a> = Mathf.InverseLerp(0f, <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a35801d0ce16ade36be744b980b000280">mw</a>, <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a21b95f9ee00aebb1b8e47a992db6569c">progressMw</a>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="comment">//進捗が1に到達したら完了</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Task_1_1BaseTask.html#adf401b66c1fb2d799d739a853975832f">currentProgress</a> &gt;= 1f)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a871d1f342934de436416e5fed9cd3bc9">ChangeState</a>(<a class="code" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a>.Completed);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <a class="code" href="classModule_1_1Task_1_1BaseTask.html#aecef9fa0a5d27bea4c305ce753c97a1b">OnComplete</a>();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a21b95f9ee00aebb1b8e47a992db6569c"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a21b95f9ee00aebb1b8e47a992db6569c">Module.Task.BaseTask.progressMw</a></div><div class="ttdeci">float progressMw</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00029">BaseTask.cs:29</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_adf401b66c1fb2d799d739a853975832f"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#adf401b66c1fb2d799d739a853975832f">Module.Task.BaseTask.currentProgress</a></div><div class="ttdeci">float currentProgress</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00027">BaseTask.cs:27</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_aecef9fa0a5d27bea4c305ce753c97a1b"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#aecef9fa0a5d27bea4c305ce753c97a1b">Module.Task.BaseTask.OnComplete</a></div><div class="ttdeci">virtual void OnComplete()</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00137">BaseTask.cs:137</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -686,7 +699,7 @@ Module.Task.BaseTask 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00027">27</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00028">28</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -710,7 +723,7 @@ Module.Task.BaseTask 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00026">26</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00027">27</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -734,7 +747,7 @@ Module.Task.BaseTask 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00020">20</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00021">21</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -758,7 +771,7 @@ Module.Task.BaseTask 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00029">29</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00030">30</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -782,7 +795,7 @@ Module.Task.BaseTask 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00028">28</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00029">29</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -806,7 +819,7 @@ Module.Task.BaseTask 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00024">24</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00025">25</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -830,7 +843,7 @@ Module.Task.BaseTask 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00016">16</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00017">17</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -857,17 +870,17 @@ Module.Task.BaseTask 連携図</div>
 
 <p>現在割り当てられている作業量 </p>
 
-<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00034">34</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keyword">set</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a93556c2f4caa3de09473d69cc8bbd254">prevMw</a> = <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a506547b607ba83f4b0e0b302a1797bbd">currentMw</a>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a506547b607ba83f4b0e0b302a1797bbd">currentMw</a> = Mathf.Clamp(value, 0f, <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a35801d0ce16ade36be744b980b000280">mw</a>);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a5a5eed78761e97d3e6376b6240c8719d">OnMonoWorkUpdated</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keyword">get</span> =&gt; <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a506547b607ba83f4b0e0b302a1797bbd">currentMw</a>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
-<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a5a5eed78761e97d3e6376b6240c8719d"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a5a5eed78761e97d3e6376b6240c8719d">Module.Task.BaseTask.OnMonoWorkUpdated</a></div><div class="ttdeci">void OnMonoWorkUpdated()</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00103">BaseTask.cs:103</a></div></div>
+<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00035">35</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keyword">set</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a93556c2f4caa3de09473d69cc8bbd254">prevMw</a> = <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a506547b607ba83f4b0e0b302a1797bbd">currentMw</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a506547b607ba83f4b0e0b302a1797bbd">currentMw</a> = Mathf.Clamp(value, 0f, <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a35801d0ce16ade36be744b980b000280">mw</a>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a5a5eed78761e97d3e6376b6240c8719d">OnMonoWorkUpdated</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keyword">get</span> =&gt; <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a506547b607ba83f4b0e0b302a1797bbd">currentMw</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a5a5eed78761e97d3e6376b6240c8719d"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a5a5eed78761e97d3e6376b6240c8719d">Module.Task.BaseTask.OnMonoWorkUpdated</a></div><div class="ttdeci">void OnMonoWorkUpdated()</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00106">BaseTask.cs:106</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -891,7 +904,7 @@ Module.Task.BaseTask 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00045">45</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00047">47</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -915,7 +928,7 @@ Module.Task.BaseTask 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00062">62</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00064">64</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -932,7 +945,7 @@ Module.Task.BaseTask 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00079">79</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="BaseTask_8cs_source.html">BaseTask.cs</a> の <a class="el" href="BaseTask_8cs_source.html#l00082">82</a> 行目に定義があります。</p>
 
 </div>
 </div>

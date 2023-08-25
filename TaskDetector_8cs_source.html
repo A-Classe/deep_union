@@ -69,7 +69,7 @@ $(function() {
 <div class="title">TaskDetector.cs</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="TaskDetector_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> System.Collections.Generic;</div>
+<a href="TaskDetector_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceSystem.html">System</a>.Collections.Generic;</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceModule_1_1Task.html">Module.Task</a></div>
@@ -86,56 +86,58 @@ $(function() {
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1TaskDetector.html#a531b97dd2237b5b98a450cc7f627ec4c">   18</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Task_1_1TaskDetector.html#a531b97dd2237b5b98a450cc7f627ec4c">OnDrawGizmos</a>()</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        {</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            Gizmos.color = <span class="keyword">new</span> Color(1f, 0.92f, 0.02f, 0.51f);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            Gizmos.DrawSphere(transform.position, <a class="code" href="classModule_1_1Task_1_1TaskDetector.html#a7ee3682c595e04ec0aad47ba5ee5e842">detectRadius</a>);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            Gizmos.color = Color.yellow;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            Gizmos.DrawWireSphere(transform.position, <a class="code" href="classModule_1_1Task_1_1TaskDetector.html#a7ee3682c595e04ec0aad47ba5ee5e842">detectRadius</a>);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1TaskDetector.html#a9772acfba56971fbf388b479cdcd24a3">   31</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="classModule_1_1Task_1_1BaseTask.html">BaseTask</a> <a class="code" href="classModule_1_1Task_1_1TaskDetector.html#a9772acfba56971fbf388b479cdcd24a3">GetNearestTask</a>()</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Task_1_1TaskDetector.html#a8db4e8332bd873e81880d549edfa929a">detectedTasks</a>.Count == 0)</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            var origin = transform.position;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            var minDistance = <span class="keywordtype">float</span>.MaxValue;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="classModule_1_1Task_1_1BaseTask.html">BaseTask</a> nearestTask = <span class="keyword">null</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">foreach</span> (var task <span class="keywordflow">in</span> <a class="code" href="classModule_1_1Task_1_1TaskDetector.html#a8db4e8332bd873e81880d549edfa929a">detectedTasks</a>)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                var distance = (task.transform.position - origin).sqrMagnitude;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">if</span> (distance &lt; minDistance)</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    minDistance = distance;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                    nearestTask = task;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">return</span> nearestTask;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1TaskDetector.html#ac444c7dfee7ca59d9252817520a3da73">   56</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Task_1_1TaskDetector.html#ac444c7dfee7ca59d9252817520a3da73">UpdateDetection</a>()</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            var count = Physics.OverlapSphereNonAlloc(transform.position, <a class="code" href="classModule_1_1Task_1_1TaskDetector.html#a7ee3682c595e04ec0aad47ba5ee5e842">detectRadius</a>, <a class="code" href="classModule_1_1Task_1_1TaskDetector.html#a370cf5201e8e816e3c8d1c35d21e68d1">colliderBuffer</a>, <a class="code" href="classModule_1_1Task_1_1TaskDetector.html#acc4b120732af760c65b314bde9f2bd99">detectLayer</a>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <a class="code" href="classModule_1_1Task_1_1TaskDetector.html#a8db4e8332bd873e81880d549edfa929a">detectedTasks</a>.Clear();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">for</span> (var i = 0; i &lt; count; i++)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Task_1_1TaskDetector.html#a370cf5201e8e816e3c8d1c35d21e68d1">colliderBuffer</a>[i].TryGetComponent(out <a class="code" href="classModule_1_1Task_1_1BaseTask.html">BaseTask</a> baseTask))</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    <a class="code" href="classModule_1_1Task_1_1TaskDetector.html#a8db4e8332bd873e81880d549edfa929a">detectedTasks</a>.Add(baseTask);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
-<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html">Module.Task.BaseTask</a></div><div class="ttdoc">全てのタスクのベースクラス</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00011">BaseTask.cs:12</a></div></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            var position = transform.position;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            Gizmos.DrawSphere(position, <a class="code" href="classModule_1_1Task_1_1TaskDetector.html#a7ee3682c595e04ec0aad47ba5ee5e842">detectRadius</a>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            Gizmos.color = Color.yellow;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            Gizmos.DrawWireSphere(position, <a class="code" href="classModule_1_1Task_1_1TaskDetector.html#a7ee3682c595e04ec0aad47ba5ee5e842">detectRadius</a>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1TaskDetector.html#a9772acfba56971fbf388b479cdcd24a3">   32</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="classModule_1_1Task_1_1BaseTask.html">BaseTask</a> <a class="code" href="classModule_1_1Task_1_1TaskDetector.html#a9772acfba56971fbf388b479cdcd24a3">GetNearestTask</a>()</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Task_1_1TaskDetector.html#a8db4e8332bd873e81880d549edfa929a">detectedTasks</a>.Count == 0)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            var origin = transform.position;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            var minDistance = <span class="keywordtype">float</span>.MaxValue;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <a class="code" href="classModule_1_1Task_1_1BaseTask.html">BaseTask</a> nearestTask = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">foreach</span> (var task <span class="keywordflow">in</span> <a class="code" href="classModule_1_1Task_1_1TaskDetector.html#a8db4e8332bd873e81880d549edfa929a">detectedTasks</a>)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                var distance = (task.transform.position - origin).sqrMagnitude;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordflow">if</span> (distance &lt; minDistance)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                    minDistance = distance;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                    nearestTask = task;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">return</span> nearestTask;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1TaskDetector.html#ac444c7dfee7ca59d9252817520a3da73">   57</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Task_1_1TaskDetector.html#ac444c7dfee7ca59d9252817520a3da73">UpdateDetection</a>()</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            var count = Physics.OverlapSphereNonAlloc(transform.position, <a class="code" href="classModule_1_1Task_1_1TaskDetector.html#a7ee3682c595e04ec0aad47ba5ee5e842">detectRadius</a>, <a class="code" href="classModule_1_1Task_1_1TaskDetector.html#a370cf5201e8e816e3c8d1c35d21e68d1">colliderBuffer</a>, <a class="code" href="classModule_1_1Task_1_1TaskDetector.html#acc4b120732af760c65b314bde9f2bd99">detectLayer</a>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <a class="code" href="classModule_1_1Task_1_1TaskDetector.html#a8db4e8332bd873e81880d549edfa929a">detectedTasks</a>.Clear();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">for</span> (var i = 0; i &lt; count; i++)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Task_1_1TaskDetector.html#a370cf5201e8e816e3c8d1c35d21e68d1">colliderBuffer</a>[i].TryGetComponent(out <a class="code" href="classModule_1_1Task_1_1BaseTask.html">BaseTask</a> baseTask))</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    <a class="code" href="classModule_1_1Task_1_1TaskDetector.html#a8db4e8332bd873e81880d549edfa929a">detectedTasks</a>.Add(baseTask);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html">Module.Task.BaseTask</a></div><div class="ttdoc">全てのタスクのベースクラス</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00012">BaseTask.cs:13</a></div></div>
 <div class="ttc" id="aclassModule_1_1Task_1_1TaskDetector_html"><div class="ttname"><a href="classModule_1_1Task_1_1TaskDetector.html">Module.Task.TaskDetector</a></div><div class="ttdoc">タスクを検出するクラス</div><div class="ttdef"><b>Definition:</b> <a href="TaskDetector_8cs_source.html#l00009">TaskDetector.cs:10</a></div></div>
 <div class="ttc" id="aclassModule_1_1Task_1_1TaskDetector_html_a370cf5201e8e816e3c8d1c35d21e68d1"><div class="ttname"><a href="classModule_1_1Task_1_1TaskDetector.html#a370cf5201e8e816e3c8d1c35d21e68d1">Module.Task.TaskDetector.colliderBuffer</a></div><div class="ttdeci">readonly Collider[] colliderBuffer</div><div class="ttdef"><b>Definition:</b> <a href="TaskDetector_8cs_source.html#l00014">TaskDetector.cs:14</a></div></div>
 <div class="ttc" id="aclassModule_1_1Task_1_1TaskDetector_html_a531b97dd2237b5b98a450cc7f627ec4c"><div class="ttname"><a href="classModule_1_1Task_1_1TaskDetector.html#a531b97dd2237b5b98a450cc7f627ec4c">Module.Task.TaskDetector.OnDrawGizmos</a></div><div class="ttdeci">void OnDrawGizmos()</div><div class="ttdef"><b>Definition:</b> <a href="TaskDetector_8cs_source.html#l00018">TaskDetector.cs:18</a></div></div>
 <div class="ttc" id="aclassModule_1_1Task_1_1TaskDetector_html_a7ee3682c595e04ec0aad47ba5ee5e842"><div class="ttname"><a href="classModule_1_1Task_1_1TaskDetector.html#a7ee3682c595e04ec0aad47ba5ee5e842">Module.Task.TaskDetector.detectRadius</a></div><div class="ttdeci">float detectRadius</div><div class="ttdef"><b>Definition:</b> <a href="TaskDetector_8cs_source.html#l00011">TaskDetector.cs:11</a></div></div>
 <div class="ttc" id="aclassModule_1_1Task_1_1TaskDetector_html_a8db4e8332bd873e81880d549edfa929a"><div class="ttname"><a href="classModule_1_1Task_1_1TaskDetector.html#a8db4e8332bd873e81880d549edfa929a">Module.Task.TaskDetector.detectedTasks</a></div><div class="ttdeci">readonly List&lt; BaseTask &gt; detectedTasks</div><div class="ttdef"><b>Definition:</b> <a href="TaskDetector_8cs_source.html#l00016">TaskDetector.cs:16</a></div></div>
-<div class="ttc" id="aclassModule_1_1Task_1_1TaskDetector_html_a9772acfba56971fbf388b479cdcd24a3"><div class="ttname"><a href="classModule_1_1Task_1_1TaskDetector.html#a9772acfba56971fbf388b479cdcd24a3">Module.Task.TaskDetector.GetNearestTask</a></div><div class="ttdeci">BaseTask GetNearestTask()</div><div class="ttdoc">親オブジェクトの座標に最も近いタスクを取得します</div><div class="ttdef"><b>Definition:</b> <a href="TaskDetector_8cs_source.html#l00031">TaskDetector.cs:31</a></div></div>
-<div class="ttc" id="aclassModule_1_1Task_1_1TaskDetector_html_ac444c7dfee7ca59d9252817520a3da73"><div class="ttname"><a href="classModule_1_1Task_1_1TaskDetector.html#ac444c7dfee7ca59d9252817520a3da73">Module.Task.TaskDetector.UpdateDetection</a></div><div class="ttdeci">void UpdateDetection()</div><div class="ttdoc">検出処理を更新します</div><div class="ttdef"><b>Definition:</b> <a href="TaskDetector_8cs_source.html#l00056">TaskDetector.cs:56</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1TaskDetector_html_a9772acfba56971fbf388b479cdcd24a3"><div class="ttname"><a href="classModule_1_1Task_1_1TaskDetector.html#a9772acfba56971fbf388b479cdcd24a3">Module.Task.TaskDetector.GetNearestTask</a></div><div class="ttdeci">BaseTask GetNearestTask()</div><div class="ttdoc">親オブジェクトの座標に最も近いタスクを取得します</div><div class="ttdef"><b>Definition:</b> <a href="TaskDetector_8cs_source.html#l00032">TaskDetector.cs:32</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1TaskDetector_html_ac444c7dfee7ca59d9252817520a3da73"><div class="ttname"><a href="classModule_1_1Task_1_1TaskDetector.html#ac444c7dfee7ca59d9252817520a3da73">Module.Task.TaskDetector.UpdateDetection</a></div><div class="ttdeci">void UpdateDetection()</div><div class="ttdoc">検出処理を更新します</div><div class="ttdef"><b>Definition:</b> <a href="TaskDetector_8cs_source.html#l00057">TaskDetector.cs:57</a></div></div>
 <div class="ttc" id="aclassModule_1_1Task_1_1TaskDetector_html_acc4b120732af760c65b314bde9f2bd99"><div class="ttname"><a href="classModule_1_1Task_1_1TaskDetector.html#acc4b120732af760c65b314bde9f2bd99">Module.Task.TaskDetector.detectLayer</a></div><div class="ttdeci">LayerMask detectLayer</div><div class="ttdef"><b>Definition:</b> <a href="TaskDetector_8cs_source.html#l00012">TaskDetector.cs:12</a></div></div>
-<div class="ttc" id="anamespaceModule_1_1Task_html"><div class="ttname"><a href="namespaceModule_1_1Task.html">Module.Task</a></div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00004">BaseTask.cs:5</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Task_html"><div class="ttname"><a href="namespaceModule_1_1Task.html">Module.Task</a></div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00005">BaseTask.cs:6</a></div></div>
+<div class="ttc" id="anamespaceSystem_html"><div class="ttname"><a href="namespaceSystem.html">System</a></div><div class="ttdef"><b>Definition:</b> <a href="IStateSystem_8cs_source.html#l00001">IStateSystem.cs:2</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
