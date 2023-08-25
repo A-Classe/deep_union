@@ -5,6 +5,7 @@ using Core.Input;
 using Module.Task;
 using Module.Working.Controller;
 using Module.Working.State;
+using UnityEngine;
 using Wanna.DebugEx;
 
 namespace GameMain.Presenter
@@ -50,7 +51,7 @@ namespace GameMain.Presenter
                 //作業量の更新
                 assignment.Task.Mw += 1;
 
-                nearestWorker.SetFollowTarget(assignment.Target);
+                nearestWorker.SetFollowTarget(assignment.Target, Vector3.zero);
                 nearestWorker.SetWorkerState(WorkerState.Working);
             }
             catch (Exception e)
