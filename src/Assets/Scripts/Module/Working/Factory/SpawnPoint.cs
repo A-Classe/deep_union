@@ -23,7 +23,7 @@ namespace Module.Working.Factory
         [SerializeField] float randomRange = 1.0f;
         private Vector3[] pointsBuffer;
 
-        private void Start()
+        private void Awake()
         {
             pointsBuffer = new Vector3[layers.Sum(layer => layer.count)];
         }
