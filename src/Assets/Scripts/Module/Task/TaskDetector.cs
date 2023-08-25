@@ -18,10 +18,11 @@ namespace Module.Task
         private void OnDrawGizmos()
         {
             Gizmos.color = new Color(1f, 0.92f, 0.02f, 0.51f);
-            Gizmos.DrawSphere(transform.position, detectRadius);
+            var position = transform.position;
+            Gizmos.DrawSphere(position, detectRadius);
 
             Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(transform.position, detectRadius);
+            Gizmos.DrawWireSphere(position, detectRadius);
         }
 
         /// <summary>

@@ -6,7 +6,7 @@ namespace Module.Player.State
 {
     public class GoState : IPlayerState
     {
-        private PlayerController controller;
+        private readonly PlayerController controller;
         public GoState(PlayerController controller)
         {
             this.controller = controller;
@@ -16,9 +16,8 @@ namespace Module.Player.State
         public void Update()
         {
             var transform = controller.transform;
-            Vector3 position = transform.position;
-            Vector3 updatePosition = Vector3.Lerp(position, position + transform.forward * controller.Speed, Time.deltaTime);
-            DebugEx.Log(updatePosition);
+            var position = transform.position;
+            var updatePosition = Vector3.Lerp(position, position + transform.forward * controller.Speed, Time.deltaTime);
             controller.transform.position = updatePosition;
         }
     }

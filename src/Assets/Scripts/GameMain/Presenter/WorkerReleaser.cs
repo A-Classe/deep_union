@@ -54,16 +54,14 @@ namespace GameMain.Presenter
                 //タスクからワーカーを削除
                 var worker = GetNearestWorker(assignment);
 
-                if (worker != null)
-                {
-                    assignment.Workers.Remove(worker);
+                if (worker == null) return;
+                assignment.Workers.Remove(worker);
 
-                    //作業量の更新
-                    assignment.Task.Mw -= 1;
+                //作業量の更新
+                assignment.Task.Mw -= 1;
 
-                    //コントローラーに登録
-                    workerController.EnqueueWorker(worker);
-                }
+                //コントローラーに登録
+                workerController.EnqueueWorker(worker);
             }
             catch (Exception e)
             {

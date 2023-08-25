@@ -42,6 +42,7 @@ namespace Module.Task
             get => currentMw;
         }
 
+        // ReSharper disable once UnusedMember.Global
         public float Progress => currentProgress;
 
         private void OnDrawGizmos()
@@ -105,20 +106,22 @@ namespace Module.Task
             if (state == TaskState.Completed)
                 return;
 
-            //作業量が0より大きくなったら開始
-            if (prevMw == 0f && currentMw > prevMw)
+            switch (prevMw)
             {
-                ChangeState(TaskState.InProgress);
-                OnStart();
-            }
-            //作業量が0になったらキャンセル
-            else if (prevMw > 0f && currentMw == 0f)
-            {
-                ChangeState(TaskState.Idle);
-                OnCancel();
+                //作業量が0より大きくなったら開始
+                case 0f when currentMw > prevMw:
+                    ChangeState(TaskState.InProgress);
+                    OnStart();
+                    break;
+                //作業量が0になったらキャンセル
+                case > 0f when currentMw == 0f:
+                    ChangeState(TaskState.Idle);
+                    OnCancel();
+                    break;
             }
         }
 
+        // ReSharper disable once ParameterHidesMember
         private void ChangeState(TaskState state)
         {
             this.state = state;
