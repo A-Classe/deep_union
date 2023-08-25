@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using VContainer;
 
 namespace Module.Task
 {
@@ -64,7 +65,8 @@ namespace Module.Task
         /// <summary>
         ///     ゲーム開始時の初期化関数
         /// </summary>
-        public virtual void Initialize() { }
+        /// <param name="container"></param>
+        public virtual void Initialize(IObjectResolver container) { }
 
         /// <summary>
         ///     Taskの状態を更新するUpdate

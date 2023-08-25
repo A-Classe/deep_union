@@ -1,3 +1,5 @@
+using VContainer;
+
 namespace Module.Task
 {
     /// <summary>
@@ -7,7 +9,7 @@ namespace Module.Task
     {
         TaskState State { get; }
 
-        void Initialize();
+        void Initialize(IObjectResolver container);
         void TaskSystemUpdate(float deltaTime);
     }
 }
