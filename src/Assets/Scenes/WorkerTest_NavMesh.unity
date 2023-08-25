@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -401,9 +401,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   taskSize: 2.2
-  mw: 0
+  mw: 1
   state: 0
   currentProgress: 0
+  currentMw: 0
+  progressMw: 0
 --- !u!135 &493886276
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -481,9 +483,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   taskSize: 2
-  mw: 0
+  mw: 1
   state: 0
   currentProgress: 0
+  currentMw: 0
+  progressMw: 0
 --- !u!135 &529744020
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -590,6 +594,8 @@ MonoBehaviour:
   mw: 100
   state: 0
   currentProgress: 0
+  currentMw: 0
+  progressMw: 0
 --- !u!1 &814527507
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,6 +846,7 @@ MonoBehaviour:
   gameParam: {fileID: 11400000, guid: 7e6f666ad25bfdb4dbed3523c0106175, type: 2}
   workerController: {fileID: 2049303183}
   taskDetector: {fileID: 2049303189}
+  playerController: {fileID: 1719358584}
 --- !u!1 &1324484343
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,12 +1039,13 @@ GameObject:
   - component: {fileID: 1719358582}
   - component: {fileID: 1719358581}
   - component: {fileID: 1719358580}
+  - component: {fileID: 1719358584}
   m_Layer: 0
-  m_Name: w
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!65 &1719358580
 BoxCollider:
@@ -1117,6 +1125,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1719358584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719358579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de86188d99074df4af44ac11d661c012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2049303182
 GameObject:
   m_ObjectHideFlags: 0
