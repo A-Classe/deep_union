@@ -25,15 +25,6 @@ namespace Module.Working
         private void Awake()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
-        }
-
-        private void Update()
-        {
-            currentState?.Update();
-        }
-
-        public void OnSpawn()
-        {
             workerStates = new IWorkerState[]
             {
                 new IdleState(this),
@@ -42,6 +33,11 @@ namespace Module.Working
             };
 
             SetWorkerState(WorkerState.Idle);
+        }
+
+        private void Update()
+        {
+            currentState?.Update();
         }
 
         /// <summary>

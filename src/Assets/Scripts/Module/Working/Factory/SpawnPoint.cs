@@ -23,29 +23,24 @@ namespace Module.Working.Factory
         [SerializeField] private float randomRange = 1.0f;
         private Vector3[] pointsBuffer;
 
-        private void Awake()
-        {
-            pointsBuffer = new Vector3[layers.Sum(layer => layer.count)];
-        }
-
         /// <summary>
         /// ワーカーのスポーン座標を返します
         /// </summary>
         /// <param name="count">返すスポーンポイントの数</param>
         /// <returns>スポーン座標のコレクション</returns>
-        public Span<Vector3> GetSpawnPoints(int count)
+        public Span<Vector3> GetSpawnPoints()
         {
-            if (layers.Sum(layer => layer.count) < count)
+            if (pointsBuffer == null || pointsBuffer.Length == 0)
             {
-                DebugEx.LogError("設定されたスポーンポイントをオーバーしています");
-                return Span<Vector3>.Empty;
+                pointsBuffer = new Vector3[layers.Sum(layer => layer.count) + 1];
             }
 
             var center = transform.position;
-            var index = 1;
+            var index = 0;
 
             //中心
             pointsBuffer[index] = Randomize(center);
+            index++;
 
             foreach (var layer in layers)
             {
@@ -59,19 +54,12 @@ namespace Module.Working.Factory
                     //ちょっとだけ座標ずらす
                     pointsBuffer[index] = Randomize(center + new Vector3(x, 0f, z));
                     index++;
-
-                    if (index == count)
-                    {
-                        var spawnPoints = pointsBuffer.AsSpan();
-                        spawnPoints.Slice(0, count);
-                        return spawnPoints;
-                    }
                 }
             }
 
-            return Span<Vector3>.Empty;
+            return pointsBuffer.AsSpan();
         }
-        
+
         private Vector3 Randomize(Vector3 position)
         {
             float xOffset = Random.Range(-randomRange, randomRange);

@@ -13,25 +13,25 @@ namespace GameMain
     {
         private readonly SpawnParam spawnParam;
         private readonly GameParam gameParam;
-        
-        private readonly WorkerController workerController;
+
+        private readonly LeadPointConnector leadPointConnector;
         private readonly PlayerController playerController;
-        
+
         private readonly WorkerSpawner workerSpawner;
 
         [Inject]
         public GameRouter(
             SpawnParam spawnParam,
             GameParam gameParam,
-            WorkerSpawner workerSpawner, 
-            WorkerController workerController, 
+            WorkerSpawner workerSpawner,
+            LeadPointConnector leadPointConnector,
             PlayerController playerController
         )
         {
             this.spawnParam = spawnParam;
             this.gameParam = gameParam;
-            
-            this.workerController = workerController;
+
+            this.leadPointConnector = leadPointConnector;
             this.playerController = playerController;
 
             this.workerSpawner = workerSpawner;
@@ -40,7 +40,7 @@ namespace GameMain
         public void Start()
         {
             InitWorker();
-            
+
             InitPlayer();
         }
 
@@ -51,7 +51,7 @@ namespace GameMain
         {
             var workers = workerSpawner.Spawn(spawnParam.SpawnCount);
 
-            foreach (var worker in workers) workerController.EnqueueWorker(worker);
+            foreach (var worker in workers) leadPointConnector.AddWorker(worker);
         }
 
         /// <summary>
@@ -59,9 +59,9 @@ namespace GameMain
         /// </summary>
         private void InitPlayer()
         {
-           playerController.InitParam(gameParam.ConvertToPlayerModel());
-           playerController.PlayerStart();
-           playerController.SetState(PlayerState.Go);
+            playerController.InitParam(gameParam.ConvertToPlayerModel());
+            playerController.PlayerStart();
+            playerController.SetState(PlayerState.Go);
         }
     }
 }
