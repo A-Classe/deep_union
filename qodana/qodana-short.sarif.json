@@ -1,0 +1,66 @@
+{
+  "$schema": "https://raw.githubusercontent.com/schemastore/schemastore/master/src/schemas/json/sarif-2.1.0-rtm.5.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "QDNET",
+          "fullName": "Qodana for .NET",
+          "version": "232.9446.13.81",
+          "rules": [],
+          "taxa": [],
+          "language": "en-US",
+          "contents": [
+            "localizedData",
+            "nonLocalizedData"
+          ],
+          "isComprehensive": false
+        },
+        "extensions": []
+      },
+      "invocations": [
+        {
+          "exitCode": 0,
+          "toolExecutionNotifications": [
+            {
+              "message": {
+                "text": "Reporting from [] 'sanity' inspections was suspended due to high problems count."
+              },
+              "level": "error"
+            }
+          ],
+          "executionSuccessful": true
+        }
+      ],
+      "language": "en-US",
+      "versionControlProvenance": [
+        {
+          "repositoryUri": "https://github.com/A-Classe/release_control.git",
+          "revisionId": "9ade06c96c3e6ba5b58d471b98c9a9361dc8cc83",
+          "branch": "refs/heads/main",
+          "properties": {
+            "repoUrl": "https://github.com/A-Classe/release_control.git",
+            "vcsType": "Git"
+          }
+        }
+      ],
+      "results": [],
+      "automationDetails": {
+        "id": "src/qodana/2023-08-27",
+        "guid": "c3037a10-700b-4451-b57b-330c01769351",
+        "properties": {
+          "jobUrl": "https://github.com/A-Classe/release_control/actions/runs/5989906023"
+        }
+      },
+      "newlineSequences": [
+        "\r\n",
+        "\n"
+      ],
+      "properties": {
+        "configProfile": "recommended",
+        "deviceId": "200820300000000-8c6a-38bd-8432-418f423d329e"
+      }
+    }
+  ]
+}
