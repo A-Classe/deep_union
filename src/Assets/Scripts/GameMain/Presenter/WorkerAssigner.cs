@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Core.Input;
 using Module.Task;
+using Module.Working;
 using Module.Working.Controller;
 using Module.Working.State;
 using UnityEngine;
@@ -42,17 +43,17 @@ namespace GameMain.Presenter
             if (nearestWorker == null)
                 return;
 
+            //アサインできる座標がなかったら終了
+            if (!nearestTask.TryGetNearestAssignPoint(nearestWorker.transform.position, out Transform assignPoint))
+            {
+                leadPointConnector.AddWorker(nearestWorker);
+                return;
+            }
+
             try
             {
-                //ワーカーリストに登録
-                var assignment = assignments.First(connect => connect.Task == nearestTask);
-                assignment.Workers.Add(nearestWorker);
-
-                //作業量の更新
-                assignment.Task.Mw += 1;
-
-                nearestWorker.SetFollowTarget(assignment.Target, Vector3.zero);
-                nearestWorker.SetWorkerState(WorkerState.Working);
+                UpdateTask(nearestTask, nearestWorker);
+                UpdateWorker(nearestWorker, assignPoint);
             }
             catch (Exception e)
             {
@@ -60,6 +61,22 @@ namespace GameMain.Presenter
                 DebugEx.LogException(e);
                 throw;
             }
+        }
+
+        void UpdateTask(BaseTask task, Worker worker)
+        {
+            //ワーカーリストに登録
+            var assignment = assignments.First(connect => connect.Task == task);
+            assignment.Workers.Add(worker);
+
+            //作業量の更新
+            assignment.Task.Mw += 1;
+        }
+
+        void UpdateWorker(Worker nearestWorker, Transform assignPoint)
+        {
+            nearestWorker.SetFollowTarget(assignPoint, Vector3.zero);
+            nearestWorker.SetWorkerState(WorkerState.Working);
         }
     }
 }

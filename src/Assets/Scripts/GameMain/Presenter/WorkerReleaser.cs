@@ -59,6 +59,7 @@ namespace GameMain.Presenter
 
                 //作業量の更新
                 assignment.Task.Mw -= 1;
+                nearestTask.ReleaseAssignPoint(worker.Target);
 
                 //コントローラーに登録
                 leadPointConnector.AddWorker(worker);
@@ -78,7 +79,11 @@ namespace GameMain.Presenter
                 var assignment = assignments.First(connect => connect.Task == baseTask);
 
                 //コントローラーに登録
-                foreach (var worker in assignment.Workers) leadPointConnector.AddWorker(worker);
+                foreach (var worker in assignment.Workers)
+                {
+                    leadPointConnector.AddWorker(worker);
+                    baseTask.ReleaseAssignPoint(worker.Target);
+                }
 
                 //タスクからワーカーを削除
                 assignment.Workers.Clear();
@@ -93,6 +98,9 @@ namespace GameMain.Presenter
                 throw;
             }
         }
+
+
+        void UpdateTask(BaseTask task, Worker worker) { }
 
 
         private Worker GetNearestWorker(Assignment assignment)

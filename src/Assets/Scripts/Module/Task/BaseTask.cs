@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using VContainer;
 
@@ -21,11 +22,14 @@ namespace Module.Task
         [SerializeField]
         private float mw;
 
-        [Header("アサイン可能な座標\n(配列のサイズがタスクのキャパになります)")]
+        [Header("アサイン可能な座標のギズモを表示する")]
         [SerializeField]
-        private List<Transform> assignPoints;
+        private bool debugAssignPoints;
 
-        [Header("!デバッグ用 書き換え禁止!")]
+        private List<AssignPoint> assignPoints;
+
+
+        [Header("!デバッグ表示用 書き換え禁止!")]
         [SerializeField]
         protected TaskState state = TaskState.Idle;
 
@@ -51,10 +55,9 @@ namespace Module.Task
         // ReSharper disable once UnusedMember.Global
         public float Progress => currentProgress;
 
-        private void OnDrawGizmos()
+        private void Awake()
         {
-            Gizmos.color = new Color(0f, 0.83f, 0f, 0.41f);
-            Gizmos.DrawSphere(transform.position, taskSize);
+            assignPoints = GetComponentsInChildren<AssignPoint>().ToList();
         }
 
         private void OnValidate()
@@ -64,6 +67,8 @@ namespace Module.Task
 
             //作業量は最低1以上とする
             mw = Mathf.Clamp(mw, 1f, float.MaxValue);
+
+            SetEnableAssignPointDebug(debugAssignPoints);
         }
 
         public TaskState State => state;
@@ -92,9 +97,38 @@ namespace Module.Task
         /// <param name="deltaTime">Time.deltaTime</param>
         protected virtual void ManagedUpdate(float deltaTime) { }
 
-        public Transform GetNearestAssignPoint(Vector3 target)
+        public bool TryGetNearestAssignPoint(Vector3 target, out Transform assignPoint)
         {
-            assignPoints.Sort();
+            //アサインできる座標がなかったらアサイン不可
+            if (assignPoints.Count == 0)
+            {
+                assignPoint = null;
+                return false;
+            }
+
+            assignPoints.Sort((a, b) =>
+                {
+                    Vector3 p1 = target - a.transform.position;
+                    Vector3 p2 = target - b.transform.position;
+
+                    if (p1.sqrMagnitude - p2.sqrMagnitude > 0)
+                    {
+                        return 1;
+                    }
+
+                    return -1;
+                }
+            );
+
+            assignPoint = assignPoints[0].transform;
+            assignPoints.RemoveAt(0);
+
+            return true;
+        }
+
+        public void ReleaseAssignPoint(Transform assignPoint)
+        {
+            assignPoints.Add(assignPoint.GetComponent<AssignPoint>());
         }
 
         private void UpdateProgress(float deltaTime)
@@ -145,17 +179,24 @@ namespace Module.Task
 
         protected virtual void OnComplete() { }
 
-        private void OnDrawGizmosSelected()
+        private void SetEnableAssignPointDebug(bool enable)
         {
-            Gizmos.color = Color.red;
+            assignPoints = GetComponentsInChildren<AssignPoint>().ToList();
 
-            foreach (Transform point in assignPoints)
+            //アサインポイントのデブッグを有効化する
+            foreach (AssignPoint assignPoint in assignPoints)
             {
-                if (point == null)
+                if (assignPoint == null)
                     return;
 
-                Gizmos.DrawSphere(point.position, 0.3f);
+                assignPoint.enabled = enable;
             }
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = new Color(0f, 0.83f, 0f, 0.41f);
+            Gizmos.DrawSphere(transform.position, taskSize);
         }
     }
 }
