@@ -64,12 +64,15 @@ $(function() {
 &#160;
 
 <h3><a id="index_a"></a>- a -</h3><ul>
-<li>ActivePointProvider()
-: <a class="el" href="classModule_1_1Working_1_1Controller_1_1ActivePointProvider.html#a960b4edf2254227ad3b2287bcefea6cb">Module.Working.Controller.ActivePointProvider</a>
-</li>
 <li>Add()
 : <a class="el" href="structCore_1_1Utility_1_1ListSegment.html#a60ff1bca3a5ed0021c66a22e58077b34">Core.Utility.ListSegment&lt; T &gt;</a>
 , <a class="el" href="classModule_1_1Working_1_1WorkerAgent.html#a806460d3337bc23946793811ef0153f8">Module.Working.WorkerAgent</a>
+</li>
+<li>AddWorker()
+: <a class="el" href="classModule_1_1Working_1_1Controller_1_1LeadPointConnector.html#a5c7370a1c843b94a2db33f2bbb29e1fe">Module.Working.Controller.LeadPointConnector</a>
+</li>
+<li>AddWorkerPoint()
+: <a class="el" href="classModule_1_1Working_1_1Controller_1_1LeadPointConnector.html#ac25421737fc34ad1883f1d9c9030b47f">Module.Working.Controller.LeadPointConnector</a>
 </li>
 <li>Assign()
 : <a class="el" href="classGameMain_1_1Presenter_1_1WorkerAssigner.html#a8c49082adf98d57848a250206012333b">GameMain.Presenter.WorkerAssigner</a>
@@ -85,7 +88,6 @@ $(function() {
 , <a class="el" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a1b8867c32bb78594d8c7860064127f13">Module.Player.Camera.CameraController</a>
 , <a class="el" href="classModule_1_1Player_1_1Controller_1_1PlayerController.html#a0774f5efc6db8b2f5bc3a414cc1a644e">Module.Player.Controller.PlayerController</a>
 , <a class="el" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a8a22bdd1317d6d8f6024419dff17893d">Module.Working.Controller.WorkerController</a>
-, <a class="el" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#a28491c30ac0b3c2bd9481e1746ef67fd">Module.Working.Factory.SpawnPoint</a>
 , <a class="el" href="classModule_1_1Working_1_1Worker.html#a8d2ac2208d72a0702c883980ae2e537c">Module.Working.Worker</a>
 </li>
 </ul>
@@ -127,9 +129,6 @@ $(function() {
 
 
 <h3><a id="index_d"></a>- d -</h3><ul>
-<li>DequeueNearestWorker()
-: <a class="el" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a3a25e6e25b1004f752ff6af8dea771d7">Module.Working.Controller.WorkerController</a>
-</li>
 <li>Disable()
 : <a class="el" href="classModule_1_1Working_1_1Worker.html#ab930824facd15fddeac2341f151654f5">Module.Working.Worker</a>
 </li>
@@ -143,9 +142,6 @@ $(function() {
 <h3><a id="index_e"></a>- e -</h3><ul>
 <li>Enable()
 : <a class="el" href="classModule_1_1Working_1_1Worker.html#a5d7ecae078c7d33cc57c0660551b312d">Module.Working.Worker</a>
-</li>
-<li>EnqueueWorker()
-: <a class="el" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a0355752b983414821acb34c3bc51e724">Module.Working.Controller.WorkerController</a>
 </li>
 <li>Equals()
 : <a class="el" href="structGameMain_1_1Presenter_1_1Assignment.html#a79ae06e4bfedebfd81b590f1395ffe5b">GameMain.Presenter.Assignment</a>
@@ -173,7 +169,7 @@ $(function() {
 
 <h3><a id="index_g"></a>- g -</h3><ul>
 <li>GameRouter()
-: <a class="el" href="classGameMain_1_1GameRouter.html#a2274376036991af410e4d58775cee01a">GameMain.GameRouter</a>
+: <a class="el" href="classGameMain_1_1GameRouter.html#a781a0958f2b87228dbd2cd41113dd7b8">GameMain.GameRouter</a>
 </li>
 <li>GetEnumerator()
 : <a class="el" href="structCore_1_1Utility_1_1ListSegment.html#a94d9b42aa7bc79ca1ec601c9ed6e3757">Core.Utility.ListSegment&lt; T &gt;</a>
@@ -188,7 +184,7 @@ $(function() {
 : <a class="el" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a3be13fefa2a8ac385becda75f3283788">GameMain.Presenter.WorkerReleaser</a>
 </li>
 <li>GetSpawnPoints()
-: <a class="el" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#adced3b5c3c697ce4b250ec2db71f8765">Module.Working.Factory.SpawnPoint</a>
+: <a class="el" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html#a504b12b0cc32f92053acbb9ab16282ce">Module.Working.Factory.SpawnPoint</a>
 </li>
 <li>GetState()
 : <a class="el" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a443e67a59c88ec7be1ca1dcdc5979e86">Module.Player.Camera.CameraController</a>
@@ -196,6 +192,9 @@ $(function() {
 , <a class="el" href="classModule_1_1Player_1_1State_1_1GoState.html#a2b981012f88f5bebd349b2fbdd01b17f">Module.Player.State.GoState</a>
 , <a class="el" href="classModule_1_1Player_1_1State_1_1PauseState.html#a584ec6b28b6351f6f8078d00d034db38">Module.Player.State.PauseState</a>
 , <a class="el" href="interfaceSystem_1_1IStateSystem.html#a69f6dfde8020fa936d9161543ceee748">System.IStateSystem&lt; out out T &gt;</a>
+</li>
+<li>GetTargetPoint()
+: <a class="el" href="classModule_1_1Working_1_1Controller_1_1LeadPointConnector.html#ae4d32a116f0124ac4be730da385d3b60">Module.Working.Controller.LeadPointConnector</a>
 </li>
 <li>GetUsingAsset()
 : <a class="el" href="classCore_1_1Input_1_1Editor_1_1InputActionAssetProfile.html#a65513ed7362a02162cb48752df05560e">Core.Input.Editor.InputActionAssetProfile</a>
@@ -242,6 +241,9 @@ $(function() {
 
 
 <h3><a id="index_l"></a>- l -</h3><ul>
+<li>LeadPointConnector()
+: <a class="el" href="classModule_1_1Working_1_1Controller_1_1LeadPointConnector.html#a34392d76be5c1c70f5b66c033993fc04">Module.Working.Controller.LeadPointConnector</a>
+</li>
 <li>ListSegment()
 : <a class="el" href="structCore_1_1Utility_1_1ListSegment.html#ac718e1567fbb58d57c0bae5dfa346658">Core.Utility.ListSegment&lt; T &gt;</a>
 </li>
@@ -287,9 +289,6 @@ $(function() {
 </li>
 <li>OnPerformed()
 : <a class="el" href="classCore_1_1Input_1_1InputEvent.html#a225b97dc493fdcd573881e3c86ff80c7">Core.Input.InputEvent</a>
-</li>
-<li>OnSpawn()
-: <a class="el" href="classModule_1_1Working_1_1Worker.html#a9a10782b7c83f2d8b314f8f497a91d74">Module.Working.Worker</a>
 </li>
 <li>OnStart()
 : <a class="el" href="classModule_1_1Task_1_1BaseTask.html#a5e42e6ebbdf859cc1c16e01d9d77e7cf">Module.Task.BaseTask</a>
@@ -342,6 +341,12 @@ $(function() {
 <li>RemoveAt()
 : <a class="el" href="structCore_1_1Utility_1_1ListSegment.html#a9f3f83d94c37fd7e4bde16f25f4d73ea">Core.Utility.ListSegment&lt; T &gt;</a>
 </li>
+<li>RemoveNearestWorker()
+: <a class="el" href="classModule_1_1Working_1_1Controller_1_1LeadPointConnector.html#a9ee8379d59395b688f9998bcf0f980a7">Module.Working.Controller.LeadPointConnector</a>
+</li>
+<li>RemoveWorkerPoint()
+: <a class="el" href="classModule_1_1Working_1_1Controller_1_1LeadPointConnector.html#a4767e21319d1485c74fe7512ef1864b5">Module.Working.Controller.LeadPointConnector</a>
+</li>
 <li>Reset()
 : <a class="el" href="structCore_1_1Utility_1_1ListSegment_1_1Enumerator.html#a88116357982832c914067e4f66106642">Core.Utility.ListSegment&lt; T &gt;.Enumerator</a>
 </li>
@@ -350,13 +355,11 @@ $(function() {
 
 <h3><a id="index_s"></a>- s -</h3><ul>
 <li>SetFollowTarget()
-: <a class="el" href="classModule_1_1Working_1_1Worker.html#ae1f102b3934ebe7ff01e0d672f7ad6e0">Module.Working.Worker</a>
+: <a class="el" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a63498fc017741965bf61f9d99c22a7c9">Module.Player.Camera.CameraController</a>
+, <a class="el" href="classModule_1_1Working_1_1Worker.html#ae1f102b3934ebe7ff01e0d672f7ad6e0">Module.Working.Worker</a>
 </li>
 <li>SetLockState()
 : <a class="el" href="classModule_1_1Working_1_1Worker.html#ab1f0f87fe97d752b40b65691e3a7379e">Module.Working.Worker</a>
-</li>
-<li>SetSpawnPoints()
-: <a class="el" href="classModule_1_1Working_1_1Controller_1_1WorkerController.html#a19945eae90b1d7bd594d7979103d8384">Module.Working.Controller.WorkerController</a>
 </li>
 <li>SetState()
 : <a class="el" href="classModule_1_1Player_1_1Camera_1_1CameraController.html#a9c063bd68baf349e9a25d001c1a078fa">Module.Player.Camera.CameraController</a>
@@ -424,16 +427,16 @@ $(function() {
 : <a class="el" href="classModule_1_1Working_1_1WorkerAgent.html#aed898b8315c81206e1a202db6f6c4d33">Module.Working.WorkerAgent</a>
 </li>
 <li>WorkerAssigner()
-: <a class="el" href="classGameMain_1_1Presenter_1_1WorkerAssigner.html#a47df0c1c72a7e62dce944ff8ce20c176">GameMain.Presenter.WorkerAssigner</a>
+: <a class="el" href="classGameMain_1_1Presenter_1_1WorkerAssigner.html#a2eb732a4e4a3e98fafeef21dcebc94c2">GameMain.Presenter.WorkerAssigner</a>
 </li>
 <li>WorkerConnector()
-: <a class="el" href="classGameMain_1_1Presenter_1_1WorkerConnector.html#a1968fe240ac6fafc8fe8f5cb7bc19d5a">GameMain.Presenter.WorkerConnector</a>
+: <a class="el" href="classGameMain_1_1Presenter_1_1WorkerConnector.html#a0472dfc7c5caf465ab2a6a3685f81430">GameMain.Presenter.WorkerConnector</a>
 </li>
 <li>WorkerCreateModel()
 : <a class="el" href="structModule_1_1Working_1_1Factory_1_1WorkerCreateModel.html#a8a2bd92bf6568ee00a857ebf38fd5df1">Module.Working.Factory.WorkerCreateModel</a>
 </li>
 <li>WorkerReleaser()
-: <a class="el" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#ac2e1ecee00e96c2989b9c57884a8f447">GameMain.Presenter.WorkerReleaser</a>
+: <a class="el" href="classGameMain_1_1Presenter_1_1WorkerReleaser.html#a66ba0b6ccc954815b76ca214e80bfb2b">GameMain.Presenter.WorkerReleaser</a>
 </li>
 <li>WorkerSpawner()
 : <a class="el" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#afc7495d5accd591fdfbd6c09c206d26e">Module.Working.Factory.WorkerSpawner</a>

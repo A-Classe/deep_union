@@ -110,11 +110,11 @@
       "type": "file",
       "path": "Assets/Scripts/Module/Working/Factory/WorkerSpawner.cs",
       "language": "C#",
-      "line": 43,
+      "line": 42,
       "offset": 14,
       "length": 10,
       "code": {
-        "startLine": 41,
+        "startLine": 40,
         "length": 10,
         "offset": 24,
         "surroundingCode": "        }\n\n        void InitWorker(Worker worker, WorkerCreateModel createModel)\n        {\n            worker.transform.SetParent(createModel.Parent);"
@@ -125,39 +125,7 @@
     "module": "Module.Worker",
     "inspectionName": "ArrangeTypeMemberModifiers"
   },
-  "hash": "2bd8a9760bd4a14146a7a6d46bd6aef9d50fea26ebdd6912239aa7a8bc60f094"
-},{
-  "tool": "Code Inspection",
-  "category": "Syntax Style",
-  "type": "Use explicit or implicit modifier definition for type members",
-  "tags": [
-    "C#",
-    ".NETFramework 4.7.1"
-  ],
-  "severity": "Moderate",
-  "comment": "Inconsistent modifiers style: missing 'private' modifier",
-  "detailsInfo": "'private' modifier can be safely added/removed from type members without changing code semantics [Learn more...](https://www.jetbrains.com/help/rider/ArrangeTypeMemberModifiers.html)",
-  "sources": [
-    {
-      "type": "file",
-      "path": "Assets/Scripts/Module/Working/Controller/ActivePointProvider.cs",
-      "language": "C#",
-      "line": 17,
-      "offset": 16,
-      "length": 5,
-      "code": {
-        "startLine": 15,
-        "length": 5,
-        "offset": 26,
-        "surroundingCode": "        }\n\n        struct Point\n        {\n            private Vector3 point;"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "Module.Worker",
-    "inspectionName": "ArrangeTypeMemberModifiers"
-  },
-  "hash": "6f350f97cee6af7d4226d85e369444abc2f0c17d835f20799e4d41a588b3573c"
+  "hash": "052268aec9cb61d785162a3a88146ee83a69ef7c5473222de5d35ae92e74bc9c"
 },{
   "tool": "Code Inspection",
   "category": "Compiler Warnings",
@@ -263,6 +231,38 @@
     ".NETFramework 4.7.1"
   ],
   "severity": "Moderate",
+  "comment": "Class 'GameRouter' is never instantiated",
+  "detailsInfo": "Non-static class is never instantiated [Learn more...](https://www.jetbrains.com/help/rider/ClassNeverInstantiated.Global.html)",
+  "sources": [
+    {
+      "type": "file",
+      "path": "Assets/Scripts/GameMain/GameRouter.cs",
+      "language": "C#",
+      "line": 13,
+      "offset": 18,
+      "length": 10,
+      "code": {
+        "startLine": 11,
+        "length": 10,
+        "offset": 38,
+        "surroundingCode": "namespace GameMain\n{\n    public class GameRouter : IStartable\n    {\n        private readonly SpawnParam spawnParam;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "GameMain",
+    "inspectionName": "ClassNeverInstantiated.Global"
+  },
+  "hash": "032828157f27c0aa76df20c74430b44aa041cdd24442a1862e3bc3ae248a2555"
+},{
+  "tool": "Code Inspection",
+  "category": "Potential Code Quality Issues",
+  "type": "Class is never instantiated (non-private accessibility)",
+  "tags": [
+    "C#",
+    ".NETFramework 4.7.1"
+  ],
+  "severity": "Moderate",
   "comment": "Class 'WorkerController' is never instantiated",
   "detailsInfo": "Non-static class is never instantiated [Learn more...](https://www.jetbrains.com/help/rider/ClassNeverInstantiated.Global.html)",
   "sources": [
@@ -318,38 +318,6 @@
     "inspectionName": "ClassNeverInstantiated.Global"
   },
   "hash": "27d5e1373aad7752d05f62e41606755c6e0fd8515cb53a7fb677ac2f49d1d705"
-},{
-  "tool": "Code Inspection",
-  "category": "Potential Code Quality Issues",
-  "type": "Class is never instantiated (non-private accessibility)",
-  "tags": [
-    "C#",
-    ".NETFramework 4.7.1"
-  ],
-  "severity": "Moderate",
-  "comment": "Class 'GameRouter' is never instantiated",
-  "detailsInfo": "Non-static class is never instantiated [Learn more...](https://www.jetbrains.com/help/rider/ClassNeverInstantiated.Global.html)",
-  "sources": [
-    {
-      "type": "file",
-      "path": "Assets/Scripts/GameMain/GameRouter.cs",
-      "language": "C#",
-      "line": 12,
-      "offset": 18,
-      "length": 10,
-      "code": {
-        "startLine": 10,
-        "length": 10,
-        "offset": 38,
-        "surroundingCode": "namespace GameMain\n{\n    public class GameRouter : IStartable\n    {\n        private readonly SpawnParam spawnParam;"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "GameMain",
-    "inspectionName": "ClassNeverInstantiated.Global"
-  },
-  "hash": "470e64d2ef5ac9beb342c931368056417b243e6addd387c5de918f5490c3c0e4"
 },{
   "tool": "Code Inspection",
   "category": "Potential Code Quality Issues",
@@ -606,6 +574,38 @@
     "inspectionName": "ClassNeverInstantiated.Global"
   },
   "hash": "acd627d811ed0568539084f8ea114c6b72f6dea434f99422be4cb89cbe7ccaeb"
+},{
+  "tool": "Code Inspection",
+  "category": "Potential Code Quality Issues",
+  "type": "Class is never instantiated (non-private accessibility)",
+  "tags": [
+    "C#",
+    ".NETFramework 4.7.1"
+  ],
+  "severity": "Moderate",
+  "comment": "Class 'LeadPointConnector' is never instantiated",
+  "detailsInfo": "Non-static class is never instantiated [Learn more...](https://www.jetbrains.com/help/rider/ClassNeverInstantiated.Global.html)",
+  "sources": [
+    {
+      "type": "file",
+      "path": "Assets/Scripts/Module/Working/Controller/LeadPointConnector.cs",
+      "language": "C#",
+      "line": 13,
+      "offset": 18,
+      "length": 18,
+      "code": {
+        "startLine": 11,
+        "length": 18,
+        "offset": 66,
+        "surroundingCode": "    /// 追従するポイントをワーカーと紐付けるクラス\n    /// </summary>\n    public class LeadPointConnector\n    {\n        private readonly Transform target;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "Module.Worker",
+    "inspectionName": "ClassNeverInstantiated.Global"
+  },
+  "hash": "c734097dbb4569e71726ad27ca5802d6f27598a3be9bd92cea2e2e581a4f40d3"
 },{
   "tool": "Code Inspection",
   "category": "Potential Code Quality Issues",
@@ -1038,43 +1038,11 @@
       "type": "file",
       "path": "Assets/Scripts/GameMain/Container/InGameContainer.cs",
       "language": "C#",
-      "line": 20,
-      "offset": 45,
-      "length": 10,
-      "code": {
-        "startLine": 18,
-        "length": 10,
-        "offset": 46,
-        "surroundingCode": "\n\n        [SerializeField] private SpawnParam spawnParam = default!;\n        [SerializeField] private GameParam gameParam = default!;\n        [SerializeField] private WorkerController workerController = default!;"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "GameMain",
-    "inspectionName": "FieldCanBeMadeReadOnly.Local"
-  },
-  "hash": "3f02746e496781d1a958e6f9e27ddebae114e7bf025b392f37a72c41338969f6"
-},{
-  "tool": "Code Inspection",
-  "category": "Common Practices and Code Improvements",
-  "type": "Field can be made readonly (private accessibility)",
-  "tags": [
-    "C#",
-    ".NETFramework 4.7.1"
-  ],
-  "severity": "Moderate",
-  "comment": "Field can be made readonly",
-  "detailsInfo": "Field has no write usages after initialization and can be made readonly [Learn more...](https://www.jetbrains.com/help/rider/FieldCanBeMadeReadOnly.Local.html)",
-  "sources": [
-    {
-      "type": "file",
-      "path": "Assets/Scripts/GameMain/Container/InGameContainer.cs",
-      "language": "C#",
-      "line": 21,
+      "line": 22,
       "offset": 44,
       "length": 9,
       "code": {
-        "startLine": 19,
+        "startLine": 20,
         "length": 9,
         "offset": 111,
         "surroundingCode": "\n        [SerializeField] private SpawnParam spawnParam = default!;\n        [SerializeField] private GameParam gameParam = default!;\n        [SerializeField] private WorkerController workerController = default!;\n        [SerializeField] private TaskDetector taskDetector = default!;"
@@ -1085,7 +1053,7 @@
     "module": "GameMain",
     "inspectionName": "FieldCanBeMadeReadOnly.Local"
   },
-  "hash": "60e7b1054008e36b18822024ed90a880efe07a7b860ee873d1c02402aeb0574a"
+  "hash": "0be7194870a106ae7eb12bff117530e1fec0e554b0f151b34beace0a0aaf04e9"
 },{
   "tool": "Code Inspection",
   "category": "Common Practices and Code Improvements",
@@ -1102,14 +1070,14 @@
       "type": "file",
       "path": "Assets/Scripts/GameMain/Container/InGameContainer.cs",
       "language": "C#",
-      "line": 22,
+      "line": 25,
       "offset": 51,
       "length": 16,
       "code": {
-        "startLine": 20,
+        "startLine": 23,
         "length": 16,
-        "offset": 182,
-        "surroundingCode": "        [SerializeField] private SpawnParam spawnParam = default!;\n        [SerializeField] private GameParam gameParam = default!;\n        [SerializeField] private WorkerController workerController = default!;\n        [SerializeField] private TaskDetector taskDetector = default!;\n        [SerializeField] private PlayerController playerController = default!;"
+        "offset": 200,
+        "surroundingCode": "        [SerializeField] private WorkerController workerController = default!;\n        [SerializeField] private TaskDetector taskDetector = default!;\n        [SerializeField] private PlayerController playerController = default!;\n        [SerializeField] private CameraController cameraController = default!;\n"
       }
     }
   ],
@@ -1117,7 +1085,7 @@
     "module": "GameMain",
     "inspectionName": "FieldCanBeMadeReadOnly.Local"
   },
-  "hash": "a04b89200f753aad103976fa986a7e11d35aafcd59698eab02c771523cf23106"
+  "hash": "561c37ea4dd03a4e8b134f027e013fdcf8edafe4c281090afa63a0947cfca12f"
 },{
   "tool": "Code Inspection",
   "category": "Common Practices and Code Improvements",
@@ -1132,24 +1100,24 @@
   "sources": [
     {
       "type": "file",
-      "path": "Assets/Scripts/Module/Player/Camera/CameraController.cs",
+      "path": "Assets/Scripts/GameMain/Container/InGameContainer.cs",
       "language": "C#",
-      "line": 14,
-      "offset": 40,
-      "length": 11,
+      "line": 26,
+      "offset": 51,
+      "length": 16,
       "code": {
-        "startLine": 12,
-        "length": 11,
-        "offset": 142,
-        "surroundingCode": "        [SerializeField] private Transform followTarget;\n        [SerializeField] private float depth;\n        [SerializeField] private float followAngle = 40f;\n        [SerializeField] private float cameraAngle = 40f;\n        private void Awake()"
+        "startLine": 24,
+        "length": 16,
+        "offset": 200,
+        "surroundingCode": "        [SerializeField] private TaskDetector taskDetector = default!;\n        [SerializeField] private PlayerController playerController = default!;\n        [SerializeField] private CameraController cameraController = default!;\n\n        protected override void Configure(IContainerBuilder builder)"
       }
     }
   ],
   "attributes": {
-    "module": "Module.Player",
+    "module": "GameMain",
     "inspectionName": "FieldCanBeMadeReadOnly.Local"
   },
-  "hash": "b25d5eb23f55f8bd8ef5098553402771b08d8361a442961b399666e3176219f8"
+  "hash": "57d25ff35fc5f1f7ff5aba9fdab8f5a9eb0dc283a564ef831af4cc1aaae38b61"
 },{
   "tool": "Code Inspection",
   "category": "Common Practices and Code Improvements",
@@ -1172,8 +1140,8 @@
       "code": {
         "startLine": 13,
         "length": 11,
-        "offset": 143,
-        "surroundingCode": "        [SerializeField] private float depth;\n        [SerializeField] private float followAngle = 40f;\n        [SerializeField] private float cameraAngle = 40f;\n        private void Awake()\n        {"
+        "offset": 149,
+        "surroundingCode": "        [SerializeField] private float depth = 14f;\n        [SerializeField] private float followAngle = 85f;\n        [SerializeField] private float cameraAngle = 65f;\n        private void Awake()\n        {"
       }
     }
   ],
@@ -1181,7 +1149,71 @@
     "module": "Module.Player",
     "inspectionName": "FieldCanBeMadeReadOnly.Local"
   },
-  "hash": "d134d79fcd77cec1385d092585e02bc278505c0d7e37a32fd51f8bd3677101e3"
+  "hash": "85e44ae70e569702e02132c89f530e454e62179cb70a0bb1e6a242198f72d61b"
+},{
+  "tool": "Code Inspection",
+  "category": "Common Practices and Code Improvements",
+  "type": "Field can be made readonly (private accessibility)",
+  "tags": [
+    "C#",
+    ".NETFramework 4.7.1"
+  ],
+  "severity": "Moderate",
+  "comment": "Field can be made readonly",
+  "detailsInfo": "Field has no write usages after initialization and can be made readonly [Learn more...](https://www.jetbrains.com/help/rider/FieldCanBeMadeReadOnly.Local.html)",
+  "sources": [
+    {
+      "type": "file",
+      "path": "Assets/Scripts/GameMain/Container/InGameContainer.cs",
+      "language": "C#",
+      "line": 21,
+      "offset": 45,
+      "length": 10,
+      "code": {
+        "startLine": 19,
+        "length": 10,
+        "offset": 46,
+        "surroundingCode": "\n\n        [SerializeField] private SpawnParam spawnParam = default!;\n        [SerializeField] private GameParam gameParam = default!;\n        [SerializeField] private WorkerController workerController = default!;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "GameMain",
+    "inspectionName": "FieldCanBeMadeReadOnly.Local"
+  },
+  "hash": "9e5d7d9aea47a4fb77c5f865eba18581846118bd0c7ba7f4a9edc2dcab353986"
+},{
+  "tool": "Code Inspection",
+  "category": "Common Practices and Code Improvements",
+  "type": "Field can be made readonly (private accessibility)",
+  "tags": [
+    "C#",
+    ".NETFramework 4.7.1"
+  ],
+  "severity": "Moderate",
+  "comment": "Field can be made readonly",
+  "detailsInfo": "Field has no write usages after initialization and can be made readonly [Learn more...](https://www.jetbrains.com/help/rider/FieldCanBeMadeReadOnly.Local.html)",
+  "sources": [
+    {
+      "type": "file",
+      "path": "Assets/Scripts/Module/Player/Camera/CameraController.cs",
+      "language": "C#",
+      "line": 13,
+      "offset": 40,
+      "length": 5,
+      "code": {
+        "startLine": 11,
+        "length": 5,
+        "offset": 80,
+        "surroundingCode": "\n        private Transform followTarget;\n        [SerializeField] private float depth = 14f;\n        [SerializeField] private float followAngle = 85f;\n        [SerializeField] private float cameraAngle = 65f;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "Module.Player",
+    "inspectionName": "FieldCanBeMadeReadOnly.Local"
+  },
+  "hash": "c1597debba3ca60657fe4de970dca6570e5d4ed4fea53543de69ddeb17704c2a"
 },{
   "tool": "Code Inspection",
   "category": "Common Practices and Code Improvements",
@@ -1199,13 +1231,13 @@
       "path": "Assets/Scripts/GameMain/Container/InGameContainer.cs",
       "language": "C#",
       "line": 23,
-      "offset": 47,
-      "length": 12,
+      "offset": 51,
+      "length": 16,
       "code": {
         "startLine": 21,
-        "length": 12,
-        "offset": 190,
-        "surroundingCode": "        [SerializeField] private GameParam gameParam = default!;\n        [SerializeField] private WorkerController workerController = default!;\n        [SerializeField] private TaskDetector taskDetector = default!;\n        [SerializeField] private PlayerController playerController = default!;\n"
+        "length": 16,
+        "offset": 182,
+        "surroundingCode": "        [SerializeField] private SpawnParam spawnParam = default!;\n        [SerializeField] private GameParam gameParam = default!;\n        [SerializeField] private WorkerController workerController = default!;\n        [SerializeField] private TaskDetector taskDetector = default!;\n        [SerializeField] private PlayerController playerController = default!;"
       }
     }
   ],
@@ -1213,7 +1245,7 @@
     "module": "GameMain",
     "inspectionName": "FieldCanBeMadeReadOnly.Local"
   },
-  "hash": "d48c2ec4f2c7b67ed8af76e5562e5bc594b43038352c0af2002d380ddf990031"
+  "hash": "d528110eb5e37214c3ef27091e8dea198a2e759f4341ea2d853a5e94bacdfd54"
 },{
   "tool": "Code Inspection",
   "category": "Common Practices and Code Improvements",
@@ -1231,13 +1263,13 @@
       "path": "Assets/Scripts/GameMain/Container/InGameContainer.cs",
       "language": "C#",
       "line": 24,
-      "offset": 51,
-      "length": 16,
+      "offset": 47,
+      "length": 12,
       "code": {
         "startLine": 22,
-        "length": 16,
-        "offset": 200,
-        "surroundingCode": "        [SerializeField] private WorkerController workerController = default!;\n        [SerializeField] private TaskDetector taskDetector = default!;\n        [SerializeField] private PlayerController playerController = default!;\n\n        protected override void Configure(IContainerBuilder builder)"
+        "length": 12,
+        "offset": 190,
+        "surroundingCode": "        [SerializeField] private GameParam gameParam = default!;\n        [SerializeField] private WorkerController workerController = default!;\n        [SerializeField] private TaskDetector taskDetector = default!;\n        [SerializeField] private PlayerController playerController = default!;\n        [SerializeField] private CameraController cameraController = default!;"
       }
     }
   ],
@@ -1245,7 +1277,39 @@
     "module": "GameMain",
     "inspectionName": "FieldCanBeMadeReadOnly.Local"
   },
-  "hash": "ed0d9ec3b4276db38663a4268e9050230320b9d2b4ae8539c4f3faf4e9c4b709"
+  "hash": "d5b182d16dbc265c243538d06c06312ff611e976865afa4b4f302bcd4d682d8d"
+},{
+  "tool": "Code Inspection",
+  "category": "Common Practices and Code Improvements",
+  "type": "Field can be made readonly (private accessibility)",
+  "tags": [
+    "C#",
+    ".NETFramework 4.7.1"
+  ],
+  "severity": "Moderate",
+  "comment": "Field can be made readonly",
+  "detailsInfo": "Field has no write usages after initialization and can be made readonly [Learn more...](https://www.jetbrains.com/help/rider/FieldCanBeMadeReadOnly.Local.html)",
+  "sources": [
+    {
+      "type": "file",
+      "path": "Assets/Scripts/Module/Player/Camera/CameraController.cs",
+      "language": "C#",
+      "line": 14,
+      "offset": 40,
+      "length": 11,
+      "code": {
+        "startLine": 12,
+        "length": 11,
+        "offset": 131,
+        "surroundingCode": "        private Transform followTarget;\n        [SerializeField] private float depth = 14f;\n        [SerializeField] private float followAngle = 85f;\n        [SerializeField] private float cameraAngle = 65f;\n        private void Awake()"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "Module.Player",
+    "inspectionName": "FieldCanBeMadeReadOnly.Local"
+  },
+  "hash": "efbe308bc33ee81d394b6e4220d1c8aec770402ca0b839169359c5a215352202"
 },{
   "tool": "Code Inspection",
   "category": "Common Practices and Code Improvements",
@@ -1280,6 +1344,38 @@
   "hash": "f915617b8f6b00be3f116c447d064fc1e6bcdc249362442715a37202b86c05fd"
 },{
   "tool": "Code Inspection",
+  "category": "Potential Code Quality Issues",
+  "type": "Invalid XML documentation comment",
+  "tags": [
+    "C#",
+    ".NETFramework 4.7.1"
+  ],
+  "severity": "High",
+  "comment": "Cannot resolve parameter 'count'",
+  "detailsInfo": "Invalid XML documentation comment",
+  "sources": [
+    {
+      "type": "file",
+      "path": "Assets/Scripts/Module/Working/Factory/SpawnPoint.cs",
+      "language": "C#",
+      "line": 29,
+      "offset": 26,
+      "length": 5,
+      "code": {
+        "startLine": 27,
+        "length": 5,
+        "offset": 77,
+        "surroundingCode": "        /// ワーカーのスポーン座標を返します\n        /// </summary>\n        /// <param name=\"count\">返すスポーンポイントの数</param>\n        /// <returns>スポーン座標のコレクション</returns>\n        public Span<Vector3> GetSpawnPoints()"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "Module.Worker",
+    "inspectionName": "InvalidXmlDocComment"
+  },
+  "hash": "be9cbe864e291d05ccd5b017845299d07cd79ac69fbe92639d1a57f2e2dd2612"
+},{
+  "tool": "Code Inspection",
   "category": "Language Usage Opportunities",
   "type": "Invert 'if' statement to reduce nesting",
   "tags": [
@@ -1310,38 +1406,6 @@
     "inspectionName": "InvertIf"
   },
   "hash": "57e511a63646ea2132ee241461c8766b51aeab6316bb3151b1d19b905aab39b0"
-},{
-  "tool": "Code Inspection",
-  "category": "Language Usage Opportunities",
-  "type": "Invert 'if' statement to reduce nesting",
-  "tags": [
-    "C#",
-    ".NETFramework 4.7.1"
-  ],
-  "severity": "Moderate",
-  "comment": "Invert 'if' statement to reduce nesting",
-  "detailsInfo": "Invert 'if' statement to reduce nesting [Learn more...](https://www.jetbrains.com/help/rider/InvertIf.html)",
-  "sources": [
-    {
-      "type": "file",
-      "path": "Assets/Scripts/Module/Working/Factory/SpawnPoint.cs",
-      "language": "C#",
-      "line": 63,
-      "offset": 21,
-      "length": 2,
-      "code": {
-        "startLine": 61,
-        "length": 2,
-        "offset": 50,
-        "surroundingCode": "                    index++;\n\n                    if (index == count)\n                    {\n                        var spawnPoints = pointsBuffer.AsSpan();"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "Module.Worker",
-    "inspectionName": "InvertIf"
-  },
-  "hash": "f4c2d89371aff8d2c94674ae0fc7fa447efe79c05e59b647067fe655be5cb9d6"
 },{
   "tool": "Code Inspection",
   "category": "Common Practices and Code Improvements",
@@ -1729,70 +1793,6 @@
 },{
   "tool": "Code Inspection",
   "category": "Potential Code Quality Issues",
-  "type": "Non-accessed field (private accessibility)",
-  "tags": [
-    "C#",
-    ".NETFramework 4.7.1"
-  ],
-  "severity": "High",
-  "comment": "Field 'target' is assigned but its value is never used",
-  "detailsInfo": "Field is assigned but its value is never used [Learn more...](https://www.jetbrains.com/help/rider/NotAccessedField.Local.html)",
-  "sources": [
-    {
-      "type": "file",
-      "path": "Assets/Scripts/Module/Working/Controller/ActivePointProvider.cs",
-      "language": "C#",
-      "line": 8,
-      "offset": 36,
-      "length": 6,
-      "code": {
-        "startLine": 6,
-        "length": 6,
-        "offset": 78,
-        "surroundingCode": "    public class ActivePointProvider\n    {\n        private readonly Transform target;\n        private readonly IReadOnlyList<Vector3> offsets;\n"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "Module.Worker",
-    "inspectionName": "NotAccessedField.Local"
-  },
-  "hash": "83eaf34435c7855346326c6ccbfdf1eeb112467b109590d2ce6086ec347e79fd"
-},{
-  "tool": "Code Inspection",
-  "category": "Potential Code Quality Issues",
-  "type": "Non-accessed field (private accessibility)",
-  "tags": [
-    "C#",
-    ".NETFramework 4.7.1"
-  ],
-  "severity": "High",
-  "comment": "Field 'offsets' is assigned but its value is never used",
-  "detailsInfo": "Field is assigned but its value is never used [Learn more...](https://www.jetbrains.com/help/rider/NotAccessedField.Local.html)",
-  "sources": [
-    {
-      "type": "file",
-      "path": "Assets/Scripts/Module/Working/Controller/ActivePointProvider.cs",
-      "language": "C#",
-      "line": 9,
-      "offset": 49,
-      "length": 7,
-      "code": {
-        "startLine": 7,
-        "length": 7,
-        "offset": 97,
-        "surroundingCode": "    {\n        private readonly Transform target;\n        private readonly IReadOnlyList<Vector3> offsets;\n\n        public ActivePointProvider(Transform target, IReadOnlyList<Vector3> offsets)"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "Module.Worker",
-    "inspectionName": "NotAccessedField.Local"
-  },
-  "hash": "aedb037df2646bf36e9be7016aa3b2cc989ba257e49f8243b9b125027a4852f7"
-},{
-  "tool": "Code Inspection",
-  "category": "Potential Code Quality Issues",
   "type": "Possible 'System.NullReferenceException'",
   "tags": [
     "C#",
@@ -1824,36 +1824,36 @@
   "hash": "3489cc645e7efbdfe57d8c48077ebfc028bc9053580af3f0b9712fdd1a15ea99"
 },{
   "tool": "Code Inspection",
-  "category": "Potential Code Quality Issues",
-  "type": "Possible 'System.NullReferenceException'",
+  "category": "Redundancies in Code",
+  "type": "Private field can be converted into local variable",
   "tags": [
     "C#",
     ".NETFramework 4.7.1"
   ],
   "severity": "High",
-  "comment": "Possible 'System.NullReferenceException'",
-  "detailsInfo": "Dereferencing an expression that can have 'null' value. This warning is detected either when there is a comparison with 'null' earlier in the code or when this value is returned by a member marked with 'Value can be null' attribute. [Learn more...](https://www.jetbrains.com/help/rider/PossibleNullReferenceException.html)",
+  "comment": "The field is always assigned before being used and can be converted into a local variable",
+  "detailsInfo": "Private field is always assigned before being used and can be converted into a local variable [Learn more...](https://www.jetbrains.com/help/rider/PrivateFieldCanBeConvertedToLocalVariable.html)",
   "sources": [
     {
       "type": "file",
-      "path": "Assets/Scripts/Module/Working/Controller/WorkerController.cs",
+      "path": "Assets/Scripts/GameMain/Presenter/WorkerAssigner.cs",
       "language": "C#",
-      "line": 42,
-      "offset": 39,
+      "line": 18,
+      "offset": 37,
       "length": 11,
       "code": {
-        "startLine": 40,
+        "startLine": 16,
         "length": 11,
-        "offset": 105,
-        "surroundingCode": "            activePoints = new List<Vector3>(spawnPoints.Length);\n\n            foreach (Vector3 point in spawnPoints)\n            {\n                activePoints.Add(point);"
+        "offset": 74,
+        "surroundingCode": "    public class WorkerAssigner\n    {\n        private readonly InputEvent assignEvent;\n        private readonly IReadOnlyList<Assignment> assignments;\n        private readonly LeadPointConnector leadPointConnector;"
       }
     }
   ],
   "attributes": {
-    "module": "Module.Worker",
-    "inspectionName": "PossibleNullReferenceException"
+    "module": "GameMain",
+    "inspectionName": "PrivateFieldCanBeConvertedToLocalVariable"
   },
-  "hash": "7e3921fb9ba857cc4d8448a23e1d40093d9badfc209e25377bd9090f7ca9015b"
+  "hash": "8f52a09f531f1a6230c1530654d9e4bafbf7a8387a6ad30adb304c154e689c23"
 },{
   "tool": "Code Inspection",
   "category": "Redundancies in Code",
@@ -1877,7 +1877,7 @@
         "startLine": 16,
         "length": 12,
         "offset": 106,
-        "surroundingCode": "    {\n        private readonly IReadOnlyList<Assignment> assignments;\n        private readonly InputEvent releaseEvent;\n        private readonly WorkerController workerController;\n"
+        "surroundingCode": "    {\n        private readonly IReadOnlyList<Assignment> assignments;\n        private readonly InputEvent releaseEvent;\n        private readonly LeadPointConnector leadPointConnector;\n"
       }
     }
   ],
@@ -1885,39 +1885,7 @@
     "module": "GameMain",
     "inspectionName": "PrivateFieldCanBeConvertedToLocalVariable"
   },
-  "hash": "08c68692b14284bc08694ea9471ba81db5cc1a8ee5ea74f9089459766da6a0ee"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundancies in Code",
-  "type": "Private field can be converted into local variable",
-  "tags": [
-    "C#",
-    ".NETFramework 4.7.1"
-  ],
-  "severity": "High",
-  "comment": "The field is always assigned before being used and can be converted into a local variable",
-  "detailsInfo": "Private field is always assigned before being used and can be converted into a local variable [Learn more...](https://www.jetbrains.com/help/rider/PrivateFieldCanBeConvertedToLocalVariable.html)",
-  "sources": [
-    {
-      "type": "file",
-      "path": "Assets/Scripts/GameMain/Presenter/WorkerAssigner.cs",
-      "language": "C#",
-      "line": 18,
-      "offset": 37,
-      "length": 11,
-      "code": {
-        "startLine": 16,
-        "length": 11,
-        "offset": 74,
-        "surroundingCode": "    public class WorkerAssigner\n    {\n        private readonly InputEvent assignEvent;\n        private readonly IReadOnlyList<Assignment> assignments;\n        private readonly WorkerController workerController;"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "GameMain",
-    "inspectionName": "PrivateFieldCanBeConvertedToLocalVariable"
-  },
-  "hash": "f14b4ffac69f72b1cd792d91322e9cd68fa2b3a8b6a795ac4cd17ece69dcd941"
+  "hash": "a32a8b03b8eec093f34c8ef566b168ebef82d9677411ebddc9d3c891676cc0c4"
 },{
   "tool": "Code Inspection",
   "category": "Syntax Style",
@@ -1934,14 +1902,14 @@
       "type": "file",
       "path": "Assets/Scripts/Module/Working/Factory/WorkerSpawner.cs",
       "language": "C#",
-      "line": 36,
+      "line": 35,
       "offset": 17,
       "length": 17,
       "code": {
-        "startLine": 34,
+        "startLine": 33,
         "length": 17,
-        "offset": 88,
-        "surroundingCode": "            for (int i = 0; i < addedWorkers.Length; i++)\n            {\n                WorkerCreateModel createModel = new WorkerCreateModel(WorkerState.Idle, spawnPoints[i], spawnPoint.transform);\n                InitWorker(addedWorkers[i], createModel);\n            }"
+        "offset": 79,
+        "surroundingCode": "            foreach (var worker in addedWorkers)\n            {\n                WorkerCreateModel createModel = new WorkerCreateModel(WorkerState.Idle, Vector3.zero, spawnPoint.transform);\n                InitWorker(worker, createModel);\n            }"
       }
     }
   ],
@@ -1949,7 +1917,7 @@
     "module": "Module.Worker",
     "inspectionName": "SuggestVarOrType_SimpleTypes"
   },
-  "hash": "31bea14219ea23431f91d94e4fd03b91d1ca42d5a59782713db0ca96ef1213ea"
+  "hash": "12e76299501712d555615324258ce40303d10937fff2fae09be5f846e604766e"
 },{
   "tool": "Code Inspection",
   "category": "Potential Code Quality Issues",
@@ -2023,6 +1991,38 @@
     ".NETFramework 4.7.1"
   ],
   "severity": "Moderate",
+  "comment": "Method 'SetState' is never used",
+  "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Global.html)",
+  "sources": [
+    {
+      "type": "file",
+      "path": "Assets/Scripts/Module/Player/Camera/CameraController.cs",
+      "language": "C#",
+      "line": 52,
+      "offset": 21,
+      "length": 8,
+      "code": {
+        "startLine": 50,
+        "length": 8,
+        "offset": 31,
+        "surroundingCode": "        }\n\n        public void SetState(CameraState cameraState)\n        {\n            currentState = cameraState switch"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "Module.Player",
+    "inspectionName": "UnusedMember.Global"
+  },
+  "hash": "0f2e541ee8fe34033b5d6a6fdf30ce60c25a9e56e065d5ea22ffa02a96a95ab8"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundancies in Symbol Declarations",
+  "type": "Type member is never used (non-private accessibility)",
+  "tags": [
+    "C#",
+    ".NETFramework 4.7.1"
+  ],
+  "severity": "Moderate",
   "comment": "Method 'AsSpan' is never used",
   "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Global.html)",
   "sources": [
@@ -2046,38 +2046,6 @@
     "inspectionName": "UnusedMember.Global"
   },
   "hash": "258fc56729a2ea18985137e90cb93d1dcf554a51ff9e43cd478f574d72821161"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundancies in Symbol Declarations",
-  "type": "Type member is never used (non-private accessibility)",
-  "tags": [
-    "C#",
-    ".NETFramework 4.7.1"
-  ],
-  "severity": "Moderate",
-  "comment": "Method 'SetSpawnPoints' is never used",
-  "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Global.html)",
-  "sources": [
-    {
-      "type": "file",
-      "path": "Assets/Scripts/Module/Working/Controller/WorkerController.cs",
-      "language": "C#",
-      "line": 38,
-      "offset": 21,
-      "length": 14,
-      "code": {
-        "startLine": 36,
-        "length": 14,
-        "offset": 31,
-        "surroundingCode": "        }\n\n        public void SetSpawnPoints(Span<Vector3> spawnPoints)\n        {\n            activePoints = new List<Vector3>(spawnPoints.Length);"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "Module.Worker",
-    "inspectionName": "UnusedMember.Global"
-  },
-  "hash": "29acfb1a55ae064b1836b59e83c53814e8b1cea92bed5313b2e64f2527887ae5"
 },{
   "tool": "Code Inspection",
   "category": "Redundancies in Symbol Declarations",
@@ -2151,6 +2119,38 @@
     ".NETFramework 4.7.1"
   ],
   "severity": "Moderate",
+  "comment": "Method 'Start' is never used",
+  "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Global.html)",
+  "sources": [
+    {
+      "type": "file",
+      "path": "Assets/Scripts/GameMain/GameRouter.cs",
+      "language": "C#",
+      "line": 45,
+      "offset": 21,
+      "length": 5,
+      "code": {
+        "startLine": 43,
+        "length": 5,
+        "offset": 31,
+        "surroundingCode": "        }\n\n        public void Start()\n        {\n            InitWorker();"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "GameMain",
+    "inspectionName": "UnusedMember.Global"
+  },
+  "hash": "432ab3d73e30e039dd68be713aefab3a5cc1d57716e3e1fcaa9ff8f4991befb8"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundancies in Symbol Declarations",
+  "type": "Type member is never used (non-private accessibility)",
+  "tags": [
+    "C#",
+    ".NETFramework 4.7.1"
+  ],
+  "severity": "Moderate",
   "comment": "Method 'Update' is never used",
   "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Global.html)",
   "sources": [
@@ -2183,38 +2183,6 @@
     ".NETFramework 4.7.1"
   ],
   "severity": "Moderate",
-  "comment": "Method 'GetState' is never used",
-  "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Global.html)",
-  "sources": [
-    {
-      "type": "file",
-      "path": "Assets/Scripts/Module/Player/Camera/CameraController.cs",
-      "language": "C#",
-      "line": 67,
-      "offset": 28,
-      "length": 8,
-      "code": {
-        "startLine": 65,
-        "length": 8,
-        "offset": 38,
-        "surroundingCode": "        }\n\n        public CameraState GetState() => currentState.GetState();\n    }\n}"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "Module.Player",
-    "inspectionName": "UnusedMember.Global"
-  },
-  "hash": "4cae619e23867d6dba76ab024461c81e9887b5fe1a02026510e163adf53daaf5"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundancies in Symbol Declarations",
-  "type": "Type member is never used (non-private accessibility)",
-  "tags": [
-    "C#",
-    ".NETFramework 4.7.1"
-  ],
-  "severity": "Moderate",
   "comment": "Property 'Mw' is never used",
   "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Global.html)",
   "sources": [
@@ -2238,6 +2206,70 @@
     "inspectionName": "UnusedMember.Global"
   },
   "hash": "538b1a7f0f7c8b9a24ec65e0622b35b6c6e2521907858f42a1d8567876983ce5"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundancies in Symbol Declarations",
+  "type": "Type member is never used (non-private accessibility)",
+  "tags": [
+    "C#",
+    ".NETFramework 4.7.1"
+  ],
+  "severity": "Moderate",
+  "comment": "Method 'Initialize' is never used",
+  "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Global.html)",
+  "sources": [
+    {
+      "type": "file",
+      "path": "Assets/Scripts/GameMain/Presenter/WorkerConnector.cs",
+      "language": "C#",
+      "line": 45,
+      "offset": 21,
+      "length": 10,
+      "code": {
+        "startLine": 43,
+        "length": 10,
+        "offset": 90,
+        "surroundingCode": "        public IReadOnlyList<Assignment> Assignments => assignments;\n\n        public void Initialize() { }\n\n        private void CreateAssignments()"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "GameMain",
+    "inspectionName": "UnusedMember.Global"
+  },
+  "hash": "5f7d8f65b81b6c6d6d8d44f4484b236ce1f99ac0c221375c8a431ccb06f6dc99"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundancies in Symbol Declarations",
+  "type": "Type member is never used (non-private accessibility)",
+  "tags": [
+    "C#",
+    ".NETFramework 4.7.1"
+  ],
+  "severity": "Moderate",
+  "comment": "Method 'GetState' is never used",
+  "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Global.html)",
+  "sources": [
+    {
+      "type": "file",
+      "path": "Assets/Scripts/Module/Player/Camera/CameraController.cs",
+      "language": "C#",
+      "line": 72,
+      "offset": 28,
+      "length": 8,
+      "code": {
+        "startLine": 70,
+        "length": 8,
+        "offset": 38,
+        "surroundingCode": "        }\n\n        public CameraState GetState() => currentState.GetState();\n    }\n}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "Module.Player",
+    "inspectionName": "UnusedMember.Global"
+  },
+  "hash": "664b1c23b51c5279cec1c7888b76ba40a402731f71aa304d650a2d33814ba1e6"
 },{
   "tool": "Code Inspection",
   "category": "Redundancies in Symbol Declarations",
@@ -2343,70 +2375,6 @@
     ".NETFramework 4.7.1"
   ],
   "severity": "Moderate",
-  "comment": "Method 'Start' is never used",
-  "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Global.html)",
-  "sources": [
-    {
-      "type": "file",
-      "path": "Assets/Scripts/GameMain/GameRouter.cs",
-      "language": "C#",
-      "line": 40,
-      "offset": 21,
-      "length": 5,
-      "code": {
-        "startLine": 38,
-        "length": 5,
-        "offset": 31,
-        "surroundingCode": "        }\n\n        public void Start()\n        {\n            InitWorker();"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "GameMain",
-    "inspectionName": "UnusedMember.Global"
-  },
-  "hash": "86991c1884ecf3c79c21846faf67696778c7124d94978514230af2006aa39d3a"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundancies in Symbol Declarations",
-  "type": "Type member is never used (non-private accessibility)",
-  "tags": [
-    "C#",
-    ".NETFramework 4.7.1"
-  ],
-  "severity": "Moderate",
-  "comment": "Method 'Initialize' is never used",
-  "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Global.html)",
-  "sources": [
-    {
-      "type": "file",
-      "path": "Assets/Scripts/GameMain/Presenter/WorkerConnector.cs",
-      "language": "C#",
-      "line": 43,
-      "offset": 21,
-      "length": 10,
-      "code": {
-        "startLine": 41,
-        "length": 10,
-        "offset": 90,
-        "surroundingCode": "        public IReadOnlyList<Assignment> Assignments => assignments;\n\n        public void Initialize() { }\n\n        private void CreateAssignments()"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "GameMain",
-    "inspectionName": "UnusedMember.Global"
-  },
-  "hash": "878b2ff451e755aedf48e7ede75c743d6b90c763174a12214b1fed13e0a9a781"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundancies in Symbol Declarations",
-  "type": "Type member is never used (non-private accessibility)",
-  "tags": [
-    "C#",
-    ".NETFramework 4.7.1"
-  ],
-  "severity": "Moderate",
   "comment": "Property 'ClassName' is never used",
   "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Global.html)",
   "sources": [
@@ -2471,70 +2439,6 @@
     ".NETFramework 4.7.1"
   ],
   "severity": "Moderate",
-  "comment": "Method 'InitParam' is never used",
-  "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Global.html)",
-  "sources": [
-    {
-      "type": "file",
-      "path": "Assets/Scripts/Module/Player/Camera/CameraController.cs",
-      "language": "C#",
-      "line": 62,
-      "offset": 21,
-      "length": 9,
-      "code": {
-        "startLine": 60,
-        "length": 9,
-        "offset": 31,
-        "surroundingCode": "        }\n\n        public void InitParam()\n        {\n            "
-      }
-    }
-  ],
-  "attributes": {
-    "module": "Module.Player",
-    "inspectionName": "UnusedMember.Global"
-  },
-  "hash": "9c15bd59a2948085457cc67eaea23d3f7c21488ce98781f39beeb73d111c1588"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundancies in Symbol Declarations",
-  "type": "Type member is never used (non-private accessibility)",
-  "tags": [
-    "C#",
-    ".NETFramework 4.7.1"
-  ],
-  "severity": "Moderate",
-  "comment": "Method 'SetState' is never used",
-  "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Global.html)",
-  "sources": [
-    {
-      "type": "file",
-      "path": "Assets/Scripts/Module/Player/Camera/CameraController.cs",
-      "language": "C#",
-      "line": 52,
-      "offset": 21,
-      "length": 8,
-      "code": {
-        "startLine": 50,
-        "length": 8,
-        "offset": 31,
-        "surroundingCode": "        }\n\n        public void SetState(CameraState cameraState)\n        {\n            currentState = cameraState switch"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "Module.Player",
-    "inspectionName": "UnusedMember.Global"
-  },
-  "hash": "a36052485182161e8d8439270361d8c6e67821b7b90a2bc6f4dd74059ffaed4e"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundancies in Symbol Declarations",
-  "type": "Type member is never used (non-private accessibility)",
-  "tags": [
-    "C#",
-    ".NETFramework 4.7.1"
-  ],
-  "severity": "Moderate",
   "comment": "Property 'IsGenerating' is never used",
   "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Global.html)",
   "sources": [
@@ -2590,6 +2494,38 @@
     "inspectionName": "UnusedMember.Global"
   },
   "hash": "b568055eedc66f6efc27d6dfdc1a37f140e9369a45bbc9c54dbabb1486623aa2"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundancies in Symbol Declarations",
+  "type": "Type member is never used (non-private accessibility)",
+  "tags": [
+    "C#",
+    ".NETFramework 4.7.1"
+  ],
+  "severity": "Moderate",
+  "comment": "Method 'InitParam' is never used",
+  "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Global.html)",
+  "sources": [
+    {
+      "type": "file",
+      "path": "Assets/Scripts/Module/Player/Camera/CameraController.cs",
+      "language": "C#",
+      "line": 62,
+      "offset": 21,
+      "length": 9,
+      "code": {
+        "startLine": 60,
+        "length": 9,
+        "offset": 31,
+        "surroundingCode": "        }\n\n        public void InitParam()\n        {\n            "
+      }
+    }
+  ],
+  "attributes": {
+    "module": "Module.Player",
+    "inspectionName": "UnusedMember.Global"
+  },
+  "hash": "bbdaf9523e74282bfa1eeebfefa0ab3edb9da80f6cb7ab9e3857b51e7341680e"
 },{
   "tool": "Code Inspection",
   "category": "Redundancies in Symbol Declarations",
@@ -2855,38 +2791,6 @@
     ".NETFramework 4.7.1"
   ],
   "severity": "High",
-  "comment": "Method 'FixedUpdate' is never used",
-  "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Local.html)",
-  "sources": [
-    {
-      "type": "file",
-      "path": "Assets/Scripts/Module/Working/Controller/WorkerController.cs",
-      "language": "C#",
-      "line": 32,
-      "offset": 22,
-      "length": 11,
-      "code": {
-        "startLine": 30,
-        "length": 11,
-        "offset": 32,
-        "surroundingCode": "        }\n\n        private void FixedUpdate()\n        {\n            //リーダーの速度の更新"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "Module.Worker",
-    "inspectionName": "UnusedMember.Local"
-  },
-  "hash": "0e973e768bda3f9dc6f2e5bea507b07d3bb8bf7611e5be55b2974e149b7e1ff9"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundancies in Symbol Declarations",
-  "type": "Type member is never used (private accessibility)",
-  "tags": [
-    "C#",
-    ".NETFramework 4.7.1"
-  ],
-  "severity": "High",
   "comment": "Method 'Awake' is never used",
   "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Local.html)",
   "sources": [
@@ -2926,14 +2830,14 @@
       "type": "file",
       "path": "Assets/Scripts/Module/Working/Controller/WorkerController.cs",
       "language": "C#",
-      "line": 23,
+      "line": 21,
       "offset": 22,
       "length": 5,
       "code": {
-        "startLine": 21,
+        "startLine": 19,
         "length": 5,
-        "offset": 66,
-        "surroundingCode": "        private List<Vector3> activePoints;\n\n        private void Awake()\n        {\n            leaderRb = GetComponent<Rigidbody>();"
+        "offset": 58,
+        "surroundingCode": "        private Rigidbody leaderRb;\n\n        private void Awake()\n        {\n            leaderRb = GetComponent<Rigidbody>();"
       }
     }
   ],
@@ -2941,7 +2845,7 @@
     "module": "Module.Worker",
     "inspectionName": "UnusedMember.Local"
   },
-  "hash": "498595a0e793f30ea0451799582a9c04e1db4c3947ac04ec98be7f59ad48c3dc"
+  "hash": "3df6e2d5c02b975563dce58d8f0fbdc2186c7f4ac215a35363a0c77e729fea64"
 },{
   "tool": "Code Inspection",
   "category": "Redundancies in Symbol Declarations",
@@ -2951,21 +2855,21 @@
     ".NETFramework 4.7.1"
   ],
   "severity": "High",
-  "comment": "Method 'Awake' is never used",
+  "comment": "Method 'FixedUpdate' is never used",
   "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Local.html)",
   "sources": [
     {
       "type": "file",
       "path": "Assets/Scripts/Module/Player/Camera/CameraController.cs",
       "language": "C#",
-      "line": 16,
+      "line": 21,
       "offset": 22,
-      "length": 5,
+      "length": 11,
       "code": {
-        "startLine": 14,
-        "length": 5,
-        "offset": 137,
-        "surroundingCode": "        [SerializeField] private float followAngle = 40f;\n        [SerializeField] private float cameraAngle = 40f;\n        private void Awake()\n        {\n            Initialize();"
+        "startLine": 19,
+        "length": 11,
+        "offset": 32,
+        "surroundingCode": "        }\n\n        private void FixedUpdate()\n        {\n"
       }
     }
   ],
@@ -2973,7 +2877,7 @@
     "module": "Module.Player",
     "inspectionName": "UnusedMember.Local"
   },
-  "hash": "4f56f832a0c4b6f6764edff886f8862e490dc6734451d6dcdf979d40decf5944"
+  "hash": "4cccc7e9498d82de3469df63e1c7e2b86c9e077e2f63868a8d9d370a6e5a28de"
 },{
   "tool": "Code Inspection",
   "category": "Redundancies in Symbol Declarations",
@@ -3015,6 +2919,38 @@
     ".NETFramework 4.7.1"
   ],
   "severity": "High",
+  "comment": "Method 'FixedUpdate' is never used",
+  "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Local.html)",
+  "sources": [
+    {
+      "type": "file",
+      "path": "Assets/Scripts/Module/Working/Controller/WorkerController.cs",
+      "language": "C#",
+      "line": 29,
+      "offset": 22,
+      "length": 11,
+      "code": {
+        "startLine": 27,
+        "length": 11,
+        "offset": 32,
+        "surroundingCode": "        }\n\n        private void FixedUpdate()\n        {\n            //リーダーの速度の更新"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "Module.Worker",
+    "inspectionName": "UnusedMember.Local"
+  },
+  "hash": "81cdc3e38b43ee7bc678b526698741ca91357dd0b485aca5e2d2631b0caf22c9"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundancies in Symbol Declarations",
+  "type": "Type member is never used (private accessibility)",
+  "tags": [
+    "C#",
+    ".NETFramework 4.7.1"
+  ],
+  "severity": "High",
   "comment": "Method 'GenerateTask' is never used",
   "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Local.html)",
   "sources": [
@@ -3038,102 +2974,6 @@
     "inspectionName": "UnusedMember.Local"
   },
   "hash": "845b8088f49525308d9b91928b0ff47e4c49e521419e15e01aae803ad6f3a296"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundancies in Symbol Declarations",
-  "type": "Type member is never used (private accessibility)",
-  "tags": [
-    "C#",
-    ".NETFramework 4.7.1"
-  ],
-  "severity": "High",
-  "comment": "Method 'Awake' is never used",
-  "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Local.html)",
-  "sources": [
-    {
-      "type": "file",
-      "path": "Assets/Scripts/Module/Working/Factory/SpawnPoint.cs",
-      "language": "C#",
-      "line": 26,
-      "offset": 22,
-      "length": 5,
-      "code": {
-        "startLine": 24,
-        "length": 5,
-        "offset": 62,
-        "surroundingCode": "        private Vector3[] pointsBuffer;\n\n        private void Awake()\n        {\n            pointsBuffer = new Vector3[layers.Sum(layer => layer.count)];"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "Module.Worker",
-    "inspectionName": "UnusedMember.Local"
-  },
-  "hash": "8c20dc08e761948da7d6a7cafa325701e121bdd76c74e234f7bd857195b9524e"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundancies in Symbol Declarations",
-  "type": "Type member is never used (private accessibility)",
-  "tags": [
-    "C#",
-    ".NETFramework 4.7.1"
-  ],
-  "severity": "High",
-  "comment": "Method 'Update' is never used",
-  "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Local.html)",
-  "sources": [
-    {
-      "type": "file",
-      "path": "Assets/Scripts/Module/Working/Worker.cs",
-      "language": "C#",
-      "line": 30,
-      "offset": 22,
-      "length": 6,
-      "code": {
-        "startLine": 28,
-        "length": 6,
-        "offset": 32,
-        "surroundingCode": "        }\n\n        private void Update()\n        {\n            currentState?.Update();"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "Module.Worker",
-    "inspectionName": "UnusedMember.Local"
-  },
-  "hash": "9936e96cbe920ca56b4397da78e65c1672354f074d3c39b585d167bd0ba6adec"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundancies in Symbol Declarations",
-  "type": "Type member is never used (private accessibility)",
-  "tags": [
-    "C#",
-    ".NETFramework 4.7.1"
-  ],
-  "severity": "High",
-  "comment": "Method 'OnDrawGizmosSelected' is never used",
-  "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Local.html)",
-  "sources": [
-    {
-      "type": "file",
-      "path": "Assets/Scripts/Module/Working/Factory/SpawnPoint.cs",
-      "language": "C#",
-      "line": 83,
-      "offset": 22,
-      "length": 20,
-      "code": {
-        "startLine": 81,
-        "length": 20,
-        "offset": 32,
-        "surroundingCode": "        }\n\n        private void OnDrawGizmosSelected()\n        {\n            Gizmos.color = Color.red;"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "Module.Worker",
-    "inspectionName": "UnusedMember.Local"
-  },
-  "hash": "9fe1dfb55682cecef88804058cb27ef46a9579e9faf03dc398a167dc5d1cb6ab"
 },{
   "tool": "Code Inspection",
   "category": "Redundancies in Symbol Declarations",
@@ -3175,6 +3015,70 @@
     ".NETFramework 4.7.1"
   ],
   "severity": "High",
+  "comment": "Method 'Awake' is never used",
+  "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Local.html)",
+  "sources": [
+    {
+      "type": "file",
+      "path": "Assets/Scripts/Module/Player/Camera/CameraController.cs",
+      "language": "C#",
+      "line": 16,
+      "offset": 22,
+      "length": 5,
+      "code": {
+        "startLine": 14,
+        "length": 5,
+        "offset": 137,
+        "surroundingCode": "        [SerializeField] private float followAngle = 85f;\n        [SerializeField] private float cameraAngle = 65f;\n        private void Awake()\n        {\n            Initialize();"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "Module.Player",
+    "inspectionName": "UnusedMember.Local"
+  },
+  "hash": "b64ab925e42e5da44e4990cc821012283443bff532ed0225c29af29a0cd42312"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundancies in Symbol Declarations",
+  "type": "Type member is never used (private accessibility)",
+  "tags": [
+    "C#",
+    ".NETFramework 4.7.1"
+  ],
+  "severity": "High",
+  "comment": "Method 'Update' is never used",
+  "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Local.html)",
+  "sources": [
+    {
+      "type": "file",
+      "path": "Assets/Scripts/Module/Working/Worker.cs",
+      "language": "C#",
+      "line": 38,
+      "offset": 22,
+      "length": 6,
+      "code": {
+        "startLine": 36,
+        "length": 6,
+        "offset": 32,
+        "surroundingCode": "        }\n\n        private void Update()\n        {\n            currentState?.Update();"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "Module.Worker",
+    "inspectionName": "UnusedMember.Local"
+  },
+  "hash": "b823d1751efaabec68ff1052a9b1a37fe0a0859d9703769cd7a9fe3a1b9ce4ae"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundancies in Symbol Declarations",
+  "type": "Type member is never used (private accessibility)",
+  "tags": [
+    "C#",
+    ".NETFramework 4.7.1"
+  ],
+  "severity": "High",
   "comment": "Method 'OnDrawGizmos' is never used",
   "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Local.html)",
   "sources": [
@@ -3207,29 +3111,29 @@
     ".NETFramework 4.7.1"
   ],
   "severity": "High",
-  "comment": "Method 'FixedUpdate' is never used",
+  "comment": "Method 'OnDrawGizmosSelected' is never used",
   "detailsInfo": "Type member is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedMember.Local.html)",
   "sources": [
     {
       "type": "file",
-      "path": "Assets/Scripts/Module/Player/Camera/CameraController.cs",
+      "path": "Assets/Scripts/Module/Working/Factory/SpawnPoint.cs",
       "language": "C#",
-      "line": 21,
+      "line": 71,
       "offset": 22,
-      "length": 11,
+      "length": 20,
       "code": {
-        "startLine": 19,
-        "length": 11,
+        "startLine": 69,
+        "length": 20,
         "offset": 32,
-        "surroundingCode": "        }\n\n        private void FixedUpdate()\n        {\n"
+        "surroundingCode": "        }\n\n        private void OnDrawGizmosSelected()\n        {\n            Gizmos.color = Color.red;"
       }
     }
   ],
   "attributes": {
-    "module": "Module.Player",
+    "module": "Module.Worker",
     "inspectionName": "UnusedMember.Local"
   },
-  "hash": "bde94851ea9e2132aa2ab3dab642e27a9a7df168e6dafa39b5f59888329dca64"
+  "hash": "c6f52bf3ecba202e0e7c12dff8b291560b6623ec0f0e59162215b9b58b836e4c"
 },{
   "tool": "Code Inspection",
   "category": "Redundancies in Symbol Declarations",
@@ -3335,38 +3239,6 @@
     ".NETFramework 4.7.1"
   ],
   "severity": "Moderate",
-  "comment": "Method 'Dispose' return value is never used",
-  "detailsInfo": "Method return value is never used",
-  "sources": [
-    {
-      "type": "file",
-      "path": "Assets/Scripts/Module/Working/Worker.cs",
-      "language": "C#",
-      "line": 87,
-      "offset": 16,
-      "length": 4,
-      "code": {
-        "startLine": 85,
-        "length": 4,
-        "offset": 26,
-        "surroundingCode": "        }\n\n        public void Dispose()\n        {\n            Destroy(gameObject);"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "Module.Worker",
-    "inspectionName": "UnusedMethodReturnValue.Global"
-  },
-  "hash": "051fe408edf8906a371d6f578c788e2b2bda7702fbc560bc8f1a8aa78a803c89"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundancies in Symbol Declarations",
-  "type": "Method return value is never used (non-private accessibility)",
-  "tags": [
-    "C#",
-    ".NETFramework 4.7.1"
-  ],
-  "severity": "Moderate",
   "comment": "Method 'OnStart' return value is never used",
   "detailsInfo": "Method return value is never used",
   "sources": [
@@ -3399,21 +3271,21 @@
     ".NETFramework 4.7.1"
   ],
   "severity": "Moderate",
-  "comment": "Method 'Enable' return value is never used",
+  "comment": "Method 'Dispose' return value is never used",
   "detailsInfo": "Method return value is never used",
   "sources": [
     {
       "type": "file",
       "path": "Assets/Scripts/Module/Working/Worker.cs",
       "language": "C#",
-      "line": 77,
+      "line": 83,
       "offset": 16,
       "length": 4,
       "code": {
-        "startLine": 75,
+        "startLine": 81,
         "length": 4,
         "offset": 26,
-        "surroundingCode": "        }\n\n        public void Enable()\n        {\n            gameObject.SetActive(true);"
+        "surroundingCode": "        }\n\n        public void Dispose()\n        {\n            Destroy(gameObject);"
       }
     }
   ],
@@ -3421,7 +3293,7 @@
     "module": "Module.Worker",
     "inspectionName": "UnusedMethodReturnValue.Global"
   },
-  "hash": "2d902907c89e3971fde8f584a1c87499e0b5990ec565e8c9d76a3eea17de2141"
+  "hash": "202df4f0f3cd5a7251e0c8836c621ea5009e347375aad84624a2eae093591c6b"
 },{
   "tool": "Code Inspection",
   "category": "Redundancies in Symbol Declarations",
@@ -3431,21 +3303,21 @@
     ".NETFramework 4.7.1"
   ],
   "severity": "Moderate",
-  "comment": "Method 'SetFollowTarget' return value is never used",
+  "comment": "Method 'Disable' return value is never used",
   "detailsInfo": "Method return value is never used",
   "sources": [
     {
       "type": "file",
       "path": "Assets/Scripts/Module/Working/Worker.cs",
       "language": "C#",
-      "line": 65,
+      "line": 78,
       "offset": 16,
       "length": 4,
       "code": {
-        "startLine": 63,
+        "startLine": 76,
         "length": 4,
         "offset": 26,
-        "surroundingCode": "        }\n\n        public void SetFollowTarget(Transform target, Vector3 offset)\n        {\n            Target = target;"
+        "surroundingCode": "        }\n\n        public void Disable()\n        {\n            gameObject.SetActive(true);"
       }
     }
   ],
@@ -3453,39 +3325,7 @@
     "module": "Module.Worker",
     "inspectionName": "UnusedMethodReturnValue.Global"
   },
-  "hash": "3cf22ae7cf3fc3ae1f1167b9cac3b509b718a0c8df91284c17ddf4a24ac7e426"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundancies in Symbol Declarations",
-  "type": "Method return value is never used (non-private accessibility)",
-  "tags": [
-    "C#",
-    ".NETFramework 4.7.1"
-  ],
-  "severity": "Moderate",
-  "comment": "Method 'SetWorkerState' return value is never used",
-  "detailsInfo": "Method return value is never used",
-  "sources": [
-    {
-      "type": "file",
-      "path": "Assets/Scripts/Module/Working/Worker.cs",
-      "language": "C#",
-      "line": 51,
-      "offset": 16,
-      "length": 4,
-      "code": {
-        "startLine": 49,
-        "length": 4,
-        "offset": 101,
-        "surroundingCode": "        /// </summary>\n        /// <param name=\"workerState\">セットするWorkerState</param>\n        public void SetWorkerState(WorkerState workerState)\n        {\n            try"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "Module.Worker",
-    "inspectionName": "UnusedMethodReturnValue.Global"
-  },
-  "hash": "4004bc8ed4bd7f4f17d524e2beedc083a1d27070a183bc2dae444c9acea51eee"
+  "hash": "4c9fd6ddafdca005b8d3b52e5e3e41f5ce40b2d0c6a1f48467ff7e75d6bc3610"
 },{
   "tool": "Code Inspection",
   "category": "Redundancies in Symbol Declarations",
@@ -3527,6 +3367,38 @@
     ".NETFramework 4.7.1"
   ],
   "severity": "Moderate",
+  "comment": "Method 'SetFollowTarget' return value is never used",
+  "detailsInfo": "Method return value is never used",
+  "sources": [
+    {
+      "type": "file",
+      "path": "Assets/Scripts/Module/Working/Worker.cs",
+      "language": "C#",
+      "line": 61,
+      "offset": 16,
+      "length": 4,
+      "code": {
+        "startLine": 59,
+        "length": 4,
+        "offset": 26,
+        "surroundingCode": "        }\n\n        public void SetFollowTarget(Transform target, Vector3 offset)\n        {\n            Target = target;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "Module.Worker",
+    "inspectionName": "UnusedMethodReturnValue.Global"
+  },
+  "hash": "6981a3f152cb4df78247166fe154435ecd007f8f01c3a976ced2dd0f533f8426"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundancies in Symbol Declarations",
+  "type": "Method return value is never used (non-private accessibility)",
+  "tags": [
+    "C#",
+    ".NETFramework 4.7.1"
+  ],
+  "severity": "Moderate",
   "comment": "Method 'Update' return value is never used",
   "detailsInfo": "Method return value is never used",
   "sources": [
@@ -3559,38 +3431,6 @@
     ".NETFramework 4.7.1"
   ],
   "severity": "Moderate",
-  "comment": "Method 'OnSpawn' return value is never used",
-  "detailsInfo": "Method return value is never used",
-  "sources": [
-    {
-      "type": "file",
-      "path": "Assets/Scripts/Module/Working/Worker.cs",
-      "language": "C#",
-      "line": 35,
-      "offset": 16,
-      "length": 4,
-      "code": {
-        "startLine": 33,
-        "length": 4,
-        "offset": 26,
-        "surroundingCode": "        }\n\n        public void OnSpawn()\n        {\n            workerStates = new IWorkerState[]"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "Module.Worker",
-    "inspectionName": "UnusedMethodReturnValue.Global"
-  },
-  "hash": "7853e6c511dffe23f18c765cb94a635d7024ccf066396f0697e1ee317cd21219"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundancies in Symbol Declarations",
-  "type": "Method return value is never used (non-private accessibility)",
-  "tags": [
-    "C#",
-    ".NETFramework 4.7.1"
-  ],
-  "severity": "Moderate",
   "comment": "Method 'OnComplete' return value is never used",
   "detailsInfo": "Method return value is never used",
   "sources": [
@@ -3614,38 +3454,6 @@
     "inspectionName": "UnusedMethodReturnValue.Global"
   },
   "hash": "80c4e71c8c9182e07e8eb7c87edaccd84cbe735221ef760014678c68a013329b"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundancies in Symbol Declarations",
-  "type": "Method return value is never used (non-private accessibility)",
-  "tags": [
-    "C#",
-    ".NETFramework 4.7.1"
-  ],
-  "severity": "Moderate",
-  "comment": "Method 'Disable' return value is never used",
-  "detailsInfo": "Method return value is never used",
-  "sources": [
-    {
-      "type": "file",
-      "path": "Assets/Scripts/Module/Working/Worker.cs",
-      "language": "C#",
-      "line": 82,
-      "offset": 16,
-      "length": 4,
-      "code": {
-        "startLine": 80,
-        "length": 4,
-        "offset": 26,
-        "surroundingCode": "        }\n\n        public void Disable()\n        {\n            gameObject.SetActive(true);"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "Module.Worker",
-    "inspectionName": "UnusedMethodReturnValue.Global"
-  },
-  "hash": "84f37ed4000ff3eb235fada854763cae1aec4257c196a0cf4d68c02dfcb69d98"
 },{
   "tool": "Code Inspection",
   "category": "Redundancies in Symbol Declarations",
@@ -3751,21 +3559,21 @@
     ".NETFramework 4.7.1"
   ],
   "severity": "Moderate",
-  "comment": "Method 'SetLockState' return value is never used",
+  "comment": "Method 'AddWorker' return value is never used",
   "detailsInfo": "Method return value is never used",
   "sources": [
     {
       "type": "file",
-      "path": "Assets/Scripts/Module/Working/Worker.cs",
+      "path": "Assets/Scripts/Module/Working/Controller/LeadPointConnector.cs",
       "language": "C#",
-      "line": 71,
+      "line": 36,
       "offset": 16,
       "length": 4,
       "code": {
-        "startLine": 69,
+        "startLine": 34,
         "length": 4,
-        "offset": 26,
-        "surroundingCode": "        }\n\n        public void SetLockState(bool isLocked)\n        {\n            IsLocked = isLocked;"
+        "offset": 88,
+        "surroundingCode": "        /// </summary>\n        /// <param name=\"worker\">設定するワーカー</param>\n        public void AddWorker(Worker worker)\n        {\n            Vector3 offset = AddWorkerPoint(worker);"
       }
     }
   ],
@@ -3773,7 +3581,7 @@
     "module": "Module.Worker",
     "inspectionName": "UnusedMethodReturnValue.Global"
   },
-  "hash": "bfff326b80eb4263530f0a86e5f1707bbfb786ff0107de2b00a98193bd40600c"
+  "hash": "ba1414bb75275ee233c03ce71860a627c1585f0057547f885ffda409f4190061"
 },{
   "tool": "Code Inspection",
   "category": "Redundancies in Symbol Declarations",
@@ -3815,29 +3623,29 @@
     ".NETFramework 4.7.1"
   ],
   "severity": "Moderate",
-  "comment": "Method 'EnqueueWorker' return value is never used",
+  "comment": "Method 'SetFollowTarget' return value is never used",
   "detailsInfo": "Method return value is never used",
   "sources": [
     {
       "type": "file",
-      "path": "Assets/Scripts/Module/Working/Controller/WorkerController.cs",
+      "path": "Assets/Scripts/Module/Player/Camera/CameraController.cs",
       "language": "C#",
-      "line": 48,
+      "line": 67,
       "offset": 16,
       "length": 4,
       "code": {
-        "startLine": 46,
+        "startLine": 65,
         "length": 4,
         "offset": 26,
-        "surroundingCode": "        }\n\n        public void EnqueueWorker(Worker worker)\n        {\n            workers.Add(worker);"
+        "surroundingCode": "        }\n\n        public void SetFollowTarget(Transform player)\n        {\n            followTarget = player;"
       }
     }
   ],
   "attributes": {
-    "module": "Module.Worker",
+    "module": "Module.Player",
     "inspectionName": "UnusedMethodReturnValue.Global"
   },
-  "hash": "d31046b2c341a13449a30dd354c4fc68303c9709a7227f528394a2d09b37c0f4"
+  "hash": "d48c2744231df8087c01f2e81d3ffd1901390957bedee798266ebf707b9e55de"
 },{
   "tool": "Code Inspection",
   "category": "Redundancies in Symbol Declarations",
@@ -3911,6 +3719,70 @@
     ".NETFramework 4.7.1"
   ],
   "severity": "Moderate",
+  "comment": "Method 'Enable' return value is never used",
+  "detailsInfo": "Method return value is never used",
+  "sources": [
+    {
+      "type": "file",
+      "path": "Assets/Scripts/Module/Working/Worker.cs",
+      "language": "C#",
+      "line": 73,
+      "offset": 16,
+      "length": 4,
+      "code": {
+        "startLine": 71,
+        "length": 4,
+        "offset": 26,
+        "surroundingCode": "        }\n\n        public void Enable()\n        {\n            gameObject.SetActive(true);"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "Module.Worker",
+    "inspectionName": "UnusedMethodReturnValue.Global"
+  },
+  "hash": "efac7a1feef032192f5d43e662f26003c128c13b4c4d476e8875851f67f57cd9"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundancies in Symbol Declarations",
+  "type": "Method return value is never used (non-private accessibility)",
+  "tags": [
+    "C#",
+    ".NETFramework 4.7.1"
+  ],
+  "severity": "Moderate",
+  "comment": "Method 'SetLockState' return value is never used",
+  "detailsInfo": "Method return value is never used",
+  "sources": [
+    {
+      "type": "file",
+      "path": "Assets/Scripts/Module/Working/Worker.cs",
+      "language": "C#",
+      "line": 67,
+      "offset": 16,
+      "length": 4,
+      "code": {
+        "startLine": 65,
+        "length": 4,
+        "offset": 26,
+        "surroundingCode": "        }\n\n        public void SetLockState(bool isLocked)\n        {\n            IsLocked = isLocked;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "Module.Worker",
+    "inspectionName": "UnusedMethodReturnValue.Global"
+  },
+  "hash": "f3715ef7dca73f7195c6cff3460986b97860512ff156b67a90a53a2b40366e11"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundancies in Symbol Declarations",
+  "type": "Method return value is never used (non-private accessibility)",
+  "tags": [
+    "C#",
+    ".NETFramework 4.7.1"
+  ],
+  "severity": "Moderate",
   "comment": "Method 'SetState' return value is never used",
   "detailsInfo": "Method return value is never used",
   "sources": [
@@ -3937,67 +3809,35 @@
 },{
   "tool": "Code Inspection",
   "category": "Redundancies in Symbol Declarations",
-  "type": "Method return value is never used (private accessibility)",
+  "type": "Method return value is never used (non-private accessibility)",
   "tags": [
     "C#",
     ".NETFramework 4.7.1"
   ],
-  "severity": "High",
-  "comment": "Method 'InitWorker' return value is never used",
+  "severity": "Moderate",
+  "comment": "Method 'SetWorkerState' return value is never used",
   "detailsInfo": "Method return value is never used",
   "sources": [
     {
       "type": "file",
-      "path": "Assets/Scripts/Module/Working/Factory/WorkerSpawner.cs",
+      "path": "Assets/Scripts/Module/Working/Worker.cs",
       "language": "C#",
-      "line": 43,
-      "offset": 9,
+      "line": 47,
+      "offset": 16,
       "length": 4,
       "code": {
-        "startLine": 41,
+        "startLine": 45,
         "length": 4,
-        "offset": 19,
-        "surroundingCode": "        }\n\n        void InitWorker(Worker worker, WorkerCreateModel createModel)\n        {\n            worker.transform.SetParent(createModel.Parent);"
+        "offset": 101,
+        "surroundingCode": "        /// </summary>\n        /// <param name=\"workerState\">セットするWorkerState</param>\n        public void SetWorkerState(WorkerState workerState)\n        {\n            try"
       }
     }
   ],
   "attributes": {
     "module": "Module.Worker",
-    "inspectionName": "UnusedMethodReturnValue.Local"
+    "inspectionName": "UnusedMethodReturnValue.Global"
   },
-  "hash": "03c5c8adacc445925e253a46f1036f49138abe7647f3c4d0cbedad93e2193fe1"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundancies in Symbol Declarations",
-  "type": "Method return value is never used (private accessibility)",
-  "tags": [
-    "C#",
-    ".NETFramework 4.7.1"
-  ],
-  "severity": "High",
-  "comment": "Method 'Initialize' return value is never used",
-  "detailsInfo": "Method return value is never used",
-  "sources": [
-    {
-      "type": "file",
-      "path": "Assets/Scripts/Module/Player/Camera/CameraController.cs",
-      "language": "C#",
-      "line": 43,
-      "offset": 17,
-      "length": 4,
-      "code": {
-        "startLine": 41,
-        "length": 4,
-        "offset": 27,
-        "surroundingCode": "        }\n\n        private void Initialize()\n        {\n            states = new ICameraState[]"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "Module.Player",
-    "inspectionName": "UnusedMethodReturnValue.Local"
-  },
-  "hash": "1ab427a8b498aea740a8dcf54cd557a29c32c3e52f3f24081bd5ac47096c966c"
+  "hash": "fcc62fcbfdc6fe910ea7d7eec561a38d211cb3338870c2031e3c53c47507d08b"
 },{
   "tool": "Code Inspection",
   "category": "Redundancies in Symbol Declarations",
@@ -4029,7 +3869,39 @@
     "module": "GameMain",
     "inspectionName": "UnusedMethodReturnValue.Local"
   },
-  "hash": "3272872136cfda2856baa3d0bc86919a365d2850e7815156286531b9ece4d9ae"
+  "hash": "14d07889fa5883e95314811edf7c34fef7d9d8eb8a0f223ac3b921ebdd8fefb9"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundancies in Symbol Declarations",
+  "type": "Method return value is never used (private accessibility)",
+  "tags": [
+    "C#",
+    ".NETFramework 4.7.1"
+  ],
+  "severity": "High",
+  "comment": "Method 'InitWorker' return value is never used",
+  "detailsInfo": "Method return value is never used",
+  "sources": [
+    {
+      "type": "file",
+      "path": "Assets/Scripts/Module/Working/Factory/WorkerSpawner.cs",
+      "language": "C#",
+      "line": 42,
+      "offset": 9,
+      "length": 4,
+      "code": {
+        "startLine": 40,
+        "length": 4,
+        "offset": 19,
+        "surroundingCode": "        }\n\n        void InitWorker(Worker worker, WorkerCreateModel createModel)\n        {\n            worker.transform.SetParent(createModel.Parent);"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "Module.Worker",
+    "inspectionName": "UnusedMethodReturnValue.Local"
+  },
+  "hash": "2d9f1f0ff130feef59c3e9bd12eaa3b77fb29a2004e94c057139a2808fd236b1"
 },{
   "tool": "Code Inspection",
   "category": "Redundancies in Symbol Declarations",
@@ -4076,6 +3948,38 @@
   "sources": [
     {
       "type": "file",
+      "path": "Assets/Scripts/Module/Player/Camera/CameraController.cs",
+      "language": "C#",
+      "line": 43,
+      "offset": 17,
+      "length": 4,
+      "code": {
+        "startLine": 41,
+        "length": 4,
+        "offset": 27,
+        "surroundingCode": "        }\n\n        private void Initialize()\n        {\n            states = new ICameraState[]"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "Module.Player",
+    "inspectionName": "UnusedMethodReturnValue.Local"
+  },
+  "hash": "3dc6077d17b7b0c624f9d346c180341f090f76756a561c2f2844ccd1a9afeea2"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundancies in Symbol Declarations",
+  "type": "Method return value is never used (private accessibility)",
+  "tags": [
+    "C#",
+    ".NETFramework 4.7.1"
+  ],
+  "severity": "High",
+  "comment": "Method 'Initialize' return value is never used",
+  "detailsInfo": "Method return value is never used",
+  "sources": [
+    {
+      "type": "file",
       "path": "Assets/Scripts/Module/Player/Controller/PlayerController.cs",
       "language": "C#",
       "line": 34,
@@ -4103,38 +4007,6 @@
     ".NETFramework 4.7.1"
   ],
   "severity": "High",
-  "comment": "Method 'InitPlayer' return value is never used",
-  "detailsInfo": "Method return value is never used",
-  "sources": [
-    {
-      "type": "file",
-      "path": "Assets/Scripts/GameMain/GameRouter.cs",
-      "language": "C#",
-      "line": 60,
-      "offset": 17,
-      "length": 4,
-      "code": {
-        "startLine": 58,
-        "length": 4,
-        "offset": 65,
-        "surroundingCode": "        /// PLayerのセットアップ\n        /// </summary>\n        private void InitPlayer()\n        {\n           playerController.InitParam(gameParam.ConvertToPlayerModel());"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "GameMain",
-    "inspectionName": "UnusedMethodReturnValue.Local"
-  },
-  "hash": "4bbafa48ac545b51a7726cfe43901249c8d31f2b7a655d724e581b6d5381a5da"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundancies in Symbol Declarations",
-  "type": "Method return value is never used (private accessibility)",
-  "tags": [
-    "C#",
-    ".NETFramework 4.7.1"
-  ],
-  "severity": "High",
   "comment": "Method 'UpdateLeaderVelocity' return value is never used",
   "detailsInfo": "Method return value is never used",
   "sources": [
@@ -4142,11 +4014,11 @@
       "type": "file",
       "path": "Assets/Scripts/Module/Working/Controller/WorkerController.cs",
       "language": "C#",
-      "line": 68,
+      "line": 35,
       "offset": 17,
       "length": 4,
       "code": {
-        "startLine": 66,
+        "startLine": 33,
         "length": 4,
         "offset": 27,
         "surroundingCode": "        }\n\n        private void UpdateLeaderVelocity()\n        {\n            var input = controlEvent.ReadValue<Vector2>();"
@@ -4157,7 +4029,7 @@
     "module": "Module.Worker",
     "inspectionName": "UnusedMethodReturnValue.Local"
   },
-  "hash": "55eba4cd4dfcecadf5b76e98c063f8704ed6df9f452e0f2d4e8c6259b64f0fd5"
+  "hash": "55897a44426faffb3a372042ac9255950827bbbb1ce903ad1e48b13e4482a49c"
 },{
   "tool": "Code Inspection",
   "category": "Redundancies in Symbol Declarations",
@@ -4190,6 +4062,38 @@
     "inspectionName": "UnusedMethodReturnValue.Local"
   },
   "hash": "566e7f664b5e852bb893cc0c06074145d4e5be16a1e64786cdd041c20dd2c94f"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundancies in Symbol Declarations",
+  "type": "Method return value is never used (private accessibility)",
+  "tags": [
+    "C#",
+    ".NETFramework 4.7.1"
+  ],
+  "severity": "High",
+  "comment": "Method 'CreateAssignments' return value is never used",
+  "detailsInfo": "Method return value is never used",
+  "sources": [
+    {
+      "type": "file",
+      "path": "Assets/Scripts/GameMain/Presenter/WorkerConnector.cs",
+      "language": "C#",
+      "line": 47,
+      "offset": 17,
+      "length": 4,
+      "code": {
+        "startLine": 45,
+        "length": 4,
+        "offset": 54,
+        "surroundingCode": "        public void Initialize() { }\n\n        private void CreateAssignments()\n        {\n            foreach (var task in TaskUtil.FindSceneTasks<BaseTask>()) assignments.Add(new Assignment(task, task.transform));"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "GameMain",
+    "inspectionName": "UnusedMethodReturnValue.Local"
+  },
+  "hash": "5896bec5bba31aeab71e2cb35f39b11724548456de8df85b37ca34bf3121f89a"
 },{
   "tool": "Code Inspection",
   "category": "Redundancies in Symbol Declarations",
@@ -4270,11 +4174,11 @@
       "type": "file",
       "path": "Assets/Scripts/GameMain/GameRouter.cs",
       "language": "C#",
-      "line": 50,
+      "line": 55,
       "offset": 17,
       "length": 4,
       "code": {
-        "startLine": 48,
+        "startLine": 53,
         "length": 4,
         "offset": 65,
         "surroundingCode": "        /// workerのセットアップ\n        /// </summary>\n        private void InitWorker()\n        {\n            var workers = workerSpawner.Spawn(spawnParam.SpawnCount);"
@@ -4285,7 +4189,39 @@
     "module": "GameMain",
     "inspectionName": "UnusedMethodReturnValue.Local"
   },
-  "hash": "79b92d92fc761276b73d7ca90eda4d475c1d0449d2e0bc253d8d789c6d949b6a"
+  "hash": "7e4b83794cea9cdea64164e361b8ccf1cb7c988beabd828646f0959d87cd50c5"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundancies in Symbol Declarations",
+  "type": "Method return value is never used (private accessibility)",
+  "tags": [
+    "C#",
+    ".NETFramework 4.7.1"
+  ],
+  "severity": "High",
+  "comment": "Method 'RemoveWorkerPoint' return value is never used",
+  "detailsInfo": "Method return value is never used",
+  "sources": [
+    {
+      "type": "file",
+      "path": "Assets/Scripts/Module/Working/Controller/LeadPointConnector.cs",
+      "language": "C#",
+      "line": 88,
+      "offset": 17,
+      "length": 4,
+      "code": {
+        "startLine": 86,
+        "length": 4,
+        "offset": 27,
+        "surroundingCode": "        }\n\n        private void RemoveWorkerPoint(Worker worker)\n        {\n            Vector3 position = workerPoints[worker];"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "Module.Worker",
+    "inspectionName": "UnusedMethodReturnValue.Local"
+  },
+  "hash": "a0f88420a5833ab5d714950c9526e6d0ef64b68890933870df2f679d70024574"
 },{
   "tool": "Code Inspection",
   "category": "Redundancies in Symbol Declarations",
@@ -4317,7 +4253,7 @@
     "module": "GameMain",
     "inspectionName": "UnusedMethodReturnValue.Local"
   },
-  "hash": "8e2f5f269a58ee57830c20ed5efb99b4ed31a32d36e6255c7241e01495408a1c"
+  "hash": "a79a793e80eadbf316f1c2f72d36e718d08a4c9c7cdc927a6e5f2d213f1c6c0e"
 },{
   "tool": "Code Inspection",
   "category": "Redundancies in Symbol Declarations",
@@ -4327,21 +4263,21 @@
     ".NETFramework 4.7.1"
   ],
   "severity": "High",
-  "comment": "Method 'CreateAssignments' return value is never used",
+  "comment": "Method 'InitPlayer' return value is never used",
   "detailsInfo": "Method return value is never used",
   "sources": [
     {
       "type": "file",
-      "path": "Assets/Scripts/GameMain/Presenter/WorkerConnector.cs",
+      "path": "Assets/Scripts/GameMain/GameRouter.cs",
       "language": "C#",
-      "line": 45,
+      "line": 65,
       "offset": 17,
       "length": 4,
       "code": {
-        "startLine": 43,
+        "startLine": 63,
         "length": 4,
-        "offset": 54,
-        "surroundingCode": "        public void Initialize() { }\n\n        private void CreateAssignments()\n        {\n            foreach (var task in TaskUtil.FindSceneTasks<BaseTask>()) assignments.Add(new Assignment(task, task.transform));"
+        "offset": 65,
+        "surroundingCode": "        /// PLayerのセットアップ\n        /// </summary>\n        private void InitPlayer()\n        {\n            playerController.InitParam(gameParam.ConvertToPlayerModel());"
       }
     }
   ],
@@ -4349,7 +4285,7 @@
     "module": "GameMain",
     "inspectionName": "UnusedMethodReturnValue.Local"
   },
-  "hash": "f52f9015428b40ce755808f3b92f384556553c8b63e6979be1e10a9f0cf046c4"
+  "hash": "f2f042fa58680ac3004f08df71087b0b222b9ed4ab67ecab0053b5872f7d715e"
 },{
   "tool": "Code Inspection",
   "category": "Redundancies in Symbol Declarations",
@@ -4382,6 +4318,38 @@
     "inspectionName": "UnusedParameter.Global"
   },
   "hash": "7b28eef097818646f81aeda9d3c7240f373762f3783ae30bb1a92354e712beeb"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundancies in Symbol Declarations",
+  "type": "Unused parameter (private accessibility)",
+  "tags": [
+    "C#",
+    ".NETFramework 4.7.1"
+  ],
+  "severity": "High",
+  "comment": "Parameter 'workerController' is never used",
+  "detailsInfo": "Parameter is never used",
+  "sources": [
+    {
+      "type": "file",
+      "path": "Assets/Scripts/GameMain/GameRouter.cs",
+      "language": "C#",
+      "line": 30,
+      "offset": 30,
+      "length": 16,
+      "code": {
+        "startLine": 28,
+        "length": 16,
+        "offset": 122,
+        "surroundingCode": "            LeadPointConnector leadPointConnector,\n            WorkerSpawner workerSpawner, \n            WorkerController workerController, \n            PlayerController playerController,\n            CameraController cameraController"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "GameMain",
+    "inspectionName": "UnusedParameter.Local"
+  },
+  "hash": "6c6d4e20d30b373c224c598de5f772efc957440e992d7b0398b9b10cdf32ac2a"
 },{
   "tool": "Code Inspection",
   "category": "Redundancies in Symbol Declarations",
@@ -4455,38 +4423,6 @@
     ".NETFramework 4.7.1"
   ],
   "severity": "Moderate",
-  "comment": "Class 'ActivePointProvider' is never used",
-  "detailsInfo": "Type is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedType.Global.html)",
-  "sources": [
-    {
-      "type": "file",
-      "path": "Assets/Scripts/Module/Working/Controller/ActivePointProvider.cs",
-      "language": "C#",
-      "line": 6,
-      "offset": 18,
-      "length": 19,
-      "code": {
-        "startLine": 4,
-        "length": 19,
-        "offset": 55,
-        "surroundingCode": "namespace Module.Working.Controller\n{\n    public class ActivePointProvider\n    {\n        private readonly Transform target;"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "Module.Worker",
-    "inspectionName": "UnusedType.Global"
-  },
-  "hash": "194addb60b01667ed995d6c3b41f19a1c4a1228f8d1255f3a72f224f6f05ea96"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundancies in Symbol Declarations",
-  "type": "Type is never used (non-private accessibility)",
-  "tags": [
-    "C#",
-    ".NETFramework 4.7.1"
-  ],
-  "severity": "Moderate",
   "comment": "Struct 'CameraModel' is never used",
   "detailsInfo": "Type is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedType.Global.html)",
   "sources": [
@@ -4510,6 +4446,38 @@
     "inspectionName": "UnusedType.Global"
   },
   "hash": "1d87f6ca4e4c81f884f140396190ce643a5626020734007d5d1a20d4c8508de9"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundancies in Symbol Declarations",
+  "type": "Type is never used (non-private accessibility)",
+  "tags": [
+    "C#",
+    ".NETFramework 4.7.1"
+  ],
+  "severity": "Moderate",
+  "comment": "Class 'InGameContainer' is never used",
+  "detailsInfo": "Type is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedType.Global.html)",
+  "sources": [
+    {
+      "type": "file",
+      "path": "Assets/Scripts/GameMain/Container/InGameContainer.cs",
+      "language": "C#",
+      "line": 14,
+      "offset": 18,
+      "length": 15,
+      "code": {
+        "startLine": 12,
+        "length": 15,
+        "offset": 48,
+        "surroundingCode": "namespace GameMain.Container\n{\n    public class InGameContainer : LifetimeScope\n    {\n        [Header(\"ここにシーン上のインスタンスを登録\")]"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "GameMain",
+    "inspectionName": "UnusedType.Global"
+  },
+  "hash": "2891bbfb5c03bef9289fc21e0e7b5dc5416b51eed01a69cbf5d5f0775848e193"
 },{
   "tool": "Code Inspection",
   "category": "Redundancies in Symbol Declarations",
@@ -4606,38 +4574,6 @@
     "inspectionName": "UnusedType.Global"
   },
   "hash": "54585c91d0b996c6cbbdd23d1e46b8c9756ed625ef625fcffa0e9f520e9b881c"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundancies in Symbol Declarations",
-  "type": "Type is never used (non-private accessibility)",
-  "tags": [
-    "C#",
-    ".NETFramework 4.7.1"
-  ],
-  "severity": "Moderate",
-  "comment": "Class 'InGameContainer' is never used",
-  "detailsInfo": "Type is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedType.Global.html)",
-  "sources": [
-    {
-      "type": "file",
-      "path": "Assets/Scripts/GameMain/Container/InGameContainer.cs",
-      "language": "C#",
-      "line": 13,
-      "offset": 18,
-      "length": 15,
-      "code": {
-        "startLine": 11,
-        "length": 15,
-        "offset": 48,
-        "surroundingCode": "namespace GameMain.Container\n{\n    public class InGameContainer : LifetimeScope\n    {\n        [Header(\"ここにシーン上のインスタンスを登録\")]"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "GameMain",
-    "inspectionName": "UnusedType.Global"
-  },
-  "hash": "5574765609494e85fc116a7793030a02304cb0646cb8709595c327e700f60a6c"
 },{
   "tool": "Code Inspection",
   "category": "Redundancies in Symbol Declarations",
@@ -4766,38 +4702,6 @@
     "inspectionName": "UnusedType.Global"
   },
   "hash": "e4fb96adcd79fd4e845a6552bb4500932e10bff26eaa8436acedaaf7600a3e0c"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundancies in Symbol Declarations",
-  "type": "Type is never used (private accessibility)",
-  "tags": [
-    "C#",
-    ".NETFramework 4.7.1"
-  ],
-  "severity": "High",
-  "comment": "Struct 'Point' is never used",
-  "detailsInfo": "Type is never used [Learn more...](https://www.jetbrains.com/help/rider/UnusedType.Local.html)",
-  "sources": [
-    {
-      "type": "file",
-      "path": "Assets/Scripts/Module/Working/Controller/ActivePointProvider.cs",
-      "language": "C#",
-      "line": 17,
-      "offset": 16,
-      "length": 5,
-      "code": {
-        "startLine": 15,
-        "length": 5,
-        "offset": 26,
-        "surroundingCode": "        }\n\n        struct Point\n        {\n            private Vector3 point;"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "Module.Worker",
-    "inspectionName": "UnusedType.Local"
-  },
-  "hash": "afecdab132b78ae08fb367a9b41e09f48969597bcf26d24e57c34f863e50fbae"
 },{
   "tool": "Code Inspection",
   "category": "Redundancies in Symbol Declarations",

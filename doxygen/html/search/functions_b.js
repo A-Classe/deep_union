@@ -7,5 +7,7 @@ var searchData=
   ['releaseall_522',['ReleaseAll',['../classGameMain_1_1Presenter_1_1WorkerReleaser.html#a6b727baaf9b8ee42df31adf6a1ee58e9',1,'GameMain::Presenter::WorkerReleaser']]],
   ['remove_523',['Remove',['../structCore_1_1Utility_1_1ListSegment.html#a8f00fca9b6b686142c832a63498ef372',1,'Core.Utility.ListSegment.Remove()'],['../classModule_1_1Working_1_1WorkerAgent.html#a06954ac8011fd776ddb5b3d6993cccd1',1,'Module.Working.WorkerAgent.Remove()']]],
   ['removeat_524',['RemoveAt',['../structCore_1_1Utility_1_1ListSegment.html#a9f3f83d94c37fd7e4bde16f25f4d73ea',1,'Core::Utility::ListSegment']]],
-  ['reset_525',['Reset',['../structCore_1_1Utility_1_1ListSegment_1_1Enumerator.html#a88116357982832c914067e4f66106642',1,'Core::Utility::ListSegment::Enumerator']]]
+  ['removenearestworker_525',['RemoveNearestWorker',['../classModule_1_1Working_1_1Controller_1_1LeadPointConnector.html#a9ee8379d59395b688f9998bcf0f980a7',1,'Module::Working::Controller::LeadPointConnector']]],
+  ['removeworkerpoint_526',['RemoveWorkerPoint',['../classModule_1_1Working_1_1Controller_1_1LeadPointConnector.html#a4767e21319d1485c74fe7512ef1864b5',1,'Module::Working::Controller::LeadPointConnector']]],
+  ['reset_527',['Reset',['../structCore_1_1Utility_1_1ListSegment_1_1Enumerator.html#a88116357982832c914067e4f66106642',1,'Core::Utility::ListSegment::Enumerator']]]
 ];
