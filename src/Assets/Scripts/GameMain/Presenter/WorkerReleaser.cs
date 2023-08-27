@@ -16,11 +16,11 @@ namespace GameMain.Presenter
     {
         private readonly IReadOnlyList<Assignment> assignments;
         private readonly InputEvent releaseEvent;
-        private readonly WorkerController workerController;
+        private readonly LeadPointConnector leadPointConnector;
 
-        public WorkerReleaser(WorkerConnector workerConnector, WorkerController workerController)
+        public WorkerReleaser(WorkerConnector workerConnector, LeadPointConnector leadPointConnector)
         {
-            this.workerController = workerController;
+            this.leadPointConnector = leadPointConnector;
             assignments = workerConnector.Assignments;
 
             //入力の登録
@@ -61,7 +61,7 @@ namespace GameMain.Presenter
                 assignment.Task.Mw -= 1;
 
                 //コントローラーに登録
-                workerController.EnqueueWorker(worker);
+                leadPointConnector.AddWorker(worker);
             }
             catch (Exception e)
             {
@@ -78,7 +78,7 @@ namespace GameMain.Presenter
                 var assignment = assignments.First(connect => connect.Task == baseTask);
 
                 //コントローラーに登録
-                foreach (var worker in assignment.Workers) workerController.EnqueueWorker(worker);
+                foreach (var worker in assignment.Workers) leadPointConnector.AddWorker(worker);
 
                 //タスクからワーカーを削除
                 assignment.Workers.Clear();
@@ -97,7 +97,7 @@ namespace GameMain.Presenter
 
         private Worker GetNearestWorker(Assignment assignment)
         {
-            var origin = workerController.transform.position;
+            var origin = leadPointConnector.GetTargetPoint();
             return assignment.Workers.OrderBy(worker => (origin - worker.transform.position).sqrMagnitude).First();
         }
     }

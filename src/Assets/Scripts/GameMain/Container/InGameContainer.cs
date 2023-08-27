@@ -1,4 +1,5 @@
 ﻿using GameMain.Presenter;
+using Module.Player.Camera;
 using Module.Player.Controller;
 using Module.Task;
 using Module.Working;
@@ -22,6 +23,7 @@ namespace GameMain.Container
         [SerializeField] private WorkerController workerController = default!;
         [SerializeField] private TaskDetector taskDetector = default!;
         [SerializeField] private PlayerController playerController = default!;
+        [SerializeField] private CameraController cameraController = default!;
 
         protected override void Configure(IContainerBuilder builder)
         {
@@ -31,6 +33,7 @@ namespace GameMain.Container
 
             builder.Register<WorkerSpawner>(Lifetime.Singleton);
             builder.Register<WorkerAgent>(Lifetime.Singleton);
+            builder.Register<LeadPointConnector>(Lifetime.Singleton);
 
             builder.RegisterInstance(spawnPoint);
             builder.RegisterInstance(spawnParam);
@@ -38,6 +41,7 @@ namespace GameMain.Container
             builder.RegisterInstance(taskDetector);
             builder.RegisterInstance(workerController);
             builder.RegisterInstance(playerController);
+            builder.RegisterInstance(cameraController);
         }
     }
 }

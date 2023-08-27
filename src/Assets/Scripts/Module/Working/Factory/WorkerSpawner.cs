@@ -29,12 +29,11 @@ namespace Module.Working.Factory
         public Span<Worker> Spawn(int spawnCount)
         {
             Span<Worker> addedWorkers = workerAgent.Add(spawnCount);
-            Span<Vector3> spawnPoints = spawnPoint.GetSpawnPoints(spawnCount);
 
-            for (int i = 0; i < addedWorkers.Length; i++)
+            foreach (var worker in addedWorkers)
             {
-                WorkerCreateModel createModel = new WorkerCreateModel(WorkerState.Idle, spawnPoints[i], spawnPoint.transform);
-                InitWorker(addedWorkers[i], createModel);
+                WorkerCreateModel createModel = new WorkerCreateModel(WorkerState.Idle, Vector3.zero, spawnPoint.transform);
+                InitWorker(worker, createModel);
             }
 
             return addedWorkers;
@@ -46,7 +45,6 @@ namespace Module.Working.Factory
             NavMeshAgent agent = worker.GetComponent<NavMeshAgent>();
             agent.Warp(createModel.Position);
 
-            worker.OnSpawn();
             worker.SetWorkerState(createModel.State);
         }
     }
