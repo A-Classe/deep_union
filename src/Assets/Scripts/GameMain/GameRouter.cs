@@ -1,5 +1,6 @@
 ﻿using Core.Utility.Player;
 using GameMain.Presenter;
+using Module.Player.Camera;
 using Module.Player.Controller;
 using Module.Player.State;
 using Module.Working.Controller;
@@ -16,16 +17,19 @@ namespace GameMain
 
         private readonly LeadPointConnector leadPointConnector;
         private readonly PlayerController playerController;
-
+        private readonly CameraController cameraController;
+        
         private readonly WorkerSpawner workerSpawner;
 
         [Inject]
         public GameRouter(
             SpawnParam spawnParam,
             GameParam gameParam,
-            WorkerSpawner workerSpawner,
             LeadPointConnector leadPointConnector,
-            PlayerController playerController
+            WorkerSpawner workerSpawner, 
+            WorkerController workerController, 
+            PlayerController playerController,
+            CameraController cameraController
         )
         {
             this.spawnParam = spawnParam;
@@ -33,6 +37,7 @@ namespace GameMain
 
             this.leadPointConnector = leadPointConnector;
             this.playerController = playerController;
+            this.cameraController = cameraController;
 
             this.workerSpawner = workerSpawner;
         }
@@ -62,6 +67,8 @@ namespace GameMain
             playerController.InitParam(gameParam.ConvertToPlayerModel());
             playerController.PlayerStart();
             playerController.SetState(PlayerState.Go);
+           
+            cameraController.SetFollowTarget(playerController.transform);
         }
     }
 }

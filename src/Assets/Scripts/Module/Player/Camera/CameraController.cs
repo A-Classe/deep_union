@@ -9,10 +9,10 @@ namespace Module.Player.Camera
         private ICameraState currentState;
         private ICameraState[] states;
 
-        [SerializeField] private Transform followTarget;
-        [SerializeField] private float depth;
-        [SerializeField] private float followAngle = 40f;
-        [SerializeField] private float cameraAngle = 40f;
+        private Transform followTarget;
+        [SerializeField] private float depth = 14f;
+        [SerializeField] private float followAngle = 85f;
+        [SerializeField] private float cameraAngle = 65f;
         private void Awake()
         {
             Initialize();
@@ -62,6 +62,11 @@ namespace Module.Player.Camera
         public void InitParam()
         {
             
+        }
+
+        public void SetFollowTarget(Transform player)
+        {
+            followTarget = player;
         }
 
         public CameraState GetState() => currentState.GetState();
