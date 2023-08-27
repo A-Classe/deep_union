@@ -27,7 +27,7 @@ jobs:
         uses: JetBrains/qodana-action@main
         with:
           args: --project-dir,./src
-          report-dir: docs/qodana
+          results-dir: docs/qodana
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
       # Publish to GitHub Pages
