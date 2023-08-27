@@ -17,11 +17,11 @@ namespace GameMain.Presenter
     {
         private readonly InputEvent assignEvent;
         private readonly IReadOnlyList<Assignment> assignments;
-        private readonly WorkerController workerController;
+        private readonly LeadPointConnector leadPointConnector;
 
-        public WorkerAssigner(WorkerConnector workerConnector, WorkerController workerController)
+        public WorkerAssigner(WorkerConnector workerConnector, LeadPointConnector leadPointConnector)
         {
-            this.workerController = workerController;
+            this.leadPointConnector = leadPointConnector;
             assignments = workerConnector.Assignments;
 
             //入力の登録
@@ -37,7 +37,7 @@ namespace GameMain.Presenter
                 return;
 
             var position = nearestTask.transform.position;
-            var nearestWorker = workerController.DequeueNearestWorker(position);
+            var nearestWorker = leadPointConnector.RemoveNearestWorker(position);
 
             if (nearestWorker == null)
                 return;

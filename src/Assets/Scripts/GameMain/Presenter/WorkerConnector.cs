@@ -17,15 +17,17 @@ namespace GameMain.Presenter
         private readonly List<Assignment> assignments;
         private readonly GameParam gameParam;
         private readonly TaskDetector taskDetector;
+
         // ReSharper disable once NotAccessedField.Local
         private readonly WorkerAssigner workerAssigner;
+
         // ReSharper disable once NotAccessedField.Local
         private readonly WorkerReleaser workerReleaser;
 
         private CancellationTokenSource loopCanceller;
 
         [Inject]
-        public WorkerConnector(WorkerController workerController, TaskDetector taskDetector, GameParam gameParam)
+        public WorkerConnector(LeadPointConnector leadPointConnector, TaskDetector taskDetector, GameParam gameParam)
         {
             this.taskDetector = taskDetector;
             this.gameParam = gameParam;
@@ -34,8 +36,8 @@ namespace GameMain.Presenter
 
             CreateAssignments();
 
-            workerAssigner = new WorkerAssigner(this, workerController);
-            workerReleaser = new WorkerReleaser(this, workerController);
+            workerAssigner = new WorkerAssigner(this, leadPointConnector);
+            workerReleaser = new WorkerReleaser(this, leadPointConnector);
         }
 
         public IReadOnlyList<Assignment> Assignments => assignments;
