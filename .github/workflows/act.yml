@@ -1,24 +1,16 @@
-name: Create ALF File
+name: Create sln file
 
-on: [push]
+on:
+  workflow_dispatch: {}
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        unity-tag: [2021.3.23f1]
-
-    container: docker://gableroux/unity3d:${{ matrix.unity-tag }}
-
+    
     steps:
-    - run: mkdir artifact
-    - run: /opt/Unity/Editor/Unity -batchmode -nographics -logFile - -executeMethod UnityEditor.SyncVS.SyncSolution -projectPath ./src -quit || exit 0
-    - run: cp ./ artifact
-      env:
-        UNITY_VERSION: ${{ matrix.unity-tag }}
-    - uses: actions/upload-artifact@master
-      with:
-        name: ${{ matrix.unity-tag }}
-        path: artifact
+      - uses: game-ci/unity-builder@v3
+        with:
+          customParameters: -batchmode -nographics -logFile - -executeMethod UnityEditor.SyncVS.SyncSolution -projectPath ./src -quit
+      - uses: actions/upload-artifact@master
+        with:
+          path: ./
