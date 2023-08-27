@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using VContainer;
 
@@ -20,7 +22,14 @@ namespace Module.Task
         [SerializeField]
         private float mw;
 
-        [Header("!デバッグ用 書き換え禁止!")]
+        [Header("アサイン可能な座標のギズモを表示する")]
+        [SerializeField]
+        private bool debugAssignPoints;
+
+        private List<AssignPoint> assignPoints;
+
+
+        [Header("!デバッグ表示用 書き換え禁止!")]
         [SerializeField]
         protected TaskState state = TaskState.Idle;
 
@@ -46,10 +55,9 @@ namespace Module.Task
         // ReSharper disable once UnusedMember.Global
         public float Progress => currentProgress;
 
-        private void OnDrawGizmos()
+        private void Awake()
         {
-            Gizmos.color = new Color(0f, 0.83f, 0f, 0.41f);
-            Gizmos.DrawSphere(transform.position, taskSize);
+            assignPoints = GetComponentsInChildren<AssignPoint>().ToList();
         }
 
         private void OnValidate()
@@ -59,6 +67,8 @@ namespace Module.Task
 
             //作業量は最低1以上とする
             mw = Mathf.Clamp(mw, 1f, float.MaxValue);
+
+            SetEnableAssignPointDebug(debugAssignPoints);
         }
 
         public TaskState State => state;
@@ -87,6 +97,40 @@ namespace Module.Task
         /// <param name="deltaTime">Time.deltaTime</param>
         protected virtual void ManagedUpdate(float deltaTime) { }
 
+        public bool TryGetNearestAssignPoint(Vector3 target, out Transform assignPoint)
+        {
+            //アサインできる座標がなかったらアサイン不可
+            if (assignPoints.Count == 0)
+            {
+                assignPoint = null;
+                return false;
+            }
+
+            assignPoints.Sort((a, b) =>
+                {
+                    Vector3 p1 = target - a.transform.position;
+                    Vector3 p2 = target - b.transform.position;
+
+                    if (p1.sqrMagnitude - p2.sqrMagnitude > 0)
+                    {
+                        return 1;
+                    }
+
+                    return -1;
+                }
+            );
+
+            assignPoint = assignPoints[0].transform;
+            assignPoints.RemoveAt(0);
+
+            return true;
+        }
+
+        public void ReleaseAssignPoint(Transform assignPoint)
+        {
+            assignPoints.Add(assignPoint.GetComponent<AssignPoint>());
+        }
+
         private void UpdateProgress(float deltaTime)
         {
             if (state == TaskState.Completed || currentMw == 0f)
@@ -108,18 +152,17 @@ namespace Module.Task
             if (state == TaskState.Completed)
                 return;
 
-            switch (prevMw)
+            //作業量が0より大きくなったら開始
+            if (prevMw == 0f && currentMw > prevMw)
             {
-                //作業量が0より大きくなったら開始
-                case 0f when currentMw > prevMw:
-                    ChangeState(TaskState.InProgress);
-                    OnStart();
-                    break;
-                //作業量が0になったらキャンセル
-                case > 0f when currentMw == 0f:
-                    ChangeState(TaskState.Idle);
-                    OnCancel();
-                    break;
+                ChangeState(TaskState.InProgress);
+                OnStart();
+            }
+            //作業量が0になったらキャンセル
+            else if (prevMw > 0f && currentMw == 0f)
+            {
+                ChangeState(TaskState.Idle);
+                OnCancel();
             }
         }
 
@@ -135,5 +178,25 @@ namespace Module.Task
         protected virtual void OnCancel() { }
 
         protected virtual void OnComplete() { }
+
+        private void SetEnableAssignPointDebug(bool enable)
+        {
+            assignPoints = GetComponentsInChildren<AssignPoint>().ToList();
+
+            //アサインポイントのデブッグを有効化する
+            foreach (AssignPoint assignPoint in assignPoints)
+            {
+                if (assignPoint == null)
+                    return;
+
+                assignPoint.enabled = enable;
+            }
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = new Color(0f, 0.83f, 0f, 0.41f);
+            Gizmos.DrawSphere(transform.position, taskSize);
+        }
     }
 }
