@@ -466,7 +466,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 302721fd12bb450cb53280a3b433ca26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followTarget: {fileID: 1719358583}
   depth: 14
   followAngle: 85
   cameraAngle: 65
@@ -516,6 +515,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   taskSize: 2.2
   mw: 1
+  assignPoints: []
   state: 0
   currentProgress: 0
   currentMw: 0
@@ -598,6 +598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   taskSize: 2
   mw: 1
+  assignPoints: []
   state: 0
   currentProgress: 0
   currentMw: 0
@@ -706,6 +707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   taskSize: 2
   mw: 100
+  assignPoints: []
   state: 0
   currentProgress: 0
   currentMw: 0
@@ -899,6 +901,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   taskSize: 2
   mw: 100
+  assignPoints: []
   state: 0
   currentProgress: 0
   currentMw: 0
@@ -986,6 +989,7 @@ MonoBehaviour:
   workerController: {fileID: 2049303183}
   taskDetector: {fileID: 2049303189}
   playerController: {fileID: 1719358584}
+  cameraController: {fileID: 428050434}
 --- !u!1 &1324484343
 GameObject:
   m_ObjectHideFlags: 0
@@ -1621,6 +1625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   taskSize: 2
   mw: 100
+  assignPoints: []
   state: 0
   currentProgress: 0
   currentMw: 0
@@ -1739,6 +1744,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: IncreaseTask
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115247442029969141, guid: 6b6c636cd282b094ba3e88587898b435,
+        type: 3}
+      propertyPath: assignTargets.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6115247442029969143, guid: 6b6c636cd282b094ba3e88587898b435,
         type: 3}

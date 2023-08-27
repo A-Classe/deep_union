@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using VContainer;
 
@@ -19,6 +20,10 @@ namespace Module.Task
         [Header("タスクのMonoWork")]
         [SerializeField]
         private float mw;
+
+        [Header("アサイン可能な座標\n(配列のサイズがタスクのキャパになります)")]
+        [SerializeField]
+        private List<Transform> assignPoints;
 
         [Header("!デバッグ用 書き換え禁止!")]
         [SerializeField]
@@ -87,6 +92,11 @@ namespace Module.Task
         /// <param name="deltaTime">Time.deltaTime</param>
         protected virtual void ManagedUpdate(float deltaTime) { }
 
+        public Transform GetNearestAssignPoint(Vector3 target)
+        {
+            assignPoints.Sort();
+        }
+
         private void UpdateProgress(float deltaTime)
         {
             if (state == TaskState.Completed || currentMw == 0f)
@@ -108,18 +118,17 @@ namespace Module.Task
             if (state == TaskState.Completed)
                 return;
 
-            switch (prevMw)
+            //作業量が0より大きくなったら開始
+            if (prevMw == 0f && currentMw > prevMw)
             {
-                //作業量が0より大きくなったら開始
-                case 0f when currentMw > prevMw:
-                    ChangeState(TaskState.InProgress);
-                    OnStart();
-                    break;
-                //作業量が0になったらキャンセル
-                case > 0f when currentMw == 0f:
-                    ChangeState(TaskState.Idle);
-                    OnCancel();
-                    break;
+                ChangeState(TaskState.InProgress);
+                OnStart();
+            }
+            //作業量が0になったらキャンセル
+            else if (prevMw > 0f && currentMw == 0f)
+            {
+                ChangeState(TaskState.Idle);
+                OnCancel();
             }
         }
 
@@ -135,5 +144,18 @@ namespace Module.Task
         protected virtual void OnCancel() { }
 
         protected virtual void OnComplete() { }
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.red;
+
+            foreach (Transform point in assignPoints)
+            {
+                if (point == null)
+                    return;
+
+                Gizmos.DrawSphere(point.position, 0.3f);
+            }
+        }
     }
 }
