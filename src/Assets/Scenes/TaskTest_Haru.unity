@@ -689,7 +689,6 @@ GameObject:
   - component: {fileID: 365993223}
   - component: {fileID: 365993226}
   - component: {fileID: 365993225}
-  - component: {fileID: 365993224}
   m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
@@ -712,19 +711,6 @@ Transform:
   m_Father: {fileID: 2132152278}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &365993224
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 365993222}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &365993225
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1184,7 +1170,6 @@ GameObject:
   - component: {fileID: 493886277}
   - component: {fileID: 493886276}
   - component: {fileID: 493886275}
-  - component: {fileID: 493886274}
   m_Layer: 8
   m_Name: Task
   m_TagString: Task
@@ -1192,19 +1177,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!135 &493886274
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493886273}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &493886275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1217,8 +1189,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade7a25f3f2d2df418fc3f372bb6f91f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskSize: 0
-  mw: 0
+  taskSize: 1.57
+  mw: 30
   debugAssignPoints: 0
   state: 0
   currentProgress: 0
@@ -1234,7 +1206,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0
+  m_Radius: 1.57
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &493886277
 Transform:
@@ -1346,7 +1318,6 @@ GameObject:
   - component: {fileID: 570805211}
   - component: {fileID: 570805210}
   - component: {fileID: 570805212}
-  - component: {fileID: 570805208}
   m_Layer: 8
   m_Name: Task
   m_TagString: Task
@@ -1354,19 +1325,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!135 &570805208
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 570805207}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &570805210
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1378,7 +1336,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0
+  m_Radius: 2.12
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &570805211
 Transform:
@@ -1409,8 +1367,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade7a25f3f2d2df418fc3f372bb6f91f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskSize: 0
-  mw: 0
+  taskSize: 2.12
+  mw: 30
   debugAssignPoints: 0
   state: 0
   currentProgress: 0
@@ -1914,7 +1872,6 @@ GameObject:
   - component: {fileID: 911208543}
   - component: {fileID: 911208546}
   - component: {fileID: 911208545}
-  - component: {fileID: 911208544}
   m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
@@ -1937,19 +1894,6 @@ Transform:
   m_Father: {fileID: 493886277}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &911208544
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 911208542}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &911208545
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2011,7 +1955,6 @@ GameObject:
   - component: {fileID: 947288602}
   - component: {fileID: 947288601}
   - component: {fileID: 947288600}
-  - component: {fileID: 947288599}
   m_Layer: 8
   m_Name: Task_01
   m_TagString: Task
@@ -2019,19 +1962,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!135 &947288599
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947288598}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &947288600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2044,8 +1974,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade7a25f3f2d2df418fc3f372bb6f91f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskSize: 0
-  mw: 0
+  taskSize: 1.49
+  mw: 30
   debugAssignPoints: 0
   state: 0
   currentProgress: 0
@@ -2061,7 +1991,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0
+  m_Radius: 1.49
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &947288602
 Transform:
@@ -2718,7 +2648,6 @@ GameObject:
   - component: {fileID: 1324484344}
   - component: {fileID: 1324484347}
   - component: {fileID: 1324484346}
-  - component: {fileID: 1324484345}
   m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
@@ -2741,19 +2670,6 @@ Transform:
   m_Father: {fileID: 570805211}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1324484345
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1324484343}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1324484346
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3294,7 +3210,6 @@ GameObject:
   - component: {fileID: 1650780691}
   - component: {fileID: 1650780694}
   - component: {fileID: 1650780693}
-  - component: {fileID: 1650780692}
   m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
@@ -3317,19 +3232,6 @@ Transform:
   m_Father: {fileID: 947288602}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1650780692
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1650780690}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1650780693
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4189,7 +4091,6 @@ GameObject:
   - component: {fileID: 2132152278}
   - component: {fileID: 2132152277}
   - component: {fileID: 2132152276}
-  - component: {fileID: 2132152275}
   m_Layer: 8
   m_Name: Task_02
   m_TagString: Task
@@ -4197,19 +4098,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!135 &2132152275
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2132152274}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2132152276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4222,8 +4110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade7a25f3f2d2df418fc3f372bb6f91f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskSize: 0
-  mw: 0
+  taskSize: 1.49
+  mw: 30
   debugAssignPoints: 0
   state: 0
   currentProgress: 0
@@ -4239,7 +4127,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0
+  m_Radius: 1.49
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &2132152278
 Transform:
