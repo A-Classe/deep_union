@@ -57,8 +57,8 @@ namespace GameMain.Presenter
                 if (worker == null) return;
                 assignment.Workers.Remove(worker);
 
-                //作業量の更新
-                assignment.Task.Mw -= 1;
+                //ワーカー数の更新
+                assignment.Task.WorkerCount -= 1;
                 nearestTask.ReleaseAssignPoint(worker.Target);
 
                 //コントローラーに登録
@@ -88,8 +88,8 @@ namespace GameMain.Presenter
                 //タスクからワーカーを削除
                 assignment.Workers.Clear();
 
-                //作業量の更新
-                assignment.Task.Mw = 0f;
+                //ワーカー数の初期化
+                assignment.Task.WorkerCount = 0;
             }
             catch (Exception e)
             {
