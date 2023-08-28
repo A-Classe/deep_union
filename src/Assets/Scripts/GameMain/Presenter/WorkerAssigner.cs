@@ -69,8 +69,8 @@ namespace GameMain.Presenter
             var assignment = assignments.First(connect => connect.Task == task);
             assignment.Workers.Add(worker);
 
-            //作業量の更新
-            assignment.Task.Mw += 1;
+            //ワーカー数の更新
+            assignment.Task.WorkerCount += 1;
         }
 
         void UpdateWorker(Worker nearestWorker, Transform assignPoint)

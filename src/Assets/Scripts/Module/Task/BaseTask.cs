@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 using VContainer;
 
 namespace Module.Task
@@ -13,47 +14,35 @@ namespace Module.Task
     [DisallowMultipleComponent]
     public abstract class BaseTask : MonoBehaviour, ITaskSystem
     {
-        [Header("検出されるタスクの半径")]
-        [SerializeField]
-        [Range(0f, 6f)]
-        private float taskSize = 1f;
-
-        [Header("タスクのMonoWork")]
-        [SerializeField]
-        private float mw;
-
-        [Header("アサイン可能な座標のギズモを表示する")]
-        [SerializeField]
-        private bool debugAssignPoints;
+        [SerializeField] private float taskSize;
+        [SerializeField] private float mw;
+        [SerializeField] private bool debugAssignPoints;
 
         private List<AssignPoint> assignPoints;
 
+        [SerializeField] protected TaskState state = TaskState.Idle;
 
-        [Header("!デバッグ表示用 書き換え禁止!")]
-        [SerializeField]
-        protected TaskState state = TaskState.Idle;
-
-        [SerializeField] [Range(0f, 1f)] private float currentProgress;
-        [SerializeField] private float currentMw;
-        [SerializeField] private float progressMw;
-        private float prevMw;
+        [SerializeField] private float currentProgress;
+        [SerializeField] private int currentWorkerCount;
+        private float prevWorkerCount;
 
         /// <summary>
-        ///     現在割り当てられている作業量
+        ///     現在割り当てられているワーカー数
         /// </summary>
-        public float Mw
+        public int WorkerCount
         {
             set
             {
-                prevMw = currentMw;
-                currentMw = Mathf.Clamp(value, 0f, mw);
+                prevWorkerCount = currentWorkerCount;
+                currentWorkerCount = value;
                 OnMonoWorkUpdated();
             }
-            get => currentMw;
+            get => currentWorkerCount;
         }
 
         // ReSharper disable once UnusedMember.Global
         public float Progress => currentProgress;
+        public TaskState State => state;
 
         private void Awake()
         {
@@ -64,14 +53,9 @@ namespace Module.Task
         {
             var col = GetComponent<SphereCollider>();
             col.radius = taskSize;
-
-            //作業量は最低1以上とする
-            mw = Mathf.Clamp(mw, 1f, float.MaxValue);
-
+            
             SetEnableAssignPointDebug(debugAssignPoints);
         }
-
-        public TaskState State => state;
 
         /// <summary>
         ///     ゲーム開始時の初期化関数
@@ -133,11 +117,11 @@ namespace Module.Task
 
         private void UpdateProgress(float deltaTime)
         {
-            if (state == TaskState.Completed || currentMw == 0f)
+            if (state == TaskState.Completed || currentWorkerCount == 0f)
                 return;
 
-            progressMw = Mathf.Clamp(progressMw + currentMw * deltaTime, 0f, mw);
-            currentProgress = Mathf.InverseLerp(0f, mw, progressMw);
+            float currentMw = Mathf.Clamp(mw * currentProgress + currentWorkerCount * deltaTime, 0f, mw);
+            currentProgress = Mathf.InverseLerp(0f, mw, currentMw);
 
             //進捗が1に到達したら完了
             if (currentProgress >= 1f)
@@ -153,13 +137,13 @@ namespace Module.Task
                 return;
 
             //作業量が0より大きくなったら開始
-            if (prevMw == 0f && currentMw > prevMw)
+            if (prevWorkerCount == 0f && currentWorkerCount > prevWorkerCount)
             {
                 ChangeState(TaskState.InProgress);
                 OnStart();
             }
             //作業量が0になったらキャンセル
-            else if (prevMw > 0f && currentMw == 0f)
+            else if (prevWorkerCount > 0f && currentWorkerCount == 0f)
             {
                 ChangeState(TaskState.Idle);
                 OnCancel();
@@ -179,7 +163,7 @@ namespace Module.Task
 
         protected virtual void OnComplete() { }
 
-        private void SetEnableAssignPointDebug(bool enable)
+        public void SetEnableAssignPointDebug(bool enable)
         {
             assignPoints = GetComponentsInChildren<AssignPoint>().ToList();
 
