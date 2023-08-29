@@ -38,10 +38,13 @@ namespace Module.Working.State
         {
             workerAnimator.SetBool(IsFollowing, true);
 
+            //タスクに到着するまでは待機
             await UniTask.WaitUntil(IsArrived, cancellationToken: cancellationToken);
 
             workerAnimator.SetBool(IsFollowing, false);
             workerAnimator.SetBool(IsWorking, true);
+            
+            //作業しているワーカーには衝突しない
             navMeshAgent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
         }
 

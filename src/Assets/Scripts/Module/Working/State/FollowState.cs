@@ -8,6 +8,7 @@ namespace Module.Working.State
         private readonly NavMeshAgent navMeshAgent;
         private readonly Worker worker;
         private readonly Animator workerAnimator;
+
         private static readonly int IsFollowing = Animator.StringToHash("Following");
 
         public FollowState(Worker worker)
@@ -32,11 +33,13 @@ namespace Module.Working.State
         {
             navMeshAgent.SetDestination(worker.Target.position + worker.Offset);
 
+            //リーダーに追いついたとき
             if (IsStopped())
             {
                 isMoving = false;
                 workerAnimator.SetBool(IsFollowing, false);
             }
+            //リーダーにリーダーを追いかけ始めたとき
             else if (IsMoved())
             {
                 isMoving = true;
@@ -48,7 +51,6 @@ namespace Module.Working.State
         {
             return isMoving && navMeshAgent.velocity.sqrMagnitude == 0f;
         }
-
 
         bool IsMoved()
         {
