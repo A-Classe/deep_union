@@ -16,15 +16,15 @@ namespace UI.Title.Quit
         }
 
         [SerializeField] private CursorController<Nav> cursor;
-        [SerializeField] private RectTransform yes;
-        [SerializeField] private RectTransform no;
+        [SerializeField] private FadeInOutButton yes;
+        [SerializeField] private FadeInOutButton no;
 
         private Nav? current;
 
         private void Start()
         {
-            cursor.AddPoint(Nav.Yes, yes);
-            cursor.AddPoint(Nav.No, no);
+            cursor.AddPoint(Nav.Yes, yes.rectTransform);
+            cursor.AddPoint(Nav.No, no.rectTransform);
             current = null;
         }
 
@@ -47,10 +47,10 @@ namespace UI.Title.Quit
             switch (current.Value)
             {
                 case Nav.Yes:
-                    onClick?.Invoke(true);
+                    yes.OnPlay(() => onClick?.Invoke(true));
                     break;
                 case Nav.No:
-                    onClick?.Invoke(false);
+                    no.OnPlay(() => onClick?.Invoke(false));
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

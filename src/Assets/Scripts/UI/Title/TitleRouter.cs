@@ -101,7 +101,7 @@ namespace UI.Title
         public void Tick()
         {
             var moveValue = moveEvent.ReadValue<Vector2>();
-            if (Math.Abs(moveValue.y) > 0.02f || Math.Abs(moveValue.x) > 0.02f)
+            if (Math.Abs(moveValue.y) > 0.05f || Math.Abs(moveValue.x) > 0.05f)
             {
                 OnMove(moveValue);
             }

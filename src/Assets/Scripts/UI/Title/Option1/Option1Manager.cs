@@ -23,7 +23,7 @@ namespace UI.Title.Option1
         [SerializeField] private FadeInOutButton video;
         [SerializeField] private FadeInOutButton audios;
         [SerializeField] private FadeInOutButton keyConfig;
-        [SerializeField] private RectTransform back;
+        [SerializeField] private FadeInOutButton back;
 
         private Nav? current;
 
@@ -32,7 +32,7 @@ namespace UI.Title.Option1
             cursor.AddPoint(Nav.Video, video.rectTransform);
             cursor.AddPoint(Nav.Audio, audios.rectTransform);
             cursor.AddPoint(Nav.KeyConfig, keyConfig.rectTransform);
-            cursor.AddPoint(Nav.Back, back);
+            cursor.AddPoint(Nav.Back, back.rectTransform);
             current = Nav.Video;
         }
 
@@ -59,16 +59,16 @@ namespace UI.Title.Option1
             switch (current.Value)
             {
                 case Nav.Video:
-                    onClick?.Invoke(Nav.Video);
+                    video.OnPlay(() => onClick?.Invoke(Nav.Video));
                     break;
                 case Nav.Audio:
-                    onClick?.Invoke(Nav.Audio);
+                    audios.OnPlay(() => onClick?.Invoke(Nav.Audio));
                     break;
                 case Nav.KeyConfig:
-                    onClick?.Invoke(Nav.KeyConfig);
+                    keyConfig.OnPlay(() => onClick?.Invoke(Nav.KeyConfig));
                     break;
                 case Nav.Back:
-                    onBack?.Invoke();
+                    back.OnPlay(() => onBack?.Invoke());
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
