@@ -12,16 +12,20 @@ namespace UI.Title.Title
         public Action onOption;
 
         public Action onQuit;
+
+        public Action onCredit;
         public enum Nav
         {
             Start,
             Option,
+            Credit,
             Quit
         }
 
         [SerializeField] private CursorController<Nav> cursor;
         [SerializeField] private FadeInOutButton start;
         [SerializeField] private FadeInOutButton option;
+        [SerializeField] private FadeInOutButton credit;
         [SerializeField] private FadeInOutButton quit;
 
         private Nav? current;
@@ -30,6 +34,7 @@ namespace UI.Title.Title
         {
             cursor.AddPoint(Nav.Start, start.rectTransform);
             cursor.AddPoint(Nav.Option, option.rectTransform);
+            cursor.AddPoint(Nav.Credit, credit.rectTransform);
             cursor.AddPoint(Nav.Quit, quit.rectTransform);
             current = Nav.Start;
         }
@@ -57,6 +62,9 @@ namespace UI.Title.Title
                     break;
                 case Nav.Option:
                     option.OnPlay(() => onOption?.Invoke());
+                    break;
+                case Nav.Credit:
+                    credit.OnPlay(() => onCredit?.Invoke());
                     break;
                 case Nav.Quit:
                     quit.OnPlay(() =>  onQuit?.Invoke());

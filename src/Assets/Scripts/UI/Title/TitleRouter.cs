@@ -164,6 +164,7 @@ namespace UI.Title
         {
             title.onQuit = () => SetScreen(Nav.Quit);
             title.onOption = () => SetScreen(Nav.Option1);
+            title.onCredit = () => SetScreen(Nav.Credit);
             title.onStart = () => SetScreen(Nav.StageSelect);
             
             quit.onClick = val =>
