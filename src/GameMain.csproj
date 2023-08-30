@@ -45,15 +45,15 @@
      <Compile Include="Assets\Scripts\GameMain\Presenter\WorkerAssigner.cs" />
      <Compile Include="Assets\Scripts\GameMain\Presenter\WorkerConnector.cs" />
      <Compile Include="Assets\Scripts\GameMain\Container\InGameContainer.cs" />
+     <Compile Include="Assets\Scripts\GameMain\System\GameProgres\GameSequenceHandler.cs" />
      <Compile Include="Assets\Scripts\GameMain\Task\IncreaseWorkerTask.cs" />
      <Compile Include="Assets\Scripts\GameMain\GameRouter.cs" />
      <Compile Include="Assets\Scripts\GameMain\Presenter\WorkerReleaser.cs" />
      <Compile Include="Assets\Scripts\GameMain\Task\DebugTask.cs" />
      <Compile Include="Assets\Scripts\GameMain\Task\DeletedObjectTask.cs" />
-     <Compile Include="Assets\Scripts\GameMain\System\GameProgres\GoalPoint.cs" />
      <Compile Include="Assets\Scripts\GameMain\System\GameProgres\StageProgressObserver.cs" />
      <Compile Include="Assets\Scripts\GameMain\Container\RootContainer.cs" />
-     <Compile Include="Assets\Scripts\GameMain\System\GameProgres\GameSequenceHandler.cs" />
+     <Compile Include="Assets\Scripts\GameMain\System\GameProgres\GoalPoint.cs" />
      <Folder Include="Assets\Scripts\GameMain" />
      <Folder Include="Assets\Scripts\GameMain\Container" />
      <Folder Include="Assets\Scripts\GameMain\Task" />
@@ -779,6 +779,10 @@
     <ProjectReference Include="Module.Player.csproj">
       <Project>{0d0ed36f-2ce2-075a-a724-3b9c7f79fe3a}</Project>
       <Name>Module.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Core.NavMesh.csproj">
+      <Project>{948b7307-f782-3824-5ede-b9c5f045d86e}</Project>
+      <Name>Core.NavMesh</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &745528898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 745528899}
+  - component: {fileID: 745528900}
+  m_Layer: 8
+  m_Name: DetectableArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &745528899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745528898}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6432846725614552387}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &745528900
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745528898}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.94
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6432846725004060352
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,9 +318,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6432846725614552387}
-  - component: {fileID: 6432846725614552384}
   - component: {fileID: 6432846725614552385}
-  - component: {fileID: 6432846725614552386}
   - component: {fileID: 6432846725614552389}
   m_Layer: 8
   m_Name: WallTask
@@ -299,22 +342,10 @@ Transform:
   - {fileID: 6432846725619544654}
   - {fileID: 6432846725641347787}
   - {fileID: 7831194107737646097}
+  - {fileID: 745528899}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &6432846725614552384
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6432846725614552447}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 3.94
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6432846725614552385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,19 +364,7 @@ MonoBehaviour:
   state: 0
   currentProgress: 0
   currentWorkerCount: 0
---- !u!65 &6432846725614552386
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6432846725614552447}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 8, y: 2, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  col: {fileID: 7668304189865901888}
 --- !u!54 &6432846725614552389
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -417,7 +436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6432846725641347787}
   - component: {fileID: 6432846725641347786}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: WaitArea
   m_TagString: WaitPoint
   m_Icon: {fileID: 0}
@@ -816,8 +835,7 @@ GameObject:
   - component: {fileID: 4272003242294379446}
   - component: {fileID: 1946905993488238322}
   - component: {fileID: 7668304189865901888}
-  - component: {fileID: 6042143226973641552}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -902,19 +920,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!208 &6042143226973641552
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6676925199223096339}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5

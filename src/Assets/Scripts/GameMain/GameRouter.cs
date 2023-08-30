@@ -1,5 +1,6 @@
 ﻿using System;
 using System.GameProgress;
+using Core.NavMesh;
 using Core.Utility.Player;
 using GameMain.Presenter;
 using Module.Player.Camera;
@@ -24,6 +25,7 @@ namespace GameMain
         private readonly PlayerController playerController;
         private readonly CameraController cameraController;
         private readonly StageProgressObserver progressObserver;
+        private readonly RuntimeNavMeshBaker runtimeNavMeshBaker;
 
         private readonly WorkerSpawner workerSpawner;
 
@@ -36,7 +38,8 @@ namespace GameMain
             WorkerController workerController,
             PlayerController playerController,
             CameraController cameraController,
-            StageProgressObserver progressObserver
+            StageProgressObserver progressObserver,
+            RuntimeNavMeshBaker runtimeNavMeshBaker 
         )
         {
             this.spawnParam = spawnParam;
@@ -46,12 +49,14 @@ namespace GameMain
             this.playerController = playerController;
             this.cameraController = cameraController;
             this.progressObserver = progressObserver;
+            this.runtimeNavMeshBaker = runtimeNavMeshBaker;
 
             this.workerSpawner = workerSpawner;
         }
 
         public void Start()
         {
+            runtimeNavMeshBaker.Build();
             progressObserver.Start().Forget();
 
             InitWorker();

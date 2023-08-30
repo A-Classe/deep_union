@@ -1,4 +1,5 @@
 ﻿using System.GameProgress;
+using Core.NavMesh;
 using GameMain.Presenter;
 using Module.Player.Camera;
 using Module.Player.Controller;
@@ -38,6 +39,7 @@ namespace GameMain.Container
             builder.Register<WorkerAgent>(Lifetime.Singleton);
             builder.Register<LeadPointConnector>(Lifetime.Singleton);
             builder.Register<StageProgressObserver>(Lifetime.Singleton);
+            builder.Register<RuntimeNavMeshBaker>(Lifetime.Singleton);
 
             builder.RegisterInstance(spawnPoint);
             builder.RegisterInstance(spawnParam);

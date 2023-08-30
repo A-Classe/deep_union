@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Wanna.DebugEx;
 
 namespace Module.Task
 {
@@ -61,7 +62,7 @@ namespace Module.Task
             detectedTasks.Clear();
 
             for (var i = 0; i < count; i++)
-                if (colliderBuffer[i].TryGetComponent(out BaseTask baseTask))
+                if (colliderBuffer[i].transform.parent.TryGetComponent(out BaseTask baseTask))
                     detectedTasks.Add(baseTask);
         }
     }
