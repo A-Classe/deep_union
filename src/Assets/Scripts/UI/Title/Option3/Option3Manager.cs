@@ -46,6 +46,7 @@ namespace UI.Title.Option3
         public void Initialized(ContentTransform content)
         {
             gameObject.SetActive(true);
+            bar.AnimateIn();
             OnCancel();
             Animation(content);
             SetState(Nav.Master);
