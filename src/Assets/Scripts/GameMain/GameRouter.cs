@@ -8,6 +8,7 @@ using Module.Player.Controller;
 using Module.Player.State;
 using Module.Working.Controller;
 using Module.Working.Factory;
+using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 

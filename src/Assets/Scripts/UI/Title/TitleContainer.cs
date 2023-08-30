@@ -1,4 +1,5 @@
-﻿using UI.Title.Credit;
+﻿using Core.Utility.User;
+using UI.Title.Credit;
 using UI.Title.Option1;
 using UI.Title.Option2;
 using UI.Title.Option3;
@@ -26,6 +27,8 @@ namespace UI.Title
         protected override void Configure(IContainerBuilder builder)
         {
             builder.RegisterEntryPoint<TitleRouter>();
+
+            builder.Register<UserPreference>(Lifetime.Singleton);
 
             builder.RegisterInstance(title);
             builder.RegisterInstance(quit);

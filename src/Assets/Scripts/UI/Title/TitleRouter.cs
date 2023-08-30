@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using AnimationPro.RunTime;
 using Core.Input;
+using Core.Utility.User;
 using JetBrains.Annotations;
 using UI.Title.Credit;
 using UI.Title.Option1;
@@ -15,6 +16,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using VContainer;
 using VContainer.Unity;
+using Wanna.DebugEx;
 
 namespace UI.Title
 {
@@ -57,6 +59,8 @@ namespace UI.Title
 
         private InputEvent moveEvent;
 
+        private readonly UserPreference data;
+
         [Inject]
         public TitleRouter(
             TitleManager titleManager,
@@ -66,7 +70,8 @@ namespace UI.Title
             Option3Manager option3Manager,
             Option4Manager option4Manager,
             CreditManager creditManager,
-            StageSelectManager stageSelectManager
+            StageSelectManager stageSelectManager,
+            UserPreference dataManager
         )
         {
             title = titleManager;
@@ -77,6 +82,8 @@ namespace UI.Title
             option4 = option4Manager;
             credit = creditManager;
             stageSelect = stageSelectManager;
+
+            data = dataManager;
         }
 
 
@@ -104,6 +111,11 @@ namespace UI.Title
             managers.Add(Nav.StageSelect, stageSelect);
 
             SetScreen(Nav.Title);
+            
+            
+            // data.Delete();
+            // data.Load();
+            // UserData user = data.GetUserData();
         }
 
         public void Tick()
