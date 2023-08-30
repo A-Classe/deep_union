@@ -4,13 +4,13 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
 using VContainer;
+using Wanna.DebugEx;
 
 namespace Module.Task
 {
     /// <summary>
     ///     全てのタスクのベースクラス
     /// </summary>
-    [RequireComponent(typeof(SphereCollider))]
     [DisallowMultipleComponent]
     public abstract class BaseTask : MonoBehaviour, ITaskSystem
     {
@@ -19,6 +19,7 @@ namespace Module.Task
         [SerializeField] private bool debugAssignPoints;
 
         private List<AssignPoint> assignPoints;
+        private List<Collider> taskColliders;
 
         [SerializeField] protected TaskState state = TaskState.Idle;
 
@@ -47,13 +48,24 @@ namespace Module.Task
         private void Awake()
         {
             assignPoints = GetComponentsInChildren<AssignPoint>().ToList();
+            taskColliders = GetComponentsInChildren<Collider>().ToList();
+            taskColliders.AddRange(GetComponents<Collider>());
         }
 
         private void OnValidate()
         {
-            var col = GetComponent<SphereCollider>();
-            col.radius = taskSize;
-            
+            var col = transform.Find("DetectableArea").GetComponent<SphereCollider>();
+
+            if (col != null)
+            {
+                col.radius = taskSize;
+            }
+            else
+            {
+                DebugEx.LogWarning($"GameObject:{gameObject.name}に{nameof(SphereCollider)}が含まれていません!");
+            }
+
+
             SetEnableAssignPointDebug(debugAssignPoints);
         }
 
@@ -163,7 +175,17 @@ namespace Module.Task
 
         protected virtual void OnComplete() { }
 
-        public void SetEnableAssignPointDebug(bool enable)
+        protected void Disable()
+        {
+            foreach (Collider col in taskColliders)
+            {
+                col.enabled = false;
+            }
+
+            gameObject.SetActive(false);
+        }
+
+        void SetEnableAssignPointDebug(bool enable)
         {
             assignPoints = GetComponentsInChildren<AssignPoint>().ToList();
 

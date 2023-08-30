@@ -1,8 +1,11 @@
 using System;
+using Core.NavMesh;
+using Cysharp.Threading.Tasks;
 using Module.Player.Controller;
 using Module.Player.State;
 using Module.Task;
 using UnityEngine;
+using VContainer;
 
 namespace GameMain.Task
 {
@@ -16,12 +19,31 @@ namespace GameMain.Task
         /// タスク終了後にhitしたplayerのstateを変更する
         /// </summary>
         private Action onComplete;
+
+        private RuntimeNavMeshBaker navMeshBaker;
+
+        [SerializeField] private Collider col;
+
+
+        public override void Initialize(IObjectResolver container)
+        {
+            navMeshBaker = container.Resolve<RuntimeNavMeshBaker>();
+        }
+
         protected override void OnComplete()
         {
-            base.OnComplete();
-            onComplete?.Invoke();
-            gameObject.SetActive(false);
+            DisableSequence().Forget();
         }
+
+        private async UniTaskVoid DisableSequence()
+        {
+            Disable();
+
+            await navMeshBaker.Bake();
+
+            onComplete?.Invoke();
+        }
+
         /// <summary>
         /// 子objectのwaitPointからタスク完了までplayerをその場に止める
         /// </summary>
@@ -34,10 +56,9 @@ namespace GameMain.Task
 
             var controller = obj.GetComponent<PlayerController>();
             if (controller == null) return;
-            
+
             controller.SetState(PlayerState.Wait);
             onComplete = () => controller.SetState(PlayerState.Go);
         }
-        
     }
 }
