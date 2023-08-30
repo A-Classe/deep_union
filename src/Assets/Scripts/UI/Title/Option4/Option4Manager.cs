@@ -1,17 +1,22 @@
-﻿using UnityEngine;
+﻿using System;
+using AnimationPro.RunTime;
+using Core.Utility.UI.UnderBar;
+using UnityEngine;
 
 namespace UI.Title.Option4
 {
-    public class Option4Manager: MonoBehaviour, IUIManager
+    public class Option4Manager: AnimationBehaviour, IUIManager
     {
-        private void Awake()
-        {
-        }
+        [SerializeField] private SimpleUnderBarController bar;
 
 
-        public void Initialized()
+        public void Initialized(ContentTransform content)
         {     
             gameObject.SetActive(true);
+            bar.AnimateIn();
+            OnCancel();
+            Animation(content);
+            bar.AnimateIn();
         }
         public void Clicked()
         { }
@@ -20,9 +25,25 @@ namespace UI.Title.Option4
         {
         }
 
-        public void Finished()
+        public void Finished(ContentTransform content, Action onFinished)
         {
-            gameObject.SetActive(false);
+            bar.AnimateOut(() =>
+                {
+                    Animation(
+                        content,
+                        new AnimationListener()
+                        {
+                            OnFinished = () =>
+                            {
+                                gameObject.SetActive(false);
+                                onFinished?.Invoke();
+                            }
+                        }
+                    );    
+                }
+            );
         }
+        
+        public AnimationBehaviour GetContext() => this;
     }
 }

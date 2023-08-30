@@ -1,12 +1,16 @@
 ﻿using System;
+using AnimationPro.RunTime;
 using Core.Utility.UI;
 using Core.Utility.UI.Cursor;
+using Core.Utility.UI.UnderBar;
 using UnityEngine;
 
 namespace UI.Title.Option1
 {
-    internal class Option1Manager : MonoBehaviour, IUIManager
+    internal class Option1Manager : AnimationBehaviour, IUIManager
     {
+        [SerializeField] private SimpleUnderBarController bar;
+        
         public Action<Nav> onClick;
 
         public Action onBack;
@@ -43,9 +47,12 @@ namespace UI.Title.Option1
             cursor.SetPoint(setNav);
         }
 
-        public void Initialized()
+        public void Initialized(ContentTransform content)
         {     
             gameObject.SetActive(true);
+            bar.AnimateIn();
+            OnCancel();
+            Animation(content);
             SetState(Nav.Video);
         }
 
@@ -102,9 +109,24 @@ namespace UI.Title.Option1
             SetState(nextNav);
         }
 
-        public void Finished()
+        public void Finished(ContentTransform content, Action onFinished)
         {
-            gameObject.SetActive(false);
+            bar.AnimateOut(() =>
+            {
+                Animation(
+                    content,
+                    new AnimationListener()
+                    {
+                        OnFinished = () =>
+                        {
+                            gameObject.SetActive(false);
+                            onFinished?.Invoke();
+                        }
+                    }
+                );
+            });
         }
+        
+        public AnimationBehaviour GetContext() => this;
     }
 }

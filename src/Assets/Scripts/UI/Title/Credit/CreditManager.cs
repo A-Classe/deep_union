@@ -1,13 +1,17 @@
-﻿using UnityEngine;
+﻿using System;
+using AnimationPro.RunTime;
+using UnityEngine;
 
 namespace UI.Title.Credit
 {
-    internal class CreditManager : MonoBehaviour, IUIManager
+    internal class CreditManager : AnimationBehaviour, IUIManager
     {
         
-        public void Initialized()
+        public void Initialized(ContentTransform content)
         {     
             gameObject.SetActive(true);
+            OnCancel();
+            Animation(content);
         }
 
         public void Clicked()
@@ -16,9 +20,21 @@ namespace UI.Title.Credit
         public void Select(Vector2 direction)
         { }
 
-        public void Finished()
+        public void Finished(ContentTransform content, Action onFinished)
         {
-            gameObject.SetActive(false);
+            Animation(
+                content,
+                new AnimationListener()
+                {
+                    OnFinished = () =>
+                    {
+                        gameObject.SetActive(false);
+                        onFinished?.Invoke();
+                    }
+                }
+            );
         }
+
+        public AnimationBehaviour GetContext() => this;
     }
 }

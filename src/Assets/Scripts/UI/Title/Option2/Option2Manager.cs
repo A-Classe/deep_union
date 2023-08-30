@@ -1,6 +1,8 @@
 ﻿using System;
+using AnimationPro.RunTime;
 using Core.Utility.UI;
 using Core.Utility.UI.Cursor;
+using Core.Utility.UI.UnderBar;
 using UnityEngine;
 
 namespace UI.Title.Option2
@@ -11,8 +13,11 @@ namespace UI.Title.Option2
     /// - FULL SCREEN
     /// - BRIGHTNESS
     /// </summary>
-    internal class Option2Manager : MonoBehaviour, IUIManager
+    internal class Option2Manager : AnimationBehaviour, IUIManager
     {
+        
+        [SerializeField] private SimpleUnderBarController bar;
+        
         public Action<bool> onFullScreen;
 
         public Action<float> onBrightness;
@@ -29,7 +34,7 @@ namespace UI.Title.Option2
         [SerializeField] private CursorController<Nav> cursor;
         [SerializeField] private ToggleController fullScreen;
         [SerializeField] private SliderController bright;
-        [SerializeField] private RectTransform back;
+        [SerializeField] private FadeInOutButton back;
 
         private Nav? current;
 
@@ -37,7 +42,7 @@ namespace UI.Title.Option2
         {
             cursor.AddPoint(Nav.FullScreen, fullScreen.rectTransform);
             cursor.AddPoint(Nav.Brightness, bright.rectTransform);
-            cursor.AddPoint(Nav.Back, back);
+            cursor.AddPoint(Nav.Back, back.rectTransform);
             current = Nav.FullScreen;
             bright.Setup(100f, 0f, 70f);
         }
@@ -49,9 +54,12 @@ namespace UI.Title.Option2
             cursor.SetPoint(setNav);
         }
 
-        public void Initialized()
+        public void Initialized(ContentTransform content)
         {     
             gameObject.SetActive(true);
+            bar.AnimateIn();
+            OnCancel();
+            Animation(content);
             SetState(Nav.FullScreen);
         }
 
@@ -72,7 +80,7 @@ namespace UI.Title.Option2
                 case Nav.Back:
                     onFullScreen(fullScreen.IsOn);
                     onBrightness(bright.Value);
-                    onBack?.Invoke();
+                    back.OnPlay(() => onBack?.Invoke());
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -130,9 +138,24 @@ namespace UI.Title.Option2
             fullScreen.SetState(isOn);
         }
 
-        public void Finished()
+        public void Finished(ContentTransform content, Action onFinished)
         {
-            gameObject.SetActive(false);
+            bar.AnimateOut(() =>
+            {
+                Animation(
+                    content,
+                    new AnimationListener()
+                    {
+                        OnFinished = () =>
+                        {
+                            gameObject.SetActive(false);
+                            onFinished?.Invoke();
+                        }
+                    }
+                ); 
+            });
         }
+        
+        public AnimationBehaviour GetContext() => this;
     }
 }

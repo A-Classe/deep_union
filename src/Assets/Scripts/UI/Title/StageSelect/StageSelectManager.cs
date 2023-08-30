@@ -1,12 +1,16 @@
 ﻿using System;
+using AnimationPro.RunTime;
 using Core.Utility.UI;
 using Core.Utility.UI.Cursor;
+using Core.Utility.UI.UnderBar;
 using UnityEngine;
 
 namespace UI.Title.StageSelect
 {
-    public class StageSelectManager: MonoBehaviour, IUIManager
+    public class StageSelectManager: AnimationBehaviour, IUIManager
     {
+        [SerializeField] private SimpleUnderBarController bar;
+        
         public Action<Nav> onStage;
 
         public Action onBack;
@@ -27,7 +31,7 @@ namespace UI.Title.StageSelect
         [SerializeField] private FadeInOutButton stage3;
         [SerializeField] private FadeInOutButton stage4;
         [SerializeField] private FadeInOutButton stage5;
-        [SerializeField] private RectTransform back;
+        [SerializeField] private FadeInOutButton back;
 
         private Nav? current;
 
@@ -45,13 +49,16 @@ namespace UI.Title.StageSelect
             cursor.AddPoint(Nav.Stage3, stage3.rectTransform);
             cursor.AddPoint(Nav.Stage4, stage4.rectTransform);
             cursor.AddPoint(Nav.Stage5, stage5.rectTransform);
-            cursor.AddPoint(Nav.Back, back);
+            cursor.AddPoint(Nav.Back, back.rectTransform);
             current = Nav.Stage1;
         }
 
-        public void Initialized()
+        public void Initialized(ContentTransform content)
         {     
             gameObject.SetActive(true);
+            bar.AnimateIn();
+            OnCancel();
+            Animation(content);
             SetState(Nav.Stage1);
         }
 
@@ -80,7 +87,7 @@ namespace UI.Title.StageSelect
                     onStage?.Invoke(Nav.Stage5);
                     break;
                 case Nav.Back:
-                    onBack?.Invoke();
+                    back.OnPlay(() => onBack?.Invoke());
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -114,9 +121,25 @@ namespace UI.Title.StageSelect
             SetState(nextNav);
         }
 
-        public void Finished()
+        public void Finished(ContentTransform content, Action onFinished)
         {
-            gameObject.SetActive(false);
+            bar.AnimateOut(() =>
+            {
+                Animation(
+                    content,
+                    new AnimationListener()
+                    {
+                        OnFinished = () =>
+                        {
+                            gameObject.SetActive(false);
+                            onFinished?.Invoke();
+                        }
+                    }
+                );
+            });
+            
         }
+        
+        public AnimationBehaviour GetContext() => this;
     }
 }

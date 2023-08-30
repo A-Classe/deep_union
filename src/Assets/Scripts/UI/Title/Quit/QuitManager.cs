@@ -1,12 +1,16 @@
 ﻿using System;
+using AnimationPro.RunTime;
 using Core.Utility.UI;
 using Core.Utility.UI.Cursor;
+using Core.Utility.UI.UnderBar;
 using UnityEngine;
 
 namespace UI.Title.Quit
 {
-    internal class QuitManager : MonoBehaviour, IUIManager
+    internal class QuitManager : AnimationBehaviour, IUIManager
     {
+        [SerializeField] private SimpleUnderBarController bar;
+        
         public Action<bool> onClick;
         
         public enum Nav
@@ -35,9 +39,12 @@ namespace UI.Title.Quit
             cursor.SetPoint(setNav);
         }
 
-        public void Initialized()
+        public void Initialized(ContentTransform content)
         {     
             gameObject.SetActive(true);
+            bar.AnimateIn();
+            OnCancel();
+            Animation(content);
             SetState(Nav.Yes);
         }
 
@@ -72,9 +79,24 @@ namespace UI.Title.Quit
             }
         }
 
-        public void Finished()
+        public void Finished(ContentTransform content, Action onFinished)
         {
-            gameObject.SetActive(false);
+            bar.AnimateOut(() =>
+            {
+                Animation(
+                    content,
+                    new AnimationListener()
+                    {
+                        OnFinished = () =>
+                        {
+                            gameObject.SetActive(false);
+                            onFinished?.Invoke();
+                        }
+                    }
+                );
+            });
         }
+        
+        public AnimationBehaviour GetContext() => this;
     }
 }

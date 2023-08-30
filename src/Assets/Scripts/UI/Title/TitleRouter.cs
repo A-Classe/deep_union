@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using AnimationPro.RunTime;
 using Core.Input;
 using JetBrains.Annotations;
 using UI.Title.Credit;
@@ -254,16 +255,29 @@ namespace UI.Title
         }
         private void SetScreen(Nav nav)
         {
-            current?.Finished();
-            
-            current = managers[nav];
-            currentNav = nav;
             if (current == null)
             {
-                throw new NotImplementedException();
-            }
+                current = managers[nav];
+                currentNav = nav;
+                if (current == null)
+                {
+                    throw new NotImplementedException();
+                }
             
-            current?.Initialized();
+                current?.Initialized(current.GetContext().FadeIn(Easings.Default(0.3f)));
+                return;
+            }
+            current?.Finished(current.GetContext().FadeOut(Easings.Default(0.3f)), () =>
+            {
+                current = managers[nav];
+                currentNav = nav;
+                if (current == null)
+                {
+                    throw new NotImplementedException();
+                }
+            
+                current?.Initialized(current.GetContext().FadeIn(Easings.Default(0.3f)));
+            });
         }
     }
 }

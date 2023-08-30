@@ -1,12 +1,17 @@
 ﻿using System;
+using AnimationPro.RunTime;
 using Core.Utility.UI;
 using Core.Utility.UI.Cursor;
+using Core.Utility.UI.UnderBar;
 using UnityEngine;
 
 namespace UI.Title.Option3
 {
-    public class Option3Manager: MonoBehaviour, IUIManager
+    public class Option3Manager: AnimationBehaviour, IUIManager
     {
+        
+        [SerializeField] private SimpleUnderBarController bar;
+        
         public Action<Nav, float> onVolumeChanged;
 
         public Action onBack;
@@ -23,7 +28,7 @@ namespace UI.Title.Option3
         [SerializeField] private SliderController master;
         [SerializeField] private SliderController music;
         [SerializeField] private SliderController effect;
-        [SerializeField] private RectTransform back;
+        [SerializeField] private FadeInOutButton back;
 
         private Nav? current;
 
@@ -32,7 +37,7 @@ namespace UI.Title.Option3
             cursor.AddPoint(Nav.Master, master.rectTransform);
             cursor.AddPoint(Nav.Music, music.rectTransform);
             cursor.AddPoint(Nav.Effect, effect.rectTransform);
-            cursor.AddPoint(Nav.Back, back);
+            cursor.AddPoint(Nav.Back, back.rectTransform);
             current = Nav.Master;
             master.Setup(100f, 0f, 70f);
             music.Setup(100f, 0f, 70f);
@@ -46,9 +51,11 @@ namespace UI.Title.Option3
             cursor.SetPoint(setNav);
         }
 
-        public void Initialized()
+        public void Initialized(ContentTransform content)
         {     
             gameObject.SetActive(true);
+            OnCancel();
+            Animation(content);
             SetState(Nav.Master);
         }
 
@@ -98,6 +105,7 @@ namespace UI.Title.Option3
                         onVolumeChanged?.Invoke(Nav.Effect, effect.Value);
                         break;
                     case Nav.Back:
+                        back.OnPlay(() => onBack?.Invoke());
                         break;
                 }
                 return;
@@ -122,9 +130,24 @@ namespace UI.Title.Option3
         }
         
 
-        public void Finished()
+        public void Finished(ContentTransform content, Action onFinished)
         {
-            gameObject.SetActive(false);
+            bar.AnimateOut(() =>
+            {
+                Animation(
+                    content,
+                    new AnimationListener()
+                    {
+                        OnFinished = () =>
+                        {
+                            gameObject.SetActive(false);
+                            onFinished?.Invoke();
+                        }
+                    }
+                ); 
+            });
         }
+        
+        public AnimationBehaviour GetContext() => this;
     }
 }

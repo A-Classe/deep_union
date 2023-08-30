@@ -1,12 +1,16 @@
 ﻿using System;
+using AnimationPro.RunTime;
 using Core.Utility.UI;
 using Core.Utility.UI.Cursor;
 using UnityEngine;
 
 namespace UI.Title.Title
 {
-    internal class TitleManager : MonoBehaviour, IUIManager
+    internal class TitleManager : AnimationBehaviour, IUIManager
     {
+        
+        
+        
         public Action onStart;
 
         public Action onOption;
@@ -46,9 +50,11 @@ namespace UI.Title.Title
             cursor.SetPoint(setNav);
         }
 
-        public void Initialized()
+        public void Initialized(ContentTransform content)
         {
             gameObject.SetActive(true);
+            OnCancel();
+            Animation(content);
             SetState(Nav.Start);
         }
 
@@ -101,9 +107,23 @@ namespace UI.Title.Title
             SetState(nextNav);
         }
 
-        public void Finished()
+        public void Finished(ContentTransform content, Action onFinished)
         {
-            gameObject.SetActive(false);
+            OnCancel();
+            Animation(
+                content,
+                new AnimationListener()
+                {
+                    OnFinished = () =>
+                    {
+                        gameObject.SetActive(false);
+                        onFinished?.Invoke();
+                    }
+                }
+            );
+            
         }
+        
+        public AnimationBehaviour GetContext() => this;
     }
 }
