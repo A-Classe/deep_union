@@ -4,6 +4,5 @@ namespace UI.Title.Title
 {
     internal class TitleCursor : CursorController<TitleManager.Nav>
     {
-        
     }
 }

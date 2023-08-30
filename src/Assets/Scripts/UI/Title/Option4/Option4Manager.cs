@@ -5,21 +5,23 @@ using UnityEngine;
 
 namespace UI.Title.Option4
 {
-    public class Option4Manager: AnimationBehaviour, IUIManager
+    public class Option4Manager : AnimationBehaviour, IUIManager
     {
         [SerializeField] private SimpleUnderBarController bar;
 
 
         public void Initialized(ContentTransform content)
-        {     
+        {
             gameObject.SetActive(true);
             bar.AnimateIn();
             OnCancel();
             Animation(content);
             bar.AnimateIn();
         }
+
         public void Clicked()
-        { }
+        {
+        }
 
         public void Select(Vector2 direction)
         {
@@ -31,7 +33,7 @@ namespace UI.Title.Option4
                 {
                     Animation(
                         content,
-                        new AnimationListener()
+                        new AnimationListener
                         {
                             OnFinished = () =>
                             {
@@ -39,11 +41,14 @@ namespace UI.Title.Option4
                                 onFinished?.Invoke();
                             }
                         }
-                    );    
+                    );
                 }
             );
         }
-        
-        public AnimationBehaviour GetContext() => this;
+
+        public AnimationBehaviour GetContext()
+        {
+            return this;
+        }
     }
 }

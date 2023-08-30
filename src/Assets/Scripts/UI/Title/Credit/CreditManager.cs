@@ -6,25 +6,26 @@ namespace UI.Title.Credit
 {
     internal class CreditManager : AnimationBehaviour, IUIManager
     {
-        
         public void Initialized(ContentTransform content)
-        {     
+        {
             gameObject.SetActive(true);
             OnCancel();
             Animation(content);
         }
 
         public void Clicked()
-        { }
+        {
+        }
 
         public void Select(Vector2 direction)
-        { }
+        {
+        }
 
         public void Finished(ContentTransform content, Action onFinished)
         {
             Animation(
                 content,
-                new AnimationListener()
+                new AnimationListener
                 {
                     OnFinished = () =>
                     {
@@ -35,6 +36,9 @@ namespace UI.Title.Credit
             );
         }
 
-        public AnimationBehaviour GetContext() => this;
+        public AnimationBehaviour GetContext()
+        {
+            return this;
+        }
     }
 }

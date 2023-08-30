@@ -8,22 +8,13 @@ using UnityEngine;
 namespace UI.Title.Option2
 {
     /// <summary>
-    /// TL02-2
-    /// オプション画面
-    /// - FULL SCREEN
-    /// - BRIGHTNESS
+    ///     TL02-2
+    ///     オプション画面
+    ///     - FULL SCREEN
+    ///     - BRIGHTNESS
     /// </summary>
     internal class Option2Manager : AnimationBehaviour, IUIManager
     {
-        
-        [SerializeField] private SimpleUnderBarController bar;
-        
-        public Action<bool> onFullScreen;
-
-        public Action<float> onBrightness;
-
-        public Action onBack;
-        
         public enum Nav
         {
             FullScreen,
@@ -31,12 +22,20 @@ namespace UI.Title.Option2
             Back
         }
 
+        [SerializeField] private SimpleUnderBarController bar;
+
         [SerializeField] private CursorController<Nav> cursor;
         [SerializeField] private ToggleController fullScreen;
         [SerializeField] private SliderController bright;
         [SerializeField] private FadeInOutButton back;
 
         private Nav? current;
+
+        public Action onBack;
+
+        public Action<float> onBrightness;
+
+        public Action<bool> onFullScreen;
 
         private void Start()
         {
@@ -47,15 +46,8 @@ namespace UI.Title.Option2
             bright.Setup(100f, 0f, 70f);
         }
 
-
-        private void SetState(Nav setNav)
-        {
-            current = setNav;
-            cursor.SetPoint(setNav);
-        }
-
         public void Initialized(ContentTransform content)
-        {     
+        {
             gameObject.SetActive(true);
             bar.AnimateIn();
             OnCancel();
@@ -64,7 +56,7 @@ namespace UI.Title.Option2
         }
 
         /// <summary>
-        /// 戻るボタンが押されたときに反映する
+        ///     戻るボタンが押されたときに反映する
         /// </summary>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public void Clicked()
@@ -92,16 +84,12 @@ namespace UI.Title.Option2
             if (Math.Abs(direction.x) > Math.Abs(direction.y))
             {
                 if (current == Nav.Brightness)
-                {
                     OnBrightnessValueChanged(direction.x);
-                } else if (current == Nav.FullScreen)
-                {
-                    OnFullScreenChanged(!fullScreen.IsOn);
-                }
-               
+                else if (current == Nav.FullScreen) OnFullScreenChanged(!fullScreen.IsOn);
+
                 return;
             }
-            
+
             if (!current.HasValue)
             {
                 SetState(Nav.FullScreen);
@@ -109,7 +97,7 @@ namespace UI.Title.Option2
             }
 
             Nav nextNav;
-            
+
             switch (direction.y)
             {
                 // 上向きの入力
@@ -127,24 +115,13 @@ namespace UI.Title.Option2
             SetState(nextNav);
         }
 
-        private void OnBrightnessValueChanged(float val)
-        {
-            float value = bright.Value + val;
-            bright.SetValue(value);
-        }
-
-        private void OnFullScreenChanged(bool isOn)
-        {
-            fullScreen.SetState(isOn);
-        }
-
         public void Finished(ContentTransform content, Action onFinished)
         {
             bar.AnimateOut(() =>
             {
                 Animation(
                     content,
-                    new AnimationListener()
+                    new AnimationListener
                     {
                         OnFinished = () =>
                         {
@@ -152,10 +129,31 @@ namespace UI.Title.Option2
                             onFinished?.Invoke();
                         }
                     }
-                ); 
+                );
             });
         }
-        
-        public AnimationBehaviour GetContext() => this;
+
+        public AnimationBehaviour GetContext()
+        {
+            return this;
+        }
+
+
+        private void SetState(Nav setNav)
+        {
+            current = setNav;
+            cursor.SetPoint(setNav);
+        }
+
+        private void OnBrightnessValueChanged(float val)
+        {
+            var value = bright.Value + val;
+            bright.SetValue(value);
+        }
+
+        private void OnFullScreenChanged(bool isOn)
+        {
+            fullScreen.SetState(isOn);
+        }
     }
 }

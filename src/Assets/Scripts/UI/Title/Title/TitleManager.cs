@@ -8,16 +8,6 @@ namespace UI.Title.Title
 {
     internal class TitleManager : AnimationBehaviour, IUIManager
     {
-        
-        
-        
-        public Action onStart;
-
-        public Action onOption;
-
-        public Action onQuit;
-
-        public Action onCredit;
         public enum Nav
         {
             Start,
@@ -34,6 +24,15 @@ namespace UI.Title.Title
 
         private Nav? current;
 
+        public Action onCredit;
+
+        public Action onOption;
+
+        public Action onQuit;
+
+
+        public Action onStart;
+
         private void Start()
         {
             cursor.AddPoint(Nav.Start, start.rectTransform);
@@ -41,13 +40,6 @@ namespace UI.Title.Title
             cursor.AddPoint(Nav.Credit, credit.rectTransform);
             cursor.AddPoint(Nav.Quit, quit.rectTransform);
             current = Nav.Start;
-        }
-
-
-        private void SetState(Nav setNav)
-        {
-            current = setNav;
-            cursor.SetPoint(setNav);
         }
 
         public void Initialized(ContentTransform content)
@@ -73,7 +65,7 @@ namespace UI.Title.Title
                     credit.OnPlay(() => onCredit?.Invoke());
                     break;
                 case Nav.Quit:
-                    quit.OnPlay(() =>  onQuit?.Invoke());
+                    quit.OnPlay(() => onQuit?.Invoke());
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -112,7 +104,7 @@ namespace UI.Title.Title
             OnCancel();
             Animation(
                 content,
-                new AnimationListener()
+                new AnimationListener
                 {
                     OnFinished = () =>
                     {
@@ -121,9 +113,18 @@ namespace UI.Title.Title
                     }
                 }
             );
-            
         }
-        
-        public AnimationBehaviour GetContext() => this;
+
+        public AnimationBehaviour GetContext()
+        {
+            return this;
+        }
+
+
+        private void SetState(Nav setNav)
+        {
+            current = setNav;
+            cursor.SetPoint(setNav);
+        }
     }
 }

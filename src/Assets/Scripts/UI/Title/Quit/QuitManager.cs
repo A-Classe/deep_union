@@ -9,21 +9,21 @@ namespace UI.Title.Quit
 {
     internal class QuitManager : AnimationBehaviour, IUIManager
     {
-        [SerializeField] private SimpleUnderBarController bar;
-        
-        public Action<bool> onClick;
-        
         public enum Nav
         {
             Yes,
             No
         }
 
+        [SerializeField] private SimpleUnderBarController bar;
+
         [SerializeField] private CursorController<Nav> cursor;
         [SerializeField] private FadeInOutButton yes;
         [SerializeField] private FadeInOutButton no;
 
         private Nav? current;
+
+        public Action<bool> onClick;
 
         private void Start()
         {
@@ -32,15 +32,8 @@ namespace UI.Title.Quit
             current = null;
         }
 
-
-        private void SetState(Nav setNav)
-        {
-            current = setNav;
-            cursor.SetPoint(setNav);
-        }
-
         public void Initialized(ContentTransform content)
-        {     
+        {
             gameObject.SetActive(true);
             bar.AnimateIn();
             OnCancel();
@@ -85,7 +78,7 @@ namespace UI.Title.Quit
             {
                 Animation(
                     content,
-                    new AnimationListener()
+                    new AnimationListener
                     {
                         OnFinished = () =>
                         {
@@ -96,7 +89,17 @@ namespace UI.Title.Quit
                 );
             });
         }
-        
-        public AnimationBehaviour GetContext() => this;
+
+        public AnimationBehaviour GetContext()
+        {
+            return this;
+        }
+
+
+        private void SetState(Nav setNav)
+        {
+            current = setNav;
+            cursor.SetPoint(setNav);
+        }
     }
 }

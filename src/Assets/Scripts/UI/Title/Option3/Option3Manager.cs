@@ -7,15 +7,8 @@ using UnityEngine;
 
 namespace UI.Title.Option3
 {
-    public class Option3Manager: AnimationBehaviour, IUIManager
+    public class Option3Manager : AnimationBehaviour, IUIManager
     {
-        
-        [SerializeField] private SimpleUnderBarController bar;
-        
-        public Action<Nav, float> onVolumeChanged;
-
-        public Action onBack;
-        
         public enum Nav
         {
             Master,
@@ -24,6 +17,8 @@ namespace UI.Title.Option3
             Back
         }
 
+        [SerializeField] private SimpleUnderBarController bar;
+
         [SerializeField] private CursorController<Nav> cursor;
         [SerializeField] private SliderController master;
         [SerializeField] private SliderController music;
@@ -31,6 +26,10 @@ namespace UI.Title.Option3
         [SerializeField] private FadeInOutButton back;
 
         private Nav? current;
+
+        public Action onBack;
+
+        public Action<Nav, float> onVolumeChanged;
 
         private void Start()
         {
@@ -44,15 +43,8 @@ namespace UI.Title.Option3
             effect.Setup(100f, 0f, 70f);
         }
 
-
-        private void SetState(Nav setNav)
-        {
-            current = setNav;
-            cursor.SetPoint(setNav);
-        }
-
         public void Initialized(ContentTransform content)
-        {     
+        {
             gameObject.SetActive(true);
             OnCancel();
             Animation(content);
@@ -60,7 +52,7 @@ namespace UI.Title.Option3
         }
 
         /// <summary>
-        /// 戻るボタンが押されたときに反映する
+        ///     戻るボタンが押されたときに反映する
         /// </summary>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public void Clicked()
@@ -81,13 +73,12 @@ namespace UI.Title.Option3
 
         public void Select(Vector2 direction)
         {
-                     
             if (!current.HasValue)
             {
                 SetState(Nav.Master);
                 return;
             }
-            
+
             if (Math.Abs(direction.x) > Math.Abs(direction.y))
             {
                 switch (current)
@@ -108,10 +99,12 @@ namespace UI.Title.Option3
                         back.OnPlay(() => onBack?.Invoke());
                         break;
                 }
+
                 return;
             }
+
             Nav nextNav;
-            
+
             switch (direction.y)
             {
                 // 上向きの入力
@@ -128,7 +121,7 @@ namespace UI.Title.Option3
 
             SetState(nextNav);
         }
-        
+
 
         public void Finished(ContentTransform content, Action onFinished)
         {
@@ -136,7 +129,7 @@ namespace UI.Title.Option3
             {
                 Animation(
                     content,
-                    new AnimationListener()
+                    new AnimationListener
                     {
                         OnFinished = () =>
                         {
@@ -144,10 +137,20 @@ namespace UI.Title.Option3
                             onFinished?.Invoke();
                         }
                     }
-                ); 
+                );
             });
         }
-        
-        public AnimationBehaviour GetContext() => this;
+
+        public AnimationBehaviour GetContext()
+        {
+            return this;
+        }
+
+
+        private void SetState(Nav setNav)
+        {
+            current = setNav;
+            cursor.SetPoint(setNav);
+        }
     }
 }

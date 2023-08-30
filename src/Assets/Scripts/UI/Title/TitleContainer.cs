@@ -12,9 +12,8 @@ using VContainer.Unity;
 
 namespace UI.Title
 {
-    public class TitleContainer: LifetimeScope
+    public class TitleContainer : LifetimeScope
     {
-
         [SerializeField] private TitleManager title;
         [SerializeField] private QuitManager quit;
         [SerializeField] private Option1Manager option1;
@@ -23,6 +22,7 @@ namespace UI.Title
         [SerializeField] private Option4Manager option4;
         [SerializeField] private CreditManager credit;
         [SerializeField] private StageSelectManager stageSelect;
+
         protected override void Configure(IContainerBuilder builder)
         {
             builder.RegisterEntryPoint<TitleRouter>();

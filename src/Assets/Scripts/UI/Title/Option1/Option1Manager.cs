@@ -9,12 +9,6 @@ namespace UI.Title.Option1
 {
     internal class Option1Manager : AnimationBehaviour, IUIManager
     {
-        [SerializeField] private SimpleUnderBarController bar;
-        
-        public Action<Nav> onClick;
-
-        public Action onBack;
-        
         public enum Nav
         {
             Video,
@@ -23,6 +17,8 @@ namespace UI.Title.Option1
             Back
         }
 
+        [SerializeField] private SimpleUnderBarController bar;
+
         [SerializeField] private CursorController<Nav> cursor;
         [SerializeField] private FadeInOutButton video;
         [SerializeField] private FadeInOutButton audios;
@@ -30,6 +26,10 @@ namespace UI.Title.Option1
         [SerializeField] private FadeInOutButton back;
 
         private Nav? current;
+
+        public Action onBack;
+
+        public Action<Nav> onClick;
 
         private void Start()
         {
@@ -40,15 +40,8 @@ namespace UI.Title.Option1
             current = Nav.Video;
         }
 
-
-        private void SetState(Nav setNav)
-        {
-            current = setNav;
-            cursor.SetPoint(setNav);
-        }
-
         public void Initialized(ContentTransform content)
-        {     
+        {
             gameObject.SetActive(true);
             bar.AnimateIn();
             OnCancel();
@@ -57,7 +50,7 @@ namespace UI.Title.Option1
         }
 
         /// <summary>
-        /// 戻るボタンが押されたときに反映する
+        ///     戻るボタンが押されたときに反映する
         /// </summary>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public void Clicked()
@@ -91,7 +84,7 @@ namespace UI.Title.Option1
             }
 
             Nav nextNav;
-            
+
             switch (direction.y)
             {
                 // 上向きの入力
@@ -115,7 +108,7 @@ namespace UI.Title.Option1
             {
                 Animation(
                     content,
-                    new AnimationListener()
+                    new AnimationListener
                     {
                         OnFinished = () =>
                         {
@@ -126,7 +119,17 @@ namespace UI.Title.Option1
                 );
             });
         }
-        
-        public AnimationBehaviour GetContext() => this;
+
+        public AnimationBehaviour GetContext()
+        {
+            return this;
+        }
+
+
+        private void SetState(Nav setNav)
+        {
+            current = setNav;
+            cursor.SetPoint(setNav);
+        }
     }
 }

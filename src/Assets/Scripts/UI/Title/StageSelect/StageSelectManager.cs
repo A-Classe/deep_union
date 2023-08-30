@@ -7,14 +7,8 @@ using UnityEngine;
 
 namespace UI.Title.StageSelect
 {
-    public class StageSelectManager: AnimationBehaviour, IUIManager
+    public class StageSelectManager : AnimationBehaviour, IUIManager
     {
-        [SerializeField] private SimpleUnderBarController bar;
-        
-        public Action<Nav> onStage;
-
-        public Action onBack;
-        
         public enum Nav
         {
             Stage1,
@@ -24,6 +18,8 @@ namespace UI.Title.StageSelect
             Stage5,
             Back
         }
+
+        [SerializeField] private SimpleUnderBarController bar;
 
         [SerializeField] private CursorController<Nav> cursor;
         [SerializeField] private FadeInOutButton stage1;
@@ -35,12 +31,9 @@ namespace UI.Title.StageSelect
 
         private Nav? current;
 
+        public Action onBack;
 
-        private void SetState(Nav setNav)
-        {
-            current = setNav;
-            cursor.SetPoint(setNav);
-        }
+        public Action<Nav> onStage;
 
         private void Start()
         {
@@ -54,7 +47,7 @@ namespace UI.Title.StageSelect
         }
 
         public void Initialized(ContentTransform content)
-        {     
+        {
             gameObject.SetActive(true);
             bar.AnimateIn();
             OnCancel();
@@ -63,7 +56,7 @@ namespace UI.Title.StageSelect
         }
 
         /// <summary>
-        /// 戻るボタンが押されたときに反映する
+        ///     戻るボタンが押されたときに反映する
         /// </summary>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public void Clicked()
@@ -103,7 +96,7 @@ namespace UI.Title.StageSelect
             }
 
             Nav nextNav;
-            
+
             switch (direction.y)
             {
                 // 上向きの入力
@@ -127,7 +120,7 @@ namespace UI.Title.StageSelect
             {
                 Animation(
                     content,
-                    new AnimationListener()
+                    new AnimationListener
                     {
                         OnFinished = () =>
                         {
@@ -137,9 +130,18 @@ namespace UI.Title.StageSelect
                     }
                 );
             });
-            
         }
-        
-        public AnimationBehaviour GetContext() => this;
+
+        public AnimationBehaviour GetContext()
+        {
+            return this;
+        }
+
+
+        private void SetState(Nav setNav)
+        {
+            current = setNav;
+            cursor.SetPoint(setNav);
+        }
     }
 }

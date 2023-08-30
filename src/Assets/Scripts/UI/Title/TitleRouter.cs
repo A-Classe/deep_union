@@ -18,37 +18,45 @@ using VContainer.Unity;
 
 namespace UI.Title
 {
-    internal class TitleRouter : IStartable,ITickable
+    internal class TitleRouter : IStartable, ITickable
     {
-        private readonly TitleManager title;
-        private readonly QuitManager quit;
+        /// <summary>
+        ///     押し続けるたびに減らす感覚
+        /// </summary>
+        private const float IntervalIncrement = 0.05f;
+
+        /// <summary>
+        ///     初回の呼び出し感覚
+        /// </summary>
+        private const float StartInterval = 0.6f;
+
+        private readonly CreditManager credit;
+
+        private readonly Dictionary<Nav, IUIManager> managers = new();
+
+        /// <summary>
+        ///     最小の呼び出し感覚
+        /// </summary>
+        private readonly float minInterval = 0.1f;
+
         private readonly Option1Manager option1;
         private readonly Option2Manager option2;
         private readonly Option3Manager option3;
         private readonly Option4Manager option4;
-        private readonly CreditManager credit;
+        private readonly QuitManager quit;
         private readonly StageSelectManager stageSelect;
+        private readonly TitleManager title;
+        private InputEvent cancelEvent;
+        private InputEvent clickEvent;
 
         [CanBeNull] private IUIManager current;
         private Nav? currentNav;
 
-        private readonly Dictionary<Nav, IUIManager> managers = new();
+        private float currentTime;
+        private float initialInterval = StartInterval;
 
         private InputEvent moveEvent;
-        private InputEvent clickEvent;
-        private InputEvent cancelEvent;
 
-        private enum Nav
-        {
-            Title,
-            Option1,
-            Option2,
-            Option3,
-            Option4,
-            Quit,
-            Credit,
-            StageSelect
-        }
         [Inject]
         public TitleRouter(
             TitleManager titleManager,
@@ -70,7 +78,7 @@ namespace UI.Title
             credit = creditManager;
             stageSelect = stageSelectManager;
         }
-        
+
 
         public void Start()
         {
@@ -83,7 +91,7 @@ namespace UI.Title
 
             cancelEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.Title.Cancel);
             cancelEvent.Started += OnCanceled;
-            
+
             SetNavigation();
             managers.Clear();
             managers.Add(Nav.Title, title);
@@ -94,52 +102,27 @@ namespace UI.Title
             managers.Add(Nav.Option4, option4);
             managers.Add(Nav.Credit, credit);
             managers.Add(Nav.StageSelect, stageSelect);
-            
+
             SetScreen(Nav.Title);
-            
-            
         }
+
         public void Tick()
         {
             var moveValue = moveEvent.ReadValue<Vector2>();
-            if (Math.Abs(moveValue.y) > 0.05f || Math.Abs(moveValue.x) > 0.05f)
-            {
-                OnMove(moveValue);
-            }
+            if (Math.Abs(moveValue.y) > 0.05f || Math.Abs(moveValue.x) > 0.05f) OnMove(moveValue);
         }
-        /// <summary>
-        /// 最小の呼び出し感覚
-        /// </summary>
-        private readonly float minInterval = 0.1f;
-        /// <summary>
-        /// 押し続けるたびに減らす感覚
-        /// </summary>
-        private const float IntervalIncrement = 0.05f;
-        /// <summary>
-        /// 初回の呼び出し感覚
-        /// </summary>
-        private const float StartInterval = 0.6f;
-        private float initialInterval = StartInterval;
 
-        private float currentTime;
-      
 
         private void OnMove(Vector2 input)
         {
             currentTime += Time.deltaTime;
             // ReSharper disable once CompareOfFloatsByEqualityOperator
-            if (initialInterval == StartInterval && currentTime == 0f)
-            {
-                current?.Select(input);
-            }   
-            if (currentTime < initialInterval)
-            {
-                return; // 一定の間隔が経過していない場合、何もしない
-            }
-    
+            if (initialInterval == StartInterval && currentTime == 0f) current?.Select(input);
+            if (currentTime < initialInterval) return; // 一定の間隔が経過していない場合、何もしない
+
             // 呼び出し間隔を増加させる
             initialInterval = Math.Max(initialInterval -= IntervalIncrement, minInterval);
-            
+
             current?.Select(input);
             currentTime = 0f;
         }
@@ -160,43 +143,35 @@ namespace UI.Title
         {
             current?.Clicked();
         }
-        
+
         private void SetNavigation()
         {
             title.onQuit = () => SetScreen(Nav.Quit);
             title.onOption = () => SetScreen(Nav.Option1);
             title.onCredit = () => SetScreen(Nav.Credit);
             title.onStart = () => SetScreen(Nav.StageSelect);
-            
+
             quit.onClick = val =>
             {
                 if (val)
                 {
-                    
                 }
                 else
                 {
                     NavigateToTitle();
                 }
-                
             };
             option1.onClick = Opt1Clicked;
             option1.onBack = NavigateToTitle;
 
-            option2.onFullScreen = isOn =>
-            {
-                Debug.Log("onFullScreen : " + isOn);
-            };
-            option2.onBrightness = val =>
-            {
-                Debug.Log("onBrightness : " + val);
-            };
+            option2.onFullScreen = isOn => { Debug.Log("onFullScreen : " + isOn); };
+            option2.onBrightness = val => { Debug.Log("onBrightness : " + val); };
             option2.onBack = NavigateToOption1;
 
             option3.onVolumeChanged = Opt3ParameterChanged;
             option3.onBack = NavigateToOption1;
             //TODO  option4
-            
+
             //TODO  credit
 
             stageSelect.onStage = StageSelected;
@@ -253,31 +228,39 @@ namespace UI.Title
                     break;
             }
         }
+
         private void SetScreen(Nav nav)
         {
             if (current == null)
             {
                 current = managers[nav];
                 currentNav = nav;
-                if (current == null)
-                {
-                    throw new NotImplementedException();
-                }
-            
+                if (current == null) throw new NotImplementedException();
+
                 current?.Initialized(current.GetContext().FadeIn(Easings.Default(0.3f)));
                 return;
             }
+
             current?.Finished(current.GetContext().FadeOut(Easings.Default(0.3f)), () =>
             {
                 current = managers[nav];
                 currentNav = nav;
-                if (current == null)
-                {
-                    throw new NotImplementedException();
-                }
-            
+                if (current == null) throw new NotImplementedException();
+
                 current?.Initialized(current.GetContext().FadeIn(Easings.Default(0.3f)));
             });
+        }
+
+        private enum Nav
+        {
+            Title,
+            Option1,
+            Option2,
+            Option3,
+            Option4,
+            Quit,
+            Credit,
+            StageSelect
         }
     }
 }
