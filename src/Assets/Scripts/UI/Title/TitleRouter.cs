@@ -146,12 +146,12 @@ namespace UI.Title
 
         private void SetNavigation()
         {
-            title.onQuit = () => SetScreen(Nav.Quit);
-            title.onOption = () => SetScreen(Nav.Option1);
-            title.onCredit = () => SetScreen(Nav.Credit);
-            title.onStart = () => SetScreen(Nav.StageSelect);
+            title.OnQuit += () => SetScreen(Nav.Quit);
+            title.OnOption += () => SetScreen(Nav.Option1);
+            title.OnCredit += () => SetScreen(Nav.Credit);
+            title.OnPlay += () => SetScreen(Nav.StageSelect);
 
-            quit.onClick = val =>
+            quit.OnClick += val =>
             {
                 if (val)
                 {
@@ -161,21 +161,21 @@ namespace UI.Title
                     NavigateToTitle();
                 }
             };
-            option1.onClick = Opt1Clicked;
-            option1.onBack = NavigateToTitle;
+            option1.OnClick += Opt1Clicked;
+            option1.OnBack += NavigateToTitle;
 
-            option2.onFullScreen = isOn => { Debug.Log("onFullScreen : " + isOn); };
-            option2.onBrightness = val => { Debug.Log("onBrightness : " + val); };
-            option2.onBack = NavigateToOption1;
+            option2.OnFullScreen += isOn => { Debug.Log("onFullScreen : " + isOn); };
+            option2.OnBrightness += val => { Debug.Log("onBrightness : " + val); };
+            option2.OnBack += NavigateToOption1;
 
-            option3.onVolumeChanged = Opt3ParameterChanged;
-            option3.onBack = NavigateToOption1;
+            option3.OnVolumeChanged += Opt3ParameterChanged;
+            option3.OnBack += NavigateToOption1;
             //TODO  option4
 
             //TODO  credit
 
-            stageSelect.onStage = StageSelected;
-            stageSelect.onBack = NavigateToTitle;
+            stageSelect.OnStage += StageSelected;
+            stageSelect.OnBack += NavigateToTitle;
         }
 
         private void StageSelected(StageSelectManager.Nav nav)
@@ -222,6 +222,9 @@ namespace UI.Title
                 case Nav.Option3:
                 case Nav.Option4:
                     NavigateToOption1();
+                    break;
+                case Nav.Title:
+                    SetScreen(Nav.Quit);
                     break;
                 default:
                     NavigateToTitle();

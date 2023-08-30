@@ -24,14 +24,14 @@ namespace UI.Title.Title
 
         private Nav? current;
 
-        public Action onCredit;
+        public event Action OnCredit;
 
-        public Action onOption;
+        public event Action OnOption;
 
-        public Action onQuit;
+        public event Action OnQuit;
 
 
-        public Action onStart;
+        public event Action OnPlay;
 
         private void Start()
         {
@@ -56,16 +56,16 @@ namespace UI.Title.Title
             switch (current.Value)
             {
                 case Nav.Start:
-                    start.OnPlay(() => onStart?.Invoke());
+                    start.OnPlay(() => OnPlay?.Invoke());
                     break;
                 case Nav.Option:
-                    option.OnPlay(() => onOption?.Invoke());
+                    option.OnPlay(() => OnOption?.Invoke());
                     break;
                 case Nav.Credit:
-                    credit.OnPlay(() => onCredit?.Invoke());
+                    credit.OnPlay(() => OnCredit?.Invoke());
                     break;
                 case Nav.Quit:
-                    quit.OnPlay(() => onQuit?.Invoke());
+                    quit.OnPlay(() => OnQuit?.Invoke());
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

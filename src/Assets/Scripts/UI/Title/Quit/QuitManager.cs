@@ -23,7 +23,7 @@ namespace UI.Title.Quit
 
         private Nav? current;
 
-        public Action<bool> onClick;
+        public event Action<bool> OnClick;
 
         private void Start()
         {
@@ -47,10 +47,10 @@ namespace UI.Title.Quit
             switch (current.Value)
             {
                 case Nav.Yes:
-                    yes.OnPlay(() => onClick?.Invoke(true));
+                    yes.OnPlay(() => OnClick?.Invoke(true));
                     break;
                 case Nav.No:
-                    no.OnPlay(() => onClick?.Invoke(false));
+                    no.OnPlay(() => OnClick?.Invoke(false));
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

@@ -27,9 +27,9 @@ namespace UI.Title.Option3
 
         private Nav? current;
 
-        public Action onBack;
+        public event Action OnBack;
 
-        public Action<Nav, float> onVolumeChanged;
+        public event Action<Nav, float> OnVolumeChanged;
 
         private void Start()
         {
@@ -62,10 +62,10 @@ namespace UI.Title.Option3
             switch (current.Value)
             {
                 case Nav.Back:
-                    onVolumeChanged?.Invoke(Nav.Master, master.Value);
-                    onVolumeChanged?.Invoke(Nav.Music, music.Value);
-                    onVolumeChanged?.Invoke(Nav.Effect, effect.Value);
-                    onBack?.Invoke();
+                    OnVolumeChanged?.Invoke(Nav.Master, master.Value);
+                    OnVolumeChanged?.Invoke(Nav.Music, music.Value);
+                    OnVolumeChanged?.Invoke(Nav.Effect, effect.Value);
+                    OnBack?.Invoke();
                     break;
                 default:
                     return;
@@ -86,18 +86,18 @@ namespace UI.Title.Option3
                 {
                     case Nav.Master:
                         master.SetValue(master.Value + direction.x);
-                        onVolumeChanged?.Invoke(Nav.Master, master.Value);
+                        OnVolumeChanged?.Invoke(Nav.Master, master.Value);
                         break;
                     case Nav.Music:
                         music.SetValue(music.Value + direction.x);
-                        onVolumeChanged?.Invoke(Nav.Music, music.Value);
+                        OnVolumeChanged?.Invoke(Nav.Music, music.Value);
                         break;
                     case Nav.Effect:
                         effect.SetValue(effect.Value + direction.x);
-                        onVolumeChanged?.Invoke(Nav.Effect, effect.Value);
+                        OnVolumeChanged?.Invoke(Nav.Effect, effect.Value);
                         break;
                     case Nav.Back:
-                        back.OnPlay(() => onBack?.Invoke());
+                        back.OnPlay(() => OnBack?.Invoke());
                         break;
                 }
 

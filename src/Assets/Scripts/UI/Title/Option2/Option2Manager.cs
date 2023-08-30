@@ -31,11 +31,11 @@ namespace UI.Title.Option2
 
         private Nav? current;
 
-        public Action onBack;
+        public event Action OnBack;
 
-        public Action<float> onBrightness;
+        public event Action<float> OnBrightness;
 
-        public Action<bool> onFullScreen;
+        public event Action<bool> OnFullScreen;
 
         private void Start()
         {
@@ -70,9 +70,9 @@ namespace UI.Title.Option2
                 case Nav.Brightness:
                     break;
                 case Nav.Back:
-                    onFullScreen(fullScreen.IsOn);
-                    onBrightness(bright.Value);
-                    back.OnPlay(() => onBack?.Invoke());
+                    OnFullScreen?.Invoke(fullScreen.IsOn);
+                    OnBrightness?.Invoke(bright.Value);
+                    back.OnPlay(() => OnBack?.Invoke());
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

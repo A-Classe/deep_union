@@ -27,9 +27,9 @@ namespace UI.Title.Option1
 
         private Nav? current;
 
-        public Action onBack;
+        public event Action OnBack;
 
-        public Action<Nav> onClick;
+        public event Action<Nav> OnClick;
 
         private void Start()
         {
@@ -59,16 +59,16 @@ namespace UI.Title.Option1
             switch (current.Value)
             {
                 case Nav.Video:
-                    video.OnPlay(() => onClick?.Invoke(Nav.Video));
+                    video.OnPlay(() => OnClick?.Invoke(Nav.Video));
                     break;
                 case Nav.Audio:
-                    audios.OnPlay(() => onClick?.Invoke(Nav.Audio));
+                    audios.OnPlay(() => OnClick?.Invoke(Nav.Audio));
                     break;
                 case Nav.KeyConfig:
-                    keyConfig.OnPlay(() => onClick?.Invoke(Nav.KeyConfig));
+                    keyConfig.OnPlay(() => OnClick?.Invoke(Nav.KeyConfig));
                     break;
                 case Nav.Back:
-                    back.OnPlay(() => onBack?.Invoke());
+                    back.OnPlay(() => OnBack?.Invoke());
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

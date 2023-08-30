@@ -31,9 +31,9 @@ namespace UI.Title.StageSelect
 
         private Nav? current;
 
-        public Action onBack;
+        public event Action OnBack;
 
-        public Action<Nav> onStage;
+        public event Action<Nav> OnStage;
 
         private void Start()
         {
@@ -65,22 +65,22 @@ namespace UI.Title.StageSelect
             switch (current.Value)
             {
                 case Nav.Stage1:
-                    onStage?.Invoke(Nav.Stage1);
+                    OnStage?.Invoke(Nav.Stage1);
                     break;
                 case Nav.Stage2:
-                    onStage?.Invoke(Nav.Stage2);
+                    OnStage?.Invoke(Nav.Stage2);
                     break;
                 case Nav.Stage3:
-                    onStage?.Invoke(Nav.Stage3);
+                    OnStage?.Invoke(Nav.Stage3);
                     break;
                 case Nav.Stage4:
-                    onStage?.Invoke(Nav.Stage4);
+                    OnStage?.Invoke(Nav.Stage4);
                     break;
                 case Nav.Stage5:
-                    onStage?.Invoke(Nav.Stage5);
+                    OnStage?.Invoke(Nav.Stage5);
                     break;
                 case Nav.Back:
-                    back.OnPlay(() => onBack?.Invoke());
+                    back.OnPlay(() => OnBack?.Invoke());
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
