@@ -17,6 +17,7 @@ namespace Module.Working
         private IWorkerState[] workerStates;
         private NavMeshAgent navMeshAgent;
 
+        public Animator animator;
         public Transform Target { get; private set; }
         public Vector3 Offset { get; private set; }
 
@@ -48,7 +49,9 @@ namespace Module.Working
         {
             try
             {
+                currentState?.OnStop();
                 currentState = workerStates.First(state => state.WorkerState == workerState);
+                currentState.OnStart();
             }
             catch (Exception e)
             {
@@ -82,7 +85,20 @@ namespace Module.Working
 
         public void Dispose()
         {
+            foreach (IWorkerState state in workerStates)
+            {
+                state.Dispose();
+            }
+
             Destroy(gameObject);
+        }
+
+        private void OnDestroy()
+        {
+            foreach (IWorkerState state in workerStates)
+            {
+                state.Dispose();
+            }
         }
     }
 }

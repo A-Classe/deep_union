@@ -1,4 +1,7 @@
-﻿using Core.Utility.Player;
+﻿using System;
+using System.GameProgress;
+using Core.NavMesh;
+using Core.Utility.Player;
 using GameMain.Presenter;
 using Module.Player.Camera;
 using Module.Player.Controller;
@@ -10,7 +13,10 @@ using VContainer.Unity;
 
 namespace GameMain
 {
-    public class GameRouter : IStartable
+    /// <summary>
+    /// ゲームのエントリーポイント
+    /// </summary>
+    public class GameRouter : IStartable, IDisposable
     {
         private readonly SpawnParam spawnParam;
         private readonly GameParam gameParam;
@@ -18,7 +24,9 @@ namespace GameMain
         private readonly LeadPointConnector leadPointConnector;
         private readonly PlayerController playerController;
         private readonly CameraController cameraController;
-        
+        private readonly StageProgressObserver progressObserver;
+        private readonly RuntimeNavMeshBaker runtimeNavMeshBaker;
+
         private readonly WorkerSpawner workerSpawner;
 
         [Inject]
@@ -26,10 +34,12 @@ namespace GameMain
             SpawnParam spawnParam,
             GameParam gameParam,
             LeadPointConnector leadPointConnector,
-            WorkerSpawner workerSpawner, 
-            WorkerController workerController, 
+            WorkerSpawner workerSpawner,
+            WorkerController workerController,
             PlayerController playerController,
-            CameraController cameraController
+            CameraController cameraController,
+            StageProgressObserver progressObserver,
+            RuntimeNavMeshBaker runtimeNavMeshBaker 
         )
         {
             this.spawnParam = spawnParam;
@@ -38,12 +48,17 @@ namespace GameMain
             this.leadPointConnector = leadPointConnector;
             this.playerController = playerController;
             this.cameraController = cameraController;
+            this.progressObserver = progressObserver;
+            this.runtimeNavMeshBaker = runtimeNavMeshBaker;
 
             this.workerSpawner = workerSpawner;
         }
 
         public void Start()
         {
+            runtimeNavMeshBaker.Build();
+            progressObserver.Start().Forget();
+
             InitWorker();
 
             InitPlayer();
@@ -67,8 +82,13 @@ namespace GameMain
             playerController.InitParam(gameParam.ConvertToPlayerModel());
             playerController.PlayerStart();
             playerController.SetState(PlayerState.Go);
-           
+
             cameraController.SetFollowTarget(playerController.transform);
+        }
+
+        public void Dispose()
+        {
+            progressObserver.Cancel();
         }
     }
 }

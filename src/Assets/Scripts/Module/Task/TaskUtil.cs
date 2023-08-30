@@ -20,7 +20,7 @@ namespace Module.Task
                 {
                     if (obj.TryGetComponent(out TInterface task)) return task;
 
-                    Debug.LogWarning($"GameObject: {obj.name}に{nameof(TInterface)}がアタッチされていません!");
+                    Debug.LogWarning($"GameObject: {obj.name}に{typeof(TInterface).Name}がアタッチされていません!");
                     return null;
                 })
                 .ToArray();
