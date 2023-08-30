@@ -1,4 +1,5 @@
-﻿using GameMain.Presenter;
+﻿using System.GameProgress;
+using GameMain.Presenter;
 using Module.Player.Camera;
 using Module.Player.Controller;
 using Module.Task;
@@ -18,22 +19,25 @@ namespace GameMain.Container
         private SpawnPoint spawnPoint;
 
 
-        [SerializeField] private SpawnParam spawnParam = default!;
-        [SerializeField] private GameParam gameParam = default!;
-        [SerializeField] private WorkerController workerController = default!;
-        [SerializeField] private TaskDetector taskDetector = default!;
-        [SerializeField] private PlayerController playerController = default!;
-        [SerializeField] private CameraController cameraController = default!;
+        [SerializeField] private SpawnParam spawnParam;
+        [SerializeField] private GameParam gameParam;
+        [SerializeField] private WorkerController workerController;
+        [SerializeField] private TaskDetector taskDetector;
+        [SerializeField] private PlayerController playerController;
+        [SerializeField] private CameraController cameraController;
+        [SerializeField] private GoalPoint goalPoint;
 
         protected override void Configure(IContainerBuilder builder)
         {
             builder.RegisterEntryPoint<GameRouter>();
             builder.RegisterEntryPoint<TaskSystemLoop>();
             builder.RegisterEntryPoint<WorkerConnector>();
+            builder.RegisterEntryPoint<GameSequenceHandler>();
 
             builder.Register<WorkerSpawner>(Lifetime.Singleton);
             builder.Register<WorkerAgent>(Lifetime.Singleton);
             builder.Register<LeadPointConnector>(Lifetime.Singleton);
+            builder.Register<StageProgressObserver>(Lifetime.Singleton);
 
             builder.RegisterInstance(spawnPoint);
             builder.RegisterInstance(spawnParam);
@@ -42,6 +46,7 @@ namespace GameMain.Container
             builder.RegisterInstance(workerController);
             builder.RegisterInstance(playerController);
             builder.RegisterInstance(cameraController);
+            builder.RegisterInstance(goalPoint);
         }
     }
 }
