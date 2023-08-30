@@ -42,14 +42,19 @@ namespace Editor
             if (!GeneratingFlagHolder.instance.IsGenerating)
                 return;
 
+            LayerMask taskLayer = LayerMask.NameToLayer("Task");
+
             // ReSharper disable once UseObjectOrCollectionInitializer
             var gameObject = new GameObject("Task");
             gameObject.tag = "Task";
-            gameObject.layer = LayerMask.NameToLayer("Task");
-            gameObject.isStatic = true;
+            gameObject.layer = taskLayer;
 
+            var detectableObject = new GameObject("DetectableArea");
+            detectableObject.layer = taskLayer;
+            detectableObject.transform.SetParent(gameObject.transform);
+
+            detectableObject.AddComponent<SphereCollider>();
             gameObject.AddComponent(FindGeneratedType());
-            gameObject.AddComponent<SphereCollider>();
 
             GeneratingFlagHolder.instance.IsGenerating = false;
         }
