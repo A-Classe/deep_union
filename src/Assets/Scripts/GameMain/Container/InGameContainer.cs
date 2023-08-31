@@ -1,12 +1,14 @@
 ﻿using System.GameProgress;
 using Core.NavMesh;
 using GameMain.Presenter;
+using GameMain.UI;
 using Module.Player.Camera;
 using Module.Player.Controller;
 using Module.Task;
 using Module.Working;
 using Module.Working.Controller;
 using Module.Working.Factory;
+using UI.HUD;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -27,6 +29,7 @@ namespace GameMain.Container
         [SerializeField] private PlayerController playerController;
         [SerializeField] private CameraController cameraController;
         [SerializeField] private GoalPoint goalPoint;
+        [SerializeField] private TaskProgressPool progressPool;
 
         protected override void Configure(IContainerBuilder builder)
         {
@@ -34,6 +37,7 @@ namespace GameMain.Container
             builder.RegisterEntryPoint<TaskSystemLoop>();
             builder.RegisterEntryPoint<WorkerConnector>();
             builder.RegisterEntryPoint<GameSequenceHandler>();
+            builder.RegisterEntryPoint<ProgressBarSwitcher>();
 
             builder.Register<WorkerSpawner>(Lifetime.Singleton);
             builder.Register<WorkerAgent>(Lifetime.Singleton);
@@ -49,6 +53,7 @@ namespace GameMain.Container
             builder.RegisterInstance(playerController);
             builder.RegisterInstance(cameraController);
             builder.RegisterInstance(goalPoint);
+            builder.RegisterInstance(progressPool);
         }
     }
 }
