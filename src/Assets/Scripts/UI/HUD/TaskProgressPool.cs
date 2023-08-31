@@ -6,8 +6,12 @@ using Wanna.DebugEx;
 
 namespace UI.HUD
 {
+    /// <summary>
+    /// 進捗バーをプールするクラス
+    /// </summary>
     public class TaskProgressPool : MonoBehaviour
     {
+        [Header("進捗バーのプレハブ")]
         [SerializeField] private GameObject prefab;
         private ObjectPool<TaskProgressView> progressPool;
 
@@ -16,7 +20,12 @@ namespace UI.HUD
             progressPool = new ObjectPool<TaskProgressView>(CreateView);
         }
 
-        public TaskProgressView AddProgressView(Transform task)
+        /// <summary>
+        /// 進捗バーを取得します
+        /// </summary>
+        /// <param name="task">タスクのTransform</param>
+        /// <returns>進捗バーのインスタンス</returns>
+        public TaskProgressView GetProgressView(Transform task)
         {
             TaskProgressView progressView = progressPool.Get();
             progressView.SetTarget(task);
@@ -25,13 +34,16 @@ namespace UI.HUD
             return progressView;
         }
 
-        public void RemoveProgressView(TaskProgressView view)
+        /// <summary>
+        /// 進捗バーを返却します
+        /// </summary>
+        /// <param name="view">進捗バーのインスタンス</param>
+        public void ReleaseProgressView(TaskProgressView view)
         {
-            TaskProgressView progressView = view;
-            progressView.SetTarget(null);
-            progressView.Disable();
+            view.SetTarget(null);
+            view.Disable();
 
-            progressPool.Release(progressView);
+            progressPool.Release(view);
         }
 
         private TaskProgressView CreateView()

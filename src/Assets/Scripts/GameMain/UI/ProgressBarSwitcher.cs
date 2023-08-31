@@ -10,12 +10,15 @@ using Wanna.DebugEx;
 
 namespace GameMain.UI
 {
+    /// <summary>
+    /// 進捗バーの更新を行うクラス
+    /// </summary>
     public class ProgressBarSwitcher : IStartable, ITickable
     {
         private readonly Camera mainCamera;
         private readonly TaskProgressPool taskProgressPool;
-        private readonly Transform[] taskTransforms;
-        private readonly Queue<TaskProgressView> activeViews;
+        private readonly BaseTask[] tasks;
+        private readonly Queue<(BaseTask task, TaskProgressView view)> activeViews;
 
         private int head;
         private int tail;
@@ -24,22 +27,23 @@ namespace GameMain.UI
         public ProgressBarSwitcher(TaskProgressPool taskProgressPool)
         {
             mainCamera = Camera.main;
-            activeViews = new Queue<TaskProgressView>();
+            activeViews = new Queue<(BaseTask task, TaskProgressView view)>();
             this.taskProgressPool = taskProgressPool;
-            taskTransforms = SortTaskOrder(TaskUtil.FindSceneTasks<Transform>());
+            tasks = SortTaskOrder(TaskUtil.FindSceneTasks<BaseTask>());
         }
 
-        private Transform[] SortTaskOrder(IEnumerable<Transform> transforms)
+        private BaseTask[] SortTaskOrder(IEnumerable<BaseTask> tasks)
         {
             float camZ = mainCamera.transform.position.z;
-            return transforms.OrderBy(transform => transform.position.z - camZ).ToArray();
+            return tasks.OrderBy(task => task.transform.position.z - camZ).ToArray();
         }
 
         public void Start()
         {
-            foreach (Transform transform in taskTransforms)
+            //ゲーム開始時に画面内に存在するタスクの進捗バー表示
+            foreach (BaseTask task in tasks)
             {
-                Vector3 viewPos = mainCamera.WorldToViewportPoint(transform.position);
+                Vector3 viewPos = mainCamera.WorldToViewportPoint(task.transform.position);
 
                 if (IsPassed(viewPos))
                 {
@@ -49,8 +53,8 @@ namespace GameMain.UI
 
                 if (!IsAhead(viewPos))
                 {
-                    TaskProgressView view = taskProgressPool.AddProgressView(transform);
-                    activeViews.Enqueue(view);
+                    TaskProgressView view = taskProgressPool.GetProgressView(task.transform);
+                    activeViews.Enqueue((task, view));
                     tail++;
                 }
             }
@@ -58,43 +62,55 @@ namespace GameMain.UI
 
         public void Tick()
         {
+            //最も近いタスクと遠いタスクのカメラ外検知
             UpdateHead();
             UpdateTail();
 
-            foreach (TaskProgressView progressView in activeViews)
+            foreach ((BaseTask task, TaskProgressView view) element in activeViews)
             {
-                progressView.ManagedUpdate();
+                if (!element.view.IsEnabled)
+                    continue;
+
+                //タスクが終了したら非表示にする
+                if (element.task.State == TaskState.Completed)
+                {
+                    element.view.Disable();
+                    continue;
+                }
+
+                element.view.ManagedUpdate();
+                element.view.SetProgress(element.task.Progress);
             }
         }
 
         void UpdateHead()
         {
-            if (head >= taskTransforms.Length)
+            if (head >= tasks.Length)
                 return;
 
-            Transform headTransform = taskTransforms[head];
+            Transform headTransform = tasks[head].transform;
             Vector3 viewPos = mainCamera.WorldToViewportPoint(headTransform.position);
 
             if (IsPassed(viewPos))
             {
-                TaskProgressView view = activeViews.Dequeue();
-                taskProgressPool.RemoveProgressView(view);
+                (BaseTask task, TaskProgressView view) element = activeViews.Dequeue();
+                taskProgressPool.ReleaseProgressView(element.view);
                 head++;
             }
         }
 
         void UpdateTail()
         {
-            if (tail + 1 >= taskTransforms.Length)
+            if (tail >= tasks.Length)
                 return;
 
-            Transform tailTransform = taskTransforms[tail + 1];
-            Vector3 viewPos = mainCamera.WorldToViewportPoint(tailTransform.position);
+            BaseTask task = tasks[tail];
+            Vector3 viewPos = mainCamera.WorldToViewportPoint(task.transform.position);
 
             if (!IsAhead(viewPos))
             {
-                TaskProgressView view = taskProgressPool.AddProgressView(tailTransform);
-                activeViews.Enqueue(view);
+                TaskProgressView view = taskProgressPool.GetProgressView(task.transform);
+                activeViews.Enqueue((task, view));
                 tail++;
             }
         }
@@ -107,7 +123,7 @@ namespace GameMain.UI
 
         bool IsPassed(Vector3 viewPos)
         {
-            return viewPos.y < 0;
+            return viewPos.y < -0.1;
         }
     }
 }

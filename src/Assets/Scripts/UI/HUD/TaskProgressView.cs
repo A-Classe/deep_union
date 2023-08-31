@@ -2,15 +2,23 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI.HUD
 {
+    /// <summary>
+    /// タスクの進捗バーコンポーネント
+    /// </summary>
     public class TaskProgressView : MonoBehaviour
     {
-        [SerializeField] private Vector3 offset;
+        [Header("表示オフセット")] [SerializeField] private Vector3 offset;
+        [SerializeField] private float scaleOffset;
+        [SerializeField] private Slider slider;
 
         private Camera cam;
         private Transform target;
+
+        public bool IsEnabled => gameObject.activeSelf;
 
         private void Awake()
         {
@@ -24,9 +32,24 @@ namespace UI.HUD
 
         public void ManagedUpdate()
         {
-            float xSign = Mathf.Sign(target.position.x - cam.transform.position.x);
-            Vector3 screenPoint = cam.WorldToScreenPoint(target.position + new Vector3(xSign * offset.x, offset.y, offset.z));
+            var targetPos = target.position;
+            var camPos = cam.transform.position;
+
+            float xSign = Mathf.Sign(targetPos.x - camPos.x);
+            Vector3 screenPoint = cam.WorldToScreenPoint(targetPos + new Vector3(xSign * offset.x, offset.y, offset.z));
             transform.position = screenPoint;
+
+            float distance = Vector3.Distance(targetPos, camPos);
+            transform.localScale = (Vector3.one / distance) * scaleOffset;
+        }
+
+        /// <summary>
+        /// 進捗をセットします(0 ~ 1)
+        /// </summary>
+        /// <param name="value">進捗</param>
+        public void SetProgress(float value)
+        {
+            slider.value = value;
         }
 
         public void Enable()
