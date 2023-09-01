@@ -34,8 +34,8 @@ namespace Module.Task.Editor
                 SerializedProperty mw = serializedObject.FindProperty("mw");
 
                 taskSize.floatValue = EditorGUILayout.Slider("検出サイズ", taskSize.floatValue, 0f, 6f);
-                mw.floatValue = EditorGUILayout.FloatField("MonoWork", mw.floatValue);
-                mw.floatValue = Mathf.Clamp(mw.floatValue, 1f, float.MaxValue);
+                mw.intValue = EditorGUILayout.IntField("MonoWork", mw.intValue);
+                mw.intValue = Mathf.Clamp(mw.intValue, 1, int.MaxValue);
             }
         }
 

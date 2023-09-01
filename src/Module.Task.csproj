@@ -49,6 +49,9 @@
      <Compile Include="Assets\Scripts\Module\Task\TaskUtil.cs" />
      <Compile Include="Assets\Scripts\Module\Task\AssignPoint.cs" />
      <Compile Include="Assets\Scripts\Module\Task\Editor\BaseTaskEditor.cs" />
+     <Compile Include="Assets\Scripts\Module\Task\Resource\CollectableTask.cs" />
+     <Compile Include="Assets\Scripts\Module\Task\Resource\ResourceContainer.cs" />
+     <Folder Include="Assets\Scripts\Module\Task\Resource" />
      <Folder Include="Assets\Scripts\Module\Task\Editor" />
      <Folder Include="Assets\Scripts\Module\Task" />
      <None Include="Assets\Scripts\Module\Task\Module.Task.asmdef" />
@@ -742,6 +745,10 @@
     <ProjectReference Include="Core.Utility.csproj">
       <Project>{d2e0865b-657b-42a9-c964-7ce50668b0f1}</Project>
       <Name>Core.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="Core.Parameter.csproj">
+      <Project>{92bb72c2-ea4b-5ac1-66d4-2589d6f686b9}</Project>
+      <Name>Core.Parameter</Name>
     </ProjectReference>
     <ProjectReference Include="UniTask.csproj">
       <Project>{f52c406a-1600-d9d4-8306-967578deb673}</Project>

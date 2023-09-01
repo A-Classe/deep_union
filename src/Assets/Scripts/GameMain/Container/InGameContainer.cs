@@ -1,6 +1,8 @@
 ﻿using System.GameProgress;
 using Core.NavMesh;
 using GameMain.Presenter;
+using GameMain.Presenter.Resource;
+using GameMain.Presenter.Working;
 using GameMain.UI;
 using Module.Player.Camera;
 using Module.Player.Controller;
@@ -21,9 +23,7 @@ namespace GameMain.Container
         [SerializeField]
         private SpawnPoint spawnPoint;
 
-
         [SerializeField] private SpawnParam spawnParam;
-        [SerializeField] private GameParam gameParam;
         [SerializeField] private WorkerController workerController;
         [SerializeField] private TaskDetector taskDetector;
         [SerializeField] private PlayerController playerController;
@@ -35,19 +35,23 @@ namespace GameMain.Container
         {
             builder.RegisterEntryPoint<GameRouter>();
             builder.RegisterEntryPoint<TaskSystemLoop>();
-            builder.RegisterEntryPoint<WorkerConnector>();
             builder.RegisterEntryPoint<GameSequenceHandler>();
             builder.RegisterEntryPoint<ProgressBarSwitcher>();
+            builder.RegisterEntryPoint<ResourcePresenter>();
+            builder.RegisterEntryPoint<WorkerPresenter>();
 
             builder.Register<WorkerSpawner>(Lifetime.Singleton);
             builder.Register<WorkerAgent>(Lifetime.Singleton);
             builder.Register<LeadPointConnector>(Lifetime.Singleton);
             builder.Register<StageProgressObserver>(Lifetime.Singleton);
             builder.Register<RuntimeNavMeshBaker>(Lifetime.Singleton);
+            builder.Register<WorkerConnector>(Lifetime.Singleton);
+            builder.Register<WorkerAssigner>(Lifetime.Singleton);
+            builder.Register<WorkerReleaser>(Lifetime.Singleton);
+            builder.Register<ResourceContainer>(Lifetime.Singleton);
 
             builder.RegisterInstance(spawnPoint);
             builder.RegisterInstance(spawnParam);
-            builder.RegisterInstance(gameParam);
             builder.RegisterInstance(taskDetector);
             builder.RegisterInstance(workerController);
             builder.RegisterInstance(playerController);

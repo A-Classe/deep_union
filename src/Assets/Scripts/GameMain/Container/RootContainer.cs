@@ -1,3 +1,5 @@
+using GameMain.Presenter;
+using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
@@ -5,6 +7,11 @@ namespace GameMain.Container
 {
     public class RootContainer : LifetimeScope
     {
-        protected override void Configure(IContainerBuilder builder) { }
+        [SerializeField] private GameParam gameParam;
+        
+        protected override void Configure(IContainerBuilder builder)
+        {
+            builder.RegisterInstance(gameParam);
+        }
     }
 }
