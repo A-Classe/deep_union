@@ -44,19 +44,19 @@
      <Compile Include="Assets\Scripts\Core\Utility\UI\Component\Cursor\CursorController.cs" />
      <Compile Include="Assets\Scripts\Core\Utility\UI\Navigation\IUIManager.cs" />
      <Compile Include="Assets\Scripts\Core\Utility\UI\Component\FadeInOutButton.cs" />
-     <Compile Include="Assets\Scripts\Core\Utility\User\UserPreference.cs" />
-     <Compile Include="Assets\Scripts\Core\Utility\User\DataManager.cs" />
      <Compile Include="Assets\Scripts\Core\Utility\SpanUtility.cs" />
      <Compile Include="Assets\Scripts\Core\Utility\UI\Component\ToggleController.cs" />
      <Compile Include="Assets\Scripts\Core\Utility\UI\AnimateObject.cs" />
-     <Compile Include="Assets\Scripts\Core\Utility\User\UserSetting.cs" />
      <Compile Include="Assets\Scripts\Core\Utility\UI\Component\SimpleUnderBarController.cs" />
      <Compile Include="Assets\Scripts\Core\Utility\Player\PlayerUtility.cs" />
      <Compile Include="Assets\Scripts\Core\Utility\ListSegment.cs" />
-     <Compile Include="Assets\Scripts\Core\Utility\User\IDefaultable.cs" />
      <Compile Include="Assets\Scripts\Core\Utility\UI\Component\SliderController.cs" />
+     <Compile Include="Assets\Scripts\Core\Utility\User\IDefaultable.cs" />
      <Compile Include="Assets\Scripts\Core\Utility\UI\Navigation\Navigation.cs" />
      <Compile Include="Assets\Scripts\Core\Utility\UI\Component\StageButton.cs" />
+     <Compile Include="Assets\Scripts\Core\Utility\User\DataManager.cs" />
+     <Compile Include="Assets\Scripts\Core\Utility\User\UserSetting.cs" />
+     <Compile Include="Assets\Scripts\Core\Utility\User\UserPreference.cs" />
      <Folder Include="Assets\Scripts\Core\Utility\UI" />
      <Folder Include="Assets\Scripts\Core\Utility\UI\Component" />
      <Folder Include="Assets\Scripts\Core\Utility\User" />
@@ -738,10 +738,7 @@
      <HintPath>C:\Users\makar\Documents\Unity\2021.3.23f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
      </Reference>
      <Reference Include="VContainer">
-     <HintPath>C:\Users\yuhi\Dropbox\kougei\A\release_control\src\Library\ScriptAssemblies\VContainer.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.InputSystem">
-     <HintPath>C:\Users\yuhi\Dropbox\kougei\A\release_control\src\Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
+     <HintPath>C:\Users\makar\Desktop\my-works\release_control\src\Library\ScriptAssemblies\VContainer.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
      <HintPath>C:\Users\makar\Desktop\my-works\release_control\src\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
@@ -770,6 +767,14 @@
     <ProjectReference Include="Unity.TextMeshPro.csproj">
       <Project>{1cc858fa-215b-6022-8008-3183c9d4d3c9}</Project>
       <Name>Unity.TextMeshPro</Name>
+    </ProjectReference>
+    <ProjectReference Include="Core.Input.csproj">
+      <Project>{daf5ad3f-bd5b-7a4e-baca-0e006f668f89}</Project>
+      <Name>Core.Input</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.InputSystem.csproj">
+      <Project>{4e57be16-99a5-d0e9-6d23-a67bf0e20903}</Project>
+      <Name>Unity.InputSystem</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
