@@ -19,10 +19,9 @@ namespace Core.Utility.User
             {
                 string json = File.ReadAllText(filePath);
                 dataStorage = JsonUtility.FromJson<SerializableDictionary>(json).ToDictionary();
-                jsonPath = filePath;
                 return true;
             }
-
+            jsonPath = filePath;
             return false;
         }
 

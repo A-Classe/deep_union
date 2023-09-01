@@ -2,7 +2,7 @@
 using AnimationPro.RunTime;
 using UnityEngine;
 
-namespace UI.Title
+namespace Core.Utility.UI.Navigation
 {
     public interface IUIManager
     {

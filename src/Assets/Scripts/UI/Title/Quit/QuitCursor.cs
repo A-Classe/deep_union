@@ -1,4 +1,4 @@
-﻿using Core.Utility.UI.Cursor;
+﻿using Core.Utility.UI.Component.Cursor;
 
 namespace UI.Title.Quit
 {

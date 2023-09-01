@@ -2,7 +2,7 @@
 using AnimationPro.RunTime;
 using UnityEngine;
 
-namespace Core.Utility.UI
+namespace Core.Utility.UI.Component
 {
     public class FadeInOutButton: AnimationBehaviour
     {

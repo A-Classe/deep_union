@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using AnimationPro.RunTime;
 using UnityEngine;
-using Wanna.DebugEx;
 
-namespace Core.Utility.UI.Cursor
+namespace Core.Utility.UI.Component.Cursor
 {
     public class CursorController<T>: AnimationBehaviour where T : Enum
     {

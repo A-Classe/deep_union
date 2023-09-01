@@ -41,26 +41,30 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Core\Utility\UI\Cursor\CursorController.cs" />
-     <Compile Include="Assets\Scripts\Core\Utility\UI\FadeInOutButton.cs" />
+     <Compile Include="Assets\Scripts\Core\Utility\UI\Component\Cursor\CursorController.cs" />
+     <Compile Include="Assets\Scripts\Core\Utility\UI\Navigation\IUIManager.cs" />
+     <Compile Include="Assets\Scripts\Core\Utility\UI\Component\FadeInOutButton.cs" />
+     <Compile Include="Assets\Scripts\Core\Utility\User\UserPreference.cs" />
+     <Compile Include="Assets\Scripts\Core\Utility\User\DataManager.cs" />
      <Compile Include="Assets\Scripts\Core\Utility\SpanUtility.cs" />
-     <Compile Include="Assets\Scripts\Core\Utility\UI\ToggleController.cs" />
+     <Compile Include="Assets\Scripts\Core\Utility\UI\Component\ToggleController.cs" />
      <Compile Include="Assets\Scripts\Core\Utility\UI\AnimateObject.cs" />
-     <Compile Include="Assets\Scripts\Core\Utility\UI\UnderBar\SimpleUnderBarController.cs" />
+     <Compile Include="Assets\Scripts\Core\Utility\User\UserSetting.cs" />
+     <Compile Include="Assets\Scripts\Core\Utility\UI\Component\SimpleUnderBarController.cs" />
      <Compile Include="Assets\Scripts\Core\Utility\Player\PlayerUtility.cs" />
      <Compile Include="Assets\Scripts\Core\Utility\ListSegment.cs" />
-     <Compile Include="Assets\Scripts\Core\Utility\UI\SliderController.cs" />
-     <Compile Include="Assets\Scripts\Core\Utility\User\UserPreference.cs" />
-     <Compile Include="Assets\Scripts\Core\Utility\User\UserSetting.cs" />
-     <Compile Include="Assets\Scripts\Core\Utility\User\DataManager.cs" />
      <Compile Include="Assets\Scripts\Core\Utility\User\IDefaultable.cs" />
+     <Compile Include="Assets\Scripts\Core\Utility\UI\Component\SliderController.cs" />
+     <Compile Include="Assets\Scripts\Core\Utility\UI\Navigation\Navigation.cs" />
+     <Compile Include="Assets\Scripts\Core\Utility\UI\Component\StageButton.cs" />
      <Folder Include="Assets\Scripts\Core\Utility\UI" />
-     <Folder Include="Assets\Scripts\Core\Utility\UI\UnderBar" />
+     <Folder Include="Assets\Scripts\Core\Utility\UI\Component" />
      <Folder Include="Assets\Scripts\Core\Utility\User" />
      <Folder Include="Assets\Scripts\Core\Utility" />
      <None Include="Assets\Scripts\Core\Utility\Core.Utility.asmdef" />
+     <Folder Include="Assets\Scripts\Core\Utility\UI\Navigation" />
      <Folder Include="Assets\Scripts\Core\Utility\Player" />
-     <Folder Include="Assets\Scripts\Core\Utility\UI\Cursor" />
+     <Folder Include="Assets\Scripts\Core\Utility\UI\Component\Cursor" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
@@ -742,6 +746,12 @@
      <Reference Include="Unity.TextMeshPro">
      <HintPath>C:\Users\yuhi\Dropbox\kougei\A\release_control\src\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
      </Reference>
+     <Reference Include="VContainer">
+     <HintPath>C:\Users\yuhi\Dropbox\kougei\A\release_control\src\Library\ScriptAssemblies\VContainer.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.InputSystem">
+     <HintPath>C:\Users\yuhi\Dropbox\kougei\A\release_control\src\Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
+     </Reference>
      <Reference Include="UnityEditor.UI">
      <HintPath>C:\Users\yuhi\Dropbox\kougei\A\release_control\src\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
      </Reference>
@@ -757,6 +767,10 @@
     <ProjectReference Include="Core.Parameter.csproj">
       <Project>{92bb72c2-ea4b-5ac1-66d4-2589d6f686b9}</Project>
       <Name>Core.Parameter</Name>
+    </ProjectReference>
+    <ProjectReference Include="Core.Input.csproj">
+      <Project>{daf5ad3f-bd5b-7a4e-baca-0e006f668f89}</Project>
+      <Name>Core.Input</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

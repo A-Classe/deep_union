@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Core.Utility.User
 {
@@ -23,14 +24,17 @@ namespace Core.Utility.User
     {
         public static readonly Expression<Func<UserData, object>> FullScreen = data => data.fullScreen;
         public KeyValue<string, bool> fullScreen = new("fullScreen", true);
-        public static readonly Expression<Func<UserData, object>> Volume = data => data.volume;
-        public KeyValue<string, float> volume = new("Volume", 0f);
-        public static readonly Expression<Func<UserData, object>> Volume2 = data => data.volume2;
-        public KeyValue<string, float> volume2 = new("Volume2", 0f);
+        public static readonly Expression<Func<UserData, object>> BrightVal = data => data.bright;
+        public KeyValue<string, int> bright = new("brightVal", 0);
+        public static readonly Expression<Func<UserData, object>> MasterVol = data => data.masterVolume;
+        public KeyValue<string, int> masterVolume = new("masterVol", 0);
+        public static readonly Expression<Func<UserData, object>> MusicVol = data => data.musicVolume;
+        public KeyValue<string, int> musicVolume = new("musicVol", 0);
+        public static readonly Expression<Func<UserData, object>> EffectVol = data => data.effectVolume;
+        public KeyValue<string, int> effectVolume = new("musicVol", 0);
 
         public UserData DefaultInstance()
         {
-            // volumeのKeyを使用します。
             return new UserData();
         }
     }

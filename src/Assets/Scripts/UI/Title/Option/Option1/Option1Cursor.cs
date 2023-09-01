@@ -1,6 +1,6 @@
-﻿using Core.Utility.UI.Cursor;
+﻿using Core.Utility.UI.Component.Cursor;
 
-namespace UI.Title.Option1
+namespace UI.Title.Option.Option1
 {
     internal class Option1Cursor : CursorController<Option1Manager.Nav>
     {

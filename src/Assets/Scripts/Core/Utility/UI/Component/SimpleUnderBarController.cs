@@ -2,7 +2,7 @@
 using AnimationPro.RunTime;
 using UnityEngine;
 
-namespace Core.Utility.UI.UnderBar
+namespace Core.Utility.UI.Component
 {
     public class SimpleUnderBarController: MonoBehaviour
     {

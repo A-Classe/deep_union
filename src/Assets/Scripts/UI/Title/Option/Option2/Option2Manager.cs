@@ -1,11 +1,12 @@
 ﻿using System;
 using AnimationPro.RunTime;
 using Core.Utility.UI;
-using Core.Utility.UI.Cursor;
-using Core.Utility.UI.UnderBar;
+using Core.Utility.UI.Component;
+using Core.Utility.UI.Component.Cursor;
+using Core.Utility.UI.Navigation;
 using UnityEngine;
 
-namespace UI.Title.Option2
+namespace UI.Title.Option.Option2
 {
     /// <summary>
     ///     TL02-2
@@ -21,8 +22,6 @@ namespace UI.Title.Option2
             Brightness,
             Back
         }
-
-        [SerializeField] private SimpleUnderBarController bar;
 
         [SerializeField] private CursorController<Nav> cursor;
         [SerializeField] private ToggleController fullScreen;
@@ -46,10 +45,14 @@ namespace UI.Title.Option2
             bright.Setup(100f, 0f, 70f);
         }
 
+        public void SetValues(bool fullscreen, int brightVal)
+        {
+            bright.SetValue(brightVal);
+        }
+
         public void Initialized(ContentTransform content)
         {
             gameObject.SetActive(true);
-            bar.AnimateIn();
             OnCancel();
             Animation(content);
             SetState(Nav.FullScreen);
@@ -117,20 +120,17 @@ namespace UI.Title.Option2
 
         public void Finished(ContentTransform content, Action onFinished)
         {
-            bar.AnimateOut(() =>
-            {
-                Animation(
-                    content,
-                    new AnimationListener
+            Animation(
+                content,
+                new AnimationListener
+                {
+                    OnFinished = () =>
                     {
-                        OnFinished = () =>
-                        {
-                            gameObject.SetActive(false);
-                            onFinished?.Invoke();
-                        }
+                        gameObject.SetActive(false);
+                        onFinished?.Invoke();
                     }
-                );
-            });
+                }
+            );
         }
 
         public AnimationBehaviour GetContext()

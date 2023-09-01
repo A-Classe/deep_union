@@ -37,10 +37,30 @@ namespace Core.Utility.User
             return dataManager.Get<UserData>();
         }
 
-        public void SaveUserData(UserData data)
+        public void SetUserData(UserData data)
         {
             dataManager.Set(data);
-            dataManager.Save();
+        }
+
+        public void SetMasterVolume(int vol)
+        {
+            UserData data = dataManager.Get<UserData>();
+            data.masterVolume.value = vol;
+            dataManager.Set(data);
+        }
+        
+        public void SetMusicVolume(int vol)
+        {
+            UserData data = dataManager.Get<UserData>();
+            data.musicVolume.value = vol;
+            dataManager.Set(data);
+        }
+        
+        public void SetEffectVolume(int vol)
+        {
+            UserData data = dataManager.Get<UserData>();
+            data.effectVolume.value = vol;
+            dataManager.Set(data);
         }
 
         public Dictionary<StageData.Stage, uint> GetStageData()
@@ -48,23 +68,26 @@ namespace Core.Utility.User
             return dataManager.Get<StageData>().stage;
         }
 
-        public void SaveStageData(StageData data)
+        public void SetStageData(StageData data)
         {
             dataManager.Set(data);
-            dataManager.Save();
         }
         
-        public void SaveStageData(StageData.Stage stage, uint score)
+        public void SetStageData(StageData.Stage stage, uint score)
         {
             var data = dataManager.Get<StageData>();
             data.stage[stage] = score;
             dataManager.Set(data);
-            dataManager.Save();
         }
 
         public void Delete()
         {
             dataManager.Delete(GetFilePath());
+        }
+
+        public void Save()
+        {
+            dataManager.Save();
         }
 
         public TValue GetSpecificField<T, TValue>(Expression<Func<T, object>> selector) where T : IDefaultable<T>, new()

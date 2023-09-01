@@ -1,11 +1,12 @@
 ﻿using System;
 using AnimationPro.RunTime;
 using Core.Utility.UI;
-using Core.Utility.UI.Cursor;
-using Core.Utility.UI.UnderBar;
+using Core.Utility.UI.Component;
+using Core.Utility.UI.Component.Cursor;
+using Core.Utility.UI.Navigation;
 using UnityEngine;
 
-namespace UI.Title.Option1
+namespace UI.Title.Option.Option1
 {
     internal class Option1Manager : AnimationBehaviour, IUIManager
     {
@@ -16,8 +17,6 @@ namespace UI.Title.Option1
             KeyConfig,
             Back
         }
-
-        [SerializeField] private SimpleUnderBarController bar;
 
         [SerializeField] private CursorController<Nav> cursor;
         [SerializeField] private FadeInOutButton video;
@@ -43,7 +42,6 @@ namespace UI.Title.Option1
         public void Initialized(ContentTransform content)
         {
             gameObject.SetActive(true);
-            bar.AnimateIn();
             OnCancel();
             Animation(content);
             SetState(Nav.Video);
@@ -104,20 +102,17 @@ namespace UI.Title.Option1
 
         public void Finished(ContentTransform content, Action onFinished)
         {
-            bar.AnimateOut(() =>
-            {
-                Animation(
-                    content,
-                    new AnimationListener
+            Animation(
+                content,
+                new AnimationListener
+                {
+                    OnFinished = () =>
                     {
-                        OnFinished = () =>
-                        {
-                            gameObject.SetActive(false);
-                            onFinished?.Invoke();
-                        }
+                        gameObject.SetActive(false);
+                        onFinished?.Invoke();
                     }
-                );
-            });
+                }
+            );
         }
 
         public AnimationBehaviour GetContext()

@@ -1,5 +1,6 @@
 ﻿using System;
 using AnimationPro.RunTime;
+using Core.Utility.UI.Navigation;
 using UnityEngine;
 
 namespace UI.Title.Credit

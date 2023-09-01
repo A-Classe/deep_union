@@ -1,10 +1,10 @@
 ﻿using System;
 using AnimationPro.RunTime;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
-namespace Core.Utility.UI
+namespace Core.Utility.UI.Component
 {
     public class SliderController : AnimationBehaviour
     {
