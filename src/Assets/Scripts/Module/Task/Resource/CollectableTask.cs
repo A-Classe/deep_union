@@ -3,6 +3,7 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using GameMain.Presenter;
 using UnityEngine;
+using Wanna.DebugEx;
 
 namespace Module.Task
 {
@@ -13,9 +14,9 @@ namespace Module.Task
     public class CollectableTask : MonoBehaviour
     {
         [SerializeField] private GameParam gameParam;
+        [SerializeField] private int resourceCount;
 
         private BaseTask targetTask;
-        private int resourceCount;
         private CancellationTokenSource collectCanceller;
 
         public event Action<int> OnCollected;
@@ -38,19 +39,22 @@ namespace Module.Task
                 collectCanceller?.Cancel();
                 collectCanceller?.Dispose();
 
-                //余ったリソースも送る(仕様としては例外的)
-                SendResource();
+                if (state == TaskState.Completed)
+                {
+                    //完了時は余ったリソースも送る(仕様としては例外的)
+                    SendResource();
+                }
             }
         }
 
+
         private async UniTaskVoid StartCollection(CancellationToken cancellationToken)
         {
-            //収集間隔はワーカー数 * 任意の係数
-            TimeSpan collectSpan = TimeSpan.FromSeconds(targetTask.WorkerCount * gameParam.CollectFactor);
-
             while (!cancellationToken.IsCancellationRequested)
             {
-                await UniTask.Delay(collectSpan, cancellationToken: cancellationToken);
+                //収集間隔はワーカー数 * 任意の係数
+
+                await WaitForCollectionStep(cancellationToken);
 
                 resourceCount += 1;
 
@@ -59,6 +63,18 @@ namespace Module.Task
                     SendResource();
                 }
             }
+        }
+
+        private async UniTask WaitForCollectionStep(CancellationToken cancellationToken)
+        {
+            float checkTime = 0f;
+
+            await UniTask.WaitUntil(() =>
+            {
+                checkTime += Time.deltaTime;
+
+                return checkTime >= gameParam.CollectFactor / targetTask.WorkerCount;
+            }, cancellationToken: cancellationToken);
         }
 
         private void SendResource()
