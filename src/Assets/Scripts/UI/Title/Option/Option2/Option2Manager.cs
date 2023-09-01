@@ -1,6 +1,5 @@
 ﻿using System;
 using AnimationPro.RunTime;
-using Core.Utility.UI;
 using Core.Utility.UI.Component;
 using Core.Utility.UI.Component.Cursor;
 using Core.Utility.UI.Navigation;
@@ -30,12 +29,6 @@ namespace UI.Title.Option.Option2
 
         private Nav? current;
 
-        public event Action OnBack;
-
-        public event Action<float> OnBrightness;
-
-        public event Action<bool> OnFullScreen;
-
         private void Start()
         {
             cursor.AddPoint(Nav.FullScreen, fullScreen.rectTransform);
@@ -43,11 +36,6 @@ namespace UI.Title.Option.Option2
             cursor.AddPoint(Nav.Back, back.rectTransform);
             current = Nav.FullScreen;
             bright.Setup(100f, 0f, 70f);
-        }
-
-        public void SetValues(bool fullscreen, int brightVal)
-        {
-            bright.SetValue(brightVal);
         }
 
         public void Initialized(ContentTransform content)
@@ -136,6 +124,17 @@ namespace UI.Title.Option.Option2
         public AnimationBehaviour GetContext()
         {
             return this;
+        }
+
+        public event Action OnBack;
+
+        public event Action<float> OnBrightness;
+
+        public event Action<bool> OnFullScreen;
+
+        public void SetValues(bool fullscreen, int brightVal)
+        {
+            bright.SetValue(brightVal);
         }
 
 

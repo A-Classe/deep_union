@@ -14,17 +14,17 @@ namespace UI.Title
 {
     internal class TitleRouter : IStartable
     {
-        
+        private readonly CreditManager credit;
+
+        private readonly UserPreference data;
+
+        private readonly Navigation<Nav> navigation;
+
 
         private readonly OptionManager option;
         private readonly QuitManager quit;
         private readonly StageSelectManager stageSelect;
         private readonly TitleManager title;
-        private readonly CreditManager credit;
-
-        private readonly UserPreference data;
-        
-        private readonly Navigation<Nav> navigation;
 
         [Inject]
         public TitleRouter(
@@ -46,11 +46,11 @@ namespace UI.Title
             option.SetPreference(data);
             var initialManagers = new Dictionary<Nav, IUIManager>
             {
-                {Nav.Title, title},
-                {Nav.Quit, quit},
-                {Nav.Option, option},
-                {Nav.Credit, credit},
-                {Nav.StageSelect, stageSelect}
+                { Nav.Title, title },
+                { Nav.Quit, quit },
+                { Nav.Option, option },
+                { Nav.Credit, credit },
+                { Nav.StageSelect, stageSelect }
             };
             navigation = new Navigation<Nav>(initialManagers);
         }
@@ -58,23 +58,19 @@ namespace UI.Title
 
         public void Start()
         {
-
             SetNavigation();
             NavigateToTitle();
-            
-            
+
+
             data.Delete();
             data.Load();
         }
 
 
-
-    
-
         private void SetNavigation()
         {
             navigation.OnCancel += _ => { OnCanceled(); };
-            
+
             title.OnQuit += NavigateToQuit;
             title.OnOption += NavigateToOption;
             title.OnCredit += NavigateToCredit;
@@ -100,6 +96,7 @@ namespace UI.Title
         {
             Debug.Log("StageSelected : " + nav);
         }
+
         private void NavigateToTitle()
         {
             navigation.SetActive(true);
@@ -120,7 +117,7 @@ namespace UI.Title
                     break;
             }
         }
-        
+
 
         private void NavigateToPlay()
         {

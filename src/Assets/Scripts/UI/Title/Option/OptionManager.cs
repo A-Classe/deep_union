@@ -12,42 +12,78 @@ using UnityEngine;
 
 namespace UI.Title.Option
 {
-    public class OptionManager: AnimationBehaviour, IUIManager
+    public class OptionManager : AnimationBehaviour, IUIManager
     {
-        public event Action OnBack;
-        
         [SerializeField] private Option1Manager option1;
         [SerializeField] private Option2Manager option2;
         [SerializeField] private Option3Manager option3;
         [SerializeField] private Option4Manager option4;
 
-        private Navigation<Nav> navigation;
-        
         [SerializeField] private SimpleUnderBarController bar;
+
+        private Navigation<Nav> navigation;
 
         private UserPreference preference;
 
-        private enum Nav
-        {
-            Option1,
-            Option2,
-            Option3,
-            Option4
-        }
         protected override void Awake()
         {
             base.Awake();
             var initialManagers = new Dictionary<Nav, IUIManager>
             {
-                {Nav.Option1, option1},
-                { Nav.Option2 , option2},
-                { Nav.Option3 , option3},
-                { Nav.Option4, option4}
+                { Nav.Option1, option1 },
+                { Nav.Option2, option2 },
+                { Nav.Option3, option3 },
+                { Nav.Option4, option4 }
             };
             navigation = new Navigation<Nav>(initialManagers);
-            
+
             SetNavigation();
         }
+
+
+        public void Initialized(ContentTransform content)
+        {
+            gameObject.SetActive(true);
+            navigation.SetActive(true);
+            bar.AnimateIn();
+            OnCancel();
+            Animation(content);
+            navigation.SetScreen(Nav.Option1);
+        }
+
+        public void Select(Vector2 direction)
+        {
+        }
+
+        public void Clicked()
+        {
+        }
+
+        public void Finished(ContentTransform content, Action onFinished)
+        {
+            bar.AnimateOut(() =>
+            {
+                Animation(
+                    content,
+                    new AnimationListener
+                    {
+                        OnFinished = () =>
+                        {
+                            gameObject.SetActive(false);
+                            navigation.SetActive(false);
+                            onFinished?.Invoke();
+                        }
+                    }
+                );
+            });
+        }
+
+        public AnimationBehaviour GetContext()
+        {
+            return this;
+        }
+
+        public event Action OnBack;
 
         private void SetNavigation()
         {
@@ -82,17 +118,17 @@ namespace UI.Title.Option
 
             option2.OnFullScreen += isOn =>
             {
-                UserData data = preference.GetUserData();
+                var data = preference.GetUserData();
                 data.fullScreen.value = isOn;
                 preference.SetUserData(data);
             };
             option2.OnBrightness += value =>
             {
-                UserData data = preference.GetUserData();
+                var data = preference.GetUserData();
                 data.bright.value = (int)value;
                 preference.SetUserData(data);
             };
-            
+
             option2.OnBack += () =>
             {
                 preference.Save();
@@ -101,7 +137,7 @@ namespace UI.Title.Option
 
             option3.OnVolumeChanged += (nav, f) =>
             {
-                int volume = (int)f;
+                var volume = (int)f;
                 switch (nav)
                 {
                     case Option3Manager.Nav.Master:
@@ -127,40 +163,6 @@ namespace UI.Title.Option
             };
         }
 
-
-        public void Initialized(ContentTransform content)
-        {
-            gameObject.SetActive(true);
-            navigation.SetActive(true);
-            bar.AnimateIn();
-            OnCancel();
-            Animation(content);
-            navigation.SetScreen(Nav.Option1);
-        }
-
-        public void Select(Vector2 direction) { }
-
-        public void Clicked() { }
-
-        public void Finished(ContentTransform content, Action onFinished)
-        {
-            bar.AnimateOut(() =>
-            {
-                Animation(
-                    content,
-                    new AnimationListener
-                    {
-                        OnFinished = () =>
-                        {
-                            gameObject.SetActive(false);
-                            navigation.SetActive(false);
-                            onFinished?.Invoke();
-                        }
-                    }
-                );
-            });
-        }
-
         public void SetPreference(UserPreference manager)
         {
             preference = manager;
@@ -170,7 +172,7 @@ namespace UI.Title.Option
         {
             navigation.SetScreen(Nav.Option2);
             preference.Load();
-            UserData user = preference.GetUserData();
+            var user = preference.GetUserData();
             option2.SetValues(user.fullScreen.value, user.bright.value);
         }
 
@@ -178,19 +180,25 @@ namespace UI.Title.Option
         {
             navigation.SetScreen(Nav.Option3);
             preference.Load();
-            UserData user = preference.GetUserData();
+            var user = preference.GetUserData();
             option3.SetValues(
                 user.masterVolume.value,
                 user.musicVolume.value,
                 user.effectVolume.value
             );
         }
-        
+
         private void NavigateToKeyConfig()
         {
             navigation.SetScreen(Nav.Option4);
         }
 
-        public AnimationBehaviour GetContext() => this;
+        private enum Nav
+        {
+            Option1,
+            Option2,
+            Option3,
+            Option4
+        }
     }
 }

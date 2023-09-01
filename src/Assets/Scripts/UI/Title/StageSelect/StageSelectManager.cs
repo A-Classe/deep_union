@@ -33,10 +33,6 @@ namespace UI.Title.StageSelect
 
         private Nav? current;
 
-        public event Action OnBack;
-
-        public event Action<Nav> OnStage;
-
         private void Start()
         {
             cursor.AddPoint(Nav.Stage1, stage1.rectTransform);
@@ -55,31 +51,6 @@ namespace UI.Title.StageSelect
             OnCancel();
             Animation(content);
             SetState(Nav.Stage1);
-        }
-
-        public void SetScores(Dictionary<StageData.Stage, uint> scores)
-        {
-            foreach (var keyValuePair in scores)
-            {
-                switch (keyValuePair.Key)
-                {
-                    case StageData.Stage.Stage1:
-                        stage1.SetScore(keyValuePair.Value);
-                        break;
-                    case StageData.Stage.Stage2:
-                        stage2.SetScore(keyValuePair.Value);
-                        break;
-                    case StageData.Stage.Stage3:
-                        stage3.SetScore(keyValuePair.Value);
-                        break;
-                    case StageData.Stage.Stage4:
-                        stage4.SetScore(keyValuePair.Value);
-                        break;
-                    case StageData.Stage.Stage5:
-                        stage4.SetScore(keyValuePair.Value);
-                        break;
-                }
-            }
         }
 
         /// <summary>
@@ -162,6 +133,33 @@ namespace UI.Title.StageSelect
         public AnimationBehaviour GetContext()
         {
             return this;
+        }
+
+        public event Action OnBack;
+
+        public event Action<Nav> OnStage;
+
+        public void SetScores(Dictionary<StageData.Stage, uint> scores)
+        {
+            foreach (var keyValuePair in scores)
+                switch (keyValuePair.Key)
+                {
+                    case StageData.Stage.Stage1:
+                        stage1.SetScore(keyValuePair.Value);
+                        break;
+                    case StageData.Stage.Stage2:
+                        stage2.SetScore(keyValuePair.Value);
+                        break;
+                    case StageData.Stage.Stage3:
+                        stage3.SetScore(keyValuePair.Value);
+                        break;
+                    case StageData.Stage.Stage4:
+                        stage4.SetScore(keyValuePair.Value);
+                        break;
+                    case StageData.Stage.Stage5:
+                        stage4.SetScore(keyValuePair.Value);
+                        break;
+                }
         }
 
 

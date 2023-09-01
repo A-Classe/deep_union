@@ -1,6 +1,5 @@
 ﻿using System;
 using AnimationPro.RunTime;
-using Core.Utility.UI;
 using Core.Utility.UI.Component;
 using Core.Utility.UI.Component.Cursor;
 using Core.Utility.UI.Navigation;
@@ -17,7 +16,7 @@ namespace UI.Title.Option.Option3
             Effect,
             Back
         }
-        
+
 
         [SerializeField] private CursorController<Nav> cursor;
         [SerializeField] private SliderController master;
@@ -26,10 +25,6 @@ namespace UI.Title.Option.Option3
         [SerializeField] private FadeInOutButton back;
 
         private Nav? current;
-
-        public event Action OnBack;
-
-        public event Action<Nav, float> OnVolumeChanged;
 
         private void Start()
         {
@@ -41,13 +36,6 @@ namespace UI.Title.Option.Option3
             master.Setup(100f, 0f, 70f);
             music.Setup(100f, 0f, 70f);
             effect.Setup(100f, 0f, 70f);
-        }
-
-        public void SetValues(int masterVol, int musicVol, int effectVol)
-        {
-            master.SetValue(masterVol);
-            music.SetValue(musicVol);
-            effect.SetValue(effectVol);
         }
 
         public void Initialized(ContentTransform content)
@@ -148,6 +136,17 @@ namespace UI.Title.Option.Option3
         public AnimationBehaviour GetContext()
         {
             return this;
+        }
+
+        public event Action OnBack;
+
+        public event Action<Nav, float> OnVolumeChanged;
+
+        public void SetValues(int masterVol, int musicVol, int effectVol)
+        {
+            master.SetValue(masterVol);
+            music.SetValue(musicVol);
+            effect.SetValue(effectVol);
         }
 
 

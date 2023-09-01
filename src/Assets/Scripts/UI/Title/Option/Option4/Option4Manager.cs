@@ -7,8 +7,6 @@ namespace UI.Title.Option.Option4
 {
     public class Option4Manager : AnimationBehaviour, IUIManager
     {
-        public event Action OnBack;
-
         public void Initialized(ContentTransform content)
         {
             gameObject.SetActive(true);
@@ -44,5 +42,7 @@ namespace UI.Title.Option.Option4
         {
             return this;
         }
+
+        public event Action OnBack;
     }
 }

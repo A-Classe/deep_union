@@ -1,6 +1,5 @@
 ﻿using System;
 using AnimationPro.RunTime;
-using Core.Utility.UI;
 using Core.Utility.UI.Component;
 using Core.Utility.UI.Component.Cursor;
 using Core.Utility.UI.Navigation;
@@ -23,8 +22,6 @@ namespace UI.Title.Quit
         [SerializeField] private FadeInOutButton no;
 
         private Nav? current;
-
-        public event Action<bool> OnClick;
 
         private void Start()
         {
@@ -95,6 +92,8 @@ namespace UI.Title.Quit
         {
             return this;
         }
+
+        public event Action<bool> OnClick;
 
 
         private void SetState(Nav setNav)
