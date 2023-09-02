@@ -20,15 +20,15 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: B_WaterCorstic
-  m_Shader: {fileID: -6465566751694194690, guid: dbe12bfee47c4a94ca32022e718c651b,
+  m_Name: C_WaterCorstic
+  m_Shader: {fileID: -6465566751694194690, guid: ab66db560fd1d334da03aea6709777d4,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -74,6 +74,14 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_4b6d6f6e12e24e06914a79ef66589ab9_Texture_1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_e980ac0a771d4027931b438b12809096_Texture_1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -93,11 +101,12 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
-    - _Alpha_Tr: 0.3
+    - _Alpha_Tr: 7.41
     - _Blend: 0
     - _BumpScale: 1
-    - _CausticScale: -0.02
+    - _CausticScale: 0.03
     - _CauticsScale: 0.41
+    - _CellDensity: 20.25
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
@@ -107,14 +116,16 @@ Material:
     - _DecalMeshViewBias: 0
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _DrawOrder: 0
+    - _DrawOrder: -14
     - _DstBlend: 0
     - _EnvironmentReflections: 1
+    - _FresnelPower: 3.4
+    - _FresnelScale: 0.13
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _LightIntensity: 2.58
-    - _Lightintensity: -2.5
+    - _Lightintensity: 1.06
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -126,28 +137,28 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _Transparent: 0.27
     - _UseAoMap: 0
     - _UseColorMap: 0
     - _UseEmissiveMap: 0
     - _UseMetallicMap: 0
     - _UseNormalMap: 0
     - _UseRoughnessMap: 0
-    - _VoronoiPower: 7.17
+    - _VoronoiPower: 6.8
     - _WatarLevel: 0
     - _WaterLevel: 6.25
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - _2nd_LightColor: {r: 1, g: 0.28930807, b: 0.28930807, a: 0}
+    - _3rd_LightColor: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0.26100624, g: 0.8372022, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Light: {r: 6.16, g: 44.31, b: -2.21, a: 14.53}
-    - _LightColor: {r: 1, g: 0.9978076, b: 0.9685534, a: 1}
-    - _MainColor: {r: 0.990566, g: 0.990566, b: 0.990566, a: 0}
+    - _LightColor: {r: 1, g: 0.8851237, b: 0.68553454, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _SubLight: {r: 0.5280645, g: 0.83333814, b: 0.8396226, a: 0}
+    - _Sub_LightColor: {r: 0.8599376, g: 1, b: 0.43081754, a: 0}
     - _UvOffset: {r: 0, g: 0, b: 0, a: 0}
     - _UvTiling: {r: 1, g: 1, b: 0, a: 0}
-    - _WaterColor: {r: 0.86477983, g: 1, b: 0.9760835, a: 0.3882353}
+    - _WaterColor: {r: 0.6981428, g: 0.9417408, b: 0.9528302, a: 0.3882353}
   m_BuildTextureStacks: []
