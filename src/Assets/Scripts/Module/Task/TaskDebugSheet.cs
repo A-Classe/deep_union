@@ -3,6 +3,7 @@ using System.Text;
 using Core.Debug;
 using UnityDebugSheet.Runtime.Core.Scripts;
 using UnityDebugSheet.Runtime.Core.Scripts.DefaultImpl.Cells;
+using UnityDebugSheet.Runtime.Foundation.TinyRecyclerView;
 using UnityEngine;
 using UnityEngine.UI;
 using Wanna.DebugEx;
@@ -44,7 +45,7 @@ namespace Module.Task
         private readonly List<(BaseTask task, Button button)> taskObserveButtons;
 
 
-        TaskDebugPage taskDebugPage;
+        private TaskDebugPage taskDebugPage;
 
         public TaskDebugSheet()
         {
@@ -61,6 +62,7 @@ namespace Module.Task
                         int pageId = taskDebugPage.AddPageLinkButton<TaskStatsPage>(baseTask.name, onLoad: page =>
                         {
                             page.page.SetUp(baseTask);
+                            IRecyclerViewCellProvider provider = page.page as IRecyclerViewCellProvider;
                         });
 
                         Button button = taskDebugPage.GetCellIfExists(pageId).GetComponent<Button>();
