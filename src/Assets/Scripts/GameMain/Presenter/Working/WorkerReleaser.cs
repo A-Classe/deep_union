@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Core.Input;
 using Module.Task;
 using Module.Working;
 using Module.Working.Controller;
+using VContainer;
 using Wanna.DebugEx;
 
-namespace GameMain.Presenter
+namespace GameMain.Presenter.Working
 {
     /// <summary>
     ///     ワーカーのリリース処理を行うクラス
@@ -15,18 +15,13 @@ namespace GameMain.Presenter
     public class WorkerReleaser
     {
         private readonly IReadOnlyList<Assignment> assignments;
-        private readonly InputEvent releaseEvent;
         private readonly LeadPointConnector leadPointConnector;
 
+        [Inject]
         public WorkerReleaser(WorkerConnector workerConnector, LeadPointConnector leadPointConnector)
         {
             this.leadPointConnector = leadPointConnector;
             assignments = workerConnector.Assignments;
-
-            //入力の登録
-            releaseEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Release);
-            releaseEvent.Started += _ => workerConnector.StartLoop(Release).Forget();
-            releaseEvent.Canceled += _ => workerConnector.CancelLoop();
 
             RegisterReleaseEvents();
         }
@@ -41,7 +36,7 @@ namespace GameMain.Presenter
                 };
         }
 
-        private void Release(BaseTask nearestTask)
+        public void Release(BaseTask nearestTask)
         {
             try
             {
@@ -98,10 +93,6 @@ namespace GameMain.Presenter
                 throw;
             }
         }
-
-
-        void UpdateTask(BaseTask task, Worker worker) { }
-
 
         private Worker GetNearestWorker(Assignment assignment)
         {

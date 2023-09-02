@@ -22,9 +22,6 @@ namespace GameMain.Task
 
         private RuntimeNavMeshBaker navMeshBaker;
 
-        [SerializeField] private Collider col;
-
-
         public override void Initialize(IObjectResolver container)
         {
             navMeshBaker = container.Resolve<RuntimeNavMeshBaker>();

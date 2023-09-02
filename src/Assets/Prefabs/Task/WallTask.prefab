@@ -319,6 +319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6432846725614552387}
   - component: {fileID: 6432846725614552385}
+  - component: {fileID: 3766925610363818856}
   - component: {fileID: 6432846725614552389}
   m_Layer: 8
   m_Name: WallTask
@@ -364,7 +365,19 @@ MonoBehaviour:
   state: 0
   currentProgress: 0
   currentWorkerCount: 0
-  col: {fileID: 7668304189865901888}
+--- !u!114 &3766925610363818856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6432846725614552447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4891286eb22b45018e28cc9e4a69dab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameParam: {fileID: 11400000, guid: 7e6f666ad25bfdb4dbed3523c0106175, type: 2}
 --- !u!54 &6432846725614552389
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -1,37 +1,32 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Core.Input;
 using Module.Task;
 using Module.Working;
 using Module.Working.Controller;
 using Module.Working.State;
 using UnityEngine;
+using VContainer;
 using Wanna.DebugEx;
 
-namespace GameMain.Presenter
+namespace GameMain.Presenter.Working
 {
     /// <summary>
     ///     ワーカーのアサイン処理を行うクラス
     /// </summary>
     public class WorkerAssigner
     {
-        private readonly InputEvent assignEvent;
         private readonly IReadOnlyList<Assignment> assignments;
         private readonly LeadPointConnector leadPointConnector;
 
+        [Inject]
         public WorkerAssigner(WorkerConnector workerConnector, LeadPointConnector leadPointConnector)
         {
             this.leadPointConnector = leadPointConnector;
             assignments = workerConnector.Assignments;
-
-            //入力の登録
-            assignEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Assign);
-            assignEvent.Started += _ => workerConnector.StartLoop(Assign).Forget();
-            assignEvent.Canceled += _ => workerConnector.CancelLoop();
         }
 
-        private void Assign(BaseTask nearestTask)
+        public void Assign(BaseTask nearestTask)
         {
             //タスクが完了していたらアサインしない
             if (nearestTask.State == TaskState.Completed)

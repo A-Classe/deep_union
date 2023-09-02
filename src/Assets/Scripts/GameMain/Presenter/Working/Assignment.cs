@@ -4,7 +4,7 @@ using Module.Task;
 using Module.Working;
 using UnityEngine;
 
-namespace GameMain.Presenter
+namespace GameMain.Presenter.Working
 {
     public readonly struct Assignment : IEquatable<Assignment>
     {

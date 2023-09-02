@@ -3,31 +3,23 @@ using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using Module.Task;
-using Module.Working.Controller;
 using VContainer;
-using VContainer.Unity;
 
-namespace GameMain.Presenter
+namespace GameMain.Presenter.Working
 {
     /// <summary>
     ///     ワーカーとタスクを仲介するクラス
     /// </summary>
-    public class WorkerConnector : IInitializable
+    public class WorkerConnector 
     {
         private readonly List<Assignment> assignments;
         private readonly GameParam gameParam;
         private readonly TaskDetector taskDetector;
 
-        // ReSharper disable once NotAccessedField.Local
-        private readonly WorkerAssigner workerAssigner;
-
-        // ReSharper disable once NotAccessedField.Local
-        private readonly WorkerReleaser workerReleaser;
-
         private CancellationTokenSource loopCanceller;
 
         [Inject]
-        public WorkerConnector(LeadPointConnector leadPointConnector, TaskDetector taskDetector, GameParam gameParam)
+        public WorkerConnector(TaskDetector taskDetector, GameParam gameParam)
         {
             this.taskDetector = taskDetector;
             this.gameParam = gameParam;
@@ -35,14 +27,9 @@ namespace GameMain.Presenter
             loopCanceller = new CancellationTokenSource();
 
             CreateAssignments();
-
-            workerAssigner = new WorkerAssigner(this, leadPointConnector);
-            workerReleaser = new WorkerReleaser(this, leadPointConnector);
         }
 
         public IReadOnlyList<Assignment> Assignments => assignments;
-
-        public void Initialize() { }
 
         private void CreateAssignments()
         {

@@ -15,7 +15,7 @@ namespace Module.Task
     public abstract class BaseTask : MonoBehaviour, ITaskSystem
     {
         [SerializeField] private float taskSize;
-        [SerializeField] private float mw;
+        [SerializeField] private int mw;
         [SerializeField] private bool debugAssignPoints;
 
         private List<AssignPoint> assignPoints;
@@ -26,6 +26,8 @@ namespace Module.Task
         [SerializeField] private float currentProgress;
         [SerializeField] private int currentWorkerCount;
         private float prevWorkerCount;
+
+        public int MonoWork => mw;
 
         /// <summary>
         ///     現在割り当てられているワーカー数
