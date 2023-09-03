@@ -16,6 +16,8 @@ namespace Module.Working.Controller
         private readonly List<Vector3> offsets;
         private readonly Dictionary<Worker, Vector3> workerPoints;
 
+        public int WorkerCount => workerPoints.Count;
+
         [Inject]
         public LeadPointConnector(WorkerController target, SpawnPoint spawnPoint)
         {

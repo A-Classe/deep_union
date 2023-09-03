@@ -18,11 +18,6 @@ namespace GameMain.Presenter.Resource
         {
             this.resourceContainer = resourceContainer;
             collectableTasks = TaskUtil.FindSceneTasks<CollectableTask>();
-
-            resourceContainer.OnResourceChanged += (prev, current) =>
-            {
-                DebugEx.Log($"リソースが増えました{prev} => {current}");
-            };
         }
 
         public void Initialize()
