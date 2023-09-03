@@ -16,17 +16,14 @@ namespace Module.Working.Controller
         [Header("移動速度")] [SerializeField] private float controlSpeed;
 
         private InputEvent controlEvent;
-        private Rigidbody leaderRb;
 
         private void Awake()
         {
-            leaderRb = GetComponent<Rigidbody>();
-
             //入力イベントの生成
             controlEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Control);
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
             //リーダーの速度の更新
             UpdateLeaderVelocity();
@@ -34,13 +31,12 @@ namespace Module.Working.Controller
 
         private void UpdateLeaderVelocity()
         {
-            var input = controlEvent.ReadValue<Vector2>();
+            var input = controlEvent.ReadValue<Vector2>() ;
 
-            var velocity = leaderRb.velocity;
-            velocity.x += input.x * controlSpeed;
-            velocity.z += input.y * controlSpeed;
+            float moveX = input.x * controlSpeed * Time.deltaTime;
+            float moveY = input.y * controlSpeed * Time.deltaTime;
 
-            leaderRb.velocity = velocity;
+            transform.localPosition += new Vector3(moveX, 0f, moveY);
         }
     }
 }
