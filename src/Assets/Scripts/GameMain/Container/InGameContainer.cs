@@ -1,5 +1,6 @@
 ﻿using System.GameProgress;
 using Core.NavMesh;
+using Debug;
 using GameMain.Presenter;
 using GameMain.Presenter.Resource;
 using GameMain.Presenter.Working;
@@ -39,6 +40,7 @@ namespace GameMain.Container
             builder.RegisterEntryPoint<ProgressBarSwitcher>();
             builder.RegisterEntryPoint<ResourcePresenter>();
             builder.RegisterEntryPoint<WorkerPresenter>();
+            builder.RegisterEntryPoint<SceneDebugTool>();
 
             builder.Register<WorkerSpawner>(Lifetime.Singleton);
             builder.Register<WorkerAgent>(Lifetime.Singleton);

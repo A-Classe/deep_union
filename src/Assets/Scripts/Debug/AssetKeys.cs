@@ -1,5 +1,5 @@
 ﻿#if !EXCLUDE_UNITY_DEBUG_SHEET
-namespace Core.Debug
+namespace Debug
 {
     public static class AssetKeys
     {

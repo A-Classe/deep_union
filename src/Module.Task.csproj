@@ -51,8 +51,6 @@
      <Compile Include="Assets\Scripts\Module\Task\Resource\CollectableTask.cs" />
      <Compile Include="Assets\Scripts\Module\Task\AssignPoint.cs" />
      <Compile Include="Assets\Scripts\Module\Task\Editor\BaseTaskEditor.cs" />
-     <Compile Include="Assets\Scripts\Module\Task\TaskDebugSheet.cs" />
-     <Compile Include="Assets\Scripts\Module\Task\TaskStatsPage.cs" />
      <Folder Include="Assets\Scripts\Module\Task\Resource" />
      <Folder Include="Assets\Scripts\Module\Task\Editor" />
      <Folder Include="Assets\Scripts\Module\Task" />
@@ -762,10 +760,6 @@
     <ProjectReference Include="Unity.InputSystem.csproj">
       <Project>{4e57be16-99a5-d0e9-6d23-a67bf0e20903}</Project>
       <Name>Unity.InputSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="Core.Debug.csproj">
-      <Project>{3791e991-9286-96a9-8978-ffb5c8bf64d3}</Project>
-      <Name>Core.Debug</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

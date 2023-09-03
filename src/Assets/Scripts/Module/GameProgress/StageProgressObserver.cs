@@ -20,18 +20,24 @@ namespace System.GameProgress
 
         public event Action OnCompleted;
 
+        public float Progress => Mathf.InverseLerp(initDistance, 0f, GetDistance());
+
+        private readonly float initDistance;
+
         [Inject]
         public StageProgressObserver(PlayerController playerController, GoalPoint goalPoint)
         {
             this.playerController = playerController;
             this.goalPoint = goalPoint;
             cTokenSource = new CancellationTokenSource();
+
+            initDistance = GetDistance();
         }
 
         public async UniTaskVoid Start()
         {
             //ゴール到着まで待機
-            await WaitForArrived(cTokenSource.Token);
+            await UniTask.WaitUntil(() => Progress >= 1f, cancellationToken: cTokenSource.Token);
 
             if (cTokenSource.IsCancellationRequested)
                 return;
@@ -45,17 +51,9 @@ namespace System.GameProgress
             cTokenSource.Dispose();
         }
 
-        UniTask WaitForArrived(CancellationToken cToken)
+        float GetDistance()
         {
-            return UniTask.WaitUntil(IsArrived, cancellationToken: cToken);
-
-            bool IsArrived()
-            {
-                Vector3 goalPos = goalPoint.transform.position;
-                Vector3 playerPos = playerController.transform.position;
-
-                return (goalPos - playerPos).z <= 0;
-            }
+            return (goalPoint.transform.position - playerController.transform.position).z;
         }
     }
 }

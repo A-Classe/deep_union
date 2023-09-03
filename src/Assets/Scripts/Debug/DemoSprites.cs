@@ -1,7 +1,7 @@
 ﻿#if !EXCLUDE_UNITY_DEBUG_SHEET
 using UnityEngine;
 
-namespace Core.Debug
+namespace Debug
 {
     public static class DemoSprites
     {
