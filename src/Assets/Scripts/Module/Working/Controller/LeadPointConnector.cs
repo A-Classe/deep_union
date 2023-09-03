@@ -94,8 +94,6 @@ namespace Module.Working.Controller
         {
             isWorldMoving = enable;
 
-            DebugEx.Log(isWorldMoving);
-            
             foreach (Worker worker in workerPoints.Keys)
             {
                 worker.IsWorldMoving = enable;
