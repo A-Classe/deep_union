@@ -18,17 +18,19 @@ namespace Module.Player.Controller
         private IPlayerState currentState;
 
         private IPlayerState[] states;
+        public event Action<PlayerState> OnStateChanged;
+
         private void Awake()
         {
             Initialize();
         }
-        
+
 
         private void FixedUpdate()
         {
             StateUpdate();
         }
-        
+
         /// <summary>
         /// objectの初期化
         /// </summary>
@@ -40,7 +42,7 @@ namespace Module.Player.Controller
                 new GoState(this),
                 new PauseState()
             };
-            
+
             SetState(PlayerState.Pause);
         }
 
@@ -61,6 +63,8 @@ namespace Module.Player.Controller
                 PlayerState.Pause => states[2],
                 _ => null
             };
+
+            OnStateChanged?.Invoke(state);
         }
 
         public void InitParam(PlayerInitModel model)
