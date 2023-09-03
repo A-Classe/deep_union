@@ -22,6 +22,7 @@ namespace Module.Working
         public Vector3 Offset { get; private set; }
 
         public bool IsLocked { get; private set; }
+        public bool IsWorldMoving { get; set; }
 
         private void Awake()
         {

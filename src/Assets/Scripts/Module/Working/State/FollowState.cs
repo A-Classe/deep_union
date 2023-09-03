@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using Wanna.DebugEx;
 
 namespace Module.Working.State
 {
@@ -11,11 +12,17 @@ namespace Module.Working.State
 
         private static readonly int IsFollowing = Animator.StringToHash("Following");
 
+        private Vector3 prevPos;
+        private Vector3 currentPos;
+
         public FollowState(Worker worker)
         {
             this.worker = worker;
             navMeshAgent = worker.GetComponent<NavMeshAgent>();
             workerAnimator = worker.animator;
+
+            prevPos = worker.transform.position;
+            currentPos = prevPos;
         }
 
         public WorkerState WorkerState => WorkerState.Following;
@@ -31,6 +38,9 @@ namespace Module.Working.State
 
         public void Update()
         {
+            prevPos = currentPos;
+            currentPos = worker.transform.position;
+
             navMeshAgent.SetDestination(worker.Target.position + worker.Offset);
 
             //リーダーに追いついたとき
@@ -49,7 +59,7 @@ namespace Module.Working.State
 
         bool IsStopped()
         {
-            return isMoving && navMeshAgent.velocity.sqrMagnitude == 0f;
+            return isMoving && navMeshAgent.velocity.sqrMagnitude == 0f && !worker.IsWorldMoving;
         }
 
         bool IsMoved()

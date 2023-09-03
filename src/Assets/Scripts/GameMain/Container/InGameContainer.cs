@@ -41,6 +41,7 @@ namespace GameMain.Container
             builder.RegisterEntryPoint<ResourcePresenter>();
             builder.RegisterEntryPoint<WorkerPresenter>();
             builder.RegisterEntryPoint<SceneDebugTool>();
+            builder.RegisterEntryPoint<LeaderPresenter>();
 
             builder.Register<WorkerSpawner>(Lifetime.Singleton);
             builder.Register<WorkerAgent>(Lifetime.Singleton);
