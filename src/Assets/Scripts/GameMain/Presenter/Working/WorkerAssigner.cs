@@ -18,11 +18,15 @@ namespace GameMain.Presenter.Working
     {
         private readonly IReadOnlyList<Assignment> assignments;
         private readonly LeadPointConnector leadPointConnector;
+        private readonly GameParam gameParam;
+
+        public float LoopInterval => gameParam.AssignInterval;
 
         [Inject]
-        public WorkerAssigner(WorkerConnector workerConnector, LeadPointConnector leadPointConnector)
+        public WorkerAssigner(WorkerConnector workerConnector, LeadPointConnector leadPointConnector, GameParam gameParam)
         {
             this.leadPointConnector = leadPointConnector;
+            this.gameParam = gameParam;
             assignments = workerConnector.Assignments;
         }
 

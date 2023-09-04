@@ -13,6 +13,7 @@ namespace GameMain.Presenter.Working
         private readonly WorkerAssigner workerAssigner;
         private readonly WorkerReleaser workerReleaser;
 
+
         [Inject]
         public WorkerPresenter(WorkerConnector workerConnector, WorkerAssigner workerAssigner, WorkerReleaser workerReleaser)
         {
@@ -25,11 +26,11 @@ namespace GameMain.Presenter.Working
         {
             //入力の登録
             var assignEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Assign);
-            assignEvent.Started += _ => workerConnector.StartLoop(workerAssigner.Assign).Forget();
+            assignEvent.Started += _ => workerConnector.StartLoop(workerAssigner.Assign, workerAssigner.LoopInterval).Forget();
             assignEvent.Canceled += _ => workerConnector.CancelLoop();
 
             var releaseEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Release);
-            releaseEvent.Started += _ => workerConnector.StartLoop(workerReleaser.Release).Forget();
+            releaseEvent.Started += _ => workerConnector.StartLoop(workerReleaser.Release, workerReleaser.LoopInterval).Forget();
             releaseEvent.Canceled += _ => workerConnector.CancelLoop();
         }
     }

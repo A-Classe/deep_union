@@ -10,7 +10,7 @@ namespace GameMain.Presenter.Working
     /// <summary>
     ///     ワーカーとタスクを仲介するクラス
     /// </summary>
-    public class WorkerConnector 
+    public class WorkerConnector
     {
         private readonly List<Assignment> assignments;
         private readonly GameParam gameParam;
@@ -36,12 +36,12 @@ namespace GameMain.Presenter.Working
             foreach (var task in TaskUtil.FindSceneTasks<BaseTask>()) assignments.Add(new Assignment(task, task.transform));
         }
 
-        public async UniTaskVoid StartLoop(Action<BaseTask> loopAction)
+        public async UniTaskVoid StartLoop(Action<BaseTask> loopAction, float loopInterval)
         {
             //既に行われているループを止める
             CancelLoop();
 
-            var delay = TimeSpan.FromSeconds(gameParam.AssignInterval);
+            var delay = TimeSpan.FromSeconds(loopInterval);
 
             while (!loopCanceller.IsCancellationRequested)
             {
