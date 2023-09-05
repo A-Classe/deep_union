@@ -26,6 +26,7 @@ namespace Module.Task
         [SerializeField] private float currentProgress;
         [SerializeField] private int currentWorkerCount;
         private float prevWorkerCount;
+        private Light detectAreaLight; 
 
         public int MonoWork => mw;
 
@@ -56,7 +57,7 @@ namespace Module.Task
 
         private void OnValidate()
         {
-            var col = transform.Find("DetectableArea").GetComponent<SphereCollider>();
+            var col = GetDetectArea().GetComponent<SphereCollider>();
 
             if (col != null)
             {
@@ -205,6 +206,11 @@ namespace Module.Task
         {
             Gizmos.color = new Color(0f, 0.83f, 0f, 0.41f);
             Gizmos.DrawSphere(transform.position, taskSize);
+        }
+
+        private GameObject GetDetectArea()
+        {
+             return transform.Find("DetectableArea").gameObject;
         }
     }
 }
