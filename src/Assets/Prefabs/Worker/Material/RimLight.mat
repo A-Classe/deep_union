@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: OutLine
-  m_Shader: {fileID: -6465566751694194690, guid: 4ecb5129969450f418244dd3a8c3486e,
+  m_Name: RimLight
+  m_Shader: {fileID: -6465566751694194690, guid: 03257a5ddb721ab42bcd7973213a3bae,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -95,7 +95,8 @@ Material:
     - _GlossyReflections: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _OutLineSize: 0.81
+    - _OutLineIntensity: 90.18
+    - _OutLineScale: 0.33
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -111,10 +112,10 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _OutLineColor: {r: 1, g: 0, b: 0, a: 0}
+    - _LightColor: {r: 0, g: 0.096090555, b: 1, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &4113381690700006408
+--- !u!114 &6887671411941576042
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
