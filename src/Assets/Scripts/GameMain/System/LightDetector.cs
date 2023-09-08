@@ -10,7 +10,6 @@ using Unity.Jobs;
 using Unity.Mathematics;
 using UnityEngine;
 using VContainer;
-using NotImplementedException = System.NotImplementedException;
 
 namespace GameMain.System
 {
@@ -39,7 +38,10 @@ namespace GameMain.System
             NativeArray<float3> workerPositions = new NativeArray<float3>(workerAgent.ActiveWorkers.Length, Allocator.TempJob);
             NativeArray<float3> lightPositions = new NativeArray<float3>(assignableAreas.Count, Allocator.TempJob);
 
-            foreach (Worker worker in workerAgent.ActiveWorkers) { }
+            foreach (Worker worker in workerAgent.ActiveWorkers)
+            {
+                
+            }
         }
 
         [BurstCompile]
