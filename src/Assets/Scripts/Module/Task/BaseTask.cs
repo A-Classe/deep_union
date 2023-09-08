@@ -14,11 +14,8 @@ namespace Module.Task
     [DisallowMultipleComponent]
     public abstract class BaseTask : MonoBehaviour, ITaskSystem
     {
-        [SerializeField] private float taskSize;
         [SerializeField] private int mw;
-        [SerializeField] private bool debugAssignPoints;
 
-        private List<AssignPoint> assignPoints;
         private List<Collider> taskColliders;
 
         [SerializeField] protected TaskState state = TaskState.Idle;
@@ -27,6 +24,8 @@ namespace Module.Task
         [SerializeField] private int currentWorkerCount;
         private float prevWorkerCount;
 
+        public float Progress => currentProgress;
+        public TaskState State => state;
         public int MonoWork => mw;
 
         /// <summary>
@@ -43,32 +42,10 @@ namespace Module.Task
             get => currentWorkerCount;
         }
 
-        // ReSharper disable once UnusedMember.Global
-        public float Progress => currentProgress;
-        public TaskState State => state;
-
         private void Awake()
         {
-            assignPoints = GetComponentsInChildren<AssignPoint>().ToList();
             taskColliders = GetComponentsInChildren<Collider>().ToList();
             taskColliders.AddRange(GetComponents<Collider>());
-        }
-
-        private void OnValidate()
-        {
-            var col = transform.Find("DetectableArea").GetComponent<SphereCollider>();
-
-            if (col != null)
-            {
-                col.radius = taskSize;
-            }
-            else
-            {
-                DebugEx.LogWarning($"GameObject:{gameObject.name}に{nameof(SphereCollider)}が含まれていません!");
-            }
-
-
-            SetEnableAssignPointDebug(debugAssignPoints);
         }
 
         /// <summary>
@@ -94,40 +71,6 @@ namespace Module.Task
         /// </summary>
         /// <param name="deltaTime">Time.deltaTime</param>
         protected virtual void ManagedUpdate(float deltaTime) { }
-
-        public bool TryGetNearestAssignPoint(Vector3 target, out Transform assignPoint)
-        {
-            //アサインできる座標がなかったらアサイン不可
-            if (assignPoints.Count == 0)
-            {
-                assignPoint = null;
-                return false;
-            }
-
-            assignPoints.Sort((a, b) =>
-                {
-                    Vector3 p1 = target - a.transform.position;
-                    Vector3 p2 = target - b.transform.position;
-
-                    if (p1.sqrMagnitude - p2.sqrMagnitude > 0)
-                    {
-                        return 1;
-                    }
-
-                    return -1;
-                }
-            );
-
-            assignPoint = assignPoints[0].transform;
-            assignPoints.RemoveAt(0);
-
-            return true;
-        }
-
-        public void ReleaseAssignPoint(Transform assignPoint)
-        {
-            assignPoints.Add(assignPoint.GetComponent<AssignPoint>());
-        }
 
         private void UpdateProgress(float deltaTime)
         {
@@ -185,26 +128,6 @@ namespace Module.Task
             }
 
             gameObject.SetActive(false);
-        }
-
-        void SetEnableAssignPointDebug(bool enable)
-        {
-            assignPoints = GetComponentsInChildren<AssignPoint>().ToList();
-
-            //アサインポイントのデブッグを有効化する
-            foreach (AssignPoint assignPoint in assignPoints)
-            {
-                if (assignPoint == null)
-                    return;
-
-                assignPoint.enabled = enable;
-            }
-        }
-
-        private void OnDrawGizmos()
-        {
-            Gizmos.color = new Color(0f, 0.83f, 0f, 0.41f);
-            Gizmos.DrawSphere(transform.position, taskSize);
         }
     }
 }

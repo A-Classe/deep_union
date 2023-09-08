@@ -6,6 +6,7 @@ using GameMain.Presenter;
 using Module.Player.Camera;
 using Module.Player.Controller;
 using Module.Player.State;
+using Module.Task;
 using Module.Working.Controller;
 using Module.Working.Factory;
 using VContainer;
@@ -16,7 +17,7 @@ namespace GameMain
     /// <summary>
     /// ゲームのエントリーポイント
     /// </summary>
-    public class GameRouter : IStartable, IDisposable
+    public class GameRouter : IStartable, ITickable, IDisposable
     {
         private readonly SpawnParam spawnParam;
         private readonly GameParam gameParam;
@@ -26,6 +27,7 @@ namespace GameMain
         private readonly CameraController cameraController;
         private readonly StageProgressObserver progressObserver;
         private readonly RuntimeNavMeshBaker runtimeNavMeshBaker;
+        private readonly TaskActivator taskActivator;
 
         private readonly WorkerSpawner workerSpawner;
 
@@ -39,7 +41,8 @@ namespace GameMain
             PlayerController playerController,
             CameraController cameraController,
             StageProgressObserver progressObserver,
-            RuntimeNavMeshBaker runtimeNavMeshBaker 
+            RuntimeNavMeshBaker runtimeNavMeshBaker,
+            TaskActivator taskActivator
         )
         {
             this.spawnParam = spawnParam;
@@ -50,6 +53,7 @@ namespace GameMain
             this.cameraController = cameraController;
             this.progressObserver = progressObserver;
             this.runtimeNavMeshBaker = runtimeNavMeshBaker;
+            this.taskActivator = taskActivator;
 
             this.workerSpawner = workerSpawner;
         }
@@ -89,6 +93,11 @@ namespace GameMain
         public void Dispose()
         {
             progressObserver.Cancel();
+        }
+
+        public void Tick()
+        {
+            taskActivator.Tick();
         }
     }
 }

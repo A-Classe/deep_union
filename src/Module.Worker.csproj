@@ -48,16 +48,21 @@
      <Compile Include="Assets\Scripts\Module\Working\Factory\SpawnParam.cs" />
      <Compile Include="Assets\Scripts\Module\Working\State\IdleState.cs" />
      <Compile Include="Assets\Scripts\Module\Working\State\WorkState.cs" />
+     <Compile Include="Assets\Scripts\Module\Working\Assign\AssignPoint.cs" />
      <Compile Include="Assets\Scripts\Module\Working\Factory\SpawnPoint.cs" />
      <Compile Include="Assets\Scripts\Module\Working\State\WorkerState.cs" />
      <Compile Include="Assets\Scripts\Module\Working\Controller\LeadPointConnector.cs" />
+     <Compile Include="Assets\Scripts\Module\Working\Assign\AssignableArea.cs" />
      <Compile Include="Assets\Scripts\Module\Working\Factory\WorkerSpawner.cs" />
      <Compile Include="Assets\Scripts\Module\Working\Factory\WorkerCreateModel.cs" />
      <Compile Include="Assets\Scripts\Module\Working\Worker.cs" />
+     <Compile Include="Assets\Scripts\Module\Working\Assign\EllipseCollider.cs" />
+     <Compile Include="Assets\Scripts\Module\Working\Assign\LightData.cs" />
      <Folder Include="Assets\Scripts\Module\Working\Controller" />
      <Folder Include="Assets\Scripts\Module\Working" />
      <Folder Include="Assets\Scripts\Module\Working\Factory" />
      <Folder Include="Assets\Scripts\Module\Working\State" />
+     <Folder Include="Assets\Scripts\Module\Working\Assign" />
      <None Include="Assets\Scripts\Module\Working\Module.Worker.asmdef" />
      <None Include="Assets\Scripts\Module\Working\Factory\SpawnParam.json" />
      <Reference Include="UnityEngine">
@@ -311,6 +316,9 @@
      </Reference>
      <Reference Include="UnityEditor.WindowsStandalone.Extensions">
      <HintPath>C:\Users\makar\Documents\Unity\2021.3.23f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Collections.LowLevel.ILSupport">
+     <HintPath>C:\Users\makar\Desktop\my-works\release_control\src\Library\PackageCache\com.unity.collections@1.2.4\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Plastic.Newtonsoft.Json">
      <HintPath>C:\Users\makar\Desktop\my-works\release_control\src\Library\PackageCache\com.unity.collab-proxy@2.0.3\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
@@ -735,6 +743,9 @@
      <Reference Include="VContainer">
      <HintPath>C:\Users\makar\Desktop\my-works\release_control\src\Library\ScriptAssemblies\VContainer.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+     <HintPath>C:\Users\makar\Desktop\my-works\release_control\src\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+     </Reference>
      <Reference Include="UnityEditor.UI">
      <HintPath>C:\Users\makar\Desktop\my-works\release_control\src\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
      </Reference>
@@ -758,6 +769,14 @@
     <ProjectReference Include="UniTask.csproj">
       <Project>{f52c406a-1600-d9d4-8306-967578deb673}</Project>
       <Name>UniTask</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Mathematics.csproj">
+      <Project>{e8267927-4196-6292-7814-a724023324dc}</Project>
+      <Name>Unity.Mathematics</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Burst.csproj">
+      <Project>{03b62124-33ac-59c5-2b68-773be4873e09}</Project>
+      <Name>Unity.Burst</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

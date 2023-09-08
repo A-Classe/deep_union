@@ -15,57 +15,32 @@ namespace GameMain.UI
     /// </summary>
     public class ProgressBarSwitcher : IStartable, ITickable
     {
-        private readonly Camera mainCamera;
         private readonly TaskProgressPool taskProgressPool;
-        private readonly BaseTask[] tasks;
+        private readonly TaskActivator taskActivator;
         private readonly Queue<(BaseTask task, TaskProgressView view)> activeViews;
 
-        private int head;
-        private int tail;
-
         [Inject]
-        public ProgressBarSwitcher(TaskProgressPool taskProgressPool)
+        public ProgressBarSwitcher(TaskProgressPool taskProgressPool, TaskActivator taskActivator)
         {
-            mainCamera = Camera.main;
-            activeViews = new Queue<(BaseTask task, TaskProgressView view)>();
             this.taskProgressPool = taskProgressPool;
-            tasks = SortTaskOrder(TaskUtil.FindSceneTasks<BaseTask>());
-        }
-
-        private BaseTask[] SortTaskOrder(IEnumerable<BaseTask> tasks)
-        {
-            float camZ = mainCamera.transform.position.z;
-            return tasks.OrderBy(task => task.transform.position.z - camZ).ToArray();
+            this.taskActivator = taskActivator;
+            activeViews = new Queue<(BaseTask task, TaskProgressView view)>();
         }
 
         public void Start()
         {
-            //ゲーム開始時に画面内に存在するタスクの進捗バー表示
-            foreach (BaseTask task in tasks)
+            foreach (var task in taskActivator.GetActiveTasks())
             {
-                Vector3 viewPos = mainCamera.WorldToViewportPoint(task.transform.position);
-
-                if (IsPassed(viewPos))
-                {
-                    head++;
-                    continue;
-                }
-
-                if (!IsAhead(viewPos))
-                {
-                    TaskProgressView view = taskProgressPool.GetProgressView(task.transform);
-                    activeViews.Enqueue((task, view));
-                    tail++;
-                }
+                OnTaskActivated(task);
             }
+
+            //ゲーム開始時に画面内に存在するタスクの進捗バー表示
+            taskActivator.OnTaskActivated += OnTaskActivated;
+            taskActivator.OnTaskDeactivated += OnTaskDeactivated;
         }
 
         public void Tick()
         {
-            //最も近いタスクと遠いタスクのカメラ外検知
-            UpdateHead();
-            UpdateTail();
-
             foreach ((BaseTask task, TaskProgressView view) element in activeViews)
             {
                 if (!element.view.IsEnabled)
@@ -83,47 +58,16 @@ namespace GameMain.UI
             }
         }
 
-        void UpdateHead()
+        void OnTaskActivated(BaseTask task)
         {
-            if (head >= tasks.Length)
-                return;
-
-            Transform headTransform = tasks[head].transform;
-            Vector3 viewPos = mainCamera.WorldToViewportPoint(headTransform.position);
-
-            if (IsPassed(viewPos))
-            {
-                (BaseTask task, TaskProgressView view) element = activeViews.Dequeue();
-                taskProgressPool.ReleaseProgressView(element.view);
-                head++;
-            }
+            var view = taskProgressPool.GetProgressView(task.transform);
+            activeViews.Enqueue((task, view));
         }
 
-        void UpdateTail()
+        void OnTaskDeactivated(BaseTask task)
         {
-            if (tail >= tasks.Length)
-                return;
-
-            BaseTask task = tasks[tail];
-            Vector3 viewPos = mainCamera.WorldToViewportPoint(task.transform.position);
-
-            if (!IsAhead(viewPos))
-            {
-                TaskProgressView view = taskProgressPool.GetProgressView(task.transform);
-                activeViews.Enqueue((task, view));
-                tail++;
-            }
-        }
-
-
-        bool IsAhead(Vector4 viewPos)
-        {
-            return viewPos.y > 1;
-        }
-
-        bool IsPassed(Vector3 viewPos)
-        {
-            return viewPos.y < -0.1;
+            var element = activeViews.Dequeue();
+            taskProgressPool.ReleaseProgressView(element.view);
         }
     }
 }

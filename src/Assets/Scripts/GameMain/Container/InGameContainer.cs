@@ -26,7 +26,6 @@ namespace GameMain.Container
 
         [SerializeField] private SpawnParam spawnParam;
         [SerializeField] private WorkerController workerController;
-        [SerializeField] private TaskDetector taskDetector;
         [SerializeField] private PlayerController playerController;
         [SerializeField] private CameraController cameraController;
         [SerializeField] private GoalPoint goalPoint;
@@ -48,14 +47,11 @@ namespace GameMain.Container
             builder.Register<LeadPointConnector>(Lifetime.Singleton);
             builder.Register<StageProgressObserver>(Lifetime.Singleton);
             builder.Register<RuntimeNavMeshBaker>(Lifetime.Singleton);
-            builder.Register<WorkerConnector>(Lifetime.Singleton);
-            builder.Register<WorkerAssigner>(Lifetime.Singleton);
-            builder.Register<WorkerReleaser>(Lifetime.Singleton);
             builder.Register<ResourceContainer>(Lifetime.Singleton);
+            builder.Register<TaskActivator>(Lifetime.Singleton);
 
             builder.RegisterInstance(spawnPoint);
             builder.RegisterInstance(spawnParam);
-            builder.RegisterInstance(taskDetector);
             builder.RegisterInstance(workerController);
             builder.RegisterInstance(playerController);
             builder.RegisterInstance(cameraController);
