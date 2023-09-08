@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\Module\Working\Worker.cs" />
      <Compile Include="Assets\Scripts\Module\Working\Assign\AssignableAreaLight.cs" />
      <Compile Include="Assets\Scripts\Module\Working\Assign\EllipseCollider.cs" />
+     <Compile Include="Assets\Scripts\Module\Working\Assign\LightData.cs" />
      <Folder Include="Assets\Scripts\Module\Working\Controller" />
      <Folder Include="Assets\Scripts\Module\Working" />
      <Folder Include="Assets\Scripts\Module\Working\Factory" />
@@ -766,6 +767,14 @@
     <ProjectReference Include="UniTask.csproj">
       <Project>{f52c406a-1600-d9d4-8306-967578deb673}</Project>
       <Name>UniTask</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Mathematics.csproj">
+      <Project>{e8267927-4196-6292-7814-a724023324dc}</Project>
+      <Name>Unity.Mathematics</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Burst.csproj">
+      <Project>{03b62124-33ac-59c5-2b68-773be4873e09}</Project>
+      <Name>Unity.Burst</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -6,7 +6,7 @@ namespace Module.Task
 {
     public class AssignableAreaLight : MonoBehaviour
     {
-        [SerializeField] private Light areaLight;
+        [SerializeField] private Projector areaLight;
         [SerializeField] private float softLightRadius;
         [SerializeField] private float fixOffset;
 

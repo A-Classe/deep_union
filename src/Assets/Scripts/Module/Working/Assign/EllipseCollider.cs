@@ -18,14 +18,7 @@ public class EllipseCollider : MonoBehaviour
         this.size = size;
     }
 
-    public bool InEllipse(Vector3 point)
-    {
-        var position = transform.position;
-        var dx = (point.x - position.x) / (size.x * 0.5f);
-        var dz = (point.z - position.z) / (size.y * 0.5f);
-
-        return (dx * dx + dz * dz) <= 1;
-    }
+ 
 
     internal void OnWorkerEnter_Internal(Worker worker)
     {

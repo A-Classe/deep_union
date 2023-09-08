@@ -1,10 +1,13 @@
+using System;
 using System.Collections.Generic;
 using GameMain.Presenter;
 using Module.Task;
 using Module.Working;
 using Module.Working.Controller;
+using Unity.Burst;
 using Unity.Collections;
 using Unity.Jobs;
+using Unity.Mathematics;
 using UnityEngine;
 using VContainer;
 using NotImplementedException = System.NotImplementedException;
@@ -16,52 +19,63 @@ namespace GameMain.System
         private readonly TaskActivator taskActivator;
         private readonly WorkerAgent workerAgent;
         private readonly GameParam gameParam;
-        private readonly PhysicsScene physicsScene;
         private readonly int layerMask;
         private List<Transform> origins;
 
-        private readonly Queue<BaseTask> activeTasks;
+        private readonly List<AssignableArea> assignableAreas;
 
         [Inject]
         public LightDetector(TaskActivator taskActivator, WorkerAgent workerAgent, GameParam gameParam)
         {
             this.taskActivator = taskActivator;
             this.workerAgent = workerAgent;
-            activeTasks = new Queue<BaseTask>();
+            assignableAreas = new List<AssignableArea>();
         }
 
-        private void InitializeTasks()
-        {
-            //既に有効になっているタスクを登録
-            foreach (BaseTask task in taskActivator.GetActiveTasks())
-            {
-                activeTasks.Enqueue(task);
-            }
-
-            taskActivator.OnTaskActivated += task =>
-            {
-                activeTasks.Enqueue(task);
-            };
-
-            taskActivator.OnTaskActivated += task =>
-            {
-                activeTasks.Enqueue(task);
-            };
-        }
+        private void InitializeTasks() { }
 
         public void UpdateDetection()
         {
-            foreach (Worker worker in workerAgent.ActiveWorkers)
-            {
-                
-            }
+            NativeArray<float3> workerPositions = new NativeArray<float3>(workerAgent.ActiveWorkers.Length, Allocator.TempJob);
+            NativeArray<float3> lightPositions = new NativeArray<float3>(assignableAreas.Count, Allocator.TempJob);
+
+            foreach (Worker worker in workerAgent.ActiveWorkers) { }
         }
 
-        struct EllipseCollideJob:IJob
+        [BurstCompile]
+        private struct EllipseCollideJob : IJobParallelFor
         {
-            public void Execute()
+            [ReadOnly] public NativeArray<float3> WorkerPositions;
+            [ReadOnly] public NativeArray<float3> LightPositions;
+            [ReadOnly] public NativeArray<LightData> LightDataList;
+
+            public NativeArray<int> Result;
+
+            public void Execute(int index)
             {
-                
+                int result = -1;
+                var workerPos = WorkerPositions[index];
+
+                for (var i = 0; i < LightPositions.Length; i++)
+                {
+                    var lightPos = LightPositions[i];
+                    var lightData = LightDataList[i];
+
+                    if (InEllipse(workerPos, lightPos, lightData) && lightData.Intensity > LightDataList[result].Intensity)
+                    {
+                        result = i;
+                    }
+                }
+
+                Result[index] = result;
+            }
+
+            private bool InEllipse(in float3 a, in float3 b, in LightData lightData)
+            {
+                var dx = (b.x - a.x) / (lightData.Width * 0.5f);
+                var dz = (b.z - a.z) / (lightData.Height * 0.5f);
+
+                return (dx * dx + dz * dz) <= 1;
             }
         }
     }
