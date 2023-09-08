@@ -13,5 +13,7 @@ namespace GameMain.Presenter
         public int MaxResourceCount = 999;
 
         public float PlayerSpeed = 1f;
+
+        public int HitPoint = 100;
     }
 }
