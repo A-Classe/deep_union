@@ -229,7 +229,7 @@ MonoBehaviour:
   m_UVBias: {x: 0, y: 0}
   m_ScaleMode: 0
   m_Offset: {x: 0, y: 0, z: 6.30031}
-  m_Size: {x: 6, y: 6, z: 12.57}
+  m_Size: {x: 4, y: 4, z: 10}
   m_FadeFactor: 1
 --- !u!1 &328872023
 GameObject:
@@ -719,10 +719,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86741824de2f411286f8f151edfe8c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lightProjector: {fileID: 943023126143076612}
   ellipseCollider: {fileID: 2012384590}
-  areaRadius: {x: 2.93, y: 3.71}
+  size:
+    x: 4
+    y: 4
+  factor:
+    x: 0.97
+    y: 1.18
+  intensity: 0.5
   debugAssignPoints: 0
-  assignableAreaLight: {fileID: 0}
 --- !u!114 &2012384590
 MonoBehaviour:
   m_ObjectHideFlags: 0

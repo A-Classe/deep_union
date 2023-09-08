@@ -72,8 +72,8 @@ namespace GameMain.System
 
             private bool InEllipse(in float3 a, in float3 b, in LightData lightData)
             {
-                var dx = (b.x - a.x) / (lightData.Width * 0.5f);
-                var dz = (b.z - a.z) / (lightData.Height * 0.5f);
+                var dx = (b.x - a.x) / (lightData.Size.x * 0.5f);
+                var dz = (b.z - a.z) / (lightData.Size.y * 0.5f);
 
                 return (dx * dx + dz * dz) <= 1;
             }

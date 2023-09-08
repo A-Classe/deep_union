@@ -18,13 +18,11 @@ public class EllipseCollider : MonoBehaviour
         this.size = size;
     }
 
- 
-
     internal void OnWorkerEnter_Internal(Worker worker)
     {
         OnWorkerEnter?.Invoke(worker);
     }
-    
+
     internal void OnWorkerExit_Internal(Worker worker)
     {
         OnWorkerExit?.Invoke(worker);
