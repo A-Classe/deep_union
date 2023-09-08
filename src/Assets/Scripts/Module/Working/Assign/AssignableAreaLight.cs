@@ -1,12 +1,13 @@
 using System;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using Wanna.DebugEx;
 
 namespace Module.Task
 {
     public class AssignableAreaLight : MonoBehaviour
     {
-        [SerializeField] private Projector areaLight;
+        [SerializeField] private DecalProjector areaLight;
         [SerializeField] private float softLightRadius;
         [SerializeField] private float fixOffset;
 
