@@ -9,29 +9,16 @@ namespace GameMain.Presenter.Working
     /// </summary>
     public class WorkerPresenter : IInitializable
     {
-        private readonly WorkerConnector workerConnector;
-        private readonly WorkerAssigner workerAssigner;
-        private readonly WorkerReleaser workerReleaser;
-
-
         [Inject]
-        public WorkerPresenter(WorkerConnector workerConnector, WorkerAssigner workerAssigner, WorkerReleaser workerReleaser)
-        {
-            this.workerConnector = workerConnector;
-            this.workerAssigner = workerAssigner;
-            this.workerReleaser = workerReleaser;
-        }
+        public WorkerPresenter() { }
 
         public void Initialize()
         {
             //入力の登録
             var assignEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Assign);
-            assignEvent.Started += _ => workerConnector.StartLoop(workerAssigner.Assign, workerAssigner.LoopInterval).Forget();
-            assignEvent.Canceled += _ => workerConnector.CancelLoop();
+
 
             var releaseEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Release);
-            releaseEvent.Started += _ => workerConnector.StartLoop(workerReleaser.Release, workerReleaser.LoopInterval).Forget();
-            releaseEvent.Canceled += _ => workerConnector.CancelLoop();
         }
     }
 }

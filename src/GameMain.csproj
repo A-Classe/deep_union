@@ -41,18 +41,15 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\GameMain\Presenter\Working\WorkerAssigner.cs" />
      <Compile Include="Assets\Scripts\GameMain\UI\ProgressBarSwitcher.cs" />
      <Compile Include="Assets\Scripts\GameMain\Presenter\Working\WorkerPresenter.cs" />
-     <Compile Include="Assets\Scripts\GameMain\Presenter\Working\WorkerConnector.cs" />
      <Compile Include="Assets\Scripts\GameMain\Container\InGameContainer.cs" />
      <Compile Include="Assets\Scripts\GameMain\Presenter\Resource\ResourcePresenter.cs" />
      <Compile Include="Assets\Scripts\GameMain\GameRouter.cs" />
-     <Compile Include="Assets\Scripts\GameMain\Presenter\Working\Assignment.cs" />
      <Compile Include="Assets\Scripts\GameMain\Task\IncreaseWorkerTask.cs" />
-     <Compile Include="Assets\Scripts\GameMain\Presenter\Working\WorkerReleaser.cs" />
      <Compile Include="Assets\Scripts\GameMain\Task\DebugTask.cs" />
      <Compile Include="Assets\Scripts\GameMain\Presenter\LeaderPresenter.cs" />
+     <Compile Include="Assets\Scripts\GameMain\System\LightDetector.cs" />
      <Compile Include="Assets\Scripts\GameMain\Task\DeletedObjectTask.cs" />
      <Compile Include="Assets\Scripts\GameMain\Container\RootContainer.cs" />
      <Folder Include="Assets\Scripts\GameMain" />
@@ -315,6 +312,9 @@
      </Reference>
      <Reference Include="UnityEditor.WindowsStandalone.Extensions">
      <HintPath>C:\Users\makar\Documents\Unity\2021.3.23f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Collections.LowLevel.ILSupport">
+     <HintPath>C:\Users\makar\Desktop\my-works\release_control\src\Library\PackageCache\com.unity.collections@1.2.4\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Plastic.Newtonsoft.Json">
      <HintPath>C:\Users\makar\Desktop\my-works\release_control\src\Library\PackageCache\com.unity.collab-proxy@2.0.3\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>

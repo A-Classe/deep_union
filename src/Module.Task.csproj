@@ -45,16 +45,16 @@
      <Compile Include="Assets\Scripts\Module\Task\Resource\ResourceContainer.cs" />
      <Compile Include="Assets\Scripts\Module\Task\TaskState.cs" />
      <Compile Include="Assets\Scripts\Module\Task\TaskUtil.cs" />
-     <Compile Include="Assets\Scripts\Module\Task\AssignPoint.cs" />
      <Compile Include="Assets\Scripts\Module\Task\BaseTask.cs" />
-     <Compile Include="Assets\Scripts\Module\Task\TaskDetector.cs" />
      <Compile Include="Assets\Scripts\Module\Task\TaskSystemLoop.cs" />
+     <Compile Include="Assets\Scripts\Module\Task\DetectArea.cs" />
+     <Compile Include="Assets\Scripts\Module\Task\TaskActivator.cs" />
      <Compile Include="Assets\Scripts\Module\Task\Resource\CollectableTask.cs" />
      <Compile Include="Assets\Scripts\Module\Task\Editor\BaseTaskEditor.cs" />
-     <Compile Include="Assets\Scripts\Module\Task\DetectArea.cs" />
      <Folder Include="Assets\Scripts\Module\Task\Resource" />
      <Folder Include="Assets\Scripts\Module\Task\Editor" />
      <Folder Include="Assets\Scripts\Module\Task" />
+     <Folder Include="Assets\Scripts\Module\Task\Debug" />
      <None Include="Assets\Scripts\Module\Task\Module.Task.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Users\makar\Documents\Unity\2021.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
@@ -307,6 +307,9 @@
      </Reference>
      <Reference Include="UnityEditor.WindowsStandalone.Extensions">
      <HintPath>C:\Users\makar\Documents\Unity\2021.3.23f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Collections.LowLevel.ILSupport">
+     <HintPath>C:\Users\makar\Desktop\my-works\release_control\src\Library\PackageCache\com.unity.collections@1.2.4\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Plastic.Newtonsoft.Json">
      <HintPath>C:\Users\makar\Desktop\my-works\release_control\src\Library\PackageCache\com.unity.collab-proxy@2.0.3\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
@@ -761,6 +764,10 @@
     <ProjectReference Include="Unity.InputSystem.csproj">
       <Project>{4e57be16-99a5-d0e9-6d23-a67bf0e20903}</Project>
       <Name>Unity.InputSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Collections.csproj">
+      <Project>{f951224d-5272-b3aa-617b-b76badd414f9}</Project>
+      <Name>Unity.Collections</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

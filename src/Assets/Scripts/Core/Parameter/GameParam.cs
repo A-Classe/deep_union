@@ -6,6 +6,7 @@ namespace GameMain.Presenter
     {
         public float AssignInterval = 0.1f;
         public float ReleaseInteval = 0.1f;
+        public float DetectRadius = 1f;
 
         public float CollectFactor = 1f;
         public int TemoraryStrageCount = 10;
