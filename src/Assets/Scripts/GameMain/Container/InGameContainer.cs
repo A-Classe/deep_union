@@ -32,6 +32,7 @@ namespace GameMain.Container
         [SerializeField] private CameraController cameraController;
         [SerializeField] private GoalPoint goalPoint;
         [SerializeField] private TaskProgressPool progressPool;
+        [SerializeField] private LeaderAssignEvent leaderAssignEvent;
 
         protected override void Configure(IContainerBuilder builder)
         {
@@ -61,6 +62,7 @@ namespace GameMain.Container
             builder.RegisterInstance(cameraController);
             builder.RegisterInstance(goalPoint);
             builder.RegisterInstance(progressPool);
+            builder.RegisterInstance(leaderAssignEvent);
         }
     }
 }

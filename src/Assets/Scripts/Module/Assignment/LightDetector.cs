@@ -37,8 +37,6 @@ namespace GameMain.System
             var lightDataList = new NativeArray<LightData>(AssignableAreas.Count, Allocator.TempJob);
             var result = new NativeArray<int>(workerAgent.ActiveWorkers.Length, Allocator.TempJob);
 
-            DebugEx.Log(workerAgent.ActiveWorkers.Length);
-
             for (int i = 0; i < workerAgent.ActiveWorkers.Length; i++)
             {
                 Worker worker = workerAgent.ActiveWorkers[i];
@@ -65,7 +63,7 @@ namespace GameMain.System
                 AssignableArea assignableArea = AssignableAreas[result[i]];
                 Worker worker = workerAgent.ActiveWorkers[i];
 
-                if (worker.Target == assignableArea.transform)
+                if (worker.AreaTarget == assignableArea.transform)
                     continue;
 
                 OnAssignableAreaDetected?.Invoke(worker, assignableArea);
@@ -94,7 +92,10 @@ namespace GameMain.System
                 {
                     var lightData = LightDataList[i];
 
-                    if (InEllipse(workerPos,lightData))
+                    if (lightData.Intensity <= 0f)
+                        continue;
+
+                    if (InEllipse(workerPos, lightData))
                     {
                         collideCount++;
                     }
@@ -107,16 +108,16 @@ namespace GameMain.System
 
                 if (result == -1)
                 {
-                    float nearestLength = math.lengthsq(LightDataList[0].Position);
+                    float maxIntensity = LightDataList[0].Intensity;
                     result = 0;
 
                     for (int i = 1; i < LightDataList.Length; i++)
                     {
-                        float length = math.lengthsq(LightDataList[i].Position);
-                        if (nearestLength > length)
+                        float intensity = LightDataList[i].Intensity;
+                        if (intensity > maxIntensity)
                         {
                             result = i;
-                            nearestLength = length;
+                            maxIntensity = intensity;
                         }
                     }
                 }
@@ -143,9 +144,6 @@ namespace GameMain.System
                 var prevLightData = LightDataList[result];
                 var isPrioritize = lightData.Intensity == prevLightData.Intensity && lightData.Priority > prevLightData.Priority;
                 var isBrightest = lightData.Intensity > prevLightData.Intensity;
-
-                DebugEx.Log($"isPrioritize = {isPrioritize}");
-                DebugEx.Log($"isBrightest = {isBrightest}");
 
                 return isPrioritize || isBrightest;
             }

@@ -10,7 +10,7 @@ namespace Debug
         private readonly LabelCellModel cellModel;
         private readonly Func<T, string> getText;
 
-        public LabelObserver(int cellId, LabelCellModel cellModel, Func<T, string> getText)
+        private LabelObserver(int cellId, LabelCellModel cellModel, Func<T, string> getText)
         {
             CellId = cellId;
             this.cellModel = cellModel;

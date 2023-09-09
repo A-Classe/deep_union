@@ -4,9 +4,8 @@ namespace GameMain.Presenter
 {
     public class GameParam : ScriptableObject
     {
-        public float AssignInterval = 0.1f;
-        public float ReleaseInteval = 0.1f;
-        public float DetectRadius = 1f;
+        public float AssignIntensity = 1f;
+        public float ReleaseIntensity = 0.3f;
 
         public float CollectFactor = 1f;
         public int TemoraryStrageCount = 10;

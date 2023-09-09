@@ -24,7 +24,8 @@ namespace Module.Task
         [SerializeField] private float2 factor;
         [SerializeField] private bool debugAssignPoints;
 
-        public LightData LightData => lightData;
+        public float Intensity => intensity;
+        public LightData LightData => new LightData(transform.position, lightData.Size, intensity, priority);
         private LightData lightData;
 
         private List<AssignPoint> assignPoints;
@@ -75,7 +76,7 @@ namespace Module.Task
             if (assignPoint == null)
                 return;
 
-            worker.SetFollowTarget(assignPoint.transform);
+            worker.SetFollowTarget(transform, assignPoint.transform);
             OnWorkerEnter?.Invoke(worker);
         }
 
@@ -102,13 +103,19 @@ namespace Module.Task
                 {
                     Vector3 p1 = target - a.transform.position;
                     Vector3 p2 = target - b.transform.position;
+                    float distance = p1.sqrMagnitude - p2.sqrMagnitude;
 
-                    if (p1.sqrMagnitude - p2.sqrMagnitude > 0)
+                    if (distance > 0)
                     {
                         return 1;
                     }
 
-                    return -1;
+                    if (distance < 0)
+                    {
+                        return -1;
+                    }
+
+                    return 0;
                 }
             );
 

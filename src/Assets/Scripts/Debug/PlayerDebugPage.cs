@@ -1,3 +1,4 @@
+using Module.Assignment;
 using Module.Player.Controller;
 using Module.Task;
 using Module.Working.Controller;
@@ -11,22 +12,21 @@ namespace Debug
         protected override string Title => "Player";
         private PlayerController playerController;
         private ResourceContainer resourceContainer;
-        private LeadPointConnector leadPointConnector;
+        private LeaderAssignEvent leaderAssignEvent;
 
         private LabelObserver<PlayerController> speedObserver;
         private LabelObserver<PlayerController> stateObserver;
-        private LabelObserver<LeadPointConnector> workerCountObserver;
+        private LabelObserver<LeaderAssignEvent> workerCountObserver;
         private LabelObserver<ResourceContainer> resourceObserver;
 
-        public void SetUp(ResourceContainer resourceContainer, LeadPointConnector leadPointConnector)
+        public void SetUp(ResourceContainer resourceContainer, LeaderAssignEvent leaderAssignEvent)
         {
             this.resourceContainer = resourceContainer;
-            this.leadPointConnector = leadPointConnector;
             playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
 
             speedObserver = LabelObserver<PlayerController>.Create(this, controller => $"Speed: {controller.Speed}");
             stateObserver = LabelObserver<PlayerController>.Create(this, controller => $"State: {controller.GetState()}");
-            workerCountObserver = LabelObserver<LeadPointConnector>.Create(this, leader => $"WorkerCount: {leader.WorkerCount}");
+            workerCountObserver = LabelObserver<LeaderAssignEvent>.Create(this, leader => $"WorkerCount: {leaderAssignEvent.WorkerCount}");
             resourceObserver = LabelObserver<ResourceContainer>.Create(this, container => $"ResourceCount: {container.ResourceCount}");
         }
 
@@ -34,7 +34,7 @@ namespace Debug
         {
             speedObserver.Update(playerController);
             stateObserver.Update(playerController);
-            workerCountObserver.Update(leadPointConnector);
+            workerCountObserver.Update(leaderAssignEvent);
             resourceObserver.Update(resourceContainer);
 
             RefreshData();

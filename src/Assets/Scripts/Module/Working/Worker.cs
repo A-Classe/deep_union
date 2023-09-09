@@ -18,6 +18,7 @@ namespace Module.Working
         private NavMeshAgent navMeshAgent;
 
         public Animator animator;
+        public Transform AreaTarget { get; private set; }
         public Transform Target { get; private set; }
 
         public bool IsLocked { get; private set; }
@@ -61,8 +62,9 @@ namespace Module.Working
             }
         }
 
-        public void SetFollowTarget(Transform target)
+        public void SetFollowTarget(Transform areaTarget, Transform target)
         {
+            AreaTarget = areaTarget;
             Target = target;
         }
 

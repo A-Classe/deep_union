@@ -2032,6 +2032,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 975a22c026a24b7cbbf0add76ea91ddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1173000828 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2012384588, guid: a9e893c375aaf4541bf60405b51adc86,
+    type: 3}
+  m_PrefabInstance: {fileID: 8011763555999241042}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1173000831 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2012384591, guid: a9e893c375aaf4541bf60405b51adc86,
+    type: 3}
+  m_PrefabInstance: {fileID: 8011763555999241042}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173000828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86741824de2f411286f8f151edfe8c16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1173000832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173000828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 667e500447ce48f2916fe836e8cabc8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  assignableArea: {fileID: 1173000831}
+  gameParam: {fileID: 11400000, guid: 7e6f666ad25bfdb4dbed3523c0106175, type: 2}
 --- !u!1 &1190884830
 GameObject:
   m_ObjectHideFlags: 0
@@ -2219,6 +2251,7 @@ MonoBehaviour:
   cameraController: {fileID: 428050434}
   goalPoint: {fileID: 1858020820}
   progressPool: {fileID: 1402946010}
+  leaderAssignEvent: {fileID: 1173000832}
 --- !u!1 &1352020297
 GameObject:
   m_ObjectHideFlags: 0
@@ -5780,6 +5813,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 809279128, guid: a9e893c375aaf4541bf60405b51adc86, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1146613325, guid: a9e893c375aaf4541bf60405b51adc86, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -5797,12 +5834,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2012384591, guid: a9e893c375aaf4541bf60405b51adc86, type: 3}
+      propertyPath: size.x
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2012384591, guid: a9e893c375aaf4541bf60405b51adc86, type: 3}
+      propertyPath: size.y
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2012384591, guid: a9e893c375aaf4541bf60405b51adc86, type: 3}
       propertyPath: priority
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2012384591, guid: a9e893c375aaf4541bf60405b51adc86, type: 3}
       propertyPath: intensity
-      value: 0.6
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2012384591, guid: a9e893c375aaf4541bf60405b51adc86, type: 3}
       propertyPath: debugAssignPoints
