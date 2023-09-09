@@ -1,9 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Core.Input;
-using Core.Utility;
-using Module.Working.State;
 using UnityEngine;
 
 namespace Module.Working.Controller
@@ -16,6 +11,8 @@ namespace Module.Working.Controller
         [Header("移動速度")] [SerializeField] private float controlSpeed;
 
         private InputEvent controlEvent;
+
+        private Camera followCamera;
 
         private void Awake()
         {
@@ -31,12 +28,36 @@ namespace Module.Working.Controller
 
         private void UpdateLeaderVelocity()
         {
-            var input = controlEvent.ReadValue<Vector2>() ;
+            var input = controlEvent.ReadValue<Vector2>();
 
             float moveX = input.x * controlSpeed * Time.deltaTime;
             float moveY = input.y * controlSpeed * Time.deltaTime;
+            
+            Vector3 move = new Vector3(moveX, 0f, moveY);
 
-            transform.localPosition += new Vector3(moveX, 0f, moveY);
+            Vector3 position = transform.position + move;
+            if (!InViewport(position)) return;
+
+            transform.position = position;
+        }
+
+        private bool InViewport(Vector3 position)
+        {
+            if (followCamera != null)
+            {
+                Vector3 inViewport = followCamera.WorldToViewportPoint(position);
+
+                return (inViewport.x is > 0 and < 1 &&
+                        inViewport.y is > 0 and < 1 &&
+                        inViewport.z > 0);
+            }
+
+            return false;
+        }
+
+        public void SetCamera(Camera cam)
+        {
+            followCamera = cam;
         }
     }
 }

@@ -23,8 +23,11 @@ namespace GameMain
         private readonly GameParam gameParam;
 
         private readonly LeadPointConnector leadPointConnector;
+        
         private readonly PlayerController playerController;
         private readonly CameraController cameraController;
+        private readonly WorkerController workerController;
+        
         private readonly StageProgressObserver progressObserver;
         private readonly RuntimeNavMeshBaker runtimeNavMeshBaker;
         private readonly TaskActivator taskActivator;
@@ -49,8 +52,11 @@ namespace GameMain
             this.gameParam = gameParam;
 
             this.leadPointConnector = leadPointConnector;
+            
             this.playerController = playerController;
             this.cameraController = cameraController;
+            this.workerController = workerController;
+            
             this.progressObserver = progressObserver;
             this.runtimeNavMeshBaker = runtimeNavMeshBaker;
             this.taskActivator = taskActivator;
@@ -86,6 +92,8 @@ namespace GameMain
             playerController.SetState(PlayerState.Go);
 
             cameraController.SetFollowTarget(playerController.transform);
+            
+            workerController.SetCamera(cameraController.GetCamera());
         }
 
         public void Dispose()
