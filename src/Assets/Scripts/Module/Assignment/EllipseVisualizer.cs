@@ -3,29 +3,16 @@ using Module.Working;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class EllipseCollider : MonoBehaviour
+public class EllipseVisualizer : MonoBehaviour
 {
     [SerializeField] private float debugHeight = 1f;
     [SerializeField] private int debugResolution = 50;
 
     private Vector2 size;
 
-    public event Action<Worker> OnWorkerEnter;
-    public event Action<Worker> OnWorkerExit;
-
     public void SetSize(Vector2 size)
     {
         this.size = size;
-    }
-
-    internal void OnWorkerEnter_Internal(Worker worker)
-    {
-        OnWorkerEnter?.Invoke(worker);
-    }
-
-    internal void OnWorkerExit_Internal(Worker worker)
-    {
-        OnWorkerExit?.Invoke(worker);
     }
 
     private void OnDrawGizmos()

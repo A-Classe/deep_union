@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1341387373}
   - component: {fileID: 1091139433158846305}
   - component: {fileID: 7838267265210189784}
+  - component: {fileID: 1375650332}
   m_Layer: 8
   m_Name: DetectableArea
   m_TagString: Untagged
@@ -48,14 +49,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightProjector: {fileID: 7158169335957205603}
-  ellipseCollider: {fileID: 7838267265210189784}
+  ellipseVisualizer: {fileID: 7838267265210189784}
+  intensity: 0.4
   size:
     x: 4
     y: 4
   factor:
     x: 1
     y: 1
-  intensity: 0.5
   debugAssignPoints: 1
 --- !u!114 &7838267265210189784
 MonoBehaviour:
@@ -71,6 +72,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugHeight: 0.3
   debugResolution: 50
+--- !u!114 &1375650332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341387372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08fd352dd79a5a54bb65b949bb927ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  task: {fileID: 6115247442029969141}
+  assignableArea: {fileID: 1091139433158846305}
 --- !u!1 &141903426227995795
 GameObject:
   m_ObjectHideFlags: 0

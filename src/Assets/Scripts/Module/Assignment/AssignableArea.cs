@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Module.Working;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -12,12 +13,18 @@ namespace Module.Task
     public class AssignableArea : MonoBehaviour
     {
         [SerializeField] private DecalProjector lightProjector;
-        [SerializeField] private EllipseCollider ellipseCollider;
+
+        [FormerlySerializedAs("ellipseCollider")]
+        [SerializeField]
+        private EllipseVisualizer ellipseVisualizer;
+
+        [SerializeField] private float intensity;
+        [SerializeField] private short priority;
         [SerializeField] private float2 size;
         [SerializeField] private float2 factor;
-        [SerializeField] private float intensity;
         [SerializeField] private bool debugAssignPoints;
 
+        public LightData LightData => lightData;
         private LightData lightData;
 
         private List<AssignPoint> assignPoints;
@@ -26,37 +33,56 @@ namespace Module.Task
 
         private static readonly int IntensityKey = Shader.PropertyToID("_Intensity");
 
+        public event Action<Worker> OnWorkerEnter;
+        public event Action<Worker> OnWorkerExit;
+
         private void Awake()
         {
             assignPoints = GetComponentsInChildren<AssignPoint>().ToList();
 
             //Decalだと自動で複製されないので新しいインスタンスを作る
-            Material newMaterial = new Material(lightMaterial);
+            Material newMaterial = new Material(lightProjector.material);
             lightProjector.material = newMaterial;
             lightMaterial = newMaterial;
+
+            SetLightIntensity(intensity);
         }
 
         private void OnValidate()
         {
-            lightMaterial = lightProjector.material;
-
             SetEnableAssignPointDebug(debugAssignPoints);
             SetLightSize();
-            ellipseCollider.SetSize(lightData.Size);
-
-            SetLightIntensity();
+            ellipseVisualizer.SetSize(lightData.Size);
         }
 
         public void SetLightSize()
         {
-            lightData = new LightData(size * factor, intensity);
+            lightData = new LightData(transform.position, size * factor, intensity, priority);
             lightProjector.size = new Vector3(size.x, size.y, 10f);
         }
 
-        public void SetLightIntensity()
+        public void SetLightIntensity(float intensity)
         {
-            lightData = new LightData(size * factor, intensity);
+            this.intensity = intensity;
+            lightData = new LightData(transform.position, size * factor, intensity, priority);
             lightMaterial.SetFloat(IntensityKey, lightData.Intensity);
+        }
+
+        internal void OnWorkerEnter_Internal(Worker worker)
+        {
+            Transform assignPoint = GetNearestAssignPoint(worker.transform.position);
+
+            if (assignPoint == null)
+                return;
+
+            worker.SetFollowTarget(assignPoint.transform);
+            OnWorkerEnter?.Invoke(worker);
+        }
+
+        internal void OnWorkerExit_Internal(Worker worker)
+        {
+            OnWorkerExit?.Invoke(worker);
+            ReleaseAssignPoint(worker.Target);
         }
 
         public void ReleaseAssignPoint(Transform assignPoint)
@@ -64,13 +90,12 @@ namespace Module.Task
             assignPoints.Add(assignPoint.GetComponent<AssignPoint>());
         }
 
-        public bool TryGetNearestAssignPoint(Vector3 target, out Transform assignPoint)
+        public Transform GetNearestAssignPoint(Vector3 target)
         {
-            //アサインできる座標がなかったらアサイン不可
             if (assignPoints.Count == 0)
             {
-                assignPoint = null;
-                return false;
+                DebugEx.LogWarning("登録できるAssignPointはありません！");
+                return null;
             }
 
             assignPoints.Sort((a, b) =>
@@ -87,10 +112,11 @@ namespace Module.Task
                 }
             );
 
-            assignPoint = assignPoints[0].transform;
+
+            Transform assignPoint = assignPoints[0].transform;
             assignPoints.RemoveAt(0);
 
-            return true;
+            return assignPoint;
         }
 
         void SetEnableAssignPointDebug(bool enable)

@@ -4,7 +4,9 @@ using Debug;
 using GameMain.Presenter;
 using GameMain.Presenter.Resource;
 using GameMain.Presenter.Working;
+using GameMain.System;
 using GameMain.UI;
+using Module.Assignment;
 using Module.Player.Camera;
 using Module.Player.Controller;
 using Module.Task;
@@ -41,6 +43,7 @@ namespace GameMain.Container
             builder.RegisterEntryPoint<WorkerPresenter>();
             builder.RegisterEntryPoint<SceneDebugTool>();
             builder.RegisterEntryPoint<LeaderPresenter>();
+            builder.RegisterEntryPoint<LightDetectionConnector>();
 
             builder.Register<WorkerSpawner>(Lifetime.Singleton);
             builder.Register<WorkerAgent>(Lifetime.Singleton);
@@ -48,6 +51,7 @@ namespace GameMain.Container
             builder.Register<StageProgressObserver>(Lifetime.Singleton);
             builder.Register<RuntimeNavMeshBaker>(Lifetime.Singleton);
             builder.Register<ResourceContainer>(Lifetime.Singleton);
+            builder.Register<LightDetector>(Lifetime.Singleton);
             builder.Register<TaskActivator>(Lifetime.Singleton);
 
             builder.RegisterInstance(spawnPoint);

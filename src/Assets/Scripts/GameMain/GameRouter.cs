@@ -73,9 +73,7 @@ namespace GameMain
         /// </summary>
         private void InitWorker()
         {
-            var workers = workerSpawner.Spawn(spawnParam.SpawnCount);
-
-            foreach (var worker in workers) leadPointConnector.AddWorker(worker);
+            workerSpawner.Spawn(spawnParam.SpawnCount);
         }
 
         /// <summary>

@@ -13,12 +13,8 @@ namespace GameMain.Task
         [SerializeField]
         private List<Worker> imprisonedWorkers;
 
-        private LeadPointConnector leadPointConnector;
-
         public override void Initialize(IObjectResolver container)
         {
-            leadPointConnector = container.Resolve<LeadPointConnector>();
-
             foreach (Worker worker in imprisonedWorkers)
             {
                 worker.SetLockState(true);
@@ -30,11 +26,6 @@ namespace GameMain.Task
             foreach (Worker worker in imprisonedWorkers)
             {
                 worker.SetLockState(false);
-            }
-
-            foreach (Worker worker in imprisonedWorkers)
-            {
-                leadPointConnector.AddWorker(worker);
             }
         }
     }

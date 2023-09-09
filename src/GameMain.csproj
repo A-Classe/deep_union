@@ -49,7 +49,6 @@
      <Compile Include="Assets\Scripts\GameMain\Task\IncreaseWorkerTask.cs" />
      <Compile Include="Assets\Scripts\GameMain\Task\DebugTask.cs" />
      <Compile Include="Assets\Scripts\GameMain\Presenter\LeaderPresenter.cs" />
-     <Compile Include="Assets\Scripts\GameMain\System\LightDetector.cs" />
      <Compile Include="Assets\Scripts\GameMain\Task\DeletedObjectTask.cs" />
      <Compile Include="Assets\Scripts\GameMain\Container\RootContainer.cs" />
      <Folder Include="Assets\Scripts\GameMain" />
@@ -314,7 +313,7 @@
      <HintPath>C:\Users\makar\Documents\Unity\2021.3.23f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Collections.LowLevel.ILSupport">
-     <HintPath>C:\Users\makar\Desktop\my-works\release_control\src\Library\PackageCache\com.unity.collections@1.2.4\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+     <HintPath>C:\Users\makar\Desktop\my-works\release_control\src\Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Plastic.Newtonsoft.Json">
      <HintPath>C:\Users\makar\Desktop\my-works\release_control\src\Library\PackageCache\com.unity.collab-proxy@2.0.3\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
@@ -356,7 +355,7 @@
      <HintPath>C:\Users\makar\Desktop\my-works\release_control\src\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Mono.Cecil">
-     <HintPath>C:\Users\makar\Desktop\my-works\release_control\src\Library\PackageCache\com.unity.nuget.mono-cecil@1.10.1\Mono.Cecil.dll</HintPath>
+     <HintPath>C:\Users\makar\Desktop\my-works\release_control\src\Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.dll</HintPath>
      </Reference>
      <Reference Include="System.Runtime.CompilerServices.Unsafe">
      <HintPath>C:\Users\makar\Desktop\my-works\release_control\src\Library\PackageCache\org.nuget.system.runtime.compilerservices.unsafe@6.0.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
@@ -810,6 +809,10 @@
     <ProjectReference Include="Module.Assignment.csproj">
       <Project>{bb608473-37c4-48dd-696b-81e706a01199}</Project>
       <Name>Module.Assignment</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Jobs.csproj">
+      <Project>{5506a859-f592-dd8f-e185-9b9040bc88a7}</Project>
+      <Name>Unity.Jobs</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

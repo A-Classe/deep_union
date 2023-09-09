@@ -41,7 +41,7 @@ namespace Module.Working.State
             prevPos = currentPos;
             currentPos = worker.transform.position;
 
-            navMeshAgent.SetDestination(worker.Target.position + worker.Offset);
+            navMeshAgent.SetDestination(worker.Target.position);
 
             //リーダーに追いついたとき
             if (IsStopped())

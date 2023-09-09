@@ -19,7 +19,6 @@ namespace Module.Working
 
         public Animator animator;
         public Transform Target { get; private set; }
-        public Vector3 Offset { get; private set; }
 
         public bool IsLocked { get; private set; }
         public bool IsWorldMoving { get; set; }
@@ -62,10 +61,9 @@ namespace Module.Working
             }
         }
 
-        public void SetFollowTarget(Transform target, Vector3 offset)
+        public void SetFollowTarget(Transform target)
         {
             Target = target;
-            Offset = offset;
         }
 
         public void SetLockState(bool isLocked)

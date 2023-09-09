@@ -11,7 +11,7 @@ namespace Module.Task
                 return;
 
             Gizmos.color = Color.red;
-            Gizmos.DrawSphere(transform.position, 0.3f);
+            Gizmos.DrawSphere(transform.position, 0.25f);
         }
     }
 }

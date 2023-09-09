@@ -28,6 +28,8 @@ namespace Module.Task
         public TaskState State => state;
         public int MonoWork => mw;
 
+        public event Action<float> OnProgressChanged;
+
         /// <summary>
         ///     現在割り当てられているワーカー数
         /// </summary>
@@ -78,7 +80,13 @@ namespace Module.Task
                 return;
 
             float currentMw = Mathf.Clamp(mw * currentProgress + currentWorkerCount * deltaTime, 0f, mw);
+            float prevProgress = currentProgress;
             currentProgress = Mathf.InverseLerp(0f, mw, currentMw);
+
+            if (currentProgress - prevProgress != 0)
+            {
+                OnProgressChanged?.Invoke(currentProgress);
+            }
 
             //進捗が1に到達したら完了
             if (currentProgress >= 1f)
