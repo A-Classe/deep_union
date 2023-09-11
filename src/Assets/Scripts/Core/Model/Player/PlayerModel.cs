@@ -1,4 +1,3 @@
-using GameMain.Presenter;
 using UnityEngine;
 
 namespace Core.Model.Player
@@ -16,6 +15,5 @@ namespace Core.Model.Player
         public short? hp;
 
         public short? maxHp;
-        
     }
 }
