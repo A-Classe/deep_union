@@ -1,3 +1,4 @@
+using GameMain.Presenter;
 using UnityEngine;
 
 namespace Core.Model.Player
@@ -8,5 +9,13 @@ namespace Core.Model.Player
         public Vector3? startPosition;
 
         public float? speed;
+    }
+
+    public struct PlayerStatusModel
+    {
+        public short? hp;
+
+        public short? maxHp;
+        
     }
 }
