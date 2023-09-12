@@ -4,6 +4,7 @@ using Module.Working.Factory;
 using Module.Working.State;
 using UnityEngine;
 using VContainer;
+using Wanna.DebugEx;
 
 namespace Module.Working.Controller
 {
@@ -15,6 +16,9 @@ namespace Module.Working.Controller
         private readonly Transform target;
         private readonly List<Vector3> offsets;
         private readonly Dictionary<Worker, Vector3> workerPoints;
+
+        public int WorkerCount => workerPoints.Count;
+        private bool isWorldMoving;
 
         [Inject]
         public LeadPointConnector(WorkerController target, SpawnPoint spawnPoint)
@@ -39,6 +43,7 @@ namespace Module.Working.Controller
 
             worker.SetFollowTarget(target, offset);
             worker.SetWorkerState(WorkerState.Following);
+            worker.IsWorldMoving = isWorldMoving;
         }
 
         /// <summary>
@@ -84,6 +89,17 @@ namespace Module.Working.Controller
 
             return offset;
         }
+
+        public void SetWorldMovingActive(bool enable)
+        {
+            isWorldMoving = enable;
+
+            foreach (Worker worker in workerPoints.Keys)
+            {
+                worker.IsWorldMoving = enable;
+            }
+        }
+
 
         private void RemoveWorkerPoint(Worker worker)
         {

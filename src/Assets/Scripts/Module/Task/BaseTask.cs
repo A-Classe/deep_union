@@ -1,67 +1,52 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 using VContainer;
+using Wanna.DebugEx;
 
 namespace Module.Task
 {
     /// <summary>
     ///     全てのタスクのベースクラス
     /// </summary>
-    [RequireComponent(typeof(SphereCollider))]
     [DisallowMultipleComponent]
     public abstract class BaseTask : MonoBehaviour, ITaskSystem
     {
-        [Header("検出されるタスクの半径")]
-        [SerializeField]
-        [Range(0f, 6f)]
-        private float taskSize = 1f;
+        [SerializeField] private int mw;
 
-        [Header("タスクのMonoWork")]
-        [SerializeField]
-        private float mw;
+        private List<Collider> taskColliders;
 
-        [Header("!デバッグ用 書き換え禁止!")]
-        [SerializeField]
-        protected TaskState state = TaskState.Idle;
+        [SerializeField] protected TaskState state = TaskState.Idle;
 
-        [SerializeField] [Range(0f, 1f)] private float currentProgress;
-        [SerializeField] private float currentMw;
-        [SerializeField] private float progressMw;
-        private float prevMw;
+        [SerializeField] private float currentProgress;
+        [SerializeField] private int currentWorkerCount;
+        private float prevWorkerCount;
+
+        public float Progress => currentProgress;
+        public TaskState State => state;
+        public int MonoWork => mw;
 
         /// <summary>
-        ///     現在割り当てられている作業量
+        ///     現在割り当てられているワーカー数
         /// </summary>
-        public float Mw
+        public int WorkerCount
         {
             set
             {
-                prevMw = currentMw;
-                currentMw = Mathf.Clamp(value, 0f, mw);
+                prevWorkerCount = currentWorkerCount;
+                currentWorkerCount = value;
                 OnMonoWorkUpdated();
             }
-            get => currentMw;
+            get => currentWorkerCount;
         }
 
-        // ReSharper disable once UnusedMember.Global
-        public float Progress => currentProgress;
-
-        private void OnDrawGizmos()
+        private void Awake()
         {
-            Gizmos.color = new Color(0f, 0.83f, 0f, 0.41f);
-            Gizmos.DrawSphere(transform.position, taskSize);
+            taskColliders = GetComponentsInChildren<Collider>().ToList();
+            taskColliders.AddRange(GetComponents<Collider>());
         }
-
-        private void OnValidate()
-        {
-            var col = GetComponent<SphereCollider>();
-            col.radius = taskSize;
-
-            //作業量は最低1以上とする
-            mw = Mathf.Clamp(mw, 1f, float.MaxValue);
-        }
-
-        public TaskState State => state;
 
         /// <summary>
         ///     ゲーム開始時の初期化関数
@@ -89,11 +74,11 @@ namespace Module.Task
 
         private void UpdateProgress(float deltaTime)
         {
-            if (state == TaskState.Completed || currentMw == 0f)
+            if (state == TaskState.Completed || currentWorkerCount == 0f)
                 return;
 
-            progressMw = Mathf.Clamp(progressMw + currentMw * deltaTime, 0f, mw);
-            currentProgress = Mathf.InverseLerp(0f, mw, progressMw);
+            float currentMw = Mathf.Clamp(mw * currentProgress + currentWorkerCount * deltaTime, 0f, mw);
+            currentProgress = Mathf.InverseLerp(0f, mw, currentMw);
 
             //進捗が1に到達したら完了
             if (currentProgress >= 1f)
@@ -108,18 +93,17 @@ namespace Module.Task
             if (state == TaskState.Completed)
                 return;
 
-            switch (prevMw)
+            //作業量が0より大きくなったら開始
+            if (prevWorkerCount == 0f && currentWorkerCount > prevWorkerCount)
             {
-                //作業量が0より大きくなったら開始
-                case 0f when currentMw > prevMw:
-                    ChangeState(TaskState.InProgress);
-                    OnStart();
-                    break;
-                //作業量が0になったらキャンセル
-                case > 0f when currentMw == 0f:
-                    ChangeState(TaskState.Idle);
-                    OnCancel();
-                    break;
+                ChangeState(TaskState.InProgress);
+                OnStart();
+            }
+            //作業量が0になったらキャンセル
+            else if (prevWorkerCount > 0f && currentWorkerCount == 0f)
+            {
+                ChangeState(TaskState.Idle);
+                OnCancel();
             }
         }
 
@@ -135,5 +119,15 @@ namespace Module.Task
         protected virtual void OnCancel() { }
 
         protected virtual void OnComplete() { }
+
+        protected void Disable()
+        {
+            foreach (Collider col in taskColliders)
+            {
+                col.enabled = false;
+            }
+
+            gameObject.SetActive(false);
+        }
     }
 }

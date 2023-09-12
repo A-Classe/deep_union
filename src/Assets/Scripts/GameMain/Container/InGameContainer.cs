@@ -1,10 +1,17 @@
-﻿using GameMain.Presenter;
+﻿using System.GameProgress;
+using Core.NavMesh;
+using Debug;
+using GameMain.Presenter;
+using GameMain.Presenter.Resource;
+using GameMain.Presenter.Working;
+using GameMain.UI;
 using Module.Player.Camera;
 using Module.Player.Controller;
 using Module.Task;
 using Module.Working;
 using Module.Working.Controller;
 using Module.Working.Factory;
+using UI.HUD;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -17,31 +24,39 @@ namespace GameMain.Container
         [SerializeField]
         private SpawnPoint spawnPoint;
 
-
-        [SerializeField] private SpawnParam spawnParam = default!;
-        [SerializeField] private GameParam gameParam = default!;
-        [SerializeField] private WorkerController workerController = default!;
-        [SerializeField] private TaskDetector taskDetector = default!;
-        [SerializeField] private PlayerController playerController = default!;
-        [SerializeField] private CameraController cameraController = default!;
+        [SerializeField] private SpawnParam spawnParam;
+        [SerializeField] private WorkerController workerController;
+        [SerializeField] private PlayerController playerController;
+        [SerializeField] private CameraController cameraController;
+        [SerializeField] private GoalPoint goalPoint;
+        [SerializeField] private TaskProgressPool progressPool;
 
         protected override void Configure(IContainerBuilder builder)
         {
             builder.RegisterEntryPoint<GameRouter>();
             builder.RegisterEntryPoint<TaskSystemLoop>();
-            builder.RegisterEntryPoint<WorkerConnector>();
+            builder.RegisterEntryPoint<GameSequenceHandler>();
+            builder.RegisterEntryPoint<ProgressBarSwitcher>();
+            builder.RegisterEntryPoint<ResourcePresenter>();
+            builder.RegisterEntryPoint<WorkerPresenter>();
+            builder.RegisterEntryPoint<SceneDebugTool>();
+            builder.RegisterEntryPoint<LeaderPresenter>();
 
             builder.Register<WorkerSpawner>(Lifetime.Singleton);
             builder.Register<WorkerAgent>(Lifetime.Singleton);
             builder.Register<LeadPointConnector>(Lifetime.Singleton);
+            builder.Register<StageProgressObserver>(Lifetime.Singleton);
+            builder.Register<RuntimeNavMeshBaker>(Lifetime.Singleton);
+            builder.Register<ResourceContainer>(Lifetime.Singleton);
+            builder.Register<TaskActivator>(Lifetime.Singleton);
 
             builder.RegisterInstance(spawnPoint);
             builder.RegisterInstance(spawnParam);
-            builder.RegisterInstance(gameParam);
-            builder.RegisterInstance(taskDetector);
             builder.RegisterInstance(workerController);
             builder.RegisterInstance(playerController);
             builder.RegisterInstance(cameraController);
+            builder.RegisterInstance(goalPoint);
+            builder.RegisterInstance(progressPool);
         }
     }
 }

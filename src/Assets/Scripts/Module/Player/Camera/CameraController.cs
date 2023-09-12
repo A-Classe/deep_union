@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Module.Player.Camera
 {
+    [RequireComponent(typeof(UnityEngine.Camera))]
     public class CameraController : MonoBehaviour
     {
         private ICameraState currentState;
@@ -70,5 +71,10 @@ namespace Module.Player.Camera
         }
 
         public CameraState GetState() => currentState.GetState();
+
+        public UnityEngine.Camera GetCamera()
+        {
+            return GetComponent<UnityEngine.Camera>();
+        }
     }
 }

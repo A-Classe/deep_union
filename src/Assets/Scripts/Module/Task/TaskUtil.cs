@@ -16,14 +16,11 @@ namespace Module.Task
             var objects = GameObject.FindGameObjectsWithTag(taskTag);
 
             return objects
-                .Select(obj =>
-                {
-                    if (obj.TryGetComponent(out TInterface task)) return task;
-
-                    Debug.LogWarning($"GameObject: {obj.name}に{nameof(TInterface)}がアタッチされていません!");
-                    return null;
-                })
+                .Select(obj => obj.GetComponent<TInterface>())
+                .Where(obj => obj != null)
                 .ToArray();
         }
+        
+         
     }
 }

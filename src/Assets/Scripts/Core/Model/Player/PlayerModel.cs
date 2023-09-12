@@ -9,4 +9,11 @@ namespace Core.Model.Player
 
         public float? speed;
     }
+
+    public struct PlayerStatusModel
+    {
+        public short? hp;
+
+        public short? maxHp;
+    }
 }

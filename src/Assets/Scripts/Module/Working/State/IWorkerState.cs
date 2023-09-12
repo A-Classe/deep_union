@@ -4,6 +4,9 @@ namespace Module.Working.State
     {
         WorkerState WorkerState { get; }
 
+        void OnStart();
+        void OnStop();
         void Update();
+        void Dispose();
     }
 }

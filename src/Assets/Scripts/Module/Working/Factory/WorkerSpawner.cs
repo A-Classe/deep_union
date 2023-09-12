@@ -26,9 +26,9 @@ namespace Module.Working.Factory
         /// </summary>
         /// <param name="spawnCount">スポーンするワーカーの数</param>
         /// <returns>スポーンしたワーカーのコレクション</returns>
-        public Span<Worker> Spawn(int spawnCount)
+        public ReadOnlySpan<Worker> Spawn(int spawnCount)
         {
-            Span<Worker> addedWorkers = workerAgent.Add(spawnCount);
+            var addedWorkers = workerAgent.Add(spawnCount);
 
             foreach (var worker in addedWorkers)
             {
