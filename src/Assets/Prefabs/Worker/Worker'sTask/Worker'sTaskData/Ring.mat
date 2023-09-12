@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8874486113129362559
+--- !u!114 &-4210376944936045415
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,12 +20,12 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: "\u30DE\u30C6\u30EA\u30A2\u30EB.005"
-  m_Shader: {fileID: -6465566751694194690, guid: 72310fa569343124f8bb55a63f3ed933,
+  m_Name: Ring
+  m_Shader: {fileID: -6465566751694194690, guid: 930ae7146fe8483479a75f44df9cccea,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 1
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -59,7 +59,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: b37d4d61c9c00664ba08f4ac1134d67b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -72,6 +72,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Propety:
+        m_Texture: {fileID: 2800000, guid: fc1903fb8f2a2c84494b2c0b8fcd1939, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -92,6 +96,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _1st_Shadow: 0.38
+    - _2nd_Shadow: 0.27
+    - _Alpha: 0.51
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -102,39 +109,39 @@ Material:
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _Emission: 3.24
     - _EnvironmentReflections: 1
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0
     - _GlossyReflections: 1
-    - _LifeColorTime: 0.04
-    - _LifeLineSpeed: 0.6
+    - _Intensity: 2.12
     - _Metallic: 0
     - _Mode: 0
-    - _Noise: 0.48
-    - _NoiseAddScale: 3.35
     - _OcclusionStrength: 1
+    - _OutLineSize: 5.86
+    - _OutLineTime: 0.4
     - _Parallax: 0.02
-    - _PolygonNum: 12
-    - _PolygonRadius: 0
-    - _PolygonSize: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Rotate: 15
-    - _Smoothness: 0.5
+    - _Roop_Time: 2.93
+    - _ScrollTime: 0.29
+    - _Scroll_X: 0
+    - _Scroll_Y: 1
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _StepTime: 0.2
     - _Surface: 0
     - _UVSec: 0
+    - _Vec1: 0.2
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0, g: 0.9063317, b: 0.20718095, a: 1}
-    - _Color: {r: 0, g: 0.9063317, b: 0.20718092, a: 1}
-    - _EmissionColor: {r: 0, g: 20, b: 0, a: 20}
-    - _LightColor: {r: 0.26454648, g: 1, b: 0.081760935, a: 0}
+    - _BaseColor: {r: 0.32985294, g: 0.49876517, b: 0.49876517, a: 1}
+    - _Color: {r: 0.3298529, g: 0.49876517, b: 0.49876517, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutLineColor: {r: 0, g: 0.45774645, b: 1, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _UV_Size: {r: 1, g: -0.18, b: 0, a: 0}
+    - _WallColor: {r: 0, g: 0.81954885, b: 1, a: 0}
   m_BuildTextureStacks: []
