@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
 using VContainer;
+using Wanna.DebugEx;
 
 namespace Core.NavMesh
 {
@@ -18,6 +19,9 @@ namespace Core.NavMesh
         public void Build()
         {
             UnityEngine.AI.NavMesh.RemoveAllNavMeshData();
+
+            DebugEx.Assert(navMeshSurface != null, "NavMeshSurfaceがアタッチされていません! 地面のオブジェクトにNavMeshSurfaceコンポーネントが必要です。");
+
             navMeshSurface.BuildNavMesh();
         }
 
