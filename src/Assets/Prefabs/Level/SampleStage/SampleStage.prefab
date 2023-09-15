@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 822273645330106979}
   - component: {fileID: 822273645330106978}
   - component: {fileID: 822273645330106977}
-  m_Layer: 0
+  - component: {fileID: 822273645121583182}
+  m_Layer: 14
   m_Name: SampleStage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 822273645330106976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 13.19}
-  m_LocalScale: {x: 2.5, y: 1, z: 4.9668}
+  m_LocalScale: {x: 2.5, y: 1, z: 5.6143303}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7512295747797934141}
@@ -100,6 +101,35 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &822273645121583182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822273645330106976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 17409
+  m_UseGeometry: 1
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &2278941695627819722
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,7 +142,7 @@ GameObject:
   - component: {fileID: 6628145230699112935}
   - component: {fileID: 3129247203573686552}
   - component: {fileID: 805047202853732537}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +239,7 @@ GameObject:
   - component: {fileID: 4611670310368129779}
   - component: {fileID: 6992974374129516343}
   - component: {fileID: 6148572844003527839}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cube_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
