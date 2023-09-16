@@ -1,12 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using GameMain.Presenter;
 using UnityEngine;
+using VContainer;
+using Wanna.DebugEx;
 
 namespace Module.Task
 {
     public class TaskActivator
     {
+        private readonly GameParam gameParam;
         private readonly Camera mainCamera;
         private readonly BaseTask[] tasks;
 
@@ -16,8 +20,10 @@ namespace Module.Task
         public event Action<BaseTask> OnTaskActivated;
         public event Action<BaseTask> OnTaskDeactivated;
 
-        public TaskActivator()
+        [Inject]
+        public TaskActivator(GameParam gameParam)
         {
+            this.gameParam = gameParam;
             mainCamera = Camera.main;
             tasks = SortTaskOrder(TaskUtil.FindSceneTasks<BaseTask>());
 
@@ -91,12 +97,12 @@ namespace Module.Task
 
         bool IsAhead(Vector4 viewPos)
         {
-            return viewPos.y > 1;
+            return viewPos.y > gameParam.ActivateTaskRange;
         }
 
         bool IsPassed(Vector3 viewPos)
         {
-            return viewPos.y < -0.1;
+            return viewPos.y < gameParam.DeactivateTaskRange;
         }
     }
 }

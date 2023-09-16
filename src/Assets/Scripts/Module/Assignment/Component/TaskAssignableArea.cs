@@ -1,12 +1,14 @@
-using System;
 using Module.Task;
 using Module.Working;
 using Module.Working.State;
 using UnityEngine;
 
-namespace Module.Assignment
+namespace Module.Assignment.Component
 {
-    public class TaskAssignEvent : MonoBehaviour
+    /// <summary>
+    /// タスクのアサイン機能を拡張するクラス
+    /// </summary>
+    public class TaskAssignableArea : MonoBehaviour
     {
         [SerializeField] private BaseTask baseTask;
         [SerializeField] private AssignableArea assignableArea;

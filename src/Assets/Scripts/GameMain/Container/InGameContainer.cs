@@ -4,9 +4,10 @@ using Debug;
 using GameMain.Presenter;
 using GameMain.Presenter.Resource;
 using GameMain.Presenter.Working;
-using GameMain.System;
 using GameMain.UI;
 using Module.Assignment;
+using Module.Assignment.Component;
+using Module.Assignment.System;
 using Module.Player.Camera;
 using Module.Player.Controller;
 using Module.Task;
@@ -15,6 +16,7 @@ using Module.Working.Controller;
 using Module.Working.Factory;
 using UI.HUD;
 using UnityEngine;
+using UnityEngine.Serialization;
 using VContainer;
 using VContainer.Unity;
 
@@ -32,7 +34,7 @@ namespace GameMain.Container
         [SerializeField] private CameraController cameraController;
         [SerializeField] private GoalPoint goalPoint;
         [SerializeField] private TaskProgressPool progressPool;
-        [SerializeField] private LeaderAssignEvent leaderAssignEvent;
+        [FormerlySerializedAs("leaderAssignEvent")] [SerializeField] private LeaderAssignableArea leaderAssignableArea;
 
         protected override void Configure(IContainerBuilder builder)
         {
@@ -44,7 +46,7 @@ namespace GameMain.Container
             builder.RegisterEntryPoint<WorkerPresenter>();
             builder.RegisterEntryPoint<SceneDebugTool>();
             builder.RegisterEntryPoint<LeaderPresenter>();
-            builder.RegisterEntryPoint<LightDetectionConnector>();
+            builder.RegisterEntryPoint<AssignmentSystem>();
 
             builder.Register<WorkerSpawner>(Lifetime.Singleton);
             builder.Register<WorkerAgent>(Lifetime.Singleton);
@@ -52,7 +54,8 @@ namespace GameMain.Container
             builder.Register<StageProgressObserver>(Lifetime.Singleton);
             builder.Register<RuntimeNavMeshBaker>(Lifetime.Singleton);
             builder.Register<ResourceContainer>(Lifetime.Singleton);
-            builder.Register<LightDetector>(Lifetime.Singleton);
+            builder.Register<WorkerAssigner>(Lifetime.Singleton);
+            builder.Register<WorkerReleaser>(Lifetime.Singleton);
             builder.Register<TaskActivator>(Lifetime.Singleton);
 
             builder.RegisterInstance(spawnPoint);
@@ -62,7 +65,7 @@ namespace GameMain.Container
             builder.RegisterInstance(cameraController);
             builder.RegisterInstance(goalPoint);
             builder.RegisterInstance(progressPool);
-            builder.RegisterInstance(leaderAssignEvent);
+            builder.RegisterInstance(leaderAssignableArea);
         }
     }
 }

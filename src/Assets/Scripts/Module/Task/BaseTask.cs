@@ -29,6 +29,7 @@ namespace Module.Task
         public int MonoWork => mw;
 
         public event Action<float> OnProgressChanged;
+        public event Action<BaseTask> OnCompleted;
 
         /// <summary>
         ///     現在割り当てられているワーカー数
@@ -93,6 +94,7 @@ namespace Module.Task
             {
                 ChangeState(TaskState.Completed);
                 OnComplete();
+                OnCompleted?.Invoke(this);
             }
         }
 

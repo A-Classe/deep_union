@@ -1,7 +1,7 @@
 ﻿using System;
 using Core.Model.Player;
 
-namespace GameMain.System
+namespace Module.Assignment
 {
     public class PlayerStatus
     {

@@ -1,4 +1,5 @@
 using Module.Assignment;
+using Module.Assignment.Component;
 using Module.Player.Controller;
 using Module.Player.State;
 using Module.Working.Controller;
@@ -10,20 +11,20 @@ namespace GameMain.Presenter
     public class LeaderPresenter : IInitializable
     {
         private readonly PlayerController playerController;
-        private readonly LeaderAssignEvent leaderAssignEvent;
+        private readonly LeaderAssignableArea leaderAssignableArea;
 
         [Inject]
-        public LeaderPresenter(PlayerController playerController, LeaderAssignEvent leaderAssignEvent)
+        public LeaderPresenter(PlayerController playerController, LeaderAssignableArea leaderAssignableArea)
         {
             this.playerController = playerController;
-            this.leaderAssignEvent = leaderAssignEvent;
+            this.leaderAssignableArea = leaderAssignableArea;
         }
 
         public void Initialize()
         {
             playerController.OnStateChanged += state =>
             {
-                leaderAssignEvent.SetWorldMovingActive(state == PlayerState.Go);
+                leaderAssignableArea.SetWorldMovingActive(state == PlayerState.Go);
             };
         }
     }

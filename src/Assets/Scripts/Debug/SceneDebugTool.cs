@@ -1,5 +1,6 @@
 using System.GameProgress;
 using Module.Assignment;
+using Module.Assignment.Component;
 using Module.Task;
 using Module.Working.Controller;
 using UnityDebugSheet.Runtime.Core.Scripts;
@@ -12,14 +13,14 @@ namespace Debug
     public sealed class SceneDebugTool : IStartable
     {
         private readonly ResourceContainer resourceContainer;
-        private readonly LeaderAssignEvent leaderAssignEvent;
+        private readonly LeaderAssignableArea leaderAssignableArea;
         private readonly StageProgressObserver stageProgressObserver;
 
         [Inject]
-        public SceneDebugTool(ResourceContainer resourceContainer, LeaderAssignEvent leaderAssignEvent, StageProgressObserver stageProgressObserver)
+        public SceneDebugTool(ResourceContainer resourceContainer, LeaderAssignableArea leaderAssignableArea, StageProgressObserver stageProgressObserver)
         {
             this.resourceContainer = resourceContainer;
-            this.leaderAssignEvent = leaderAssignEvent;
+            this.leaderAssignableArea = leaderAssignableArea;
             this.stageProgressObserver = stageProgressObserver;
         }
 
@@ -34,7 +35,7 @@ namespace Debug
             initialPage.AddPageLinkButton<PlayerDebugPage>("Player",
                 icon: Resources.Load<Sprite>(AssetKeys.Resources.Icon.CharacterViewer), onLoad: data =>
                 {
-                    data.page.SetUp(resourceContainer, leaderAssignEvent);
+                    data.page.SetUp(resourceContainer, leaderAssignableArea);
                 });
 
             initialPage.Reload();

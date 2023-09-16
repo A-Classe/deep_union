@@ -1,7 +1,7 @@
 using Core.Utility.Player;
 using Debug;
 using GameMain.Presenter;
-using GameMain.System;
+using Module.Assignment;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;

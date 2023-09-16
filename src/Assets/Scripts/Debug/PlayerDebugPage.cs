@@ -1,4 +1,5 @@
 using Module.Assignment;
+using Module.Assignment.Component;
 using Module.Player.Controller;
 using Module.Task;
 using Module.Working.Controller;
@@ -12,21 +13,21 @@ namespace Debug
         protected override string Title => "Player";
         private PlayerController playerController;
         private ResourceContainer resourceContainer;
-        private LeaderAssignEvent leaderAssignEvent;
+        private LeaderAssignableArea leaderAssignableArea;
 
         private LabelObserver<PlayerController> speedObserver;
         private LabelObserver<PlayerController> stateObserver;
-        private LabelObserver<LeaderAssignEvent> workerCountObserver;
+        private LabelObserver<LeaderAssignableArea> workerCountObserver;
         private LabelObserver<ResourceContainer> resourceObserver;
 
-        public void SetUp(ResourceContainer resourceContainer, LeaderAssignEvent leaderAssignEvent)
+        public void SetUp(ResourceContainer resourceContainer, LeaderAssignableArea leaderAssignableArea)
         {
             this.resourceContainer = resourceContainer;
             playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
 
             speedObserver = LabelObserver<PlayerController>.Create(this, controller => $"Speed: {controller.Speed}");
             stateObserver = LabelObserver<PlayerController>.Create(this, controller => $"State: {controller.GetState()}");
-            workerCountObserver = LabelObserver<LeaderAssignEvent>.Create(this, leader => $"WorkerCount: {leaderAssignEvent.WorkerCount}");
+            workerCountObserver = LabelObserver<LeaderAssignableArea>.Create(this, leader => $"WorkerCount: {leaderAssignableArea.WorkerCount}");
             resourceObserver = LabelObserver<ResourceContainer>.Create(this, container => $"ResourceCount: {container.ResourceCount}");
         }
 
@@ -34,7 +35,7 @@ namespace Debug
         {
             speedObserver.Update(playerController);
             stateObserver.Update(playerController);
-            workerCountObserver.Update(leaderAssignEvent);
+            workerCountObserver.Update(leaderAssignableArea);
             resourceObserver.Update(resourceContainer);
 
             RefreshData();
