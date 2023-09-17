@@ -70,6 +70,7 @@ namespace Module.Assignment.System
 
             taskActivator.OnTaskDeactivated += task =>
             {
+                OnTaskCompleted(task);
                 activeAreas.RemoveAt(0);
             };
 
