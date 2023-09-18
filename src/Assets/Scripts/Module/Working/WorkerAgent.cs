@@ -51,6 +51,14 @@ namespace Module.Working
         }
 
         /// <summary>
+        ///    外部からのWorkerを追加します
+        /// </summary>
+        public void AddActiveWorker(Worker worker)
+        {
+            activeWorkers.Add(worker);
+        }
+
+        /// <summary>
         ///     Workerを指定数削除します
         /// </summary>
         // ReSharper disable once UnusedMember.Global

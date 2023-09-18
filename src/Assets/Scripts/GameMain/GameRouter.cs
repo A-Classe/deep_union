@@ -3,10 +3,13 @@ using System.GameProgress;
 using Core.NavMesh;
 using Core.Utility.Player;
 using GameMain.Presenter;
+using Module.Assignment;
+using Module.Assignment.Component;
 using Module.Player.Camera;
 using Module.Player.Controller;
 using Module.Player.State;
 using Module.Task;
+using Module.Working;
 using Module.Working.Controller;
 using Module.Working.Factory;
 using VContainer;
@@ -23,14 +26,15 @@ namespace GameMain
         private readonly GameParam gameParam;
 
         private readonly LeadPointConnector leadPointConnector;
-        
+
         private readonly PlayerController playerController;
         private readonly CameraController cameraController;
         private readonly WorkerController workerController;
-        
+
         private readonly StageProgressObserver progressObserver;
         private readonly RuntimeNavMeshBaker runtimeNavMeshBaker;
         private readonly TaskActivator taskActivator;
+        private readonly LeaderAssignableArea leaderAssignableArea;
 
         private readonly WorkerSpawner workerSpawner;
 
@@ -45,21 +49,23 @@ namespace GameMain
             CameraController cameraController,
             StageProgressObserver progressObserver,
             RuntimeNavMeshBaker runtimeNavMeshBaker,
-            TaskActivator taskActivator
+            TaskActivator taskActivator,
+            LeaderAssignableArea leaderAssignableArea
         )
         {
             this.spawnParam = spawnParam;
             this.gameParam = gameParam;
 
             this.leadPointConnector = leadPointConnector;
-            
+
             this.playerController = playerController;
             this.cameraController = cameraController;
             this.workerController = workerController;
-            
+
             this.progressObserver = progressObserver;
             this.runtimeNavMeshBaker = runtimeNavMeshBaker;
             this.taskActivator = taskActivator;
+            this.leaderAssignableArea = leaderAssignableArea;
 
             this.workerSpawner = workerSpawner;
         }
@@ -79,9 +85,12 @@ namespace GameMain
         /// </summary>
         private void InitWorker()
         {
-            var workers = workerSpawner.Spawn(spawnParam.SpawnCount);
+            ReadOnlySpan<Worker> addedWorkers = workerSpawner.Spawn(spawnParam.SpawnCount);
 
-            foreach (var worker in workers) leadPointConnector.AddWorker(worker);
+            foreach (Worker worker in addedWorkers)
+            {
+                leaderAssignableArea.AssignableArea.AddWorker(worker);
+            }
         }
 
         /// <summary>
@@ -94,7 +103,7 @@ namespace GameMain
             playerController.SetState(PlayerState.Go);
 
             cameraController.SetFollowTarget(playerController.transform);
-            
+
             workerController.SetCamera(cameraController.GetCamera());
         }
 

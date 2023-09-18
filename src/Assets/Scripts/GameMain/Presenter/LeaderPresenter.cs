@@ -1,3 +1,5 @@
+using Module.Assignment;
+using Module.Assignment.Component;
 using Module.Player.Controller;
 using Module.Player.State;
 using Module.Working.Controller;
@@ -9,20 +11,20 @@ namespace GameMain.Presenter
     public class LeaderPresenter : IInitializable
     {
         private readonly PlayerController playerController;
-        private readonly LeadPointConnector leadPointConnector;
+        private readonly LeaderAssignableArea leaderAssignableArea;
 
         [Inject]
-        public LeaderPresenter(PlayerController playerController, LeadPointConnector leadPointConnector)
+        public LeaderPresenter(PlayerController playerController, LeaderAssignableArea leaderAssignableArea)
         {
             this.playerController = playerController;
-            this.leadPointConnector = leadPointConnector;
+            this.leaderAssignableArea = leaderAssignableArea;
         }
 
         public void Initialize()
         {
             playerController.OnStateChanged += state =>
             {
-                leadPointConnector.SetWorldMovingActive(state == PlayerState.Go);
+                leaderAssignableArea.SetWorldMovingActive(state == PlayerState.Go);
             };
         }
     }

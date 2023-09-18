@@ -29,7 +29,11 @@ namespace Module.Working.State
 
         private bool isMoving;
 
-        public void OnStart() { }
+        public void OnStart()
+        {
+            navMeshAgent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
+            workerAnimator.SetBool(IsFollowing, true);
+        }
 
         public void OnStop()
         {
@@ -41,7 +45,7 @@ namespace Module.Working.State
             prevPos = currentPos;
             currentPos = worker.transform.position;
 
-            navMeshAgent.SetDestination(worker.Target.position + worker.Offset);
+            navMeshAgent.SetDestination(worker.Target.position);
 
             //リーダーに追いついたとき
             if (IsStopped())
@@ -49,7 +53,7 @@ namespace Module.Working.State
                 isMoving = false;
                 workerAnimator.SetBool(IsFollowing, false);
             }
-            //リーダーにリーダーを追いかけ始めたとき
+            //リーダーを追いかけ始めたとき
             else if (IsMoved())
             {
                 isMoving = true;
