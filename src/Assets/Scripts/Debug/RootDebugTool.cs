@@ -18,7 +18,7 @@ namespace Debug
 
             initialPage.AddPageLinkButton<GraphyDebugPage>("Graphy",
                 icon: Resources.Load<Sprite>(AssetKeys.Resources.Icon.FPS),
-                onLoad: x => x.page.Setup(GraphyManager.Instance),priority: 100);
+                onLoad: x => x.page.Setup(GraphyManager.Instance), priority: 100);
             DebugSheet.Instance.GetComponent<Canvas>().enabled = true;
 
             initialPage.Reload();
