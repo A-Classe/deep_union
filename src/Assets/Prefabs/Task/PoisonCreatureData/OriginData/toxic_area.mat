@@ -21,16 +21,19 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: toxic_area
-  m_Shader: {fileID: -6465566751694194690, guid: 89e25ecefde78254ab32062d3ec89a96,
+  m_Shader: {fileID: -6465566751694194690, guid: 7bdfdff6333b8af4a8ab06ea0f65bb02,
     type: 3}
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
+  m_CustomRenderQueue: 3001
+  stringTagMap:
+    RenderType: Transparent
+  disabledShaderPasses:
+  - DepthOnly
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -97,35 +100,53 @@ Material:
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
+    - _CastShadows: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _Cull: 2
+    - _Cull: 0
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _DstBlend: 0
+    - _DstBlend: 10
     - _EnvironmentReflections: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _Metalic: 1.4
     - _Metallic: 0
     - _Mode: 0
+    - _NormalStrangth: 0.12
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _QueueControl: 0
+    - _QueueControl: 1
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.5
+    - _Smoothness: 0.4
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _Surface: 0
+    - _SrcBlend: 5
+    - _Surface: 1
+    - _TransParency: 0.15
+    - _TransparencyMask: 0
     - _UVSec: 0
+    - _VoronoiAgitation: 1
+    - _VoronoiPower: 5.22
+    - _VoronoiScale: 6.17
+    - _WobbleAmount: 0.04
+    - _WobbleFrequency: 4
+    - _WobbleHeight: 1
+    - _WobbleSpeed: 16
     - _WorkflowMode: 1
-    - _ZWrite: 1
+    - _ZTest: 4
+    - _ZWrite: 0
+    - _ZWriteControl: 2
     m_Colors:
-    - _BaseColor: {r: 0.9063317, g: 0.8816186, b: 0, a: 1}
+    - _BaseColor: {r: 0.2819216, g: 0.79, b: 0.1425098, a: 1}
     - _Color: {r: 0.9063317, g: 0.8816186, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _NormalizeSpeed: {r: 0, g: 0.2, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _VoronoiColor: {r: 1.0709497, g: 2.9136133, b: 0, a: 1}
+    - _VoronoiSpeed: {r: 0.01, g: 0.01, b: 0, a: 0}
+    - _VoronoiTiling: {r: 0.61, g: -0.78, b: 0, a: 0}
   m_BuildTextureStacks: []
