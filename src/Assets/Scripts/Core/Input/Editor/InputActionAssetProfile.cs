@@ -1,15 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[CreateAssetMenu(menuName = "InputActionAssetProfile", fileName = "InputActionAssetProfile")]
-public class InputActionAssetProfile : ScriptableObject
+namespace Core.Input.Editor
 {
-    [SerializeField] private InputActionAsset inputActionAsset;
-
-    public InputActionAsset GetUsingAsset()
+    [CreateAssetMenu(menuName = "InputActionAssetProfile", fileName = "InputActionAssetProfile")]
+    public class InputActionAssetProfile : ScriptableObject
     {
-        return inputActionAsset;
+        [SerializeField] private InputActionAsset inputActionAsset;
+
+        public InputActionAsset GetUsingAsset()
+        {
+            return inputActionAsset;
+        }
     }
 }

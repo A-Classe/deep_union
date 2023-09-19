@@ -5,4 +5,24 @@
 using System;
 
 namespace Core.Input
-{ }
+{
+    public static class ActionGuid
+    {
+       public static readonly InGame InGame = new InGame();
+       public static readonly Title Title = new Title();
+    }
+
+    public class InGame
+    {
+       public readonly Guid Control = new Guid("4b5abd4e-9db5-4537-bcbb-09b065d8f69c");
+       public readonly Guid Assign = new Guid("22d85c45-cf1a-422d-acb8-7b1768215f89");
+       public readonly Guid Release = new Guid("d5850a10-c25d-48a6-920c-80db9074d4c4");
+    }
+
+    public class Title
+    {
+       public readonly Guid Click = new Guid("b9ad4076-5aac-4827-8a94-57c3dd139f17");
+       public readonly Guid Move = new Guid("708c54d3-5590-4475-bbd6-f07e8a050432");
+       public readonly Guid Cancel = new Guid("04599d92-9045-4c43-b931-fc5bd9f7b4cb");
+    }
+}

@@ -1,0 +1,38 @@
+name: Generate Documentation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: 'Remove post-checkout hook'
+        run: rm -rf .git/hooks/post-checkout
+        
+      - name: Install Doxygen
+        run: sudo apt-get install doxygen
+      - name: Install Graphviz
+        run: sudo apt-get install graphviz
+        
+      - name: Generate documentation
+        run: doxygen doc/Doxyfile
+
+      - name: 'Qodana Scan'
+        uses: JetBrains/qodana-action@main
+        with:
+          args: --project-dir,./src
+          results-dir: docs/qodana
+        env:
+          QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
+      # Publish to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.MY_GITHUB_TOKEN }}
+          publish_dir: ./docs
