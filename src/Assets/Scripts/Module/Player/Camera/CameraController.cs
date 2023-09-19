@@ -1,6 +1,7 @@
 using System;
 using Module.Player.Camera.State;
 using UnityEngine;
+using Wanna.DebugEx;
 
 namespace Module.Player.Camera
 {
@@ -11,17 +12,18 @@ namespace Module.Player.Camera
         private ICameraState[] states;
 
         private Transform followTarget;
-        [SerializeField] private float depth = 14f;
-        [SerializeField] private float followAngle = 85f;
-        [SerializeField] private float cameraAngle = 65f;
+        private float depth = 14f;
+        private double followAngle = 85f;
+        private double cameraAngle = 65f;
         private void Awake()
         {
             Initialize();
+            
         }
 
         private void FixedUpdate()
         {
-
+            if (followTarget == null) return;
             var angleInRadians = followAngle * Mathf.Deg2Rad;
 
 
@@ -38,7 +40,7 @@ namespace Module.Player.Camera
             transform.position = targetPosition;
 
          
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(cameraAngle, 0f, 0f), Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler((float)cameraAngle, 0f, 0f), Time.deltaTime);
         }
 
         private void Initialize()
@@ -68,6 +70,14 @@ namespace Module.Player.Camera
         public void SetFollowTarget(Transform player)
         {
             followTarget = player;
+            
+            var position = transform.position;
+            depth = Vector3.Distance(position, player.position);
+            
+            var angle = Math.Atan2(position.y - player.position.y, position.z - player.position.z);
+            followAngle = 180d - (angle * 180d / Math.PI);
+
+            cameraAngle = transform.rotation.eulerAngles.x;
         }
 
         public CameraState GetState() => currentState.GetState();
