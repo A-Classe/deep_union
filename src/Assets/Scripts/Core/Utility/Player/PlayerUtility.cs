@@ -12,5 +12,14 @@ namespace Core.Utility.Player
                 speed = param.PlayerSpeed
             };
         }
+        
+        public static PlayerStatusModel ConvertToStatus(this GameParam param)
+        {
+            return new PlayerStatusModel
+            {
+                hp = (short)param.HitPoint,
+                maxHp = (short)param.HitPoint
+            };
+        }
     }
 }

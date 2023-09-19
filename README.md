@@ -14,9 +14,12 @@ git config commit.template .commit_template
 git submodule update -i
 ```
 
-### Code Quality 
-- [Qodana Cloud](https://qodana.cloud/organizations/Al5q1/teams/zxNOM)
+## Reports
+`Qodana Cloud` and `Doxygen` reports are hosted using Github Pages
+
+#### Code Quality 
+- [Qodana Cloud](https://a-classe.github.io/release_control/qodana/report/index.html)
 
 
-### Code Documentation
-- [In generate doxygen](https://a-classe.github.io/release_control/index.html)
+#### Code Documentation
+- [In generate doxygen](https://a-classe.github.io/release_control/doxygen/html/index.html)

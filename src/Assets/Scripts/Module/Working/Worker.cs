@@ -18,10 +18,11 @@ namespace Module.Working
         private NavMeshAgent navMeshAgent;
 
         public Animator animator;
+        public Transform AreaTarget { get; private set; }
         public Transform Target { get; private set; }
-        public Vector3 Offset { get; private set; }
 
         public bool IsLocked { get; private set; }
+        public bool IsWorldMoving { get; set; }
 
         private void Awake()
         {
@@ -61,10 +62,10 @@ namespace Module.Working
             }
         }
 
-        public void SetFollowTarget(Transform target, Vector3 offset)
+        public void SetFollowTarget(Transform areaTarget, Transform target)
         {
+            AreaTarget = areaTarget;
             Target = target;
-            Offset = offset;
         }
 
         public void SetLockState(bool isLocked)

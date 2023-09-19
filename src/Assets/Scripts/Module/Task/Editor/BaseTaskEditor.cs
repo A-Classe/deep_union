@@ -30,12 +30,10 @@ namespace Module.Task.Editor
             foldGeneral = Foldout("General Settings", foldGeneral);
             if (foldGeneral)
             {
-                SerializedProperty taskSize = serializedObject.FindProperty("taskSize");
                 SerializedProperty mw = serializedObject.FindProperty("mw");
 
-                taskSize.floatValue = EditorGUILayout.Slider("検出サイズ", taskSize.floatValue, 0f, 6f);
-                mw.floatValue = EditorGUILayout.FloatField("MonoWork", mw.floatValue);
-                mw.floatValue = Mathf.Clamp(mw.floatValue, 1f, float.MaxValue);
+                mw.intValue = EditorGUILayout.IntField("MonoWork", mw.intValue);
+                mw.intValue = Mathf.Clamp(mw.intValue, 1, int.MaxValue);
             }
         }
 
@@ -55,12 +53,9 @@ namespace Module.Task.Editor
             foldDebug = Foldout("Debug View", foldDebug);
             if (foldDebug)
             {
-                SerializedProperty debugAssignPoints = serializedObject.FindProperty("debugAssignPoints");
                 SerializedProperty state = serializedObject.FindProperty("state");
                 SerializedProperty currentProgress = serializedObject.FindProperty("currentProgress");
                 SerializedProperty currentWorkerCount = serializedObject.FindProperty("currentWorkerCount");
-
-                debugAssignPoints.boolValue = EditorGUILayout.Toggle("アサインポイントを表示", debugAssignPoints.boolValue);
 
                 EditorGUILayout.LabelField("タスクの状態", ((TaskState)state.enumValueFlag).ToString());
                 EditorGUILayout.LabelField("進捗率", $"{currentProgress.floatValue * 100f}%");
@@ -73,7 +68,7 @@ namespace Module.Task.Editor
             SerializedProperty iterator = serializedObject.GetIterator();
 
             //既に表示してるやつはスキップ
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 5; i++)
             {
                 iterator.NextVisible(true);
             }

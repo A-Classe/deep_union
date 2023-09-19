@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using Wanna.DebugEx;
 
 namespace Module.Working.State
 {
@@ -11,18 +12,28 @@ namespace Module.Working.State
 
         private static readonly int IsFollowing = Animator.StringToHash("Following");
 
+        private Vector3 prevPos;
+        private Vector3 currentPos;
+
         public FollowState(Worker worker)
         {
             this.worker = worker;
             navMeshAgent = worker.GetComponent<NavMeshAgent>();
             workerAnimator = worker.animator;
+
+            prevPos = worker.transform.position;
+            currentPos = prevPos;
         }
 
         public WorkerState WorkerState => WorkerState.Following;
 
         private bool isMoving;
 
-        public void OnStart() { }
+        public void OnStart()
+        {
+            navMeshAgent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
+            workerAnimator.SetBool(IsFollowing, true);
+        }
 
         public void OnStop()
         {
@@ -31,7 +42,10 @@ namespace Module.Working.State
 
         public void Update()
         {
-            navMeshAgent.SetDestination(worker.Target.position + worker.Offset);
+            prevPos = currentPos;
+            currentPos = worker.transform.position;
+
+            navMeshAgent.SetDestination(worker.Target.position);
 
             //リーダーに追いついたとき
             if (IsStopped())
@@ -39,7 +53,7 @@ namespace Module.Working.State
                 isMoving = false;
                 workerAnimator.SetBool(IsFollowing, false);
             }
-            //リーダーにリーダーを追いかけ始めたとき
+            //リーダーを追いかけ始めたとき
             else if (IsMoved())
             {
                 isMoving = true;
@@ -49,7 +63,7 @@ namespace Module.Working.State
 
         bool IsStopped()
         {
-            return isMoving && navMeshAgent.velocity.sqrMagnitude == 0f;
+            return isMoving && navMeshAgent.velocity.sqrMagnitude == 0f && !worker.IsWorldMoving;
         }
 
         bool IsMoved()

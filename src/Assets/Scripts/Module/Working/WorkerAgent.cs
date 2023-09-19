@@ -19,6 +19,8 @@ namespace Module.Working
         private readonly ObjectPool<Worker> workerPool;
         private readonly GameObject workerPrefab;
 
+        public ReadOnlySpan<Worker> ActiveWorkers => activeWorkers.AsSpan();
+
         [Inject]
         public WorkerAgent()
         {
@@ -37,7 +39,7 @@ namespace Module.Working
         /// <summary>
         ///     Workerを指定数追加します
         /// </summary>
-        public Span<Worker> Add(int count)
+        public ReadOnlySpan<Worker> Add(int count)
         {
             for (var i = 0; i < count; i++)
             {
@@ -46,6 +48,14 @@ namespace Module.Working
             }
 
             return activeWorkers.AsSpan().Slice(activeWorkers.Count - count, count);
+        }
+
+        /// <summary>
+        ///    外部からのWorkerを追加します
+        /// </summary>
+        public void AddActiveWorker(Worker worker)
+        {
+            activeWorkers.Add(worker);
         }
 
         /// <summary>
