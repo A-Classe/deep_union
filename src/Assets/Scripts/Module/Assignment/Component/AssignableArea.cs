@@ -73,7 +73,6 @@ namespace Module.Assignment.Component
         public void SetLightIntensity(float intensity)
         {
             this.intensity = intensity;
-            DebugEx.Log("a");
             lightMaterial.SetFloat(IntensityKey, intensity);
         }
 
