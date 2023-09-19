@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using AnimationPro.RunTime;
-using Core.Utility.UI;
-using Core.Utility.UI.Cursor;
-using Core.Utility.UI.UnderBar;
+using Core.Utility.UI.Component;
+using Core.Utility.UI.Component.Cursor;
+using Core.Utility.UI.Navigation;
+using Core.Utility.User;
 using UnityEngine;
 
 namespace UI.Title.StageSelect
@@ -22,18 +24,14 @@ namespace UI.Title.StageSelect
         [SerializeField] private SimpleUnderBarController bar;
 
         [SerializeField] private CursorController<Nav> cursor;
-        [SerializeField] private FadeInOutButton stage1;
-        [SerializeField] private FadeInOutButton stage2;
-        [SerializeField] private FadeInOutButton stage3;
-        [SerializeField] private FadeInOutButton stage4;
-        [SerializeField] private FadeInOutButton stage5;
+        [SerializeField] private StageButton stage1;
+        [SerializeField] private StageButton stage2;
+        [SerializeField] private StageButton stage3;
+        [SerializeField] private StageButton stage4;
+        [SerializeField] private StageButton stage5;
         [SerializeField] private FadeInOutButton back;
 
         private Nav? current;
-
-        public event Action OnBack;
-
-        public event Action<Nav> OnStage;
 
         private void Start()
         {
@@ -135,6 +133,33 @@ namespace UI.Title.StageSelect
         public AnimationBehaviour GetContext()
         {
             return this;
+        }
+
+        public event Action OnBack;
+
+        public event Action<Nav> OnStage;
+
+        public void SetScores(Dictionary<StageData.Stage, uint> scores)
+        {
+            foreach (var keyValuePair in scores)
+                switch (keyValuePair.Key)
+                {
+                    case StageData.Stage.Stage1:
+                        stage1.SetScore(keyValuePair.Value);
+                        break;
+                    case StageData.Stage.Stage2:
+                        stage2.SetScore(keyValuePair.Value);
+                        break;
+                    case StageData.Stage.Stage3:
+                        stage3.SetScore(keyValuePair.Value);
+                        break;
+                    case StageData.Stage.Stage4:
+                        stage4.SetScore(keyValuePair.Value);
+                        break;
+                    case StageData.Stage.Stage5:
+                        stage4.SetScore(keyValuePair.Value);
+                        break;
+                }
         }
 
 

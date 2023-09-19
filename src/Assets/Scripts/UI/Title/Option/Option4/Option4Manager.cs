@@ -3,9 +3,9 @@ using AnimationPro.RunTime;
 using Core.Utility.UI.Navigation;
 using UnityEngine;
 
-namespace UI.Title.Credit
+namespace UI.Title.Option.Option4
 {
-    internal class CreditManager : AnimationBehaviour, IUIManager
+    public class Option4Manager : AnimationBehaviour, IUIManager
     {
         public void Initialized(ContentTransform content)
         {
@@ -16,6 +16,7 @@ namespace UI.Title.Credit
 
         public void Clicked()
         {
+            OnBack?.Invoke();
         }
 
         public void Select(Vector2 direction)
@@ -41,5 +42,7 @@ namespace UI.Title.Credit
         {
             return this;
         }
+
+        public event Action OnBack;
     }
 }

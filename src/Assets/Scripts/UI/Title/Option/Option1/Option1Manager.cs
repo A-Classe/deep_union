@@ -5,33 +5,33 @@ using Core.Utility.UI.Component.Cursor;
 using Core.Utility.UI.Navigation;
 using UnityEngine;
 
-namespace UI.Title.Title
+namespace UI.Title.Option.Option1
 {
-    internal class TitleManager : AnimationBehaviour, IUIManager
+    internal class Option1Manager : AnimationBehaviour, IUIManager
     {
         public enum Nav
         {
-            Start,
-            Option,
-            Credit,
-            Quit
+            Video,
+            Audio,
+            KeyConfig,
+            Back
         }
 
         [SerializeField] private CursorController<Nav> cursor;
-        [SerializeField] private FadeInOutButton start;
-        [SerializeField] private FadeInOutButton option;
-        [SerializeField] private FadeInOutButton credit;
-        [SerializeField] private FadeInOutButton quit;
+        [SerializeField] private FadeInOutButton video;
+        [SerializeField] private FadeInOutButton audios;
+        [SerializeField] private FadeInOutButton keyConfig;
+        [SerializeField] private FadeInOutButton back;
 
         private Nav? current;
 
         private void Start()
         {
-            cursor.AddPoint(Nav.Start, start.rectTransform);
-            cursor.AddPoint(Nav.Option, option.rectTransform);
-            cursor.AddPoint(Nav.Credit, credit.rectTransform);
-            cursor.AddPoint(Nav.Quit, quit.rectTransform);
-            current = Nav.Start;
+            cursor.AddPoint(Nav.Video, video.rectTransform);
+            cursor.AddPoint(Nav.Audio, audios.rectTransform);
+            cursor.AddPoint(Nav.KeyConfig, keyConfig.rectTransform);
+            cursor.AddPoint(Nav.Back, back.rectTransform);
+            current = Nav.Video;
         }
 
         public void Initialized(ContentTransform content)
@@ -39,25 +39,29 @@ namespace UI.Title.Title
             gameObject.SetActive(true);
             OnCancel();
             Animation(content);
-            SetState(Nav.Start);
+            SetState(Nav.Video);
         }
 
+        /// <summary>
+        ///     戻るボタンが押されたときに反映する
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         public void Clicked()
         {
             if (!current.HasValue) return;
             switch (current.Value)
             {
-                case Nav.Start:
-                    start.OnPlay(() => OnPlay?.Invoke());
+                case Nav.Video:
+                    video.OnPlay(() => OnClick?.Invoke(Nav.Video));
                     break;
-                case Nav.Option:
-                    option.OnPlay(() => OnOption?.Invoke());
+                case Nav.Audio:
+                    audios.OnPlay(() => OnClick?.Invoke(Nav.Audio));
                     break;
-                case Nav.Credit:
-                    credit.OnPlay(() => OnCredit?.Invoke());
+                case Nav.KeyConfig:
+                    keyConfig.OnPlay(() => OnClick?.Invoke(Nav.KeyConfig));
                     break;
-                case Nav.Quit:
-                    quit.OnPlay(() => OnQuit?.Invoke());
+                case Nav.Back:
+                    back.OnPlay(() => OnBack?.Invoke());
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -68,7 +72,7 @@ namespace UI.Title.Title
         {
             if (!current.HasValue)
             {
-                SetState(Nav.Start);
+                SetState(Nav.Video);
                 return;
             }
 
@@ -78,11 +82,11 @@ namespace UI.Title.Title
             {
                 // 上向きの入力
                 case > 0:
-                    nextNav = current.Value == Nav.Start ? Nav.Quit : current.Value - 1;
+                    nextNav = current.Value == Nav.Video ? Nav.Back : current.Value - 1;
                     break;
                 // 下向きの入力
                 case < 0:
-                    nextNav = current.Value == Nav.Quit ? Nav.Start : current.Value + 1;
+                    nextNav = current.Value == Nav.Back ? Nav.Video : current.Value + 1;
                     break;
                 default:
                     return; // Y軸の入力がない場合、何もしない
@@ -93,7 +97,6 @@ namespace UI.Title.Title
 
         public void Finished(ContentTransform content, Action onFinished)
         {
-            OnCancel();
             Animation(
                 content,
                 new AnimationListener
@@ -112,14 +115,9 @@ namespace UI.Title.Title
             return this;
         }
 
-        public event Action OnCredit;
+        public event Action OnBack;
 
-        public event Action OnOption;
-
-        public event Action OnQuit;
-
-
-        public event Action OnPlay;
+        public event Action<Nav> OnClick;
 
 
         private void SetState(Nav setNav)
