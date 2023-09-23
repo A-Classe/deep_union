@@ -13,8 +13,6 @@ namespace GameMain.Container
     {
         [SerializeField] private GameParam gameParam;
 
-        private PlayerStatus status;
-
         protected override void Configure(IContainerBuilder builder)
         {
             if (gameParam.EnableDebugger)
@@ -23,10 +21,6 @@ namespace GameMain.Container
             }
 
             builder.RegisterInstance(gameParam);
-
-            status = new PlayerStatus(gameParam.ConvertToStatus());
-
-            builder.RegisterInstance(status);
         }
     }
 }
