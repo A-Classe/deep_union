@@ -1,5 +1,6 @@
 ﻿using System;
 using Core.Model.Player;
+using Wanna.DebugEx;
 
 namespace Module.Assignment
 {
@@ -9,7 +10,7 @@ namespace Module.Assignment
         private short hp;
 
         public short Hp => hp;
-        
+
         public PlayerStatus(PlayerStatusModel model)
         {
             if (model.maxHp.HasValue) maxHp = model.maxHp.Value;
