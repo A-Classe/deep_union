@@ -10,8 +10,8 @@ namespace Core.Utility.UI.Navigation
 {
     public class Navigation<T>: ITickable
     {
-        private readonly Dictionary<T, IUIManager> managers;
-        private IUIManager current;
+        private readonly Dictionary<T, UIManager> managers;
+        private UIManager current;
         private T currentNav;
         
         private readonly InputEvent cancelEvent;
@@ -42,7 +42,7 @@ namespace Core.Utility.UI.Navigation
         /// </summary>
         private readonly float minInterval = 0.1f;
 
-        public Navigation(Dictionary<T, IUIManager> initialManagers)
+        public Navigation(Dictionary<T, UIManager> initialManagers)
         {
             managers = initialManagers;
             
@@ -76,7 +76,7 @@ namespace Core.Utility.UI.Navigation
                 return;
             }
 
-            current?.Finished(current.GetContext().FadeOut(Easings.Default(0.3f)), () =>
+            current.Finished(current.GetContext().FadeOut(Easings.Default(0.3f)), () =>
             {
                 NavigateWith(nav);
             });
@@ -87,7 +87,7 @@ namespace Core.Utility.UI.Navigation
                 currentNav = n;
                 if (current == null) throw new NotImplementedException();
 
-                current?.Initialized(current.GetContext().FadeIn(Easings.Default(0.3f)));
+                current.Initialized(current.GetContext().FadeIn(Easings.Default(0.3f)));
             }
         }
         
@@ -97,13 +97,13 @@ namespace Core.Utility.UI.Navigation
 
             currentTime += Time.deltaTime;
             // ReSharper disable once CompareOfFloatsByEqualityOperator
-            if (initialInterval == StartInterval && currentTime == 0f) current?.Select(input);
+            if (initialInterval == StartInterval && currentTime == 0f && current != null) current.Select(input);
             if (currentTime < initialInterval) return; // 一定の間隔が経過していない場合、何もしない
 
             // 呼び出し間隔を増加させる
             initialInterval = Math.Max(initialInterval -= IntervalIncrement, minInterval);
 
-            current?.Select(input);
+            if (current != null) current.Select(input);
             currentTime = 0f;
         }
 
@@ -112,7 +112,7 @@ namespace Core.Utility.UI.Navigation
             if (!isActive) return;
 
             var input = context.ReadValue<Vector2>();
-            current?.Select(input);
+            if (current != null) current.Select(input);
         }
 
         private void OnMoveCanceled(InputAction.CallbackContext context)
@@ -127,7 +127,7 @@ namespace Core.Utility.UI.Navigation
         {
             if (!isActive) return;
 
-            current?.Clicked();
+            if (current != null) current.Clicked();
         }
 
         public T GetCurrentNav() => currentNav;

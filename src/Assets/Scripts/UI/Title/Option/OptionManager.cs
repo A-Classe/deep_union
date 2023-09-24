@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace UI.Title.Option
 {
-    public class OptionManager : AnimationBehaviour, IUIManager
+    public class OptionManager : UIManager
     {
         [SerializeField] private Option1Manager option1;
         [SerializeField] private Option2Manager option2;
@@ -28,7 +28,7 @@ namespace UI.Title.Option
         protected override void Awake()
         {
             base.Awake();
-            var initialManagers = new Dictionary<Nav, IUIManager>
+            var initialManagers = new Dictionary<Nav, UIManager>
             {
                 { Nav.Option1, option1 },
                 { Nav.Option2, option2 },
@@ -41,25 +41,23 @@ namespace UI.Title.Option
         }
 
 
-        public void Initialized(ContentTransform content)
+        public override void Initialized(ContentTransform content)
         {
-            gameObject.SetActive(true);
+            base.Initialized(content);
             navigation.SetActive(true);
             bar.AnimateIn();
-            OnCancel();
-            Animation(content);
             navigation.SetScreen(Nav.Option1);
         }
 
-        public void Select(Vector2 direction)
+        public override void Select(Vector2 direction)
         {
         }
 
-        public void Clicked()
+        public override void Clicked()
         {
         }
 
-        public void Finished(ContentTransform content, Action onFinished)
+        public override void Finished(ContentTransform content, Action onFinished)
         {
             bar.AnimateOut(() =>
             {
@@ -76,11 +74,6 @@ namespace UI.Title.Option
                     }
                 );
             });
-        }
-
-        public AnimationBehaviour GetContext()
-        {
-            return this;
         }
 
         public event Action OnBack;

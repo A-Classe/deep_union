@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace UI.Title.Option.Option4
 {
-    public class Option4Manager : AnimationBehaviour, IUIManager
+    public class Option4Manager : UIManager
     {
         public void Initialized(ContentTransform content)
         {

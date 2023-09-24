@@ -5,7 +5,6 @@ using GameMain.Presenter;
 using GameMain.Presenter.Resource;
 using GameMain.Presenter.Working;
 using GameMain.UI;
-using Module.Assignment;
 using Module.Assignment.Component;
 using Module.Assignment.System;
 using Module.Player.Camera;
@@ -35,6 +34,7 @@ namespace GameMain.Container
         [SerializeField] private GoalPoint goalPoint;
         [SerializeField] private TaskProgressPool progressPool;
         [FormerlySerializedAs("leaderAssignEvent")] [SerializeField] private LeaderAssignableArea leaderAssignableArea;
+        [SerializeField] private GameUIManager gameUIManager;
 
         protected override void Configure(IContainerBuilder builder)
         {
@@ -66,6 +66,7 @@ namespace GameMain.Container
             builder.RegisterInstance(goalPoint);
             builder.RegisterInstance(progressPool);
             builder.RegisterInstance(leaderAssignableArea);
+            builder.RegisterInstance(gameUIManager);
         }
     }
 }

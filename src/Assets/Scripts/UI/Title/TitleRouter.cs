@@ -44,7 +44,7 @@ namespace UI.Title
 
             data = dataManager;
             option.SetPreference(data);
-            var initialManagers = new Dictionary<Nav, IUIManager>
+            var initialManagers = new Dictionary<Nav, UIManager>
             {
                 { Nav.Title, title },
                 { Nav.Quit, quit },
