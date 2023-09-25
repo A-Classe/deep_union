@@ -1,11 +1,15 @@
 ﻿using System.GameProgress;
+using System.Linq;
 using Core.NavMesh;
 using Core.Utility.User;
+using Core.Utility;
+using Core.Utility.Player;
 using Debug;
 using GameMain.Presenter;
 using GameMain.Presenter.Resource;
 using GameMain.Presenter.Working;
 using GameMain.UI;
+using Module.Assignment;
 using Module.Assignment.Component;
 using Module.Assignment.System;
 using Module.Player.Camera;
@@ -28,14 +32,20 @@ namespace GameMain.Container
         [SerializeField]
         private SpawnPoint spawnPoint;
 
+        [SerializeField] private GameParam gameParam;
         [SerializeField] private SpawnParam spawnParam;
         [SerializeField] private WorkerController workerController;
         [SerializeField] private PlayerController playerController;
         [SerializeField] private CameraController cameraController;
         [SerializeField] private GoalPoint goalPoint;
         [SerializeField] private TaskProgressPool progressPool;
-        [FormerlySerializedAs("leaderAssignEvent")] [SerializeField] private LeaderAssignableArea leaderAssignableArea;
-        [FormerlySerializedAs("gameUIManager")] [SerializeField] private InGameUIManager inGameUIManager;
+
+        [SerializeField] private InGameUIManager inGameUIManager;
+
+        [FormerlySerializedAs("leaderAssignEvent")]
+        [SerializeField]
+        private LeaderAssignableArea leaderAssignableArea;
+
 
         protected override void Configure(IContainerBuilder builder)
         {
@@ -69,6 +79,19 @@ namespace GameMain.Container
             builder.RegisterInstance(progressPool);
             builder.RegisterInstance(leaderAssignableArea);
             builder.RegisterInstance(inGameUIManager);
+            builder.RegisterInstance(new PlayerStatus(gameParam.ConvertToStatus()));
+
+            builder.RegisterBuildCallback(container =>
+            {
+                var injectables = FindObjectsByType<Component>(FindObjectsSortMode.None)
+                    .OfType<IInjectable>()
+                    .Select(injectable => (injectable as MonoBehaviour)?.gameObject);
+
+                foreach (GameObject injectable in injectables)
+                {
+                    container.InjectGameObject(injectable);
+                }
+            });
         }
     }
 }
