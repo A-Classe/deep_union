@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Core.Utility.UI.Navigation;
 using GameMain.UI.Screen.GameOver;
@@ -7,14 +8,16 @@ using UnityEngine;
 
 namespace GameMain.UI
 {
-    public class GameUIManager: MonoBehaviour
+    public class InGameUIManager: MonoBehaviour
     {
         [SerializeField] private InGameManager inGameManager;
         [SerializeField] private GameOverManager gameOverManager;
         [SerializeField] private OptionManager optionManager;
-        private readonly Navigation<InGameNav> navigation;
+        private Navigation<InGameNav> navigation;
 
-        public GameUIManager()
+        public InGameUIManager() { }
+
+        private void Awake()
         {
             navigation = new Navigation<InGameNav>(
                 new Dictionary<InGameNav, UIManager>
