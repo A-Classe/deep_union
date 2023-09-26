@@ -13,6 +13,7 @@ namespace Module.Player.Controller
         private void Start()
         {
             lifeMaterial = lifeRenderer.sharedMaterials[1];
+            SetHpRate(0f);
         }
 
         public void SetHpRate(float rate)
