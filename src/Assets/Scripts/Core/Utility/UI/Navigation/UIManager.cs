@@ -1,29 +1,25 @@
 ﻿using System;
 using AnimationPro.RunTime;
-using Core.Utility.UI.Navigation;
 using UnityEngine;
 
-namespace UI.Title.Credit
+namespace Core.Utility.UI.Navigation
 {
-    internal class CreditManager : UIManager
+    public abstract class UIManager: AnimationBehaviour
     {
-        public void Initialized(ContentTransform content)
+        public virtual void Initialized(ContentTransform content)
         {
             gameObject.SetActive(true);
             OnCancel();
             Animation(content);
         }
 
-        public void Clicked()
-        {
-        }
+        public virtual void Select(Vector2 direction) {}
 
-        public void Select(Vector2 direction)
-        {
-        }
+        public virtual void Clicked() {}
 
-        public void Finished(ContentTransform content, Action onFinished)
+        public virtual void Finished(ContentTransform content, Action onFinished)
         {
+            OnCancel();
             Animation(
                 content,
                 new AnimationListener
@@ -37,9 +33,6 @@ namespace UI.Title.Credit
             );
         }
 
-        public AnimationBehaviour GetContext()
-        {
-            return this;
-        }
+        public AnimationBehaviour GetContext() => this;
     }
 }
