@@ -21,10 +21,12 @@ namespace Module.Player.Controller
         public void Initialize()
         {
             maxHp = playerStatus.MaxHp;
+            //HPは最大の状態で開始
+            statusVisualizer.SetHpRate(0f);
 
             playerStatus.OnHpChanged += hp =>
             {
-                statusVisualizer.SetHpRate(maxHp - Mathf.InverseLerp(0f, maxHp, hp));
+                statusVisualizer.SetHpRate(1 - Mathf.InverseLerp(0f, maxHp, hp));
             };
         }
     }

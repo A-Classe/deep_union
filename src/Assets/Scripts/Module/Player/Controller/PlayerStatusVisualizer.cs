@@ -8,7 +8,7 @@ namespace Module.Player.Controller
     {
         [SerializeField] private Renderer lifeRenderer;
         [SerializeField] private Material lifeMaterial;
-        private static readonly int LifeColorTime = Shader.PropertyToID("LifeColorTime");
+        private static readonly int LifeColorTime = Shader.PropertyToID("_LifeColorTime");
 
         private void Start()
         {
