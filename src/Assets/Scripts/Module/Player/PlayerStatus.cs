@@ -10,6 +10,9 @@ namespace Module.Assignment
         private short hp;
 
         public short Hp => hp;
+        public short MaxHp => maxHp;
+
+        public event Action<short> OnHpChanged;
 
         public PlayerStatus(PlayerStatusModel model)
         {
@@ -31,6 +34,7 @@ namespace Module.Assignment
         private void SetHp(short newHp)
         {
             hp = Math.Clamp(newHp, (short)0, maxHp);
+            OnHpChanged?.Invoke(hp);
         }
 
         private static short Parse(uint value)

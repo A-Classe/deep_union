@@ -39,6 +39,7 @@ namespace GameMain.Container
         [SerializeField] private CameraController cameraController;
         [SerializeField] private GoalPoint goalPoint;
         [SerializeField] private TaskProgressPool progressPool;
+        [SerializeField] private PlayerStatusVisualizer playerStatusVisualizer;
 
         [FormerlySerializedAs("leaderAssignEvent")]
         [SerializeField]
@@ -55,6 +56,7 @@ namespace GameMain.Container
             builder.RegisterEntryPoint<SceneDebugTool>();
             builder.RegisterEntryPoint<LeaderPresenter>();
             builder.RegisterEntryPoint<AssignmentSystem>();
+            builder.RegisterEntryPoint<PlayerStatusUpdater>();
 
             builder.Register<WorkerSpawner>(Lifetime.Singleton);
             builder.Register<WorkerAgent>(Lifetime.Singleton);
@@ -75,6 +77,7 @@ namespace GameMain.Container
             builder.RegisterInstance(progressPool);
             builder.RegisterInstance(leaderAssignableArea);
             builder.RegisterInstance(new PlayerStatus(gameParam.ConvertToStatus()));
+            builder.RegisterInstance(playerStatusVisualizer);
 
             builder.RegisterBuildCallback(container =>
             {
