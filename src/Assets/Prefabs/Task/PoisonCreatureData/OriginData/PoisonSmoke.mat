@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-24402841434149740
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 5
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -20,12 +7,12 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: toxic_line
-  m_Shader: {fileID: -6465566751694194690, guid: 5936874342e08ce43ac7f02fcbce2210,
+  m_Name: PoisonSmoke
+  m_Shader: {fileID: -6465566751694194690, guid: b438ee834f26d5b43b811bdf341b479f,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 1
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -74,11 +61,11 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SpecGlossMap:
-        m_Texture: {fileID: 0}
+    - _SmokeSampleTexture2D:
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Tex:
+    - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -96,9 +83,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _1st_Shadow: 1.01
-    - _2nd_Shadow: 0.33
-    - _Alpha: 1.97
+    - _1st_Shadow: 0.84
+    - _2nd_Shadow: 0.82
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -106,48 +92,53 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
+    - _DecalMeshBiasType: 0
+    - _DecalMeshDepthBias: 0
+    - _DecalMeshViewBias: 0
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+    - _DrawOrder: 0
     - _DstBlend: 0
-    - _Edge: 0.6
     - _EnvironmentReflections: 1
-    - _FresnelPower: 1.39
-    - _GlossMapScale: 1
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
-    - _LifeColorTime: 0
-    - _LifeLineSpeed: 0.25
+    - _FresnealPower: 0.67
+    - _GlossMapScale: 0
+    - _Glossiness: 0
+    - _GlossyReflections: 0
+    - _GradientNoiseScale: 5
+    - _GradientNoiseSpeed: 0.1
     - _Metallic: 0
-    - _Mode: 0
-    - _Noise: 30.58
-    - _NoiseAddScale: 3
     - _OcclusionStrength: 1
-    - _OutLineSize: 5.86
-    - _OutLineTime: 0.4
-    - _Parallax: 0.02
-    - _PolygonNum: 24
-    - _PolygonRadius: 0.1
-    - _PolygonSize: 0.76
+    - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Rotate: 0
+    - _SmokeDepth: 23.56
+    - _SmokeScale: 40
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _StepTime: 0.25
     - _Surface: 0
-    - _UVSec: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0, g: 1, b: 0.4053912, a: 1}
-    - _Color: {r: 0, g: 1, b: 0.40539116, a: 1}
-    - _EmiColor: {r: 0.27436474, g: 0.5566038, b: 0, a: 0}
-    - _EmissionColor: {r: 0, g: 1, b: 0.1723221, a: 1}
-    - _LightColor: {r: 0.26454648, g: 1, b: 0.081760935, a: 0}
-    - _OutLineColor: {r: 1, g: 0, b: 0, a: 0}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SmokeColor: {r: 0.103773594, g: 1, b: 0, a: 0}
+    - _SmokeScrollSpeed: {r: 0.2, g: -0.1, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _UV_Size: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
+--- !u!114 &4995580191825107660
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5

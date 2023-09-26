@@ -24,16 +24,19 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: 7bdfdff6333b8af4a8ab06ea0f65bb02,
     type: 3}
   m_ValidKeywords:
+  - _ALPHATEST_ON
+  - _RECEIVE_SHADOWS_OFF
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3001
+  m_CustomRenderQueue: 3005
   stringTagMap:
     RenderType: Transparent
   disabledShaderPasses:
   - DepthOnly
+  - SHADOWCASTER
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -97,10 +100,10 @@ Material:
     m_Floats:
     - _1st_Shadow: 0.46
     - _2nd_Shadow: 0.24
-    - _AlphaClip: 0
+    - _AlphaClip: 1
     - _Blend: 0
     - _BumpScale: 1
-    - _CastShadows: 1
+    - _CastShadows: 0
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 0
@@ -109,44 +112,47 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
     - _EnvironmentReflections: 1
+    - _Fresnel: 0.13
+    - _FresnerlPower: 162.04
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Metalic: 1.4
+    - _Metalic: 0.45
     - _Metallic: 0
     - _Mode: 0
-    - _NormalStrangth: 0.12
+    - _NormalStrangth: 13.98
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _QueueControl: 1
     - _QueueOffset: 0
-    - _ReceiveShadows: 1
-    - _Smoothness: 0.4
+    - _ReceiveShadows: 0
+    - _Smoothness: 0.59
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 5
     - _Surface: 1
-    - _TransParency: 0.35
-    - _TransparencyMask: 0.77
+    - _TransParency: -0.69
+    - _TransparencyMask: 3.79
     - _UVSec: 0
-    - _VoronoiAgitation: 1.72
-    - _VoronoiPower: 3.45
-    - _VoronoiScale: 6.91
-    - _WobbleAmount: 3.13
-    - _WobbleFrequency: 29.27
-    - _WobbleHeight: 1
-    - _WobbleSpeed: 16
+    - _VoronoiAgitation: 1.17
+    - _VoronoiPower: 3.54
+    - _VoronoiScale: 10
+    - _WobbleAmount: 0
+    - _WobbleFrequency: 0
+    - _WobbleHeight: -22.9
+    - _WobbleRotate: 0
+    - _WobbleSpeed: 0
     - _WorkflowMode: 1
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 2
     m_Colors:
-    - _BaseColor: {r: 0.2819216, g: 0.79, b: 0.1425098, a: 1}
+    - _BaseColor: {r: 0.53333336, g: 1.0980393, b: 0, a: 1}
     - _Color: {r: 0.9063317, g: 0.8816186, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _NormalizeSpeed: {r: 0, g: 0.2, b: 0, a: 0}
+    - _NormalizeSpeed: {r: 0, g: 0.05, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _VoronoiColor: {r: 1.0709497, g: 2.9136133, b: 0, a: 1}
-    - _VoronoiSpeed: {r: 0.01, g: 0.01, b: 0, a: 0}
-    - _VoronoiTiling: {r: 1.1, g: -0.79, b: 0, a: 0}
+    - _VoronoiSpeed: {r: 0, g: -0.07, b: 0, a: 0}
+    - _VoronoiTiling: {r: 1.2, g: 0.6, b: 0, a: 0}
   m_BuildTextureStacks: []
