@@ -1,0 +1,469 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: System.GameProgress.StageProgressObserver クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceSystem.html">System</a></li><li class="navelem"><a class="el" href="namespaceSystem_1_1GameProgress.html">GameProgress</a></li><li class="navelem"><a class="el" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html">StageProgressObserver</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#properties">プロパティ</a> &#124;
+<a href="#events">イベント</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classSystem_1_1GameProgress_1_1StageProgressObserver-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">System.GameProgress.StageProgressObserver クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>ステージ進捗を監視するクラス  
+ <a href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#details">[詳解]</a></p>
+<div class="dynheader">
+System.GameProgress.StageProgressObserver 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classSystem_1_1GameProgress_1_1StageProgressObserver__coll__graph.png" border="0" usemap="#aSystem_8GameProgress_8StageProgressObserver_coll__map" alt="Collaboration graph"/></div>
+<map name="aSystem_8GameProgress_8StageProgressObserver_coll__map" id="aSystem_8GameProgress_8StageProgressObserver_coll__map">
+<area shape="rect" title="ステージ進捗を監視するクラス" alt="" coords="111,476,322,641"/>
+<area shape="rect" href="classSystem_1_1GameProgress_1_1GoalPoint.html" title="ゴール地点を設定するComponent" alt="" coords="5,241,209,362"/>
+<area shape="rect" title=" " alt="" coords="69,20,193,97"/>
+<area shape="rect" href="classModule_1_1Player_1_1Controller_1_1PlayerController.html" title="プレイヤーの操作に関するクラス" alt="" coords="233,189,419,413"/>
+<area shape="rect" title=" " alt="" coords="225,5,427,112"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:aeda15d78e0cdedb2108d63587cbb143c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#aeda15d78e0cdedb2108d63587cbb143c">StageProgressObserver</a> (<a class="el" href="classModule_1_1Player_1_1Controller_1_1PlayerController.html">PlayerController</a> <a class="el" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a221a39cd62a6ca1965816624760ecb5f">playerController</a>, <a class="el" href="classSystem_1_1GameProgress_1_1GoalPoint.html">GoalPoint</a> <a class="el" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a6917506c5d77cf80980406d84c4a8bc7">goalPoint</a>)</td></tr>
+<tr class="separator:aeda15d78e0cdedb2108d63587cbb143c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45fb07343b3017cf119ef2c859841c5f"><td class="memItemLeft" align="right" valign="top">async UniTaskVoid&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a45fb07343b3017cf119ef2c859841c5f">Start</a> ()</td></tr>
+<tr class="separator:a45fb07343b3017cf119ef2c859841c5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e4b54c50f9368dc1588b8d8dc15e404"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a2e4b54c50f9368dc1588b8d8dc15e404">Cancel</a> ()</td></tr>
+<tr class="separator:a2e4b54c50f9368dc1588b8d8dc15e404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+プロパティ</h2></td></tr>
+<tr class="memitem:ac3f146e32f24787e2d5158c07d11389a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#ac3f146e32f24787e2d5158c07d11389a">Progress</a><code> [get]</code></td></tr>
+<tr class="separator:ac3f146e32f24787e2d5158c07d11389a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="events"></a>
+イベント</h2></td></tr>
+<tr class="memitem:a4590773a3c423e7aed7911d65e5552eb"><td class="memItemLeft" align="right" valign="top">Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a4590773a3c423e7aed7911d65e5552eb">OnCompleted</a></td></tr>
+<tr class="separator:a4590773a3c423e7aed7911d65e5552eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:ad9222a33c19f20489c3a47b7a6d95759"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#ad9222a33c19f20489c3a47b7a6d95759">GetDistance</a> ()</td></tr>
+<tr class="separator:ad9222a33c19f20489c3a47b7a6d95759"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a221a39cd62a6ca1965816624760ecb5f"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="classModule_1_1Player_1_1Controller_1_1PlayerController.html">PlayerController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a221a39cd62a6ca1965816624760ecb5f">playerController</a></td></tr>
+<tr class="separator:a221a39cd62a6ca1965816624760ecb5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6917506c5d77cf80980406d84c4a8bc7"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="classSystem_1_1GameProgress_1_1GoalPoint.html">GoalPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a6917506c5d77cf80980406d84c4a8bc7">goalPoint</a></td></tr>
+<tr class="separator:a6917506c5d77cf80980406d84c4a8bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c232bd6410be7657c2783a89923ca17"><td class="memItemLeft" align="right" valign="top">readonly CancellationTokenSource&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a0c232bd6410be7657c2783a89923ca17">cTokenSource</a></td></tr>
+<tr class="separator:a0c232bd6410be7657c2783a89923ca17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8a6643376c2b107e4759f083ba1d45b"><td class="memItemLeft" align="right" valign="top">readonly float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#af8a6643376c2b107e4759f083ba1d45b">initDistance</a></td></tr>
+<tr class="separator:af8a6643376c2b107e4759f083ba1d45b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>ステージ進捗を監視するクラス </p>
+
+<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00015">15</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="aeda15d78e0cdedb2108d63587cbb143c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeda15d78e0cdedb2108d63587cbb143c">&#9670;&nbsp;</a></span>StageProgressObserver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">System.GameProgress.StageProgressObserver.StageProgressObserver </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classModule_1_1Player_1_1Controller_1_1PlayerController.html">PlayerController</a>&#160;</td>
+          <td class="paramname"><em>playerController</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classSystem_1_1GameProgress_1_1GoalPoint.html">GoalPoint</a>&#160;</td>
+          <td class="paramname"><em>goalPoint</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00028">28</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            this.playerController = <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a221a39cd62a6ca1965816624760ecb5f">playerController</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            this.<a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a6917506c5d77cf80980406d84c4a8bc7">goalPoint</a> = <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a6917506c5d77cf80980406d84c4a8bc7">goalPoint</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a0c232bd6410be7657c2783a89923ca17">cTokenSource</a> = <span class="keyword">new</span> CancellationTokenSource();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#af8a6643376c2b107e4759f083ba1d45b">initDistance</a> = <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#ad9222a33c19f20489c3a47b7a6d95759">GetDistance</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
+<div class="ttc" id="aclassSystem_1_1GameProgress_1_1StageProgressObserver_html_a0c232bd6410be7657c2783a89923ca17"><div class="ttname"><a href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a0c232bd6410be7657c2783a89923ca17">System.GameProgress.StageProgressObserver.cTokenSource</a></div><div class="ttdeci">readonly CancellationTokenSource cTokenSource</div><div class="ttdef"><b>Definition:</b> <a href="StageProgressObserver_8cs_source.html#l00019">StageProgressObserver.cs:19</a></div></div>
+<div class="ttc" id="aclassSystem_1_1GameProgress_1_1StageProgressObserver_html_a221a39cd62a6ca1965816624760ecb5f"><div class="ttname"><a href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a221a39cd62a6ca1965816624760ecb5f">System.GameProgress.StageProgressObserver.playerController</a></div><div class="ttdeci">readonly PlayerController playerController</div><div class="ttdef"><b>Definition:</b> <a href="StageProgressObserver_8cs_source.html#l00017">StageProgressObserver.cs:17</a></div></div>
+<div class="ttc" id="aclassSystem_1_1GameProgress_1_1StageProgressObserver_html_a6917506c5d77cf80980406d84c4a8bc7"><div class="ttname"><a href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a6917506c5d77cf80980406d84c4a8bc7">System.GameProgress.StageProgressObserver.goalPoint</a></div><div class="ttdeci">readonly GoalPoint goalPoint</div><div class="ttdef"><b>Definition:</b> <a href="StageProgressObserver_8cs_source.html#l00018">StageProgressObserver.cs:18</a></div></div>
+<div class="ttc" id="aclassSystem_1_1GameProgress_1_1StageProgressObserver_html_ad9222a33c19f20489c3a47b7a6d95759"><div class="ttname"><a href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#ad9222a33c19f20489c3a47b7a6d95759">System.GameProgress.StageProgressObserver.GetDistance</a></div><div class="ttdeci">float GetDistance()</div><div class="ttdef"><b>Definition:</b> <a href="StageProgressObserver_8cs_source.html#l00054">StageProgressObserver.cs:54</a></div></div>
+<div class="ttc" id="aclassSystem_1_1GameProgress_1_1StageProgressObserver_html_af8a6643376c2b107e4759f083ba1d45b"><div class="ttname"><a href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#af8a6643376c2b107e4759f083ba1d45b">System.GameProgress.StageProgressObserver.initDistance</a></div><div class="ttdeci">readonly float initDistance</div><div class="ttdef"><b>Definition:</b> <a href="StageProgressObserver_8cs_source.html#l00025">StageProgressObserver.cs:25</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSystem_1_1GameProgress_1_1StageProgressObserver_aeda15d78e0cdedb2108d63587cbb143c_cgraph.png" border="0" usemap="#aclassSystem_1_1GameProgress_1_1StageProgressObserver_aeda15d78e0cdedb2108d63587cbb143c_cgraph" alt=""/></div>
+<map name="aclassSystem_1_1GameProgress_1_1StageProgressObserver_aeda15d78e0cdedb2108d63587cbb143c_cgraph" id="aclassSystem_1_1GameProgress_1_1StageProgressObserver_aeda15d78e0cdedb2108d63587cbb143c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,239,61"/>
+<area shape="rect" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#ad9222a33c19f20489c3a47b7a6d95759" title=" " alt="" coords="287,13,507,54"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a2e4b54c50f9368dc1588b8d8dc15e404"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e4b54c50f9368dc1588b8d8dc15e404">&#9670;&nbsp;</a></span>Cancel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void System.GameProgress.StageProgressObserver.Cancel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00048">48</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a0c232bd6410be7657c2783a89923ca17">cTokenSource</a>.Cancel();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a0c232bd6410be7657c2783a89923ca17">cTokenSource</a>.Dispose();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
+</div><!-- fragment --><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSystem_1_1GameProgress_1_1StageProgressObserver_a2e4b54c50f9368dc1588b8d8dc15e404_icgraph.png" border="0" usemap="#aclassSystem_1_1GameProgress_1_1StageProgressObserver_a2e4b54c50f9368dc1588b8d8dc15e404_icgraph" alt=""/></div>
+<map name="aclassSystem_1_1GameProgress_1_1StageProgressObserver_a2e4b54c50f9368dc1588b8d8dc15e404_icgraph" id="aclassSystem_1_1GameProgress_1_1StageProgressObserver_a2e4b54c50f9368dc1588b8d8dc15e404_icgraph">
+<area shape="rect" title=" " alt="" coords="288,5,499,47"/>
+<area shape="rect" href="classGameMain_1_1GameRouter.html#a7e7b4085575f6e9877419b6820df7302" title=" " alt="" coords="5,13,240,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad9222a33c19f20489c3a47b7a6d95759"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9222a33c19f20489c3a47b7a6d95759">&#9670;&nbsp;</a></span>GetDistance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float System.GameProgress.StageProgressObserver.GetDistance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00054">54</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a6917506c5d77cf80980406d84c4a8bc7">goalPoint</a>.transform.position - <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a221a39cd62a6ca1965816624760ecb5f">playerController</a>.transform.position).z;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
+</div><!-- fragment --><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSystem_1_1GameProgress_1_1StageProgressObserver_ad9222a33c19f20489c3a47b7a6d95759_icgraph.png" border="0" usemap="#aclassSystem_1_1GameProgress_1_1StageProgressObserver_ad9222a33c19f20489c3a47b7a6d95759_icgraph" alt=""/></div>
+<map name="aclassSystem_1_1GameProgress_1_1StageProgressObserver_ad9222a33c19f20489c3a47b7a6d95759_icgraph" id="aclassSystem_1_1GameProgress_1_1StageProgressObserver_ad9222a33c19f20489c3a47b7a6d95759_icgraph">
+<area shape="rect" title=" " alt="" coords="287,13,507,54"/>
+<area shape="rect" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#aeda15d78e0cdedb2108d63587cbb143c" title=" " alt="" coords="5,5,239,61"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a45fb07343b3017cf119ef2c859841c5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45fb07343b3017cf119ef2c859841c5f">&#9670;&nbsp;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async UniTaskVoid System.GameProgress.StageProgressObserver.Start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00037">37</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="comment">//ゴール到着まで待機</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            await UniTask.WaitUntil(() =&gt; <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#ac3f146e32f24787e2d5158c07d11389a">Progress</a> &gt;= 1f, cancellationToken: <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a0c232bd6410be7657c2783a89923ca17">cTokenSource</a>.Token);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a0c232bd6410be7657c2783a89923ca17">cTokenSource</a>.IsCancellationRequested)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a4590773a3c423e7aed7911d65e5552eb">OnCompleted</a>?.Invoke();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
+<div class="ttc" id="aclassSystem_1_1GameProgress_1_1StageProgressObserver_html_a4590773a3c423e7aed7911d65e5552eb"><div class="ttname"><a href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a4590773a3c423e7aed7911d65e5552eb">System.GameProgress.StageProgressObserver.OnCompleted</a></div><div class="ttdeci">Action OnCompleted</div><div class="ttdef"><b>Definition:</b> <a href="StageProgressObserver_8cs_source.html#l00021">StageProgressObserver.cs:21</a></div></div>
+<div class="ttc" id="aclassSystem_1_1GameProgress_1_1StageProgressObserver_html_ac3f146e32f24787e2d5158c07d11389a"><div class="ttname"><a href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#ac3f146e32f24787e2d5158c07d11389a">System.GameProgress.StageProgressObserver.Progress</a></div><div class="ttdeci">float Progress</div><div class="ttdef"><b>Definition:</b> <a href="StageProgressObserver_8cs_source.html#l00023">StageProgressObserver.cs:23</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSystem_1_1GameProgress_1_1StageProgressObserver_a45fb07343b3017cf119ef2c859841c5f_icgraph.png" border="0" usemap="#aclassSystem_1_1GameProgress_1_1StageProgressObserver_a45fb07343b3017cf119ef2c859841c5f_icgraph" alt=""/></div>
+<map name="aclassSystem_1_1GameProgress_1_1StageProgressObserver_a45fb07343b3017cf119ef2c859841c5f_icgraph" id="aclassSystem_1_1GameProgress_1_1StageProgressObserver_a45fb07343b3017cf119ef2c859841c5f_icgraph">
+<area shape="rect" title=" " alt="" coords="267,5,477,47"/>
+<area shape="rect" href="classGameMain_1_1GameRouter.html#a6454f04e22fe74080dbb46da0f8927be" title=" " alt="" coords="5,13,219,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a0c232bd6410be7657c2783a89923ca17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c232bd6410be7657c2783a89923ca17">&#9670;&nbsp;</a></span>cTokenSource</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly CancellationTokenSource System.GameProgress.StageProgressObserver.cTokenSource</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00019">19</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6917506c5d77cf80980406d84c4a8bc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6917506c5d77cf80980406d84c4a8bc7">&#9670;&nbsp;</a></span>goalPoint</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly <a class="el" href="classSystem_1_1GameProgress_1_1GoalPoint.html">GoalPoint</a> System.GameProgress.StageProgressObserver.goalPoint</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00018">18</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af8a6643376c2b107e4759f083ba1d45b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8a6643376c2b107e4759f083ba1d45b">&#9670;&nbsp;</a></span>initDistance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly float System.GameProgress.StageProgressObserver.initDistance</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00025">25</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a221a39cd62a6ca1965816624760ecb5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a221a39cd62a6ca1965816624760ecb5f">&#9670;&nbsp;</a></span>playerController</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly <a class="el" href="classModule_1_1Player_1_1Controller_1_1PlayerController.html">PlayerController</a> System.GameProgress.StageProgressObserver.playerController</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00017">17</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">プロパティ詳解</h2>
+<a id="ac3f146e32f24787e2d5158c07d11389a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3f146e32f24787e2d5158c07d11389a">&#9670;&nbsp;</a></span>Progress</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float System.GameProgress.StageProgressObserver.Progress</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00023">23</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">イベント詳解</h2>
+<a id="a4590773a3c423e7aed7911d65e5552eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4590773a3c423e7aed7911d65e5552eb">&#9670;&nbsp;</a></span>OnCompleted</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Action System.GameProgress.StageProgressObserver.OnCompleted</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00021">21</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>src/Assets/Scripts/Module/GameProgress/<a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

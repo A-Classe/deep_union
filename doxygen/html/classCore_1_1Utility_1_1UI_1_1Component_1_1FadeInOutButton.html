@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: Core.Utility.UI.Component.FadeInOutButton クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceCore.html">Core</a></li><li class="navelem"><a class="el" href="namespaceCore_1_1Utility.html">Utility</a></li><li class="navelem"><a class="el" href="namespaceCore_1_1Utility_1_1UI.html">UI</a></li><li class="navelem"><a class="el" href="namespaceCore_1_1Utility_1_1UI_1_1Component.html">Component</a></li><li class="navelem"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html">FadeInOutButton</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="#pro-methods">限定公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">Core.Utility.UI.Component.FadeInOutButton クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Core.Utility.UI.Component.FadeInOutButton の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton__inherit__graph.png" border="0" usemap="#aCore_8Utility_8UI_8Component_8FadeInOutButton_inherit__map" alt="Inheritance graph"/></div>
+<map name="aCore_8Utility_8UI_8Component_8FadeInOutButton_inherit__map" id="aCore_8Utility_8UI_8Component_8FadeInOutButton_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,131,200,267"/>
+<area shape="rect" title=" " alt="" coords="25,5,180,83"/>
+</map>
+</div>
+<div class="dynheader">
+Core.Utility.UI.Component.FadeInOutButton 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton__coll__graph.png" border="0" usemap="#aCore_8Utility_8UI_8Component_8FadeInOutButton_coll__map" alt="Collaboration graph"/></div>
+<map name="aCore_8Utility_8UI_8Component_8FadeInOutButton_coll__map" id="aCore_8Utility_8UI_8Component_8FadeInOutButton_coll__map">
+<area shape="rect" title=" " alt="" coords="5,131,200,267"/>
+<area shape="rect" title=" " alt="" coords="25,5,180,83"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a6efc8a73fe3f9a7a2cb0b434dbe4f524"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a6efc8a73fe3f9a7a2cb0b434dbe4f524">OnPlay</a> (Action onFinished)</td></tr>
+<tr class="separator:a6efc8a73fe3f9a7a2cb0b434dbe4f524"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:a3423e76e3e9a1700a0dcf1beb29818e7"><td class="memItemLeft" align="right" valign="top">RectTransform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a3423e76e3e9a1700a0dcf1beb29818e7">rectTransform</a></td></tr>
+<tr class="separator:a3423e76e3e9a1700a0dcf1beb29818e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:a201f33cceb0e403b9e03d69e520c1873"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a201f33cceb0e403b9e03d69e520c1873">Awake</a> ()</td></tr>
+<tr class="separator:a201f33cceb0e403b9e03d69e520c1873"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:aff3299ce4f89ef9947f0852057ec9cc7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#aff3299ce4f89ef9947f0852057ec9cc7">FadeIn</a> (Action onFinished)</td></tr>
+<tr class="separator:aff3299ce4f89ef9947f0852057ec9cc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1574ad676bb9823b1db1b44124c74e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#aa1574ad676bb9823b1db1b44124c74e8">FadeOut</a> (Action onFinished)</td></tr>
+<tr class="separator:aa1574ad676bb9823b1db1b44124c74e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="FadeInOutButton_8cs_source.html">FadeInOutButton.cs</a> の <a class="el" href="FadeInOutButton_8cs_source.html#l00007">7</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="a201f33cceb0e403b9e03d69e520c1873"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a201f33cceb0e403b9e03d69e520c1873">&#9670;&nbsp;</a></span>Awake()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void Core.Utility.UI.Component.FadeInOutButton.Awake </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="FadeInOutButton_8cs_source.html">FadeInOutButton.cs</a> の <a class="el" href="FadeInOutButton_8cs_source.html#l00011">11</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            base.Awake();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a3423e76e3e9a1700a0dcf1beb29818e7">rectTransform</a> = GetComponent&lt;RectTransform&gt;();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton_html_a3423e76e3e9a1700a0dcf1beb29818e7"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a3423e76e3e9a1700a0dcf1beb29818e7">Core.Utility.UI.Component.FadeInOutButton.rectTransform</a></div><div class="ttdeci">RectTransform rectTransform</div><div class="ttdef"><b>Definition:</b> <a href="FadeInOutButton_8cs_source.html#l00009">FadeInOutButton.cs:9</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aff3299ce4f89ef9947f0852057ec9cc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff3299ce4f89ef9947f0852057ec9cc7">&#9670;&nbsp;</a></span>FadeIn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Core.Utility.UI.Component.FadeInOutButton.FadeIn </td>
+          <td>(</td>
+          <td class="paramtype">Action&#160;</td>
+          <td class="paramname"><em>onFinished</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="FadeInOutButton_8cs_source.html">FadeInOutButton.cs</a> の <a class="el" href="FadeInOutButton_8cs_source.html#l00022">22</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            Animation(</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                this.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#aff3299ce4f89ef9947f0852057ec9cc7">FadeIn</a>(Easings.Default(0.2f)),</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="keyword">new</span> AnimationListener()</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    OnFinished = onFinished</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            );</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton_html_aff3299ce4f89ef9947f0852057ec9cc7"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#aff3299ce4f89ef9947f0852057ec9cc7">Core.Utility.UI.Component.FadeInOutButton.FadeIn</a></div><div class="ttdeci">void FadeIn(Action onFinished)</div><div class="ttdef"><b>Definition:</b> <a href="FadeInOutButton_8cs_source.html#l00022">FadeInOutButton.cs:22</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton_aff3299ce4f89ef9947f0852057ec9cc7_icgraph.png" border="0" usemap="#aclassCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton_aff3299ce4f89ef9947f0852057ec9cc7_icgraph" alt=""/></div>
+<map name="aclassCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton_aff3299ce4f89ef9947f0852057ec9cc7_icgraph" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton_aff3299ce4f89ef9947f0852057ec9cc7_icgraph">
+<area shape="rect" title=" " alt="" coords="487,39,681,80"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a6efc8a73fe3f9a7a2cb0b434dbe4f524" title=" " alt="" coords="244,39,439,80"/>
+<area shape="rect" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a0c7e383d1c7df6bcb89a5e718507d2fa" title="戻るボタンが押されたときに反映する" alt="" coords="5,5,196,47"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html#a44b921a1f20a37a0e50d8726e9ef7bb7" title=" " alt="" coords="13,71,188,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa1574ad676bb9823b1db1b44124c74e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1574ad676bb9823b1db1b44124c74e8">&#9670;&nbsp;</a></span>FadeOut()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Core.Utility.UI.Component.FadeInOutButton.FadeOut </td>
+          <td>(</td>
+          <td class="paramtype">Action&#160;</td>
+          <td class="paramname"><em>onFinished</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="FadeInOutButton_8cs_source.html">FadeInOutButton.cs</a> の <a class="el" href="FadeInOutButton_8cs_source.html#l00033">33</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            Animation(</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                this.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#aa1574ad676bb9823b1db1b44124c74e8">FadeOut</a>(Easings.Default(0.2f)),</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <span class="keyword">new</span> AnimationListener()</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    OnFinished = onFinished</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            );</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton_html_aa1574ad676bb9823b1db1b44124c74e8"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#aa1574ad676bb9823b1db1b44124c74e8">Core.Utility.UI.Component.FadeInOutButton.FadeOut</a></div><div class="ttdeci">void FadeOut(Action onFinished)</div><div class="ttdef"><b>Definition:</b> <a href="FadeInOutButton_8cs_source.html#l00033">FadeInOutButton.cs:33</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton_aa1574ad676bb9823b1db1b44124c74e8_icgraph.png" border="0" usemap="#aclassCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton_aa1574ad676bb9823b1db1b44124c74e8_icgraph" alt=""/></div>
+<map name="aclassCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton_aa1574ad676bb9823b1db1b44124c74e8_icgraph" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton_aa1574ad676bb9823b1db1b44124c74e8_icgraph">
+<area shape="rect" title=" " alt="" coords="487,39,681,80"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a6efc8a73fe3f9a7a2cb0b434dbe4f524" title=" " alt="" coords="244,39,439,80"/>
+<area shape="rect" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a0c7e383d1c7df6bcb89a5e718507d2fa" title="戻るボタンが押されたときに反映する" alt="" coords="5,5,196,47"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html#a44b921a1f20a37a0e50d8726e9ef7bb7" title=" " alt="" coords="13,71,188,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6efc8a73fe3f9a7a2cb0b434dbe4f524"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6efc8a73fe3f9a7a2cb0b434dbe4f524">&#9670;&nbsp;</a></span>OnPlay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Core.Utility.UI.Component.FadeInOutButton.OnPlay </td>
+          <td>(</td>
+          <td class="paramtype">Action&#160;</td>
+          <td class="paramname"><em>onFinished</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="FadeInOutButton_8cs_source.html">FadeInOutButton.cs</a> の <a class="el" href="FadeInOutButton_8cs_source.html#l00017">17</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#aa1574ad676bb9823b1db1b44124c74e8">FadeOut</a>(() =&gt; <a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#aff3299ce4f89ef9947f0852057ec9cc7">FadeIn</a>(onFinished));</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        }</div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton_a6efc8a73fe3f9a7a2cb0b434dbe4f524_cgraph.png" border="0" usemap="#aclassCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton_a6efc8a73fe3f9a7a2cb0b434dbe4f524_cgraph" alt=""/></div>
+<map name="aclassCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton_a6efc8a73fe3f9a7a2cb0b434dbe4f524_cgraph" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton_a6efc8a73fe3f9a7a2cb0b434dbe4f524_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,200,80"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#aff3299ce4f89ef9947f0852057ec9cc7" title=" " alt="" coords="248,5,443,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#aa1574ad676bb9823b1db1b44124c74e8" title=" " alt="" coords="248,71,443,112"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton_a6efc8a73fe3f9a7a2cb0b434dbe4f524_icgraph.png" border="0" usemap="#aclassCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton_a6efc8a73fe3f9a7a2cb0b434dbe4f524_icgraph" alt=""/></div>
+<map name="aclassCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton_a6efc8a73fe3f9a7a2cb0b434dbe4f524_icgraph" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton_a6efc8a73fe3f9a7a2cb0b434dbe4f524_icgraph">
+<area shape="rect" title=" " alt="" coords="244,39,439,80"/>
+<area shape="rect" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a0c7e383d1c7df6bcb89a5e718507d2fa" title="戻るボタンが押されたときに反映する" alt="" coords="5,5,196,47"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html#a44b921a1f20a37a0e50d8726e9ef7bb7" title=" " alt="" coords="13,71,188,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a3423e76e3e9a1700a0dcf1beb29818e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3423e76e3e9a1700a0dcf1beb29818e7">&#9670;&nbsp;</a></span>rectTransform</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RectTransform Core.Utility.UI.Component.FadeInOutButton.rectTransform</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="FadeInOutButton_8cs_source.html">FadeInOutButton.cs</a> の <a class="el" href="FadeInOutButton_8cs_source.html#l00009">9</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>src/Assets/Scripts/Core/Utility/UI/Component/<a class="el" href="FadeInOutButton_8cs_source.html">FadeInOutButton.cs</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

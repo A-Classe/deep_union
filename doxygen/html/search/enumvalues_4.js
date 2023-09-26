@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['pause_647',['Pause',['../namespaceModule_1_1Player_1_1State.html#a1f8129bb91b2599aa35084f9e3aca736a105b296a83f9c105355403f3332af50f',1,'Module::Player::State']]]
+  ['follow_1568',['Follow',['../namespaceModule_1_1Player_1_1Camera_1_1State.html#a706feea038e86118d7428652b300b1cca3903aab323863bd2e9b68218a7a65ebd',1,'Module::Player::Camera::State']]],
+  ['following_1569',['Following',['../namespaceModule_1_1Working_1_1State.html#a6741b3bd2dd67b25e9e0477f35e01082a6f796b0e6deb4f4c2c0ee0ed5e10e117',1,'Module::Working::State']]]
 ];

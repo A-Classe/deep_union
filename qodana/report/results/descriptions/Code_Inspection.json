@@ -16352,6 +16352,12 @@
           "description": "Reports a CSS class or an element IDs that appears in selectors but is not used in HTML.\n\n\nNote that complete inspection results are available only when running it via **Code \\| Inspect Code** or\n**Code \\| Analyze Code \\| Run Inspection by Name**.\nDue to performance reasons, style sheet files are not inspected on the fly."
         },
         {
+          "shortName": "CssDeprecatedValue",
+          "displayName": "Deprecated value",
+          "enabled": false,
+          "description": "Reports a deprecated CSS value. Suggests replacing the deprecated value with valid equivalent."
+        },
+        {
           "shortName": "CssConvertColorToHexInspection",
           "displayName": "Color could be replaced with #-hex",
           "enabled": false,
@@ -16445,6 +16451,12 @@
           "displayName": "Invalid property value",
           "enabled": false,
           "description": "Reports an incorrect CSS property value."
+        },
+        {
+          "shortName": "CssUnknownUnit",
+          "displayName": "Unknown unit",
+          "enabled": false,
+          "description": "Reports an unknown unit"
         },
         {
           "shortName": "CssInvalidImport",

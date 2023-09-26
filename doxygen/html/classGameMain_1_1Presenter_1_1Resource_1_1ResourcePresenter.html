@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: GameMain.Presenter.Resource.ResourcePresenter クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceGameMain.html">GameMain</a></li><li class="navelem"><a class="el" href="namespaceGameMain_1_1Presenter.html">Presenter</a></li><li class="navelem"><a class="el" href="namespaceGameMain_1_1Presenter_1_1Resource.html">Resource</a></li><li class="navelem"><a class="el" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html">ResourcePresenter</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">GameMain.Presenter.Resource.ResourcePresenter クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>タスクとリソース管理クラスのプレゼンタークラス  
+ <a href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#details">[詳解]</a></p>
+<div class="dynheader">
+GameMain.Presenter.Resource.ResourcePresenter の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter__inherit__graph.png" border="0" usemap="#aGameMain_8Presenter_8Resource_8ResourcePresenter_inherit__map" alt="Inheritance graph"/></div>
+<map name="aGameMain_8Presenter_8Resource_8ResourcePresenter_inherit__map" id="aGameMain_8Presenter_8Resource_8ResourcePresenter_inherit__map">
+<area shape="rect" title="タスクとリソース管理クラスのプレゼンタークラス" alt="" coords="5,131,232,252"/>
+<area shape="rect" title=" " alt="" coords="67,5,170,83"/>
+</map>
+</div>
+<div class="dynheader">
+GameMain.Presenter.Resource.ResourcePresenter 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter__coll__graph.png" border="0" usemap="#aGameMain_8Presenter_8Resource_8ResourcePresenter_coll__map" alt="Collaboration graph"/></div>
+<map name="aGameMain_8Presenter_8Resource_8ResourcePresenter_coll__map" id="aGameMain_8Presenter_8Resource_8ResourcePresenter_coll__map">
+<area shape="rect" title="タスクとリソース管理クラスのプレゼンタークラス" alt="" coords="123,779,350,885"/>
+<area shape="rect" title=" " alt="" coords="5,602,108,679"/>
+<area shape="rect" href="classModule_1_1Task_1_1ResourceContainer.html" title="リソースを管理するクラス" alt="" coords="365,580,596,701"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1GameParam.html" title=" " alt="" coords="357,220,599,429"/>
+<area shape="rect" href="classModule_1_1Task_1_1CollectableTask.html" title="資源を一時的に収集するクラス" alt="" coords="132,565,341,716"/>
+<area shape="rect" title=" " alt="" coords="413,13,543,90"/>
+<area shape="rect" title=" " alt="" coords="48,13,172,90"/>
+<area shape="rect" href="classModule_1_1Task_1_1BaseTask.html" title="全てのタスクのベースクラス" alt="" coords="148,147,331,503"/>
+<area shape="rect" href="interfaceModule_1_1Task_1_1ITaskSystem.html" title="タスクにゲームループを適用するインターフェース" alt="" coords="196,5,368,97"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a244525432dda84ed7fc7617c1e7c5957"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a244525432dda84ed7fc7617c1e7c5957">ResourcePresenter</a> (<a class="el" href="classModule_1_1Task_1_1ResourceContainer.html">ResourceContainer</a> <a class="el" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a8e6e06136f0759d79d0deebdd4f640bb">resourceContainer</a>)</td></tr>
+<tr class="separator:a244525432dda84ed7fc7617c1e7c5957"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4685bda8b42b7e9304433b7352608255"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a4685bda8b42b7e9304433b7352608255">Initialize</a> ()</td></tr>
+<tr class="separator:a4685bda8b42b7e9304433b7352608255"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a8e6e06136f0759d79d0deebdd4f640bb"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="classModule_1_1Task_1_1ResourceContainer.html">ResourceContainer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a8e6e06136f0759d79d0deebdd4f640bb">resourceContainer</a></td></tr>
+<tr class="separator:a8e6e06136f0759d79d0deebdd4f640bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62c0881fde07324caa2c5fcd5d7aeef8"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="classModule_1_1Task_1_1CollectableTask.html">CollectableTask</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a62c0881fde07324caa2c5fcd5d7aeef8">collectableTasks</a></td></tr>
+<tr class="separator:a62c0881fde07324caa2c5fcd5d7aeef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>タスクとリソース管理クラスのプレゼンタークラス </p>
+
+<p class="definition"> <a class="el" href="ResourcePresenter_8cs_source.html">ResourcePresenter.cs</a> の <a class="el" href="ResourcePresenter_8cs_source.html#l00011">11</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a244525432dda84ed7fc7617c1e7c5957"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a244525432dda84ed7fc7617c1e7c5957">&#9670;&nbsp;</a></span>ResourcePresenter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameMain.Presenter.Resource.ResourcePresenter.ResourcePresenter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classModule_1_1Task_1_1ResourceContainer.html">ResourceContainer</a>&#160;</td>
+          <td class="paramname"><em>resourceContainer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResourcePresenter_8cs_source.html">ResourcePresenter.cs</a> の <a class="el" href="ResourcePresenter_8cs_source.html#l00017">17</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            this.resourceContainer = <a class="code" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a8e6e06136f0759d79d0deebdd4f640bb">resourceContainer</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <a class="code" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a62c0881fde07324caa2c5fcd5d7aeef8">collectableTasks</a> = <a class="code" href="classModule_1_1Task_1_1TaskUtil.html">TaskUtil</a>.FindSceneTasks&lt;<a class="code" href="classModule_1_1Task_1_1CollectableTask.html">CollectableTask</a>&gt;();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter_html_a62c0881fde07324caa2c5fcd5d7aeef8"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a62c0881fde07324caa2c5fcd5d7aeef8">GameMain.Presenter.Resource.ResourcePresenter.collectableTasks</a></div><div class="ttdeci">readonly CollectableTask[] collectableTasks</div><div class="ttdef"><b>Definition:</b> <a href="ResourcePresenter_8cs_source.html#l00014">ResourcePresenter.cs:14</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter_html_a8e6e06136f0759d79d0deebdd4f640bb"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a8e6e06136f0759d79d0deebdd4f640bb">GameMain.Presenter.Resource.ResourcePresenter.resourceContainer</a></div><div class="ttdeci">readonly ResourceContainer resourceContainer</div><div class="ttdef"><b>Definition:</b> <a href="ResourcePresenter_8cs_source.html#l00013">ResourcePresenter.cs:13</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1CollectableTask_html"><div class="ttname"><a href="classModule_1_1Task_1_1CollectableTask.html">Module.Task.CollectableTask</a></div><div class="ttdoc">資源を一時的に収集するクラス</div><div class="ttdef"><b>Definition:</b> <a href="CollectableTask_8cs_source.html#l00014">CollectableTask.cs:15</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1TaskUtil_html"><div class="ttname"><a href="classModule_1_1Task_1_1TaskUtil.html">Module.Task.TaskUtil</a></div><div class="ttdef"><b>Definition:</b> <a href="TaskUtil_8cs_source.html#l00006">TaskUtil.cs:7</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a4685bda8b42b7e9304433b7352608255"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4685bda8b42b7e9304433b7352608255">&#9670;&nbsp;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameMain.Presenter.Resource.ResourcePresenter.Initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResourcePresenter_8cs_source.html">ResourcePresenter.cs</a> の <a class="el" href="ResourcePresenter_8cs_source.html#l00023">23</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordflow">foreach</span> (var collectableTask <span class="keywordflow">in</span> <a class="code" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a62c0881fde07324caa2c5fcd5d7aeef8">collectableTasks</a>)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                collectableTask.OnCollected += count =&gt;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                    <a class="code" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a8e6e06136f0759d79d0deebdd4f640bb">resourceContainer</a>.<a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#abaa4c97750ccb88f1fef631c9f5045d4">Add</a>(count);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                };</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Task_1_1ResourceContainer_html_abaa4c97750ccb88f1fef631c9f5045d4"><div class="ttname"><a href="classModule_1_1Task_1_1ResourceContainer.html#abaa4c97750ccb88f1fef631c9f5045d4">Module.Task.ResourceContainer.Add</a></div><div class="ttdeci">void Add(int count)</div><div class="ttdef"><b>Definition:</b> <a href="ResourceContainer_8cs_source.html#l00038">ResourceContainer.cs:38</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter_a4685bda8b42b7e9304433b7352608255_cgraph.png" border="0" usemap="#aclassGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter_a4685bda8b42b7e9304433b7352608255_cgraph" alt=""/></div>
+<map name="aclassGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter_a4685bda8b42b7e9304433b7352608255_cgraph" id="aclassGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter_a4685bda8b42b7e9304433b7352608255_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,232,47"/>
+<area shape="rect" href="classModule_1_1Task_1_1ResourceContainer.html#abaa4c97750ccb88f1fef631c9f5045d4" title=" " alt="" coords="280,13,539,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a62c0881fde07324caa2c5fcd5d7aeef8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62c0881fde07324caa2c5fcd5d7aeef8">&#9670;&nbsp;</a></span>collectableTasks</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly <a class="el" href="classModule_1_1Task_1_1CollectableTask.html">CollectableTask</a> [] GameMain.Presenter.Resource.ResourcePresenter.collectableTasks</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResourcePresenter_8cs_source.html">ResourcePresenter.cs</a> の <a class="el" href="ResourcePresenter_8cs_source.html#l00014">14</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8e6e06136f0759d79d0deebdd4f640bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e6e06136f0759d79d0deebdd4f640bb">&#9670;&nbsp;</a></span>resourceContainer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly <a class="el" href="classModule_1_1Task_1_1ResourceContainer.html">ResourceContainer</a> GameMain.Presenter.Resource.ResourcePresenter.resourceContainer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResourcePresenter_8cs_source.html">ResourcePresenter.cs</a> の <a class="el" href="ResourcePresenter_8cs_source.html#l00013">13</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>src/Assets/Scripts/GameMain/Presenter/Resource/<a class="el" href="ResourcePresenter_8cs_source.html">ResourcePresenter.cs</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

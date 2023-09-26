@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: src/Assets/Scripts/Debug/TaskPageLinkButtonCell.cs ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_32423195e903e7bbb36d3ddd3a1a2aba.html">Debug</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">TaskPageLinkButtonCell.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="TaskPageLinkButtonCell_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceSystem.html">System</a>;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> UnityDebugSheet.Runtime.Core.Scripts;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> UnityDebugSheet.Runtime.Core.Scripts.DefaultImpl.CellParts;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using</span> UnityEngine.UI;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceDebug.html">Debug</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classDebug_1_1TaskPageLinkButtonCell.html">    9</a></span>&#160;    <span class="keyword">public</span> sealed <span class="keyword">class </span><a class="code" href="classDebug_1_1TaskPageLinkButtonCell.html">TaskPageLinkButtonCell</a> : Cell&lt;TaskPageLinkButtonCellModel&gt;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classDebug_1_1TaskPageLinkButtonCell.html#ab44028d85479121d44957740f3943bbf">   11</a></span>&#160;        [SerializeField] <span class="keyword">private</span> LayoutElement <a class="code" href="classDebug_1_1TaskPageLinkButtonCell.html#ab44028d85479121d44957740f3943bbf">_layoutElement</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classDebug_1_1TaskPageLinkButtonCell.html#a4c50b7f3fb91a61bc2223a820b621e8d">   12</a></span>&#160;        [SerializeField] <span class="keyword">private</span> RectTransform <a class="code" href="classDebug_1_1TaskPageLinkButtonCell.html#a4c50b7f3fb91a61bc2223a820b621e8d">_contents</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classDebug_1_1TaskPageLinkButtonCell.html#aaf8b56145bd632dabc3ab855d7cda3c6">   13</a></span>&#160;        [SerializeField] <span class="keyword">private</span> CanvasGroup <a class="code" href="classDebug_1_1TaskPageLinkButtonCell.html#aaf8b56145bd632dabc3ab855d7cda3c6">_contentsCanvasGroup</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classDebug_1_1TaskPageLinkButtonCell.html#a6b0a6a90da91074cc77e91f9674c18d4">   15</a></span>&#160;        <span class="keyword">public</span> CellIcon <a class="code" href="classDebug_1_1TaskPageLinkButtonCell.html#a6b0a6a90da91074cc77e91f9674c18d4">icon</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classDebug_1_1TaskPageLinkButtonCell.html#a2e7d7a8227defd4ddf8efa446b3c1ff2">   16</a></span>&#160;        <span class="keyword">public</span> CellTexts <a class="code" href="classDebug_1_1TaskPageLinkButtonCell.html#a2e7d7a8227defd4ddf8efa446b3c1ff2">cellTexts</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classDebug_1_1TaskPageLinkButtonCell.html#a940223c087669dd5ad8d02f8c83cab40">   17</a></span>&#160;        <span class="keyword">public</span> Image <a class="code" href="classDebug_1_1TaskPageLinkButtonCell.html#a940223c087669dd5ad8d02f8c83cab40">arrow</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classDebug_1_1TaskPageLinkButtonCell.html#a06bdc831e8cb4489f0dafabb55e5860f">   18</a></span>&#160;        <span class="keyword">public</span> Button <a class="code" href="classDebug_1_1TaskPageLinkButtonCell.html#a06bdc831e8cb4489f0dafabb55e5860f">button</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classDebug_1_1TaskPageLinkButtonCell.html#ab3c101253676df691febc1947f53f60f">   20</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="classDebug_1_1TaskPageLinkButtonCell.html#ab3c101253676df691febc1947f53f60f">SetModel</a>(<a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html">TaskPageLinkButtonCellModel</a> model)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            Type pageType = model.<a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#a7e01ae03e3a49efd09d5c319f4e7ca68">PageType</a> ?? typeof(DebugPage);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <a class="code" href="classDebug_1_1TaskPageLinkButtonCell.html#aaf8b56145bd632dabc3ab855d7cda3c6">_contentsCanvasGroup</a>.alpha = model.<a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#a6a9fa06551470d4bbf2e0ba989865e03">Interactable</a> ? 1.0f : 0.3f;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="comment">// Icon</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <a class="code" href="classDebug_1_1TaskPageLinkButtonCell.html#a6b0a6a90da91074cc77e91f9674c18d4">icon</a>.Setup(model.<a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#aa307a578af422cb79a25fff722d98f70">Icon</a>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <a class="code" href="classDebug_1_1TaskPageLinkButtonCell.html#a6b0a6a90da91074cc77e91f9674c18d4">icon</a>.gameObject.SetActive(model.<a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#aa307a578af422cb79a25fff722d98f70">Icon</a>.Sprite != <span class="keyword">null</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="comment">//Texts</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <a class="code" href="classDebug_1_1TaskPageLinkButtonCell.html#a2e7d7a8227defd4ddf8efa446b3c1ff2">cellTexts</a>.Setup(model.<a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#ade8fd9d6a10f0f0c64cff09b8a1383ae">CellTexts</a>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="comment">// Arrow</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="classDebug_1_1TaskPageLinkButtonCell.html#a940223c087669dd5ad8d02f8c83cab40">arrow</a>.gameObject.SetActive(model.<a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#af9a214a4cdfa47dac4a8a99c249ee3ed">ShowArrow</a>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="comment">// Button</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <a class="code" href="classDebug_1_1TaskPageLinkButtonCell.html#a06bdc831e8cb4489f0dafabb55e5860f">button</a>.interactable = model.<a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#a6a9fa06551470d4bbf2e0ba989865e03">Interactable</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="classDebug_1_1TaskPageLinkButtonCell.html#a06bdc831e8cb4489f0dafabb55e5860f">button</a>.colors = model.<a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#a11d33471fb06f263520411ebfe1dff34">ColorBlock</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <a class="code" href="classDebug_1_1TaskPageLinkButtonCell.html#a06bdc831e8cb4489f0dafabb55e5860f">button</a>.onClick.RemoveAllListeners();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <a class="code" href="classDebug_1_1TaskPageLinkButtonCell.html#a06bdc831e8cb4489f0dafabb55e5860f">button</a>.onClick.AddListener(() =&gt;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordflow">if</span> (model.<a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#a9763c5093b3ea3318e41efa2493bb060">Prefab</a> == <span class="keyword">null</span>)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    DebugSheet.Of(transform)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                        .PushPage(pageType, <span class="keyword">true</span>, onLoad: x =&gt; model.InvokeOnLoad(x.pageId, x.page),</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                            titleOverride: model.<a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#aa1f900891b84748bd8444e13c182fcd6">PageTitleOverride</a>, pageId: model.<a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#ad2b718a55ddddfbdeacb61c86d482616">PageId</a>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                    DebugSheet.Of(transform)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        .PushPage(pageType, model.<a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#a9763c5093b3ea3318e41efa2493bb060">Prefab</a>, <span class="keyword">true</span>,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                            onLoad: x =&gt; model.InvokeOnLoad(x.pageId, x.page),</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                            titleOverride: model.<a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#aa1f900891b84748bd8444e13c182fcd6">PageTitleOverride</a>, pageId: model.<a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#ad2b718a55ddddfbdeacb61c86d482616">PageId</a>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            });</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="comment">// Height</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            var height = model.<a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#a4182595dc9243244a0e70eec966b4b7c">UseSubTextOrIcon</a> ? 68 : 32; <span class="comment">// Texts</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            height += 26; <span class="comment">// Padding</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            height += 1; <span class="comment">// Border</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <a class="code" href="classDebug_1_1TaskPageLinkButtonCell.html#a4c50b7f3fb91a61bc2223a820b621e8d">_contents</a>.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, height);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <a class="code" href="classDebug_1_1TaskPageLinkButtonCell.html#ab44028d85479121d44957740f3943bbf">_layoutElement</a>.preferredHeight = height; <span class="comment">// Set the preferred height for the recycler view.</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classDebug_1_1TaskPageLinkButtonCellModel.html">   62</a></span>&#160;    <span class="keyword">public</span> sealed <span class="keyword">class </span><a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html">TaskPageLinkButtonCellModel</a> : CellModel</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classDebug_1_1TaskPageLinkButtonCellModel.html#a8307f33af1da53a4a5b36021f311c403">   64</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#a8307f33af1da53a4a5b36021f311c403">TaskPageLinkButtonCellModel</a>(<span class="keywordtype">bool</span> useSubTextOrIcon)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#a4182595dc9243244a0e70eec966b4b7c">UseSubTextOrIcon</a> = useSubTextOrIcon;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classDebug_1_1TaskPageLinkButtonCellModel.html#aa1f900891b84748bd8444e13c182fcd6">   69</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#aa1f900891b84748bd8444e13c182fcd6">PageTitleOverride</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classDebug_1_1TaskPageLinkButtonCellModel.html#aa307a578af422cb79a25fff722d98f70">   71</a></span>&#160;        <span class="keyword">public</span> CellIconModel <a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#aa307a578af422cb79a25fff722d98f70">Icon</a> { <span class="keyword">get</span>; } = <span class="keyword">new</span> CellIconModel();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classDebug_1_1TaskPageLinkButtonCellModel.html#a4182595dc9243244a0e70eec966b4b7c">   73</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#a4182595dc9243244a0e70eec966b4b7c">UseSubTextOrIcon</a> { <span class="keyword">get</span>; }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classDebug_1_1TaskPageLinkButtonCellModel.html#ade8fd9d6a10f0f0c64cff09b8a1383ae">   75</a></span>&#160;        <span class="keyword">public</span> CellTextsModel <a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#ade8fd9d6a10f0f0c64cff09b8a1383ae">CellTexts</a> { <span class="keyword">get</span>; } = <span class="keyword">new</span> CellTextsModel();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classDebug_1_1TaskPageLinkButtonCellModel.html#af9a214a4cdfa47dac4a8a99c249ee3ed">   77</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#af9a214a4cdfa47dac4a8a99c249ee3ed">ShowArrow</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classDebug_1_1TaskPageLinkButtonCellModel.html#a6a9fa06551470d4bbf2e0ba989865e03">   79</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#a6a9fa06551470d4bbf2e0ba989865e03">Interactable</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; } = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classDebug_1_1TaskPageLinkButtonCellModel.html#a7e01ae03e3a49efd09d5c319f4e7ca68">   81</a></span>&#160;        <span class="keyword">public</span> Type <a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#a7e01ae03e3a49efd09d5c319f4e7ca68">PageType</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classDebug_1_1TaskPageLinkButtonCellModel.html#a9763c5093b3ea3318e41efa2493bb060">   83</a></span>&#160;        <span class="keyword">public</span> DebugPageBase <a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#a9763c5093b3ea3318e41efa2493bb060">Prefab</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classDebug_1_1TaskPageLinkButtonCellModel.html#a4a2c146be89639d0313a0bca9d201352">   85</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">event</span> Action&lt;(<span class="keywordtype">string</span> pageId, DebugPageBase page)&gt; <a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#a4a2c146be89639d0313a0bca9d201352">OnLoad</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classDebug_1_1TaskPageLinkButtonCellModel.html#ad2b718a55ddddfbdeacb61c86d482616">   87</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#ad2b718a55ddddfbdeacb61c86d482616">PageId</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classDebug_1_1TaskPageLinkButtonCellModel.html#a11d33471fb06f263520411ebfe1dff34">   89</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#a11d33471fb06f263520411ebfe1dff34">ColorBlock</a> <a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#a11d33471fb06f263520411ebfe1dff34">ColorBlock</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keyword">internal</span> <span class="keywordtype">void</span> InvokeOnLoad(<span class="keywordtype">string</span> pageId, DebugPageBase debugPage)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <a class="code" href="classDebug_1_1TaskPageLinkButtonCellModel.html#a4a2c146be89639d0313a0bca9d201352">OnLoad</a>?.Invoke((pageId, debugPage));</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+<div class="ttc" id="aclassDebug_1_1TaskPageLinkButtonCellModel_html"><div class="ttname"><a href="classDebug_1_1TaskPageLinkButtonCellModel.html">Debug.TaskPageLinkButtonCellModel</a></div><div class="ttdef"><b>Definition:</b> <a href="TaskPageLinkButtonCell_8cs_source.html#l00062">TaskPageLinkButtonCell.cs:63</a></div></div>
+<div class="ttc" id="aclassDebug_1_1TaskPageLinkButtonCellModel_html_a11d33471fb06f263520411ebfe1dff34"><div class="ttname"><a href="classDebug_1_1TaskPageLinkButtonCellModel.html#a11d33471fb06f263520411ebfe1dff34">Debug.TaskPageLinkButtonCellModel.ColorBlock</a></div><div class="ttdeci">ColorBlock ColorBlock</div><div class="ttdef"><b>Definition:</b> <a href="TaskPageLinkButtonCell_8cs_source.html#l00089">TaskPageLinkButtonCell.cs:89</a></div></div>
+<div class="ttc" id="aclassDebug_1_1TaskPageLinkButtonCellModel_html_a4182595dc9243244a0e70eec966b4b7c"><div class="ttname"><a href="classDebug_1_1TaskPageLinkButtonCellModel.html#a4182595dc9243244a0e70eec966b4b7c">Debug.TaskPageLinkButtonCellModel.UseSubTextOrIcon</a></div><div class="ttdeci">bool UseSubTextOrIcon</div><div class="ttdef"><b>Definition:</b> <a href="TaskPageLinkButtonCell_8cs_source.html#l00073">TaskPageLinkButtonCell.cs:73</a></div></div>
+<div class="ttc" id="aclassDebug_1_1TaskPageLinkButtonCellModel_html_a4a2c146be89639d0313a0bca9d201352"><div class="ttname"><a href="classDebug_1_1TaskPageLinkButtonCellModel.html#a4a2c146be89639d0313a0bca9d201352">Debug.TaskPageLinkButtonCellModel.OnLoad</a></div><div class="ttdeci">Action&lt;(string pageId, DebugPageBase page)&gt; OnLoad</div><div class="ttdef"><b>Definition:</b> <a href="TaskPageLinkButtonCell_8cs_source.html#l00085">TaskPageLinkButtonCell.cs:85</a></div></div>
+<div class="ttc" id="aclassDebug_1_1TaskPageLinkButtonCellModel_html_a6a9fa06551470d4bbf2e0ba989865e03"><div class="ttname"><a href="classDebug_1_1TaskPageLinkButtonCellModel.html#a6a9fa06551470d4bbf2e0ba989865e03">Debug.TaskPageLinkButtonCellModel.Interactable</a></div><div class="ttdeci">bool Interactable</div><div class="ttdef"><b>Definition:</b> <a href="TaskPageLinkButtonCell_8cs_source.html#l00079">TaskPageLinkButtonCell.cs:79</a></div></div>
+<div class="ttc" id="aclassDebug_1_1TaskPageLinkButtonCellModel_html_a7e01ae03e3a49efd09d5c319f4e7ca68"><div class="ttname"><a href="classDebug_1_1TaskPageLinkButtonCellModel.html#a7e01ae03e3a49efd09d5c319f4e7ca68">Debug.TaskPageLinkButtonCellModel.PageType</a></div><div class="ttdeci">Type PageType</div><div class="ttdef"><b>Definition:</b> <a href="TaskPageLinkButtonCell_8cs_source.html#l00081">TaskPageLinkButtonCell.cs:81</a></div></div>
+<div class="ttc" id="aclassDebug_1_1TaskPageLinkButtonCellModel_html_a8307f33af1da53a4a5b36021f311c403"><div class="ttname"><a href="classDebug_1_1TaskPageLinkButtonCellModel.html#a8307f33af1da53a4a5b36021f311c403">Debug.TaskPageLinkButtonCellModel.TaskPageLinkButtonCellModel</a></div><div class="ttdeci">TaskPageLinkButtonCellModel(bool useSubTextOrIcon)</div><div class="ttdef"><b>Definition:</b> <a href="TaskPageLinkButtonCell_8cs_source.html#l00064">TaskPageLinkButtonCell.cs:64</a></div></div>
+<div class="ttc" id="aclassDebug_1_1TaskPageLinkButtonCellModel_html_a9763c5093b3ea3318e41efa2493bb060"><div class="ttname"><a href="classDebug_1_1TaskPageLinkButtonCellModel.html#a9763c5093b3ea3318e41efa2493bb060">Debug.TaskPageLinkButtonCellModel.Prefab</a></div><div class="ttdeci">DebugPageBase Prefab</div><div class="ttdef"><b>Definition:</b> <a href="TaskPageLinkButtonCell_8cs_source.html#l00083">TaskPageLinkButtonCell.cs:83</a></div></div>
+<div class="ttc" id="aclassDebug_1_1TaskPageLinkButtonCellModel_html_aa1f900891b84748bd8444e13c182fcd6"><div class="ttname"><a href="classDebug_1_1TaskPageLinkButtonCellModel.html#aa1f900891b84748bd8444e13c182fcd6">Debug.TaskPageLinkButtonCellModel.PageTitleOverride</a></div><div class="ttdeci">string PageTitleOverride</div><div class="ttdef"><b>Definition:</b> <a href="TaskPageLinkButtonCell_8cs_source.html#l00069">TaskPageLinkButtonCell.cs:69</a></div></div>
+<div class="ttc" id="aclassDebug_1_1TaskPageLinkButtonCellModel_html_aa307a578af422cb79a25fff722d98f70"><div class="ttname"><a href="classDebug_1_1TaskPageLinkButtonCellModel.html#aa307a578af422cb79a25fff722d98f70">Debug.TaskPageLinkButtonCellModel.Icon</a></div><div class="ttdeci">CellIconModel Icon</div><div class="ttdef"><b>Definition:</b> <a href="TaskPageLinkButtonCell_8cs_source.html#l00071">TaskPageLinkButtonCell.cs:71</a></div></div>
+<div class="ttc" id="aclassDebug_1_1TaskPageLinkButtonCellModel_html_ad2b718a55ddddfbdeacb61c86d482616"><div class="ttname"><a href="classDebug_1_1TaskPageLinkButtonCellModel.html#ad2b718a55ddddfbdeacb61c86d482616">Debug.TaskPageLinkButtonCellModel.PageId</a></div><div class="ttdeci">string PageId</div><div class="ttdef"><b>Definition:</b> <a href="TaskPageLinkButtonCell_8cs_source.html#l00087">TaskPageLinkButtonCell.cs:87</a></div></div>
+<div class="ttc" id="aclassDebug_1_1TaskPageLinkButtonCellModel_html_ade8fd9d6a10f0f0c64cff09b8a1383ae"><div class="ttname"><a href="classDebug_1_1TaskPageLinkButtonCellModel.html#ade8fd9d6a10f0f0c64cff09b8a1383ae">Debug.TaskPageLinkButtonCellModel.CellTexts</a></div><div class="ttdeci">CellTextsModel CellTexts</div><div class="ttdef"><b>Definition:</b> <a href="TaskPageLinkButtonCell_8cs_source.html#l00075">TaskPageLinkButtonCell.cs:75</a></div></div>
+<div class="ttc" id="aclassDebug_1_1TaskPageLinkButtonCellModel_html_af9a214a4cdfa47dac4a8a99c249ee3ed"><div class="ttname"><a href="classDebug_1_1TaskPageLinkButtonCellModel.html#af9a214a4cdfa47dac4a8a99c249ee3ed">Debug.TaskPageLinkButtonCellModel.ShowArrow</a></div><div class="ttdeci">bool ShowArrow</div><div class="ttdef"><b>Definition:</b> <a href="TaskPageLinkButtonCell_8cs_source.html#l00077">TaskPageLinkButtonCell.cs:77</a></div></div>
+<div class="ttc" id="aclassDebug_1_1TaskPageLinkButtonCell_html"><div class="ttname"><a href="classDebug_1_1TaskPageLinkButtonCell.html">Debug.TaskPageLinkButtonCell</a></div><div class="ttdef"><b>Definition:</b> <a href="TaskPageLinkButtonCell_8cs_source.html#l00009">TaskPageLinkButtonCell.cs:10</a></div></div>
+<div class="ttc" id="aclassDebug_1_1TaskPageLinkButtonCell_html_a06bdc831e8cb4489f0dafabb55e5860f"><div class="ttname"><a href="classDebug_1_1TaskPageLinkButtonCell.html#a06bdc831e8cb4489f0dafabb55e5860f">Debug.TaskPageLinkButtonCell.button</a></div><div class="ttdeci">Button button</div><div class="ttdef"><b>Definition:</b> <a href="TaskPageLinkButtonCell_8cs_source.html#l00018">TaskPageLinkButtonCell.cs:18</a></div></div>
+<div class="ttc" id="aclassDebug_1_1TaskPageLinkButtonCell_html_a2e7d7a8227defd4ddf8efa446b3c1ff2"><div class="ttname"><a href="classDebug_1_1TaskPageLinkButtonCell.html#a2e7d7a8227defd4ddf8efa446b3c1ff2">Debug.TaskPageLinkButtonCell.cellTexts</a></div><div class="ttdeci">CellTexts cellTexts</div><div class="ttdef"><b>Definition:</b> <a href="TaskPageLinkButtonCell_8cs_source.html#l00016">TaskPageLinkButtonCell.cs:16</a></div></div>
+<div class="ttc" id="aclassDebug_1_1TaskPageLinkButtonCell_html_a4c50b7f3fb91a61bc2223a820b621e8d"><div class="ttname"><a href="classDebug_1_1TaskPageLinkButtonCell.html#a4c50b7f3fb91a61bc2223a820b621e8d">Debug.TaskPageLinkButtonCell._contents</a></div><div class="ttdeci">RectTransform _contents</div><div class="ttdef"><b>Definition:</b> <a href="TaskPageLinkButtonCell_8cs_source.html#l00012">TaskPageLinkButtonCell.cs:12</a></div></div>
+<div class="ttc" id="aclassDebug_1_1TaskPageLinkButtonCell_html_a6b0a6a90da91074cc77e91f9674c18d4"><div class="ttname"><a href="classDebug_1_1TaskPageLinkButtonCell.html#a6b0a6a90da91074cc77e91f9674c18d4">Debug.TaskPageLinkButtonCell.icon</a></div><div class="ttdeci">CellIcon icon</div><div class="ttdef"><b>Definition:</b> <a href="TaskPageLinkButtonCell_8cs_source.html#l00015">TaskPageLinkButtonCell.cs:15</a></div></div>
+<div class="ttc" id="aclassDebug_1_1TaskPageLinkButtonCell_html_a940223c087669dd5ad8d02f8c83cab40"><div class="ttname"><a href="classDebug_1_1TaskPageLinkButtonCell.html#a940223c087669dd5ad8d02f8c83cab40">Debug.TaskPageLinkButtonCell.arrow</a></div><div class="ttdeci">Image arrow</div><div class="ttdef"><b>Definition:</b> <a href="TaskPageLinkButtonCell_8cs_source.html#l00017">TaskPageLinkButtonCell.cs:17</a></div></div>
+<div class="ttc" id="aclassDebug_1_1TaskPageLinkButtonCell_html_aaf8b56145bd632dabc3ab855d7cda3c6"><div class="ttname"><a href="classDebug_1_1TaskPageLinkButtonCell.html#aaf8b56145bd632dabc3ab855d7cda3c6">Debug.TaskPageLinkButtonCell._contentsCanvasGroup</a></div><div class="ttdeci">CanvasGroup _contentsCanvasGroup</div><div class="ttdef"><b>Definition:</b> <a href="TaskPageLinkButtonCell_8cs_source.html#l00013">TaskPageLinkButtonCell.cs:13</a></div></div>
+<div class="ttc" id="aclassDebug_1_1TaskPageLinkButtonCell_html_ab3c101253676df691febc1947f53f60f"><div class="ttname"><a href="classDebug_1_1TaskPageLinkButtonCell.html#ab3c101253676df691febc1947f53f60f">Debug.TaskPageLinkButtonCell.SetModel</a></div><div class="ttdeci">override void SetModel(TaskPageLinkButtonCellModel model)</div><div class="ttdef"><b>Definition:</b> <a href="TaskPageLinkButtonCell_8cs_source.html#l00020">TaskPageLinkButtonCell.cs:20</a></div></div>
+<div class="ttc" id="aclassDebug_1_1TaskPageLinkButtonCell_html_ab44028d85479121d44957740f3943bbf"><div class="ttname"><a href="classDebug_1_1TaskPageLinkButtonCell.html#ab44028d85479121d44957740f3943bbf">Debug.TaskPageLinkButtonCell._layoutElement</a></div><div class="ttdeci">LayoutElement _layoutElement</div><div class="ttdef"><b>Definition:</b> <a href="TaskPageLinkButtonCell_8cs_source.html#l00011">TaskPageLinkButtonCell.cs:11</a></div></div>
+<div class="ttc" id="anamespaceDebug_html"><div class="ttname"><a href="namespaceDebug.html">Debug</a></div><div class="ttdef"><b>Definition:</b> <a href="AssetKeys_8cs_source.html#l00002">AssetKeys.cs:3</a></div></div>
+<div class="ttc" id="anamespaceSystem_html"><div class="ttname"><a href="namespaceSystem.html">System</a></div><div class="ttdef"><b>Definition:</b> <a href="GameSequenceHandler_8cs_source.html#l00007">GameSequenceHandler.cs:8</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

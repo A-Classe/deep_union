@@ -94,12 +94,12 @@ $(function() {
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        {</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">if</span> (!Directory.Exists(profilePath))</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                Debug.LogError(<span class="stringliteral">&quot;Resources directory was not found!&quot;</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <a class="code" href="namespaceDebug.html">Debug</a>.LogError(<span class="stringliteral">&quot;Resources directory was not found!&quot;</span>);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            }</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            profileAsset = Resources.Load&lt;InputActionAssetProfile&gt;(<span class="stringliteral">&quot;InputActionAssetProfile&quot;</span>);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            Debug.Assert(profileAsset != <span class="keyword">null</span>, <span class="stringliteral">&quot;InputActionAssetProfile was not found! \nPlease create a profile in the Resources folder.&quot;</span>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="namespaceDebug.html">Debug</a>.Assert(profileAsset != <span class="keyword">null</span>, <span class="stringliteral">&quot;InputActionAssetProfile was not found! \nPlease create a profile in the Resources folder.&quot;</span>);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
@@ -138,7 +138,7 @@ $(function() {
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            CreateFile(builder);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            Debug.Log(savePath + <span class="stringliteral">&quot; にInputActionNameのGuidを生成しました。&quot;</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <a class="code" href="namespaceDebug.html">Debug</a>.Log(savePath + <span class="stringliteral">&quot; にInputActionNameのGuidを生成しました。&quot;</span>);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
@@ -239,7 +239,8 @@ $(function() {
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    }</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}</div>
 <div class="ttc" id="anamespaceCore_1_1Input_1_1Editor_html"><div class="ttname"><a href="namespaceCore_1_1Input_1_1Editor.html">Core.Input.Editor</a></div><div class="ttdef"><b>Definition:</b> <a href="InputActionAssetProfile_8cs_source.html#l00004">InputActionAssetProfile.cs:5</a></div></div>
-<div class="ttc" id="anamespaceSystem_html"><div class="ttname"><a href="namespaceSystem.html">System</a></div><div class="ttdef"><b>Definition:</b> <a href="IStateSystem_8cs_source.html#l00001">IStateSystem.cs:2</a></div></div>
+<div class="ttc" id="anamespaceDebug_html"><div class="ttname"><a href="namespaceDebug.html">Debug</a></div><div class="ttdef"><b>Definition:</b> <a href="AssetKeys_8cs_source.html#l00002">AssetKeys.cs:3</a></div></div>
+<div class="ttc" id="anamespaceSystem_html"><div class="ttname"><a href="namespaceSystem.html">System</a></div><div class="ttdef"><b>Definition:</b> <a href="GameSequenceHandler_8cs_source.html#l00007">GameSequenceHandler.cs:8</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

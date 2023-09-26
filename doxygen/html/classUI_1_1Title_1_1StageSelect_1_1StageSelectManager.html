@@ -1,0 +1,939 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: UI.Title.StageSelect.StageSelectManager クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceUI.html">UI</a></li><li class="navelem"><a class="el" href="namespaceUI_1_1Title.html">Title</a></li><li class="navelem"><a class="el" href="namespaceUI_1_1Title_1_1StageSelect.html">StageSelect</a></li><li class="navelem"><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html">StageSelectManager</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#events">イベント</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">UI.Title.StageSelect.StageSelectManager クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+UI.Title.StageSelect.StageSelectManager の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager__inherit__graph.png" border="0" usemap="#aUI_8Title_8StageSelect_8StageSelectManager_inherit__map" alt="Inheritance graph"/></div>
+<map name="aUI_8Title_8StageSelect_8StageSelectManager_inherit__map" id="aUI_8Title_8StageSelect_8StageSelectManager_inherit__map">
+<area shape="rect" title=" " alt="" coords="69,189,259,501"/>
+<area shape="rect" title=" " alt="" coords="5,35,160,112"/>
+<area shape="rect" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html" title=" " alt="" coords="185,5,306,141"/>
+</map>
+</div>
+<div class="dynheader">
+UI.Title.StageSelect.StageSelectManager 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager__coll__graph.png" border="0" usemap="#aUI_8Title_8StageSelect_8StageSelectManager_coll__map" alt="Collaboration graph"/></div>
+<map name="aUI_8Title_8StageSelect_8StageSelectManager_coll__map" id="aUI_8Title_8StageSelect_8StageSelectManager_coll__map">
+<area shape="rect" title=" " alt="" coords="307,636,498,831"/>
+<area shape="rect" title=" " alt="" coords="48,5,202,83"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1StageButton.html" title=" " alt="" coords="22,241,217,362"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1AnimateObject.html" title=" " alt="" coords="90,132,304,209"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html" title=" " alt="" coords="393,233,588,369"/>
+<area shape="rect" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html" title=" " alt="" coords="506,415,627,551"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html" title=" " alt="" coords="652,401,881,566"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SimpleUnderBarController.html" title=" " alt="" coords="197,393,392,573"/>
+<area shape="rect" title=" " alt="" coords="328,132,452,209"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:afe7dbbcf43c6b5e386715dfc253c317f"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a> { <br />
+&#160;&#160;<a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317fac22eb18b2912c4b1b06ad4ea1a782443">Stage1</a>
+, <a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317fac42681a8b1280ef2acfa056ed117a248">Stage2</a>
+, <a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317fa9443560b4a613c50c16873363c5cbdf4">Stage3</a>
+, <a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317fa6818af43a8fce6242b0b25f08a8423b8">Stage4</a>
+, <br />
+&#160;&#160;<a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317faf0cba5c1fa78964c8b5605af1547478e">Stage5</a>
+, <a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317fa0557fa923dcee4d0f86b1409f5c2167f">Back</a>
+<br />
+ }</td></tr>
+<tr class="separator:afe7dbbcf43c6b5e386715dfc253c317f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a9ca9c3a9bb2817f4f8874250c7e4ba37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a9ca9c3a9bb2817f4f8874250c7e4ba37">Initialized</a> (ContentTransform content)</td></tr>
+<tr class="separator:a9ca9c3a9bb2817f4f8874250c7e4ba37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c7e383d1c7df6bcb89a5e718507d2fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a0c7e383d1c7df6bcb89a5e718507d2fa">Clicked</a> ()</td></tr>
+<tr class="memdesc:a0c7e383d1c7df6bcb89a5e718507d2fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">戻るボタンが押されたときに反映する  <a href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a0c7e383d1c7df6bcb89a5e718507d2fa">[詳解]</a><br /></td></tr>
+<tr class="separator:a0c7e383d1c7df6bcb89a5e718507d2fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03bd90db22d660d50895536a654a7e98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a03bd90db22d660d50895536a654a7e98">Select</a> (Vector2 direction)</td></tr>
+<tr class="separator:a03bd90db22d660d50895536a654a7e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a566175d0bd535f3ec645ac75c7f2a0ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a566175d0bd535f3ec645ac75c7f2a0ee">Finished</a> (ContentTransform content, Action onFinished)</td></tr>
+<tr class="separator:a566175d0bd535f3ec645ac75c7f2a0ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c38977a61dab0962cfa0bdd77891fd7"><td class="memItemLeft" align="right" valign="top">AnimationBehaviour&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a3c38977a61dab0962cfa0bdd77891fd7">GetContext</a> ()</td></tr>
+<tr class="separator:a3c38977a61dab0962cfa0bdd77891fd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1921f432079d411e349b44d4ed26366"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#af1921f432079d411e349b44d4ed26366">SetScores</a> (Dictionary&lt; <a class="el" href="classCore_1_1Utility_1_1User_1_1StageData.html#ad3459928d4b866ea3c276011d1279136">StageData.Stage</a>, uint &gt; scores)</td></tr>
+<tr class="separator:af1921f432079d411e349b44d4ed26366"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="events"></a>
+イベント</h2></td></tr>
+<tr class="memitem:a7ddc41eeb24043856a80b79fde3b248a"><td class="memItemLeft" align="right" valign="top">Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a7ddc41eeb24043856a80b79fde3b248a">OnBack</a></td></tr>
+<tr class="separator:a7ddc41eeb24043856a80b79fde3b248a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25d3aab086c18406b44fd401a365961f"><td class="memItemLeft" align="right" valign="top">Action&lt; <a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a25d3aab086c18406b44fd401a365961f">OnStage</a></td></tr>
+<tr class="separator:a25d3aab086c18406b44fd401a365961f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:ae9aa4030eecd2e2cfebaff7ca680bcc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#ae9aa4030eecd2e2cfebaff7ca680bcc3">Start</a> ()</td></tr>
+<tr class="separator:ae9aa4030eecd2e2cfebaff7ca680bcc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d0c2c2389620c83eab9eeb86b9b0e69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a7d0c2c2389620c83eab9eeb86b9b0e69">SetState</a> (<a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a> setNav)</td></tr>
+<tr class="separator:a7d0c2c2389620c83eab9eeb86b9b0e69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a4f53b5c8613d2c5869382453b34f4aae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SimpleUnderBarController.html">SimpleUnderBarController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a4f53b5c8613d2c5869382453b34f4aae">bar</a></td></tr>
+<tr class="separator:a4f53b5c8613d2c5869382453b34f4aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac47bb4c04f4f6df736d449764bd64c9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html">CursorController</a>&lt; <a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#ac47bb4c04f4f6df736d449764bd64c9b">cursor</a></td></tr>
+<tr class="separator:ac47bb4c04f4f6df736d449764bd64c9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b9e69c27434b218b01d6d083a5f35c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1StageButton.html">StageButton</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a2b9e69c27434b218b01d6d083a5f35c6">stage1</a></td></tr>
+<tr class="separator:a2b9e69c27434b218b01d6d083a5f35c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dd33f78dd7ad503eab88870f80235b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1StageButton.html">StageButton</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a0dd33f78dd7ad503eab88870f80235b2">stage2</a></td></tr>
+<tr class="separator:a0dd33f78dd7ad503eab88870f80235b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40bd20137d81de4edd786dc4184a6b08"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1StageButton.html">StageButton</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a40bd20137d81de4edd786dc4184a6b08">stage3</a></td></tr>
+<tr class="separator:a40bd20137d81de4edd786dc4184a6b08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03bc32465a43feb98f025290589e923f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1StageButton.html">StageButton</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a03bc32465a43feb98f025290589e923f">stage4</a></td></tr>
+<tr class="separator:a03bc32465a43feb98f025290589e923f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0875e9b6b607e636f485ef2bc67eac34"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1StageButton.html">StageButton</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a0875e9b6b607e636f485ef2bc67eac34">stage5</a></td></tr>
+<tr class="separator:a0875e9b6b607e636f485ef2bc67eac34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af779385052f4539eb4d7a70aade3395b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html">FadeInOutButton</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#af779385052f4539eb4d7a70aade3395b">back</a></td></tr>
+<tr class="separator:af779385052f4539eb4d7a70aade3395b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ce4eaf9bd15bf045da7fe78beca5996"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a8ce4eaf9bd15bf045da7fe78beca5996">current</a></td></tr>
+<tr class="separator:a8ce4eaf9bd15bf045da7fe78beca5996"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="StageSelectManager_8cs_source.html">StageSelectManager.cs</a> の <a class="el" href="StageSelectManager_8cs_source.html#l00012">12</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">列挙型メンバ詳解</h2>
+<a id="afe7dbbcf43c6b5e386715dfc253c317f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe7dbbcf43c6b5e386715dfc253c317f">&#9670;&nbsp;</a></span>Nav</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">UI.Title.StageSelect.StageSelectManager.Nav</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="afe7dbbcf43c6b5e386715dfc253c317fac22eb18b2912c4b1b06ad4ea1a782443"></a>Stage1&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="afe7dbbcf43c6b5e386715dfc253c317fac42681a8b1280ef2acfa056ed117a248"></a>Stage2&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="afe7dbbcf43c6b5e386715dfc253c317fa9443560b4a613c50c16873363c5cbdf4"></a>Stage3&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="afe7dbbcf43c6b5e386715dfc253c317fa6818af43a8fce6242b0b25f08a8423b8"></a>Stage4&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="afe7dbbcf43c6b5e386715dfc253c317faf0cba5c1fa78964c8b5605af1547478e"></a>Stage5&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="afe7dbbcf43c6b5e386715dfc253c317fa0557fa923dcee4d0f86b1409f5c2167f"></a>Back&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition"> <a class="el" href="StageSelectManager_8cs_source.html">StageSelectManager.cs</a> の <a class="el" href="StageSelectManager_8cs_source.html#l00014">14</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            Stage1,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            Stage2,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            Stage3,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            Stage4,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            Stage5,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            Back</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a0c7e383d1c7df6bcb89a5e718507d2fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c7e383d1c7df6bcb89a5e718507d2fa">&#9670;&nbsp;</a></span>Clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UI.Title.StageSelect.StageSelectManager.Clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>戻るボタンが押されたときに反映する </p>
+<dl class="exception"><dt>例外</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArgumentOutOfRangeException</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#a9ec30452f75c89f1627a4dc7b9d876bf">Core.Utility.UI.Navigation.IUIManager</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="StageSelectManager_8cs_source.html">StageSelectManager.cs</a> の <a class="el" href="StageSelectManager_8cs_source.html#l00060">60</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a8ce4eaf9bd15bf045da7fe78beca5996">current</a>.HasValue) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">switch</span> (<a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a8ce4eaf9bd15bf045da7fe78beca5996">current</a>.Value)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>.Stage1:</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a25d3aab086c18406b44fd401a365961f">OnStage</a>?.Invoke(<a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>.Stage1);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>.Stage2:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a25d3aab086c18406b44fd401a365961f">OnStage</a>?.Invoke(<a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>.Stage2);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>.Stage3:</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a25d3aab086c18406b44fd401a365961f">OnStage</a>?.Invoke(<a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>.Stage3);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>.Stage4:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                    <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a25d3aab086c18406b44fd401a365961f">OnStage</a>?.Invoke(<a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>.Stage4);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>.Stage5:</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a25d3aab086c18406b44fd401a365961f">OnStage</a>?.Invoke(<a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>.Stage5);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>.Back:</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#af779385052f4539eb4d7a70aade3395b">back</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a6efc8a73fe3f9a7a2cb0b434dbe4f524">OnPlay</a>(() =&gt; <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a7ddc41eeb24043856a80b79fde3b248a">OnBack</a>?.Invoke());</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                    <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentOutOfRangeException();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton_html_a6efc8a73fe3f9a7a2cb0b434dbe4f524"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a6efc8a73fe3f9a7a2cb0b434dbe4f524">Core.Utility.UI.Component.FadeInOutButton.OnPlay</a></div><div class="ttdeci">void OnPlay(Action onFinished)</div><div class="ttdef"><b>Definition:</b> <a href="FadeInOutButton_8cs_source.html#l00017">FadeInOutButton.cs:17</a></div></div>
+<div class="ttc" id="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_html_a25d3aab086c18406b44fd401a365961f"><div class="ttname"><a href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a25d3aab086c18406b44fd401a365961f">UI.Title.StageSelect.StageSelectManager.OnStage</a></div><div class="ttdeci">Action&lt; Nav &gt; OnStage</div><div class="ttdef"><b>Definition:</b> <a href="StageSelectManager_8cs_source.html#l00140">StageSelectManager.cs:140</a></div></div>
+<div class="ttc" id="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_html_a7ddc41eeb24043856a80b79fde3b248a"><div class="ttname"><a href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a7ddc41eeb24043856a80b79fde3b248a">UI.Title.StageSelect.StageSelectManager.OnBack</a></div><div class="ttdeci">Action OnBack</div><div class="ttdef"><b>Definition:</b> <a href="StageSelectManager_8cs_source.html#l00138">StageSelectManager.cs:138</a></div></div>
+<div class="ttc" id="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_html_a8ce4eaf9bd15bf045da7fe78beca5996"><div class="ttname"><a href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a8ce4eaf9bd15bf045da7fe78beca5996">UI.Title.StageSelect.StageSelectManager.current</a></div><div class="ttdeci">Nav? current</div><div class="ttdef"><b>Definition:</b> <a href="StageSelectManager_8cs_source.html#l00034">StageSelectManager.cs:34</a></div></div>
+<div class="ttc" id="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_html_af779385052f4539eb4d7a70aade3395b"><div class="ttname"><a href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#af779385052f4539eb4d7a70aade3395b">UI.Title.StageSelect.StageSelectManager.back</a></div><div class="ttdeci">FadeInOutButton back</div><div class="ttdef"><b>Definition:</b> <a href="StageSelectManager_8cs_source.html#l00032">StageSelectManager.cs:32</a></div></div>
+<div class="ttc" id="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_html_afe7dbbcf43c6b5e386715dfc253c317f"><div class="ttname"><a href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">UI.Title.StageSelect.StageSelectManager.Nav</a></div><div class="ttdeci">Nav</div><div class="ttdef"><b>Definition:</b> <a href="StageSelectManager_8cs_source.html#l00014">StageSelectManager.cs:15</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager_a0c7e383d1c7df6bcb89a5e718507d2fa_cgraph.png" border="0" usemap="#aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_a0c7e383d1c7df6bcb89a5e718507d2fa_cgraph" alt=""/></div>
+<map name="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_a0c7e383d1c7df6bcb89a5e718507d2fa_cgraph" id="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_a0c7e383d1c7df6bcb89a5e718507d2fa_cgraph">
+<area shape="rect" title="戻るボタンが押されたときに反映する" alt="" coords="5,39,196,80"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a6efc8a73fe3f9a7a2cb0b434dbe4f524" title=" " alt="" coords="244,39,439,80"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#aff3299ce4f89ef9947f0852057ec9cc7" title=" " alt="" coords="487,5,681,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#aa1574ad676bb9823b1db1b44124c74e8" title=" " alt="" coords="487,71,681,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a566175d0bd535f3ec645ac75c7f2a0ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a566175d0bd535f3ec645ac75c7f2a0ee">&#9670;&nbsp;</a></span>Finished()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UI.Title.StageSelect.StageSelectManager.Finished </td>
+          <td>(</td>
+          <td class="paramtype">ContentTransform&#160;</td>
+          <td class="paramname"><em>content</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Action&#160;</td>
+          <td class="paramname"><em>onFinished</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#af7bb9f4babe786f2b895ff9925fe43e5">Core.Utility.UI.Navigation.IUIManager</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="StageSelectManager_8cs_source.html">StageSelectManager.cs</a> の <a class="el" href="StageSelectManager_8cs_source.html#l00115">115</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a4f53b5c8613d2c5869382453b34f4aae">bar</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SimpleUnderBarController.html#a281784c16ed7ce48be59e756d8c310b2">AnimateOut</a>(() =&gt;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                Animation(</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                    content,</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                    <span class="keyword">new</span> AnimationListener</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                        OnFinished = () =&gt;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                        {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                            gameObject.SetActive(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                            onFinished?.Invoke();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                        }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                    }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                );</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            });</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1SimpleUnderBarController_html_a281784c16ed7ce48be59e756d8c310b2"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Component_1_1SimpleUnderBarController.html#a281784c16ed7ce48be59e756d8c310b2">Core.Utility.UI.Component.SimpleUnderBarController.AnimateOut</a></div><div class="ttdeci">void AnimateOut(Action onFinished=null)</div><div class="ttdef"><b>Definition:</b> <a href="SimpleUnderBarController_8cs_source.html#l00082">SimpleUnderBarController.cs:82</a></div></div>
+<div class="ttc" id="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_html_a4f53b5c8613d2c5869382453b34f4aae"><div class="ttname"><a href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a4f53b5c8613d2c5869382453b34f4aae">UI.Title.StageSelect.StageSelectManager.bar</a></div><div class="ttdeci">SimpleUnderBarController bar</div><div class="ttdef"><b>Definition:</b> <a href="StageSelectManager_8cs_source.html#l00024">StageSelectManager.cs:24</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager_a566175d0bd535f3ec645ac75c7f2a0ee_cgraph.png" border="0" usemap="#aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_a566175d0bd535f3ec645ac75c7f2a0ee_cgraph" alt=""/></div>
+<map name="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_a566175d0bd535f3ec645ac75c7f2a0ee_cgraph" id="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_a566175d0bd535f3ec645ac75c7f2a0ee_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,196,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SimpleUnderBarController.html#a281784c16ed7ce48be59e756d8c310b2" title=" " alt="" coords="244,5,517,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3c38977a61dab0962cfa0bdd77891fd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c38977a61dab0962cfa0bdd77891fd7">&#9670;&nbsp;</a></span>GetContext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AnimationBehaviour UI.Title.StageSelect.StageSelectManager.GetContext </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#a5f45f697454fd38c0e502e3c7b015c18">Core.Utility.UI.Navigation.IUIManager</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="StageSelectManager_8cs_source.html">StageSelectManager.cs</a> の <a class="el" href="StageSelectManager_8cs_source.html#l00133">133</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9ca9c3a9bb2817f4f8874250c7e4ba37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ca9c3a9bb2817f4f8874250c7e4ba37">&#9670;&nbsp;</a></span>Initialized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UI.Title.StageSelect.StageSelectManager.Initialized </td>
+          <td>(</td>
+          <td class="paramtype">ContentTransform&#160;</td>
+          <td class="paramname"><em>content</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#a26634d10aa3cbac35d57a9aca5147ffb">Core.Utility.UI.Navigation.IUIManager</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="StageSelectManager_8cs_source.html">StageSelectManager.cs</a> の <a class="el" href="StageSelectManager_8cs_source.html#l00047">47</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            gameObject.SetActive(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a4f53b5c8613d2c5869382453b34f4aae">bar</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SimpleUnderBarController.html#a097a69b0447a4c40fc81093f188a87b6">AnimateIn</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            OnCancel();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            Animation(content);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a7d0c2c2389620c83eab9eeb86b9b0e69">SetState</a>(<a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>.Stage1);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1SimpleUnderBarController_html_a097a69b0447a4c40fc81093f188a87b6"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Component_1_1SimpleUnderBarController.html#a097a69b0447a4c40fc81093f188a87b6">Core.Utility.UI.Component.SimpleUnderBarController.AnimateIn</a></div><div class="ttdeci">void AnimateIn(Action onFinished=null)</div><div class="ttdef"><b>Definition:</b> <a href="SimpleUnderBarController_8cs_source.html#l00037">SimpleUnderBarController.cs:37</a></div></div>
+<div class="ttc" id="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_html_a7d0c2c2389620c83eab9eeb86b9b0e69"><div class="ttname"><a href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a7d0c2c2389620c83eab9eeb86b9b0e69">UI.Title.StageSelect.StageSelectManager.SetState</a></div><div class="ttdeci">void SetState(Nav setNav)</div><div class="ttdef"><b>Definition:</b> <a href="StageSelectManager_8cs_source.html#l00166">StageSelectManager.cs:166</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager_a9ca9c3a9bb2817f4f8874250c7e4ba37_cgraph.png" border="0" usemap="#aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_a9ca9c3a9bb2817f4f8874250c7e4ba37_cgraph" alt=""/></div>
+<map name="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_a9ca9c3a9bb2817f4f8874250c7e4ba37_cgraph" id="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_a9ca9c3a9bb2817f4f8874250c7e4ba37_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,196,80"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SimpleUnderBarController.html#a097a69b0447a4c40fc81093f188a87b6" title=" " alt="" coords="244,5,507,47"/>
+<area shape="rect" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a7d0c2c2389620c83eab9eeb86b9b0e69" title=" " alt="" coords="280,71,471,112"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#aaa1e5c0a4627bd775feeee2d0ab2baeb" title=" " alt="" coords="555,71,785,112"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#a4b04b543aed3ca2bf06bd58f384917ee" title=" " alt="" coords="833,71,1072,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a03bd90db22d660d50895536a654a7e98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03bd90db22d660d50895536a654a7e98">&#9670;&nbsp;</a></span>Select()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UI.Title.StageSelect.StageSelectManager.Select </td>
+          <td>(</td>
+          <td class="paramtype">Vector2&#160;</td>
+          <td class="paramname"><em>direction</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#aac9cefba6acd376cb4e525360774cd13">Core.Utility.UI.Navigation.IUIManager</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="StageSelectManager_8cs_source.html">StageSelectManager.cs</a> の <a class="el" href="StageSelectManager_8cs_source.html#l00088">88</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a8ce4eaf9bd15bf045da7fe78beca5996">current</a>.HasValue)</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a7d0c2c2389620c83eab9eeb86b9b0e69">SetState</a>(<a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>.Stage1);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a> nextNav;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordflow">switch</span> (direction.y)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="comment">// 上向きの入力</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <span class="keywordflow">case</span> &gt; 0:</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                    nextNav = <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a8ce4eaf9bd15bf045da7fe78beca5996">current</a>.Value == <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>.Stage1 ? <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>.Back : <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a8ce4eaf9bd15bf045da7fe78beca5996">current</a>.Value - 1;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <span class="comment">// 下向きの入力</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                <span class="keywordflow">case</span> &lt; 0:</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                    nextNav = <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a8ce4eaf9bd15bf045da7fe78beca5996">current</a>.Value == <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>.Back ? <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>.Stage1 : <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a8ce4eaf9bd15bf045da7fe78beca5996">current</a>.Value + 1;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                    <span class="keywordflow">return</span>; <span class="comment">// Y軸の入力がない場合、何もしない</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a7d0c2c2389620c83eab9eeb86b9b0e69">SetState</a>(nextNav);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        }</div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager_a03bd90db22d660d50895536a654a7e98_cgraph.png" border="0" usemap="#aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_a03bd90db22d660d50895536a654a7e98_cgraph" alt=""/></div>
+<map name="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_a03bd90db22d660d50895536a654a7e98_cgraph" id="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_a03bd90db22d660d50895536a654a7e98_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,196,47"/>
+<area shape="rect" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a7d0c2c2389620c83eab9eeb86b9b0e69" title=" " alt="" coords="244,5,435,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#aaa1e5c0a4627bd775feeee2d0ab2baeb" title=" " alt="" coords="483,5,713,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#a4b04b543aed3ca2bf06bd58f384917ee" title=" " alt="" coords="761,5,1000,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af1921f432079d411e349b44d4ed26366"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1921f432079d411e349b44d4ed26366">&#9670;&nbsp;</a></span>SetScores()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UI.Title.StageSelect.StageSelectManager.SetScores </td>
+          <td>(</td>
+          <td class="paramtype">Dictionary&lt; <a class="el" href="classCore_1_1Utility_1_1User_1_1StageData.html#ad3459928d4b866ea3c276011d1279136">StageData.Stage</a>, uint &gt;&#160;</td>
+          <td class="paramname"><em>scores</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="StageSelectManager_8cs_source.html">StageSelectManager.cs</a> の <a class="el" href="StageSelectManager_8cs_source.html#l00142">142</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <span class="keywordflow">foreach</span> (var keyValuePair <span class="keywordflow">in</span> scores)</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                <span class="keywordflow">switch</span> (keyValuePair.Key)</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                {</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                    <span class="keywordflow">case</span> <a class="code" href="classCore_1_1Utility_1_1User_1_1StageData.html">StageData</a>.<a class="code" href="classCore_1_1Utility_1_1User_1_1StageData.html#ad3459928d4b866ea3c276011d1279136">Stage</a>.Stage1:</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                        <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a2b9e69c27434b218b01d6d083a5f35c6">stage1</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1StageButton.html#a1924a78a2b60073efd79d2e431289e98">SetScore</a>(keyValuePair.Value);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                    <span class="keywordflow">case</span> <a class="code" href="classCore_1_1Utility_1_1User_1_1StageData.html">StageData</a>.<a class="code" href="classCore_1_1Utility_1_1User_1_1StageData.html#ad3459928d4b866ea3c276011d1279136">Stage</a>.Stage2:</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                        <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a0dd33f78dd7ad503eab88870f80235b2">stage2</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1StageButton.html#a1924a78a2b60073efd79d2e431289e98">SetScore</a>(keyValuePair.Value);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                    <span class="keywordflow">case</span> <a class="code" href="classCore_1_1Utility_1_1User_1_1StageData.html">StageData</a>.<a class="code" href="classCore_1_1Utility_1_1User_1_1StageData.html#ad3459928d4b866ea3c276011d1279136">Stage</a>.Stage3:</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                        <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a40bd20137d81de4edd786dc4184a6b08">stage3</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1StageButton.html#a1924a78a2b60073efd79d2e431289e98">SetScore</a>(keyValuePair.Value);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                    <span class="keywordflow">case</span> <a class="code" href="classCore_1_1Utility_1_1User_1_1StageData.html">StageData</a>.<a class="code" href="classCore_1_1Utility_1_1User_1_1StageData.html#ad3459928d4b866ea3c276011d1279136">Stage</a>.Stage4:</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                        <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a03bc32465a43feb98f025290589e923f">stage4</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1StageButton.html#a1924a78a2b60073efd79d2e431289e98">SetScore</a>(keyValuePair.Value);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                    <span class="keywordflow">case</span> <a class="code" href="classCore_1_1Utility_1_1User_1_1StageData.html">StageData</a>.<a class="code" href="classCore_1_1Utility_1_1User_1_1StageData.html#ad3459928d4b866ea3c276011d1279136">Stage</a>.Stage5:</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                        <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a03bc32465a43feb98f025290589e923f">stage4</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1StageButton.html#a1924a78a2b60073efd79d2e431289e98">SetScore</a>(keyValuePair.Value);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                }</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1StageButton_html_a1924a78a2b60073efd79d2e431289e98"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Component_1_1StageButton.html#a1924a78a2b60073efd79d2e431289e98">Core.Utility.UI.Component.StageButton.SetScore</a></div><div class="ttdeci">void SetScore(uint score)</div><div class="ttdef"><b>Definition:</b> <a href="StageButton_8cs_source.html#l00012">StageButton.cs:12</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1StageData_html"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1StageData.html">Core.Utility.User.StageData</a></div><div class="ttdef"><b>Definition:</b> <a href="UserSetting_8cs_source.html#l00043">UserSetting.cs:44</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1StageData_html_ad3459928d4b866ea3c276011d1279136"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1StageData.html#ad3459928d4b866ea3c276011d1279136">Core.Utility.User.StageData.Stage</a></div><div class="ttdeci">Stage</div><div class="ttdef"><b>Definition:</b> <a href="UserSetting_8cs_source.html#l00051">UserSetting.cs:52</a></div></div>
+<div class="ttc" id="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_html_a03bc32465a43feb98f025290589e923f"><div class="ttname"><a href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a03bc32465a43feb98f025290589e923f">UI.Title.StageSelect.StageSelectManager.stage4</a></div><div class="ttdeci">StageButton stage4</div><div class="ttdef"><b>Definition:</b> <a href="StageSelectManager_8cs_source.html#l00030">StageSelectManager.cs:30</a></div></div>
+<div class="ttc" id="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_html_a0dd33f78dd7ad503eab88870f80235b2"><div class="ttname"><a href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a0dd33f78dd7ad503eab88870f80235b2">UI.Title.StageSelect.StageSelectManager.stage2</a></div><div class="ttdeci">StageButton stage2</div><div class="ttdef"><b>Definition:</b> <a href="StageSelectManager_8cs_source.html#l00028">StageSelectManager.cs:28</a></div></div>
+<div class="ttc" id="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_html_a2b9e69c27434b218b01d6d083a5f35c6"><div class="ttname"><a href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a2b9e69c27434b218b01d6d083a5f35c6">UI.Title.StageSelect.StageSelectManager.stage1</a></div><div class="ttdeci">StageButton stage1</div><div class="ttdef"><b>Definition:</b> <a href="StageSelectManager_8cs_source.html#l00027">StageSelectManager.cs:27</a></div></div>
+<div class="ttc" id="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_html_a40bd20137d81de4edd786dc4184a6b08"><div class="ttname"><a href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a40bd20137d81de4edd786dc4184a6b08">UI.Title.StageSelect.StageSelectManager.stage3</a></div><div class="ttdeci">StageButton stage3</div><div class="ttdef"><b>Definition:</b> <a href="StageSelectManager_8cs_source.html#l00029">StageSelectManager.cs:29</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager_af1921f432079d411e349b44d4ed26366_cgraph.png" border="0" usemap="#aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_af1921f432079d411e349b44d4ed26366_cgraph" alt=""/></div>
+<map name="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_af1921f432079d411e349b44d4ed26366_cgraph" id="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_af1921f432079d411e349b44d4ed26366_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,196,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1StageButton.html#a1924a78a2b60073efd79d2e431289e98" title=" " alt="" coords="244,5,439,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7d0c2c2389620c83eab9eeb86b9b0e69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d0c2c2389620c83eab9eeb86b9b0e69">&#9670;&nbsp;</a></span>SetState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UI.Title.StageSelect.StageSelectManager.SetState </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>&#160;</td>
+          <td class="paramname"><em>setNav</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="StageSelectManager_8cs_source.html">StageSelectManager.cs</a> の <a class="el" href="StageSelectManager_8cs_source.html#l00166">166</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        {</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a8ce4eaf9bd15bf045da7fe78beca5996">current</a> = setNav;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#ac47bb4c04f4f6df736d449764bd64c9b">cursor</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#aaa1e5c0a4627bd775feeee2d0ab2baeb">SetPoint</a>(setNav);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController_html_aaa1e5c0a4627bd775feeee2d0ab2baeb"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#aaa1e5c0a4627bd775feeee2d0ab2baeb">Core.Utility.UI.Component.Cursor.CursorController.SetPoint</a></div><div class="ttdeci">void SetPoint(T key)</div><div class="ttdef"><b>Definition:</b> <a href="CursorController_8cs_source.html#l00022">CursorController.cs:22</a></div></div>
+<div class="ttc" id="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_html_ac47bb4c04f4f6df736d449764bd64c9b"><div class="ttname"><a href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#ac47bb4c04f4f6df736d449764bd64c9b">UI.Title.StageSelect.StageSelectManager.cursor</a></div><div class="ttdeci">CursorController&lt; Nav &gt; cursor</div><div class="ttdef"><b>Definition:</b> <a href="StageSelectManager_8cs_source.html#l00026">StageSelectManager.cs:26</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager_a7d0c2c2389620c83eab9eeb86b9b0e69_cgraph.png" border="0" usemap="#aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_a7d0c2c2389620c83eab9eeb86b9b0e69_cgraph" alt=""/></div>
+<map name="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_a7d0c2c2389620c83eab9eeb86b9b0e69_cgraph" id="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_a7d0c2c2389620c83eab9eeb86b9b0e69_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,196,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#aaa1e5c0a4627bd775feeee2d0ab2baeb" title=" " alt="" coords="244,5,475,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#a4b04b543aed3ca2bf06bd58f384917ee" title=" " alt="" coords="523,5,761,47"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager_a7d0c2c2389620c83eab9eeb86b9b0e69_icgraph.png" border="0" usemap="#aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_a7d0c2c2389620c83eab9eeb86b9b0e69_icgraph" alt=""/></div>
+<map name="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_a7d0c2c2389620c83eab9eeb86b9b0e69_icgraph" id="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_a7d0c2c2389620c83eab9eeb86b9b0e69_icgraph">
+<area shape="rect" title=" " alt="" coords="244,39,435,80"/>
+<area shape="rect" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a9ca9c3a9bb2817f4f8874250c7e4ba37" title=" " alt="" coords="5,5,196,47"/>
+<area shape="rect" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a03bd90db22d660d50895536a654a7e98" title=" " alt="" coords="5,71,196,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae9aa4030eecd2e2cfebaff7ca680bcc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9aa4030eecd2e2cfebaff7ca680bcc3">&#9670;&nbsp;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UI.Title.StageSelect.StageSelectManager.Start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="StageSelectManager_8cs_source.html">StageSelectManager.cs</a> の <a class="el" href="StageSelectManager_8cs_source.html#l00036">36</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#ac47bb4c04f4f6df736d449764bd64c9b">cursor</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#a763ab2eb7280acd430567dcf64fb372a">AddPoint</a>(<a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>.Stage1, <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a2b9e69c27434b218b01d6d083a5f35c6">stage1</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1StageButton.html#a5022c81f839cff4da17e6d263b2993f6">rectTransform</a>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#ac47bb4c04f4f6df736d449764bd64c9b">cursor</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#a763ab2eb7280acd430567dcf64fb372a">AddPoint</a>(<a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>.Stage2, <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a0dd33f78dd7ad503eab88870f80235b2">stage2</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1StageButton.html#a5022c81f839cff4da17e6d263b2993f6">rectTransform</a>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#ac47bb4c04f4f6df736d449764bd64c9b">cursor</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#a763ab2eb7280acd430567dcf64fb372a">AddPoint</a>(<a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>.Stage3, <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a40bd20137d81de4edd786dc4184a6b08">stage3</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1StageButton.html#a5022c81f839cff4da17e6d263b2993f6">rectTransform</a>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#ac47bb4c04f4f6df736d449764bd64c9b">cursor</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#a763ab2eb7280acd430567dcf64fb372a">AddPoint</a>(<a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>.Stage4, <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a03bc32465a43feb98f025290589e923f">stage4</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1StageButton.html#a5022c81f839cff4da17e6d263b2993f6">rectTransform</a>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#ac47bb4c04f4f6df736d449764bd64c9b">cursor</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#a763ab2eb7280acd430567dcf64fb372a">AddPoint</a>(<a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>.Stage5, <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a0875e9b6b607e636f485ef2bc67eac34">stage5</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1StageButton.html#a5022c81f839cff4da17e6d263b2993f6">rectTransform</a>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#ac47bb4c04f4f6df736d449764bd64c9b">cursor</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#a763ab2eb7280acd430567dcf64fb372a">AddPoint</a>(<a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>.Back, <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#af779385052f4539eb4d7a70aade3395b">back</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a3423e76e3e9a1700a0dcf1beb29818e7">rectTransform</a>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a8ce4eaf9bd15bf045da7fe78beca5996">current</a> = <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>.Stage1;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController_html_a763ab2eb7280acd430567dcf64fb372a"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#a763ab2eb7280acd430567dcf64fb372a">Core.Utility.UI.Component.Cursor.CursorController.AddPoint</a></div><div class="ttdeci">void AddPoint(T key, RectTransform rectT)</div><div class="ttdef"><b>Definition:</b> <a href="CursorController_8cs_source.html#l00017">CursorController.cs:17</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton_html_a3423e76e3e9a1700a0dcf1beb29818e7"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a3423e76e3e9a1700a0dcf1beb29818e7">Core.Utility.UI.Component.FadeInOutButton.rectTransform</a></div><div class="ttdeci">RectTransform rectTransform</div><div class="ttdef"><b>Definition:</b> <a href="FadeInOutButton_8cs_source.html#l00009">FadeInOutButton.cs:9</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1StageButton_html_a5022c81f839cff4da17e6d263b2993f6"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Component_1_1StageButton.html#a5022c81f839cff4da17e6d263b2993f6">Core.Utility.UI.Component.StageButton.rectTransform</a></div><div class="ttdeci">RectTransform rectTransform</div><div class="ttdef"><b>Definition:</b> <a href="StageButton_8cs_source.html#l00017">StageButton.cs:17</a></div></div>
+<div class="ttc" id="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_html_a0875e9b6b607e636f485ef2bc67eac34"><div class="ttname"><a href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a0875e9b6b607e636f485ef2bc67eac34">UI.Title.StageSelect.StageSelectManager.stage5</a></div><div class="ttdeci">StageButton stage5</div><div class="ttdef"><b>Definition:</b> <a href="StageSelectManager_8cs_source.html#l00031">StageSelectManager.cs:31</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager_ae9aa4030eecd2e2cfebaff7ca680bcc3_cgraph.png" border="0" usemap="#aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_ae9aa4030eecd2e2cfebaff7ca680bcc3_cgraph" alt=""/></div>
+<map name="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_ae9aa4030eecd2e2cfebaff7ca680bcc3_cgraph" id="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_ae9aa4030eecd2e2cfebaff7ca680bcc3_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,196,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#a763ab2eb7280acd430567dcf64fb372a" title=" " alt="" coords="244,5,479,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="af779385052f4539eb4d7a70aade3395b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af779385052f4539eb4d7a70aade3395b">&#9670;&nbsp;</a></span>back</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html">FadeInOutButton</a> UI.Title.StageSelect.StageSelectManager.back</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="StageSelectManager_8cs_source.html">StageSelectManager.cs</a> の <a class="el" href="StageSelectManager_8cs_source.html#l00032">32</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4f53b5c8613d2c5869382453b34f4aae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f53b5c8613d2c5869382453b34f4aae">&#9670;&nbsp;</a></span>bar</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SimpleUnderBarController.html">SimpleUnderBarController</a> UI.Title.StageSelect.StageSelectManager.bar</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="StageSelectManager_8cs_source.html">StageSelectManager.cs</a> の <a class="el" href="StageSelectManager_8cs_source.html#l00024">24</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8ce4eaf9bd15bf045da7fe78beca5996"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ce4eaf9bd15bf045da7fe78beca5996">&#9670;&nbsp;</a></span>current</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>? UI.Title.StageSelect.StageSelectManager.current</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="StageSelectManager_8cs_source.html">StageSelectManager.cs</a> の <a class="el" href="StageSelectManager_8cs_source.html#l00034">34</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac47bb4c04f4f6df736d449764bd64c9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac47bb4c04f4f6df736d449764bd64c9b">&#9670;&nbsp;</a></span>cursor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html">CursorController</a>&lt;<a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>&gt; UI.Title.StageSelect.StageSelectManager.cursor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="StageSelectManager_8cs_source.html">StageSelectManager.cs</a> の <a class="el" href="StageSelectManager_8cs_source.html#l00026">26</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2b9e69c27434b218b01d6d083a5f35c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b9e69c27434b218b01d6d083a5f35c6">&#9670;&nbsp;</a></span>stage1</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1StageButton.html">StageButton</a> UI.Title.StageSelect.StageSelectManager.stage1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="StageSelectManager_8cs_source.html">StageSelectManager.cs</a> の <a class="el" href="StageSelectManager_8cs_source.html#l00027">27</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0dd33f78dd7ad503eab88870f80235b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dd33f78dd7ad503eab88870f80235b2">&#9670;&nbsp;</a></span>stage2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1StageButton.html">StageButton</a> UI.Title.StageSelect.StageSelectManager.stage2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="StageSelectManager_8cs_source.html">StageSelectManager.cs</a> の <a class="el" href="StageSelectManager_8cs_source.html#l00028">28</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a40bd20137d81de4edd786dc4184a6b08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40bd20137d81de4edd786dc4184a6b08">&#9670;&nbsp;</a></span>stage3</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1StageButton.html">StageButton</a> UI.Title.StageSelect.StageSelectManager.stage3</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="StageSelectManager_8cs_source.html">StageSelectManager.cs</a> の <a class="el" href="StageSelectManager_8cs_source.html#l00029">29</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a03bc32465a43feb98f025290589e923f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03bc32465a43feb98f025290589e923f">&#9670;&nbsp;</a></span>stage4</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1StageButton.html">StageButton</a> UI.Title.StageSelect.StageSelectManager.stage4</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="StageSelectManager_8cs_source.html">StageSelectManager.cs</a> の <a class="el" href="StageSelectManager_8cs_source.html#l00030">30</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0875e9b6b607e636f485ef2bc67eac34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0875e9b6b607e636f485ef2bc67eac34">&#9670;&nbsp;</a></span>stage5</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1StageButton.html">StageButton</a> UI.Title.StageSelect.StageSelectManager.stage5</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="StageSelectManager_8cs_source.html">StageSelectManager.cs</a> の <a class="el" href="StageSelectManager_8cs_source.html#l00031">31</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">イベント詳解</h2>
+<a id="a7ddc41eeb24043856a80b79fde3b248a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ddc41eeb24043856a80b79fde3b248a">&#9670;&nbsp;</a></span>OnBack</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Action UI.Title.StageSelect.StageSelectManager.OnBack</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="StageSelectManager_8cs_source.html">StageSelectManager.cs</a> の <a class="el" href="StageSelectManager_8cs_source.html#l00138">138</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a25d3aab086c18406b44fd401a365961f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25d3aab086c18406b44fd401a365961f">&#9670;&nbsp;</a></span>OnStage</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Action&lt;<a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a>&gt; UI.Title.StageSelect.StageSelectManager.OnStage</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="StageSelectManager_8cs_source.html">StageSelectManager.cs</a> の <a class="el" href="StageSelectManager_8cs_source.html#l00140">140</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>src/Assets/Scripts/UI/Title/StageSelect/<a class="el" href="StageSelectManager_8cs_source.html">StageSelectManager.cs</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

@@ -1,0 +1,985 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: Core.Utility.UI.Navigation.Navigation&lt; T &gt; クラステンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceCore.html">Core</a></li><li class="navelem"><a class="el" href="namespaceCore_1_1Utility.html">Utility</a></li><li class="navelem"><a class="el" href="namespaceCore_1_1Utility_1_1UI.html">UI</a></li><li class="navelem"><a class="el" href="namespaceCore_1_1Utility_1_1UI_1_1Navigation.html">Navigation</a></li><li class="navelem"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Navigation</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#properties">プロパティ</a> &#124;
+<a href="#events">イベント</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="#pri-static-attribs">静的非公開変数類</a> &#124;
+<a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">Core.Utility.UI.Navigation.Navigation&lt; T &gt; クラステンプレート</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Core.Utility.UI.Navigation.Navigation&lt; T &gt; の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation__inherit__graph.png" border="0" usemap="#aCore_8Utility_8UI_8Navigation_8Navigation_3_01T_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="aCore_8Utility_8UI_8Navigation_8Navigation_3_01T_01_4_inherit__map" id="aCore_8Utility_8UI_8Navigation_8Navigation_3_01T_01_4_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,131,196,516"/>
+<area shape="rect" title=" " alt="" coords="61,5,141,83"/>
+</map>
+</div>
+<div class="dynheader">
+Core.Utility.UI.Navigation.Navigation&lt; T &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation__coll__graph.png" border="0" usemap="#aCore_8Utility_8UI_8Navigation_8Navigation_3_01T_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="aCore_8Utility_8UI_8Navigation_8Navigation_3_01T_01_4_coll__map" id="aCore_8Utility_8UI_8Navigation_8Navigation_3_01T_01_4_coll__map">
+<area shape="rect" title=" " alt="" coords="110,248,301,575"/>
+<area shape="rect" title=" " alt="" coords="5,42,85,119"/>
+<area shape="rect" href="classCore_1_1Input_1_1InputEvent.html" title="InputActionのラッパークラス" alt="" coords="110,5,301,156"/>
+<area shape="rect" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html" title=" " alt="" coords="325,5,515,156"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a94b9af164847dcdf17a0fe5842ad16ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a94b9af164847dcdf17a0fe5842ad16ec">Navigation</a> (Dictionary&lt; T, <a class="el" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html">IUIManager</a> &gt; initialManagers)</td></tr>
+<tr class="separator:a94b9af164847dcdf17a0fe5842ad16ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4516055a30fc1457db69643c62fa9d16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4516055a30fc1457db69643c62fa9d16">Tick</a> ()</td></tr>
+<tr class="separator:a4516055a30fc1457db69643c62fa9d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ca04e63fd777971106f2e23aa4e8127"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a7ca04e63fd777971106f2e23aa4e8127">SetScreen</a> (T nav)</td></tr>
+<tr class="separator:a7ca04e63fd777971106f2e23aa4e8127"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66fb20844af6cbb1b759cbf564ee4e37"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a66fb20844af6cbb1b759cbf564ee4e37">GetCurrentNav</a> ()</td></tr>
+<tr class="separator:a66fb20844af6cbb1b759cbf564ee4e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a710a31240ad99f5ee1d11eb6c4f32eca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca">SetActive</a> (bool value)</td></tr>
+<tr class="separator:a710a31240ad99f5ee1d11eb6c4f32eca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+プロパティ</h2></td></tr>
+<tr class="memitem:a85cb4af5e88f184a248d64f90baeb840"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a85cb4af5e88f184a248d64f90baeb840">IsActive</a><code> [get]</code></td></tr>
+<tr class="separator:a85cb4af5e88f184a248d64f90baeb840"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="events"></a>
+イベント</h2></td></tr>
+<tr class="memitem:a349ca79afa6722d45b5dc9f72195297b"><td class="memItemLeft" align="right" valign="top">Action&lt; InputAction.CallbackContext &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a349ca79afa6722d45b5dc9f72195297b">OnCancel</a></td></tr>
+<tr class="separator:a349ca79afa6722d45b5dc9f72195297b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:abf4cfc3297237541fbbfc570944a960c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#abf4cfc3297237541fbbfc570944a960c">OnMove</a> (Vector2 input)</td></tr>
+<tr class="separator:abf4cfc3297237541fbbfc570944a960c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8f8dad068c28087a982a4c69142b477"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#ac8f8dad068c28087a982a4c69142b477">OnMoveStarted</a> (InputAction.CallbackContext context)</td></tr>
+<tr class="separator:ac8f8dad068c28087a982a4c69142b477"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93c10087acbbf7383bee84f68bffef3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a93c10087acbbf7383bee84f68bffef3f">OnMoveCanceled</a> (InputAction.CallbackContext context)</td></tr>
+<tr class="separator:a93c10087acbbf7383bee84f68bffef3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa259a5932407229dda04fa9da04497ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#aa259a5932407229dda04fa9da04497ce">OnClick</a> (InputAction.CallbackContext _)</td></tr>
+<tr class="separator:aa259a5932407229dda04fa9da04497ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a9eebcbe652527a4dfe5253d6ea42ee91"><td class="memItemLeft" align="right" valign="top">readonly Dictionary&lt; T, <a class="el" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html">IUIManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a9eebcbe652527a4dfe5253d6ea42ee91">managers</a></td></tr>
+<tr class="separator:a9eebcbe652527a4dfe5253d6ea42ee91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91348af01b5c86e98c60c392a3ac0f73"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html">IUIManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a91348af01b5c86e98c60c392a3ac0f73">current</a></td></tr>
+<tr class="separator:a91348af01b5c86e98c60c392a3ac0f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a813b616ce89f545614c01bc0536acde6"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a813b616ce89f545614c01bc0536acde6">currentNav</a></td></tr>
+<tr class="separator:a813b616ce89f545614c01bc0536acde6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c96bb25df0d26d8f8aa0e548a7ee59b"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="classCore_1_1Input_1_1InputEvent.html">InputEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4c96bb25df0d26d8f8aa0e548a7ee59b">cancelEvent</a></td></tr>
+<tr class="separator:a4c96bb25df0d26d8f8aa0e548a7ee59b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae51bbd030477551a2b884cf2849bc99a"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="classCore_1_1Input_1_1InputEvent.html">InputEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#ae51bbd030477551a2b884cf2849bc99a">clickEvent</a></td></tr>
+<tr class="separator:ae51bbd030477551a2b884cf2849bc99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a714651511b32b6693e7a2b5053f1e2a3"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="classCore_1_1Input_1_1InputEvent.html">InputEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a714651511b32b6693e7a2b5053f1e2a3">moveEvent</a></td></tr>
+<tr class="separator:a714651511b32b6693e7a2b5053f1e2a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43c161c06878d829aafc29d1a9632117"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a43c161c06878d829aafc29d1a9632117">currentTime</a></td></tr>
+<tr class="separator:a43c161c06878d829aafc29d1a9632117"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc42e0157911c7188bebad71531bf9ab"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#abc42e0157911c7188bebad71531bf9ab">initialInterval</a> = <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#aef7d7df2de7b86a846695b6a92416024">StartInterval</a></td></tr>
+<tr class="separator:abc42e0157911c7188bebad71531bf9ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bd77f4226910a4882eaad29216deed9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a9bd77f4226910a4882eaad29216deed9">isActive</a></td></tr>
+<tr class="separator:a9bd77f4226910a4882eaad29216deed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae52ef4b4b2c255913145991c5bd8918b"><td class="memItemLeft" align="right" valign="top">readonly float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#ae52ef4b4b2c255913145991c5bd8918b">minInterval</a> = 0.1f</td></tr>
+<tr class="memdesc:ae52ef4b4b2c255913145991c5bd8918b"><td class="mdescLeft">&#160;</td><td class="mdescRight">最小の呼び出し感覚  <a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#ae52ef4b4b2c255913145991c5bd8918b">[詳解]</a><br /></td></tr>
+<tr class="separator:ae52ef4b4b2c255913145991c5bd8918b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+静的非公開変数類</h2></td></tr>
+<tr class="memitem:af29ff0becbc121335a08a8f9f8daeb84"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#af29ff0becbc121335a08a8f9f8daeb84">IntervalIncrement</a> = 0.05f</td></tr>
+<tr class="memdesc:af29ff0becbc121335a08a8f9f8daeb84"><td class="mdescLeft">&#160;</td><td class="mdescRight">押し続けるたびに減らす感覚  <a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#af29ff0becbc121335a08a8f9f8daeb84">[詳解]</a><br /></td></tr>
+<tr class="separator:af29ff0becbc121335a08a8f9f8daeb84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef7d7df2de7b86a846695b6a92416024"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#aef7d7df2de7b86a846695b6a92416024">StartInterval</a> = 0.6f</td></tr>
+<tr class="memdesc:aef7d7df2de7b86a846695b6a92416024"><td class="mdescLeft">&#160;</td><td class="mdescRight">初回の呼び出し感覚  <a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#aef7d7df2de7b86a846695b6a92416024">[詳解]</a><br /></td></tr>
+<tr class="separator:aef7d7df2de7b86a846695b6a92416024"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="Navigation_8cs_source.html">Navigation.cs</a> の <a class="el" href="Navigation_8cs_source.html#l00011">11</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a94b9af164847dcdf17a0fe5842ad16ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94b9af164847dcdf17a0fe5842ad16ec">&#9670;&nbsp;</a></span>Navigation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation</a>&lt; T &gt;.<a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Navigation</a> </td>
+          <td>(</td>
+          <td class="paramtype">Dictionary&lt; T, <a class="el" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html">IUIManager</a> &gt;&#160;</td>
+          <td class="paramname"><em>initialManagers</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Navigation_8cs_source.html">Navigation.cs</a> の <a class="el" href="Navigation_8cs_source.html#l00045">45</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a9eebcbe652527a4dfe5253d6ea42ee91">managers</a> = initialManagers;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a714651511b32b6693e7a2b5053f1e2a3">moveEvent</a> = <a class="code" href="classCore_1_1Input_1_1InputActionProvider.html">InputActionProvider</a>.<a class="code" href="classCore_1_1Input_1_1SingletonMonoBehaviour.html#abe9d85521c1adf0cc8870497504118ae">Instance</a>.CreateEvent(<a class="code" href="classCore_1_1Input_1_1ActionGuid.html">ActionGuid</a>.<a class="code" href="classCore_1_1Input_1_1ActionGuid.html#ac3d8fe55b372c1f9679cc32591273eee">Title</a>.<a class="code" href="classCore_1_1Input_1_1Title.html#ae0b076b0e310f25e2ac9f0d5c1bea76b">Move</a>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a714651511b32b6693e7a2b5053f1e2a3">moveEvent</a>.<a class="code" href="classCore_1_1Input_1_1InputEvent.html#a6083757a734e5cbebda39c604cfc2d9f">Started</a> += <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#ac8f8dad068c28087a982a4c69142b477">OnMoveStarted</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a714651511b32b6693e7a2b5053f1e2a3">moveEvent</a>.<a class="code" href="classCore_1_1Input_1_1InputEvent.html#a38ded2cbcefd054bfaf50c6fec84f963">Canceled</a> += <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a93c10087acbbf7383bee84f68bffef3f">OnMoveCanceled</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#ae51bbd030477551a2b884cf2849bc99a">clickEvent</a> = <a class="code" href="classCore_1_1Input_1_1InputActionProvider.html">InputActionProvider</a>.<a class="code" href="classCore_1_1Input_1_1SingletonMonoBehaviour.html#abe9d85521c1adf0cc8870497504118ae">Instance</a>.CreateEvent(<a class="code" href="classCore_1_1Input_1_1ActionGuid.html">ActionGuid</a>.<a class="code" href="classCore_1_1Input_1_1ActionGuid.html#ac3d8fe55b372c1f9679cc32591273eee">Title</a>.<a class="code" href="classCore_1_1Input_1_1Title.html#a42318f8409ff290c7ec0fb5a9d978a3e">Click</a>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#ae51bbd030477551a2b884cf2849bc99a">clickEvent</a>.<a class="code" href="classCore_1_1Input_1_1InputEvent.html#a6083757a734e5cbebda39c604cfc2d9f">Started</a> += <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#aa259a5932407229dda04fa9da04497ce">OnClick</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4c96bb25df0d26d8f8aa0e548a7ee59b">cancelEvent</a> = <a class="code" href="classCore_1_1Input_1_1InputActionProvider.html">InputActionProvider</a>.<a class="code" href="classCore_1_1Input_1_1SingletonMonoBehaviour.html#abe9d85521c1adf0cc8870497504118ae">Instance</a>.CreateEvent(<a class="code" href="classCore_1_1Input_1_1ActionGuid.html">ActionGuid</a>.<a class="code" href="classCore_1_1Input_1_1ActionGuid.html#ac3d8fe55b372c1f9679cc32591273eee">Title</a>.<a class="code" href="classCore_1_1Input_1_1Title.html#a268a4cf854de873cc1499fe1d9aefa99">Cancel</a>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4c96bb25df0d26d8f8aa0e548a7ee59b">cancelEvent</a>.<a class="code" href="classCore_1_1Input_1_1InputEvent.html#a6083757a734e5cbebda39c604cfc2d9f">Started</a> += ctx =&gt;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a349ca79afa6722d45b5dc9f72195297b">OnCancel</a>?.Invoke(ctx);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            };</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Input_1_1ActionGuid_html"><div class="ttname"><a href="classCore_1_1Input_1_1ActionGuid.html">Core.Input.ActionGuid</a></div><div class="ttdef"><b>Definition:</b> <a href="ActionGuid_8cs_source.html#l00009">ActionGuid.cs:10</a></div></div>
+<div class="ttc" id="aclassCore_1_1Input_1_1ActionGuid_html_ac3d8fe55b372c1f9679cc32591273eee"><div class="ttname"><a href="classCore_1_1Input_1_1ActionGuid.html#ac3d8fe55b372c1f9679cc32591273eee">Core.Input.ActionGuid.Title</a></div><div class="ttdeci">static readonly Title Title</div><div class="ttdef"><b>Definition:</b> <a href="ActionGuid_8cs_source.html#l00012">ActionGuid.cs:12</a></div></div>
+<div class="ttc" id="aclassCore_1_1Input_1_1InputActionProvider_html"><div class="ttname"><a href="classCore_1_1Input_1_1InputActionProvider.html">Core.Input.InputActionProvider</a></div><div class="ttdoc">登録解除不要なInputActionを提供するクラス</div><div class="ttdef"><b>Definition:</b> <a href="InputActionProvider_8cs_source.html#l00011">InputActionProvider.cs:12</a></div></div>
+<div class="ttc" id="aclassCore_1_1Input_1_1InputEvent_html_a38ded2cbcefd054bfaf50c6fec84f963"><div class="ttname"><a href="classCore_1_1Input_1_1InputEvent.html#a38ded2cbcefd054bfaf50c6fec84f963">Core.Input.InputEvent.Canceled</a></div><div class="ttdeci">Action&lt; InputAction.CallbackContext &gt; Canceled</div><div class="ttdef"><b>Definition:</b> <a href="InputEvent_8cs_source.html#l00015">InputEvent.cs:15</a></div></div>
+<div class="ttc" id="aclassCore_1_1Input_1_1InputEvent_html_a6083757a734e5cbebda39c604cfc2d9f"><div class="ttname"><a href="classCore_1_1Input_1_1InputEvent.html#a6083757a734e5cbebda39c604cfc2d9f">Core.Input.InputEvent.Started</a></div><div class="ttdeci">Action&lt; InputAction.CallbackContext &gt; Started</div><div class="ttdef"><b>Definition:</b> <a href="InputEvent_8cs_source.html#l00013">InputEvent.cs:13</a></div></div>
+<div class="ttc" id="aclassCore_1_1Input_1_1SingletonMonoBehaviour_html_abe9d85521c1adf0cc8870497504118ae"><div class="ttname"><a href="classCore_1_1Input_1_1SingletonMonoBehaviour.html#abe9d85521c1adf0cc8870497504118ae">Core.Input.SingletonMonoBehaviour.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition:</b> <a href="SingletonMonobehaviour_8cs_source.html#l00013">SingletonMonobehaviour.cs:14</a></div></div>
+<div class="ttc" id="aclassCore_1_1Input_1_1Title_html_a268a4cf854de873cc1499fe1d9aefa99"><div class="ttname"><a href="classCore_1_1Input_1_1Title.html#a268a4cf854de873cc1499fe1d9aefa99">Core.Input.Title.Cancel</a></div><div class="ttdeci">readonly Guid Cancel</div><div class="ttdef"><b>Definition:</b> <a href="ActionGuid_8cs_source.html#l00026">ActionGuid.cs:26</a></div></div>
+<div class="ttc" id="aclassCore_1_1Input_1_1Title_html_a42318f8409ff290c7ec0fb5a9d978a3e"><div class="ttname"><a href="classCore_1_1Input_1_1Title.html#a42318f8409ff290c7ec0fb5a9d978a3e">Core.Input.Title.Click</a></div><div class="ttdeci">readonly Guid Click</div><div class="ttdef"><b>Definition:</b> <a href="ActionGuid_8cs_source.html#l00024">ActionGuid.cs:24</a></div></div>
+<div class="ttc" id="aclassCore_1_1Input_1_1Title_html_ae0b076b0e310f25e2ac9f0d5c1bea76b"><div class="ttname"><a href="classCore_1_1Input_1_1Title.html#ae0b076b0e310f25e2ac9f0d5c1bea76b">Core.Input.Title.Move</a></div><div class="ttdeci">readonly Guid Move</div><div class="ttdef"><b>Definition:</b> <a href="ActionGuid_8cs_source.html#l00025">ActionGuid.cs:25</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html_a349ca79afa6722d45b5dc9f72195297b"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a349ca79afa6722d45b5dc9f72195297b">Core.Utility.UI.Navigation.Navigation.OnCancel</a></div><div class="ttdeci">Action&lt; InputAction.CallbackContext &gt; OnCancel</div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00024">Navigation.cs:24</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html_a4c96bb25df0d26d8f8aa0e548a7ee59b"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4c96bb25df0d26d8f8aa0e548a7ee59b">Core.Utility.UI.Navigation.Navigation.cancelEvent</a></div><div class="ttdeci">readonly InputEvent cancelEvent</div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00017">Navigation.cs:17</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html_a714651511b32b6693e7a2b5053f1e2a3"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a714651511b32b6693e7a2b5053f1e2a3">Core.Utility.UI.Navigation.Navigation.moveEvent</a></div><div class="ttdeci">readonly InputEvent moveEvent</div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00019">Navigation.cs:19</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html_a93c10087acbbf7383bee84f68bffef3f"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a93c10087acbbf7383bee84f68bffef3f">Core.Utility.UI.Navigation.Navigation.OnMoveCanceled</a></div><div class="ttdeci">void OnMoveCanceled(InputAction.CallbackContext context)</div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00118">Navigation.cs:118</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html_a9eebcbe652527a4dfe5253d6ea42ee91"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a9eebcbe652527a4dfe5253d6ea42ee91">Core.Utility.UI.Navigation.Navigation.managers</a></div><div class="ttdeci">readonly Dictionary&lt; T, IUIManager &gt; managers</div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00013">Navigation.cs:13</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html_aa259a5932407229dda04fa9da04497ce"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#aa259a5932407229dda04fa9da04497ce">Core.Utility.UI.Navigation.Navigation.OnClick</a></div><div class="ttdeci">void OnClick(InputAction.CallbackContext _)</div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00126">Navigation.cs:126</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html_ac8f8dad068c28087a982a4c69142b477"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#ac8f8dad068c28087a982a4c69142b477">Core.Utility.UI.Navigation.Navigation.OnMoveStarted</a></div><div class="ttdeci">void OnMoveStarted(InputAction.CallbackContext context)</div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00110">Navigation.cs:110</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html_ae51bbd030477551a2b884cf2849bc99a"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#ae51bbd030477551a2b884cf2849bc99a">Core.Utility.UI.Navigation.Navigation.clickEvent</a></div><div class="ttdeci">readonly InputEvent clickEvent</div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00018">Navigation.cs:18</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a94b9af164847dcdf17a0fe5842ad16ec_cgraph.png" border="0" usemap="#aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a94b9af164847dcdf17a0fe5842ad16ec_cgraph" alt=""/></div>
+<map name="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a94b9af164847dcdf17a0fe5842ad16ec_cgraph" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a94b9af164847dcdf17a0fe5842ad16ec_cgraph">
+<area shape="rect" title=" " alt="" coords="5,71,196,112"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#aa259a5932407229dda04fa9da04497ce" title=" " alt="" coords="254,5,445,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a93c10087acbbf7383bee84f68bffef3f" title=" " alt="" coords="244,71,455,112"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#ac8f8dad068c28087a982a4c69142b477" title=" " alt="" coords="250,136,449,177"/>
+<area shape="rect" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#a9ec30452f75c89f1627a4dc7b9d876bf" title=" " alt="" coords="503,5,693,47"/>
+<area shape="rect" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#aac9cefba6acd376cb4e525360774cd13" title=" " alt="" coords="503,136,693,177"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a66fb20844af6cbb1b759cbf564ee4e37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66fb20844af6cbb1b759cbf564ee4e37">&#9670;&nbsp;</a></span>GetCurrentNav()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation</a>&lt; T &gt;.GetCurrentNav </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a66fb20844af6cbb1b759cbf564ee4e37_icgraph.png" border="0" usemap="#aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a66fb20844af6cbb1b759cbf564ee4e37_icgraph" alt=""/></div>
+<map name="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a66fb20844af6cbb1b759cbf564ee4e37_icgraph" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a66fb20844af6cbb1b759cbf564ee4e37_icgraph">
+<area shape="rect" title=" " alt="" coords="547,5,741,47"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#aa95693b32f2274a054a0daef6ee3ad25" title=" " alt="" coords="276,5,499,47"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#a5c19ef95c31c80fc1ece501498875961" title=" " alt="" coords="5,5,228,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa259a5932407229dda04fa9da04497ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa259a5932407229dda04fa9da04497ce">&#9670;&nbsp;</a></span>OnClick()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation</a>&lt; T &gt;.OnClick </td>
+          <td>(</td>
+          <td class="paramtype">InputAction.CallbackContext&#160;</td>
+          <td class="paramname"><em>_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Navigation_8cs_source.html">Navigation.cs</a> の <a class="el" href="Navigation_8cs_source.html#l00126">126</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a9bd77f4226910a4882eaad29216deed9">isActive</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a91348af01b5c86e98c60c392a3ac0f73">current</a>?.<a class="code" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#a9ec30452f75c89f1627a4dc7b9d876bf">Clicked</a>();</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html_a91348af01b5c86e98c60c392a3ac0f73"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a91348af01b5c86e98c60c392a3ac0f73">Core.Utility.UI.Navigation.Navigation.current</a></div><div class="ttdeci">IUIManager current</div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00014">Navigation.cs:14</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html_a9bd77f4226910a4882eaad29216deed9"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a9bd77f4226910a4882eaad29216deed9">Core.Utility.UI.Navigation.Navigation.isActive</a></div><div class="ttdeci">bool isActive</div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00026">Navigation.cs:26</a></div></div>
+<div class="ttc" id="ainterfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager_html_a9ec30452f75c89f1627a4dc7b9d876bf"><div class="ttname"><a href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#a9ec30452f75c89f1627a4dc7b9d876bf">Core.Utility.UI.Navigation.IUIManager.Clicked</a></div><div class="ttdeci">void Clicked()</div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_aa259a5932407229dda04fa9da04497ce_cgraph.png" border="0" usemap="#aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_aa259a5932407229dda04fa9da04497ce_cgraph" alt=""/></div>
+<map name="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_aa259a5932407229dda04fa9da04497ce_cgraph" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_aa259a5932407229dda04fa9da04497ce_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,196,47"/>
+<area shape="rect" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#a9ec30452f75c89f1627a4dc7b9d876bf" title=" " alt="" coords="244,5,435,47"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_aa259a5932407229dda04fa9da04497ce_icgraph.png" border="0" usemap="#aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_aa259a5932407229dda04fa9da04497ce_icgraph" alt=""/></div>
+<map name="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_aa259a5932407229dda04fa9da04497ce_icgraph" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_aa259a5932407229dda04fa9da04497ce_icgraph">
+<area shape="rect" title=" " alt="" coords="244,5,435,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a94b9af164847dcdf17a0fe5842ad16ec" title=" " alt="" coords="5,5,196,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abf4cfc3297237541fbbfc570944a960c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf4cfc3297237541fbbfc570944a960c">&#9670;&nbsp;</a></span>OnMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation</a>&lt; T &gt;.OnMove </td>
+          <td>(</td>
+          <td class="paramtype">Vector2&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Navigation_8cs_source.html">Navigation.cs</a> の <a class="el" href="Navigation_8cs_source.html#l00094">94</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a9bd77f4226910a4882eaad29216deed9">isActive</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a43c161c06878d829aafc29d1a9632117">currentTime</a> += Time.deltaTime;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="comment">// ReSharper disable once CompareOfFloatsByEqualityOperator</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#abc42e0157911c7188bebad71531bf9ab">initialInterval</a> == <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#aef7d7df2de7b86a846695b6a92416024">StartInterval</a> &amp;&amp; <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a43c161c06878d829aafc29d1a9632117">currentTime</a> == 0f) <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a91348af01b5c86e98c60c392a3ac0f73">current</a>?.<a class="code" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#aac9cefba6acd376cb4e525360774cd13">Select</a>(input);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a43c161c06878d829aafc29d1a9632117">currentTime</a> &lt; <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#abc42e0157911c7188bebad71531bf9ab">initialInterval</a>) <span class="keywordflow">return</span>; <span class="comment">// 一定の間隔が経過していない場合、何もしない</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="comment">// 呼び出し間隔を増加させる</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#abc42e0157911c7188bebad71531bf9ab">initialInterval</a> = Math.Max(<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#abc42e0157911c7188bebad71531bf9ab">initialInterval</a> -= <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#af29ff0becbc121335a08a8f9f8daeb84">IntervalIncrement</a>, <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#ae52ef4b4b2c255913145991c5bd8918b">minInterval</a>);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a91348af01b5c86e98c60c392a3ac0f73">current</a>?.<a class="code" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#aac9cefba6acd376cb4e525360774cd13">Select</a>(input);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a43c161c06878d829aafc29d1a9632117">currentTime</a> = 0f;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html_a43c161c06878d829aafc29d1a9632117"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a43c161c06878d829aafc29d1a9632117">Core.Utility.UI.Navigation.Navigation.currentTime</a></div><div class="ttdeci">float currentTime</div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00021">Navigation.cs:21</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html_abc42e0157911c7188bebad71531bf9ab"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#abc42e0157911c7188bebad71531bf9ab">Core.Utility.UI.Navigation.Navigation.initialInterval</a></div><div class="ttdeci">float initialInterval</div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00022">Navigation.cs:22</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html_ae52ef4b4b2c255913145991c5bd8918b"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#ae52ef4b4b2c255913145991c5bd8918b">Core.Utility.UI.Navigation.Navigation.minInterval</a></div><div class="ttdeci">readonly float minInterval</div><div class="ttdoc">最小の呼び出し感覚</div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00043">Navigation.cs:43</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html_aef7d7df2de7b86a846695b6a92416024"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#aef7d7df2de7b86a846695b6a92416024">Core.Utility.UI.Navigation.Navigation.StartInterval</a></div><div class="ttdeci">const float StartInterval</div><div class="ttdoc">初回の呼び出し感覚</div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00038">Navigation.cs:38</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html_af29ff0becbc121335a08a8f9f8daeb84"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#af29ff0becbc121335a08a8f9f8daeb84">Core.Utility.UI.Navigation.Navigation.IntervalIncrement</a></div><div class="ttdeci">const float IntervalIncrement</div><div class="ttdoc">押し続けるたびに減らす感覚</div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00033">Navigation.cs:33</a></div></div>
+<div class="ttc" id="ainterfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager_html_aac9cefba6acd376cb4e525360774cd13"><div class="ttname"><a href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#aac9cefba6acd376cb4e525360774cd13">Core.Utility.UI.Navigation.IUIManager.Select</a></div><div class="ttdeci">void Select(Vector2 direction)</div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_abf4cfc3297237541fbbfc570944a960c_cgraph.png" border="0" usemap="#aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_abf4cfc3297237541fbbfc570944a960c_cgraph" alt=""/></div>
+<map name="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_abf4cfc3297237541fbbfc570944a960c_cgraph" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_abf4cfc3297237541fbbfc570944a960c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,196,47"/>
+<area shape="rect" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#aac9cefba6acd376cb4e525360774cd13" title=" " alt="" coords="244,5,435,47"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_abf4cfc3297237541fbbfc570944a960c_icgraph.png" border="0" usemap="#aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_abf4cfc3297237541fbbfc570944a960c_icgraph" alt=""/></div>
+<map name="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_abf4cfc3297237541fbbfc570944a960c_icgraph" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_abf4cfc3297237541fbbfc570944a960c_icgraph">
+<area shape="rect" title=" " alt="" coords="244,5,435,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4516055a30fc1457db69643c62fa9d16" title=" " alt="" coords="5,5,196,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a93c10087acbbf7383bee84f68bffef3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93c10087acbbf7383bee84f68bffef3f">&#9670;&nbsp;</a></span>OnMoveCanceled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation</a>&lt; T &gt;.OnMoveCanceled </td>
+          <td>(</td>
+          <td class="paramtype">InputAction.CallbackContext&#160;</td>
+          <td class="paramname"><em>context</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Navigation_8cs_source.html">Navigation.cs</a> の <a class="el" href="Navigation_8cs_source.html#l00118">118</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a9bd77f4226910a4882eaad29216deed9">isActive</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#abc42e0157911c7188bebad71531bf9ab">initialInterval</a> = <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#aef7d7df2de7b86a846695b6a92416024">StartInterval</a>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a43c161c06878d829aafc29d1a9632117">currentTime</a> = 0f;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        }</div>
+</div><!-- fragment --><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a93c10087acbbf7383bee84f68bffef3f_icgraph.png" border="0" usemap="#aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a93c10087acbbf7383bee84f68bffef3f_icgraph" alt=""/></div>
+<map name="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a93c10087acbbf7383bee84f68bffef3f_icgraph" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a93c10087acbbf7383bee84f68bffef3f_icgraph">
+<area shape="rect" title=" " alt="" coords="244,5,455,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a94b9af164847dcdf17a0fe5842ad16ec" title=" " alt="" coords="5,5,196,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac8f8dad068c28087a982a4c69142b477"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8f8dad068c28087a982a4c69142b477">&#9670;&nbsp;</a></span>OnMoveStarted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation</a>&lt; T &gt;.OnMoveStarted </td>
+          <td>(</td>
+          <td class="paramtype">InputAction.CallbackContext&#160;</td>
+          <td class="paramname"><em>context</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Navigation_8cs_source.html">Navigation.cs</a> の <a class="el" href="Navigation_8cs_source.html#l00110">110</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a9bd77f4226910a4882eaad29216deed9">isActive</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            var input = context.ReadValue&lt;Vector2&gt;();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a91348af01b5c86e98c60c392a3ac0f73">current</a>?.<a class="code" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#aac9cefba6acd376cb4e525360774cd13">Select</a>(input);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_ac8f8dad068c28087a982a4c69142b477_cgraph.png" border="0" usemap="#aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_ac8f8dad068c28087a982a4c69142b477_cgraph" alt=""/></div>
+<map name="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_ac8f8dad068c28087a982a4c69142b477_cgraph" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_ac8f8dad068c28087a982a4c69142b477_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,204,47"/>
+<area shape="rect" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#aac9cefba6acd376cb4e525360774cd13" title=" " alt="" coords="252,5,443,47"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_ac8f8dad068c28087a982a4c69142b477_icgraph.png" border="0" usemap="#aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_ac8f8dad068c28087a982a4c69142b477_icgraph" alt=""/></div>
+<map name="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_ac8f8dad068c28087a982a4c69142b477_icgraph" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_ac8f8dad068c28087a982a4c69142b477_icgraph">
+<area shape="rect" title=" " alt="" coords="244,5,443,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a94b9af164847dcdf17a0fe5842ad16ec" title=" " alt="" coords="5,5,196,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a710a31240ad99f5ee1d11eb6c4f32eca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a710a31240ad99f5ee1d11eb6c4f32eca">&#9670;&nbsp;</a></span>SetActive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation</a>&lt; T &gt;.SetActive </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a710a31240ad99f5ee1d11eb6c4f32eca_icgraph.png" border="0" usemap="#aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a710a31240ad99f5ee1d11eb6c4f32eca_icgraph" alt=""/></div>
+<map name="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a710a31240ad99f5ee1d11eb6c4f32eca_icgraph" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a710a31240ad99f5ee1d11eb6c4f32eca_icgraph">
+<area shape="rect" title=" " alt="" coords="276,39,467,80"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#ae386e299a5b5026026809f6d5553bf01" title=" " alt="" coords="5,5,228,47"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#a83b8dac4163f6b036fb389a42d5f992e" title=" " alt="" coords="5,71,228,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7ca04e63fd777971106f2e23aa4e8127"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ca04e63fd777971106f2e23aa4e8127">&#9670;&nbsp;</a></span>SetScreen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation</a>&lt; T &gt;.SetScreen </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>nav</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Navigation_8cs_source.html">Navigation.cs</a> の <a class="el" href="Navigation_8cs_source.html#l00069">69</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a9bd77f4226910a4882eaad29216deed9">isActive</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a91348af01b5c86e98c60c392a3ac0f73">current</a> == <span class="keyword">null</span>)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                NavigateWith(nav);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a91348af01b5c86e98c60c392a3ac0f73">current</a>?.<a class="code" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#af7bb9f4babe786f2b895ff9925fe43e5">Finished</a>(<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a91348af01b5c86e98c60c392a3ac0f73">current</a>.<a class="code" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#a5f45f697454fd38c0e502e3c7b015c18">GetContext</a>().FadeOut(Easings.Default(0.3f)), () =&gt;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                NavigateWith(nav);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            });</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordtype">void</span> NavigateWith(T n)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a91348af01b5c86e98c60c392a3ac0f73">current</a> = <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a9eebcbe652527a4dfe5253d6ea42ee91">managers</a>[n];</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a813b616ce89f545614c01bc0536acde6">currentNav</a> = n;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a91348af01b5c86e98c60c392a3ac0f73">current</a> == <span class="keyword">null</span>) <span class="keywordflow">throw</span> <span class="keyword">new</span> NotImplementedException();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a91348af01b5c86e98c60c392a3ac0f73">current</a>?.<a class="code" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#a26634d10aa3cbac35d57a9aca5147ffb">Initialized</a>(<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a91348af01b5c86e98c60c392a3ac0f73">current</a>.<a class="code" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#a5f45f697454fd38c0e502e3c7b015c18">GetContext</a>().FadeIn(Easings.Default(0.3f)));</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html_a813b616ce89f545614c01bc0536acde6"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a813b616ce89f545614c01bc0536acde6">Core.Utility.UI.Navigation.Navigation.currentNav</a></div><div class="ttdeci">T currentNav</div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00015">Navigation.cs:15</a></div></div>
+<div class="ttc" id="ainterfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager_html_a26634d10aa3cbac35d57a9aca5147ffb"><div class="ttname"><a href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#a26634d10aa3cbac35d57a9aca5147ffb">Core.Utility.UI.Navigation.IUIManager.Initialized</a></div><div class="ttdeci">void Initialized(ContentTransform content)</div></div>
+<div class="ttc" id="ainterfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager_html_a5f45f697454fd38c0e502e3c7b015c18"><div class="ttname"><a href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#a5f45f697454fd38c0e502e3c7b015c18">Core.Utility.UI.Navigation.IUIManager.GetContext</a></div><div class="ttdeci">AnimationBehaviour GetContext()</div></div>
+<div class="ttc" id="ainterfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager_html_af7bb9f4babe786f2b895ff9925fe43e5"><div class="ttname"><a href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#af7bb9f4babe786f2b895ff9925fe43e5">Core.Utility.UI.Navigation.IUIManager.Finished</a></div><div class="ttdeci">void Finished(ContentTransform content, Action onFinished)</div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a7ca04e63fd777971106f2e23aa4e8127_cgraph.png" border="0" usemap="#aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a7ca04e63fd777971106f2e23aa4e8127_cgraph" alt=""/></div>
+<map name="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a7ca04e63fd777971106f2e23aa4e8127_cgraph" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a7ca04e63fd777971106f2e23aa4e8127_cgraph">
+<area shape="rect" title=" " alt="" coords="5,71,196,112"/>
+<area shape="rect" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#af7bb9f4babe786f2b895ff9925fe43e5" title=" " alt="" coords="244,5,435,47"/>
+<area shape="rect" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#a5f45f697454fd38c0e502e3c7b015c18" title=" " alt="" coords="244,71,435,112"/>
+<area shape="rect" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#a26634d10aa3cbac35d57a9aca5147ffb" title=" " alt="" coords="244,136,435,177"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a7ca04e63fd777971106f2e23aa4e8127_icgraph.png" border="0" usemap="#aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a7ca04e63fd777971106f2e23aa4e8127_icgraph" alt=""/></div>
+<map name="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a7ca04e63fd777971106f2e23aa4e8127_icgraph" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a7ca04e63fd777971106f2e23aa4e8127_icgraph">
+<area shape="rect" title=" " alt="" coords="817,129,1008,171"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#a83b8dac4163f6b036fb389a42d5f992e" title=" " alt="" coords="547,5,769,47"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#a4c9a03aecd2253bcdc1b387655a17d8f" title=" " alt="" coords="547,71,769,112"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#aa95693b32f2274a054a0daef6ee3ad25" title=" " alt="" coords="276,159,499,200"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#aa7ac9d917c9647dfb4157c097afb0eea" title=" " alt="" coords="547,188,769,229"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#a25ac6a557643d50d2db26df7cba42d6c" title=" " alt="" coords="547,253,769,295"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#a5c19ef95c31c80fc1ece501498875961" title=" " alt="" coords="5,159,228,200"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4516055a30fc1457db69643c62fa9d16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4516055a30fc1457db69643c62fa9d16">&#9670;&nbsp;</a></span>Tick()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation</a>&lt; T &gt;.Tick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Navigation_8cs_source.html">Navigation.cs</a> の <a class="el" href="Navigation_8cs_source.html#l00063">63</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            var moveValue = <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a714651511b32b6693e7a2b5053f1e2a3">moveEvent</a>.ReadValue&lt;Vector2&gt;();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">if</span> (Math.Abs(moveValue.y) &gt; 0.05f || Math.Abs(moveValue.x) &gt; 0.05f) <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#abf4cfc3297237541fbbfc570944a960c">OnMove</a>(moveValue);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html_abf4cfc3297237541fbbfc570944a960c"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#abf4cfc3297237541fbbfc570944a960c">Core.Utility.UI.Navigation.Navigation.OnMove</a></div><div class="ttdeci">void OnMove(Vector2 input)</div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00094">Navigation.cs:94</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a4516055a30fc1457db69643c62fa9d16_cgraph.png" border="0" usemap="#aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a4516055a30fc1457db69643c62fa9d16_cgraph" alt=""/></div>
+<map name="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a4516055a30fc1457db69643c62fa9d16_cgraph" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_a4516055a30fc1457db69643c62fa9d16_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,196,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#abf4cfc3297237541fbbfc570944a960c" title=" " alt="" coords="244,5,435,47"/>
+<area shape="rect" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html#aac9cefba6acd376cb4e525360774cd13" title=" " alt="" coords="483,5,673,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a4c96bb25df0d26d8f8aa0e548a7ee59b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c96bb25df0d26d8f8aa0e548a7ee59b">&#9670;&nbsp;</a></span>cancelEvent</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly <a class="el" href="classCore_1_1Input_1_1InputEvent.html">InputEvent</a> <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation</a>&lt; T &gt;.cancelEvent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Navigation_8cs_source.html">Navigation.cs</a> の <a class="el" href="Navigation_8cs_source.html#l00017">17</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae51bbd030477551a2b884cf2849bc99a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae51bbd030477551a2b884cf2849bc99a">&#9670;&nbsp;</a></span>clickEvent</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly <a class="el" href="classCore_1_1Input_1_1InputEvent.html">InputEvent</a> <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation</a>&lt; T &gt;.clickEvent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Navigation_8cs_source.html">Navigation.cs</a> の <a class="el" href="Navigation_8cs_source.html#l00018">18</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a91348af01b5c86e98c60c392a3ac0f73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91348af01b5c86e98c60c392a3ac0f73">&#9670;&nbsp;</a></span>current</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html">IUIManager</a> <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation</a>&lt; T &gt;.current</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Navigation_8cs_source.html">Navigation.cs</a> の <a class="el" href="Navigation_8cs_source.html#l00014">14</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a813b616ce89f545614c01bc0536acde6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a813b616ce89f545614c01bc0536acde6">&#9670;&nbsp;</a></span>currentNav</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation</a>&lt; T &gt;.currentNav</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Navigation_8cs_source.html">Navigation.cs</a> の <a class="el" href="Navigation_8cs_source.html#l00015">15</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a43c161c06878d829aafc29d1a9632117"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43c161c06878d829aafc29d1a9632117">&#9670;&nbsp;</a></span>currentTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation</a>&lt; T &gt;.currentTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Navigation_8cs_source.html">Navigation.cs</a> の <a class="el" href="Navigation_8cs_source.html#l00021">21</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="abc42e0157911c7188bebad71531bf9ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc42e0157911c7188bebad71531bf9ab">&#9670;&nbsp;</a></span>initialInterval</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation</a>&lt; T &gt;.initialInterval = <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#aef7d7df2de7b86a846695b6a92416024">StartInterval</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Navigation_8cs_source.html">Navigation.cs</a> の <a class="el" href="Navigation_8cs_source.html#l00022">22</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af29ff0becbc121335a08a8f9f8daeb84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af29ff0becbc121335a08a8f9f8daeb84">&#9670;&nbsp;</a></span>IntervalIncrement</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation</a>&lt; T &gt;.IntervalIncrement = 0.05f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>押し続けるたびに減らす感覚 </p>
+
+<p class="definition"> <a class="el" href="Navigation_8cs_source.html">Navigation.cs</a> の <a class="el" href="Navigation_8cs_source.html#l00033">33</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9bd77f4226910a4882eaad29216deed9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bd77f4226910a4882eaad29216deed9">&#9670;&nbsp;</a></span>isActive</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation</a>&lt; T &gt;.isActive</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Navigation_8cs_source.html">Navigation.cs</a> の <a class="el" href="Navigation_8cs_source.html#l00026">26</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9eebcbe652527a4dfe5253d6ea42ee91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9eebcbe652527a4dfe5253d6ea42ee91">&#9670;&nbsp;</a></span>managers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly Dictionary&lt;T, <a class="el" href="interfaceCore_1_1Utility_1_1UI_1_1Navigation_1_1IUIManager.html">IUIManager</a>&gt; <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation</a>&lt; T &gt;.managers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Navigation_8cs_source.html">Navigation.cs</a> の <a class="el" href="Navigation_8cs_source.html#l00013">13</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae52ef4b4b2c255913145991c5bd8918b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae52ef4b4b2c255913145991c5bd8918b">&#9670;&nbsp;</a></span>minInterval</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly float <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation</a>&lt; T &gt;.minInterval = 0.1f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>最小の呼び出し感覚 </p>
+
+<p class="definition"> <a class="el" href="Navigation_8cs_source.html">Navigation.cs</a> の <a class="el" href="Navigation_8cs_source.html#l00043">43</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a714651511b32b6693e7a2b5053f1e2a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a714651511b32b6693e7a2b5053f1e2a3">&#9670;&nbsp;</a></span>moveEvent</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly <a class="el" href="classCore_1_1Input_1_1InputEvent.html">InputEvent</a> <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation</a>&lt; T &gt;.moveEvent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Navigation_8cs_source.html">Navigation.cs</a> の <a class="el" href="Navigation_8cs_source.html#l00019">19</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aef7d7df2de7b86a846695b6a92416024"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef7d7df2de7b86a846695b6a92416024">&#9670;&nbsp;</a></span>StartInterval</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation</a>&lt; T &gt;.StartInterval = 0.6f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初回の呼び出し感覚 </p>
+
+<p class="definition"> <a class="el" href="Navigation_8cs_source.html">Navigation.cs</a> の <a class="el" href="Navigation_8cs_source.html#l00038">38</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">プロパティ詳解</h2>
+<a id="a85cb4af5e88f184a248d64f90baeb840"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85cb4af5e88f184a248d64f90baeb840">&#9670;&nbsp;</a></span>IsActive</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation</a>&lt; T &gt;.IsActive</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Navigation_8cs_source.html">Navigation.cs</a> の <a class="el" href="Navigation_8cs_source.html#l00028">28</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">イベント詳解</h2>
+<a id="a349ca79afa6722d45b5dc9f72195297b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a349ca79afa6722d45b5dc9f72195297b">&#9670;&nbsp;</a></span>OnCancel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Action&lt;InputAction.CallbackContext&gt; <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation</a>&lt; T &gt;.OnCancel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Navigation_8cs_source.html">Navigation.cs</a> の <a class="el" href="Navigation_8cs_source.html#l00024">24</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>src/Assets/Scripts/Core/Utility/UI/Navigation/<a class="el" href="Navigation_8cs_source.html">Navigation.cs</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

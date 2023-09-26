@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: src/Assets/Scripts/Module/Assignment/Component/EllipseVisualizer.cs ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_b90377121573af7cb25ee89fc5236601.html">Module</a></li><li class="navelem"><a class="el" href="dir_cfd21f0f40f7fd8662bdac11ddda31eb.html">Assignment</a></li><li class="navelem"><a class="el" href="dir_994261d92e95be504cb99825927f6b80.html">Component</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">EllipseVisualizer.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="EllipseVisualizer_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceModule_1_1Assignment_1_1Component.html">Module.Assignment.Component</a></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html">    8</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html">EllipseVisualizer</a> : MonoBehaviour</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#af1ffcdd477eced58c05179bbe30e115d">   10</a></span>&#160;        [SerializeField] <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#af1ffcdd477eced58c05179bbe30e115d">debugHeight</a> = 1f;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#ac1c00d0f7e7eef049a55684d14c8fc01">   11</a></span>&#160;        [SerializeField] <span class="keyword">private</span> <span class="keywordtype">int</span> <a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#ac1c00d0f7e7eef049a55684d14c8fc01">debugResolution</a> = 50;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#a7bd863610cde4c627c6550e0e7dbae25">   13</a></span>&#160;        <span class="keyword">private</span> Vector2 <a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#a7bd863610cde4c627c6550e0e7dbae25">size</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#afe6f0723ab8385e3d218ce7e53389004">   15</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#afe6f0723ab8385e3d218ce7e53389004">SetSize</a>(Vector2 <a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#a7bd863610cde4c627c6550e0e7dbae25">size</a>)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            this.size = <a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#a7bd863610cde4c627c6550e0e7dbae25">size</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#abb999b375b582ebc502b9900208f1604">   20</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#abb999b375b582ebc502b9900208f1604">OnDrawGizmos</a>()</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            Gizmos.color = Color.green;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            var angleStep = 360f / <a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#ac1c00d0f7e7eef049a55684d14c8fc01">debugResolution</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            Vector3 prevPoint = Vector3.zero;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">for</span> (var i = 0; i &lt;= <a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#ac1c00d0f7e7eef049a55684d14c8fc01">debugResolution</a>; i++)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                var angle = i * angleStep;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                var position = transform.position;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                var x = position.x + <a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#a7bd863610cde4c627c6550e0e7dbae25">size</a>.x * 0.5f * Mathf.Cos(angle * Mathf.Deg2Rad);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                var z = position.z + <a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#a7bd863610cde4c627c6550e0e7dbae25">size</a>.y * 0.5f * Mathf.Sin(angle * Mathf.Deg2Rad);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                var currentPoint = <span class="keyword">new</span> Vector3(x, position.y + <a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#af1ffcdd477eced58c05179bbe30e115d">debugHeight</a>, z);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <span class="keywordflow">if</span> (i &gt; 0)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    Gizmos.DrawLine(prevPoint, currentPoint);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                prevPoint = currentPoint;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1EllipseVisualizer_html"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html">Module.Assignment.Component.EllipseVisualizer</a></div><div class="ttdoc">楕円判定をビジュアライズするクラス</div><div class="ttdef"><b>Definition:</b> <a href="EllipseVisualizer_8cs_source.html#l00008">EllipseVisualizer.cs:9</a></div></div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1EllipseVisualizer_html_a7bd863610cde4c627c6550e0e7dbae25"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#a7bd863610cde4c627c6550e0e7dbae25">Module.Assignment.Component.EllipseVisualizer.size</a></div><div class="ttdeci">Vector2 size</div><div class="ttdef"><b>Definition:</b> <a href="EllipseVisualizer_8cs_source.html#l00013">EllipseVisualizer.cs:13</a></div></div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1EllipseVisualizer_html_abb999b375b582ebc502b9900208f1604"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#abb999b375b582ebc502b9900208f1604">Module.Assignment.Component.EllipseVisualizer.OnDrawGizmos</a></div><div class="ttdeci">void OnDrawGizmos()</div><div class="ttdef"><b>Definition:</b> <a href="EllipseVisualizer_8cs_source.html#l00020">EllipseVisualizer.cs:20</a></div></div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1EllipseVisualizer_html_ac1c00d0f7e7eef049a55684d14c8fc01"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#ac1c00d0f7e7eef049a55684d14c8fc01">Module.Assignment.Component.EllipseVisualizer.debugResolution</a></div><div class="ttdeci">int debugResolution</div><div class="ttdef"><b>Definition:</b> <a href="EllipseVisualizer_8cs_source.html#l00011">EllipseVisualizer.cs:11</a></div></div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1EllipseVisualizer_html_af1ffcdd477eced58c05179bbe30e115d"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#af1ffcdd477eced58c05179bbe30e115d">Module.Assignment.Component.EllipseVisualizer.debugHeight</a></div><div class="ttdeci">float debugHeight</div><div class="ttdef"><b>Definition:</b> <a href="EllipseVisualizer_8cs_source.html#l00010">EllipseVisualizer.cs:10</a></div></div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1EllipseVisualizer_html_afe6f0723ab8385e3d218ce7e53389004"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#afe6f0723ab8385e3d218ce7e53389004">Module.Assignment.Component.EllipseVisualizer.SetSize</a></div><div class="ttdeci">void SetSize(Vector2 size)</div><div class="ttdef"><b>Definition:</b> <a href="EllipseVisualizer_8cs_source.html#l00015">EllipseVisualizer.cs:15</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Assignment_1_1Component_html"><div class="ttname"><a href="namespaceModule_1_1Assignment_1_1Component.html">Module.Assignment.Component</a></div><div class="ttdef"><b>Definition:</b> <a href="AssignableArea_8cs_source.html#l00012">AssignableArea.cs:13</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

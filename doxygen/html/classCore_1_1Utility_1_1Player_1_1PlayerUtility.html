@@ -77,7 +77,7 @@ Core.Utility.Player.PlayerUtility 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classCore_1_1Utility_1_1Player_1_1PlayerUtility__coll__graph.png" border="0" usemap="#aCore_8Utility_8Player_8PlayerUtility_coll__map" alt="Collaboration graph"/></div>
 <map name="aCore_8Utility_8Player_8PlayerUtility_coll__map" id="aCore_8Utility_8Player_8PlayerUtility_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,199,97"/>
+<area shape="rect" title=" " alt="" coords="5,5,199,112"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -85,6 +85,8 @@ Core.Utility.Player.PlayerUtility 連携図</div>
 静的公開メンバ関数</h2></td></tr>
 <tr class="memitem:a392a17b1dfdaee4df12accdaed9379f3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structCore_1_1Model_1_1Player_1_1PlayerInitModel.html">PlayerInitModel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1Player_1_1PlayerUtility.html#a392a17b1dfdaee4df12accdaed9379f3">ConvertToPlayerModel</a> (this GameParam　param)</td></tr>
 <tr class="separator:a392a17b1dfdaee4df12accdaed9379f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d6a0f3a106c2125ac8175d46f5cba0f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structCore_1_1Model_1_1Player_1_1PlayerStatusModel.html">PlayerStatusModel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1Player_1_1PlayerUtility.html#a4d6a0f3a106c2125ac8175d46f5cba0f">ConvertToStatus</a> (this <a class="el" href="classGameMain_1_1Presenter_1_1GameParam.html">GameParam</a> param)</td></tr>
+<tr class="separator:a4d6a0f3a106c2125ac8175d46f5cba0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock">
@@ -122,6 +124,42 @@ Core.Utility.Player.PlayerUtility 連携図</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            };</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        }</div>
 <div class="ttc" id="astructCore_1_1Model_1_1Player_1_1PlayerInitModel_html"><div class="ttname"><a href="structCore_1_1Model_1_1Player_1_1PlayerInitModel.html">Core.Model.Player.PlayerInitModel</a></div><div class="ttdef"><b>Definition:</b> <a href="PlayerModel_8cs_source.html#l00005">PlayerModel.cs:6</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4d6a0f3a106c2125ac8175d46f5cba0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d6a0f3a106c2125ac8175d46f5cba0f">&#9670;&nbsp;</a></span>ConvertToStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structCore_1_1Model_1_1Player_1_1PlayerStatusModel.html">PlayerStatusModel</a> Core.Utility.Player.PlayerUtility.ConvertToStatus </td>
+          <td>(</td>
+          <td class="paramtype">this <a class="el" href="classGameMain_1_1Presenter_1_1GameParam.html">GameParam</a>&#160;</td>
+          <td class="paramname"><em>param</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PlayerUtility_8cs_source.html">PlayerUtility.cs</a> の <a class="el" href="PlayerUtility_8cs_source.html#l00016">16</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="structCore_1_1Model_1_1Player_1_1PlayerStatusModel.html">PlayerStatusModel</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                hp = (short)param.HitPoint,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                maxHp = (<span class="keywordtype">short</span>)param.HitPoint</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            };</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
+<div class="ttc" id="astructCore_1_1Model_1_1Player_1_1PlayerStatusModel_html"><div class="ttname"><a href="structCore_1_1Model_1_1Player_1_1PlayerStatusModel.html">Core.Model.Player.PlayerStatusModel</a></div><div class="ttdef"><b>Definition:</b> <a href="PlayerModel_8cs_source.html#l00013">PlayerModel.cs:14</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

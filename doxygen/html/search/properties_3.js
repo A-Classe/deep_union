@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mw_658',['Mw',['../classModule_1_1Task_1_1BaseTask.html#aaaec697f4b6cb5731930685280338e12',1,'Module::Task::BaseTask']]]
+  ['fps_1601',['FPS',['../classDebug_1_1DemoSprites_1_1Icon.html#aadc3b565b14299a01126fe5198a1003d',1,'Debug::DemoSprites::Icon']]]
 ];

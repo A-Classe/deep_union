@@ -79,7 +79,7 @@ GameMain.Task.IncreaseWorkerTask の継承関係図</div>
 <div class="dyncontent">
 <div class="center"><img src="classGameMain_1_1Task_1_1IncreaseWorkerTask__inherit__graph.png" border="0" usemap="#aGameMain_8Task_8IncreaseWorkerTask_inherit__map" alt="Inheritance graph"/></div>
 <map name="aGameMain_8Task_8IncreaseWorkerTask_inherit__map" id="aGameMain_8Task_8IncreaseWorkerTask_inherit__map">
-<area shape="rect" title=" " alt="" coords="23,549,282,656"/>
+<area shape="rect" title=" " alt="" coords="23,549,282,685"/>
 <area shape="rect" href="classModule_1_1Task_1_1BaseTask.html" title="全てのタスクのベースクラス" alt="" coords="61,145,244,501"/>
 <area shape="rect" title=" " alt="" coords="5,13,129,90"/>
 <area shape="rect" href="interfaceModule_1_1Task_1_1ITaskSystem.html" title="タスクにゲームループを適用するインターフェース" alt="" coords="153,5,325,97"/>
@@ -90,11 +90,19 @@ GameMain.Task.IncreaseWorkerTask 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classGameMain_1_1Task_1_1IncreaseWorkerTask__coll__graph.png" border="0" usemap="#aGameMain_8Task_8IncreaseWorkerTask_coll__map" alt="Collaboration graph"/></div>
 <map name="aGameMain_8Task_8IncreaseWorkerTask_coll__map" id="aGameMain_8Task_8IncreaseWorkerTask_coll__map">
-<area shape="rect" title=" " alt="" coords="183,565,442,657"/>
-<area shape="rect" href="classModule_1_1Task_1_1BaseTask.html" title="全てのタスクのベースクラス" alt="" coords="61,147,244,503"/>
-<area shape="rect" title=" " alt="" coords="5,13,129,90"/>
-<area shape="rect" href="interfaceModule_1_1Task_1_1ITaskSystem.html" title="タスクにゲームループを適用するインターフェース" alt="" coords="153,5,325,97"/>
-<area shape="rect" href="classModule_1_1Working_1_1Controller_1_1LeadPointConnector.html" title="追従するポイントをワーカーと紐付けるクラス" alt="" coords="268,227,467,422"/>
+<area shape="rect" title=" " alt="" coords="811,1407,1070,1499"/>
+<area shape="rect" href="classModule_1_1Task_1_1BaseTask.html" title="全てのタスクのベースクラス" alt="" coords="1008,147,1191,503"/>
+<area shape="rect" title=" " alt="" coords="532,13,656,90"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html" title="リーダーのアサイン機能を拡張するクラス" alt="" coords="530,1135,765,1315"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html" title="アサイン範囲を設定するクラス" alt="" coords="767,643,1002,1028"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html" title="楕円判定をビジュアライズするクラス" alt="" coords="477,257,711,393"/>
+<area shape="rect" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html" title="ワーカーのスポーン座標を生成するクラス" alt="" coords="5,527,228,619"/>
+<area shape="rect" href="interfaceModule_1_1Task_1_1ITaskSystem.html" title="タスクにゲームループを適用するインターフェース" alt="" coords="1013,5,1185,97"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1GameParam.html" title=" " alt="" coords="285,731,527,940"/>
+<area shape="rect" title=" " alt="" coords="323,286,452,363"/>
+<area shape="rect" href="classCore_1_1Input_1_1InputEvent.html" title="InputActionのラッパークラス" alt="" coords="552,760,743,911"/>
+<area shape="rect" href="structModule_1_1Assignment_1_1Utility_1_1EllipseData.html" title=" " alt="" coords="786,271,983,378"/>
+<area shape="rect" href="classModule_1_1Working_1_1WorkerAgent.html" title="Workerのインスタンスを管理するクラス" alt="" coords="1077,1105,1292,1344"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -116,13 +124,19 @@ GameMain.Task.IncreaseWorkerTask 連携図</div>
 <tr class="separator:a5e42e6ebbdf859cc1c16e01d9d77e7cf inherit pro_methods_classModule_1_1Task_1_1BaseTask"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d685a0de356fcc8f1973b3ca5cdddf3 inherit pro_methods_classModule_1_1Task_1_1BaseTask"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Task_1_1BaseTask.html#a7d685a0de356fcc8f1973b3ca5cdddf3">OnCancel</a> ()</td></tr>
 <tr class="separator:a7d685a0de356fcc8f1973b3ca5cdddf3 inherit pro_methods_classModule_1_1Task_1_1BaseTask"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96d2755ee80c2fec124d237f348c8fb4 inherit pro_methods_classModule_1_1Task_1_1BaseTask"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Task_1_1BaseTask.html#a96d2755ee80c2fec124d237f348c8fb4">Disable</a> ()</td></tr>
+<tr class="separator:a96d2755ee80c2fec124d237f348c8fb4 inherit pro_methods_classModule_1_1Task_1_1BaseTask"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 非公開変数類</h2></td></tr>
 <tr class="memitem:adad7372ff80cd5b19d8158ac93bb6148"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classModule_1_1Working_1_1Worker.html">Worker</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#adad7372ff80cd5b19d8158ac93bb6148">imprisonedWorkers</a></td></tr>
 <tr class="separator:adad7372ff80cd5b19d8158ac93bb6148"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d428f343b87295868aa7e0ab5f6a3da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classModule_1_1Working_1_1Controller_1_1LeadPointConnector.html">LeadPointConnector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#a3d428f343b87295868aa7e0ab5f6a3da">leadPointConnector</a></td></tr>
-<tr class="separator:a3d428f343b87295868aa7e0ab5f6a3da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81df8abc3cc80edf9273bd26c76a4210"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classModule_1_1Working_1_1WorkerAgent.html">WorkerAgent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#a81df8abc3cc80edf9273bd26c76a4210">workerAgent</a></td></tr>
+<tr class="separator:a81df8abc3cc80edf9273bd26c76a4210"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e3f19e0feb120f9e986393ce292e8f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html">LeaderAssignableArea</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#a4e3f19e0feb120f9e986393ce292e8f9">leaderAssignableArea</a></td></tr>
+<tr class="separator:a4e3f19e0feb120f9e986393ce292e8f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab83025812a6b80608a9a799111fb7f43"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html">SpawnPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#ab83025812a6b80608a9a799111fb7f43">spawnPoint</a></td></tr>
+<tr class="separator:ab83025812a6b80608a9a799111fb7f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 その他の継承メンバ</h2></td></tr>
@@ -130,23 +144,29 @@ GameMain.Task.IncreaseWorkerTask 連携図</div>
 <tr class="memitem:a95eba1abd7be6b67609c7fe3e8980930 inherit pro_attribs_classModule_1_1Task_1_1BaseTask"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Task_1_1BaseTask.html#a95eba1abd7be6b67609c7fe3e8980930">state</a> = <a class="el" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985ae599161956d626eda4cb0a5ffb85271c">TaskState.Idle</a></td></tr>
 <tr class="separator:a95eba1abd7be6b67609c7fe3e8980930 inherit pro_attribs_classModule_1_1Task_1_1BaseTask"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_classModule_1_1Task_1_1BaseTask"><td colspan="2" onclick="javascript:toggleInherit('properties_classModule_1_1Task_1_1BaseTask')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classModule_1_1Task_1_1BaseTask.html">Module.Task.BaseTask</a> に属する継承プロパティ</td></tr>
-<tr class="memitem:aaaec697f4b6cb5731930685280338e12 inherit properties_classModule_1_1Task_1_1BaseTask"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Task_1_1BaseTask.html#aaaec697f4b6cb5731930685280338e12">Mw</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aaaec697f4b6cb5731930685280338e12 inherit properties_classModule_1_1Task_1_1BaseTask"><td class="mdescLeft">&#160;</td><td class="mdescRight">現在割り当てられている作業量  <a href="classModule_1_1Task_1_1BaseTask.html#aaaec697f4b6cb5731930685280338e12">[詳解]</a><br /></td></tr>
-<tr class="separator:aaaec697f4b6cb5731930685280338e12 inherit properties_classModule_1_1Task_1_1BaseTask"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75876410e40af75b65fa24567311ef6e inherit properties_classModule_1_1Task_1_1BaseTask"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Task_1_1BaseTask.html#a75876410e40af75b65fa24567311ef6e">Progress</a><code> [get]</code></td></tr>
 <tr class="separator:a75876410e40af75b65fa24567311ef6e inherit properties_classModule_1_1Task_1_1BaseTask"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a497cfd73c40753ae68cd917dd9500398 inherit properties_classModule_1_1Task_1_1BaseTask"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Task_1_1BaseTask.html#a497cfd73c40753ae68cd917dd9500398">State</a><code> [get]</code></td></tr>
 <tr class="separator:a497cfd73c40753ae68cd917dd9500398 inherit properties_classModule_1_1Task_1_1BaseTask"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b66d4b87343da46ccefc06685ec1024 inherit properties_classModule_1_1Task_1_1BaseTask"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Task_1_1BaseTask.html#a3b66d4b87343da46ccefc06685ec1024">MonoWork</a><code> [get]</code></td></tr>
+<tr class="separator:a3b66d4b87343da46ccefc06685ec1024 inherit properties_classModule_1_1Task_1_1BaseTask"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dfab13bf50f8dab9a40ab6d23f7b1ea inherit properties_classModule_1_1Task_1_1BaseTask"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Task_1_1BaseTask.html#a1dfab13bf50f8dab9a40ab6d23f7b1ea">WorkerCount</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a1dfab13bf50f8dab9a40ab6d23f7b1ea inherit properties_classModule_1_1Task_1_1BaseTask"><td class="mdescLeft">&#160;</td><td class="mdescRight">現在割り当てられているワーカー数  <a href="classModule_1_1Task_1_1BaseTask.html#a1dfab13bf50f8dab9a40ab6d23f7b1ea">[詳解]</a><br /></td></tr>
+<tr class="separator:a1dfab13bf50f8dab9a40ab6d23f7b1ea inherit properties_classModule_1_1Task_1_1BaseTask"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_interfaceModule_1_1Task_1_1ITaskSystem"><td colspan="2" onclick="javascript:toggleInherit('properties_interfaceModule_1_1Task_1_1ITaskSystem')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="interfaceModule_1_1Task_1_1ITaskSystem.html">Module.Task.ITaskSystem</a> に属する継承プロパティ</td></tr>
 <tr class="memitem:a8748160f5294da743568d278e63375ae inherit properties_interfaceModule_1_1Task_1_1ITaskSystem"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceModule_1_1Task_1_1ITaskSystem.html#a8748160f5294da743568d278e63375ae">State</a><code> [get]</code></td></tr>
 <tr class="separator:a8748160f5294da743568d278e63375ae inherit properties_interfaceModule_1_1Task_1_1ITaskSystem"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header events_classModule_1_1Task_1_1BaseTask"><td colspan="2" onclick="javascript:toggleInherit('events_classModule_1_1Task_1_1BaseTask')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classModule_1_1Task_1_1BaseTask.html">Module.Task.BaseTask</a> に属する継承イベント</td></tr>
+<tr class="memitem:a06bef9735165fd40037c82bb025700a3 inherit events_classModule_1_1Task_1_1BaseTask"><td class="memItemLeft" align="right" valign="top">Action&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Task_1_1BaseTask.html#a06bef9735165fd40037c82bb025700a3">OnProgressChanged</a></td></tr>
+<tr class="separator:a06bef9735165fd40037c82bb025700a3 inherit events_classModule_1_1Task_1_1BaseTask"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af85e01a3806f264d9081e8ebbc4b5aa2 inherit events_classModule_1_1Task_1_1BaseTask"><td class="memItemLeft" align="right" valign="top">Action&lt; <a class="el" href="classModule_1_1Task_1_1BaseTask.html">BaseTask</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Task_1_1BaseTask.html#af85e01a3806f264d9081e8ebbc4b5aa2">OnCompleted</a></td></tr>
+<tr class="separator:af85e01a3806f264d9081e8ebbc4b5aa2 inherit events_classModule_1_1Task_1_1BaseTask"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b4e4e9e8b80cddd3d79b7872ac0d5b6 inherit events_classModule_1_1Task_1_1BaseTask"><td class="memItemLeft" align="right" valign="top">Action&lt; <a class="el" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Task_1_1BaseTask.html#a1b4e4e9e8b80cddd3d79b7872ac0d5b6">OnStateChanged</a></td></tr>
 <tr class="separator:a1b4e4e9e8b80cddd3d79b7872ac0d5b6 inherit events_classModule_1_1Task_1_1BaseTask"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock">
-<p class="definition"> <a class="el" href="IncreaseWorkerTask_8cs_source.html">IncreaseWorkerTask.cs</a> の <a class="el" href="IncreaseWorkerTask_8cs_source.html#l00010">10</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="IncreaseWorkerTask_8cs_source.html">IncreaseWorkerTask.cs</a> の <a class="el" href="IncreaseWorkerTask_8cs_source.html#l00014">14</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">関数詳解</h2>
 <a id="abe9cfa4c8320b9305c081314542e9a52"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abe9cfa4c8320b9305c081314542e9a52">&#9670;&nbsp;</a></span>Initialize()</h2>
@@ -182,20 +202,26 @@ GameMain.Task.IncreaseWorkerTask 連携図</div>
 
 <p><a class="el" href="classModule_1_1Task_1_1BaseTask.html#a1920401ca93b2510521acb57666f9be7">Module.Task.BaseTask</a>を再実装しています。</p>
 
-<p class="definition"> <a class="el" href="IncreaseWorkerTask_8cs_source.html">IncreaseWorkerTask.cs</a> の <a class="el" href="IncreaseWorkerTask_8cs_source.html#l00018">18</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <a class="code" href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#a3d428f343b87295868aa7e0ab5f6a3da">leadPointConnector</a> = container.Resolve&lt;<a class="code" href="classModule_1_1Working_1_1Controller_1_1LeadPointConnector.html">LeadPointConnector</a>&gt;();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordflow">foreach</span> (<a class="code" href="classModule_1_1Working_1_1Worker.html">Worker</a> worker <span class="keywordflow">in</span> <a class="code" href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#adad7372ff80cd5b19d8158ac93bb6148">imprisonedWorkers</a>)</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                worker.<a class="code" href="classModule_1_1Working_1_1Worker.html#ab1f0f87fe97d752b40b65691e3a7379e">SetLockState</a>(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
-<div class="ttc" id="aclassGameMain_1_1Task_1_1IncreaseWorkerTask_html_a3d428f343b87295868aa7e0ab5f6a3da"><div class="ttname"><a href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#a3d428f343b87295868aa7e0ab5f6a3da">GameMain.Task.IncreaseWorkerTask.leadPointConnector</a></div><div class="ttdeci">LeadPointConnector leadPointConnector</div><div class="ttdef"><b>Definition:</b> <a href="IncreaseWorkerTask_8cs_source.html#l00016">IncreaseWorkerTask.cs:16</a></div></div>
-<div class="ttc" id="aclassGameMain_1_1Task_1_1IncreaseWorkerTask_html_adad7372ff80cd5b19d8158ac93bb6148"><div class="ttname"><a href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#adad7372ff80cd5b19d8158ac93bb6148">GameMain.Task.IncreaseWorkerTask.imprisonedWorkers</a></div><div class="ttdeci">List&lt; Worker &gt; imprisonedWorkers</div><div class="ttdef"><b>Definition:</b> <a href="IncreaseWorkerTask_8cs_source.html#l00014">IncreaseWorkerTask.cs:14</a></div></div>
-<div class="ttc" id="aclassModule_1_1Working_1_1Controller_1_1LeadPointConnector_html"><div class="ttname"><a href="classModule_1_1Working_1_1Controller_1_1LeadPointConnector.html">Module.Working.Controller.LeadPointConnector</a></div><div class="ttdoc">追従するポイントをワーカーと紐付けるクラス</div><div class="ttdef"><b>Definition:</b> <a href="LeadPointConnector_8cs_source.html#l00013">LeadPointConnector.cs:14</a></div></div>
+<p class="definition"> <a class="el" href="IncreaseWorkerTask_8cs_source.html">IncreaseWorkerTask.cs</a> の <a class="el" href="IncreaseWorkerTask_8cs_source.html#l00024">24</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#a81df8abc3cc80edf9273bd26c76a4210">workerAgent</a> = container.Resolve&lt;<a class="code" href="classModule_1_1Working_1_1WorkerAgent.html">WorkerAgent</a>&gt;();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <a class="code" href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#a4e3f19e0feb120f9e986393ce292e8f9">leaderAssignableArea</a> = container.Resolve&lt;<a class="code" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html">LeaderAssignableArea</a>&gt;();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <a class="code" href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#ab83025812a6b80608a9a799111fb7f43">spawnPoint</a> = container.Resolve&lt;<a class="code" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html">SpawnPoint</a>&gt;();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">foreach</span> (<a class="code" href="classModule_1_1Working_1_1Worker.html">Worker</a> worker <span class="keywordflow">in</span> <a class="code" href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#adad7372ff80cd5b19d8158ac93bb6148">imprisonedWorkers</a>)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                worker.<a class="code" href="classModule_1_1Working_1_1Worker.html#ab1f0f87fe97d752b40b65691e3a7379e">SetLockState</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
+<div class="ttc" id="aclassGameMain_1_1Task_1_1IncreaseWorkerTask_html_a4e3f19e0feb120f9e986393ce292e8f9"><div class="ttname"><a href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#a4e3f19e0feb120f9e986393ce292e8f9">GameMain.Task.IncreaseWorkerTask.leaderAssignableArea</a></div><div class="ttdeci">LeaderAssignableArea leaderAssignableArea</div><div class="ttdef"><b>Definition:</b> <a href="IncreaseWorkerTask_8cs_source.html#l00021">IncreaseWorkerTask.cs:21</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Task_1_1IncreaseWorkerTask_html_a81df8abc3cc80edf9273bd26c76a4210"><div class="ttname"><a href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#a81df8abc3cc80edf9273bd26c76a4210">GameMain.Task.IncreaseWorkerTask.workerAgent</a></div><div class="ttdeci">WorkerAgent workerAgent</div><div class="ttdef"><b>Definition:</b> <a href="IncreaseWorkerTask_8cs_source.html#l00020">IncreaseWorkerTask.cs:20</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Task_1_1IncreaseWorkerTask_html_ab83025812a6b80608a9a799111fb7f43"><div class="ttname"><a href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#ab83025812a6b80608a9a799111fb7f43">GameMain.Task.IncreaseWorkerTask.spawnPoint</a></div><div class="ttdeci">SpawnPoint spawnPoint</div><div class="ttdef"><b>Definition:</b> <a href="IncreaseWorkerTask_8cs_source.html#l00022">IncreaseWorkerTask.cs:22</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Task_1_1IncreaseWorkerTask_html_adad7372ff80cd5b19d8158ac93bb6148"><div class="ttname"><a href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#adad7372ff80cd5b19d8158ac93bb6148">GameMain.Task.IncreaseWorkerTask.imprisonedWorkers</a></div><div class="ttdeci">List&lt; Worker &gt; imprisonedWorkers</div><div class="ttdef"><b>Definition:</b> <a href="IncreaseWorkerTask_8cs_source.html#l00018">IncreaseWorkerTask.cs:18</a></div></div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea_html"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html">Module.Assignment.Component.LeaderAssignableArea</a></div><div class="ttdoc">リーダーのアサイン機能を拡張するクラス</div><div class="ttdef"><b>Definition:</b> <a href="LeaderAssignableArea_8cs_source.html#l00012">LeaderAssignableArea.cs:13</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Factory_1_1SpawnPoint_html"><div class="ttname"><a href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html">Module.Working.Factory.SpawnPoint</a></div><div class="ttdoc">ワーカーのスポーン座標を生成するクラス</div><div class="ttdef"><b>Definition:</b> <a href="SpawnPoint_8cs_source.html#l00013">SpawnPoint.cs:13</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1WorkerAgent_html"><div class="ttname"><a href="classModule_1_1Working_1_1WorkerAgent.html">Module.Working.WorkerAgent</a></div><div class="ttdoc">Workerのインスタンスを管理するクラス</div><div class="ttdef"><b>Definition:</b> <a href="WorkerAgent_8cs_source.html#l00015">WorkerAgent.cs:16</a></div></div>
 <div class="ttc" id="aclassModule_1_1Working_1_1Worker_html"><div class="ttname"><a href="classModule_1_1Working_1_1Worker.html">Module.Working.Worker</a></div><div class="ttdoc">ワーカーの状態を管理するクラス</div><div class="ttdef"><b>Definition:</b> <a href="Worker_8cs_source.html#l00014">Worker.cs:15</a></div></div>
-<div class="ttc" id="aclassModule_1_1Working_1_1Worker_html_ab1f0f87fe97d752b40b65691e3a7379e"><div class="ttname"><a href="classModule_1_1Working_1_1Worker.html#ab1f0f87fe97d752b40b65691e3a7379e">Module.Working.Worker.SetLockState</a></div><div class="ttdeci">void SetLockState(bool isLocked)</div><div class="ttdef"><b>Definition:</b> <a href="Worker_8cs_source.html#l00067">Worker.cs:67</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Worker_html_ab1f0f87fe97d752b40b65691e3a7379e"><div class="ttname"><a href="classModule_1_1Working_1_1Worker.html#ab1f0f87fe97d752b40b65691e3a7379e">Module.Working.Worker.SetLockState</a></div><div class="ttdeci">void SetLockState(bool isLocked)</div><div class="ttdef"><b>Definition:</b> <a href="Worker_8cs_source.html#l00071">Worker.cs:71</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -233,30 +259,31 @@ GameMain.Task.IncreaseWorkerTask 連携図</div>
 
 <p><a class="el" href="classModule_1_1Task_1_1BaseTask.html#aecef9fa0a5d27bea4c305ce753c97a1b">Module.Task.BaseTask</a>を再実装しています。</p>
 
-<p class="definition"> <a class="el" href="IncreaseWorkerTask_8cs_source.html">IncreaseWorkerTask.cs</a> の <a class="el" href="IncreaseWorkerTask_8cs_source.html#l00028">28</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">foreach</span> (<a class="code" href="classModule_1_1Working_1_1Worker.html">Worker</a> worker <span class="keywordflow">in</span> <a class="code" href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#adad7372ff80cd5b19d8158ac93bb6148">imprisonedWorkers</a>)</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                worker.<a class="code" href="classModule_1_1Working_1_1Worker.html#ab1f0f87fe97d752b40b65691e3a7379e">SetLockState</a>(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordflow">foreach</span> (<a class="code" href="classModule_1_1Working_1_1Worker.html">Worker</a> worker <span class="keywordflow">in</span> <a class="code" href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#adad7372ff80cd5b19d8158ac93bb6148">imprisonedWorkers</a>)</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <a class="code" href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#a3d428f343b87295868aa7e0ab5f6a3da">leadPointConnector</a>.<a class="code" href="classModule_1_1Working_1_1Controller_1_1LeadPointConnector.html#a5c7370a1c843b94a2db33f2bbb29e1fe">AddWorker</a>(worker);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div>
-<div class="ttc" id="aclassModule_1_1Working_1_1Controller_1_1LeadPointConnector_html_a5c7370a1c843b94a2db33f2bbb29e1fe"><div class="ttname"><a href="classModule_1_1Working_1_1Controller_1_1LeadPointConnector.html#a5c7370a1c843b94a2db33f2bbb29e1fe">Module.Working.Controller.LeadPointConnector.AddWorker</a></div><div class="ttdeci">void AddWorker(Worker worker)</div><div class="ttdoc">ワーカーの目標をリーダーに設定します</div><div class="ttdef"><b>Definition:</b> <a href="LeadPointConnector_8cs_source.html#l00036">LeadPointConnector.cs:36</a></div></div>
+<p class="definition"> <a class="el" href="IncreaseWorkerTask_8cs_source.html">IncreaseWorkerTask.cs</a> の <a class="el" href="IncreaseWorkerTask_8cs_source.html#l00036">36</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">foreach</span> (<a class="code" href="classModule_1_1Working_1_1Worker.html">Worker</a> worker <span class="keywordflow">in</span> <a class="code" href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#adad7372ff80cd5b19d8158ac93bb6148">imprisonedWorkers</a>)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                worker.<a class="code" href="classModule_1_1Working_1_1Worker.html#ab1f0f87fe97d752b40b65691e3a7379e">SetLockState</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <a class="code" href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#a81df8abc3cc80edf9273bd26c76a4210">workerAgent</a>.<a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a75ae9aedff81481c03a6462a98bbc26f">AddActiveWorker</a>(worker);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <a class="code" href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#a4e3f19e0feb120f9e986393ce292e8f9">leaderAssignableArea</a>.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html#aca57c50818acabe7282173c69a79f5e6">AssignableArea</a>.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a80e77697fbf11b427fa7ee0e11a68e12">AddWorker</a>(worker);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                worker.transform.SetParent(<a class="code" href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#ab83025812a6b80608a9a799111fb7f43">spawnPoint</a>.transform);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1AssignableArea_html_a80e77697fbf11b427fa7ee0e11a68e12"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a80e77697fbf11b427fa7ee0e11a68e12">Module.Assignment.Component.AssignableArea.AddWorker</a></div><div class="ttdeci">void AddWorker(Worker worker)</div><div class="ttdef"><b>Definition:</b> <a href="AssignableArea_8cs_source.html#l00119">AssignableArea.cs:119</a></div></div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea_html_aca57c50818acabe7282173c69a79f5e6"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html#aca57c50818acabe7282173c69a79f5e6">Module.Assignment.Component.LeaderAssignableArea.AssignableArea</a></div><div class="ttdeci">AssignableArea AssignableArea</div><div class="ttdef"><b>Definition:</b> <a href="LeaderAssignableArea_8cs_source.html#l00023">LeaderAssignableArea.cs:23</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1WorkerAgent_html_a75ae9aedff81481c03a6462a98bbc26f"><div class="ttname"><a href="classModule_1_1Working_1_1WorkerAgent.html#a75ae9aedff81481c03a6462a98bbc26f">Module.Working.WorkerAgent.AddActiveWorker</a></div><div class="ttdeci">void AddActiveWorker(Worker worker)</div><div class="ttdoc">外部からのWorkerを追加します</div><div class="ttdef"><b>Definition:</b> <a href="WorkerAgent_8cs_source.html#l00056">WorkerAgent.cs:56</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classGameMain_1_1Task_1_1IncreaseWorkerTask_ae864f3f5ff16dc9657414c8cdfa3d2f4_cgraph.png" border="0" usemap="#aclassGameMain_1_1Task_1_1IncreaseWorkerTask_ae864f3f5ff16dc9657414c8cdfa3d2f4_cgraph" alt=""/></div>
 <map name="aclassGameMain_1_1Task_1_1IncreaseWorkerTask_ae864f3f5ff16dc9657414c8cdfa3d2f4_cgraph" id="aclassGameMain_1_1Task_1_1IncreaseWorkerTask_ae864f3f5ff16dc9657414c8cdfa3d2f4_cgraph">
-<area shape="rect" title=" " alt="" coords="5,104,236,145"/>
-<area shape="rect" href="classModule_1_1Working_1_1Controller_1_1LeadPointConnector.html#a5c7370a1c843b94a2db33f2bbb29e1fe" title="ワーカーの目標をリーダーに設定します" alt="" coords="284,71,509,112"/>
-<area shape="rect" href="classModule_1_1Working_1_1Worker.html#ab1f0f87fe97d752b40b65691e3a7379e" title=" " alt="" coords="297,136,497,177"/>
-<area shape="rect" href="classModule_1_1Working_1_1Controller_1_1LeadPointConnector.html#ac25421737fc34ad1883f1d9c9030b47f" title=" " alt="" coords="557,5,816,47"/>
-<area shape="rect" href="classModule_1_1Working_1_1Worker.html#ae1f102b3934ebe7ff01e0d672f7ad6e0" title=" " alt="" coords="587,71,787,112"/>
-<area shape="rect" href="classModule_1_1Working_1_1Worker.html#aef8170fa48e94cf709f865386be24688" title="ワーカーの状態をセットします" alt="" coords="587,136,787,177"/>
+<area shape="rect" title=" " alt="" coords="5,71,236,112"/>
+<area shape="rect" href="classModule_1_1Working_1_1WorkerAgent.html#a75ae9aedff81481c03a6462a98bbc26f" title="外部からのWorkerを追加します" alt="" coords="292,5,511,47"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a80e77697fbf11b427fa7ee0e11a68e12" title=" " alt="" coords="284,71,519,112"/>
+<area shape="rect" href="classModule_1_1Working_1_1Worker.html#ab1f0f87fe97d752b40b65691e3a7379e" title=" " alt="" coords="301,136,501,177"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#aff5099ab272b3aba5a0da4fa8c512c9c" title=" " alt="" coords="567,39,844,80"/>
+<area shape="rect" href="classModule_1_1Working_1_1Worker.html#af70118007fec13a8ae6ae3687eedc85d" title=" " alt="" coords="605,104,805,145"/>
 </map>
 </div>
 
@@ -283,12 +310,12 @@ GameMain.Task.IncreaseWorkerTask 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="IncreaseWorkerTask_8cs_source.html">IncreaseWorkerTask.cs</a> の <a class="el" href="IncreaseWorkerTask_8cs_source.html#l00014">14</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="IncreaseWorkerTask_8cs_source.html">IncreaseWorkerTask.cs</a> の <a class="el" href="IncreaseWorkerTask_8cs_source.html#l00018">18</a> 行目に定義があります。</p>
 
 </div>
 </div>
-<a id="a3d428f343b87295868aa7e0ab5f6a3da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d428f343b87295868aa7e0ab5f6a3da">&#9670;&nbsp;</a></span>leadPointConnector</h2>
+<a id="a4e3f19e0feb120f9e986393ce292e8f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e3f19e0feb120f9e986393ce292e8f9">&#9670;&nbsp;</a></span>leaderAssignableArea</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -297,7 +324,7 @@ GameMain.Task.IncreaseWorkerTask 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classModule_1_1Working_1_1Controller_1_1LeadPointConnector.html">LeadPointConnector</a> GameMain.Task.IncreaseWorkerTask.leadPointConnector</td>
+          <td class="memname"><a class="el" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html">LeaderAssignableArea</a> GameMain.Task.IncreaseWorkerTask.leaderAssignableArea</td>
         </tr>
       </table>
   </td>
@@ -307,7 +334,55 @@ GameMain.Task.IncreaseWorkerTask 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="IncreaseWorkerTask_8cs_source.html">IncreaseWorkerTask.cs</a> の <a class="el" href="IncreaseWorkerTask_8cs_source.html#l00016">16</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="IncreaseWorkerTask_8cs_source.html">IncreaseWorkerTask.cs</a> の <a class="el" href="IncreaseWorkerTask_8cs_source.html#l00021">21</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab83025812a6b80608a9a799111fb7f43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab83025812a6b80608a9a799111fb7f43">&#9670;&nbsp;</a></span>spawnPoint</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classModule_1_1Working_1_1Factory_1_1SpawnPoint.html">SpawnPoint</a> GameMain.Task.IncreaseWorkerTask.spawnPoint</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IncreaseWorkerTask_8cs_source.html">IncreaseWorkerTask.cs</a> の <a class="el" href="IncreaseWorkerTask_8cs_source.html#l00022">22</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a81df8abc3cc80edf9273bd26c76a4210"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81df8abc3cc80edf9273bd26c76a4210">&#9670;&nbsp;</a></span>workerAgent</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classModule_1_1Working_1_1WorkerAgent.html">WorkerAgent</a> GameMain.Task.IncreaseWorkerTask.workerAgent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IncreaseWorkerTask_8cs_source.html">IncreaseWorkerTask.cs</a> の <a class="el" href="IncreaseWorkerTask_8cs_source.html#l00020">20</a> 行目に定義があります。</p>
 
 </div>
 </div>

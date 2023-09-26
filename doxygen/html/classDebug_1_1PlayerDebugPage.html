@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: Debug.PlayerDebugPage クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceDebug.html">Debug</a></li><li class="navelem"><a class="el" href="classDebug_1_1PlayerDebugPage.html">PlayerDebugPage</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#properties">プロパティ</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classDebug_1_1PlayerDebugPage-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">Debug.PlayerDebugPage クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Debug.PlayerDebugPage の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classDebug_1_1PlayerDebugPage__inherit__graph.png" border="0" usemap="#aDebug_8PlayerDebugPage_inherit__map" alt="Inheritance graph"/></div>
+<map name="aDebug_8PlayerDebugPage_inherit__map" id="aDebug_8PlayerDebugPage_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,131,188,325"/>
+<area shape="rect" title=" " alt="" coords="9,5,184,83"/>
+</map>
+</div>
+<div class="dynheader">
+Debug.PlayerDebugPage 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classDebug_1_1PlayerDebugPage__coll__graph.png" border="0" usemap="#aDebug_8PlayerDebugPage_coll__map" alt="Collaboration graph"/></div>
+<map name="aDebug_8PlayerDebugPage_coll__map" id="aDebug_8PlayerDebugPage_coll__map">
+<area shape="rect" title=" " alt="" coords="708,1196,891,1288"/>
+<area shape="rect" title=" " alt="" coords="5,990,180,1067"/>
+<area shape="rect" title=" " alt="" coords="205,953,402,1104"/>
+<area shape="rect" href="classModule_1_1Task_1_1ResourceContainer.html" title="リソースを管理するクラス" alt="" coords="427,968,657,1089"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1GameParam.html" title=" " alt="" coords="435,564,678,773"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html" title="リーダーのアサイン機能を拡張するクラス" alt="" coords="682,939,917,1119"/>
+<area shape="rect" title=" " alt="" coords="492,263,621,340"/>
+<area shape="rect" title=" " alt="" coords="776,20,900,97"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html" title="アサイン範囲を設定するクラス" alt="" coords="1002,476,1237,861"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html" title="楕円判定をビジュアライズするクラス" alt="" coords="837,233,1071,369"/>
+<area shape="rect" href="classModule_1_1Player_1_1Controller_1_1PlayerController.html" title="プレイヤーの操作に関するクラス" alt="" coords="1317,189,1503,413"/>
+<area shape="rect" href="classCore_1_1Input_1_1InputEvent.html" title="InputActionのラッパークラス" alt="" coords="787,593,977,744"/>
+<area shape="rect" href="structModule_1_1Assignment_1_1Utility_1_1EllipseData.html" title=" " alt="" coords="1095,248,1293,355"/>
+<area shape="rect" title=" " alt="" coords="941,953,1116,1104"/>
+<area shape="rect" title=" " alt="" coords="1141,953,1303,1104"/>
+<area shape="rect" title=" " alt="" coords="1309,5,1511,112"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:afc4caf8741d886be6e1589e1e6b66d59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDebug_1_1PlayerDebugPage.html#afc4caf8741d886be6e1589e1e6b66d59">SetUp</a> (<a class="el" href="classModule_1_1Task_1_1ResourceContainer.html">ResourceContainer</a> <a class="el" href="classDebug_1_1PlayerDebugPage.html#a001c695fa97cb8ebd4917f4d806dbd40">resourceContainer</a>, <a class="el" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html">LeaderAssignableArea</a> <a class="el" href="classDebug_1_1PlayerDebugPage.html#a7f7bb187e35fb0b6090e818688ef2ac4">leaderAssignableArea</a>)</td></tr>
+<tr class="separator:afc4caf8741d886be6e1589e1e6b66d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+プロパティ</h2></td></tr>
+<tr class="memitem:aec50636fdf623b97beb71d65d2821087"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDebug_1_1PlayerDebugPage.html#aec50636fdf623b97beb71d65d2821087">Title</a><code> [get]</code></td></tr>
+<tr class="separator:aec50636fdf623b97beb71d65d2821087"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a0f8c4949b701f1dba116360851875357"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDebug_1_1PlayerDebugPage.html#a0f8c4949b701f1dba116360851875357">Update</a> ()</td></tr>
+<tr class="separator:a0f8c4949b701f1dba116360851875357"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:aed097a8af36b2f6d6ac1d2c56a891248"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classModule_1_1Player_1_1Controller_1_1PlayerController.html">PlayerController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDebug_1_1PlayerDebugPage.html#aed097a8af36b2f6d6ac1d2c56a891248">playerController</a></td></tr>
+<tr class="separator:aed097a8af36b2f6d6ac1d2c56a891248"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a001c695fa97cb8ebd4917f4d806dbd40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classModule_1_1Task_1_1ResourceContainer.html">ResourceContainer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDebug_1_1PlayerDebugPage.html#a001c695fa97cb8ebd4917f4d806dbd40">resourceContainer</a></td></tr>
+<tr class="separator:a001c695fa97cb8ebd4917f4d806dbd40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f7bb187e35fb0b6090e818688ef2ac4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html">LeaderAssignableArea</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDebug_1_1PlayerDebugPage.html#a7f7bb187e35fb0b6090e818688ef2ac4">leaderAssignableArea</a></td></tr>
+<tr class="separator:a7f7bb187e35fb0b6090e818688ef2ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06c0aff1d9350ee67847cceb15009680"><td class="memItemLeft" align="right" valign="top">LabelObserver&lt; <a class="el" href="classModule_1_1Player_1_1Controller_1_1PlayerController.html">PlayerController</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDebug_1_1PlayerDebugPage.html#a06c0aff1d9350ee67847cceb15009680">speedObserver</a></td></tr>
+<tr class="separator:a06c0aff1d9350ee67847cceb15009680"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec0de4841ca24685ef090b6539153475"><td class="memItemLeft" align="right" valign="top">LabelObserver&lt; <a class="el" href="classModule_1_1Player_1_1Controller_1_1PlayerController.html">PlayerController</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDebug_1_1PlayerDebugPage.html#aec0de4841ca24685ef090b6539153475">stateObserver</a></td></tr>
+<tr class="separator:aec0de4841ca24685ef090b6539153475"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53d063e9bbc080dd72c0cd7699446013"><td class="memItemLeft" align="right" valign="top">LabelObserver&lt; <a class="el" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html">LeaderAssignableArea</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDebug_1_1PlayerDebugPage.html#a53d063e9bbc080dd72c0cd7699446013">workerCountObserver</a></td></tr>
+<tr class="separator:a53d063e9bbc080dd72c0cd7699446013"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17be5959bc2dcc96cb3c8f269f29fcc5"><td class="memItemLeft" align="right" valign="top">LabelObserver&lt; <a class="el" href="classModule_1_1Task_1_1ResourceContainer.html">ResourceContainer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDebug_1_1PlayerDebugPage.html#a17be5959bc2dcc96cb3c8f269f29fcc5">resourceObserver</a></td></tr>
+<tr class="separator:a17be5959bc2dcc96cb3c8f269f29fcc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="PlayerDebugPage_8cs_source.html">PlayerDebugPage.cs</a> の <a class="el" href="PlayerDebugPage_8cs_source.html#l00011">11</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="afc4caf8741d886be6e1589e1e6b66d59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc4caf8741d886be6e1589e1e6b66d59">&#9670;&nbsp;</a></span>SetUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Debug.PlayerDebugPage.SetUp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classModule_1_1Task_1_1ResourceContainer.html">ResourceContainer</a>&#160;</td>
+          <td class="paramname"><em>resourceContainer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html">LeaderAssignableArea</a>&#160;</td>
+          <td class="paramname"><em>leaderAssignableArea</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PlayerDebugPage_8cs_source.html">PlayerDebugPage.cs</a> の <a class="el" href="PlayerDebugPage_8cs_source.html#l00023">23</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            this.resourceContainer = <a class="code" href="classDebug_1_1PlayerDebugPage.html#a001c695fa97cb8ebd4917f4d806dbd40">resourceContainer</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="classDebug_1_1PlayerDebugPage.html#aed097a8af36b2f6d6ac1d2c56a891248">playerController</a> = GameObject.FindWithTag(<span class="stringliteral">&quot;Player&quot;</span>).GetComponent&lt;<a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerController.html">PlayerController</a>&gt;();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <a class="code" href="classDebug_1_1PlayerDebugPage.html#a06c0aff1d9350ee67847cceb15009680">speedObserver</a> = LabelObserver&lt;PlayerController&gt;.Create(<span class="keyword">this</span>, controller =&gt; $<span class="stringliteral">&quot;Speed: {controller.Speed}&quot;</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <a class="code" href="classDebug_1_1PlayerDebugPage.html#aec0de4841ca24685ef090b6539153475">stateObserver</a> = LabelObserver&lt;PlayerController&gt;.Create(<span class="keyword">this</span>, controller =&gt; $<span class="stringliteral">&quot;State: {controller.GetState()}&quot;</span>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="classDebug_1_1PlayerDebugPage.html#a53d063e9bbc080dd72c0cd7699446013">workerCountObserver</a> = LabelObserver&lt;LeaderAssignableArea&gt;.Create(<span class="keyword">this</span>, leader =&gt; $<span class="stringliteral">&quot;WorkerCount: {leaderAssignableArea.WorkerCount}&quot;</span>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <a class="code" href="classDebug_1_1PlayerDebugPage.html#a17be5959bc2dcc96cb3c8f269f29fcc5">resourceObserver</a> = LabelObserver&lt;ResourceContainer&gt;.Create(<span class="keyword">this</span>, container =&gt; $<span class="stringliteral">&quot;ResourceCount: {container.ResourceCount}&quot;</span>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
+<div class="ttc" id="aclassDebug_1_1PlayerDebugPage_html_a001c695fa97cb8ebd4917f4d806dbd40"><div class="ttname"><a href="classDebug_1_1PlayerDebugPage.html#a001c695fa97cb8ebd4917f4d806dbd40">Debug.PlayerDebugPage.resourceContainer</a></div><div class="ttdeci">ResourceContainer resourceContainer</div><div class="ttdef"><b>Definition:</b> <a href="PlayerDebugPage_8cs_source.html#l00015">PlayerDebugPage.cs:15</a></div></div>
+<div class="ttc" id="aclassDebug_1_1PlayerDebugPage_html_a06c0aff1d9350ee67847cceb15009680"><div class="ttname"><a href="classDebug_1_1PlayerDebugPage.html#a06c0aff1d9350ee67847cceb15009680">Debug.PlayerDebugPage.speedObserver</a></div><div class="ttdeci">LabelObserver&lt; PlayerController &gt; speedObserver</div><div class="ttdef"><b>Definition:</b> <a href="PlayerDebugPage_8cs_source.html#l00018">PlayerDebugPage.cs:18</a></div></div>
+<div class="ttc" id="aclassDebug_1_1PlayerDebugPage_html_a17be5959bc2dcc96cb3c8f269f29fcc5"><div class="ttname"><a href="classDebug_1_1PlayerDebugPage.html#a17be5959bc2dcc96cb3c8f269f29fcc5">Debug.PlayerDebugPage.resourceObserver</a></div><div class="ttdeci">LabelObserver&lt; ResourceContainer &gt; resourceObserver</div><div class="ttdef"><b>Definition:</b> <a href="PlayerDebugPage_8cs_source.html#l00021">PlayerDebugPage.cs:21</a></div></div>
+<div class="ttc" id="aclassDebug_1_1PlayerDebugPage_html_a53d063e9bbc080dd72c0cd7699446013"><div class="ttname"><a href="classDebug_1_1PlayerDebugPage.html#a53d063e9bbc080dd72c0cd7699446013">Debug.PlayerDebugPage.workerCountObserver</a></div><div class="ttdeci">LabelObserver&lt; LeaderAssignableArea &gt; workerCountObserver</div><div class="ttdef"><b>Definition:</b> <a href="PlayerDebugPage_8cs_source.html#l00020">PlayerDebugPage.cs:20</a></div></div>
+<div class="ttc" id="aclassDebug_1_1PlayerDebugPage_html_aec0de4841ca24685ef090b6539153475"><div class="ttname"><a href="classDebug_1_1PlayerDebugPage.html#aec0de4841ca24685ef090b6539153475">Debug.PlayerDebugPage.stateObserver</a></div><div class="ttdeci">LabelObserver&lt; PlayerController &gt; stateObserver</div><div class="ttdef"><b>Definition:</b> <a href="PlayerDebugPage_8cs_source.html#l00019">PlayerDebugPage.cs:19</a></div></div>
+<div class="ttc" id="aclassDebug_1_1PlayerDebugPage_html_aed097a8af36b2f6d6ac1d2c56a891248"><div class="ttname"><a href="classDebug_1_1PlayerDebugPage.html#aed097a8af36b2f6d6ac1d2c56a891248">Debug.PlayerDebugPage.playerController</a></div><div class="ttdeci">PlayerController playerController</div><div class="ttdef"><b>Definition:</b> <a href="PlayerDebugPage_8cs_source.html#l00014">PlayerDebugPage.cs:14</a></div></div>
+<div class="ttc" id="aclassModule_1_1Player_1_1Controller_1_1PlayerController_html"><div class="ttname"><a href="classModule_1_1Player_1_1Controller_1_1PlayerController.html">Module.Player.Controller.PlayerController</a></div><div class="ttdoc">プレイヤーの操作に関するクラス</div><div class="ttdef"><b>Definition:</b> <a href="PlayerController_8cs_source.html#l00011">PlayerController.cs:12</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0f8c4949b701f1dba116360851875357"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f8c4949b701f1dba116360851875357">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Debug.PlayerDebugPage.Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PlayerDebugPage_8cs_source.html">PlayerDebugPage.cs</a> の <a class="el" href="PlayerDebugPage_8cs_source.html#l00034">34</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <a class="code" href="classDebug_1_1PlayerDebugPage.html#a06c0aff1d9350ee67847cceb15009680">speedObserver</a>.Update(<a class="code" href="classDebug_1_1PlayerDebugPage.html#aed097a8af36b2f6d6ac1d2c56a891248">playerController</a>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <a class="code" href="classDebug_1_1PlayerDebugPage.html#aec0de4841ca24685ef090b6539153475">stateObserver</a>.Update(<a class="code" href="classDebug_1_1PlayerDebugPage.html#aed097a8af36b2f6d6ac1d2c56a891248">playerController</a>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="classDebug_1_1PlayerDebugPage.html#a53d063e9bbc080dd72c0cd7699446013">workerCountObserver</a>.Update(<a class="code" href="classDebug_1_1PlayerDebugPage.html#a7f7bb187e35fb0b6090e818688ef2ac4">leaderAssignableArea</a>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <a class="code" href="classDebug_1_1PlayerDebugPage.html#a17be5959bc2dcc96cb3c8f269f29fcc5">resourceObserver</a>.Update(<a class="code" href="classDebug_1_1PlayerDebugPage.html#a001c695fa97cb8ebd4917f4d806dbd40">resourceContainer</a>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            RefreshData();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
+<div class="ttc" id="aclassDebug_1_1PlayerDebugPage_html_a7f7bb187e35fb0b6090e818688ef2ac4"><div class="ttname"><a href="classDebug_1_1PlayerDebugPage.html#a7f7bb187e35fb0b6090e818688ef2ac4">Debug.PlayerDebugPage.leaderAssignableArea</a></div><div class="ttdeci">LeaderAssignableArea leaderAssignableArea</div><div class="ttdef"><b>Definition:</b> <a href="PlayerDebugPage_8cs_source.html#l00016">PlayerDebugPage.cs:16</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a7f7bb187e35fb0b6090e818688ef2ac4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f7bb187e35fb0b6090e818688ef2ac4">&#9670;&nbsp;</a></span>leaderAssignableArea</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html">LeaderAssignableArea</a> Debug.PlayerDebugPage.leaderAssignableArea</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PlayerDebugPage_8cs_source.html">PlayerDebugPage.cs</a> の <a class="el" href="PlayerDebugPage_8cs_source.html#l00016">16</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aed097a8af36b2f6d6ac1d2c56a891248"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed097a8af36b2f6d6ac1d2c56a891248">&#9670;&nbsp;</a></span>playerController</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classModule_1_1Player_1_1Controller_1_1PlayerController.html">PlayerController</a> Debug.PlayerDebugPage.playerController</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PlayerDebugPage_8cs_source.html">PlayerDebugPage.cs</a> の <a class="el" href="PlayerDebugPage_8cs_source.html#l00014">14</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a001c695fa97cb8ebd4917f4d806dbd40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a001c695fa97cb8ebd4917f4d806dbd40">&#9670;&nbsp;</a></span>resourceContainer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classModule_1_1Task_1_1ResourceContainer.html">ResourceContainer</a> Debug.PlayerDebugPage.resourceContainer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PlayerDebugPage_8cs_source.html">PlayerDebugPage.cs</a> の <a class="el" href="PlayerDebugPage_8cs_source.html#l00015">15</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a17be5959bc2dcc96cb3c8f269f29fcc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17be5959bc2dcc96cb3c8f269f29fcc5">&#9670;&nbsp;</a></span>resourceObserver</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LabelObserver&lt;<a class="el" href="classModule_1_1Task_1_1ResourceContainer.html">ResourceContainer</a>&gt; Debug.PlayerDebugPage.resourceObserver</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PlayerDebugPage_8cs_source.html">PlayerDebugPage.cs</a> の <a class="el" href="PlayerDebugPage_8cs_source.html#l00021">21</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a06c0aff1d9350ee67847cceb15009680"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06c0aff1d9350ee67847cceb15009680">&#9670;&nbsp;</a></span>speedObserver</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LabelObserver&lt;<a class="el" href="classModule_1_1Player_1_1Controller_1_1PlayerController.html">PlayerController</a>&gt; Debug.PlayerDebugPage.speedObserver</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PlayerDebugPage_8cs_source.html">PlayerDebugPage.cs</a> の <a class="el" href="PlayerDebugPage_8cs_source.html#l00018">18</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aec0de4841ca24685ef090b6539153475"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec0de4841ca24685ef090b6539153475">&#9670;&nbsp;</a></span>stateObserver</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LabelObserver&lt;<a class="el" href="classModule_1_1Player_1_1Controller_1_1PlayerController.html">PlayerController</a>&gt; Debug.PlayerDebugPage.stateObserver</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PlayerDebugPage_8cs_source.html">PlayerDebugPage.cs</a> の <a class="el" href="PlayerDebugPage_8cs_source.html#l00019">19</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a53d063e9bbc080dd72c0cd7699446013"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53d063e9bbc080dd72c0cd7699446013">&#9670;&nbsp;</a></span>workerCountObserver</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LabelObserver&lt;<a class="el" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html">LeaderAssignableArea</a>&gt; Debug.PlayerDebugPage.workerCountObserver</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PlayerDebugPage_8cs_source.html">PlayerDebugPage.cs</a> の <a class="el" href="PlayerDebugPage_8cs_source.html#l00020">20</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">プロパティ詳解</h2>
+<a id="aec50636fdf623b97beb71d65d2821087"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec50636fdf623b97beb71d65d2821087">&#9670;&nbsp;</a></span>Title</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override string Debug.PlayerDebugPage.Title</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PlayerDebugPage_8cs_source.html">PlayerDebugPage.cs</a> の <a class="el" href="PlayerDebugPage_8cs_source.html#l00013">13</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>src/Assets/Scripts/Debug/<a class="el" href="PlayerDebugPage_8cs_source.html">PlayerDebugPage.cs</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

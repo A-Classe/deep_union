@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['offset_659',['Offset',['../classModule_1_1Working_1_1Worker.html#a42b6b0c772f2feffb8c08d34106cb137',1,'Module::Working::Worker']]]
+  ['hp_1602',['Hp',['../classModule_1_1Assignment_1_1PlayerStatus.html#acdf8e3cd37dd3d5241d05b7e9978ab01',1,'Module::Assignment::PlayerStatus']]]
 ];

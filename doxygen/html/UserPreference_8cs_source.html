@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: src/Assets/Scripts/Core/Utility/User/UserPreference.cs ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_fede226f1245c80472226816c0f2cbdb.html">Core</a></li><li class="navelem"><a class="el" href="dir_93d41ab0abe9308e8c43968b6ceba6ae.html">Utility</a></li><li class="navelem"><a class="el" href="dir_f60a369e125030d6a06922130bf9462f.html">User</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">UserPreference.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="UserPreference_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceSystem.html">System</a>;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceSystem.html">System</a>.Collections.Generic;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceSystem.html">System</a>.IO;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceSystem.html">System</a>.Linq.Expressions;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceCore_1_1Utility_1_1User.html">Core.Utility.User</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1User_1_1UserPreference.html">    9</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html">UserPreference</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a2d7ff395db165fdf90423e86ca80e24e">   11</a></span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> readonly <span class="keywordtype">string</span> <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a2d7ff395db165fdf90423e86ca80e24e">RootPath</a> = Application.persistentDataPath;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a1044ec2a816972e7f59d043b38296547">   12</a></span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> readonly <span class="keywordtype">string</span> <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a1044ec2a816972e7f59d043b38296547">SaveDirPath</a> = Path.Combine(<a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a2d7ff395db165fdf90423e86ca80e24e">RootPath</a>, <span class="stringliteral">&quot;preference&quot;</span>);</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#acf204a4cc18ca3253d91990a957dff9d">   13</a></span>&#160;        <span class="keyword">private</span> readonly <span class="keywordtype">string</span> <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#acf204a4cc18ca3253d91990a957dff9d">saveFilePath</a> = <span class="stringliteral">&quot;preference.json&quot;</span>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#af7679bee25fac74ca0028dee5e683232">   15</a></span>&#160;        <span class="keyword">private</span> readonly <a class="code" href="classCore_1_1Utility_1_1User_1_1DataManager.html">DataManager</a> <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#af7679bee25fac74ca0028dee5e683232">dataManager</a> = <span class="keyword">new</span>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a73b06f1e43152e9c56270fe7ae5712a1">   17</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a73b06f1e43152e9c56270fe7ae5712a1">UserPreference</a>()</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a964dcdb1bfce2d95f3bacd13887cb15e">EnsureDirectoryExists</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a964dcdb1bfce2d95f3bacd13887cb15e">   22</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a964dcdb1bfce2d95f3bacd13887cb15e">EnsureDirectoryExists</a>()</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">if</span> (!Directory.Exists(<a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a1044ec2a816972e7f59d043b38296547">SaveDirPath</a>))</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                Directory.CreateDirectory(<a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a1044ec2a816972e7f59d043b38296547">SaveDirPath</a>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a191a2db4bc3eea97319434169b759e49">   30</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a191a2db4bc3eea97319434169b759e49">Load</a>()</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#af7679bee25fac74ca0028dee5e683232">dataManager</a>.<a class="code" href="classCore_1_1Utility_1_1User_1_1DataManager.html#aa4ef235ba2932196365d074a4bcc4c7d">Load</a>(<a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a30d41c30895319daa4f081c56a1f9228">GetFilePath</a>());</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#aa8a42e491ef2f89808b51a759849d21b">   35</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="classCore_1_1Utility_1_1User_1_1UserData.html">UserData</a> <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#aa8a42e491ef2f89808b51a759849d21b">GetUserData</a>()</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#af7679bee25fac74ca0028dee5e683232">dataManager</a>.Get&lt;<a class="code" href="classCore_1_1Utility_1_1User_1_1UserData.html">UserData</a>&gt;();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a97a67ec5afcc7d7ded9453879b0c199d">   40</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a97a67ec5afcc7d7ded9453879b0c199d">SetUserData</a>(<a class="code" href="classCore_1_1Utility_1_1User_1_1UserData.html">UserData</a> data)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#af7679bee25fac74ca0028dee5e683232">dataManager</a>.Set(data);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a51b6c2a553179c50551f67b3c06ba6cf">   45</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a51b6c2a553179c50551f67b3c06ba6cf">SetMasterVolume</a>(<span class="keywordtype">int</span> vol)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1User_1_1UserData.html">UserData</a> data = <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#af7679bee25fac74ca0028dee5e683232">dataManager</a>.Get&lt;<a class="code" href="classCore_1_1Utility_1_1User_1_1UserData.html">UserData</a>&gt;();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            data.<a class="code" href="classCore_1_1Utility_1_1User_1_1UserData.html#a41c703909ae8e7170dd5ece1af99f2fe">masterVolume</a>.<a class="code" href="classCore_1_1Utility_1_1User_1_1KeyValue.html#a1178406536461ef833f786fbd76615f2">value</a> = vol;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#af7679bee25fac74ca0028dee5e683232">dataManager</a>.Set(data);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a5eec1958878b0c2b55b615d5a7e58d2a">   52</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a5eec1958878b0c2b55b615d5a7e58d2a">SetMusicVolume</a>(<span class="keywordtype">int</span> vol)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1User_1_1UserData.html">UserData</a> data = <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#af7679bee25fac74ca0028dee5e683232">dataManager</a>.Get&lt;<a class="code" href="classCore_1_1Utility_1_1User_1_1UserData.html">UserData</a>&gt;();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            data.<a class="code" href="classCore_1_1Utility_1_1User_1_1UserData.html#a35dcf03567d9c4aceb3334ea0ef12f47">musicVolume</a>.<a class="code" href="classCore_1_1Utility_1_1User_1_1KeyValue.html#a1178406536461ef833f786fbd76615f2">value</a> = vol;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#af7679bee25fac74ca0028dee5e683232">dataManager</a>.Set(data);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a056e7ac9cc37d7537504f44d060f93b2">   59</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a056e7ac9cc37d7537504f44d060f93b2">SetEffectVolume</a>(<span class="keywordtype">int</span> vol)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1User_1_1UserData.html">UserData</a> data = <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#af7679bee25fac74ca0028dee5e683232">dataManager</a>.Get&lt;<a class="code" href="classCore_1_1Utility_1_1User_1_1UserData.html">UserData</a>&gt;();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            data.<a class="code" href="classCore_1_1Utility_1_1User_1_1UserData.html#a6321a6706a4e2870e5927c7d6b26187a">effectVolume</a>.<a class="code" href="classCore_1_1Utility_1_1User_1_1KeyValue.html#a1178406536461ef833f786fbd76615f2">value</a> = vol;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#af7679bee25fac74ca0028dee5e683232">dataManager</a>.Set(data);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#aa8777ea7a7c581e38d6d5c3b0bf73b04">   66</a></span>&#160;        <span class="keyword">public</span> Dictionary&lt;<a class="code" href="classCore_1_1Utility_1_1User_1_1StageData.html">StageData</a>.<a class="code" href="classCore_1_1Utility_1_1User_1_1StageData.html#ad3459928d4b866ea3c276011d1279136">Stage</a>, uint&gt; <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#aa8777ea7a7c581e38d6d5c3b0bf73b04">GetStageData</a>()</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#af7679bee25fac74ca0028dee5e683232">dataManager</a>.Get&lt;<a class="code" href="classCore_1_1Utility_1_1User_1_1StageData.html">StageData</a>&gt;().stage;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#acfade9c110226d10fcd1eff828f9e068">   71</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#acfade9c110226d10fcd1eff828f9e068">SetStageData</a>(<a class="code" href="classCore_1_1Utility_1_1User_1_1StageData.html">StageData</a> data)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#af7679bee25fac74ca0028dee5e683232">dataManager</a>.Set(data);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a35893da35ea433002c32cfdbd1aff330">   76</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a35893da35ea433002c32cfdbd1aff330">SetStageData</a>(<a class="code" href="classCore_1_1Utility_1_1User_1_1StageData.html">StageData</a>.<a class="code" href="classCore_1_1Utility_1_1User_1_1StageData.html#ad3459928d4b866ea3c276011d1279136">Stage</a> stage, uint score)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            var data = <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#af7679bee25fac74ca0028dee5e683232">dataManager</a>.Get&lt;<a class="code" href="classCore_1_1Utility_1_1User_1_1StageData.html">StageData</a>&gt;();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            data.<a class="code" href="classCore_1_1Utility_1_1User_1_1StageData.html#a69b5bc96413669c4ff058af6fca069e5">stage</a>[stage] = score;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#af7679bee25fac74ca0028dee5e683232">dataManager</a>.Set(data);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a4a6fcf3426e694d5489c2a2afcc80526">   83</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a4a6fcf3426e694d5489c2a2afcc80526">Delete</a>()</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#af7679bee25fac74ca0028dee5e683232">dataManager</a>.<a class="code" href="classCore_1_1Utility_1_1User_1_1DataManager.html#aa29660d00c352c4191cae2fd470fb009">Delete</a>(<a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a30d41c30895319daa4f081c56a1f9228">GetFilePath</a>());</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a21481e199cee633332ac991d3395715b">   88</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a21481e199cee633332ac991d3395715b">Save</a>()</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#af7679bee25fac74ca0028dee5e683232">dataManager</a>.<a class="code" href="classCore_1_1Utility_1_1User_1_1DataManager.html#a0667b0820f96c9dd227ff70a377d62e3">Save</a>();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a2957084ff4dbdb166ed83d61582faee2">   93</a></span>&#160;        <span class="keyword">public</span> TValue <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a2957084ff4dbdb166ed83d61582faee2">GetSpecificField&lt;T, TValue&gt;</a>(Expression&lt;Func&lt;T, object&gt;&gt; selector) where T : <a class="code" href="interfaceCore_1_1Utility_1_1User_1_1IDefaultable.html">IDefaultable&lt;T&gt;</a>, <span class="keyword">new</span>()</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#af7679bee25fac74ca0028dee5e683232">dataManager</a>.GetSpecificField&lt;T, TValue&gt;(selector);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a30d41c30895319daa4f081c56a1f9228">   98</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">string</span> <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a30d41c30895319daa4f081c56a1f9228">GetFilePath</a>()</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">return</span> Path.Combine(<a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a1044ec2a816972e7f59d043b38296547">SaveDirPath</a>, <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html#acf204a4cc18ca3253d91990a957dff9d">saveFilePath</a>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1DataManager_html"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1DataManager.html">Core.Utility.User.DataManager</a></div><div class="ttdef"><b>Definition:</b> <a href="DataManager_8cs_source.html#l00009">DataManager.cs:10</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1DataManager_html_a0667b0820f96c9dd227ff70a377d62e3"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1DataManager.html#a0667b0820f96c9dd227ff70a377d62e3">Core.Utility.User.DataManager.Save</a></div><div class="ttdeci">void Save()</div><div class="ttdef"><b>Definition:</b> <a href="DataManager_8cs_source.html#l00044">DataManager.cs:44</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1DataManager_html_aa29660d00c352c4191cae2fd470fb009"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1DataManager.html#aa29660d00c352c4191cae2fd470fb009">Core.Utility.User.DataManager.Delete</a></div><div class="ttdeci">void Delete(string filePath)</div><div class="ttdef"><b>Definition:</b> <a href="DataManager_8cs_source.html#l00028">DataManager.cs:28</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1DataManager_html_aa4ef235ba2932196365d074a4bcc4c7d"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1DataManager.html#aa4ef235ba2932196365d074a4bcc4c7d">Core.Utility.User.DataManager.Load</a></div><div class="ttdeci">bool Load(string filePath)</div><div class="ttdef"><b>Definition:</b> <a href="DataManager_8cs_source.html#l00016">DataManager.cs:16</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1KeyValue_html_a1178406536461ef833f786fbd76615f2"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1KeyValue.html#a1178406536461ef833f786fbd76615f2">Core.Utility.User.KeyValue.value</a></div><div class="ttdeci">TValue value</div><div class="ttdef"><b>Definition:</b> <a href="UserSetting_8cs_source.html#l00013">UserSetting.cs:13</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1StageData_html"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1StageData.html">Core.Utility.User.StageData</a></div><div class="ttdef"><b>Definition:</b> <a href="UserSetting_8cs_source.html#l00043">UserSetting.cs:44</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1StageData_html_a69b5bc96413669c4ff058af6fca069e5"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1StageData.html#a69b5bc96413669c4ff058af6fca069e5">Core.Utility.User.StageData.stage</a></div><div class="ttdeci">Dictionary&lt; Stage, uint &gt; stage</div><div class="ttdef"><b>Definition:</b> <a href="UserSetting_8cs_source.html#l00045">UserSetting.cs:45</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1StageData_html_ad3459928d4b866ea3c276011d1279136"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1StageData.html#ad3459928d4b866ea3c276011d1279136">Core.Utility.User.StageData.Stage</a></div><div class="ttdeci">Stage</div><div class="ttdef"><b>Definition:</b> <a href="UserSetting_8cs_source.html#l00051">UserSetting.cs:52</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserData_html"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserData.html">Core.Utility.User.UserData</a></div><div class="ttdef"><b>Definition:</b> <a href="UserSetting_8cs_source.html#l00023">UserSetting.cs:24</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserData_html_a35dcf03567d9c4aceb3334ea0ef12f47"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserData.html#a35dcf03567d9c4aceb3334ea0ef12f47">Core.Utility.User.UserData.musicVolume</a></div><div class="ttdeci">KeyValue&lt; string, int &gt; musicVolume</div><div class="ttdef"><b>Definition:</b> <a href="UserSetting_8cs_source.html#l00032">UserSetting.cs:32</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserData_html_a41c703909ae8e7170dd5ece1af99f2fe"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserData.html#a41c703909ae8e7170dd5ece1af99f2fe">Core.Utility.User.UserData.masterVolume</a></div><div class="ttdeci">KeyValue&lt; string, int &gt; masterVolume</div><div class="ttdef"><b>Definition:</b> <a href="UserSetting_8cs_source.html#l00030">UserSetting.cs:30</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserData_html_a6321a6706a4e2870e5927c7d6b26187a"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserData.html#a6321a6706a4e2870e5927c7d6b26187a">Core.Utility.User.UserData.effectVolume</a></div><div class="ttdeci">KeyValue&lt; string, int &gt; effectVolume</div><div class="ttdef"><b>Definition:</b> <a href="UserSetting_8cs_source.html#l00034">UserSetting.cs:34</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserPreference_html"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserPreference.html">Core.Utility.User.UserPreference</a></div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00009">UserPreference.cs:10</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserPreference_html_a056e7ac9cc37d7537504f44d060f93b2"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a056e7ac9cc37d7537504f44d060f93b2">Core.Utility.User.UserPreference.SetEffectVolume</a></div><div class="ttdeci">void SetEffectVolume(int vol)</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00059">UserPreference.cs:59</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserPreference_html_a1044ec2a816972e7f59d043b38296547"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a1044ec2a816972e7f59d043b38296547">Core.Utility.User.UserPreference.SaveDirPath</a></div><div class="ttdeci">static readonly string SaveDirPath</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00012">UserPreference.cs:12</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserPreference_html_a191a2db4bc3eea97319434169b759e49"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a191a2db4bc3eea97319434169b759e49">Core.Utility.User.UserPreference.Load</a></div><div class="ttdeci">void Load()</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00030">UserPreference.cs:30</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserPreference_html_a21481e199cee633332ac991d3395715b"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a21481e199cee633332ac991d3395715b">Core.Utility.User.UserPreference.Save</a></div><div class="ttdeci">void Save()</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00088">UserPreference.cs:88</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserPreference_html_a2957084ff4dbdb166ed83d61582faee2"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a2957084ff4dbdb166ed83d61582faee2">Core.Utility.User.UserPreference.GetSpecificField&lt; T, TValue &gt;</a></div><div class="ttdeci">TValue GetSpecificField&lt; T, TValue &gt;(Expression&lt; Func&lt; T, object &gt;&gt; selector)</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00093">UserPreference.cs:93</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserPreference_html_a2d7ff395db165fdf90423e86ca80e24e"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a2d7ff395db165fdf90423e86ca80e24e">Core.Utility.User.UserPreference.RootPath</a></div><div class="ttdeci">static readonly string RootPath</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00011">UserPreference.cs:11</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserPreference_html_a30d41c30895319daa4f081c56a1f9228"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a30d41c30895319daa4f081c56a1f9228">Core.Utility.User.UserPreference.GetFilePath</a></div><div class="ttdeci">string GetFilePath()</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00098">UserPreference.cs:98</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserPreference_html_a35893da35ea433002c32cfdbd1aff330"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a35893da35ea433002c32cfdbd1aff330">Core.Utility.User.UserPreference.SetStageData</a></div><div class="ttdeci">void SetStageData(StageData.Stage stage, uint score)</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00076">UserPreference.cs:76</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserPreference_html_a4a6fcf3426e694d5489c2a2afcc80526"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a4a6fcf3426e694d5489c2a2afcc80526">Core.Utility.User.UserPreference.Delete</a></div><div class="ttdeci">void Delete()</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00083">UserPreference.cs:83</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserPreference_html_a51b6c2a553179c50551f67b3c06ba6cf"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a51b6c2a553179c50551f67b3c06ba6cf">Core.Utility.User.UserPreference.SetMasterVolume</a></div><div class="ttdeci">void SetMasterVolume(int vol)</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00045">UserPreference.cs:45</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserPreference_html_a5eec1958878b0c2b55b615d5a7e58d2a"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a5eec1958878b0c2b55b615d5a7e58d2a">Core.Utility.User.UserPreference.SetMusicVolume</a></div><div class="ttdeci">void SetMusicVolume(int vol)</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00052">UserPreference.cs:52</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserPreference_html_a73b06f1e43152e9c56270fe7ae5712a1"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a73b06f1e43152e9c56270fe7ae5712a1">Core.Utility.User.UserPreference.UserPreference</a></div><div class="ttdeci">UserPreference()</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00017">UserPreference.cs:17</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserPreference_html_a964dcdb1bfce2d95f3bacd13887cb15e"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a964dcdb1bfce2d95f3bacd13887cb15e">Core.Utility.User.UserPreference.EnsureDirectoryExists</a></div><div class="ttdeci">void EnsureDirectoryExists()</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00022">UserPreference.cs:22</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserPreference_html_a97a67ec5afcc7d7ded9453879b0c199d"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserPreference.html#a97a67ec5afcc7d7ded9453879b0c199d">Core.Utility.User.UserPreference.SetUserData</a></div><div class="ttdeci">void SetUserData(UserData data)</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00040">UserPreference.cs:40</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserPreference_html_aa8777ea7a7c581e38d6d5c3b0bf73b04"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserPreference.html#aa8777ea7a7c581e38d6d5c3b0bf73b04">Core.Utility.User.UserPreference.GetStageData</a></div><div class="ttdeci">Dictionary&lt; StageData.Stage, uint &gt; GetStageData()</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00066">UserPreference.cs:66</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserPreference_html_aa8a42e491ef2f89808b51a759849d21b"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserPreference.html#aa8a42e491ef2f89808b51a759849d21b">Core.Utility.User.UserPreference.GetUserData</a></div><div class="ttdeci">UserData GetUserData()</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00035">UserPreference.cs:35</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserPreference_html_acf204a4cc18ca3253d91990a957dff9d"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserPreference.html#acf204a4cc18ca3253d91990a957dff9d">Core.Utility.User.UserPreference.saveFilePath</a></div><div class="ttdeci">readonly string saveFilePath</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00013">UserPreference.cs:13</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserPreference_html_acfade9c110226d10fcd1eff828f9e068"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserPreference.html#acfade9c110226d10fcd1eff828f9e068">Core.Utility.User.UserPreference.SetStageData</a></div><div class="ttdeci">void SetStageData(StageData data)</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00071">UserPreference.cs:71</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserPreference_html_af7679bee25fac74ca0028dee5e683232"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserPreference.html#af7679bee25fac74ca0028dee5e683232">Core.Utility.User.UserPreference.dataManager</a></div><div class="ttdeci">readonly DataManager dataManager</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00015">UserPreference.cs:15</a></div></div>
+<div class="ttc" id="ainterfaceCore_1_1Utility_1_1User_1_1IDefaultable_html"><div class="ttname"><a href="interfaceCore_1_1Utility_1_1User_1_1IDefaultable.html">Core.Utility.User.IDefaultable</a></div><div class="ttdef"><b>Definition:</b> <a href="IDefaultable_8cs_source.html#l00003">IDefaultable.cs:4</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1Utility_1_1User_html"><div class="ttname"><a href="namespaceCore_1_1Utility_1_1User.html">Core.Utility.User</a></div><div class="ttdef"><b>Definition:</b> <a href="DataManager_8cs_source.html#l00007">DataManager.cs:8</a></div></div>
+<div class="ttc" id="anamespaceSystem_html"><div class="ttname"><a href="namespaceSystem.html">System</a></div><div class="ttdef"><b>Definition:</b> <a href="GameSequenceHandler_8cs_source.html#l00007">GameSequenceHandler.cs:8</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

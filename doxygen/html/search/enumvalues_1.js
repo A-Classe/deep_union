@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['follow_642',['Follow',['../namespaceModule_1_1Player_1_1Camera_1_1State.html#a706feea038e86118d7428652b300b1cca3903aab323863bd2e9b68218a7a65ebd',1,'Module::Player::Camera::State']]],
-  ['following_643',['Following',['../namespaceModule_1_1Working_1_1State.html#a6741b3bd2dd67b25e9e0477f35e01082a6f796b0e6deb4f4c2c0ee0ed5e10e117',1,'Module::Working::State']]]
+  ['back_1565',['Back',['../classUI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html#a919cf21a9d00459ef5625ac4107ec303a0557fa923dcee4d0f86b1409f5c2167f',1,'UI.Title.Option.Option3.Option3Manager.Back()'],['../classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317fa0557fa923dcee4d0f86b1409f5c2167f',1,'UI.Title.StageSelect.StageSelectManager.Back()']]]
 ];

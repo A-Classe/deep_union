@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['gameparam_335',['GameParam',['../classGameMain_1_1Presenter_1_1GameParam.html',1,'GameMain::Presenter']]],
-  ['gamerouter_336',['GameRouter',['../classGameMain_1_1GameRouter.html',1,'GameMain']]],
-  ['generatingflagholder_337',['GeneratingFlagHolder',['../classEditor_1_1GeneratingFlagHolder.html',1,'Editor']]],
-  ['gostate_338',['GoState',['../classModule_1_1Player_1_1State_1_1GoState.html',1,'Module::Player::State']]]
+  ['fadeinoutbutton_834',['FadeInOutButton',['../classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html',1,'Core::Utility::UI::Component']]],
+  ['followstate_835',['FollowState',['../classModule_1_1Working_1_1State_1_1FollowState.html',1,'Module::Working::State']]]
 ];

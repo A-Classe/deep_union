@@ -67,6 +67,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#properties">プロパティ</a> &#124;
 <a href="#pri-methods">非公開メンバ関数</a> &#124;
 <a href="#pri-static-methods">静的非公開メンバ関数</a> &#124;
 <a href="#pri-attribs">非公開変数類</a> &#124;
@@ -84,7 +85,7 @@ Module.Working.WorkerAgent 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classModule_1_1Working_1_1WorkerAgent__coll__graph.png" border="0" usemap="#aModule_8Working_8WorkerAgent_coll__map" alt="Collaboration graph"/></div>
 <map name="aModule_8Working_8WorkerAgent_coll__map" id="aModule_8Working_8WorkerAgent_coll__map">
-<area shape="rect" title="Workerのインスタンスを管理するクラス" alt="" coords="5,5,220,215"/>
+<area shape="rect" title="Workerのインスタンスを管理するクラス" alt="" coords="5,5,220,244"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -92,12 +93,20 @@ Module.Working.WorkerAgent 連携図</div>
 公開メンバ関数</h2></td></tr>
 <tr class="memitem:aed898b8315c81206e1a202db6f6c4d33"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1WorkerAgent.html#aed898b8315c81206e1a202db6f6c4d33">WorkerAgent</a> ()</td></tr>
 <tr class="separator:aed898b8315c81206e1a202db6f6c4d33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a806460d3337bc23946793811ef0153f8"><td class="memItemLeft" align="right" valign="top">Span&lt; <a class="el" href="classModule_1_1Working_1_1Worker.html">Worker</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1WorkerAgent.html#a806460d3337bc23946793811ef0153f8">Add</a> (int count)</td></tr>
-<tr class="memdesc:a806460d3337bc23946793811ef0153f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Workerを指定数追加します  <a href="classModule_1_1Working_1_1WorkerAgent.html#a806460d3337bc23946793811ef0153f8">[詳解]</a><br /></td></tr>
-<tr class="separator:a806460d3337bc23946793811ef0153f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdb86e95ada63760e4b3b88f0e0949e8"><td class="memItemLeft" align="right" valign="top">ReadOnlySpan&lt; <a class="el" href="classModule_1_1Working_1_1Worker.html">Worker</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1WorkerAgent.html#afdb86e95ada63760e4b3b88f0e0949e8">Add</a> (int count)</td></tr>
+<tr class="memdesc:afdb86e95ada63760e4b3b88f0e0949e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Workerを指定数追加します  <a href="classModule_1_1Working_1_1WorkerAgent.html#afdb86e95ada63760e4b3b88f0e0949e8">[詳解]</a><br /></td></tr>
+<tr class="separator:afdb86e95ada63760e4b3b88f0e0949e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75ae9aedff81481c03a6462a98bbc26f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1WorkerAgent.html#a75ae9aedff81481c03a6462a98bbc26f">AddActiveWorker</a> (<a class="el" href="classModule_1_1Working_1_1Worker.html">Worker</a> worker)</td></tr>
+<tr class="memdesc:a75ae9aedff81481c03a6462a98bbc26f"><td class="mdescLeft">&#160;</td><td class="mdescRight">外部からのWorkerを追加します  <a href="classModule_1_1Working_1_1WorkerAgent.html#a75ae9aedff81481c03a6462a98bbc26f">[詳解]</a><br /></td></tr>
+<tr class="separator:a75ae9aedff81481c03a6462a98bbc26f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06954ac8011fd776ddb5b3d6993cccd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1WorkerAgent.html#a06954ac8011fd776ddb5b3d6993cccd1">Remove</a> (<a class="el" href="classModule_1_1Working_1_1Worker.html">Worker</a> worker)</td></tr>
 <tr class="memdesc:a06954ac8011fd776ddb5b3d6993cccd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Workerを指定数削除します  <a href="classModule_1_1Working_1_1WorkerAgent.html#a06954ac8011fd776ddb5b3d6993cccd1">[詳解]</a><br /></td></tr>
 <tr class="separator:a06954ac8011fd776ddb5b3d6993cccd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+プロパティ</h2></td></tr>
+<tr class="memitem:aad173fb71f54c8d1417fa21f794ebc56"><td class="memItemLeft" align="right" valign="top">ReadOnlySpan&lt; <a class="el" href="classModule_1_1Working_1_1Worker.html">Worker</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1WorkerAgent.html#aad173fb71f54c8d1417fa21f794ebc56">ActiveWorkers</a><code> [get]</code></td></tr>
+<tr class="separator:aad173fb71f54c8d1417fa21f794ebc56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 非公開メンバ関数</h2></td></tr>
@@ -155,24 +164,24 @@ Module.Working.WorkerAgent 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="WorkerAgent_8cs_source.html">WorkerAgent.cs</a> の <a class="el" href="WorkerAgent_8cs_source.html#l00023">23</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="comment">//プーリングする</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#addc07a85047e94d4b56ebc43cce7687b">workerPool</a> = <span class="keyword">new</span> ObjectPool&lt;Worker&gt;(</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a2f7088103369d0dd020fbe5c5d45833e">CreateWorker</a>,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a6c772c121bb44a4c9ba0b313374a2fea">OnWorkerGet</a>,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a05fadd899c7cb2e6cb1c57a354ab4db6">OnWorkerRelease</a>,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a08418401284de714cc01fdbecca2479f">OnWorkerDestroy</a>,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                defaultCapacity: <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a3b84ba9edc098a789054daf42320024d">workersCapacity</a>);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a82e3c69827dc9c27ea6c50e656cf3eef">activeWorkers</a> = <span class="keyword">new</span> List&lt;Worker&gt;(<a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a3b84ba9edc098a789054daf42320024d">workersCapacity</a>);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a9fb9630d0eaed512302d5822b4068ad6">workerPrefab</a> = Resources.Load&lt;GameObject&gt;(<span class="stringliteral">&quot;Worker&quot;</span>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
-<div class="ttc" id="aclassModule_1_1Working_1_1WorkerAgent_html_a05fadd899c7cb2e6cb1c57a354ab4db6"><div class="ttname"><a href="classModule_1_1Working_1_1WorkerAgent.html#a05fadd899c7cb2e6cb1c57a354ab4db6">Module.Working.WorkerAgent.OnWorkerRelease</a></div><div class="ttdeci">static void OnWorkerRelease(Worker worker)</div><div class="ttdef"><b>Definition:</b> <a href="WorkerAgent_8cs_source.html#l00077">WorkerAgent.cs:77</a></div></div>
-<div class="ttc" id="aclassModule_1_1Working_1_1WorkerAgent_html_a08418401284de714cc01fdbecca2479f"><div class="ttname"><a href="classModule_1_1Working_1_1WorkerAgent.html#a08418401284de714cc01fdbecca2479f">Module.Working.WorkerAgent.OnWorkerDestroy</a></div><div class="ttdeci">static void OnWorkerDestroy(Worker worker)</div><div class="ttdef"><b>Definition:</b> <a href="WorkerAgent_8cs_source.html#l00082">WorkerAgent.cs:82</a></div></div>
-<div class="ttc" id="aclassModule_1_1Working_1_1WorkerAgent_html_a2f7088103369d0dd020fbe5c5d45833e"><div class="ttname"><a href="classModule_1_1Working_1_1WorkerAgent.html#a2f7088103369d0dd020fbe5c5d45833e">Module.Working.WorkerAgent.CreateWorker</a></div><div class="ttdeci">Worker CreateWorker()</div><div class="ttdef"><b>Definition:</b> <a href="WorkerAgent_8cs_source.html#l00061">WorkerAgent.cs:61</a></div></div>
+<p class="definition"> <a class="el" href="WorkerAgent_8cs_source.html">WorkerAgent.cs</a> の <a class="el" href="WorkerAgent_8cs_source.html#l00025">25</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="comment">//プーリングする</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#addc07a85047e94d4b56ebc43cce7687b">workerPool</a> = <span class="keyword">new</span> ObjectPool&lt;Worker&gt;(</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a2f7088103369d0dd020fbe5c5d45833e">CreateWorker</a>,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a6c772c121bb44a4c9ba0b313374a2fea">OnWorkerGet</a>,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a05fadd899c7cb2e6cb1c57a354ab4db6">OnWorkerRelease</a>,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a08418401284de714cc01fdbecca2479f">OnWorkerDestroy</a>,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                defaultCapacity: <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a3b84ba9edc098a789054daf42320024d">workersCapacity</a>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a82e3c69827dc9c27ea6c50e656cf3eef">activeWorkers</a> = <span class="keyword">new</span> List&lt;Worker&gt;(<a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a3b84ba9edc098a789054daf42320024d">workersCapacity</a>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a9fb9630d0eaed512302d5822b4068ad6">workerPrefab</a> = Resources.Load&lt;GameObject&gt;(<span class="stringliteral">&quot;Worker&quot;</span>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Working_1_1WorkerAgent_html_a05fadd899c7cb2e6cb1c57a354ab4db6"><div class="ttname"><a href="classModule_1_1Working_1_1WorkerAgent.html#a05fadd899c7cb2e6cb1c57a354ab4db6">Module.Working.WorkerAgent.OnWorkerRelease</a></div><div class="ttdeci">static void OnWorkerRelease(Worker worker)</div><div class="ttdef"><b>Definition:</b> <a href="WorkerAgent_8cs_source.html#l00087">WorkerAgent.cs:87</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1WorkerAgent_html_a08418401284de714cc01fdbecca2479f"><div class="ttname"><a href="classModule_1_1Working_1_1WorkerAgent.html#a08418401284de714cc01fdbecca2479f">Module.Working.WorkerAgent.OnWorkerDestroy</a></div><div class="ttdeci">static void OnWorkerDestroy(Worker worker)</div><div class="ttdef"><b>Definition:</b> <a href="WorkerAgent_8cs_source.html#l00092">WorkerAgent.cs:92</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1WorkerAgent_html_a2f7088103369d0dd020fbe5c5d45833e"><div class="ttname"><a href="classModule_1_1Working_1_1WorkerAgent.html#a2f7088103369d0dd020fbe5c5d45833e">Module.Working.WorkerAgent.CreateWorker</a></div><div class="ttdeci">Worker CreateWorker()</div><div class="ttdef"><b>Definition:</b> <a href="WorkerAgent_8cs_source.html#l00071">WorkerAgent.cs:71</a></div></div>
 <div class="ttc" id="aclassModule_1_1Working_1_1WorkerAgent_html_a3b84ba9edc098a789054daf42320024d"><div class="ttname"><a href="classModule_1_1Working_1_1WorkerAgent.html#a3b84ba9edc098a789054daf42320024d">Module.Working.WorkerAgent.workersCapacity</a></div><div class="ttdeci">const int workersCapacity</div><div class="ttdef"><b>Definition:</b> <a href="WorkerAgent_8cs_source.html#l00017">WorkerAgent.cs:17</a></div></div>
-<div class="ttc" id="aclassModule_1_1Working_1_1WorkerAgent_html_a6c772c121bb44a4c9ba0b313374a2fea"><div class="ttname"><a href="classModule_1_1Working_1_1WorkerAgent.html#a6c772c121bb44a4c9ba0b313374a2fea">Module.Working.WorkerAgent.OnWorkerGet</a></div><div class="ttdeci">static void OnWorkerGet(Worker worker)</div><div class="ttdef"><b>Definition:</b> <a href="WorkerAgent_8cs_source.html#l00072">WorkerAgent.cs:72</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1WorkerAgent_html_a6c772c121bb44a4c9ba0b313374a2fea"><div class="ttname"><a href="classModule_1_1Working_1_1WorkerAgent.html#a6c772c121bb44a4c9ba0b313374a2fea">Module.Working.WorkerAgent.OnWorkerGet</a></div><div class="ttdeci">static void OnWorkerGet(Worker worker)</div><div class="ttdef"><b>Definition:</b> <a href="WorkerAgent_8cs_source.html#l00082">WorkerAgent.cs:82</a></div></div>
 <div class="ttc" id="aclassModule_1_1Working_1_1WorkerAgent_html_a82e3c69827dc9c27ea6c50e656cf3eef"><div class="ttname"><a href="classModule_1_1Working_1_1WorkerAgent.html#a82e3c69827dc9c27ea6c50e656cf3eef">Module.Working.WorkerAgent.activeWorkers</a></div><div class="ttdeci">readonly List&lt; Worker &gt; activeWorkers</div><div class="ttdef"><b>Definition:</b> <a href="WorkerAgent_8cs_source.html#l00018">WorkerAgent.cs:18</a></div></div>
 <div class="ttc" id="aclassModule_1_1Working_1_1WorkerAgent_html_a9fb9630d0eaed512302d5822b4068ad6"><div class="ttname"><a href="classModule_1_1Working_1_1WorkerAgent.html#a9fb9630d0eaed512302d5822b4068ad6">Module.Working.WorkerAgent.workerPrefab</a></div><div class="ttdeci">readonly GameObject workerPrefab</div><div class="ttdef"><b>Definition:</b> <a href="WorkerAgent_8cs_source.html#l00020">WorkerAgent.cs:20</a></div></div>
 <div class="ttc" id="aclassModule_1_1Working_1_1WorkerAgent_html_addc07a85047e94d4b56ebc43cce7687b"><div class="ttname"><a href="classModule_1_1Working_1_1WorkerAgent.html#addc07a85047e94d4b56ebc43cce7687b">Module.Working.WorkerAgent.workerPool</a></div><div class="ttdeci">readonly ObjectPool&lt; Worker &gt; workerPool</div><div class="ttdef"><b>Definition:</b> <a href="WorkerAgent_8cs_source.html#l00019">WorkerAgent.cs:19</a></div></div>
@@ -187,6 +196,7 @@ Module.Working.WorkerAgent 連携図</div>
 <area shape="rect" href="classModule_1_1Working_1_1WorkerAgent.html#a6c772c121bb44a4c9ba0b313374a2fea" title=" " alt="" coords="272,136,491,177"/>
 <area shape="rect" href="classModule_1_1Working_1_1WorkerAgent.html#a05fadd899c7cb2e6cb1c57a354ab4db6" title=" " alt="" coords="272,201,491,243"/>
 <area shape="rect" href="classModule_1_1Working_1_1Worker.html#ad2455ba9875647171151f68bf0d8e352" title=" " alt="" coords="539,78,769,105"/>
+<area shape="rect" href="interfaceModule_1_1Working_1_1State_1_1IWorkerState.html#ace853b47119f47a812b7734c9ac1bcf5" title=" " alt="" coords="817,71,1036,112"/>
 <area shape="rect" href="classModule_1_1Working_1_1Worker.html#a5d7ecae078c7d33cc57c0660551b312d" title=" " alt="" coords="543,143,765,170"/>
 <area shape="rect" href="classModule_1_1Working_1_1Worker.html#ab930824facd15fddeac2341f151654f5" title=" " alt="" coords="540,209,768,235"/>
 </map>
@@ -195,8 +205,8 @@ Module.Working.WorkerAgent 連携図</div>
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
-<a id="a806460d3337bc23946793811ef0153f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a806460d3337bc23946793811ef0153f8">&#9670;&nbsp;</a></span>Add()</h2>
+<a id="afdb86e95ada63760e4b3b88f0e0949e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdb86e95ada63760e4b3b88f0e0949e8">&#9670;&nbsp;</a></span>Add()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -205,7 +215,7 @@ Module.Working.WorkerAgent 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Span&lt;<a class="el" href="classModule_1_1Working_1_1Worker.html">Worker</a>&gt; Module.Working.WorkerAgent.Add </td>
+          <td class="memname">ReadOnlySpan&lt;<a class="el" href="classModule_1_1Working_1_1Worker.html">Worker</a>&gt; Module.Working.WorkerAgent.Add </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>count</em></td><td>)</td>
@@ -221,25 +231,67 @@ Module.Working.WorkerAgent 連携図</div>
 
 <p>Workerを指定数追加します </p>
 
-<p class="definition"> <a class="el" href="WorkerAgent_8cs_source.html">WorkerAgent.cs</a> の <a class="el" href="WorkerAgent_8cs_source.html#l00040">40</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">for</span> (var i = 0; i &lt; count; i++)</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                var worker = <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#addc07a85047e94d4b56ebc43cce7687b">workerPool</a>.Get();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a82e3c69827dc9c27ea6c50e656cf3eef">activeWorkers</a>.Add(worker);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a82e3c69827dc9c27ea6c50e656cf3eef">activeWorkers</a>.AsSpan().Slice(<a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a82e3c69827dc9c27ea6c50e656cf3eef">activeWorkers</a>.Count - count, count);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
+<p class="definition"> <a class="el" href="WorkerAgent_8cs_source.html">WorkerAgent.cs</a> の <a class="el" href="WorkerAgent_8cs_source.html#l00042">42</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">for</span> (var i = 0; i &lt; count; i++)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                var worker = <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#addc07a85047e94d4b56ebc43cce7687b">workerPool</a>.Get();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a82e3c69827dc9c27ea6c50e656cf3eef">activeWorkers</a>.Add(worker);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a82e3c69827dc9c27ea6c50e656cf3eef">activeWorkers</a>.AsSpan().Slice(<a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a82e3c69827dc9c27ea6c50e656cf3eef">activeWorkers</a>.Count - count, count);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
 </div><!-- fragment --><div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="classModule_1_1Working_1_1WorkerAgent_a806460d3337bc23946793811ef0153f8_icgraph.png" border="0" usemap="#aclassModule_1_1Working_1_1WorkerAgent_a806460d3337bc23946793811ef0153f8_icgraph" alt=""/></div>
-<map name="aclassModule_1_1Working_1_1WorkerAgent_a806460d3337bc23946793811ef0153f8_icgraph" id="aclassModule_1_1Working_1_1WorkerAgent_a806460d3337bc23946793811ef0153f8_icgraph">
+<div class="center"><img src="classModule_1_1Working_1_1WorkerAgent_afdb86e95ada63760e4b3b88f0e0949e8_icgraph.png" border="0" usemap="#aclassModule_1_1Working_1_1WorkerAgent_afdb86e95ada63760e4b3b88f0e0949e8_icgraph" alt=""/></div>
+<map name="aclassModule_1_1Working_1_1WorkerAgent_afdb86e95ada63760e4b3b88f0e0949e8_icgraph" id="aclassModule_1_1Working_1_1WorkerAgent_afdb86e95ada63760e4b3b88f0e0949e8_icgraph">
 <area shape="rect" title="Workerを指定数追加します" alt="" coords="791,13,1033,39"/>
-<area shape="rect" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#ac966f5863bd7a545801886ed8d14dba3" title="指定した数のワーカーをスポーンします" alt="" coords="517,5,743,47"/>
+<area shape="rect" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#a1c8bb78f6e100da276a5fc2de0daba45" title="指定した数のワーカーをスポーンします" alt="" coords="517,5,743,47"/>
 <area shape="rect" href="classGameMain_1_1GameRouter.html#a9ba3d1ae2e03dd55fd5c3b55c49db185" title="workerのセットアップ" alt="" coords="267,5,469,47"/>
 <area shape="rect" href="classGameMain_1_1GameRouter.html#a6454f04e22fe74080dbb46da0f8927be" title=" " alt="" coords="5,13,219,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a75ae9aedff81481c03a6462a98bbc26f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75ae9aedff81481c03a6462a98bbc26f">&#9670;&nbsp;</a></span>AddActiveWorker()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.Working.WorkerAgent.AddActiveWorker </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classModule_1_1Working_1_1Worker.html">Worker</a>&#160;</td>
+          <td class="paramname"><em>worker</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>外部からのWorkerを追加します </p>
+
+<p class="definition"> <a class="el" href="WorkerAgent_8cs_source.html">WorkerAgent.cs</a> の <a class="el" href="WorkerAgent_8cs_source.html#l00056">56</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a82e3c69827dc9c27ea6c50e656cf3eef">activeWorkers</a>.Add(worker);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
+</div><!-- fragment --><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1Working_1_1WorkerAgent_a75ae9aedff81481c03a6462a98bbc26f_icgraph.png" border="0" usemap="#aclassModule_1_1Working_1_1WorkerAgent_a75ae9aedff81481c03a6462a98bbc26f_icgraph" alt=""/></div>
+<map name="aclassModule_1_1Working_1_1WorkerAgent_a75ae9aedff81481c03a6462a98bbc26f_icgraph" id="aclassModule_1_1Working_1_1WorkerAgent_a75ae9aedff81481c03a6462a98bbc26f_icgraph">
+<area shape="rect" title="外部からのWorkerを追加します" alt="" coords="284,5,503,47"/>
+<area shape="rect" href="classGameMain_1_1Task_1_1IncreaseWorkerTask.html#ae864f3f5ff16dc9657414c8cdfa3d2f4" title=" " alt="" coords="5,5,236,47"/>
 </map>
 </div>
 
@@ -268,16 +320,16 @@ Module.Working.WorkerAgent 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="WorkerAgent_8cs_source.html">WorkerAgent.cs</a> の <a class="el" href="WorkerAgent_8cs_source.html#l00061">61</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            var obj = <a class="code" href="WorkerAgent_8cs.html#aef19bab18b9814edeef255c43e4f6bbc">Object</a>.Instantiate(<a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a9fb9630d0eaed512302d5822b4068ad6">workerPrefab</a>);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            obj.name = $<span class="stringliteral">&quot;Worker_{workerPool.CountAll}&quot;</span>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">if</span> (obj.TryGetComponent(out Worker worker)) <span class="keywordflow">return</span> worker;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            DebugEx.LogWarning($<span class="stringliteral">&quot;WorkerAgent: {obj.name}に{nameof(Worker)}コンポーネントがアタッチされていません&quot;</span>);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div>
+<p class="definition"> <a class="el" href="WorkerAgent_8cs_source.html">WorkerAgent.cs</a> の <a class="el" href="WorkerAgent_8cs_source.html#l00071">71</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            var obj = <a class="code" href="WorkerAgent_8cs.html#aef19bab18b9814edeef255c43e4f6bbc">Object</a>.Instantiate(<a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a9fb9630d0eaed512302d5822b4068ad6">workerPrefab</a>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            obj.name = $<span class="stringliteral">&quot;Worker_{workerPool.CountAll}&quot;</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">if</span> (obj.TryGetComponent(out Worker worker)) <span class="keywordflow">return</span> worker;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            DebugEx.LogWarning($<span class="stringliteral">&quot;WorkerAgent: {obj.name}に{nameof(Worker)}コンポーネントがアタッチされていません&quot;</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
 <div class="ttc" id="aWorkerAgent_8cs_html_aef19bab18b9814edeef255c43e4f6bbc"><div class="ttname"><a href="WorkerAgent_8cs.html#aef19bab18b9814edeef255c43e4f6bbc">Object</a></div><div class="ttdeci">UnityEngine.Object Object</div><div class="ttdef"><b>Definition:</b> <a href="WorkerAgent_8cs_source.html#l00008">WorkerAgent.cs:8</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 被呼び出し関係図:</div>
@@ -315,10 +367,10 @@ Module.Working.WorkerAgent 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="WorkerAgent_8cs_source.html">WorkerAgent.cs</a> の <a class="el" href="WorkerAgent_8cs_source.html#l00082">82</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            worker.Dispose();</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
+<p class="definition"> <a class="el" href="WorkerAgent_8cs_source.html">WorkerAgent.cs</a> の <a class="el" href="WorkerAgent_8cs_source.html#l00092">92</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            worker.Dispose();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        }</div>
 </div><!-- fragment --><div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -326,6 +378,7 @@ Module.Working.WorkerAgent 連携図</div>
 <map name="aclassModule_1_1Working_1_1WorkerAgent_a08418401284de714cc01fdbecca2479f_cgraph" id="aclassModule_1_1Working_1_1WorkerAgent_a08418401284de714cc01fdbecca2479f_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,224,47"/>
 <area shape="rect" href="classModule_1_1Working_1_1Worker.html#ad2455ba9875647171151f68bf0d8e352" title=" " alt="" coords="272,13,503,39"/>
+<area shape="rect" href="interfaceModule_1_1Working_1_1State_1_1IWorkerState.html#ace853b47119f47a812b7734c9ac1bcf5" title=" " alt="" coords="551,5,769,47"/>
 </map>
 </div>
 <div class="dynheader">
@@ -364,10 +417,10 @@ Module.Working.WorkerAgent 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="WorkerAgent_8cs_source.html">WorkerAgent.cs</a> の <a class="el" href="WorkerAgent_8cs_source.html#l00072">72</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            worker.Enable();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
+<p class="definition"> <a class="el" href="WorkerAgent_8cs_source.html">WorkerAgent.cs</a> の <a class="el" href="WorkerAgent_8cs_source.html#l00082">82</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            worker.Enable();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
 </div><!-- fragment --><div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -413,10 +466,10 @@ Module.Working.WorkerAgent 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="WorkerAgent_8cs_source.html">WorkerAgent.cs</a> の <a class="el" href="WorkerAgent_8cs_source.html#l00077">77</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            worker.Disable();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
+<p class="definition"> <a class="el" href="WorkerAgent_8cs_source.html">WorkerAgent.cs</a> の <a class="el" href="WorkerAgent_8cs_source.html#l00087">87</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            worker.Disable();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div>
 </div><!-- fragment --><div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -464,11 +517,11 @@ Module.Working.WorkerAgent 連携図</div>
 
 <p>Workerを指定数削除します </p>
 
-<p class="definition"> <a class="el" href="WorkerAgent_8cs_source.html">WorkerAgent.cs</a> の <a class="el" href="WorkerAgent_8cs_source.html#l00055">55</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#addc07a85047e94d4b56ebc43cce7687b">workerPool</a>.Release(worker);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a82e3c69827dc9c27ea6c50e656cf3eef">activeWorkers</a>.Remove(worker);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
+<p class="definition"> <a class="el" href="WorkerAgent_8cs_source.html">WorkerAgent.cs</a> の <a class="el" href="WorkerAgent_8cs_source.html#l00065">65</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#addc07a85047e94d4b56ebc43cce7687b">workerPool</a>.Release(worker);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <a class="code" href="classModule_1_1Working_1_1WorkerAgent.html#a82e3c69827dc9c27ea6c50e656cf3eef">activeWorkers</a>.Remove(worker);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -566,6 +619,31 @@ Module.Working.WorkerAgent 連携図</div>
 </div><div class="memdoc">
 
 <p class="definition"> <a class="el" href="WorkerAgent_8cs_source.html">WorkerAgent.cs</a> の <a class="el" href="WorkerAgent_8cs_source.html#l00017">17</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">プロパティ詳解</h2>
+<a id="aad173fb71f54c8d1417fa21f794ebc56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad173fb71f54c8d1417fa21f794ebc56">&#9670;&nbsp;</a></span>ActiveWorkers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ReadOnlySpan&lt;<a class="el" href="classModule_1_1Working_1_1Worker.html">Worker</a>&gt; Module.Working.WorkerAgent.ActiveWorkers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="WorkerAgent_8cs_source.html">WorkerAgent.cs</a> の <a class="el" href="WorkerAgent_8cs_source.html#l00022">22</a> 行目に定義があります。</p>
 
 </div>
 </div>

@@ -1,0 +1,536 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: UI.HUD.TaskProgressView クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceUI.html">UI</a></li><li class="navelem"><a class="el" href="namespaceUI_1_1HUD.html">HUD</a></li><li class="navelem"><a class="el" href="classUI_1_1HUD_1_1TaskProgressView.html">TaskProgressView</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#properties">プロパティ</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classUI_1_1HUD_1_1TaskProgressView-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">UI.HUD.TaskProgressView クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>タスクの進捗バーコンポーネント  
+ <a href="classUI_1_1HUD_1_1TaskProgressView.html#details">[詳解]</a></p>
+<div class="dynheader">
+UI.HUD.TaskProgressView の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classUI_1_1HUD_1_1TaskProgressView__inherit__graph.png" border="0" usemap="#aUI_8HUD_8TaskProgressView_inherit__map" alt="Inheritance graph"/></div>
+<map name="aUI_8HUD_8TaskProgressView_inherit__map" id="aUI_8HUD_8TaskProgressView_inherit__map">
+<area shape="rect" title="タスクの進捗バーコンポーネント" alt="" coords="5,131,196,355"/>
+<area shape="rect" title=" " alt="" coords="39,5,163,83"/>
+</map>
+</div>
+<div class="dynheader">
+UI.HUD.TaskProgressView 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classUI_1_1HUD_1_1TaskProgressView__coll__graph.png" border="0" usemap="#aUI_8HUD_8TaskProgressView_coll__map" alt="Collaboration graph"/></div>
+<map name="aUI_8HUD_8TaskProgressView_coll__map" id="aUI_8HUD_8TaskProgressView_coll__map">
+<area shape="rect" title="タスクの進捗バーコンポーネント" alt="" coords="33,145,224,355"/>
+<area shape="rect" title=" " alt="" coords="5,5,129,83"/>
+<area shape="rect" title=" " alt="" coords="153,5,227,83"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:ac1ba40563800520e7853a951bf4731af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1HUD_1_1TaskProgressView.html#ac1ba40563800520e7853a951bf4731af">SetTarget</a> (Transform <a class="el" href="classUI_1_1HUD_1_1TaskProgressView.html#adb726369d3e8c28ef64ed6c65e082afc">target</a>)</td></tr>
+<tr class="separator:ac1ba40563800520e7853a951bf4731af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a334c421a3368ab5ca21b8fba1dabc1fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1HUD_1_1TaskProgressView.html#a334c421a3368ab5ca21b8fba1dabc1fd">ManagedUpdate</a> ()</td></tr>
+<tr class="separator:a334c421a3368ab5ca21b8fba1dabc1fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae02d6eaaa2a84e5135f0b1abd996b3c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1HUD_1_1TaskProgressView.html#ae02d6eaaa2a84e5135f0b1abd996b3c7">SetProgress</a> (float value)</td></tr>
+<tr class="memdesc:ae02d6eaaa2a84e5135f0b1abd996b3c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">進捗をセットします(0 ~ 1)  <a href="classUI_1_1HUD_1_1TaskProgressView.html#ae02d6eaaa2a84e5135f0b1abd996b3c7">[詳解]</a><br /></td></tr>
+<tr class="separator:ae02d6eaaa2a84e5135f0b1abd996b3c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63f6c2186a0445773d7c43a705248dcf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1HUD_1_1TaskProgressView.html#a63f6c2186a0445773d7c43a705248dcf">Enable</a> ()</td></tr>
+<tr class="separator:a63f6c2186a0445773d7c43a705248dcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad63e2dc9c54cbd3f9f8dbcd6283bfe0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1HUD_1_1TaskProgressView.html#ad63e2dc9c54cbd3f9f8dbcd6283bfe0e">Disable</a> ()</td></tr>
+<tr class="separator:ad63e2dc9c54cbd3f9f8dbcd6283bfe0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+プロパティ</h2></td></tr>
+<tr class="memitem:a3e91430570c609316a0ecb92cc8f040f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1HUD_1_1TaskProgressView.html#a3e91430570c609316a0ecb92cc8f040f">IsEnabled</a><code> [get]</code></td></tr>
+<tr class="separator:a3e91430570c609316a0ecb92cc8f040f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a76c897ee8d829feeeaca43164bb054f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1HUD_1_1TaskProgressView.html#a76c897ee8d829feeeaca43164bb054f4">Awake</a> ()</td></tr>
+<tr class="separator:a76c897ee8d829feeeaca43164bb054f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:aafb0ce78b4d70e0a4286cb52f33084b6"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1HUD_1_1TaskProgressView.html#aafb0ce78b4d70e0a4286cb52f33084b6">offset</a></td></tr>
+<tr class="separator:aafb0ce78b4d70e0a4286cb52f33084b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e97980098969c7b27bd4bf998fd3874"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1HUD_1_1TaskProgressView.html#a0e97980098969c7b27bd4bf998fd3874">scaleOffset</a></td></tr>
+<tr class="separator:a0e97980098969c7b27bd4bf998fd3874"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6496bc288f95ae6830952b4754ea631b"><td class="memItemLeft" align="right" valign="top">Slider&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1HUD_1_1TaskProgressView.html#a6496bc288f95ae6830952b4754ea631b">slider</a></td></tr>
+<tr class="separator:a6496bc288f95ae6830952b4754ea631b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac241c5d3c3ca049c55f2dd1f87a14a0"><td class="memItemLeft" align="right" valign="top">Camera&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1HUD_1_1TaskProgressView.html#aac241c5d3c3ca049c55f2dd1f87a14a0">cam</a></td></tr>
+<tr class="separator:aac241c5d3c3ca049c55f2dd1f87a14a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb726369d3e8c28ef64ed6c65e082afc"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUI_1_1HUD_1_1TaskProgressView.html#adb726369d3e8c28ef64ed6c65e082afc">target</a></td></tr>
+<tr class="separator:adb726369d3e8c28ef64ed6c65e082afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>タスクの進捗バーコンポーネント </p>
+
+<p class="definition"> <a class="el" href="TaskProgressView_8cs_source.html">TaskProgressView.cs</a> の <a class="el" href="TaskProgressView_8cs_source.html#l00012">12</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="a76c897ee8d829feeeaca43164bb054f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76c897ee8d829feeeaca43164bb054f4">&#9670;&nbsp;</a></span>Awake()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UI.HUD.TaskProgressView.Awake </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="TaskProgressView_8cs_source.html">TaskProgressView.cs</a> の <a class="el" href="TaskProgressView_8cs_source.html#l00023">23</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="classUI_1_1HUD_1_1TaskProgressView.html#aac241c5d3c3ca049c55f2dd1f87a14a0">cam</a> = Camera.main;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
+<div class="ttc" id="aclassUI_1_1HUD_1_1TaskProgressView_html_aac241c5d3c3ca049c55f2dd1f87a14a0"><div class="ttname"><a href="classUI_1_1HUD_1_1TaskProgressView.html#aac241c5d3c3ca049c55f2dd1f87a14a0">UI.HUD.TaskProgressView.cam</a></div><div class="ttdeci">Camera cam</div><div class="ttdef"><b>Definition:</b> <a href="TaskProgressView_8cs_source.html#l00018">TaskProgressView.cs:18</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad63e2dc9c54cbd3f9f8dbcd6283bfe0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad63e2dc9c54cbd3f9f8dbcd6283bfe0e">&#9670;&nbsp;</a></span>Disable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UI.HUD.TaskProgressView.Disable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="TaskProgressView_8cs_source.html">TaskProgressView.cs</a> の <a class="el" href="TaskProgressView_8cs_source.html#l00060">60</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            gameObject.SetActive(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
+</div><!-- fragment --><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUI_1_1HUD_1_1TaskProgressView_ad63e2dc9c54cbd3f9f8dbcd6283bfe0e_icgraph.png" border="0" usemap="#aclassUI_1_1HUD_1_1TaskProgressView_ad63e2dc9c54cbd3f9f8dbcd6283bfe0e_icgraph" alt=""/></div>
+<map name="aclassUI_1_1HUD_1_1TaskProgressView_ad63e2dc9c54cbd3f9f8dbcd6283bfe0e_icgraph" id="aclassUI_1_1HUD_1_1TaskProgressView_ad63e2dc9c54cbd3f9f8dbcd6283bfe0e_icgraph">
+<area shape="rect" title=" " alt="" coords="844,5,1039,47"/>
+<area shape="rect" href="classUI_1_1HUD_1_1TaskProgressPool.html#ac59b0c0e54f11dc6d0b9d86a0cde5a93" title="進捗バーを返却します" alt="" coords="605,5,796,47"/>
+<area shape="rect" href="classGameMain_1_1UI_1_1ProgressBarSwitcher.html#a0fe3734d2632830eb0d6daad37fefd6e" title=" " alt="" coords="305,5,557,47"/>
+<area shape="rect" href="classGameMain_1_1UI_1_1ProgressBarSwitcher.html#a52d9128a8efd4c9248075bdf44ebd145" title=" " alt="" coords="5,5,257,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a63f6c2186a0445773d7c43a705248dcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63f6c2186a0445773d7c43a705248dcf">&#9670;&nbsp;</a></span>Enable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UI.HUD.TaskProgressView.Enable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="TaskProgressView_8cs_source.html">TaskProgressView.cs</a> の <a class="el" href="TaskProgressView_8cs_source.html#l00055">55</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            gameObject.SetActive(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
+</div><!-- fragment --><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUI_1_1HUD_1_1TaskProgressView_a63f6c2186a0445773d7c43a705248dcf_icgraph.png" border="0" usemap="#aclassUI_1_1HUD_1_1TaskProgressView_a63f6c2186a0445773d7c43a705248dcf_icgraph" alt=""/></div>
+<map name="aclassUI_1_1HUD_1_1TaskProgressView_a63f6c2186a0445773d7c43a705248dcf_icgraph" id="aclassUI_1_1HUD_1_1TaskProgressView_a63f6c2186a0445773d7c43a705248dcf_icgraph">
+<area shape="rect" title=" " alt="" coords="844,5,1039,47"/>
+<area shape="rect" href="classUI_1_1HUD_1_1TaskProgressPool.html#a1e19295e8af4a6fc97ed4548b6a6e76a" title="進捗バーを取得します" alt="" coords="605,5,796,47"/>
+<area shape="rect" href="classGameMain_1_1UI_1_1ProgressBarSwitcher.html#a69ef42efbd61ef9382ab2e6ddd593a74" title=" " alt="" coords="305,5,557,47"/>
+<area shape="rect" href="classGameMain_1_1UI_1_1ProgressBarSwitcher.html#a52d9128a8efd4c9248075bdf44ebd145" title=" " alt="" coords="5,5,257,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a334c421a3368ab5ca21b8fba1dabc1fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a334c421a3368ab5ca21b8fba1dabc1fd">&#9670;&nbsp;</a></span>ManagedUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UI.HUD.TaskProgressView.ManagedUpdate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="TaskProgressView_8cs_source.html">TaskProgressView.cs</a> の <a class="el" href="TaskProgressView_8cs_source.html#l00033">33</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            var targetPos = <a class="code" href="classUI_1_1HUD_1_1TaskProgressView.html#adb726369d3e8c28ef64ed6c65e082afc">target</a>.position;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            var camPos = <a class="code" href="classUI_1_1HUD_1_1TaskProgressView.html#aac241c5d3c3ca049c55f2dd1f87a14a0">cam</a>.transform.position;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordtype">float</span> xSign = Mathf.Sign(targetPos.x - camPos.x);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            Vector3 screenPoint = <a class="code" href="classUI_1_1HUD_1_1TaskProgressView.html#aac241c5d3c3ca049c55f2dd1f87a14a0">cam</a>.WorldToScreenPoint(targetPos + <span class="keyword">new</span> Vector3(xSign * <a class="code" href="classUI_1_1HUD_1_1TaskProgressView.html#aafb0ce78b4d70e0a4286cb52f33084b6">offset</a>.x, <a class="code" href="classUI_1_1HUD_1_1TaskProgressView.html#aafb0ce78b4d70e0a4286cb52f33084b6">offset</a>.y, <a class="code" href="classUI_1_1HUD_1_1TaskProgressView.html#aafb0ce78b4d70e0a4286cb52f33084b6">offset</a>.z));</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            transform.position = screenPoint;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordtype">float</span> distance = Vector3.Distance(targetPos, camPos);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            transform.localScale = (Vector3.one / distance) * <a class="code" href="classUI_1_1HUD_1_1TaskProgressView.html#a0e97980098969c7b27bd4bf998fd3874">scaleOffset</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
+<div class="ttc" id="aclassUI_1_1HUD_1_1TaskProgressView_html_a0e97980098969c7b27bd4bf998fd3874"><div class="ttname"><a href="classUI_1_1HUD_1_1TaskProgressView.html#a0e97980098969c7b27bd4bf998fd3874">UI.HUD.TaskProgressView.scaleOffset</a></div><div class="ttdeci">float scaleOffset</div><div class="ttdef"><b>Definition:</b> <a href="TaskProgressView_8cs_source.html#l00015">TaskProgressView.cs:15</a></div></div>
+<div class="ttc" id="aclassUI_1_1HUD_1_1TaskProgressView_html_aafb0ce78b4d70e0a4286cb52f33084b6"><div class="ttname"><a href="classUI_1_1HUD_1_1TaskProgressView.html#aafb0ce78b4d70e0a4286cb52f33084b6">UI.HUD.TaskProgressView.offset</a></div><div class="ttdeci">Vector3 offset</div><div class="ttdef"><b>Definition:</b> <a href="TaskProgressView_8cs_source.html#l00014">TaskProgressView.cs:14</a></div></div>
+<div class="ttc" id="aclassUI_1_1HUD_1_1TaskProgressView_html_adb726369d3e8c28ef64ed6c65e082afc"><div class="ttname"><a href="classUI_1_1HUD_1_1TaskProgressView.html#adb726369d3e8c28ef64ed6c65e082afc">UI.HUD.TaskProgressView.target</a></div><div class="ttdeci">Transform target</div><div class="ttdef"><b>Definition:</b> <a href="TaskProgressView_8cs_source.html#l00019">TaskProgressView.cs:19</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae02d6eaaa2a84e5135f0b1abd996b3c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae02d6eaaa2a84e5135f0b1abd996b3c7">&#9670;&nbsp;</a></span>SetProgress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UI.HUD.TaskProgressView.SetProgress </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>進捗をセットします(0 ~ 1) </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>進捗</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="TaskProgressView_8cs_source.html">TaskProgressView.cs</a> の <a class="el" href="TaskProgressView_8cs_source.html#l00050">50</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="classUI_1_1HUD_1_1TaskProgressView.html#a6496bc288f95ae6830952b4754ea631b">slider</a>.value = value;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
+<div class="ttc" id="aclassUI_1_1HUD_1_1TaskProgressView_html_a6496bc288f95ae6830952b4754ea631b"><div class="ttname"><a href="classUI_1_1HUD_1_1TaskProgressView.html#a6496bc288f95ae6830952b4754ea631b">UI.HUD.TaskProgressView.slider</a></div><div class="ttdeci">Slider slider</div><div class="ttdef"><b>Definition:</b> <a href="TaskProgressView_8cs_source.html#l00016">TaskProgressView.cs:16</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac1ba40563800520e7853a951bf4731af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1ba40563800520e7853a951bf4731af">&#9670;&nbsp;</a></span>SetTarget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UI.HUD.TaskProgressView.SetTarget </td>
+          <td>(</td>
+          <td class="paramtype">Transform&#160;</td>
+          <td class="paramname"><em>target</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="TaskProgressView_8cs_source.html">TaskProgressView.cs</a> の <a class="el" href="TaskProgressView_8cs_source.html#l00028">28</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            this.<a class="code" href="classUI_1_1HUD_1_1TaskProgressView.html#adb726369d3e8c28ef64ed6c65e082afc">target</a> = <a class="code" href="classUI_1_1HUD_1_1TaskProgressView.html#adb726369d3e8c28ef64ed6c65e082afc">target</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
+</div><!-- fragment --><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUI_1_1HUD_1_1TaskProgressView_ac1ba40563800520e7853a951bf4731af_icgraph.png" border="0" usemap="#aclassUI_1_1HUD_1_1TaskProgressView_ac1ba40563800520e7853a951bf4731af_icgraph" alt=""/></div>
+<map name="aclassUI_1_1HUD_1_1TaskProgressView_ac1ba40563800520e7853a951bf4731af_icgraph" id="aclassUI_1_1HUD_1_1TaskProgressView_ac1ba40563800520e7853a951bf4731af_icgraph">
+<area shape="rect" title=" " alt="" coords="844,39,1039,80"/>
+<area shape="rect" href="classUI_1_1HUD_1_1TaskProgressPool.html#a1e19295e8af4a6fc97ed4548b6a6e76a" title="進捗バーを取得します" alt="" coords="605,5,796,47"/>
+<area shape="rect" href="classUI_1_1HUD_1_1TaskProgressPool.html#ac59b0c0e54f11dc6d0b9d86a0cde5a93" title="進捗バーを返却します" alt="" coords="605,71,796,112"/>
+<area shape="rect" href="classGameMain_1_1UI_1_1ProgressBarSwitcher.html#a69ef42efbd61ef9382ab2e6ddd593a74" title=" " alt="" coords="305,5,557,47"/>
+<area shape="rect" href="classGameMain_1_1UI_1_1ProgressBarSwitcher.html#a52d9128a8efd4c9248075bdf44ebd145" title=" " alt="" coords="5,39,257,80"/>
+<area shape="rect" href="classGameMain_1_1UI_1_1ProgressBarSwitcher.html#a0fe3734d2632830eb0d6daad37fefd6e" title=" " alt="" coords="305,71,557,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="aac241c5d3c3ca049c55f2dd1f87a14a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac241c5d3c3ca049c55f2dd1f87a14a0">&#9670;&nbsp;</a></span>cam</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Camera UI.HUD.TaskProgressView.cam</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="TaskProgressView_8cs_source.html">TaskProgressView.cs</a> の <a class="el" href="TaskProgressView_8cs_source.html#l00018">18</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aafb0ce78b4d70e0a4286cb52f33084b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafb0ce78b4d70e0a4286cb52f33084b6">&#9670;&nbsp;</a></span>offset</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector3 UI.HUD.TaskProgressView.offset</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="TaskProgressView_8cs_source.html">TaskProgressView.cs</a> の <a class="el" href="TaskProgressView_8cs_source.html#l00014">14</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0e97980098969c7b27bd4bf998fd3874"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e97980098969c7b27bd4bf998fd3874">&#9670;&nbsp;</a></span>scaleOffset</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UI.HUD.TaskProgressView.scaleOffset</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="TaskProgressView_8cs_source.html">TaskProgressView.cs</a> の <a class="el" href="TaskProgressView_8cs_source.html#l00015">15</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6496bc288f95ae6830952b4754ea631b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6496bc288f95ae6830952b4754ea631b">&#9670;&nbsp;</a></span>slider</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Slider UI.HUD.TaskProgressView.slider</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="TaskProgressView_8cs_source.html">TaskProgressView.cs</a> の <a class="el" href="TaskProgressView_8cs_source.html#l00016">16</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="adb726369d3e8c28ef64ed6c65e082afc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb726369d3e8c28ef64ed6c65e082afc">&#9670;&nbsp;</a></span>target</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Transform UI.HUD.TaskProgressView.target</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="TaskProgressView_8cs_source.html">TaskProgressView.cs</a> の <a class="el" href="TaskProgressView_8cs_source.html#l00019">19</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">プロパティ詳解</h2>
+<a id="a3e91430570c609316a0ecb92cc8f040f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e91430570c609316a0ecb92cc8f040f">&#9670;&nbsp;</a></span>IsEnabled</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UI.HUD.TaskProgressView.IsEnabled</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="TaskProgressView_8cs_source.html">TaskProgressView.cs</a> の <a class="el" href="TaskProgressView_8cs_source.html#l00021">21</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>src/Assets/Scripts/UI/HUD/<a class="el" href="TaskProgressView_8cs_source.html">TaskProgressView.cs</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

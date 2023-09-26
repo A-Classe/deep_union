@@ -1,0 +1,427 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: Module.Assignment.System.WorkerReleaser クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceModule.html">Module</a></li><li class="navelem"><a class="el" href="namespaceModule_1_1Assignment.html">Assignment</a></li><li class="navelem"><a class="el" href="namespaceModule_1_1Assignment_1_1System.html">System</a></li><li class="navelem"><a class="el" href="classModule_1_1Assignment_1_1System_1_1WorkerReleaser.html">WorkerReleaser</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classModule_1_1Assignment_1_1System_1_1WorkerReleaser-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">Module.Assignment.System.WorkerReleaser クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Module.Assignment.System.WorkerReleaser 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1Assignment_1_1System_1_1WorkerReleaser__coll__graph.png" border="0" usemap="#aModule_8Assignment_8System_8WorkerReleaser_coll__map" alt="Collaboration graph"/></div>
+<map name="aModule_8Assignment_8System_8WorkerReleaser_coll__map" id="aModule_8Assignment_8System_8WorkerReleaser_coll__map">
+<area shape="rect" title=" " alt="" coords="658,1255,866,1391"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html" title="リーダーのアサイン機能を拡張するクラス" alt="" coords="458,1012,693,1192"/>
+<area shape="rect" title=" " alt="" coords="407,35,531,112"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html" title="アサイン範囲を設定するクラス" alt="" coords="195,549,430,935"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html" title="楕円判定をビジュアライズするクラス" alt="" coords="274,285,509,421"/>
+<area shape="rect" href="classModule_1_1Working_1_1Worker.html" title="ワーカーの状態を管理するクラス" alt="" coords="837,219,1013,487"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1GameParam.html" title=" " alt="" coords="454,637,697,847"/>
+<area shape="rect" title=" " alt="" coords="584,314,713,391"/>
+<area shape="rect" href="classCore_1_1Input_1_1InputEvent.html" title="InputActionのラッパークラス" alt="" coords="721,667,912,817"/>
+<area shape="rect" href="structModule_1_1Assignment_1_1Utility_1_1EllipseData.html" title=" " alt="" coords="53,299,250,406"/>
+<area shape="rect" href="interfaceModule_1_1Working_1_1State_1_1IWorkerState.html" title=" " alt="" coords="815,5,1034,141"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:af4c1fd56609059fe6401f5e6ec807431"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Assignment_1_1System_1_1WorkerReleaser.html#af4c1fd56609059fe6401f5e6ec807431">WorkerReleaser</a> (<a class="el" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html">LeaderAssignableArea</a> <a class="el" href="classModule_1_1Assignment_1_1System_1_1WorkerReleaser.html#a9838bdadf6d3e3c3e4eb396053c39c99">leaderAssignableArea</a>)</td></tr>
+<tr class="separator:af4c1fd56609059fe6401f5e6ec807431"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab964a9f77efaedcea4bb291f4fae9629"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Assignment_1_1System_1_1WorkerReleaser.html#ab964a9f77efaedcea4bb291f4fae9629">SetActiveAreas</a> (IReadOnlyList&lt; <a class="el" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html">AssignableArea</a> &gt; <a class="el" href="classModule_1_1Assignment_1_1System_1_1WorkerReleaser.html#a6c5db0458da4169de2d308edc8d4f1e2">activeAreas</a>)</td></tr>
+<tr class="separator:ab964a9f77efaedcea4bb291f4fae9629"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ff955b81621a7f6cdcd7b97110e6618"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Assignment_1_1System_1_1WorkerReleaser.html#a3ff955b81621a7f6cdcd7b97110e6618">Update</a> ()</td></tr>
+<tr class="separator:a3ff955b81621a7f6cdcd7b97110e6618"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bf2e17c3b1768b1cfcf4bf21457295d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Assignment_1_1System_1_1WorkerReleaser.html#a6bf2e17c3b1768b1cfcf4bf21457295d">ReleaseAllWorkers</a> (<a class="el" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html">AssignableArea</a> assignableArea)</td></tr>
+<tr class="separator:a6bf2e17c3b1768b1cfcf4bf21457295d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a9838bdadf6d3e3c3e4eb396053c39c99"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html">LeaderAssignableArea</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Assignment_1_1System_1_1WorkerReleaser.html#a9838bdadf6d3e3c3e4eb396053c39c99">leaderAssignableArea</a></td></tr>
+<tr class="separator:a9838bdadf6d3e3c3e4eb396053c39c99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4caf3f06d0f6a817e371d83f3ae6becb"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="classModule_1_1Working_1_1Worker.html">Worker</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Assignment_1_1System_1_1WorkerReleaser.html#a4caf3f06d0f6a817e371d83f3ae6becb">releaseWorkerCache</a></td></tr>
+<tr class="separator:a4caf3f06d0f6a817e371d83f3ae6becb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c5db0458da4169de2d308edc8d4f1e2"><td class="memItemLeft" align="right" valign="top">IReadOnlyList&lt; <a class="el" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html">AssignableArea</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Assignment_1_1System_1_1WorkerReleaser.html#a6c5db0458da4169de2d308edc8d4f1e2">activeAreas</a></td></tr>
+<tr class="separator:a6c5db0458da4169de2d308edc8d4f1e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="WorkerReleaser_8cs_source.html">WorkerReleaser.cs</a> の <a class="el" href="WorkerReleaser_8cs_source.html#l00010">10</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="af4c1fd56609059fe6401f5e6ec807431"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4c1fd56609059fe6401f5e6ec807431">&#9670;&nbsp;</a></span>WorkerReleaser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Module.Assignment.System.WorkerReleaser.WorkerReleaser </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html">LeaderAssignableArea</a>&#160;</td>
+          <td class="paramname"><em>leaderAssignableArea</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="WorkerReleaser_8cs_source.html">WorkerReleaser.cs</a> の <a class="el" href="WorkerReleaser_8cs_source.html#l00018">18</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            this.leaderAssignableArea = <a class="code" href="classModule_1_1Assignment_1_1System_1_1WorkerReleaser.html#a9838bdadf6d3e3c3e4eb396053c39c99">leaderAssignableArea</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <a class="code" href="classModule_1_1Assignment_1_1System_1_1WorkerReleaser.html#a4caf3f06d0f6a817e371d83f3ae6becb">releaseWorkerCache</a> = <span class="keyword">new</span> <a class="code" href="classModule_1_1Working_1_1Worker.html">Worker</a>[64];</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1System_1_1WorkerReleaser_html_a4caf3f06d0f6a817e371d83f3ae6becb"><div class="ttname"><a href="classModule_1_1Assignment_1_1System_1_1WorkerReleaser.html#a4caf3f06d0f6a817e371d83f3ae6becb">Module.Assignment.System.WorkerReleaser.releaseWorkerCache</a></div><div class="ttdeci">readonly Worker[] releaseWorkerCache</div><div class="ttdef"><b>Definition:</b> <a href="WorkerReleaser_8cs_source.html#l00013">WorkerReleaser.cs:13</a></div></div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1System_1_1WorkerReleaser_html_a9838bdadf6d3e3c3e4eb396053c39c99"><div class="ttname"><a href="classModule_1_1Assignment_1_1System_1_1WorkerReleaser.html#a9838bdadf6d3e3c3e4eb396053c39c99">Module.Assignment.System.WorkerReleaser.leaderAssignableArea</a></div><div class="ttdeci">readonly LeaderAssignableArea leaderAssignableArea</div><div class="ttdef"><b>Definition:</b> <a href="WorkerReleaser_8cs_source.html#l00012">WorkerReleaser.cs:12</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Worker_html"><div class="ttname"><a href="classModule_1_1Working_1_1Worker.html">Module.Working.Worker</a></div><div class="ttdoc">ワーカーの状態を管理するクラス</div><div class="ttdef"><b>Definition:</b> <a href="Worker_8cs_source.html#l00014">Worker.cs:15</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a6bf2e17c3b1768b1cfcf4bf21457295d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bf2e17c3b1768b1cfcf4bf21457295d">&#9670;&nbsp;</a></span>ReleaseAllWorkers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.Assignment.System.WorkerReleaser.ReleaseAllWorkers </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html">AssignableArea</a>&#160;</td>
+          <td class="paramname"><em>assignableArea</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="WorkerReleaser_8cs_source.html">WorkerReleaser.cs</a> の <a class="el" href="WorkerReleaser_8cs_source.html#l00062">62</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <a class="code" href="classModule_1_1Working_1_1Worker.html">Worker</a>[] workers = assignableArea.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#adb07bde83b46876ff5afdb845dfb773f">AssignedWorkers</a>.ToArray();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">foreach</span> (<a class="code" href="classModule_1_1Working_1_1Worker.html">Worker</a> worker <span class="keywordflow">in</span> workers)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                assignableArea.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a48d269fea2f7eb30d37afa6a1824a4df">RemoveWorker</a>(worker);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <a class="code" href="classModule_1_1Assignment_1_1System_1_1WorkerReleaser.html#a9838bdadf6d3e3c3e4eb396053c39c99">leaderAssignableArea</a>.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html#aca57c50818acabe7282173c69a79f5e6">AssignableArea</a>.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a80e77697fbf11b427fa7ee0e11a68e12">AddWorker</a>(worker);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1AssignableArea_html_a48d269fea2f7eb30d37afa6a1824a4df"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a48d269fea2f7eb30d37afa6a1824a4df">Module.Assignment.Component.AssignableArea.RemoveWorker</a></div><div class="ttdeci">void RemoveWorker(Worker worker)</div><div class="ttdef"><b>Definition:</b> <a href="AssignableArea_8cs_source.html#l00131">AssignableArea.cs:131</a></div></div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1AssignableArea_html_a80e77697fbf11b427fa7ee0e11a68e12"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a80e77697fbf11b427fa7ee0e11a68e12">Module.Assignment.Component.AssignableArea.AddWorker</a></div><div class="ttdeci">void AddWorker(Worker worker)</div><div class="ttdef"><b>Definition:</b> <a href="AssignableArea_8cs_source.html#l00119">AssignableArea.cs:119</a></div></div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1AssignableArea_html_adb07bde83b46876ff5afdb845dfb773f"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#adb07bde83b46876ff5afdb845dfb773f">Module.Assignment.Component.AssignableArea.AssignedWorkers</a></div><div class="ttdeci">IReadOnlyList&lt; Worker &gt; AssignedWorkers</div><div class="ttdef"><b>Definition:</b> <a href="AssignableArea_8cs_source.html#l00035">AssignableArea.cs:35</a></div></div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea_html_aca57c50818acabe7282173c69a79f5e6"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html#aca57c50818acabe7282173c69a79f5e6">Module.Assignment.Component.LeaderAssignableArea.AssignableArea</a></div><div class="ttdeci">AssignableArea AssignableArea</div><div class="ttdef"><b>Definition:</b> <a href="LeaderAssignableArea_8cs_source.html#l00023">LeaderAssignableArea.cs:23</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1Assignment_1_1System_1_1WorkerReleaser_a6bf2e17c3b1768b1cfcf4bf21457295d_cgraph.png" border="0" usemap="#aclassModule_1_1Assignment_1_1System_1_1WorkerReleaser_a6bf2e17c3b1768b1cfcf4bf21457295d_cgraph" alt=""/></div>
+<map name="aclassModule_1_1Assignment_1_1System_1_1WorkerReleaser_a6bf2e17c3b1768b1cfcf4bf21457295d_cgraph" id="aclassModule_1_1Assignment_1_1System_1_1WorkerReleaser_a6bf2e17c3b1768b1cfcf4bf21457295d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,253,80"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a80e77697fbf11b427fa7ee0e11a68e12" title=" " alt="" coords="301,39,536,80"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#aff5099ab272b3aba5a0da4fa8c512c9c" title=" " alt="" coords="584,5,861,47"/>
+<area shape="rect" href="classModule_1_1Working_1_1Worker.html#af70118007fec13a8ae6ae3687eedc85d" title=" " alt="" coords="623,71,823,112"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1Assignment_1_1System_1_1WorkerReleaser_a6bf2e17c3b1768b1cfcf4bf21457295d_icgraph.png" border="0" usemap="#aclassModule_1_1Assignment_1_1System_1_1WorkerReleaser_a6bf2e17c3b1768b1cfcf4bf21457295d_icgraph" alt=""/></div>
+<map name="aclassModule_1_1Assignment_1_1System_1_1WorkerReleaser_a6bf2e17c3b1768b1cfcf4bf21457295d_icgraph" id="aclassModule_1_1Assignment_1_1System_1_1WorkerReleaser_a6bf2e17c3b1768b1cfcf4bf21457295d_icgraph">
+<area shape="rect" title=" " alt="" coords="949,5,1197,47"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1System_1_1AssignmentSystem.html#ac0fb4154aaae396ae6c4c31932d8aeed" title=" " alt="" coords="631,5,901,47"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1System_1_1AssignmentSystem.html#ae2b0f4c4bd4665808fae2c0536e0f593" title=" " alt="" coords="332,5,583,47"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1System_1_1AssignmentSystem.html#a29f203f723e321884de8e1fe870c41c9" title=" " alt="" coords="5,5,284,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab964a9f77efaedcea4bb291f4fae9629"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab964a9f77efaedcea4bb291f4fae9629">&#9670;&nbsp;</a></span>SetActiveAreas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.Assignment.System.WorkerReleaser.SetActiveAreas </td>
+          <td>(</td>
+          <td class="paramtype">IReadOnlyList&lt; <a class="el" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html">AssignableArea</a> &gt;&#160;</td>
+          <td class="paramname"><em>activeAreas</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="WorkerReleaser_8cs_source.html">WorkerReleaser.cs</a> の <a class="el" href="WorkerReleaser_8cs_source.html#l00025">25</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            this.<a class="code" href="classModule_1_1Assignment_1_1System_1_1WorkerReleaser.html#a6c5db0458da4169de2d308edc8d4f1e2">activeAreas</a> = <a class="code" href="classModule_1_1Assignment_1_1System_1_1WorkerReleaser.html#a6c5db0458da4169de2d308edc8d4f1e2">activeAreas</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1System_1_1WorkerReleaser_html_a6c5db0458da4169de2d308edc8d4f1e2"><div class="ttname"><a href="classModule_1_1Assignment_1_1System_1_1WorkerReleaser.html#a6c5db0458da4169de2d308edc8d4f1e2">Module.Assignment.System.WorkerReleaser.activeAreas</a></div><div class="ttdeci">IReadOnlyList&lt; AssignableArea &gt; activeAreas</div><div class="ttdef"><b>Definition:</b> <a href="WorkerReleaser_8cs_source.html#l00015">WorkerReleaser.cs:15</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1Assignment_1_1System_1_1WorkerReleaser_ab964a9f77efaedcea4bb291f4fae9629_icgraph.png" border="0" usemap="#aclassModule_1_1Assignment_1_1System_1_1WorkerReleaser_ab964a9f77efaedcea4bb291f4fae9629_icgraph" alt=""/></div>
+<map name="aclassModule_1_1Assignment_1_1System_1_1WorkerReleaser_ab964a9f77efaedcea4bb291f4fae9629_icgraph" id="aclassModule_1_1Assignment_1_1System_1_1WorkerReleaser_ab964a9f77efaedcea4bb291f4fae9629_icgraph">
+<area shape="rect" title=" " alt="" coords="631,5,857,47"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1System_1_1AssignmentSystem.html#ae2b0f4c4bd4665808fae2c0536e0f593" title=" " alt="" coords="332,5,583,47"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1System_1_1AssignmentSystem.html#a29f203f723e321884de8e1fe870c41c9" title=" " alt="" coords="5,5,284,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3ff955b81621a7f6cdcd7b97110e6618"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ff955b81621a7f6cdcd7b97110e6618">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.Assignment.System.WorkerReleaser.Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="WorkerReleaser_8cs_source.html">WorkerReleaser.cs</a> の <a class="el" href="WorkerReleaser_8cs_source.html#l00030">30</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <a class="code" href="structModule_1_1Assignment_1_1Utility_1_1EllipseData.html">EllipseData</a> leaderEllipse = <a class="code" href="classModule_1_1Assignment_1_1System_1_1WorkerReleaser.html#a9838bdadf6d3e3c3e4eb396053c39c99">leaderAssignableArea</a>.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html#aca57c50818acabe7282173c69a79f5e6">AssignableArea</a>.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a3b17d95ce9fa15c5f422cd0a68e5ca59">EllipseData</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html">AssignableArea</a> leaderArea = <a class="code" href="classModule_1_1Assignment_1_1System_1_1WorkerReleaser.html#a9838bdadf6d3e3c3e4eb396053c39c99">leaderAssignableArea</a>.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html#aca57c50818acabe7282173c69a79f5e6">AssignableArea</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordflow">foreach</span> (<a class="code" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html">AssignableArea</a> activeArea <span class="keywordflow">in</span> <a class="code" href="classModule_1_1Assignment_1_1System_1_1WorkerReleaser.html#a6c5db0458da4169de2d308edc8d4f1e2">activeAreas</a>)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <span class="comment">//範囲同士の円形判定を行い、計算が必要な範囲を絞る</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="classModule_1_1Assignment_1_1Utility_1_1CollisionUtil.html">CollisionUtil</a>.<a class="code" href="classModule_1_1Assignment_1_1Utility_1_1CollisionUtil.html#adc1a2e1c043b61260fefb563335f23ab">IsCollideCircle</a>(leaderEllipse, activeArea.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a3b17d95ce9fa15c5f422cd0a68e5ca59">EllipseData</a>))</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordtype">int</span> cacheCount = 0;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">foreach</span> (<a class="code" href="classModule_1_1Working_1_1Worker.html">Worker</a> worker <span class="keywordflow">in</span> activeArea.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#adb07bde83b46876ff5afdb845dfb773f">AssignedWorkers</a>)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Assignment_1_1Utility_1_1CollisionUtil.html">CollisionUtil</a>.<a class="code" href="classModule_1_1Assignment_1_1Utility_1_1CollisionUtil.html#a6a80f64e7910b98310c18f817a0c4320">InEllipse</a>(worker.transform.position, leaderArea.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a3b17d95ce9fa15c5f422cd0a68e5ca59">EllipseData</a>))</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                    {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                        <span class="comment">//イテレート中はコレクション変更できないので一旦キャッシュ</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        <a class="code" href="classModule_1_1Assignment_1_1System_1_1WorkerReleaser.html#a4caf3f06d0f6a817e371d83f3ae6becb">releaseWorkerCache</a>[cacheCount] = worker;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                        cacheCount++;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; cacheCount; i++)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                    <a class="code" href="classModule_1_1Working_1_1Worker.html">Worker</a> worker = <a class="code" href="classModule_1_1Assignment_1_1System_1_1WorkerReleaser.html#a4caf3f06d0f6a817e371d83f3ae6becb">releaseWorkerCache</a>[i];</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                    activeArea.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a48d269fea2f7eb30d37afa6a1824a4df">RemoveWorker</a>(worker);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                    leaderArea.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a80e77697fbf11b427fa7ee0e11a68e12">AddWorker</a>(worker);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1AssignableArea_html"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html">Module.Assignment.Component.AssignableArea</a></div><div class="ttdoc">アサイン範囲を設定するクラス</div><div class="ttdef"><b>Definition:</b> <a href="AssignableArea_8cs_source.html#l00017">AssignableArea.cs:18</a></div></div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1AssignableArea_html_a3b17d95ce9fa15c5f422cd0a68e5ca59"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a3b17d95ce9fa15c5f422cd0a68e5ca59">Module.Assignment.Component.AssignableArea.EllipseData</a></div><div class="ttdeci">EllipseData EllipseData</div><div class="ttdef"><b>Definition:</b> <a href="AssignableArea_8cs_source.html#l00032">AssignableArea.cs:32</a></div></div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1Utility_1_1CollisionUtil_html"><div class="ttname"><a href="classModule_1_1Assignment_1_1Utility_1_1CollisionUtil.html">Module.Assignment.Utility.CollisionUtil</a></div><div class="ttdef"><b>Definition:</b> <a href="CollisionUtil_8cs_source.html#l00008">CollisionUtil.cs:9</a></div></div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1Utility_1_1CollisionUtil_html_a6a80f64e7910b98310c18f817a0c4320"><div class="ttname"><a href="classModule_1_1Assignment_1_1Utility_1_1CollisionUtil.html#a6a80f64e7910b98310c18f817a0c4320">Module.Assignment.Utility.CollisionUtil.InEllipse</a></div><div class="ttdeci">static bool InEllipse(in float3 pos, in EllipseData ellipseData)</div><div class="ttdef"><b>Definition:</b> <a href="CollisionUtil_8cs_source.html#l00022">CollisionUtil.cs:22</a></div></div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1Utility_1_1CollisionUtil_html_adc1a2e1c043b61260fefb563335f23ab"><div class="ttname"><a href="classModule_1_1Assignment_1_1Utility_1_1CollisionUtil.html#adc1a2e1c043b61260fefb563335f23ab">Module.Assignment.Utility.CollisionUtil.IsCollideCircle</a></div><div class="ttdeci">static bool IsCollideCircle(in EllipseData ellipseA, in EllipseData ellipseB)</div><div class="ttdef"><b>Definition:</b> <a href="CollisionUtil_8cs_source.html#l00011">CollisionUtil.cs:11</a></div></div>
+<div class="ttc" id="astructModule_1_1Assignment_1_1Utility_1_1EllipseData_html"><div class="ttname"><a href="structModule_1_1Assignment_1_1Utility_1_1EllipseData.html">Module.Assignment.Utility.EllipseData</a></div><div class="ttdef"><b>Definition:</b> <a href="EllipseData_8cs_source.html#l00009">EllipseData.cs:10</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1Assignment_1_1System_1_1WorkerReleaser_a3ff955b81621a7f6cdcd7b97110e6618_cgraph.png" border="0" usemap="#aclassModule_1_1Assignment_1_1System_1_1WorkerReleaser_a3ff955b81621a7f6cdcd7b97110e6618_cgraph" alt=""/></div>
+<map name="aclassModule_1_1Assignment_1_1System_1_1WorkerReleaser_a3ff955b81621a7f6cdcd7b97110e6618_cgraph" id="aclassModule_1_1Assignment_1_1System_1_1WorkerReleaser_a3ff955b81621a7f6cdcd7b97110e6618_cgraph">
+<area shape="rect" title=" " alt="" coords="5,71,213,112"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Utility_1_1CollisionUtil.html#a6a80f64e7910b98310c18f817a0c4320" title=" " alt="" coords="280,5,477,47"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Utility_1_1CollisionUtil.html#adc1a2e1c043b61260fefb563335f23ab" title=" " alt="" coords="279,71,478,112"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a48d269fea2f7eb30d37afa6a1824a4df" title=" " alt="" coords="261,136,496,177"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#ac32c145752850f570458ed176caa1ace" title=" " alt="" coords="544,136,799,177"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1Assignment_1_1System_1_1WorkerReleaser_a3ff955b81621a7f6cdcd7b97110e6618_icgraph.png" border="0" usemap="#aclassModule_1_1Assignment_1_1System_1_1WorkerReleaser_a3ff955b81621a7f6cdcd7b97110e6618_icgraph" alt=""/></div>
+<map name="aclassModule_1_1Assignment_1_1System_1_1WorkerReleaser_a3ff955b81621a7f6cdcd7b97110e6618_icgraph" id="aclassModule_1_1Assignment_1_1System_1_1WorkerReleaser_a3ff955b81621a7f6cdcd7b97110e6618_icgraph">
+<area shape="rect" title=" " alt="" coords="261,5,469,47"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1System_1_1AssignmentSystem.html#a25adb90fa77b84ed7c3c9f1fae96c289" title=" " alt="" coords="5,5,213,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a6c5db0458da4169de2d308edc8d4f1e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c5db0458da4169de2d308edc8d4f1e2">&#9670;&nbsp;</a></span>activeAreas</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IReadOnlyList&lt;<a class="el" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html">AssignableArea</a>&gt; Module.Assignment.System.WorkerReleaser.activeAreas</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="WorkerReleaser_8cs_source.html">WorkerReleaser.cs</a> の <a class="el" href="WorkerReleaser_8cs_source.html#l00015">15</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9838bdadf6d3e3c3e4eb396053c39c99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9838bdadf6d3e3c3e4eb396053c39c99">&#9670;&nbsp;</a></span>leaderAssignableArea</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly <a class="el" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html">LeaderAssignableArea</a> Module.Assignment.System.WorkerReleaser.leaderAssignableArea</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="WorkerReleaser_8cs_source.html">WorkerReleaser.cs</a> の <a class="el" href="WorkerReleaser_8cs_source.html#l00012">12</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4caf3f06d0f6a817e371d83f3ae6becb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4caf3f06d0f6a817e371d83f3ae6becb">&#9670;&nbsp;</a></span>releaseWorkerCache</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly <a class="el" href="classModule_1_1Working_1_1Worker.html">Worker</a> [] Module.Assignment.System.WorkerReleaser.releaseWorkerCache</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="WorkerReleaser_8cs_source.html">WorkerReleaser.cs</a> の <a class="el" href="WorkerReleaser_8cs_source.html#l00013">13</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>src/Assets/Scripts/Module/Assignment/System/<a class="el" href="WorkerReleaser_8cs_source.html">WorkerReleaser.cs</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

@@ -69,6 +69,7 @@ $(function() {
 <a href="#pub-methods">公開メンバ関数</a> &#124;
 <a href="#properties">プロパティ</a> &#124;
 <a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="#pri-static-attribs">静的非公開変数類</a> &#124;
 <a href="classModule_1_1Working_1_1State_1_1IdleState-members.html">全メンバ一覧</a>  </div>
   <div class="headertitle">
 <div class="title">Module.Working.State.IdleState クラス</div>  </div>
@@ -79,8 +80,8 @@ Module.Working.State.IdleState の継承関係図</div>
 <div class="dyncontent">
 <div class="center"><img src="classModule_1_1Working_1_1State_1_1IdleState__inherit__graph.png" border="0" usemap="#aModule_8Working_8State_8IdleState_inherit__map" alt="Inheritance graph"/></div>
 <map name="aModule_8Working_8State_8IdleState_inherit__map" id="aModule_8Working_8State_8IdleState_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,131,199,252"/>
-<area shape="rect" href="interfaceModule_1_1Working_1_1State_1_1IWorkerState.html" title=" " alt="" coords="44,5,160,83"/>
+<area shape="rect" title=" " alt="" coords="5,175,199,384"/>
+<area shape="rect" href="interfaceModule_1_1Working_1_1State_1_1IWorkerState.html" title=" " alt="" coords="44,5,160,127"/>
 </map>
 </div>
 <div class="dynheader">
@@ -88,11 +89,11 @@ Module.Working.State.IdleState 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classModule_1_1Working_1_1State_1_1IdleState__coll__graph.png" border="0" usemap="#aModule_8Working_8State_8IdleState_coll__map" alt="Collaboration graph"/></div>
 <map name="aModule_8Working_8State_8IdleState_coll__map" id="aModule_8Working_8State_8IdleState_coll__map">
-<area shape="rect" title=" " alt="" coords="5,461,199,568"/>
-<area shape="rect" href="interfaceModule_1_1Working_1_1State_1_1IWorkerState.html" title=" " alt="" coords="23,248,139,325"/>
-<area shape="rect" href="classModule_1_1Working_1_1Worker.html" title="ワーカーの状態を管理するクラス" alt="" coords="163,175,339,399"/>
-<area shape="rect" title=" " alt="" coords="92,13,216,90"/>
-<area shape="rect" href="interfaceModule_1_1Working_1_1State_1_1IWorkerState.html" title=" " alt="" coords="241,5,459,97"/>
+<area shape="rect" title=" " alt="" coords="5,549,199,744"/>
+<area shape="rect" href="interfaceModule_1_1Working_1_1State_1_1IWorkerState.html" title=" " alt="" coords="23,292,139,413"/>
+<area shape="rect" href="classModule_1_1Working_1_1Worker.html" title="ワーカーの状態を管理するクラス" alt="" coords="163,219,339,487"/>
+<area shape="rect" title=" " alt="" coords="92,35,216,112"/>
+<area shape="rect" href="interfaceModule_1_1Working_1_1State_1_1IWorkerState.html" title=" " alt="" coords="241,5,459,141"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -100,8 +101,14 @@ Module.Working.State.IdleState 連携図</div>
 公開メンバ関数</h2></td></tr>
 <tr class="memitem:af4392f3c24a32a0a6fea5be178b4cd94"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1State_1_1IdleState.html#af4392f3c24a32a0a6fea5be178b4cd94">IdleState</a> (<a class="el" href="classModule_1_1Working_1_1Worker.html">Worker</a> <a class="el" href="classModule_1_1Working_1_1State_1_1IdleState.html#a5da0ccb7ca77085a547109fae5868634">worker</a>)</td></tr>
 <tr class="separator:af4392f3c24a32a0a6fea5be178b4cd94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29a038ab37a6e4f211f773799e8d1088"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1State_1_1IdleState.html#a29a038ab37a6e4f211f773799e8d1088">OnStart</a> ()</td></tr>
+<tr class="separator:a29a038ab37a6e4f211f773799e8d1088"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d9b6c38a0029e7fb8abafe4ce494c01"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1State_1_1IdleState.html#a5d9b6c38a0029e7fb8abafe4ce494c01">OnStop</a> ()</td></tr>
+<tr class="separator:a5d9b6c38a0029e7fb8abafe4ce494c01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7ce3c87440b92aca3e856487e2d9059"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1State_1_1IdleState.html#ac7ce3c87440b92aca3e856487e2d9059">Update</a> ()</td></tr>
 <tr class="separator:ac7ce3c87440b92aca3e856487e2d9059"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab02dd9a27e6e02f37b12c4ed19bb549e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1State_1_1IdleState.html#ab02dd9a27e6e02f37b12c4ed19bb549e">Dispose</a> ()</td></tr>
+<tr class="separator:ab02dd9a27e6e02f37b12c4ed19bb549e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 プロパティ</h2></td></tr>
@@ -115,10 +122,19 @@ Module.Working.State.IdleState 連携図</div>
 非公開変数類</h2></td></tr>
 <tr class="memitem:a5da0ccb7ca77085a547109fae5868634"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="classModule_1_1Working_1_1Worker.html">Worker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1State_1_1IdleState.html#a5da0ccb7ca77085a547109fae5868634">worker</a></td></tr>
 <tr class="separator:a5da0ccb7ca77085a547109fae5868634"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9e2ab9f28c159d20dcc254fc8a0c2d7"><td class="memItemLeft" align="right" valign="top">readonly Animator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1State_1_1IdleState.html#af9e2ab9f28c159d20dcc254fc8a0c2d7">workerAnimator</a></td></tr>
+<tr class="separator:af9e2ab9f28c159d20dcc254fc8a0c2d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+静的非公開変数類</h2></td></tr>
+<tr class="memitem:afc5575b35b39b6d2135681e5fa868b74"><td class="memItemLeft" align="right" valign="top">static readonly int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1State_1_1IdleState.html#afc5575b35b39b6d2135681e5fa868b74">IsFollowing</a> = Animator.StringToHash(&quot;Following&quot;)</td></tr>
+<tr class="separator:afc5575b35b39b6d2135681e5fa868b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2466ef649a8c725a17246ef2ec766c5"><td class="memItemLeft" align="right" valign="top">static readonly int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Working_1_1State_1_1IdleState.html#ab2466ef649a8c725a17246ef2ec766c5">IsWorking</a> = Animator.StringToHash(&quot;Working&quot;)</td></tr>
+<tr class="separator:ab2466ef649a8c725a17246ef2ec766c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock">
-<p class="definition"> <a class="el" href="Working_2State_2IdleState_8cs_source.html">IdleState.cs</a> の <a class="el" href="Working_2State_2IdleState_8cs_source.html#l00003">3</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Working_2State_2IdleState_8cs_source.html">IdleState.cs</a> の <a class="el" href="Working_2State_2IdleState_8cs_source.html#l00005">5</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
 <a id="af4392f3c24a32a0a6fea5be178b4cd94"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af4392f3c24a32a0a6fea5be178b4cd94">&#9670;&nbsp;</a></span>IdleState()</h2>
@@ -144,15 +160,113 @@ Module.Working.State.IdleState 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Working_2State_2IdleState_8cs_source.html">IdleState.cs</a> の <a class="el" href="Working_2State_2IdleState_8cs_source.html#l00008">8</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;            this.<a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#a5da0ccb7ca77085a547109fae5868634">worker</a> = <a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#a5da0ccb7ca77085a547109fae5868634">worker</a>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        }</div>
-<div class="ttc" id="aclassModule_1_1Working_1_1State_1_1IdleState_html_a5da0ccb7ca77085a547109fae5868634"><div class="ttname"><a href="classModule_1_1Working_1_1State_1_1IdleState.html#a5da0ccb7ca77085a547109fae5868634">Module.Working.State.IdleState.worker</a></div><div class="ttdeci">readonly Worker worker</div><div class="ttdef"><b>Definition:</b> <a href="Working_2State_2IdleState_8cs_source.html#l00006">IdleState.cs:6</a></div></div>
+<p class="definition"> <a class="el" href="Working_2State_2IdleState_8cs_source.html">IdleState.cs</a> の <a class="el" href="Working_2State_2IdleState_8cs_source.html#l00013">13</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            this.<a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#a5da0ccb7ca77085a547109fae5868634">worker</a> = <a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#a5da0ccb7ca77085a547109fae5868634">worker</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#af9e2ab9f28c159d20dcc254fc8a0c2d7">workerAnimator</a> = <a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#a5da0ccb7ca77085a547109fae5868634">worker</a>.<a class="code" href="classModule_1_1Working_1_1Worker.html#a0fdc258b73daced7db65642dd2d651b8">animator</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Working_1_1State_1_1IdleState_html_a5da0ccb7ca77085a547109fae5868634"><div class="ttname"><a href="classModule_1_1Working_1_1State_1_1IdleState.html#a5da0ccb7ca77085a547109fae5868634">Module.Working.State.IdleState.worker</a></div><div class="ttdeci">readonly Worker worker</div><div class="ttdef"><b>Definition:</b> <a href="Working_2State_2IdleState_8cs_source.html#l00008">IdleState.cs:8</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1State_1_1IdleState_html_af9e2ab9f28c159d20dcc254fc8a0c2d7"><div class="ttname"><a href="classModule_1_1Working_1_1State_1_1IdleState.html#af9e2ab9f28c159d20dcc254fc8a0c2d7">Module.Working.State.IdleState.workerAnimator</a></div><div class="ttdeci">readonly Animator workerAnimator</div><div class="ttdef"><b>Definition:</b> <a href="Working_2State_2IdleState_8cs_source.html#l00009">IdleState.cs:9</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Worker_html_a0fdc258b73daced7db65642dd2d651b8"><div class="ttname"><a href="classModule_1_1Working_1_1Worker.html#a0fdc258b73daced7db65642dd2d651b8">Module.Working.Worker.animator</a></div><div class="ttdeci">Animator animator</div><div class="ttdef"><b>Definition:</b> <a href="Worker_8cs_source.html#l00020">Worker.cs:20</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
+<a id="ab02dd9a27e6e02f37b12c4ed19bb549e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab02dd9a27e6e02f37b12c4ed19bb549e">&#9670;&nbsp;</a></span>Dispose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.Working.State.IdleState.Dispose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="interfaceModule_1_1Working_1_1State_1_1IWorkerState.html#ace853b47119f47a812b7734c9ac1bcf5">Module.Working.State.IWorkerState</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="Working_2State_2IdleState_8cs_source.html">IdleState.cs</a> の <a class="el" href="Working_2State_2IdleState_8cs_source.html#l00030">30</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{ }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a29a038ab37a6e4f211f773799e8d1088"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29a038ab37a6e4f211f773799e8d1088">&#9670;&nbsp;</a></span>OnStart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.Working.State.IdleState.OnStart </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="interfaceModule_1_1Working_1_1State_1_1IWorkerState.html#afacb3e6c05ddf247238ff08728427e55">Module.Working.State.IWorkerState</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="Working_2State_2IdleState_8cs_source.html">IdleState.cs</a> の <a class="el" href="Working_2State_2IdleState_8cs_source.html#l00021">21</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#af9e2ab9f28c159d20dcc254fc8a0c2d7">workerAnimator</a>.SetBool(<a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#afc5575b35b39b6d2135681e5fa868b74">IsFollowing</a>, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#af9e2ab9f28c159d20dcc254fc8a0c2d7">workerAnimator</a>.SetBool(<a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#ab2466ef649a8c725a17246ef2ec766c5">IsWorking</a>, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Working_1_1State_1_1IdleState_html_ab2466ef649a8c725a17246ef2ec766c5"><div class="ttname"><a href="classModule_1_1Working_1_1State_1_1IdleState.html#ab2466ef649a8c725a17246ef2ec766c5">Module.Working.State.IdleState.IsWorking</a></div><div class="ttdeci">static readonly int IsWorking</div><div class="ttdef"><b>Definition:</b> <a href="Working_2State_2IdleState_8cs_source.html#l00011">IdleState.cs:11</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1State_1_1IdleState_html_afc5575b35b39b6d2135681e5fa868b74"><div class="ttname"><a href="classModule_1_1Working_1_1State_1_1IdleState.html#afc5575b35b39b6d2135681e5fa868b74">Module.Working.State.IdleState.IsFollowing</a></div><div class="ttdeci">static readonly int IsFollowing</div><div class="ttdef"><b>Definition:</b> <a href="Working_2State_2IdleState_8cs_source.html#l00010">IdleState.cs:10</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5d9b6c38a0029e7fb8abafe4ce494c01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d9b6c38a0029e7fb8abafe4ce494c01">&#9670;&nbsp;</a></span>OnStop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.Working.State.IdleState.OnStop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="interfaceModule_1_1Working_1_1State_1_1IWorkerState.html#acfe00c2f2f83aa9871c2fd007176f7b3">Module.Working.State.IWorkerState</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="Working_2State_2IdleState_8cs_source.html">IdleState.cs</a> の <a class="el" href="Working_2State_2IdleState_8cs_source.html#l00027">27</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{ }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ac7ce3c87440b92aca3e856487e2d9059"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac7ce3c87440b92aca3e856487e2d9059">&#9670;&nbsp;</a></span>Update()</h2>
 
@@ -178,12 +292,60 @@ Module.Working.State.IdleState 連携図</div>
 
 <p><a class="el" href="interfaceModule_1_1Working_1_1State_1_1IWorkerState.html#a68114b846297948996d1ab4956f2c827">Module.Working.State.IWorkerState</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="Working_2State_2IdleState_8cs_source.html">IdleState.cs</a> の <a class="el" href="Working_2State_2IdleState_8cs_source.html#l00015">15</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{ }</div>
+<p class="definition"> <a class="el" href="Working_2State_2IdleState_8cs_source.html">IdleState.cs</a> の <a class="el" href="Working_2State_2IdleState_8cs_source.html#l00029">29</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">メンバ詳解</h2>
+<a id="afc5575b35b39b6d2135681e5fa868b74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc5575b35b39b6d2135681e5fa868b74">&#9670;&nbsp;</a></span>IsFollowing</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly int Module.Working.State.IdleState.IsFollowing = Animator.StringToHash(&quot;Following&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Working_2State_2IdleState_8cs_source.html">IdleState.cs</a> の <a class="el" href="Working_2State_2IdleState_8cs_source.html#l00010">10</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab2466ef649a8c725a17246ef2ec766c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2466ef649a8c725a17246ef2ec766c5">&#9670;&nbsp;</a></span>IsWorking</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly int Module.Working.State.IdleState.IsWorking = Animator.StringToHash(&quot;Working&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Working_2State_2IdleState_8cs_source.html">IdleState.cs</a> の <a class="el" href="Working_2State_2IdleState_8cs_source.html#l00011">11</a> 行目に定義があります。</p>
+
+</div>
+</div>
 <a id="a5da0ccb7ca77085a547109fae5868634"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5da0ccb7ca77085a547109fae5868634">&#9670;&nbsp;</a></span>worker</h2>
 
@@ -204,7 +366,31 @@ Module.Working.State.IdleState 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Working_2State_2IdleState_8cs_source.html">IdleState.cs</a> の <a class="el" href="Working_2State_2IdleState_8cs_source.html#l00006">6</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Working_2State_2IdleState_8cs_source.html">IdleState.cs</a> の <a class="el" href="Working_2State_2IdleState_8cs_source.html#l00008">8</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af9e2ab9f28c159d20dcc254fc8a0c2d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9e2ab9f28c159d20dcc254fc8a0c2d7">&#9670;&nbsp;</a></span>workerAnimator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly Animator Module.Working.State.IdleState.workerAnimator</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Working_2State_2IdleState_8cs_source.html">IdleState.cs</a> の <a class="el" href="Working_2State_2IdleState_8cs_source.html#l00009">9</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -229,7 +415,7 @@ Module.Working.State.IdleState 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Working_2State_2IdleState_8cs_source.html">IdleState.cs</a> の <a class="el" href="Working_2State_2IdleState_8cs_source.html#l00013">13</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Working_2State_2IdleState_8cs_source.html">IdleState.cs</a> の <a class="el" href="Working_2State_2IdleState_8cs_source.html#l00019">19</a> 行目に定義があります。</p>
 
 </div>
 </div>
