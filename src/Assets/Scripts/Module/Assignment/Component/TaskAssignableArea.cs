@@ -10,11 +10,14 @@ namespace Module.Assignment.Component
     /// </summary>
     public class TaskAssignableArea : MonoBehaviour
     {
-        [SerializeField] private BaseTask baseTask;
         [SerializeField] private AssignableArea assignableArea;
+
+        private BaseTask baseTask;
 
         private void Start()
         {
+            baseTask = transform.parent.GetComponent<BaseTask>();
+
             assignableArea.OnWorkerEnter += AddWorker;
             assignableArea.OnWorkerExit += RemoveWorker;
         }

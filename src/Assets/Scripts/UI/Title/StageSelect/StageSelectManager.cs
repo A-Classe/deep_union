@@ -1,13 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using AnimationPro.RunTime;
-using Core.Utility.UI;
-using Core.Utility.UI.Cursor;
-using Core.Utility.UI.UnderBar;
+using Core.Utility.UI.Component;
+using Core.Utility.UI.Component.Cursor;
+using Core.Utility.UI.Navigation;
+using Core.Utility.User;
 using UnityEngine;
 
 namespace UI.Title.StageSelect
 {
-    public class StageSelectManager : AnimationBehaviour, IUIManager
+    public class StageSelectManager : UIManager
     {
         public enum Nav
         {
@@ -22,18 +24,14 @@ namespace UI.Title.StageSelect
         [SerializeField] private SimpleUnderBarController bar;
 
         [SerializeField] private CursorController<Nav> cursor;
-        [SerializeField] private FadeInOutButton stage1;
-        [SerializeField] private FadeInOutButton stage2;
-        [SerializeField] private FadeInOutButton stage3;
-        [SerializeField] private FadeInOutButton stage4;
-        [SerializeField] private FadeInOutButton stage5;
+        [SerializeField] private StageButton stage1;
+        [SerializeField] private StageButton stage2;
+        [SerializeField] private StageButton stage3;
+        [SerializeField] private StageButton stage4;
+        [SerializeField] private StageButton stage5;
         [SerializeField] private FadeInOutButton back;
 
         private Nav? current;
-
-        public event Action OnBack;
-
-        public event Action<Nav> OnStage;
 
         private void Start()
         {
@@ -46,12 +44,10 @@ namespace UI.Title.StageSelect
             current = Nav.Stage1;
         }
 
-        public void Initialized(ContentTransform content)
+        public override void Initialized(ContentTransform content)
         {
-            gameObject.SetActive(true);
+            base.Initialized(content);
             bar.AnimateIn();
-            OnCancel();
-            Animation(content);
             SetState(Nav.Stage1);
         }
 
@@ -59,7 +55,7 @@ namespace UI.Title.StageSelect
         ///     戻るボタンが押されたときに反映する
         /// </summary>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
-        public void Clicked()
+        public override void Clicked()
         {
             if (!current.HasValue) return;
             switch (current.Value)
@@ -87,7 +83,7 @@ namespace UI.Title.StageSelect
             }
         }
 
-        public void Select(Vector2 direction)
+        public override void Select(Vector2 direction)
         {
             if (!current.HasValue)
             {
@@ -114,27 +110,39 @@ namespace UI.Title.StageSelect
             SetState(nextNav);
         }
 
-        public void Finished(ContentTransform content, Action onFinished)
+        public override void Finished(ContentTransform content, Action onFinished)
         {
             bar.AnimateOut(() =>
             {
-                Animation(
-                    content,
-                    new AnimationListener
-                    {
-                        OnFinished = () =>
-                        {
-                            gameObject.SetActive(false);
-                            onFinished?.Invoke();
-                        }
-                    }
-                );
+                base.Finished(content, onFinished);
             });
         }
 
-        public AnimationBehaviour GetContext()
+        public event Action OnBack;
+
+        public event Action<Nav> OnStage;
+
+        public void SetScores(Dictionary<StageData.Stage, uint> scores)
         {
-            return this;
+            foreach (var keyValuePair in scores)
+                switch (keyValuePair.Key)
+                {
+                    case StageData.Stage.Stage1:
+                        stage1.SetScore(keyValuePair.Value);
+                        break;
+                    case StageData.Stage.Stage2:
+                        stage2.SetScore(keyValuePair.Value);
+                        break;
+                    case StageData.Stage.Stage3:
+                        stage3.SetScore(keyValuePair.Value);
+                        break;
+                    case StageData.Stage.Stage4:
+                        stage4.SetScore(keyValuePair.Value);
+                        break;
+                    case StageData.Stage.Stage5:
+                        stage4.SetScore(keyValuePair.Value);
+                        break;
+                }
         }
 
 

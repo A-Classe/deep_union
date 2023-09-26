@@ -1,13 +1,13 @@
 ﻿using System;
 using AnimationPro.RunTime;
-using Core.Utility.UI;
-using Core.Utility.UI.Cursor;
-using Core.Utility.UI.UnderBar;
+using Core.Utility.UI.Component;
+using Core.Utility.UI.Component.Cursor;
+using Core.Utility.UI.Navigation;
 using UnityEngine;
 
 namespace UI.Title.Quit
 {
-    internal class QuitManager : AnimationBehaviour, IUIManager
+    internal class QuitManager : UIManager
     {
         public enum Nav
         {
@@ -23,8 +23,6 @@ namespace UI.Title.Quit
 
         private Nav? current;
 
-        public event Action<bool> OnClick;
-
         private void Start()
         {
             cursor.AddPoint(Nav.Yes, yes.rectTransform);
@@ -32,16 +30,14 @@ namespace UI.Title.Quit
             current = null;
         }
 
-        public void Initialized(ContentTransform content)
+        public override void Initialized(ContentTransform content)
         {
-            gameObject.SetActive(true);
+            base.Initialized(content);
             bar.AnimateIn();
-            OnCancel();
-            Animation(content);
             SetState(Nav.Yes);
         }
 
-        public void Clicked()
+        public override void Clicked()
         {
             if (!current.HasValue) return;
             switch (current.Value)
@@ -57,7 +53,7 @@ namespace UI.Title.Quit
             }
         }
 
-        public void Select(Vector2 direction)
+        public override void Select(Vector2 direction)
         {
             if (!current.HasValue)
             {
@@ -72,28 +68,15 @@ namespace UI.Title.Quit
             }
         }
 
-        public void Finished(ContentTransform content, Action onFinished)
+        public override void Finished(ContentTransform content, Action onFinished)
         {
             bar.AnimateOut(() =>
             {
-                Animation(
-                    content,
-                    new AnimationListener
-                    {
-                        OnFinished = () =>
-                        {
-                            gameObject.SetActive(false);
-                            onFinished?.Invoke();
-                        }
-                    }
-                );
+                base.Finished(content, onFinished);
             });
         }
 
-        public AnimationBehaviour GetContext()
-        {
-            return this;
-        }
+        public event Action<bool> OnClick;
 
 
         private void SetState(Nav setNav)

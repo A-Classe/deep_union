@@ -4,6 +4,8 @@ namespace GameMain.Presenter
 {
     public class GameParam : ScriptableObject
     {
+        public bool EnableDebugger = false;
+        
         public float AssignIntensity = 1f;
         public float ReleaseIntensity = 0.3f;
         
