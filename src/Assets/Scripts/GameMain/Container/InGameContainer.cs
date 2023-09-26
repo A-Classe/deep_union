@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using System.GameProgress;
+﻿using System.GameProgress;
 using System.Linq;
 using Core.NavMesh;
+using Core.Utility.User;
 using Core.Utility;
 using Core.Utility.Player;
 using Debug;
@@ -41,9 +41,12 @@ namespace GameMain.Container
         [SerializeField] private TaskProgressPool progressPool;
         [SerializeField] private PlayerStatusVisualizer playerStatusVisualizer;
 
+        [SerializeField] private InGameUIManager inGameUIManager;
+
         [FormerlySerializedAs("leaderAssignEvent")]
         [SerializeField]
         private LeaderAssignableArea leaderAssignableArea;
+
 
         protected override void Configure(IContainerBuilder builder)
         {
@@ -67,6 +70,7 @@ namespace GameMain.Container
             builder.Register<WorkerAssigner>(Lifetime.Singleton);
             builder.Register<WorkerReleaser>(Lifetime.Singleton);
             builder.Register<TaskActivator>(Lifetime.Singleton);
+            builder.Register<UserPreference>(Lifetime.Singleton);
 
             builder.RegisterInstance(spawnPoint);
             builder.RegisterInstance(spawnParam);
@@ -76,6 +80,7 @@ namespace GameMain.Container
             builder.RegisterInstance(goalPoint);
             builder.RegisterInstance(progressPool);
             builder.RegisterInstance(leaderAssignableArea);
+            builder.RegisterInstance(inGameUIManager);
             builder.RegisterInstance(new PlayerStatus(gameParam.ConvertToStatus()));
             builder.RegisterInstance(playerStatusVisualizer);
 

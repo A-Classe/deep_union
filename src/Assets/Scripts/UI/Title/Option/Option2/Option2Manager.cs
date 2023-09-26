@@ -13,7 +13,7 @@ namespace UI.Title.Option.Option2
     ///     - FULL SCREEN
     ///     - BRIGHTNESS
     /// </summary>
-    internal class Option2Manager : AnimationBehaviour, IUIManager
+    internal class Option2Manager : UIManager
     {
         public enum Nav
         {
@@ -38,11 +38,9 @@ namespace UI.Title.Option.Option2
             bright.Setup(100f, 0f, 70f);
         }
 
-        public void Initialized(ContentTransform content)
+        public override void Initialized(ContentTransform content)
         {
-            gameObject.SetActive(true);
-            OnCancel();
-            Animation(content);
+            base.Initialized(content);
             SetState(Nav.FullScreen);
         }
 
@@ -50,7 +48,7 @@ namespace UI.Title.Option.Option2
         ///     戻るボタンが押されたときに反映する
         /// </summary>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
-        public void Clicked()
+        public override void Clicked()
         {
             if (!current.HasValue) return;
             switch (current.Value)
@@ -70,7 +68,7 @@ namespace UI.Title.Option.Option2
             }
         }
 
-        public void Select(Vector2 direction)
+        public override void Select(Vector2 direction)
         {
             if (Math.Abs(direction.x) > Math.Abs(direction.y))
             {
@@ -104,26 +102,6 @@ namespace UI.Title.Option.Option2
             }
 
             SetState(nextNav);
-        }
-
-        public void Finished(ContentTransform content, Action onFinished)
-        {
-            Animation(
-                content,
-                new AnimationListener
-                {
-                    OnFinished = () =>
-                    {
-                        gameObject.SetActive(false);
-                        onFinished?.Invoke();
-                    }
-                }
-            );
-        }
-
-        public AnimationBehaviour GetContext()
-        {
-            return this;
         }
 
         public event Action OnBack;

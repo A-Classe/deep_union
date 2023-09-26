@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace UI.Title.StageSelect
 {
-    public class StageSelectManager : AnimationBehaviour, IUIManager
+    public class StageSelectManager : UIManager
     {
         public enum Nav
         {
@@ -44,12 +44,10 @@ namespace UI.Title.StageSelect
             current = Nav.Stage1;
         }
 
-        public void Initialized(ContentTransform content)
+        public override void Initialized(ContentTransform content)
         {
-            gameObject.SetActive(true);
+            base.Initialized(content);
             bar.AnimateIn();
-            OnCancel();
-            Animation(content);
             SetState(Nav.Stage1);
         }
 
@@ -57,7 +55,7 @@ namespace UI.Title.StageSelect
         ///     戻るボタンが押されたときに反映する
         /// </summary>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
-        public void Clicked()
+        public override void Clicked()
         {
             if (!current.HasValue) return;
             switch (current.Value)
@@ -85,7 +83,7 @@ namespace UI.Title.StageSelect
             }
         }
 
-        public void Select(Vector2 direction)
+        public override void Select(Vector2 direction)
         {
             if (!current.HasValue)
             {
@@ -112,27 +110,12 @@ namespace UI.Title.StageSelect
             SetState(nextNav);
         }
 
-        public void Finished(ContentTransform content, Action onFinished)
+        public override void Finished(ContentTransform content, Action onFinished)
         {
             bar.AnimateOut(() =>
             {
-                Animation(
-                    content,
-                    new AnimationListener
-                    {
-                        OnFinished = () =>
-                        {
-                            gameObject.SetActive(false);
-                            onFinished?.Invoke();
-                        }
-                    }
-                );
+                base.Finished(content, onFinished);
             });
-        }
-
-        public AnimationBehaviour GetContext()
-        {
-            return this;
         }
 
         public event Action OnBack;

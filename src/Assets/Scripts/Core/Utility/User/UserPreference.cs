@@ -6,6 +6,10 @@ using UnityEngine;
 
 namespace Core.Utility.User
 {
+    /// <summary>
+    /// データ保存の中継クラス
+    /// 絶対にこれを介して保存する
+    /// </summary>
     public class UserPreference
     {
         private static readonly string RootPath = Application.persistentDataPath;

@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace UI.Title.Option.Option1
 {
-    internal class Option1Manager : AnimationBehaviour, IUIManager
+    internal class Option1Manager : UIManager
     {
         public enum Nav
         {
@@ -34,11 +34,9 @@ namespace UI.Title.Option.Option1
             current = Nav.Video;
         }
 
-        public void Initialized(ContentTransform content)
+        public override void Initialized(ContentTransform content)
         {
-            gameObject.SetActive(true);
-            OnCancel();
-            Animation(content);
+            base.Initialized(content);
             SetState(Nav.Video);
         }
 
@@ -46,7 +44,7 @@ namespace UI.Title.Option.Option1
         ///     戻るボタンが押されたときに反映する
         /// </summary>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
-        public void Clicked()
+        public override void Clicked()
         {
             if (!current.HasValue) return;
             switch (current.Value)
@@ -68,7 +66,7 @@ namespace UI.Title.Option.Option1
             }
         }
 
-        public void Select(Vector2 direction)
+        public override void Select(Vector2 direction)
         {
             if (!current.HasValue)
             {
@@ -93,26 +91,6 @@ namespace UI.Title.Option.Option1
             }
 
             SetState(nextNav);
-        }
-
-        public void Finished(ContentTransform content, Action onFinished)
-        {
-            Animation(
-                content,
-                new AnimationListener
-                {
-                    OnFinished = () =>
-                    {
-                        gameObject.SetActive(false);
-                        onFinished?.Invoke();
-                    }
-                }
-            );
-        }
-
-        public AnimationBehaviour GetContext()
-        {
-            return this;
         }
 
         public event Action OnBack;

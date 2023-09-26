@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace UI.Title.Credit
 {
-    internal class CreditManager : AnimationBehaviour, IUIManager
+    internal class CreditManager : UIManager
     {
         public void Initialized(ContentTransform content)
         {
