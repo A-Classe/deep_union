@@ -1,62 +1,93 @@
-/opt/idea/lib/ReSharperHost/linux-x64/Rider.Backend --runtimeconfig /opt/idea/lib/ReSharperHost/Rider.Backend.netcore.runtimeconfig.json --Port=41495 --enablecpp
-Warning: While cataloging the assembly “JetBrains.ReSharper.Features.Internal, Version=777.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325”, could not load the assembly reference named “Microsoft.Build, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a”.
-Warning: While cataloging the assembly “JetBrains.EntityFramework.Runner620, Version=777.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325”, could not load the assembly reference named “EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089”.
-Warning: While cataloging the assembly “JetBrains.JITDebuggerLauncher, Version=777.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325”, could not load the assembly reference named “System.Management, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a”.
-Warning: While cataloging the assembly “JetBrains.ReSharper.Features.WinForms.Designer.External, Version=777.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325”, could not load the assembly reference named “System.Drawing.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a”.
-Warning: While cataloging the assembly “JetBrains.Rider.Backend.MsClrProcessEnumerator.Worker, Version=777.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325”, could not load the assembly reference named “System.Management, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a”.
-Warning: While cataloging the assembly “Rider.SqlProj.Worker, Version=777.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325”, could not load the assembly reference named “Microsoft.Data.Tools.Schema.Sql, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a”.
-Warning: While cataloging the assembly “Rider.SqlProj.Worker, Version=777.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325”, could not load the assembly reference named “Microsoft.SqlServer.TransactSql.ScriptDom, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91”.
-Warning: While cataloging the assembly “Rider.SqlProj.Worker, Version=777.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325”, could not load the assembly reference named “Microsoft.Data.Tools.Schema.Utilities.Sql, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a”.
-Warning: While cataloging the assembly “Rider.SqlProj.Worker, Version=777.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325”, could not load the assembly reference named “Microsoft.Data.Tools.Utilities, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a”.
-Warning: While cataloging the assembly “Rider.SqlProj.Worker.Extensions, Version=777.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325”, could not load the assembly reference named “Microsoft.Data.Tools.Schema.Sql, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a”.
-Warning: While cataloging the assembly “JetBrains.Common.Util, Version=777.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325”, could not load the assembly reference named “System.Management, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a”.
-Error resolving type System.Runtime.CompilerServices.IsReadOnlyAttribute from assembly “System.Collections.Immutable, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a”, request originating from assembly “System.Collections.Immutable, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a”. Could not find the type by its FQN. Is assembly qualification specified? True! Is it of our own assembly? True! Is looking into referenced assemblies allowed? False! Was the qualified referenced assembly encountered during lookup? False! Tried loading an implicitly-referenced assembly? False! Were following a forwarder exported type's assembly ref? No!
-Loading an assembly “JetBrains.ReSharper.Feature.Services.AI, Version=777.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325” which is not listed in assembly references of assembly “JetBrains.ReSharper.Plugins.FSharp.Psi.Features, Version=1.0.0.0, Culture=neutral, PublicKeyToken=333a98252ac829ae” when trying to resolve the type JetBrains.ReSharper.Feature.Services.AI.IArtificialIntelligenceZone. A type reference points into an assembly not listed among assembly references.
-Warning: Primary thread didn't respond for 0.555sec (CurrentTask: 'DelayedInitializationStrategy.Dispatch: JetBrains.ReSharper.Feature.Services.EditorConfig.EditorConfigHighlightingConverter') QueueSize=1
-Warning: Primary thread was unresponsive for 0.555sec
-Warning: Primary thread didn't respond for 0.522sec (CurrentTask: 'DelayedInitializationStrategy.Dispatch: JetBrains.ReSharper.Feature.Services.EditorConfig.EditorConfigOptionsExporter') QueueSize=1
-Warning: Primary thread didn't respond for 0.722sec (CurrentTask: 'DelayedInitializationStrategy.Dispatch: JetBrains.ReSharper.Feature.Services.EditorConfig.EditorConfigOptionsExporter') QueueSize=1
-Warning: Primary thread was unresponsive for 0.722sec
+/opt/idea/lib/ReSharperHost/linux-x64/Rider.Backend --runtimeconfig /opt/idea/lib/ReSharperHost/Rider.Backend.netcore.runtimeconfig.json --Port=39373 --enablecpp
+Warning: Primary thread didn't respond for 0.539sec (CurrentTask: 'DelayedInitializationStrategy.Dispatch: JetBrains.Application.Configuration.Upgrade.GlobalSettingsUpgrade') QueueSize=1
+Warning: Primary thread was unresponsive for 0.539sec
+Warning: Primary thread didn't respond for 0.572sec (CurrentTask: 'DelayedInitializationStrategy.Dispatch: JetBrains.ReSharper.Feature.Services.EditorConfig.EditorConfigOptionsExporter') QueueSize=1
+Warning: Primary thread didn't respond for 0.775sec (CurrentTask: 'DelayedInitializationStrategy.Dispatch: JetBrains.ReSharper.Feature.Services.EditorConfig.EditorConfigOptionsExporter') QueueSize=1
+Warning: Primary thread didn't respond for 0.975sec (CurrentTask: 'DelayedInitializationStrategy.Dispatch: JetBrains.ReSharper.Feature.Services.EditorConfig.EditorConfigOptionsExporter') QueueSize=1
+Warning: Primary thread didn't respond for 1.172sec (CurrentTask: 'DelayedInitializationStrategy.Dispatch: JetBrains.ReSharper.Feature.Services.EditorConfig.EditorConfigOptionsExporter') QueueSize=2
+Warning: Primary thread didn't respond for 1.374sec (CurrentTask: 'RdDispatcher::FlushAll::method=Void <DoDispatch>b__0() of JetBrains.Rd.Impl.MessageBroker+RdWireableDispatchHelper+<>c__DisplayClass12_0') QueueSize=2
 Warning: DemoText for C# contains ''
 Warning: DemoText for XAML contains ''
 Warning: DemoText for C++ contains ''
 Warning: DemoText for ReSharper Cg Highlighters contains ''
 Warning: DemoText for ReSharper ShaderLab Highlighters contains ''
 Warning: DemoText for Unity contains ''
+Warning: Primary thread was unresponsive for 1.374sec
+Warning: Primary thread didn't respond for 0.993sec (CurrentTask: 'DelayedInitializationStrategy.Dispatch: JetBrains.ReSharper.Feature.Services.CodeCleanup.HighlightingModule.HighlightingCleanupItemTable') QueueSize=0
+Warning: Primary thread didn't respond for 1.195sec (CurrentTask: 'DelayedInitializationStrategy.Dispatch: JetBrains.ReSharper.Feature.Services.CodeCleanup.HighlightingModule.HighlightingCleanupItemTable') QueueSize=0
+Warning: Primary thread was unresponsive for 1.195sec
 Warning: No JetBrains.ExternalAnnotations packages found in the host Rider232
-Warning: Primary thread didn't respond for 0.602sec (CurrentTask: 'DelayedInitializationStrategy.Dispatch: JetBrains.Rider.Backend.Features.ProjectModel.RiderSolutionWatcher') QueueSize=2
-Warning: Primary thread was unresponsive for 0.602sec
-Warning: Primary thread didn't respond for 0.694sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=1
-Warning: Primary thread didn't respond for 0.895sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=2
-Warning: Primary thread didn't respond for 1.097sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=2
-Warning: Primary thread didn't respond for 1.297sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=2
-Warning: Primary thread didn't respond for 1.497sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=4
-Warning: Primary thread didn't respond for 1.697sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=7
-Warning: Primary thread didn't respond for 1.896sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=7
-Warning: Primary thread didn't respond for 2.097sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=7
-Warning: Primary thread didn't respond for 2.294sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=10
-Warning: Primary thread didn't respond for 2.495sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=10
-Warning: Primary thread didn't respond for 2.695sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=10
-Warning: Primary thread didn't respond for 2.895sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=10
-Warning: Primary thread didn't respond for 3.095sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=10
-Warning: Primary thread didn't respond for 3.297sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=11
-Warning: Primary thread didn't respond for 3.514sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=17
-Warning: Primary thread didn't respond for 3.711sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=20
-Warning: Primary thread didn't respond for 3.914sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=22
-Warning: Primary thread didn't respond for 4.113sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=23
-Warning: Add analyzer: project reference manager not found for Assembly-CSharp 30daff4c-630e-9e03-0dca-dac117ce2649
-Warning: Primary thread didn't respond for 4.330sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=24
-Warning: Primary thread didn't respond for 4.529sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=31
-Warning: Primary thread didn't respond for 4.726sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=65
-Warning: Primary thread didn't respond for 4.927sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=77
-Warning: Primary thread was unresponsive for 4.927sec
-Warning: Primary thread didn't respond for 0.539sec (CurrentTask: 'RdDispatcher::FlushAll::method=Void <DoDispatch>b__0() of JetBrains.Rd.Impl.MessageBroker+RdWireableDispatchHelper+<>c__DisplayClass12_0') QueueSize=85
-Warning: Primary thread didn't respond for 0.746sec (CurrentTask: 'GroupingEventHost.ExecuteExpiredEvents') QueueSize=25
-Warning: Primary thread didn't respond for 0.946sec (CurrentTask: 'Update TODO patterns in protocol') QueueSize=11
-Warning: Primary thread was unresponsive for 0.946sec
-Warning: Primary thread didn't respond for 0.616sec (CurrentTask: 'ReentrancyGuardTaskScheduler::QueueTask::ReentrancyGuardTaskScheduler::QueueTask name=') QueueSize=2
-Warning: Primary thread was unresponsive for 0.616sec
-Warning: Primary thread didn't respond for 0.541sec (CurrentTask: 'DPA CreatePresentationScope') QueueSize=8
-Warning: Primary thread was unresponsive for 0.541sec
-Warning: Primary thread didn't respond for 0.545sec (CurrentTask: 'PriorityRdDispatcher') QueueSize=4
-Warning: Primary thread was unresponsive for 0.545sec
+Warning: Primary thread didn't respond for 0.575sec (CurrentTask: 'DelayedInitializationStrategy.Dispatch: JetBrains.Rider.Backend.Features.ProjectModel.RiderSolutionWatcher') QueueSize=0
+Warning: Primary thread didn't respond for 0.785sec (CurrentTask: 'DelayedInitializationStrategy.Dispatch: JetBrains.Rider.Backend.Features.ProjectModel.RiderSolutionWatcher') QueueSize=0
+Warning: Primary thread didn't respond for 0.986sec (CurrentTask: 'DelayedInitializationStrategy.Dispatch: JetBrains.Rider.Backend.Features.ProjectModel.RiderSolutionWatcher') QueueSize=0
+Warning: Primary thread didn't respond for 1.186sec (CurrentTask: 'DelayedInitializationStrategy.Dispatch: JetBrains.Rider.Backend.Features.ProjectModel.RiderSolutionWatcher') QueueSize=1
+Warning: Primary thread didn't respond for 1.384sec (CurrentTask: 'DelayedInitializationStrategy.Dispatch: JetBrains.Rider.Backend.Features.ProjectModel.RiderSolutionWatcher') QueueSize=2
+Warning: Primary thread didn't respond for 1.584sec (CurrentTask: 'DelayedInitializationStrategy.Dispatch: JetBrains.Rider.Backend.Features.ProjectModel.RiderSolutionWatcher') QueueSize=2
+Warning: Primary thread didn't respond for 1.783sec (CurrentTask: 'DelayedInitializationStrategy.Dispatch: JetBrains.Rider.Backend.Features.ProjectModel.RiderSolutionWatcher') QueueSize=2
+Warning: Primary thread didn't respond for 1.992sec (CurrentTask: 'DelayedInitializationStrategy.Dispatch: JetBrains.Rider.Backend.Features.ProjectModel.RiderSolutionWatcher') QueueSize=3
+Warning: Primary thread didn't respond for 2.197sec (CurrentTask: 'DelayedInitializationStrategy.Dispatch: JetBrains.Rider.Backend.Features.ProjectModel.RiderSolutionWatcher') QueueSize=3
+Warning: Primary thread didn't respond for 2.396sec (CurrentTask: 'DelayedInitializationStrategy.Dispatch: JetBrains.Rider.Backend.Features.ProjectModel.RiderSolutionWatcher') QueueSize=3
+Warning: Primary thread was unresponsive for 2.396sec
+Warning: Primary thread didn't respond for 0.578sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=1
+Warning: Primary thread didn't respond for 0.776sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=1
+Warning: Primary thread didn't respond for 0.979sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=1
+Warning: Primary thread didn't respond for 1.178sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=1
+Warning: Primary thread didn't respond for 1.376sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=1
+Warning: Primary thread didn't respond for 1.579sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=1
+Warning: Primary thread didn't respond for 1.776sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=2
+Warning: Primary thread didn't respond for 2.008sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=2
+Warning: Primary thread didn't respond for 2.233sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=3
+Warning: Primary thread didn't respond for 2.432sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=3
+Warning: Primary thread didn't respond for 2.632sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=3
+Warning: Primary thread didn't respond for 2.833sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=3
+Warning: Primary thread didn't respond for 3.034sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=3
+Warning: Primary thread didn't respond for 3.232sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=3
+Warning: Primary thread didn't respond for 3.431sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=3
+Warning: Primary thread didn't respond for 3.632sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=3
+Warning: Primary thread didn't respond for 3.832sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=3
+Warning: Primary thread didn't respond for 4.032sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=3
+Warning: Primary thread didn't respond for 4.234sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=3
+Warning: Primary thread didn't respond for 4.434sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=3
+Warning: Primary thread didn't respond for 4.634sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=4
+Warning: Primary thread didn't respond for 4.831sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=5
+Warning: Primary thread didn't respond for 5.034sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=7
+Warning: Primary thread didn't respond for 5.232sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=7
+Warning: Primary thread didn't respond for 5.431sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=7
+Warning: Primary thread didn't respond for 5.632sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=7
+Warning: Primary thread didn't respond for 5.837sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=7
+Warning: Primary thread didn't respond for 6.036sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=7
+Warning: Primary thread didn't respond for 6.236sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=7
+Warning: Primary thread didn't respond for 6.436sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=9
+Warning: Primary thread didn't respond for 6.640sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=10
+Warning: Primary thread didn't respond for 6.850sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=10
+Warning: Primary thread didn't respond for 7.048sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=10
+Warning: Primary thread didn't respond for 7.248sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=10
+Warning: Primary thread didn't respond for 7.448sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=10
+Warning: Primary thread didn't respond for 7.648sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=10
+Warning: Primary thread didn't respond for 7.848sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=10
+Warning: Primary thread didn't respond for 8.050sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=11
+Warning: Primary thread didn't respond for 8.248sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=12
+Warning: Primary thread didn't respond for 8.448sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=17
+Warning: Primary thread didn't respond for 8.649sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=17
+Warning: Primary thread didn't respond for 8.848sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=20
+Warning: Primary thread didn't respond for 9.048sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=22
+Warning: Primary thread didn't respond for 9.250sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=23
+Warning: Primary thread didn't respond for 9.450sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=23
+Warning: Primary thread didn't respond for 9.650sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=31
+Warning: Primary thread didn't respond for 9.850sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=33
+Warning: Primary thread didn't respond for 10.051sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=74
+Warning: Primary thread didn't respond for 10.252sec (CurrentTask: 'Create Solution Container Compose Task') QueueSize=77
+Warning: Primary thread was unresponsive for 10.252sec
+Warning: Primary thread didn't respond for 0.513sec (CurrentTask: 'RdDispatcher::FlushAll::method=Void <DoDispatch>b__0() of JetBrains.Rd.Impl.MessageBroker+RdWireableDispatchHelper+<>c__DisplayClass12_0') QueueSize=87
+Warning: Primary thread didn't respond for 0.710sec (CurrentTask: 'RdDispatcher::FlushAll::method=Void <DoDispatch>b__0() of JetBrains.Rd.Impl.MessageBroker+RdWireableDispatchHelper+<>c__DisplayClass12_0') QueueSize=87
+Warning: Primary thread didn't respond for 0.912sec (CurrentTask: 'Update TODO patterns in protocol') QueueSize=17
+Warning: Primary thread didn't respond for 1.112sec (CurrentTask: 'GroupingEventHost.ExecuteExpiredEvents') QueueSize=16
+Warning: Primary thread was unresponsive for 1.112sec
+Warning: Primary thread didn't respond for 0.505sec (CurrentTask: 'EnqueueInit') QueueSize=1
+Warning: Primary thread didn't respond for 0.708sec (CurrentTask: 'EnqueueInit') QueueSize=1
+Warning: Primary thread was unresponsive for 0.708sec
+Warning: Primary thread didn't respond for 0.544sec (CurrentTask: 'DPA CreatePresentationScope') QueueSize=7
+Warning: Primary thread didn't respond for 0.748sec (CurrentTask: 'DPA CreatePresentationScope') QueueSize=8
+Warning: Primary thread was unresponsive for 0.748sec
+Warning: Primary thread didn't respond for 0.697sec (CurrentTask: 'PriorityRdDispatcher') QueueSize=4
+Warning: Primary thread was unresponsive for 0.697sec
