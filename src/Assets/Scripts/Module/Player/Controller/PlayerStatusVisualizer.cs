@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Module.Player.Controller
@@ -11,7 +12,7 @@ namespace Module.Player.Controller
 
         private void Start()
         {
-            lifeMaterial = lifeRenderer.GetSharedMaterials();
+            lifeMaterial = lifeRenderer.sharedMaterials[1];
         }
 
         public void SetHpRate(float rate)
