@@ -25,6 +25,11 @@ namespace Module.Assignment.Component
             task.OnProgressChanged += progress =>
             {
                 assignableArea.SetLightIntensity(maxIntensity - maxIntensity * progress);
+
+                if (progress >= 1f)
+                {
+                    assignableArea.enabled = false;
+                }
             };
         }
     }
