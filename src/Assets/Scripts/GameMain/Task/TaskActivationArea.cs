@@ -1,12 +1,18 @@
 using System;
 using Module.Task;
 using UnityEngine;
+using Wanna.DebugEx;
 
 namespace GameMain.Task
 {
     public class TaskActivationArea : MonoBehaviour
     {
-        [SerializeField] private BaseTask[] baseTasks;
+        private BaseTask[] baseTasks;
+
+        private void Start()
+        {
+            baseTasks = GetComponentsInChildren<BaseTask>(true);
+        }
 
         private void OnTriggerEnter(Collider other)
         {
