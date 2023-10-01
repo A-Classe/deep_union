@@ -24,12 +24,13 @@ namespace Module.Assignment.Component
 
         [SerializeField] private float intensity;
         [SerializeField] private float2 size;
+        [SerializeField] private float rotation;
         [SerializeField] private float2 factor;
         [SerializeField] private bool debugAssignPoints;
 
         public float Intensity => intensity;
 
-        public EllipseData EllipseData => new EllipseData(transform.position, ellipseData.Size);
+        public EllipseData EllipseData => new EllipseData(transform.position, ellipseData.Size, rotation);
         private EllipseData ellipseData;
 
         public IReadOnlyList<Worker> AssignedWorkers => assignedWorkers;
@@ -61,12 +62,13 @@ namespace Module.Assignment.Component
         {
             SetEnableAssignPointDebug(debugAssignPoints);
             SetLightSize();
-            ellipseVisualizer.SetSize(ellipseData.Size);
+            ellipseVisualizer.SetEllipse(ellipseData);
         }
 
         private void SetLightSize()
         {
-            ellipseData = new EllipseData(transform.position, size * factor);
+            DebugEx.Log(rotation);
+            ellipseData = new EllipseData(transform.position, size * factor, rotation);
             lightProjector.size = new Vector3(size.x, size.y, 10f);
         }
 

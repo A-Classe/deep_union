@@ -21,10 +21,18 @@ namespace Module.Assignment.Utility
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool InEllipse(in float3 pos, in EllipseData ellipseData)
         {
-            var dx = (ellipseData.Position.x - pos.x) / (ellipseData.Size.x * 0.5f);
-            var dz = (ellipseData.Position.z - pos.z) / (ellipseData.Size.y * 0.5f);
+            var dx = ellipseData.Position.x - pos.x;
+            var dz = ellipseData.Position.z - pos.z;
 
-            return (dx * dx + dz * dz) <= 1;
+            float rad = math.radians(ellipseData.Rotation);
+
+            float x = dx * math.cos(-rad) - dz * math.sin(-rad);
+            float y = dx * math.cos(-rad) - dz * math.sin(-rad);
+
+            float sizeX = ellipseData.Size.x;
+            float sizeY = ellipseData.Size.y;
+
+            return (x * x) / (sizeX * sizeX) + (y * y) / (sizeY * sizeY) <= 1f;
         }
     }
 }

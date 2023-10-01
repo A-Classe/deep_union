@@ -1,5 +1,6 @@
 using System;
 using Cysharp.Threading.Tasks;
+using GameMain.System;
 using Module.Assignment;
 using Module.Assignment.Component;
 using Module.Player.Controller;
@@ -16,7 +17,7 @@ namespace GameMain.Task
     {
         [SerializeField] private uint attackPoint;
         [SerializeField] private float explodeDuration;
-        [SerializeField] private NavMeshAgent navMeshAgent;
+        [SerializeField] private SimpleAgent simpleAgent;
         [SerializeField] private DecalProjector decalProjector;
         [SerializeField] private AssignableArea assignableArea;
 
@@ -27,15 +28,14 @@ namespace GameMain.Task
         private bool isAdsorption;
         private Transform adsorptionTarget;
         private Vector3 adsorptionOffset;
-        
-        
+
 
         public override void Initialize(IObjectResolver container)
         {
             playerController = container.Resolve<PlayerController>();
             playerStatus = container.Resolve<PlayerStatus>();
             decalProjector.enabled = false;
-            navMeshAgent.enabled = true;
+            simpleAgent.SetActive(false);
 
             SetDetection(false);
             Disable();
@@ -46,6 +46,7 @@ namespace GameMain.Task
         private void OnEnable()
         {
             decalProjector.enabled = true;
+            simpleAgent.SetActive(true);
         }
 
         private void Update()
@@ -56,21 +57,21 @@ namespace GameMain.Task
             }
             else
             {
-                navMeshAgent.SetDestination(playerController.transform.position);
+                simpleAgent.Move(playerController.transform.position);
             }
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnCollisionEnter(Collision other)
         {
             if (isAdsorption)
                 return;
 
-            if (other.CompareTag("Player"))
+            if (other.gameObject.CompareTag("Player"))
             {
                 adsorptionTarget = other.transform;
                 adsorptionOffset = transform.position - adsorptionTarget.position;
                 isAdsorption = true;
-                navMeshAgent.enabled = false;
+                simpleAgent.SetActive(false);
                 assignableArea.enabled = false;
 
                 SetDetection(false);
