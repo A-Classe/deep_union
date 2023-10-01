@@ -90,14 +90,14 @@ GameMain.Presenter.Resource.ResourcePresenter 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter__coll__graph.png" border="0" usemap="#aGameMain_8Presenter_8Resource_8ResourcePresenter_coll__map" alt="Collaboration graph"/></div>
 <map name="aGameMain_8Presenter_8Resource_8ResourcePresenter_coll__map" id="aGameMain_8Presenter_8Resource_8ResourcePresenter_coll__map">
-<area shape="rect" title="タスクとリソース管理クラスのプレゼンタークラス" alt="" coords="123,779,350,885"/>
-<area shape="rect" title=" " alt="" coords="5,602,108,679"/>
-<area shape="rect" href="classModule_1_1Task_1_1ResourceContainer.html" title="リソースを管理するクラス" alt="" coords="365,580,596,701"/>
-<area shape="rect" href="classGameMain_1_1Presenter_1_1GameParam.html" title=" " alt="" coords="357,220,599,429"/>
-<area shape="rect" href="classModule_1_1Task_1_1CollectableTask.html" title="資源を一時的に収集するクラス" alt="" coords="132,565,341,716"/>
+<area shape="rect" title="タスクとリソース管理クラスのプレゼンタークラス" alt="" coords="123,823,350,929"/>
+<area shape="rect" title=" " alt="" coords="5,646,108,723"/>
+<area shape="rect" href="classModule_1_1Task_1_1ResourceContainer.html" title="リソースを管理するクラス" alt="" coords="365,624,596,745"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1GameParam.html" title=" " alt="" coords="357,242,599,451"/>
+<area shape="rect" href="classModule_1_1Task_1_1CollectableTask.html" title="資源を一時的に収集するクラス" alt="" coords="132,609,341,760"/>
 <area shape="rect" title=" " alt="" coords="413,13,543,90"/>
 <area shape="rect" title=" " alt="" coords="48,13,172,90"/>
-<area shape="rect" href="classModule_1_1Task_1_1BaseTask.html" title="全てのタスクのベースクラス" alt="" coords="148,147,331,503"/>
+<area shape="rect" href="classModule_1_1Task_1_1BaseTask.html" title="全てのタスクのベースクラス" alt="" coords="148,147,331,547"/>
 <area shape="rect" href="interfaceModule_1_1Task_1_1ITaskSystem.html" title="タスクにゲームループを適用するインターフェース" alt="" coords="196,5,368,97"/>
 </map>
 </div>
@@ -188,9 +188,10 @@ GameMain.Presenter.Resource.ResourcePresenter 連携図</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                collectableTask.OnCollected += count =&gt;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                {</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                    <a class="code" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a8e6e06136f0759d79d0deebdd4f640bb">resourceContainer</a>.<a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#abaa4c97750ccb88f1fef631c9f5045d4">Add</a>(count);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                };</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                    DebugEx.Log($<span class="stringliteral">&quot;ResourceCount: {resourceContainer.ResourceCount}&quot;</span>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                };</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
 <div class="ttc" id="aclassModule_1_1Task_1_1ResourceContainer_html_abaa4c97750ccb88f1fef631c9f5045d4"><div class="ttname"><a href="classModule_1_1Task_1_1ResourceContainer.html#abaa4c97750ccb88f1fef631c9f5045d4">Module.Task.ResourceContainer.Add</a></div><div class="ttdeci">void Add(int count)</div><div class="ttdef"><b>Definition:</b> <a href="ResourceContainer_8cs_source.html#l00038">ResourceContainer.cs:38</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 呼び出し関係図:</div>

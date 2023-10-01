@@ -68,6 +68,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">公開メンバ関数</a> &#124;
 <a href="#properties">プロパティ</a> &#124;
+<a href="#events">イベント</a> &#124;
 <a href="#pri-methods">非公開メンバ関数</a> &#124;
 <a href="#pri-static-methods">静的非公開メンバ関数</a> &#124;
 <a href="#pri-attribs">非公開変数類</a> &#124;
@@ -81,7 +82,7 @@ Module.Assignment.PlayerStatus 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classModule_1_1Assignment_1_1PlayerStatus__coll__graph.png" border="0" usemap="#aModule_8Assignment_8PlayerStatus_coll__map" alt="Collaboration graph"/></div>
 <map name="aModule_8Assignment_8PlayerStatus_coll__map" id="aModule_8Assignment_8PlayerStatus_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,201,185"/>
+<area shape="rect" title=" " alt="" coords="5,5,201,200"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -98,6 +99,13 @@ Module.Assignment.PlayerStatus 連携図</div>
 プロパティ</h2></td></tr>
 <tr class="memitem:acdf8e3cd37dd3d5241d05b7e9978ab01"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Assignment_1_1PlayerStatus.html#acdf8e3cd37dd3d5241d05b7e9978ab01">Hp</a><code> [get]</code></td></tr>
 <tr class="separator:acdf8e3cd37dd3d5241d05b7e9978ab01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4eb4b347f7afed1ed7edb647c290da1d"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Assignment_1_1PlayerStatus.html#a4eb4b347f7afed1ed7edb647c290da1d">MaxHp</a><code> [get]</code></td></tr>
+<tr class="separator:a4eb4b347f7afed1ed7edb647c290da1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="events"></a>
+イベント</h2></td></tr>
+<tr class="memitem:ad06dafe51ee1c1fa72477a114e71d7cc"><td class="memItemLeft" align="right" valign="top">Action&lt; short &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Assignment_1_1PlayerStatus.html#ad06dafe51ee1c1fa72477a114e71d7cc">OnHpChanged</a></td></tr>
+<tr class="separator:ad06dafe51ee1c1fa72477a114e71d7cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 非公開メンバ関数</h2></td></tr>
@@ -144,12 +152,12 @@ Module.Assignment.PlayerStatus 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="PlayerStatus_8cs_source.html">PlayerStatus.cs</a> の <a class="el" href="PlayerStatus_8cs_source.html#l00014">14</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keywordflow">if</span> (model.<a class="code" href="structCore_1_1Model_1_1Player_1_1PlayerStatusModel.html#a1bd02603be3117368b0979be22c9a946">maxHp</a>.HasValue) <a class="code" href="classModule_1_1Assignment_1_1PlayerStatus.html#a277ab75977fd1ce140b0ca69beaab9b8">maxHp</a> = model.<a class="code" href="structCore_1_1Model_1_1Player_1_1PlayerStatusModel.html#a1bd02603be3117368b0979be22c9a946">maxHp</a>.Value;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordflow">if</span> (model.<a class="code" href="structCore_1_1Model_1_1Player_1_1PlayerStatusModel.html#a9ca561d8b2eb5bde88407a15355dd1f0">hp</a>.HasValue) <a class="code" href="classModule_1_1Assignment_1_1PlayerStatus.html#a0f2b59db49e9b0c1792a0fe8ac50457e">hp</a> = model.<a class="code" href="structCore_1_1Model_1_1Player_1_1PlayerStatusModel.html#a9ca561d8b2eb5bde88407a15355dd1f0">hp</a>.Value;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div>
+<p class="definition"> <a class="el" href="PlayerStatus_8cs_source.html">PlayerStatus.cs</a> の <a class="el" href="PlayerStatus_8cs_source.html#l00017">17</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keywordflow">if</span> (model.<a class="code" href="structCore_1_1Model_1_1Player_1_1PlayerStatusModel.html#a1bd02603be3117368b0979be22c9a946">maxHp</a>.HasValue) <a class="code" href="classModule_1_1Assignment_1_1PlayerStatus.html#a277ab75977fd1ce140b0ca69beaab9b8">maxHp</a> = model.<a class="code" href="structCore_1_1Model_1_1Player_1_1PlayerStatusModel.html#a1bd02603be3117368b0979be22c9a946">maxHp</a>.Value;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordflow">if</span> (model.<a class="code" href="structCore_1_1Model_1_1Player_1_1PlayerStatusModel.html#a9ca561d8b2eb5bde88407a15355dd1f0">hp</a>.HasValue) <a class="code" href="classModule_1_1Assignment_1_1PlayerStatus.html#a0f2b59db49e9b0c1792a0fe8ac50457e">hp</a> = model.<a class="code" href="structCore_1_1Model_1_1Player_1_1PlayerStatusModel.html#a9ca561d8b2eb5bde88407a15355dd1f0">hp</a>.Value;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        }</div>
 <div class="ttc" id="aclassModule_1_1Assignment_1_1PlayerStatus_html_a0f2b59db49e9b0c1792a0fe8ac50457e"><div class="ttname"><a href="classModule_1_1Assignment_1_1PlayerStatus.html#a0f2b59db49e9b0c1792a0fe8ac50457e">Module.Assignment.PlayerStatus.hp</a></div><div class="ttdeci">short hp</div><div class="ttdef"><b>Definition:</b> <a href="PlayerStatus_8cs_source.html#l00010">PlayerStatus.cs:10</a></div></div>
 <div class="ttc" id="aclassModule_1_1Assignment_1_1PlayerStatus_html_a277ab75977fd1ce140b0ca69beaab9b8"><div class="ttname"><a href="classModule_1_1Assignment_1_1PlayerStatus.html#a277ab75977fd1ce140b0ca69beaab9b8">Module.Assignment.PlayerStatus.maxHp</a></div><div class="ttdeci">readonly short maxHp</div><div class="ttdef"><b>Definition:</b> <a href="PlayerStatus_8cs_source.html#l00009">PlayerStatus.cs:9</a></div></div>
 <div class="ttc" id="astructCore_1_1Model_1_1Player_1_1PlayerStatusModel_html_a1bd02603be3117368b0979be22c9a946"><div class="ttname"><a href="structCore_1_1Model_1_1Player_1_1PlayerStatusModel.html#a1bd02603be3117368b0979be22c9a946">Core.Model.Player.PlayerStatusModel.maxHp</a></div><div class="ttdeci">short? maxHp</div><div class="ttdef"><b>Definition:</b> <a href="PlayerModel_8cs_source.html#l00017">PlayerModel.cs:17</a></div></div>
@@ -182,12 +190,12 @@ Module.Assignment.PlayerStatus 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="PlayerStatus_8cs_source.html">PlayerStatus.cs</a> の <a class="el" href="PlayerStatus_8cs_source.html#l00021">21</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="classModule_1_1Assignment_1_1PlayerStatus.html#abb2f37d46b1a2d636e5d7843e1a696d7">SetHp</a>((<span class="keywordtype">short</span>)(<a class="code" href="classModule_1_1Assignment_1_1PlayerStatus.html#a0f2b59db49e9b0c1792a0fe8ac50457e">hp</a> + <a class="code" href="classModule_1_1Assignment_1_1PlayerStatus.html#a14f9dd697088e2d6e0144c4de93a8f0e">Parse</a>(value)));</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
-<div class="ttc" id="aclassModule_1_1Assignment_1_1PlayerStatus_html_a14f9dd697088e2d6e0144c4de93a8f0e"><div class="ttname"><a href="classModule_1_1Assignment_1_1PlayerStatus.html#a14f9dd697088e2d6e0144c4de93a8f0e">Module.Assignment.PlayerStatus.Parse</a></div><div class="ttdeci">static short Parse(uint value)</div><div class="ttdef"><b>Definition:</b> <a href="PlayerStatus_8cs_source.html#l00036">PlayerStatus.cs:36</a></div></div>
-<div class="ttc" id="aclassModule_1_1Assignment_1_1PlayerStatus_html_abb2f37d46b1a2d636e5d7843e1a696d7"><div class="ttname"><a href="classModule_1_1Assignment_1_1PlayerStatus.html#abb2f37d46b1a2d636e5d7843e1a696d7">Module.Assignment.PlayerStatus.SetHp</a></div><div class="ttdeci">void SetHp(short newHp)</div><div class="ttdef"><b>Definition:</b> <a href="PlayerStatus_8cs_source.html#l00031">PlayerStatus.cs:31</a></div></div>
+<p class="definition"> <a class="el" href="PlayerStatus_8cs_source.html">PlayerStatus.cs</a> の <a class="el" href="PlayerStatus_8cs_source.html#l00024">24</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="classModule_1_1Assignment_1_1PlayerStatus.html#abb2f37d46b1a2d636e5d7843e1a696d7">SetHp</a>((<span class="keywordtype">short</span>)(<a class="code" href="classModule_1_1Assignment_1_1PlayerStatus.html#a0f2b59db49e9b0c1792a0fe8ac50457e">hp</a> + <a class="code" href="classModule_1_1Assignment_1_1PlayerStatus.html#a14f9dd697088e2d6e0144c4de93a8f0e">Parse</a>(value)));</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1PlayerStatus_html_a14f9dd697088e2d6e0144c4de93a8f0e"><div class="ttname"><a href="classModule_1_1Assignment_1_1PlayerStatus.html#a14f9dd697088e2d6e0144c4de93a8f0e">Module.Assignment.PlayerStatus.Parse</a></div><div class="ttdeci">static short Parse(uint value)</div><div class="ttdef"><b>Definition:</b> <a href="PlayerStatus_8cs_source.html#l00041">PlayerStatus.cs:41</a></div></div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1PlayerStatus_html_abb2f37d46b1a2d636e5d7843e1a696d7"><div class="ttname"><a href="classModule_1_1Assignment_1_1PlayerStatus.html#abb2f37d46b1a2d636e5d7843e1a696d7">Module.Assignment.PlayerStatus.SetHp</a></div><div class="ttdeci">void SetHp(short newHp)</div><div class="ttdef"><b>Definition:</b> <a href="PlayerStatus_8cs_source.html#l00034">PlayerStatus.cs:34</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -225,20 +233,22 @@ Module.Assignment.PlayerStatus 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="PlayerStatus_8cs_source.html">PlayerStatus.cs</a> の <a class="el" href="PlayerStatus_8cs_source.html#l00036">36</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">return</span> checked((<span class="keywordtype">short</span>)value);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div>
+<p class="definition"> <a class="el" href="PlayerStatus_8cs_source.html">PlayerStatus.cs</a> の <a class="el" href="PlayerStatus_8cs_source.html#l00041">41</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">return</span> checked((<span class="keywordtype">short</span>)value);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
 </div><!-- fragment --><div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classModule_1_1Assignment_1_1PlayerStatus_a14f9dd697088e2d6e0144c4de93a8f0e_icgraph.png" border="0" usemap="#aclassModule_1_1Assignment_1_1PlayerStatus_a14f9dd697088e2d6e0144c4de93a8f0e_icgraph" alt=""/></div>
 <map name="aclassModule_1_1Assignment_1_1PlayerStatus_a14f9dd697088e2d6e0144c4de93a8f0e_icgraph" id="aclassModule_1_1Assignment_1_1PlayerStatus_a14f9dd697088e2d6e0144c4de93a8f0e_icgraph">
-<area shape="rect" title=" " alt="" coords="759,39,955,80"/>
-<area shape="rect" href="classModule_1_1Assignment_1_1PlayerStatus.html#a488a60186aa2cfd0bbd8c843c4894118" title=" " alt="" coords="515,5,711,47"/>
-<area shape="rect" href="classModule_1_1Assignment_1_1PlayerStatus.html#ad23bf47065a3ae626abfd2a9c05ec302" title=" " alt="" coords="515,71,711,112"/>
-<area shape="rect" href="classGameMain_1_1Task_1_1PoisonArea.html#a78447d088d179d895f6ea36ae49bbadd" title=" " alt="" coords="260,71,467,112"/>
-<area shape="rect" href="classGameMain_1_1Task_1_1PoisonArea.html#a55b85a417ff8c7dc512939f94ff85073" title=" " alt="" coords="5,71,212,112"/>
+<area shape="rect" title=" " alt="" coords="777,39,973,80"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1PlayerStatus.html#a488a60186aa2cfd0bbd8c843c4894118" title=" " alt="" coords="533,5,729,47"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1PlayerStatus.html#ad23bf47065a3ae626abfd2a9c05ec302" title=" " alt="" coords="533,71,729,112"/>
+<area shape="rect" href="classGameMain_1_1Task_1_1PoisonArea.html#a78447d088d179d895f6ea36ae49bbadd" title=" " alt="" coords="274,37,481,79"/>
+<area shape="rect" href="classGameMain_1_1Task_1_1Enemy1Task.html#a1b911643e828291b31564dc80ccf1a40" title=" " alt="" coords="269,103,485,144"/>
+<area shape="rect" href="classGameMain_1_1Task_1_1PoisonArea.html#a55b85a417ff8c7dc512939f94ff85073" title=" " alt="" coords="10,37,217,79"/>
+<area shape="rect" href="classGameMain_1_1Task_1_1Enemy1Task.html#a9165d7e9f4d7da8982e88a27e42da679" title=" " alt="" coords="5,103,221,144"/>
 </map>
 </div>
 
@@ -268,10 +278,10 @@ Module.Assignment.PlayerStatus 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="PlayerStatus_8cs_source.html">PlayerStatus.cs</a> の <a class="el" href="PlayerStatus_8cs_source.html#l00026">26</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <a class="code" href="classModule_1_1Assignment_1_1PlayerStatus.html#abb2f37d46b1a2d636e5d7843e1a696d7">SetHp</a>((<span class="keywordtype">short</span>)(<a class="code" href="classModule_1_1Assignment_1_1PlayerStatus.html#a0f2b59db49e9b0c1792a0fe8ac50457e">hp</a> - <a class="code" href="classModule_1_1Assignment_1_1PlayerStatus.html#a14f9dd697088e2d6e0144c4de93a8f0e">Parse</a>(value)));</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
+<p class="definition"> <a class="el" href="PlayerStatus_8cs_source.html">PlayerStatus.cs</a> の <a class="el" href="PlayerStatus_8cs_source.html#l00029">29</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <a class="code" href="classModule_1_1Assignment_1_1PlayerStatus.html#abb2f37d46b1a2d636e5d7843e1a696d7">SetHp</a>((<span class="keywordtype">short</span>)(<a class="code" href="classModule_1_1Assignment_1_1PlayerStatus.html#a0f2b59db49e9b0c1792a0fe8ac50457e">hp</a> - <a class="code" href="classModule_1_1Assignment_1_1PlayerStatus.html#a14f9dd697088e2d6e0144c4de93a8f0e">Parse</a>(value)));</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
 </div><!-- fragment --><div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -287,9 +297,11 @@ Module.Assignment.PlayerStatus 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classModule_1_1Assignment_1_1PlayerStatus_ad23bf47065a3ae626abfd2a9c05ec302_icgraph.png" border="0" usemap="#aclassModule_1_1Assignment_1_1PlayerStatus_ad23bf47065a3ae626abfd2a9c05ec302_icgraph" alt=""/></div>
 <map name="aclassModule_1_1Assignment_1_1PlayerStatus_ad23bf47065a3ae626abfd2a9c05ec302_icgraph" id="aclassModule_1_1Assignment_1_1PlayerStatus_ad23bf47065a3ae626abfd2a9c05ec302_icgraph">
-<area shape="rect" title=" " alt="" coords="515,5,711,47"/>
-<area shape="rect" href="classGameMain_1_1Task_1_1PoisonArea.html#a78447d088d179d895f6ea36ae49bbadd" title=" " alt="" coords="260,5,467,47"/>
-<area shape="rect" href="classGameMain_1_1Task_1_1PoisonArea.html#a55b85a417ff8c7dc512939f94ff85073" title=" " alt="" coords="5,5,212,47"/>
+<area shape="rect" title=" " alt="" coords="533,39,729,80"/>
+<area shape="rect" href="classGameMain_1_1Task_1_1PoisonArea.html#a78447d088d179d895f6ea36ae49bbadd" title=" " alt="" coords="274,5,481,47"/>
+<area shape="rect" href="classGameMain_1_1Task_1_1Enemy1Task.html#a1b911643e828291b31564dc80ccf1a40" title=" " alt="" coords="269,71,485,112"/>
+<area shape="rect" href="classGameMain_1_1Task_1_1PoisonArea.html#a55b85a417ff8c7dc512939f94ff85073" title=" " alt="" coords="10,5,217,47"/>
+<area shape="rect" href="classGameMain_1_1Task_1_1Enemy1Task.html#a9165d7e9f4d7da8982e88a27e42da679" title=" " alt="" coords="5,71,221,112"/>
 </map>
 </div>
 
@@ -319,20 +331,25 @@ Module.Assignment.PlayerStatus 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="PlayerStatus_8cs_source.html">PlayerStatus.cs</a> の <a class="el" href="PlayerStatus_8cs_source.html#l00031">31</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="classModule_1_1Assignment_1_1PlayerStatus.html#a0f2b59db49e9b0c1792a0fe8ac50457e">hp</a> = Math.Clamp(newHp, (<span class="keywordtype">short</span>)0, <a class="code" href="classModule_1_1Assignment_1_1PlayerStatus.html#a277ab75977fd1ce140b0ca69beaab9b8">maxHp</a>);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
+<p class="definition"> <a class="el" href="PlayerStatus_8cs_source.html">PlayerStatus.cs</a> の <a class="el" href="PlayerStatus_8cs_source.html#l00034">34</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <a class="code" href="classModule_1_1Assignment_1_1PlayerStatus.html#a0f2b59db49e9b0c1792a0fe8ac50457e">hp</a> = Math.Clamp(newHp, (<span class="keywordtype">short</span>)0, <a class="code" href="classModule_1_1Assignment_1_1PlayerStatus.html#a277ab75977fd1ce140b0ca69beaab9b8">maxHp</a>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            DebugEx.Log($<span class="stringliteral">&quot;PlayerHP: {hp}&quot;</span>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="classModule_1_1Assignment_1_1PlayerStatus.html#ad06dafe51ee1c1fa72477a114e71d7cc">OnHpChanged</a>?.Invoke(<a class="code" href="classModule_1_1Assignment_1_1PlayerStatus.html#a0f2b59db49e9b0c1792a0fe8ac50457e">hp</a>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1PlayerStatus_html_ad06dafe51ee1c1fa72477a114e71d7cc"><div class="ttname"><a href="classModule_1_1Assignment_1_1PlayerStatus.html#ad06dafe51ee1c1fa72477a114e71d7cc">Module.Assignment.PlayerStatus.OnHpChanged</a></div><div class="ttdeci">Action&lt; short &gt; OnHpChanged</div><div class="ttdef"><b>Definition:</b> <a href="PlayerStatus_8cs_source.html#l00015">PlayerStatus.cs:15</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classModule_1_1Assignment_1_1PlayerStatus_abb2f37d46b1a2d636e5d7843e1a696d7_icgraph.png" border="0" usemap="#aclassModule_1_1Assignment_1_1PlayerStatus_abb2f37d46b1a2d636e5d7843e1a696d7_icgraph" alt=""/></div>
 <map name="aclassModule_1_1Assignment_1_1PlayerStatus_abb2f37d46b1a2d636e5d7843e1a696d7_icgraph" id="aclassModule_1_1Assignment_1_1PlayerStatus_abb2f37d46b1a2d636e5d7843e1a696d7_icgraph">
-<area shape="rect" title=" " alt="" coords="759,39,955,80"/>
-<area shape="rect" href="classModule_1_1Assignment_1_1PlayerStatus.html#a488a60186aa2cfd0bbd8c843c4894118" title=" " alt="" coords="515,5,711,47"/>
-<area shape="rect" href="classModule_1_1Assignment_1_1PlayerStatus.html#ad23bf47065a3ae626abfd2a9c05ec302" title=" " alt="" coords="515,71,711,112"/>
-<area shape="rect" href="classGameMain_1_1Task_1_1PoisonArea.html#a78447d088d179d895f6ea36ae49bbadd" title=" " alt="" coords="260,71,467,112"/>
-<area shape="rect" href="classGameMain_1_1Task_1_1PoisonArea.html#a55b85a417ff8c7dc512939f94ff85073" title=" " alt="" coords="5,71,212,112"/>
+<area shape="rect" title=" " alt="" coords="777,39,973,80"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1PlayerStatus.html#a488a60186aa2cfd0bbd8c843c4894118" title=" " alt="" coords="533,5,729,47"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1PlayerStatus.html#ad23bf47065a3ae626abfd2a9c05ec302" title=" " alt="" coords="533,71,729,112"/>
+<area shape="rect" href="classGameMain_1_1Task_1_1PoisonArea.html#a78447d088d179d895f6ea36ae49bbadd" title=" " alt="" coords="274,37,481,79"/>
+<area shape="rect" href="classGameMain_1_1Task_1_1Enemy1Task.html#a1b911643e828291b31564dc80ccf1a40" title=" " alt="" coords="269,103,485,144"/>
+<area shape="rect" href="classGameMain_1_1Task_1_1PoisonArea.html#a55b85a417ff8c7dc512939f94ff85073" title=" " alt="" coords="10,37,217,79"/>
+<area shape="rect" href="classGameMain_1_1Task_1_1Enemy1Task.html#a9165d7e9f4d7da8982e88a27e42da679" title=" " alt="" coords="5,103,221,144"/>
 </map>
 </div>
 
@@ -412,8 +429,49 @@ Module.Assignment.PlayerStatus 連携図</div>
 
 </div>
 </div>
+<a id="a4eb4b347f7afed1ed7edb647c290da1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4eb4b347f7afed1ed7edb647c290da1d">&#9670;&nbsp;</a></span>MaxHp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">short Module.Assignment.PlayerStatus.MaxHp</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PlayerStatus_8cs_source.html">PlayerStatus.cs</a> の <a class="el" href="PlayerStatus_8cs_source.html#l00013">13</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">イベント詳解</h2>
+<a id="ad06dafe51ee1c1fa72477a114e71d7cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad06dafe51ee1c1fa72477a114e71d7cc">&#9670;&nbsp;</a></span>OnHpChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Action&lt;short&gt; Module.Assignment.PlayerStatus.OnHpChanged</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PlayerStatus_8cs_source.html">PlayerStatus.cs</a> の <a class="el" href="PlayerStatus_8cs_source.html#l00015">15</a> 行目に定義があります。</p>
+
+</div>
+</div>
 <hr/>このクラス詳解は次のファイルから抽出されました:<ul>
-<li>src/Assets/Scripts/Module/Assignment/<a class="el" href="PlayerStatus_8cs_source.html">PlayerStatus.cs</a></li>
+<li>src/Assets/Scripts/Module/Player/<a class="el" href="PlayerStatus_8cs_source.html">PlayerStatus.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

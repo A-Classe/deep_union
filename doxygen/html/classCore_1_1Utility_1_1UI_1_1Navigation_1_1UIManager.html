@@ -1,0 +1,371 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: Core.Utility.UI.Navigation.UIManager クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceCore.html">Core</a></li><li class="navelem"><a class="el" href="namespaceCore_1_1Utility.html">Utility</a></li><li class="navelem"><a class="el" href="namespaceCore_1_1Utility_1_1UI.html">UI</a></li><li class="navelem"><a class="el" href="namespaceCore_1_1Utility_1_1UI_1_1Navigation.html">Navigation</a></li><li class="navelem"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html">UIManager</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">Core.Utility.UI.Navigation.UIManager クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Core.Utility.UI.Navigation.UIManager の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager__inherit__graph.png" border="0" usemap="#aCore_8Utility_8UI_8Navigation_8UIManager_inherit__map" alt="Inheritance graph"/></div>
+<map name="aCore_8Utility_8UI_8Navigation_8UIManager_inherit__map" id="aCore_8Utility_8UI_8Navigation_8UIManager_inherit__map">
+<area shape="rect" title=" " alt="" coords="1183,131,1373,281"/>
+<area shape="rect" href="classGameMain_1_1UI_1_1Screen_1_1GameOver_1_1GameOverManager.html" title="ゲーム中のGameOverUI" alt="" coords="5,373,241,583"/>
+<area shape="rect" href="classGameMain_1_1UI_1_1Screen_1_1InGame_1_1InGameManager.html" title=" " alt="" coords="266,425,485,531"/>
+<area shape="rect" title=" " alt="" coords="509,410,721,546"/>
+<area shape="rect" title=" " alt="" coords="745,366,920,590"/>
+<area shape="rect" title=" " alt="" coords="945,351,1166,605"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html" title=" " alt="" coords="1191,359,1365,597"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1Option4_1_1Option4Manager.html" title=" " alt="" coords="1389,403,1564,553"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html" title=" " alt="" coords="1588,329,1808,627"/>
+<area shape="rect" title=" " alt="" coords="1832,373,2020,583"/>
+<area shape="rect" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html" title=" " alt="" coords="2044,329,2235,627"/>
+<area shape="rect" title=" " alt="" coords="2259,373,2451,583"/>
+<area shape="rect" title=" " alt="" coords="1201,5,1355,83"/>
+</map>
+</div>
+<div class="dynheader">
+Core.Utility.UI.Navigation.UIManager 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager__coll__graph.png" border="0" usemap="#aCore_8Utility_8UI_8Navigation_8UIManager_coll__map" alt="Collaboration graph"/></div>
+<map name="aCore_8Utility_8UI_8Navigation_8UIManager_coll__map" id="aCore_8Utility_8UI_8Navigation_8UIManager_coll__map">
+<area shape="rect" title=" " alt="" coords="5,131,196,281"/>
+<area shape="rect" title=" " alt="" coords="23,5,178,83"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a64a32152c1bf56f8e49298804f574f34"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a64a32152c1bf56f8e49298804f574f34">Initialized</a> (ContentTransform content)</td></tr>
+<tr class="separator:a64a32152c1bf56f8e49298804f574f34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a361aea255401b1286eaa51bcc6eeaab8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a361aea255401b1286eaa51bcc6eeaab8">Select</a> (Vector2 direction)</td></tr>
+<tr class="separator:a361aea255401b1286eaa51bcc6eeaab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a229baea4db34a9b99e3f5d2b7fcd3c3b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a229baea4db34a9b99e3f5d2b7fcd3c3b">Clicked</a> ()</td></tr>
+<tr class="separator:a229baea4db34a9b99e3f5d2b7fcd3c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82c0d36cd008e231c62b0410f4d2196a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a82c0d36cd008e231c62b0410f4d2196a">Finished</a> (ContentTransform content, Action onFinished)</td></tr>
+<tr class="separator:a82c0d36cd008e231c62b0410f4d2196a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb6930c459fc8a9aa8d331dfbc739ba6"><td class="memItemLeft" align="right" valign="top">AnimationBehaviour&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#abb6930c459fc8a9aa8d331dfbc739ba6">GetContext</a> ()</td></tr>
+<tr class="separator:abb6930c459fc8a9aa8d331dfbc739ba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="UIManager_8cs_source.html">UIManager.cs</a> の <a class="el" href="UIManager_8cs_source.html#l00007">7</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="a229baea4db34a9b99e3f5d2b7fcd3c3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a229baea4db34a9b99e3f5d2b7fcd3c3b">&#9670;&nbsp;</a></span>Clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Core.Utility.UI.Navigation.UIManager.Clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a488cd3eb1e59e6cc202ba13e9464adc2">UI.Title.StageSelect.StageSelectManager</a>, <a class="el" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#ae5aa5bdc6be592e3efa734cc05f17370">UI.Title.Option.OptionManager</a>, <a class="el" href="classUI_1_1Title_1_1Option_1_1Option4_1_1Option4Manager.html#a46e1d1bd7e36422f12786a433a736258">UI.Title.Option.Option4.Option4Manager</a>, <a class="el" href="classUI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html#ae0641fa47201def5834da3c7af0a69d8">UI.Title.Option.Option3.Option3Manager</a>, <a class="el" href="classGameMain_1_1UI_1_1Screen_1_1InGame_1_1InGameManager.html#ae4f9f05a3cb562d75add178090e3a8e4">GameMain.UI.Screen.InGame.InGameManager</a>, <a class="el" href="classGameMain_1_1UI_1_1Screen_1_1GameOver_1_1GameOverManager.html#a2bcb20e4436806d5ef1e13e52473a8e5">GameMain.UI.Screen.GameOver.GameOverManager</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="UIManager_8cs_source.html">UIManager.cs</a> の <a class="el" href="UIManager_8cs_source.html#l00018">18</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{}</div>
+</div><!-- fragment --><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager_a229baea4db34a9b99e3f5d2b7fcd3c3b_icgraph.png" border="0" usemap="#aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager_a229baea4db34a9b99e3f5d2b7fcd3c3b_icgraph" alt=""/></div>
+<map name="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager_a229baea4db34a9b99e3f5d2b7fcd3c3b_icgraph" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager_a229baea4db34a9b99e3f5d2b7fcd3c3b_icgraph">
+<area shape="rect" title=" " alt="" coords="483,5,673,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#aa259a5932407229dda04fa9da04497ce" title=" " alt="" coords="244,5,435,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a43d98a6074ec01747d4bad843631e72a" title=" " alt="" coords="5,5,196,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a82c0d36cd008e231c62b0410f4d2196a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82c0d36cd008e231c62b0410f4d2196a">&#9670;&nbsp;</a></span>Finished()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Core.Utility.UI.Navigation.UIManager.Finished </td>
+          <td>(</td>
+          <td class="paramtype">ContentTransform&#160;</td>
+          <td class="paramname"><em>content</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Action&#160;</td>
+          <td class="paramname"><em>onFinished</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#ab9d08a2d736b7f060c288b5971b4332d">UI.Title.StageSelect.StageSelectManager</a>, <a class="el" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#aa2a8979de6f4242024b8a4774124dd79">UI.Title.Option.OptionManager</a>, <a class="el" href="classUI_1_1Title_1_1Option_1_1Option4_1_1Option4Manager.html#ab72935420a6b6f624fe27224a6de41d1">UI.Title.Option.Option4.Option4Manager</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="UIManager_8cs_source.html">UIManager.cs</a> の <a class="el" href="UIManager_8cs_source.html#l00020">20</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            OnCancel();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            Animation(</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                content,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <span class="keyword">new</span> AnimationListener</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                    OnFinished = () =&gt;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                        gameObject.SetActive(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                        onFinished?.Invoke();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                    }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            );</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
+</div><!-- fragment --><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager_a82c0d36cd008e231c62b0410f4d2196a_icgraph.png" border="0" usemap="#aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager_a82c0d36cd008e231c62b0410f4d2196a_icgraph" alt=""/></div>
+<map name="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager_a82c0d36cd008e231c62b0410f4d2196a_icgraph" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager_a82c0d36cd008e231c62b0410f4d2196a_icgraph">
+<area shape="rect" title=" " alt="" coords="1073,159,1264,200"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a7ca04e63fd777971106f2e23aa4e8127" title=" " alt="" coords="835,159,1025,200"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#aba349e758f235a946b576599b4f5ea67" title=" " alt="" coords="555,5,778,47"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#a4c9a03aecd2253bcdc1b387655a17d8f" title=" " alt="" coords="555,71,778,112"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#aa95693b32f2274a054a0daef6ee3ad25" title=" " alt="" coords="276,159,499,200"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#aa7ac9d917c9647dfb4157c097afb0eea" title=" " alt="" coords="555,188,778,229"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#a25ac6a557643d50d2db26df7cba42d6c" title=" " alt="" coords="555,253,778,295"/>
+<area shape="rect" href="classGameMain_1_1UI_1_1InGameUIManager.html#a2ca5138e4f815ef298ebc25c26ac93e6" title=" " alt="" coords="547,319,787,360"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#a5c19ef95c31c80fc1ece501498875961" title=" " alt="" coords="5,159,228,200"/>
+<area shape="rect" href="classGameMain_1_1GameRouter.html#a6454f04e22fe74080dbb46da0f8927be" title=" " alt="" coords="281,326,494,353"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abb6930c459fc8a9aa8d331dfbc739ba6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb6930c459fc8a9aa8d331dfbc739ba6">&#9670;&nbsp;</a></span>GetContext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AnimationBehaviour Core.Utility.UI.Navigation.UIManager.GetContext </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager_abb6930c459fc8a9aa8d331dfbc739ba6_icgraph.png" border="0" usemap="#aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager_abb6930c459fc8a9aa8d331dfbc739ba6_icgraph" alt=""/></div>
+<map name="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager_abb6930c459fc8a9aa8d331dfbc739ba6_icgraph" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager_abb6930c459fc8a9aa8d331dfbc739ba6_icgraph">
+<area shape="rect" title=" " alt="" coords="1073,159,1264,200"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a7ca04e63fd777971106f2e23aa4e8127" title=" " alt="" coords="835,159,1025,200"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#aba349e758f235a946b576599b4f5ea67" title=" " alt="" coords="555,5,778,47"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#a4c9a03aecd2253bcdc1b387655a17d8f" title=" " alt="" coords="555,71,778,112"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#aa95693b32f2274a054a0daef6ee3ad25" title=" " alt="" coords="276,159,499,200"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#aa7ac9d917c9647dfb4157c097afb0eea" title=" " alt="" coords="555,188,778,229"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#a25ac6a557643d50d2db26df7cba42d6c" title=" " alt="" coords="555,253,778,295"/>
+<area shape="rect" href="classGameMain_1_1UI_1_1InGameUIManager.html#a2ca5138e4f815ef298ebc25c26ac93e6" title=" " alt="" coords="547,319,787,360"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#a5c19ef95c31c80fc1ece501498875961" title=" " alt="" coords="5,159,228,200"/>
+<area shape="rect" href="classGameMain_1_1GameRouter.html#a6454f04e22fe74080dbb46da0f8927be" title=" " alt="" coords="281,326,494,353"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a64a32152c1bf56f8e49298804f574f34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64a32152c1bf56f8e49298804f574f34">&#9670;&nbsp;</a></span>Initialized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Core.Utility.UI.Navigation.UIManager.Initialized </td>
+          <td>(</td>
+          <td class="paramtype">ContentTransform&#160;</td>
+          <td class="paramname"><em>content</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a073c9e03dcf8bd77cf80208547937d5a">UI.Title.StageSelect.StageSelectManager</a>, <a class="el" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#aba349e758f235a946b576599b4f5ea67">UI.Title.Option.OptionManager</a>, <a class="el" href="classUI_1_1Title_1_1Option_1_1Option4_1_1Option4Manager.html#abed0e778e8773288f39d5c4b1c3b97f3">UI.Title.Option.Option4.Option4Manager</a>, <a class="el" href="classUI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html#ae063acfbd1f5a21861db3ad3c4125a2a">UI.Title.Option.Option3.Option3Manager</a>, <a class="el" href="classGameMain_1_1UI_1_1Screen_1_1GameOver_1_1GameOverManager.html#a18dc5da232cf3ad585edc450b0f33cd6">GameMain.UI.Screen.GameOver.GameOverManager</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="UIManager_8cs_source.html">UIManager.cs</a> の <a class="el" href="UIManager_8cs_source.html#l00009">9</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            gameObject.SetActive(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            OnCancel();</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            Animation(content);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        }</div>
+</div><!-- fragment --><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager_a64a32152c1bf56f8e49298804f574f34_icgraph.png" border="0" usemap="#aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager_a64a32152c1bf56f8e49298804f574f34_icgraph" alt=""/></div>
+<map name="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager_a64a32152c1bf56f8e49298804f574f34_icgraph" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager_a64a32152c1bf56f8e49298804f574f34_icgraph">
+<area shape="rect" title=" " alt="" coords="1073,159,1264,200"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a7ca04e63fd777971106f2e23aa4e8127" title=" " alt="" coords="835,159,1025,200"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#aba349e758f235a946b576599b4f5ea67" title=" " alt="" coords="555,5,778,47"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#a4c9a03aecd2253bcdc1b387655a17d8f" title=" " alt="" coords="555,71,778,112"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#aa95693b32f2274a054a0daef6ee3ad25" title=" " alt="" coords="276,159,499,200"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#aa7ac9d917c9647dfb4157c097afb0eea" title=" " alt="" coords="555,188,778,229"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#a25ac6a557643d50d2db26df7cba42d6c" title=" " alt="" coords="555,253,778,295"/>
+<area shape="rect" href="classGameMain_1_1UI_1_1InGameUIManager.html#a2ca5138e4f815ef298ebc25c26ac93e6" title=" " alt="" coords="547,319,787,360"/>
+<area shape="rect" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#a5c19ef95c31c80fc1ece501498875961" title=" " alt="" coords="5,159,228,200"/>
+<area shape="rect" href="classGameMain_1_1GameRouter.html#a6454f04e22fe74080dbb46da0f8927be" title=" " alt="" coords="281,326,494,353"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a361aea255401b1286eaa51bcc6eeaab8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a361aea255401b1286eaa51bcc6eeaab8">&#9670;&nbsp;</a></span>Select()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Core.Utility.UI.Navigation.UIManager.Select </td>
+          <td>(</td>
+          <td class="paramtype">Vector2&#160;</td>
+          <td class="paramname"><em>direction</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#a56bea78a1ab89da02c191e6254e91429">UI.Title.StageSelect.StageSelectManager</a>, <a class="el" href="classUI_1_1Title_1_1Option_1_1OptionManager.html#a6d197b35a3aaae2edab138854acac3f4">UI.Title.Option.OptionManager</a>, <a class="el" href="classUI_1_1Title_1_1Option_1_1Option4_1_1Option4Manager.html#a9ab9fdabf702f50115f2fa667eb0755a">UI.Title.Option.Option4.Option4Manager</a>, <a class="el" href="classUI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html#a5fb72772a6f8dee4cf70d45ff4e4c670">UI.Title.Option.Option3.Option3Manager</a>, <a class="el" href="classGameMain_1_1UI_1_1Screen_1_1InGame_1_1InGameManager.html#aa7a36c8df5b1d6022fa13610ab16b80e">GameMain.UI.Screen.InGame.InGameManager</a>, <a class="el" href="classGameMain_1_1UI_1_1Screen_1_1GameOver_1_1GameOverManager.html#af51ac2b69c1e2f6a0925eaf4ab640346">GameMain.UI.Screen.GameOver.GameOverManager</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="UIManager_8cs_source.html">UIManager.cs</a> の <a class="el" href="UIManager_8cs_source.html#l00016">16</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{}</div>
+</div><!-- fragment --><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager_a361aea255401b1286eaa51bcc6eeaab8_icgraph.png" border="0" usemap="#aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager_a361aea255401b1286eaa51bcc6eeaab8_icgraph" alt=""/></div>
+<map name="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager_a361aea255401b1286eaa51bcc6eeaab8_icgraph" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager_a361aea255401b1286eaa51bcc6eeaab8_icgraph">
+<area shape="rect" title=" " alt="" coords="491,39,681,80"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#abf4cfc3297237541fbbfc570944a960c" title=" " alt="" coords="248,5,439,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#ac8f8dad068c28087a982a4c69142b477" title=" " alt="" coords="244,71,443,112"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4516055a30fc1457db69643c62fa9d16" title=" " alt="" coords="5,5,196,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a43d98a6074ec01747d4bad843631e72a" title=" " alt="" coords="5,71,196,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>src/Assets/Scripts/Core/Utility/UI/Navigation/<a class="el" href="UIManager_8cs_source.html">UIManager.cs</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

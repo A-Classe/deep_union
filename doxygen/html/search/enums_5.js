@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['taskstate_1562',['TaskState',['../namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985',1,'Module::Task']]]
+  ['stage_1663',['Stage',['../classCore_1_1Utility_1_1User_1_1StageData.html#ad3459928d4b866ea3c276011d1279136',1,'Core::Utility::User::StageData']]]
 ];

@@ -115,7 +115,7 @@ $(function() {
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            data = dataManager;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            option.SetPreference(data);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            var initialManagers = <span class="keyword">new</span> Dictionary&lt;Nav, IUIManager&gt;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            var initialManagers = <span class="keyword">new</span> Dictionary&lt;Nav, UIManager&gt;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                { Nav.Title, title },</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                { Nav.Quit, quit },</div>
@@ -216,7 +216,7 @@ $(function() {
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keyword">private</span> <span class="keyword">enum</span> Nav</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        {</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            Title,</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            Option,</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <a class="code" href="namespaceGameMain_1_1UI.html#a69cf1dc661959747c491f84eb830b9dfa054b4f3ea543c990f6b125f41af6ebf7">Option</a>,</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            Quit,</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            Credit,</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            StageSelect</div>
@@ -224,16 +224,17 @@ $(function() {
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;}</div>
 <div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation&lt; Nav &gt;</a></div></div>
-<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserPreference_html"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserPreference.html">Core.Utility.User.UserPreference</a></div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00009">UserPreference.cs:10</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserPreference_html"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserPreference.html">Core.Utility.User.UserPreference</a></div><div class="ttdoc">データ保存の中継クラス 絶対にこれを介して保存する</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00013">UserPreference.cs:14</a></div></div>
 <div class="ttc" id="aclassUI_1_1Title_1_1Option_1_1OptionManager_html"><div class="ttname"><a href="classUI_1_1Title_1_1Option_1_1OptionManager.html">UI.Title.Option.OptionManager</a></div><div class="ttdef"><b>Definition:</b> <a href="OptionManager_8cs_source.html#l00015">OptionManager.cs:16</a></div></div>
 <div class="ttc" id="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_html"><div class="ttname"><a href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html">UI.Title.StageSelect.StageSelectManager</a></div><div class="ttdef"><b>Definition:</b> <a href="StageSelectManager_8cs_source.html#l00012">StageSelectManager.cs:13</a></div></div>
 <div class="ttc" id="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_html_afe7dbbcf43c6b5e386715dfc253c317f"><div class="ttname"><a href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">UI.Title.StageSelect.StageSelectManager.Nav</a></div><div class="ttdeci">Nav</div><div class="ttdef"><b>Definition:</b> <a href="StageSelectManager_8cs_source.html#l00014">StageSelectManager.cs:15</a></div></div>
-<div class="ttc" id="anamespaceCore_1_1Utility_1_1UI_1_1Navigation_html"><div class="ttname"><a href="namespaceCore_1_1Utility_1_1UI_1_1Navigation.html">Core.Utility.UI.Navigation</a></div><div class="ttdef"><b>Definition:</b> <a href="IUIManager_8cs_source.html#l00005">IUIManager.cs:6</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1Utility_1_1UI_1_1Navigation_html"><div class="ttname"><a href="namespaceCore_1_1Utility_1_1UI_1_1Navigation.html">Core.Utility.UI.Navigation</a></div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00009">Navigation.cs:10</a></div></div>
 <div class="ttc" id="anamespaceCore_1_1Utility_1_1UI_html"><div class="ttname"><a href="namespaceCore_1_1Utility_1_1UI.html">Core.Utility.UI</a></div><div class="ttdef"><b>Definition:</b> <a href="AnimateObject_8cs_source.html#l00005">AnimateObject.cs:6</a></div></div>
 <div class="ttc" id="anamespaceCore_1_1Utility_1_1User_html"><div class="ttname"><a href="namespaceCore_1_1Utility_1_1User.html">Core.Utility.User</a></div><div class="ttdef"><b>Definition:</b> <a href="DataManager_8cs_source.html#l00007">DataManager.cs:8</a></div></div>
 <div class="ttc" id="anamespaceCore_1_1Utility_html"><div class="ttname"><a href="namespaceCore_1_1Utility.html">Core.Utility</a></div><div class="ttdef"><b>Definition:</b> <a href="IInjectable_8cs_source.html#l00001">IInjectable.cs:2</a></div></div>
 <div class="ttc" id="anamespaceCore_html"><div class="ttname"><a href="namespaceCore.html">Core</a></div><div class="ttdef"><b>Definition:</b> <a href="InputActionAssetProfile_8cs_source.html#l00004">InputActionAssetProfile.cs:5</a></div></div>
 <div class="ttc" id="anamespaceDebug_html"><div class="ttname"><a href="namespaceDebug.html">Debug</a></div><div class="ttdef"><b>Definition:</b> <a href="AssetKeys_8cs_source.html#l00002">AssetKeys.cs:3</a></div></div>
+<div class="ttc" id="anamespaceGameMain_1_1UI_html_a69cf1dc661959747c491f84eb830b9dfa054b4f3ea543c990f6b125f41af6ebf7"><div class="ttname"><a href="namespaceGameMain_1_1UI.html#a69cf1dc661959747c491f84eb830b9dfa054b4f3ea543c990f6b125f41af6ebf7">GameMain.UI.InGameNav.Option</a></div><div class="ttdeci">@ Option</div></div>
 <div class="ttc" id="anamespaceSystem_html"><div class="ttname"><a href="namespaceSystem.html">System</a></div><div class="ttdef"><b>Definition:</b> <a href="GameSequenceHandler_8cs_source.html#l00007">GameSequenceHandler.cs:8</a></div></div>
 <div class="ttc" id="anamespaceUI_1_1Title_1_1Credit_html"><div class="ttname"><a href="namespaceUI_1_1Title_1_1Credit.html">UI.Title.Credit</a></div><div class="ttdef"><b>Definition:</b> <a href="CreditManager_8cs_source.html#l00006">CreditManager.cs:7</a></div></div>
 <div class="ttc" id="anamespaceUI_1_1Title_1_1Option_html"><div class="ttname"><a href="namespaceUI_1_1Title_1_1Option.html">UI.Title.Option</a></div><div class="ttdef"><b>Definition:</b> <a href="Option1Cursor_8cs_source.html#l00003">Option1Cursor.cs:4</a></div></div>

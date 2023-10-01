@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: src/Assets/Scripts/Module/Player/Controller/PlayerStatusUpdater.cs ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_b90377121573af7cb25ee89fc5236601.html">Module</a></li><li class="navelem"><a class="el" href="dir_dd36ce3902f9e2ced395700e6bd10f89.html">Player</a></li><li class="navelem"><a class="el" href="dir_ff9744b310b0922e6c33b6c6286fa617.html">Controller</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">PlayerStatusUpdater.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="PlayerStatusUpdater_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceModule.html">Module</a>.<a class="code" href="namespaceModule_1_1Assignment.html">Assignment</a>;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> VContainer;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> VContainer.Unity;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceModule_1_1Player_1_1Controller.html">Module.Player.Controller</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html">    8</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html">PlayerStatusUpdater</a> : IInitializable</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#a94091ea412abedfb72a7b83e1b4aace4">   10</a></span>&#160;        <span class="keyword">private</span> readonly <a class="code" href="classModule_1_1Assignment_1_1PlayerStatus.html">PlayerStatus</a> <a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#a94091ea412abedfb72a7b83e1b4aace4">playerStatus</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#a25fdc9a26a8248b89ede3a9527111d0b">   11</a></span>&#160;        <span class="keyword">private</span> readonly <a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html">PlayerStatusVisualizer</a> <a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#a25fdc9a26a8248b89ede3a9527111d0b">statusVisualizer</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#abbe04c574b8db3ae5103c2be1432ab15">   12</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">short</span> <a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#abbe04c574b8db3ae5103c2be1432ab15">maxHp</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        [Inject]</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#aed07133fbf5688e59c2767af25d99506">   15</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#aed07133fbf5688e59c2767af25d99506">PlayerStatusUpdater</a>(<a class="code" href="classModule_1_1Assignment_1_1PlayerStatus.html">PlayerStatus</a> <a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#a94091ea412abedfb72a7b83e1b4aace4">playerStatus</a>, <a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html">PlayerStatusVisualizer</a> <a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#a25fdc9a26a8248b89ede3a9527111d0b">statusVisualizer</a>)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            this.playerStatus = <a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#a94091ea412abedfb72a7b83e1b4aace4">playerStatus</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            this.statusVisualizer = <a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#a25fdc9a26a8248b89ede3a9527111d0b">statusVisualizer</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#ab885465781c3d79bdd0d51c3060d6a68">   21</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#ab885465781c3d79bdd0d51c3060d6a68">Initialize</a>()</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#abbe04c574b8db3ae5103c2be1432ab15">maxHp</a> = <a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#a94091ea412abedfb72a7b83e1b4aace4">playerStatus</a>.<a class="code" href="classModule_1_1Assignment_1_1PlayerStatus.html#a4eb4b347f7afed1ed7edb647c290da1d">MaxHp</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#a94091ea412abedfb72a7b83e1b4aace4">playerStatus</a>.<a class="code" href="classModule_1_1Assignment_1_1PlayerStatus.html#ad06dafe51ee1c1fa72477a114e71d7cc">OnHpChanged</a> += hp =&gt;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#a25fdc9a26a8248b89ede3a9527111d0b">statusVisualizer</a>.<a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html#a78b0637abb367b560b147e280fab88ad">SetHpRate</a>(1 - Mathf.InverseLerp(0f, <a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#abbe04c574b8db3ae5103c2be1432ab15">maxHp</a>, hp));</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            };</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1PlayerStatus_html"><div class="ttname"><a href="classModule_1_1Assignment_1_1PlayerStatus.html">Module.Assignment.PlayerStatus</a></div><div class="ttdef"><b>Definition:</b> <a href="PlayerStatus_8cs_source.html#l00007">PlayerStatus.cs:8</a></div></div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1PlayerStatus_html_a4eb4b347f7afed1ed7edb647c290da1d"><div class="ttname"><a href="classModule_1_1Assignment_1_1PlayerStatus.html#a4eb4b347f7afed1ed7edb647c290da1d">Module.Assignment.PlayerStatus.MaxHp</a></div><div class="ttdeci">short MaxHp</div><div class="ttdef"><b>Definition:</b> <a href="PlayerStatus_8cs_source.html#l00013">PlayerStatus.cs:13</a></div></div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1PlayerStatus_html_ad06dafe51ee1c1fa72477a114e71d7cc"><div class="ttname"><a href="classModule_1_1Assignment_1_1PlayerStatus.html#ad06dafe51ee1c1fa72477a114e71d7cc">Module.Assignment.PlayerStatus.OnHpChanged</a></div><div class="ttdeci">Action&lt; short &gt; OnHpChanged</div><div class="ttdef"><b>Definition:</b> <a href="PlayerStatus_8cs_source.html#l00015">PlayerStatus.cs:15</a></div></div>
+<div class="ttc" id="aclassModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater_html"><div class="ttname"><a href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html">Module.Player.Controller.PlayerStatusUpdater</a></div><div class="ttdef"><b>Definition:</b> <a href="PlayerStatusUpdater_8cs_source.html#l00008">PlayerStatusUpdater.cs:9</a></div></div>
+<div class="ttc" id="aclassModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater_html_a25fdc9a26a8248b89ede3a9527111d0b"><div class="ttname"><a href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#a25fdc9a26a8248b89ede3a9527111d0b">Module.Player.Controller.PlayerStatusUpdater.statusVisualizer</a></div><div class="ttdeci">readonly PlayerStatusVisualizer statusVisualizer</div><div class="ttdef"><b>Definition:</b> <a href="PlayerStatusUpdater_8cs_source.html#l00011">PlayerStatusUpdater.cs:11</a></div></div>
+<div class="ttc" id="aclassModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater_html_a94091ea412abedfb72a7b83e1b4aace4"><div class="ttname"><a href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#a94091ea412abedfb72a7b83e1b4aace4">Module.Player.Controller.PlayerStatusUpdater.playerStatus</a></div><div class="ttdeci">readonly PlayerStatus playerStatus</div><div class="ttdef"><b>Definition:</b> <a href="PlayerStatusUpdater_8cs_source.html#l00010">PlayerStatusUpdater.cs:10</a></div></div>
+<div class="ttc" id="aclassModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater_html_ab885465781c3d79bdd0d51c3060d6a68"><div class="ttname"><a href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#ab885465781c3d79bdd0d51c3060d6a68">Module.Player.Controller.PlayerStatusUpdater.Initialize</a></div><div class="ttdeci">void Initialize()</div><div class="ttdef"><b>Definition:</b> <a href="PlayerStatusUpdater_8cs_source.html#l00021">PlayerStatusUpdater.cs:21</a></div></div>
+<div class="ttc" id="aclassModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater_html_abbe04c574b8db3ae5103c2be1432ab15"><div class="ttname"><a href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#abbe04c574b8db3ae5103c2be1432ab15">Module.Player.Controller.PlayerStatusUpdater.maxHp</a></div><div class="ttdeci">short maxHp</div><div class="ttdef"><b>Definition:</b> <a href="PlayerStatusUpdater_8cs_source.html#l00012">PlayerStatusUpdater.cs:12</a></div></div>
+<div class="ttc" id="aclassModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater_html_aed07133fbf5688e59c2767af25d99506"><div class="ttname"><a href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#aed07133fbf5688e59c2767af25d99506">Module.Player.Controller.PlayerStatusUpdater.PlayerStatusUpdater</a></div><div class="ttdeci">PlayerStatusUpdater(PlayerStatus playerStatus, PlayerStatusVisualizer statusVisualizer)</div><div class="ttdef"><b>Definition:</b> <a href="PlayerStatusUpdater_8cs_source.html#l00015">PlayerStatusUpdater.cs:15</a></div></div>
+<div class="ttc" id="aclassModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer_html"><div class="ttname"><a href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html">Module.Player.Controller.PlayerStatusVisualizer</a></div><div class="ttdef"><b>Definition:</b> <a href="PlayerStatusVisualizer_8cs_source.html#l00007">PlayerStatusVisualizer.cs:8</a></div></div>
+<div class="ttc" id="aclassModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer_html_a78b0637abb367b560b147e280fab88ad"><div class="ttname"><a href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html#a78b0637abb367b560b147e280fab88ad">Module.Player.Controller.PlayerStatusVisualizer.SetHpRate</a></div><div class="ttdeci">void SetHpRate(float rate)</div><div class="ttdef"><b>Definition:</b> <a href="PlayerStatusVisualizer_8cs_source.html#l00019">PlayerStatusVisualizer.cs:19</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Assignment_html"><div class="ttname"><a href="namespaceModule_1_1Assignment.html">Module.Assignment</a></div><div class="ttdef"><b>Definition:</b> <a href="AssignableArea_8cs_source.html#l00012">AssignableArea.cs:13</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Player_1_1Controller_html"><div class="ttname"><a href="namespaceModule_1_1Player_1_1Controller.html">Module.Player.Controller</a></div><div class="ttdef"><b>Definition:</b> <a href="PlayerController_8cs_source.html#l00006">PlayerController.cs:7</a></div></div>
+<div class="ttc" id="anamespaceModule_html"><div class="ttname"><a href="namespaceModule.html">Module</a></div><div class="ttdef"><b>Definition:</b> <a href="AssignableArea_8cs_source.html#l00012">AssignableArea.cs:13</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

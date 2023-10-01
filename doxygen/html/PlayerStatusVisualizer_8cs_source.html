@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: src/Assets/Scripts/Module/Player/Controller/PlayerStatusVisualizer.cs ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_b90377121573af7cb25ee89fc5236601.html">Module</a></li><li class="navelem"><a class="el" href="dir_dd36ce3902f9e2ced395700e6bd10f89.html">Player</a></li><li class="navelem"><a class="el" href="dir_ff9744b310b0922e6c33b6c6286fa617.html">Controller</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">PlayerStatusVisualizer.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="PlayerStatusVisualizer_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceSystem.html">System</a>;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceSystem.html">System</a>.Collections.Generic;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceModule_1_1Player_1_1Controller.html">Module.Player.Controller</a></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html">    7</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html">PlayerStatusVisualizer</a> : MonoBehaviour</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    {</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html#a7ea867d0d1928b066ad58d522d81d826">    9</a></span>&#160;        [SerializeField] <span class="keyword">private</span> Renderer <a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html#a7ea867d0d1928b066ad58d522d81d826">lifeRenderer</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html#a72eb07631f07aa80def93a8acbe8974a">   10</a></span>&#160;        [SerializeField] <span class="keyword">private</span> Material <a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html#a72eb07631f07aa80def93a8acbe8974a">lifeMaterial</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html#a9a7cfcb799bd05da42bce94bdd7429b9">   11</a></span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> readonly <span class="keywordtype">int</span> <a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html#a9a7cfcb799bd05da42bce94bdd7429b9">LifeColorTime</a> = Shader.PropertyToID(<span class="stringliteral">&quot;_LifeColorTime&quot;</span>);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html#a5cb84139cf60ec9bd1cb9167723edb5c">   13</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html#a5cb84139cf60ec9bd1cb9167723edb5c">Start</a>()</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html#a72eb07631f07aa80def93a8acbe8974a">lifeMaterial</a> = <a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html#a7ea867d0d1928b066ad58d522d81d826">lifeRenderer</a>.sharedMaterials[1];</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html#a78b0637abb367b560b147e280fab88ad">SetHpRate</a>(0f);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        }</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html#a78b0637abb367b560b147e280fab88ad">   19</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html#a78b0637abb367b560b147e280fab88ad">SetHpRate</a>(<span class="keywordtype">float</span> rate)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html#a72eb07631f07aa80def93a8acbe8974a">lifeMaterial</a>.SetFloat(<a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html#a9a7cfcb799bd05da42bce94bdd7429b9">LifeColorTime</a>, rate);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="ttc" id="aclassModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer_html"><div class="ttname"><a href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html">Module.Player.Controller.PlayerStatusVisualizer</a></div><div class="ttdef"><b>Definition:</b> <a href="PlayerStatusVisualizer_8cs_source.html#l00007">PlayerStatusVisualizer.cs:8</a></div></div>
+<div class="ttc" id="aclassModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer_html_a5cb84139cf60ec9bd1cb9167723edb5c"><div class="ttname"><a href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html#a5cb84139cf60ec9bd1cb9167723edb5c">Module.Player.Controller.PlayerStatusVisualizer.Start</a></div><div class="ttdeci">void Start()</div><div class="ttdef"><b>Definition:</b> <a href="PlayerStatusVisualizer_8cs_source.html#l00013">PlayerStatusVisualizer.cs:13</a></div></div>
+<div class="ttc" id="aclassModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer_html_a72eb07631f07aa80def93a8acbe8974a"><div class="ttname"><a href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html#a72eb07631f07aa80def93a8acbe8974a">Module.Player.Controller.PlayerStatusVisualizer.lifeMaterial</a></div><div class="ttdeci">Material lifeMaterial</div><div class="ttdef"><b>Definition:</b> <a href="PlayerStatusVisualizer_8cs_source.html#l00010">PlayerStatusVisualizer.cs:10</a></div></div>
+<div class="ttc" id="aclassModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer_html_a78b0637abb367b560b147e280fab88ad"><div class="ttname"><a href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html#a78b0637abb367b560b147e280fab88ad">Module.Player.Controller.PlayerStatusVisualizer.SetHpRate</a></div><div class="ttdeci">void SetHpRate(float rate)</div><div class="ttdef"><b>Definition:</b> <a href="PlayerStatusVisualizer_8cs_source.html#l00019">PlayerStatusVisualizer.cs:19</a></div></div>
+<div class="ttc" id="aclassModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer_html_a7ea867d0d1928b066ad58d522d81d826"><div class="ttname"><a href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html#a7ea867d0d1928b066ad58d522d81d826">Module.Player.Controller.PlayerStatusVisualizer.lifeRenderer</a></div><div class="ttdeci">Renderer lifeRenderer</div><div class="ttdef"><b>Definition:</b> <a href="PlayerStatusVisualizer_8cs_source.html#l00009">PlayerStatusVisualizer.cs:9</a></div></div>
+<div class="ttc" id="aclassModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer_html_a9a7cfcb799bd05da42bce94bdd7429b9"><div class="ttname"><a href="classModule_1_1Player_1_1Controller_1_1PlayerStatusVisualizer.html#a9a7cfcb799bd05da42bce94bdd7429b9">Module.Player.Controller.PlayerStatusVisualizer.LifeColorTime</a></div><div class="ttdeci">static readonly int LifeColorTime</div><div class="ttdef"><b>Definition:</b> <a href="PlayerStatusVisualizer_8cs_source.html#l00011">PlayerStatusVisualizer.cs:11</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Player_1_1Controller_html"><div class="ttname"><a href="namespaceModule_1_1Player_1_1Controller.html">Module.Player.Controller</a></div><div class="ttdef"><b>Definition:</b> <a href="PlayerController_8cs_source.html#l00006">PlayerController.cs:7</a></div></div>
+<div class="ttc" id="anamespaceSystem_html"><div class="ttname"><a href="namespaceSystem.html">System</a></div><div class="ttdef"><b>Definition:</b> <a href="GameSequenceHandler_8cs_source.html#l00007">GameSequenceHandler.cs:8</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

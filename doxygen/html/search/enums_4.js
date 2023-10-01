@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['stage_1561',['Stage',['../classCore_1_1Utility_1_1User_1_1StageData.html#ad3459928d4b866ea3c276011d1279136',1,'Core::Utility::User::StageData']]]
+  ['playerstate_1662',['PlayerState',['../namespaceModule_1_1Player_1_1State.html#a1f8129bb91b2599aa35084f9e3aca736',1,'Module::Player::State']]]
 ];

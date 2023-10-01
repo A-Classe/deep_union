@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: src/Assets/Scripts/GameMain/UI/InGameUIManager.cs ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_2663a91e34b059a736b32b20a5ff248b.html">GameMain</a></li><li class="navelem"><a class="el" href="dir_ec3f0fa75e97c6a838b204ccaad3ad4e.html">UI</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">InGameUIManager.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="InGameUIManager_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceSystem.html">System</a>;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceSystem.html">System</a>.Collections.Generic;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceCore.html">Core</a>.<a class="code" href="namespaceCore_1_1Utility.html">Utility</a>.<a class="code" href="namespaceCore_1_1Utility_1_1UI.html">UI</a>.<a class="code" href="namespaceCore_1_1Utility_1_1UI_1_1Navigation.html">Navigation</a>;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceGameMain.html">GameMain</a>.<a class="code" href="namespaceGameMain_1_1UI.html">UI</a>.<a class="code" href="namespaceGameMain_1_1UI_1_1Screen.html">Screen</a>.<a class="code" href="namespaceGameMain_1_1UI_1_1Screen_1_1GameOver.html">GameOver</a>;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceGameMain.html">GameMain</a>.<a class="code" href="namespaceGameMain_1_1UI.html">UI</a>.<a class="code" href="namespaceGameMain_1_1UI_1_1Screen.html">Screen</a>.<a class="code" href="namespaceGameMain_1_1UI_1_1Screen_1_1InGame.html">InGame</a>;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceUI.html">UI</a>.<a class="code" href="namespaceUI_1_1Title.html">Title</a>.<a class="code" href="namespaceUI_1_1Title_1_1Option.html">Option</a>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="namespaceGameMain_1_1UI.html">    9</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceGameMain_1_1UI.html">GameMain.UI</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classGameMain_1_1UI_1_1InGameUIManager.html">   11</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classGameMain_1_1UI_1_1InGameUIManager.html">InGameUIManager</a>: MonoBehaviour</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classGameMain_1_1UI_1_1InGameUIManager.html#ace81a23d4fd166bda4d80ac14e60aa10">   13</a></span>&#160;        [SerializeField] <span class="keyword">private</span> <a class="code" href="classGameMain_1_1UI_1_1Screen_1_1InGame_1_1InGameManager.html">InGameManager</a> <a class="code" href="classGameMain_1_1UI_1_1InGameUIManager.html#ace81a23d4fd166bda4d80ac14e60aa10">inGameManager</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classGameMain_1_1UI_1_1InGameUIManager.html#a4f7c744c394d88d19d355c9afd0bf3e9">   14</a></span>&#160;        [SerializeField] <span class="keyword">private</span> <a class="code" href="classGameMain_1_1UI_1_1Screen_1_1GameOver_1_1GameOverManager.html">GameOverManager</a> <a class="code" href="classGameMain_1_1UI_1_1InGameUIManager.html#a4f7c744c394d88d19d355c9afd0bf3e9">gameOverManager</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classGameMain_1_1UI_1_1InGameUIManager.html#a160acef2f5f08d449a2ab0339dd69775">   15</a></span>&#160;        [SerializeField] <span class="keyword">private</span> <a class="code" href="classUI_1_1Title_1_1Option_1_1OptionManager.html">OptionManager</a> <a class="code" href="classGameMain_1_1UI_1_1InGameUIManager.html#a160acef2f5f08d449a2ab0339dd69775">optionManager</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classGameMain_1_1UI_1_1InGameUIManager.html#a223c7041d8edbcd16fa998f169e4c2c1">   16</a></span>&#160;        <span class="keyword">private</span> <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Navigation&lt;InGameNav&gt;</a> <a class="code" href="classGameMain_1_1UI_1_1InGameUIManager.html#a223c7041d8edbcd16fa998f169e4c2c1">navigation</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classGameMain_1_1UI_1_1InGameUIManager.html#a49844449367d84597221d9c281a401ea">   18</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="classGameMain_1_1UI_1_1InGameUIManager.html#a49844449367d84597221d9c281a401ea">InGameUIManager</a>() { }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classGameMain_1_1UI_1_1InGameUIManager.html#a6f9bd2a6cde679565bc6bf30f726ad01">   20</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classGameMain_1_1UI_1_1InGameUIManager.html#a6f9bd2a6cde679565bc6bf30f726ad01">Awake</a>()</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <a class="code" href="classGameMain_1_1UI_1_1InGameUIManager.html#a223c7041d8edbcd16fa998f169e4c2c1">navigation</a> = <span class="keyword">new</span> <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Navigation&lt;InGameNav&gt;</a>(</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                <span class="keyword">new</span> Dictionary&lt;InGameNav, UIManager&gt;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                    { <a class="code" href="namespaceGameMain_1_1UI.html#a69cf1dc661959747c491f84eb830b9df">InGameNav</a>.InGame, <a class="code" href="classGameMain_1_1UI_1_1InGameUIManager.html#ace81a23d4fd166bda4d80ac14e60aa10">inGameManager</a> },</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                    { <a class="code" href="namespaceGameMain_1_1UI.html#a69cf1dc661959747c491f84eb830b9df">InGameNav</a>.GameOver, <a class="code" href="classGameMain_1_1UI_1_1InGameUIManager.html#a4f7c744c394d88d19d355c9afd0bf3e9">gameOverManager</a> },</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                    { <a class="code" href="namespaceGameMain_1_1UI.html#a69cf1dc661959747c491f84eb830b9df">InGameNav</a>.Option, <a class="code" href="classGameMain_1_1UI_1_1InGameUIManager.html#a160acef2f5f08d449a2ab0339dd69775">optionManager</a> }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            );</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classGameMain_1_1UI_1_1InGameUIManager.html#a2ca5138e4f815ef298ebc25c26ac93e6">   32</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classGameMain_1_1UI_1_1InGameUIManager.html#a2ca5138e4f815ef298ebc25c26ac93e6">SetScreen</a>(<a class="code" href="namespaceGameMain_1_1UI.html#a69cf1dc661959747c491f84eb830b9df">InGameNav</a> nav)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="classGameMain_1_1UI_1_1InGameUIManager.html#a223c7041d8edbcd16fa998f169e4c2c1">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a7ca04e63fd777971106f2e23aa4e8127">SetScreen</a>(nav);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="namespaceGameMain_1_1UI.html#a69cf1dc661959747c491f84eb830b9df">   38</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="namespaceGameMain_1_1UI.html#a69cf1dc661959747c491f84eb830b9df">InGameNav</a> {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="namespaceGameMain_1_1UI.html#a69cf1dc661959747c491f84eb830b9dfa8f347bc7cebca9fa6d97e70c6bc29eb3">GameOver</a>,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="namespaceGameMain_1_1UI.html#a69cf1dc661959747c491f84eb830b9dfa054b4f3ea543c990f6b125f41af6ebf7">Option</a>,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="namespaceGameMain_1_1UI.html#a69cf1dc661959747c491f84eb830b9dfa7f3d370e94c8b1fea09838572013d8ec">InGame</a>,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation&lt; InGameNav &gt;</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html_a7ca04e63fd777971106f2e23aa4e8127"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a7ca04e63fd777971106f2e23aa4e8127">Core.Utility.UI.Navigation.Navigation.SetScreen</a></div><div class="ttdeci">void SetScreen(T nav)</div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00069">Navigation.cs:69</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1UI_1_1InGameUIManager_html"><div class="ttname"><a href="classGameMain_1_1UI_1_1InGameUIManager.html">GameMain.UI.InGameUIManager</a></div><div class="ttdef"><b>Definition:</b> <a href="InGameUIManager_8cs_source.html#l00011">InGameUIManager.cs:12</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1UI_1_1InGameUIManager_html_a160acef2f5f08d449a2ab0339dd69775"><div class="ttname"><a href="classGameMain_1_1UI_1_1InGameUIManager.html#a160acef2f5f08d449a2ab0339dd69775">GameMain.UI.InGameUIManager.optionManager</a></div><div class="ttdeci">OptionManager optionManager</div><div class="ttdef"><b>Definition:</b> <a href="InGameUIManager_8cs_source.html#l00015">InGameUIManager.cs:15</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1UI_1_1InGameUIManager_html_a223c7041d8edbcd16fa998f169e4c2c1"><div class="ttname"><a href="classGameMain_1_1UI_1_1InGameUIManager.html#a223c7041d8edbcd16fa998f169e4c2c1">GameMain.UI.InGameUIManager.navigation</a></div><div class="ttdeci">Navigation&lt; InGameNav &gt; navigation</div><div class="ttdef"><b>Definition:</b> <a href="InGameUIManager_8cs_source.html#l00016">InGameUIManager.cs:16</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1UI_1_1InGameUIManager_html_a2ca5138e4f815ef298ebc25c26ac93e6"><div class="ttname"><a href="classGameMain_1_1UI_1_1InGameUIManager.html#a2ca5138e4f815ef298ebc25c26ac93e6">GameMain.UI.InGameUIManager.SetScreen</a></div><div class="ttdeci">void SetScreen(InGameNav nav)</div><div class="ttdef"><b>Definition:</b> <a href="InGameUIManager_8cs_source.html#l00032">InGameUIManager.cs:32</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1UI_1_1InGameUIManager_html_a49844449367d84597221d9c281a401ea"><div class="ttname"><a href="classGameMain_1_1UI_1_1InGameUIManager.html#a49844449367d84597221d9c281a401ea">GameMain.UI.InGameUIManager.InGameUIManager</a></div><div class="ttdeci">InGameUIManager()</div><div class="ttdef"><b>Definition:</b> <a href="InGameUIManager_8cs_source.html#l00018">InGameUIManager.cs:18</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1UI_1_1InGameUIManager_html_a4f7c744c394d88d19d355c9afd0bf3e9"><div class="ttname"><a href="classGameMain_1_1UI_1_1InGameUIManager.html#a4f7c744c394d88d19d355c9afd0bf3e9">GameMain.UI.InGameUIManager.gameOverManager</a></div><div class="ttdeci">GameOverManager gameOverManager</div><div class="ttdef"><b>Definition:</b> <a href="InGameUIManager_8cs_source.html#l00014">InGameUIManager.cs:14</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1UI_1_1InGameUIManager_html_a6f9bd2a6cde679565bc6bf30f726ad01"><div class="ttname"><a href="classGameMain_1_1UI_1_1InGameUIManager.html#a6f9bd2a6cde679565bc6bf30f726ad01">GameMain.UI.InGameUIManager.Awake</a></div><div class="ttdeci">void Awake()</div><div class="ttdef"><b>Definition:</b> <a href="InGameUIManager_8cs_source.html#l00020">InGameUIManager.cs:20</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1UI_1_1InGameUIManager_html_ace81a23d4fd166bda4d80ac14e60aa10"><div class="ttname"><a href="classGameMain_1_1UI_1_1InGameUIManager.html#ace81a23d4fd166bda4d80ac14e60aa10">GameMain.UI.InGameUIManager.inGameManager</a></div><div class="ttdeci">InGameManager inGameManager</div><div class="ttdef"><b>Definition:</b> <a href="InGameUIManager_8cs_source.html#l00013">InGameUIManager.cs:13</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1UI_1_1Screen_1_1GameOver_1_1GameOverManager_html"><div class="ttname"><a href="classGameMain_1_1UI_1_1Screen_1_1GameOver_1_1GameOverManager.html">GameMain.UI.Screen.GameOver.GameOverManager</a></div><div class="ttdoc">ゲーム中のGameOverUI</div><div class="ttdef"><b>Definition:</b> <a href="GameOverManager_8cs_source.html#l00015">GameOverManager.cs:16</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1UI_1_1Screen_1_1InGame_1_1InGameManager_html"><div class="ttname"><a href="classGameMain_1_1UI_1_1Screen_1_1InGame_1_1InGameManager.html">GameMain.UI.Screen.InGame.InGameManager</a></div><div class="ttdef"><b>Definition:</b> <a href="InGameManager_8cs_source.html#l00007">InGameManager.cs:8</a></div></div>
+<div class="ttc" id="aclassUI_1_1Title_1_1Option_1_1OptionManager_html"><div class="ttname"><a href="classUI_1_1Title_1_1Option_1_1OptionManager.html">UI.Title.Option.OptionManager</a></div><div class="ttdef"><b>Definition:</b> <a href="OptionManager_8cs_source.html#l00015">OptionManager.cs:16</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1Utility_1_1UI_1_1Navigation_html"><div class="ttname"><a href="namespaceCore_1_1Utility_1_1UI_1_1Navigation.html">Core.Utility.UI.Navigation</a></div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00009">Navigation.cs:10</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1Utility_1_1UI_html"><div class="ttname"><a href="namespaceCore_1_1Utility_1_1UI.html">Core.Utility.UI</a></div><div class="ttdef"><b>Definition:</b> <a href="AnimateObject_8cs_source.html#l00005">AnimateObject.cs:6</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1Utility_html"><div class="ttname"><a href="namespaceCore_1_1Utility.html">Core.Utility</a></div><div class="ttdef"><b>Definition:</b> <a href="IInjectable_8cs_source.html#l00001">IInjectable.cs:2</a></div></div>
+<div class="ttc" id="anamespaceCore_html"><div class="ttname"><a href="namespaceCore.html">Core</a></div><div class="ttdef"><b>Definition:</b> <a href="InputActionAssetProfile_8cs_source.html#l00004">InputActionAssetProfile.cs:5</a></div></div>
+<div class="ttc" id="anamespaceGameMain_1_1UI_1_1Screen_1_1GameOver_html"><div class="ttname"><a href="namespaceGameMain_1_1UI_1_1Screen_1_1GameOver.html">GameMain.UI.Screen.GameOver</a></div><div class="ttdef"><b>Definition:</b> <a href="GameOverCursor_8cs_source.html#l00003">GameOverCursor.cs:4</a></div></div>
+<div class="ttc" id="anamespaceGameMain_1_1UI_1_1Screen_1_1InGame_html"><div class="ttname"><a href="namespaceGameMain_1_1UI_1_1Screen_1_1InGame.html">GameMain.UI.Screen.InGame</a></div><div class="ttdef"><b>Definition:</b> <a href="InGameManager_8cs_source.html#l00005">InGameManager.cs:6</a></div></div>
+<div class="ttc" id="anamespaceGameMain_1_1UI_1_1Screen_html"><div class="ttname"><a href="namespaceGameMain_1_1UI_1_1Screen.html">GameMain.UI.Screen</a></div><div class="ttdef"><b>Definition:</b> <a href="GameOverCursor_8cs_source.html#l00003">GameOverCursor.cs:4</a></div></div>
+<div class="ttc" id="anamespaceGameMain_1_1UI_html"><div class="ttname"><a href="namespaceGameMain_1_1UI.html">GameMain.UI</a></div><div class="ttdef"><b>Definition:</b> <a href="InGameUIManager_8cs_source.html#l00009">InGameUIManager.cs:10</a></div></div>
+<div class="ttc" id="anamespaceGameMain_1_1UI_html_a69cf1dc661959747c491f84eb830b9df"><div class="ttname"><a href="namespaceGameMain_1_1UI.html#a69cf1dc661959747c491f84eb830b9df">GameMain.UI.InGameNav</a></div><div class="ttdeci">InGameNav</div><div class="ttdef"><b>Definition:</b> <a href="InGameUIManager_8cs_source.html#l00038">InGameUIManager.cs:38</a></div></div>
+<div class="ttc" id="anamespaceGameMain_1_1UI_html_a69cf1dc661959747c491f84eb830b9dfa054b4f3ea543c990f6b125f41af6ebf7"><div class="ttname"><a href="namespaceGameMain_1_1UI.html#a69cf1dc661959747c491f84eb830b9dfa054b4f3ea543c990f6b125f41af6ebf7">GameMain.UI.InGameNav.Option</a></div><div class="ttdeci">@ Option</div></div>
+<div class="ttc" id="anamespaceGameMain_1_1UI_html_a69cf1dc661959747c491f84eb830b9dfa7f3d370e94c8b1fea09838572013d8ec"><div class="ttname"><a href="namespaceGameMain_1_1UI.html#a69cf1dc661959747c491f84eb830b9dfa7f3d370e94c8b1fea09838572013d8ec">GameMain.UI.InGameNav.InGame</a></div><div class="ttdeci">@ InGame</div></div>
+<div class="ttc" id="anamespaceGameMain_1_1UI_html_a69cf1dc661959747c491f84eb830b9dfa8f347bc7cebca9fa6d97e70c6bc29eb3"><div class="ttname"><a href="namespaceGameMain_1_1UI.html#a69cf1dc661959747c491f84eb830b9dfa8f347bc7cebca9fa6d97e70c6bc29eb3">GameMain.UI.InGameNav.GameOver</a></div><div class="ttdeci">@ GameOver</div></div>
+<div class="ttc" id="anamespaceGameMain_html"><div class="ttname"><a href="namespaceGameMain.html">GameMain</a></div><div class="ttdef"><b>Definition:</b> <a href="GameParam_8cs_source.html#l00003">GameParam.cs:4</a></div></div>
+<div class="ttc" id="anamespaceSystem_html"><div class="ttname"><a href="namespaceSystem.html">System</a></div><div class="ttdef"><b>Definition:</b> <a href="GameSequenceHandler_8cs_source.html#l00007">GameSequenceHandler.cs:8</a></div></div>
+<div class="ttc" id="anamespaceUI_1_1Title_1_1Option_html"><div class="ttname"><a href="namespaceUI_1_1Title_1_1Option.html">UI.Title.Option</a></div><div class="ttdef"><b>Definition:</b> <a href="Option1Cursor_8cs_source.html#l00003">Option1Cursor.cs:4</a></div></div>
+<div class="ttc" id="anamespaceUI_1_1Title_html"><div class="ttname"><a href="namespaceUI_1_1Title.html">UI.Title</a></div><div class="ttdef"><b>Definition:</b> <a href="CreditManager_8cs_source.html#l00006">CreditManager.cs:7</a></div></div>
+<div class="ttc" id="anamespaceUI_html"><div class="ttname"><a href="namespaceUI.html">UI</a></div><div class="ttdef"><b>Definition:</b> <a href="TaskProgressPool_8cs_source.html#l00007">TaskProgressPool.cs:8</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

@@ -90,13 +90,13 @@ Module.Assignment.Component.ProgressToIntensity 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classModule_1_1Assignment_1_1Component_1_1ProgressToIntensity__coll__graph.png" border="0" usemap="#aModule_8Assignment_8Component_8ProgressToIntensity_coll__map" alt="Collaboration graph"/></div>
 <map name="aModule_8Assignment_8Component_8ProgressToIntensity_coll__map" id="aModule_8Assignment_8Component_8ProgressToIntensity_coll__map">
-<area shape="rect" title="進捗率と明るさを同期するクラス" alt="" coords="245,1013,479,1105"/>
+<area shape="rect" title="進捗率と明るさを同期するクラス" alt="" coords="245,1057,479,1149"/>
 <area shape="rect" title=" " alt="" coords="291,13,415,90"/>
-<area shape="rect" href="classModule_1_1Task_1_1BaseTask.html" title="全てのタスクのベースクラス" alt="" coords="5,147,188,503"/>
-<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html" title="アサイン範囲を設定するクラス" alt="" coords="245,565,479,951"/>
-<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html" title="楕円判定をビジュアライズするクラス" alt="" coords="485,257,719,393"/>
+<area shape="rect" href="classModule_1_1Task_1_1BaseTask.html" title="全てのタスクのベースクラス" alt="" coords="5,147,188,547"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html" title="アサイン範囲を設定するクラス" alt="" coords="245,609,479,995"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html" title="楕円判定をビジュアライズするクラス" alt="" coords="485,279,719,415"/>
 <area shape="rect" href="interfaceModule_1_1Task_1_1ITaskSystem.html" title="タスクにゲームループを適用するインターフェース" alt="" coords="11,5,183,97"/>
-<area shape="rect" href="structModule_1_1Assignment_1_1Utility_1_1EllipseData.html" title=" " alt="" coords="263,271,461,378"/>
+<area shape="rect" href="structModule_1_1Assignment_1_1Utility_1_1EllipseData.html" title=" " alt="" coords="263,293,461,400"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -151,8 +151,13 @@ Module.Assignment.Component.ProgressToIntensity 連携図</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="classModule_1_1Assignment_1_1Component_1_1ProgressToIntensity.html#ac7789b0b0ba7511b3f8ccb71c279ed08">task</a>.<a class="code" href="classModule_1_1Task_1_1BaseTask.html#a06bef9735165fd40037c82bb025700a3">OnProgressChanged</a> += progress =&gt;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            {</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <a class="code" href="classModule_1_1Assignment_1_1Component_1_1ProgressToIntensity.html#af16959fb119d3c39795dae549ef12062">assignableArea</a>.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#ac9436844f4a9190e2cd90d446c5556fa">SetLightIntensity</a>(<a class="code" href="classModule_1_1Assignment_1_1Component_1_1ProgressToIntensity.html#a4f419e081000df98fd56b73a1a923b66">maxIntensity</a> - <a class="code" href="classModule_1_1Assignment_1_1Component_1_1ProgressToIntensity.html#a4f419e081000df98fd56b73a1a923b66">maxIntensity</a> * progress);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            };</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <span class="keywordflow">if</span> (progress &gt;= 1f)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                    <a class="code" href="classModule_1_1Assignment_1_1Component_1_1ProgressToIntensity.html#af16959fb119d3c39795dae549ef12062">assignableArea</a>.enabled = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            };</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
 <div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1AssignableArea_html_ac9436844f4a9190e2cd90d446c5556fa"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#ac9436844f4a9190e2cd90d446c5556fa">Module.Assignment.Component.AssignableArea.SetLightIntensity</a></div><div class="ttdeci">void SetLightIntensity(float intensity)</div><div class="ttdef"><b>Definition:</b> <a href="AssignableArea_8cs_source.html#l00073">AssignableArea.cs:73</a></div></div>
 <div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1ProgressToIntensity_html_a4f419e081000df98fd56b73a1a923b66"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1ProgressToIntensity.html#a4f419e081000df98fd56b73a1a923b66">Module.Assignment.Component.ProgressToIntensity.maxIntensity</a></div><div class="ttdeci">float maxIntensity</div><div class="ttdef"><b>Definition:</b> <a href="ProgressToIntensity_8cs_source.html#l00017">ProgressToIntensity.cs:17</a></div></div>
 <div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1ProgressToIntensity_html_ac7789b0b0ba7511b3f8ccb71c279ed08"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1ProgressToIntensity.html#ac7789b0b0ba7511b3f8ccb71c279ed08">Module.Assignment.Component.ProgressToIntensity.task</a></div><div class="ttdeci">BaseTask task</div><div class="ttdef"><b>Definition:</b> <a href="ProgressToIntensity_8cs_source.html#l00013">ProgressToIntensity.cs:13</a></div></div>

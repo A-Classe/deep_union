@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['workerstate_1563',['WorkerState',['../namespaceModule_1_1Working_1_1State.html#a6741b3bd2dd67b25e9e0477f35e01082',1,'Module::Working::State']]]
+  ['taskstate_1664',['TaskState',['../namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985',1,'Module::Task']]]
 ];
