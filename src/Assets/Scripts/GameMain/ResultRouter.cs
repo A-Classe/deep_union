@@ -52,8 +52,9 @@ namespace GameMain
                 navigation.SetScreen(Nav.InResult);
             });
             
-            
+            userPreference.Load();
             userPreference.SetStageData((StageData.Stage)result.stageCode, result.GetScore());
+            userPreference.Save();
         }
 
         private void SetNavigation()

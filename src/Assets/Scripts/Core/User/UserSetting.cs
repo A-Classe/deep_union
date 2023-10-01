@@ -47,6 +47,7 @@ namespace Core.User
             return new StageData();
         }
         
+        [Serializable]
         public enum Stage
         {
             Stage1,

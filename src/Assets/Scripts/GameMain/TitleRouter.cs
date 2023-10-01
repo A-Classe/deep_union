@@ -66,11 +66,19 @@ namespace GameMain
             
             var route = sceneChanger.GetTitle();
             navigation.SetActive(true);
-            navigation.SetScreen(route);
+            switch (route)
+            {
+                case TitleNavigation.StageSelect:
+                    NavigateToPlay();
+                    break;
+                default:
+                    NavigateToTitle();
+                    break;
+            }
             
-
-
-            data.Delete();
+            
+            /* デバッグ用 */
+            // data.Delete();
             data.Load();
         }
 
