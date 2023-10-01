@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using AnimationPro.RunTime;
+using Core.Scenes;
+using Core.User;
 using Core.Utility.UI.Component;
 using Core.Utility.UI.Component.Cursor;
 using Core.Utility.UI.Navigation;
-using Core.Utility.User;
-using GameMain.System.Scenes;
 using UnityEngine;
 
 namespace UI.Title.StageSelect

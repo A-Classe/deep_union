@@ -1,4 +1,4 @@
-﻿using Core.Utility.User;
+﻿using Core.User;
 using UI.Title.Credit;
 using UI.Title.Option;
 using UI.Title.Quit;
@@ -8,7 +8,7 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace UI.Title
+namespace GameMain.Container
 {
     public class TitleContainer : LifetimeScope
     {

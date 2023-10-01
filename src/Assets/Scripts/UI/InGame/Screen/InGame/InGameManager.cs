@@ -2,7 +2,7 @@ using System;
 using Core.Utility.UI.Navigation;
 using UnityEngine;
 
-namespace GameMain.UI.Screen.InGame
+namespace UI.InGame.Screen.InGame
 {
     public class InGameManager: UIManager
     {

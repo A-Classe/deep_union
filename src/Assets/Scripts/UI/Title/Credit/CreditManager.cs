@@ -2,5 +2,8 @@
 
 namespace UI.Title.Credit
 {
-    internal class CreditManager : UIManager { }
+    public class CreditManager : UIManager
+    {
+        // Todo:
+    }
 }

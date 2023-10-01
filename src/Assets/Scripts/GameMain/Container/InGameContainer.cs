@@ -1,7 +1,7 @@
 ﻿using System.GameProgress;
 using System.Linq;
 using Core.NavMesh;
-using Core.Utility.User;
+using Core.User;
 using Core.Utility;
 using Core.Utility.Player;
 using Debug;
@@ -19,6 +19,7 @@ using Module.Working;
 using Module.Working.Controller;
 using Module.Working.Factory;
 using UI.HUD;
+using UI.InGame;
 using UnityEngine;
 using UnityEngine.Serialization;
 using VContainer;

@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace Core.Utility.User
+namespace Core.User
 {
     [Serializable]
     public class KeyValue<TKey, TValue>

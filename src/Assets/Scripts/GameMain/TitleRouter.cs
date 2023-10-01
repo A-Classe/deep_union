@@ -1,19 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using Core.Scenes;
+using Core.User;
 using Core.Utility.UI.Navigation;
-using Core.Utility.User;
-using GameMain.System.Scenes;
 using UI.Title.Credit;
 using UI.Title.Option;
 using UI.Title.Quit;
 using UI.Title.StageSelect;
 using UI.Title.Title;
-using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace UI.Title
+namespace GameMain
 {
     internal class TitleRouter : IStartable
     {
@@ -65,7 +63,11 @@ namespace UI.Title
         public void Start()
         {
             SetNavigation();
-            NavigateToTitle();
+            
+            var route = sceneChanger.GetTitle();
+            navigation.SetActive(true);
+            navigation.SetScreen(route);
+            
 
 
             data.Delete();
@@ -104,11 +106,12 @@ namespace UI.Title
         /// <param name="nav">選んだステージ</param>
         private void StageSelected(StageNavigation nav)
         {
-            Debug.Log("StageSelected : " + nav);
-            if (!sceneChanger.LoadInGame(nav))
+            if (!sceneChanger.LoadInGame(nav.ToStage()))
             {
                 throw new NotImplementedException("not found navigation : " + nav);
             }
+
+            navigation.SetActive(false);
         }
 
         private void NavigateToTitle()

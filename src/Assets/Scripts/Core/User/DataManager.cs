@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq.Expressions;
 using UnityEngine;
 
-namespace Core.Utility.User
+namespace Core.User
 {
     public class DataManager
     {

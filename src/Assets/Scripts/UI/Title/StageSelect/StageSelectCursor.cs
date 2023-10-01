@@ -1,5 +1,5 @@
-﻿using Core.Utility.UI.Component.Cursor;
-using GameMain.System.Scenes;
+﻿using Core.Scenes;
+using Core.Utility.UI.Component.Cursor;
 
 namespace UI.Title.StageSelect
 {

@@ -1,5 +1,6 @@
 using Core.Model.Scene;
-using GameMain.System.Scenes;
+using Core.User;
+using JetBrains.Annotations;
 using UnityEngine.SceneManagement;
 
 namespace Core.Scenes
@@ -12,8 +13,11 @@ namespace Core.Scenes
     {
         private const string TitleRoute = "Scenes/Other/Titles_Test";
         private const string InGameRoute = "Scenes/Other/InGameUI_Test/InGameUI_Test";
+        private const string ResultRoute = "Scenes/Other/Result_Test";
         
         private TitleNavigation route = TitleNavigation.Title;
+
+        [CanBeNull] private string currentRoute = null;
         
         /// <summary>
         /// タイトル画面への遷移
@@ -24,6 +28,9 @@ namespace Core.Scenes
         {
             route = routeNav;
             SceneManager.LoadScene(TitleRoute);
+            CurrentUnload();
+            currentRoute = TitleRoute;
+            
             return true;
         }
 
@@ -34,18 +41,23 @@ namespace Core.Scenes
         public TitleNavigation GetTitle() => route;
         
 
-        private StageNavigation inGameRoute = StageNavigation.Stage1;
+        private StageData.Stage inGameRoute = StageData.Stage.Stage1;
         /// <summary>
         /// :TODO 引数見て、各stageに遷移
         /// </summary>
         /// <param name="routeNav"></param>
         /// <returns>遷移できなければfalseを返す</returns>
-        public bool LoadInGame(StageNavigation routeNav)
+        public bool LoadInGame(StageData.Stage routeNav)
         {
             inGameRoute = routeNav;
             SceneManager.LoadScene(InGameRoute);
+            CurrentUnload();
+            currentRoute = InGameRoute;
             return true;
         }
+
+        
+        public StageData.Stage GetInGame() => inGameRoute;
 
         private GameResult results;
         /// <summary>
@@ -58,8 +70,18 @@ namespace Core.Scenes
         )
         {
             results = param;
-            SceneManager.LoadScene("");
+            SceneManager.LoadScene(ResultRoute);
+            CurrentUnload();
+            currentRoute = ResultRoute;
             return false;
+        }
+
+        private void CurrentUnload()
+        {
+            if (currentRoute != null)
+            {
+                SceneManager.UnloadSceneAsync(currentRoute);
+            }
         }
 
         public GameResult GetResultParam() => results;

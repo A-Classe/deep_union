@@ -1,10 +1,9 @@
 ﻿using System;
 using System.GameProgress;
 using Core.NavMesh;
+using Core.Scenes;
 using Core.Utility.Player;
 using GameMain.Presenter;
-using GameMain.UI;
-using Module.Assignment;
 using Module.Assignment.Component;
 using Module.Player.Camera;
 using Module.Player.Controller;
@@ -13,7 +12,7 @@ using Module.Task;
 using Module.Working;
 using Module.Working.Controller;
 using Module.Working.Factory;
-using UnityEngine;
+using UI.InGame;
 using VContainer;
 using VContainer.Unity;
 
@@ -42,6 +41,8 @@ namespace GameMain
 
         private readonly InGameUIManager uiManager;
 
+        private readonly SceneChanger sceneChanger;
+
         [Inject]
         public GameRouter(
             SpawnParam spawnParam,
@@ -55,7 +56,8 @@ namespace GameMain
             RuntimeNavMeshBaker runtimeNavMeshBaker,
             TaskActivator taskActivator,
             LeaderAssignableArea leaderAssignableArea,
-            InGameUIManager uiManager
+            InGameUIManager uiManager,
+            SceneChanger sceneChanger
         )
         {
             this.spawnParam = spawnParam;
@@ -75,6 +77,8 @@ namespace GameMain
             this.workerSpawner = workerSpawner;
 
             this.uiManager = uiManager;
+
+            this.sceneChanger = sceneChanger;
         }
 
         public void Start()
@@ -86,6 +90,7 @@ namespace GameMain
 
             InitPlayer();
             
+            uiManager.SetSceneChanger(sceneChanger);
             uiManager.SetScreen(InGameNav.InGame);
         }
 

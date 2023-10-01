@@ -56,6 +56,7 @@ namespace Core.Utility.UI.Navigation
             cancelEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.Title.Cancel);
             cancelEvent.Started += ctx =>
             {
+                if (!isActive) return;
                 OnCancel?.Invoke(ctx);
             };
         }

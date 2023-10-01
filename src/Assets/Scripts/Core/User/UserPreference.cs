@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq.Expressions;
 using UnityEngine;
 
-namespace Core.Utility.User
+namespace Core.User
 {
     /// <summary>
     /// データ保存の中継クラス

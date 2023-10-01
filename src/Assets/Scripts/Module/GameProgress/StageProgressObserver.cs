@@ -53,6 +53,11 @@ namespace System.GameProgress
 
         float GetDistance()
         {
+            // todo: シーンを切り替え直後にnullチェック行う
+            if (goalPoint == null)
+            {
+                return 0f;
+            }
             return (goalPoint.transform.position - playerController.transform.position).z;
         }
     }

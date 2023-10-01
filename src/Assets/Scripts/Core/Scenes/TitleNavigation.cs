@@ -1,4 +1,4 @@
-namespace GameMain.System.Scenes
+namespace Core.Scenes
 {
     public enum TitleNavigation
     {
