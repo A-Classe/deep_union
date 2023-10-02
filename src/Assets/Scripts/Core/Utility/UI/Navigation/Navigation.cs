@@ -67,7 +67,7 @@ namespace Core.Utility.UI.Navigation
             if (Math.Abs(moveValue.y) > 0.05f || Math.Abs(moveValue.x) > 0.05f) OnMove(moveValue);
         }
 
-        public void SetScreen(T nav)
+        public void SetScreen(T nav, bool isAnimate = true)
         {
             if (!isActive) return;
             
@@ -77,18 +77,31 @@ namespace Core.Utility.UI.Navigation
                 return;
             }
 
-            current.Finished(current.GetContext().FadeOut(Easings.Default(0.3f)), () =>
+            if (isAnimate)
+            {
+                current.Finished(current.GetContext().FadeOut(Easings.Default(0.3f)), () =>
+                {
+                    NavigateWith(nav);
+                });
+            }
+            else
             {
                 NavigateWith(nav);
-            });
+            }
 
             void NavigateWith(T n)
             {
                 current = managers[n];
                 currentNav = n;
                 if (current == null) throw new NotImplementedException();
-
-                current.Initialized(current.GetContext().FadeIn(Easings.Default(0.3f)));
+                if (isAnimate)
+                {
+                    current.Initialized(current.GetContext().FadeIn(Easings.Default(0.3f)));
+                }
+                else
+                {
+                    current.Initialized(current.GetContext().SlideTo(new Vector2(0,0), Easings.Default(0.1f)));
+                }
             }
         }
         

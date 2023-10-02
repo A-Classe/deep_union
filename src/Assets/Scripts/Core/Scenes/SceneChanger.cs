@@ -28,7 +28,6 @@ namespace Core.Scenes
         {
             route = routeNav;
             SceneManager.LoadScene(TitleRoute);
-            CurrentUnload();
             currentRoute = TitleRoute;
             
             return true;
@@ -51,7 +50,6 @@ namespace Core.Scenes
         {
             inGameRoute = routeNav;
             SceneManager.LoadScene(InGameRoute);
-            CurrentUnload();
             currentRoute = InGameRoute;
             return true;
         }
@@ -71,18 +69,17 @@ namespace Core.Scenes
         {
             results = param;
             SceneManager.LoadScene(ResultRoute);
-            CurrentUnload();
             currentRoute = ResultRoute;
             return false;
         }
 
-        private void CurrentUnload()
-        {
-            if (currentRoute != null)
-            {
-                SceneManager.UnloadSceneAsync(currentRoute);
-            }
-        }
+        // private void CurrentUnload()
+        // {
+        //     if (currentRoute != null)
+        //     {
+        //         SceneManager.UnloadSceneAsync(currentRoute);
+        //     }
+        // }
 
         public GameResult GetResultParam() => results;
     }

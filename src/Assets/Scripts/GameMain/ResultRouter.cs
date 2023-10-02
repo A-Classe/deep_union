@@ -49,7 +49,7 @@ namespace GameMain
             resultManager.SetScore(result, () =>
             {
                 navigation.SetActive(true);
-                navigation.SetScreen(Nav.InResult);
+                navigation.SetScreen(Nav.InResult, false);
             });
             
             userPreference.Load();
