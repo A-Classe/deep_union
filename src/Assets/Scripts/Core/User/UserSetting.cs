@@ -41,7 +41,7 @@ namespace Core.User
     [Serializable]
     public class StageData: IDefaultable<StageData>
     {
-        public Dictionary<Stage, uint> stage = new ();
+        public Dict<Stage, uint> stage = new ();
         public StageData DefaultInstance()
         {
             return new StageData();
@@ -84,6 +84,40 @@ namespace Core.User
                 dict[keys[i]] = values[i];
             }
             return dict;
+        }
+    }
+    
+    [Serializable]
+    //==================================================================
+    // @brief Dictionary for JsonUtility
+    //==================================================================
+    public class Dict<TKey, TValue> : Dictionary<TKey, TValue>, ISerializationCallbackReceiver
+    {
+        [SerializeField] private List<TKey> keys = new List<TKey>();
+        [SerializeField] private List<TValue> vals = new List<TValue>();
+
+        public void OnBeforeSerialize()
+        {
+            keys.Clear();
+            vals.Clear();
+
+            using var e = GetEnumerator();
+
+            while ( e.MoveNext() )
+            {
+                keys.Add( e.Current.Key );
+                vals.Add( e.Current.Value );
+            }
+        }
+
+        public void OnAfterDeserialize()
+        {
+            this.Clear();
+
+            int cnt = ( keys.Count<=vals.Count )? keys.Count : vals.Count;
+            for (int i=0; i<cnt; ++i )
+                this[keys[i]] = vals[i];
+
         }
     }
 }

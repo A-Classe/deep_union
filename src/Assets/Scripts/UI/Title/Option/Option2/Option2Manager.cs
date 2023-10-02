@@ -112,6 +112,7 @@ namespace UI.Title.Option.Option2
 
         public void SetValues(bool fullscreen, int brightVal)
         {
+            fullScreen.SetState(fullscreen);
             bright.SetValue(brightVal);
         }
 
