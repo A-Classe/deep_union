@@ -35,7 +35,6 @@ namespace UI.Title.Option.Option2
             cursor.AddPoint(Nav.Brightness, bright.rectTransform);
             cursor.AddPoint(Nav.Back, back.rectTransform);
             current = Nav.FullScreen;
-            bright.Setup(100f, 0f, 70f);
         }
 
         public override void Initialized(ContentTransform content)
@@ -112,6 +111,9 @@ namespace UI.Title.Option.Option2
 
         public void SetValues(bool fullscreen, int brightVal)
         {
+            // initialize
+            bright.Setup(100f, 0f, 70f);
+            
             fullScreen.SetState(fullscreen);
             bright.SetValue(brightVal);
         }
