@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace UI.Title.Quit
 {
-    internal class QuitManager : UIManager
+    public class QuitManager : UIManager
     {
         public enum Nav
         {

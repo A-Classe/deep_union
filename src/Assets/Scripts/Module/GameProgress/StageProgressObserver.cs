@@ -16,7 +16,7 @@ namespace System.GameProgress
     {
         private readonly PlayerController playerController;
         private readonly GoalPoint goalPoint;
-        private readonly CancellationTokenSource cTokenSource;
+        private CancellationTokenSource cTokenSource;
 
         public event Action OnCompleted;
 

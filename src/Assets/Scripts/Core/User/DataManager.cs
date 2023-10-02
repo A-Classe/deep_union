@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq.Expressions;
 using UnityEngine;
 
-namespace Core.Utility.User
+namespace Core.User
 {
     public class DataManager
     {
@@ -19,6 +19,7 @@ namespace Core.Utility.User
             {
                 string json = File.ReadAllText(filePath);
                 dataStorage = JsonUtility.FromJson<SerializableDictionary>(json).ToDictionary();
+                jsonPath = filePath;
                 return true;
             }
             jsonPath = filePath;

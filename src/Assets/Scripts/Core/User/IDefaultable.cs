@@ -1,4 +1,4 @@
-﻿namespace Core.Utility.User
+﻿namespace Core.User
 {
     public interface IDefaultable<T>
     {

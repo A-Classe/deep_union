@@ -40,6 +40,14 @@ namespace Core.Utility.UI.Component
                 }
             );
         }
+
+        /// <summary>
+        /// とりあえずで公開しとく
+        /// </summary>
+        public void InAnimation(ContentTransform a, AnimationListener listener)
+        {
+            Animation(a, listener);
+        }
         
     }
 }
