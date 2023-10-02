@@ -27,7 +27,7 @@ namespace Module.Assignment.Utility
             float rad = math.radians(ellipseData.Rotation);
 
             float x = dx * math.cos(-rad) - dz * math.sin(-rad);
-            float y = dx * math.cos(-rad) - dz * math.sin(-rad);
+            float y = dx * math.sin(-rad) - dz * math.cos(-rad);
 
             float sizeX = ellipseData.Size.x;
             float sizeY = ellipseData.Size.y;

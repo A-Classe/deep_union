@@ -33,14 +33,15 @@ namespace Module.Assignment.Component
                 var angle = i * angleStep + ellipseData.Rotation;
                 var position = transform.position;
 
-                if (debugRotation)
-                {
-                    DebugEx.Log(Mathf.Cos(angle * Mathf.Deg2Rad));
-                }
-
                 var x = position.x + ellipseData.Size.x * 0.5f * Mathf.Cos(angle * Mathf.Deg2Rad);
                 var z = position.z + ellipseData.Size.y * 0.5f * Mathf.Sin(angle * Mathf.Deg2Rad);
+                
                 var currentPoint = new Vector3(x, position.y + debugHeight, z);
+                
+                if (debugRotation)
+                {
+                    DebugEx.Log(currentPoint);
+                }
 
                 if (i > 0)
                 {
