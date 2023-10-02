@@ -16,7 +16,7 @@ namespace System.GameProgress
     {
         private readonly PlayerController playerController;
         private readonly GoalPoint goalPoint;
-        private readonly CancellationTokenSource cTokenSource;
+        private CancellationTokenSource cTokenSource;
 
         public event Action OnCompleted;
 
@@ -53,11 +53,6 @@ namespace System.GameProgress
 
         float GetDistance()
         {
-            // todo: シーンを切り替え直後にnullチェック行う
-            if (goalPoint == null)
-            {
-                return 0f;
-            }
             return (goalPoint.transform.position - playerController.transform.position).z;
         }
     }

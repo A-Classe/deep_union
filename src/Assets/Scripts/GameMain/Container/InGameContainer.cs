@@ -20,6 +20,7 @@ using Module.Working.Controller;
 using Module.Working.Factory;
 using UI.HUD;
 using UI.InGame;
+using UnityDebugSheet.Runtime.Core.Scripts;
 using UnityEngine;
 using UnityEngine.Serialization;
 using VContainer;
@@ -41,6 +42,7 @@ namespace GameMain.Container
         [SerializeField] private GoalPoint goalPoint;
         [SerializeField] private TaskProgressPool progressPool;
         [SerializeField] private PlayerStatusVisualizer playerStatusVisualizer;
+        [SerializeField] private DebugSheet debugSheet;
 
         [SerializeField] private InGameUIManager inGameUIManager;
 
@@ -84,6 +86,7 @@ namespace GameMain.Container
             builder.RegisterInstance(inGameUIManager);
             builder.RegisterInstance(new PlayerStatus(gameParam.ConvertToStatus()));
             builder.RegisterInstance(playerStatusVisualizer);
+            builder.RegisterInstance(debugSheet);
 
             builder.RegisterBuildCallback(container =>
             {

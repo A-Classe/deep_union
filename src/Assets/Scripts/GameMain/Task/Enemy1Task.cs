@@ -27,8 +27,6 @@ namespace GameMain.Task
         private bool isAdsorption;
         private Transform adsorptionTarget;
         private Vector3 adsorptionOffset;
-        
-        
 
         public override void Initialize(IObjectResolver container)
         {
