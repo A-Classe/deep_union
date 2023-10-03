@@ -1,6 +1,6 @@
 using Core.Utility.UI.Component.Cursor;
 
-namespace GameMain.UI.Screen.GameOver
+namespace UI.InGame.Screen.GameOver
 {
     public class GameOverCursor: CursorController<GameOverManager.Nav> { }
 }

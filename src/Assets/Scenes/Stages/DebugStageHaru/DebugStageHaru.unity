@@ -4567,6 +4567,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 652649741, guid: d734dd73d3ba5af4fad585dc2c0eac45, type: 3}
+      propertyPath: graphy
+      value: 
+      objectReference: {fileID: 1756214571}
     - target: {fileID: 358672069472844303, guid: d734dd73d3ba5af4fad585dc2c0eac45,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -4587,55 +4591,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4669662423628923104, guid: d734dd73d3ba5af4fad585dc2c0eac45,
-        type: 3}
-      propertyPath: m_Pivot.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4669662423628923104, guid: d734dd73d3ba5af4fad585dc2c0eac45,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4669662423628923104, guid: d734dd73d3ba5af4fad585dc2c0eac45,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4669662423628923104, guid: d734dd73d3ba5af4fad585dc2c0eac45,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 997.9839
-      objectReference: {fileID: 0}
-    - target: {fileID: 4669662423628923104, guid: d734dd73d3ba5af4fad585dc2c0eac45,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 4669662423628923104, guid: d734dd73d3ba5af4fad585dc2c0eac45,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 997.9839
-      objectReference: {fileID: 0}
     - target: {fileID: 4669662424169538515, guid: d734dd73d3ba5af4fad585dc2c0eac45,
         type: 3}
       propertyPath: m_Name
       value: DebugSheetCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 4669662424169538525, guid: d734dd73d3ba5af4fad585dc2c0eac45,
-        type: 3}
-      propertyPath: m_MatchWidthOrHeight
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4669662424169538525, guid: d734dd73d3ba5af4fad585dc2c0eac45,
-        type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1334
-      objectReference: {fileID: 0}
-    - target: {fileID: 4669662424169538525, guid: d734dd73d3ba5af4fad585dc2c0eac45,
-        type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 2016.129
       objectReference: {fileID: 0}
     - target: {fileID: 4669662424169538527, guid: d734dd73d3ba5af4fad585dc2c0eac45,
         type: 3}
@@ -4872,6 +4831,7 @@ MonoBehaviour:
   goalPoint: {fileID: 1473537254}
   progressPool: {fileID: 1339084536}
   playerStatusVisualizer: {fileID: 1027691987}
+  debugSheet: {fileID: 652649744}
   inGameUIManager: {fileID: 149019584}
   leaderAssignableArea: {fileID: 241675934}
 --- !u!4 &568759993
@@ -5211,26 +5171,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &652649733 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4669662424169538515, guid: d734dd73d3ba5af4fad585dc2c0eac45,
+--- !u!114 &652649744 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4669662424169538526, guid: d734dd73d3ba5af4fad585dc2c0eac45,
     type: 3}
   m_PrefabInstance: {fileID: 555381376}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &652649741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 652649733}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e42b8ccde0374afaa6022c7caf80cdc9, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e8881c41cf8aa34cbaac690a6e56432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyOnStart: 1
-  graphy: {fileID: 1756214571}
 --- !u!1 &692597360
 GameObject:
   m_ObjectHideFlags: 0

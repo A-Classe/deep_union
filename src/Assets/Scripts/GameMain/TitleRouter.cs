@@ -1,16 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using Core.Scenes;
+using Core.User;
 using Core.Utility.UI.Navigation;
-using Core.Utility.User;
 using UI.Title.Credit;
 using UI.Title.Option;
 using UI.Title.Quit;
 using UI.Title.StageSelect;
 using UI.Title.Title;
-using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace UI.Title
+namespace GameMain
 {
     internal class TitleRouter : IStartable
     {
@@ -18,13 +19,14 @@ namespace UI.Title
 
         private readonly UserPreference data;
 
-        private readonly Navigation<Nav> navigation;
+        private readonly Navigation<TitleNavigation> navigation;
 
 
         private readonly OptionManager option;
         private readonly QuitManager quit;
         private readonly StageSelectManager stageSelect;
         private readonly TitleManager title;
+        private readonly SceneChanger sceneChanger;
 
         [Inject]
         public TitleRouter(
@@ -33,7 +35,8 @@ namespace UI.Title
             OptionManager optionManager,
             CreditManager creditManager,
             StageSelectManager stageSelectManager,
-            UserPreference dataManager
+            UserPreference dataManager,
+            SceneChanger sceneChanger
         )
         {
             title = titleManager;
@@ -41,28 +44,41 @@ namespace UI.Title
             option = optionManager;
             credit = creditManager;
             stageSelect = stageSelectManager;
+            this.sceneChanger = sceneChanger;
 
             data = dataManager;
             option.SetPreference(data);
-            var initialManagers = new Dictionary<Nav, UIManager>
+            var initialManagers = new Dictionary<TitleNavigation, UIManager>
             {
-                { Nav.Title, title },
-                { Nav.Quit, quit },
-                { Nav.Option, option },
-                { Nav.Credit, credit },
-                { Nav.StageSelect, stageSelect }
+                { TitleNavigation.Title, title },
+                { TitleNavigation.Quit, quit },
+                { TitleNavigation.Option, option },
+                { TitleNavigation.Credit, credit },
+                { TitleNavigation.StageSelect, stageSelect }
             };
-            navigation = new Navigation<Nav>(initialManagers);
+            navigation = new Navigation<TitleNavigation>(initialManagers);
         }
 
 
         public void Start()
         {
             SetNavigation();
-            NavigateToTitle();
-
-
-            data.Delete();
+            
+            var route = sceneChanger.GetTitle();
+            navigation.SetActive(true);
+            switch (route)
+            {
+                case TitleNavigation.StageSelect:
+                    NavigateToPlay();
+                    break;
+                default:
+                    NavigateToTitle();
+                    break;
+            }
+            
+            
+            /* デバッグ用 */
+            // data.Delete();
             data.Load();
         }
 
@@ -92,25 +108,34 @@ namespace UI.Title
             stageSelect.OnBack += NavigateToTitle;
         }
 
-        private void StageSelected(StageSelectManager.Nav nav)
+        /// <summary>
+        /// InGameに遷移する
+        /// </summary>
+        /// <param name="nav">選んだステージ</param>
+        private void StageSelected(StageNavigation nav)
         {
-            Debug.Log("StageSelected : " + nav);
+            if (!sceneChanger.LoadInGame(nav.ToStage()))
+            {
+                throw new NotImplementedException("not found navigation : " + nav);
+            }
+
+            navigation.SetActive(false);
         }
 
         private void NavigateToTitle()
         {
             navigation.SetActive(true);
-            navigation.SetScreen(Nav.Title);
+            navigation.SetScreen(TitleNavigation.Title);
         }
 
         private void OnCanceled()
         {
             switch (navigation.GetCurrentNav())
             {
-                case Nav.Title:
+                case TitleNavigation.Title:
                     NavigateToQuit();
                     break;
-                case Nav.Option:
+                case TitleNavigation.Option:
                     break;
                 default:
                     NavigateToTitle();
@@ -122,33 +147,24 @@ namespace UI.Title
         private void NavigateToPlay()
         {
             data.Load();
-            navigation.SetScreen(Nav.StageSelect);
+            navigation.SetScreen(TitleNavigation.StageSelect);
             stageSelect.SetScores(data.GetStageData());
         }
 
         private void NavigateToCredit()
         {
-            navigation.SetScreen(Nav.Credit);
+            navigation.SetScreen(TitleNavigation.Credit);
         }
 
         private void NavigateToQuit()
         {
-            navigation.SetScreen(Nav.Quit);
+            navigation.SetScreen(TitleNavigation.Quit);
         }
 
         private void NavigateToOption()
         {
-            navigation.SetScreen(Nav.Option);
+            navigation.SetScreen(TitleNavigation.Option);
             navigation.SetActive(false);
-        }
-
-        private enum Nav
-        {
-            Title,
-            Option,
-            Quit,
-            Credit,
-            StageSelect
         }
     }
 }

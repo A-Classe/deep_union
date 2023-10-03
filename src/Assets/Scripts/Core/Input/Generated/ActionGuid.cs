@@ -17,6 +17,7 @@ namespace Core.Input
        public readonly Guid Control = new Guid("4b5abd4e-9db5-4537-bcbb-09b065d8f69c");
        public readonly Guid Assign = new Guid("22d85c45-cf1a-422d-acb8-7b1768215f89");
        public readonly Guid Release = new Guid("d5850a10-c25d-48a6-920c-80db9074d4c4");
+       public readonly Guid ESC = new Guid("472655fd-8b18-4875-aae9-5b33d2815fc3");
     }
 
     public class Title

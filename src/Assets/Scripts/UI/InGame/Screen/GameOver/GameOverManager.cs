@@ -4,8 +4,9 @@ using Core.Utility.UI.Component;
 using Core.Utility.UI.Component.Cursor;
 using Core.Utility.UI.Navigation;
 using UnityEngine;
+using Wanna.DebugEx;
 
-namespace GameMain.UI.Screen.GameOver
+namespace UI.InGame.Screen.GameOver
 {
     /// <summary>
     /// ゲーム中のGameOverUI
@@ -51,10 +52,10 @@ namespace GameMain.UI.Screen.GameOver
             switch (current.Value)
             {
                 case Nav.Retry:
-                    retry.OnPlay(() => OnClick?.Invoke(Nav.Retry));
+                    retry.OnPlay(() => OnRetry?.Invoke());
                     break;
                 case Nav.StageSelect:
-                    stage.OnPlay(() => OnClick?.Invoke(Nav.StageSelect));
+                    stage.OnPlay(() => OnSelect?.Invoke());
                     break;
             }
         }
@@ -86,7 +87,10 @@ namespace GameMain.UI.Screen.GameOver
             SetState(nextNav);
         }
 
-        public event Action<Nav> OnClick;
+        public event Action OnSelect;
+
+        public event Action OnRetry;
+        
 
 
         private void SetState(Nav setNav)

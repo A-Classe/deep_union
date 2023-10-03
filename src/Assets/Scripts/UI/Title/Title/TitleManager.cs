@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace UI.Title.Title
 {
-    internal class TitleManager : UIManager
+    public class TitleManager : UIManager
     {
         public enum Nav
         {
