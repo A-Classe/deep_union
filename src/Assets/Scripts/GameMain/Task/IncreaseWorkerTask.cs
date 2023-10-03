@@ -37,6 +37,9 @@ namespace GameMain.Task
         {
             foreach (Worker worker in imprisonedWorkers)
             {
+                if (!leaderAssignableArea.AssignableArea.CanAssign())
+                    return;
+
                 worker.SetLockState(false);
                 workerAgent.AddActiveWorker(worker);
 

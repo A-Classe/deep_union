@@ -4,6 +4,7 @@ using Module.Assignment.Component;
 using Module.Task;
 using VContainer;
 using VContainer.Unity;
+using Wanna.DebugEx;
 
 namespace Module.Assignment.System
 {
@@ -80,6 +81,7 @@ namespace Module.Assignment.System
 
         private void OnTaskCompleted(BaseTask task)
         {
+            DebugEx.Log("OnTaskCompleted");
             workerReleaser.ReleaseAllWorkers(task.GetComponentInChildren<AssignableArea>());
             task.OnCompleted -= OnTaskCompleted;
         }

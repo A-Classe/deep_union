@@ -12,8 +12,11 @@ namespace Module.Assignment.Utility
         {
             float distance = math.distancesq(ellipseA.Position, ellipseB.Position);
 
-            float radiusA = math.max(ellipseA.Size.x, ellipseA.Size.y);
-            float radiusB = math.max(ellipseB.Size.x, ellipseB.Size.y);
+            float2 sizeA = ellipseA.Size;
+            float2 sizeB = ellipseB.Size;
+
+            float radiusA = math.max(sizeA.x, sizeB.y);
+            float radiusB = math.max(sizeA.x, sizeB.y);
 
             return distance <= radiusA * radiusA + radiusB * radiusB;
         }
@@ -21,18 +24,21 @@ namespace Module.Assignment.Utility
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool InEllipse(in float3 pos, in EllipseData ellipseData)
         {
-            var dx = ellipseData.Position.x - pos.x;
-            var dz = ellipseData.Position.z - pos.z;
+            var dx = pos.x - ellipseData.Position.x;
+            var dz = pos.z - ellipseData.Position.z;
 
             float rad = math.radians(ellipseData.Rotation);
+            float sin = math.sin(rad);
+            float cos = math.cos(rad);
 
-            float x = dx * math.cos(-rad) - dz * math.sin(-rad);
-            float y = dx * math.sin(-rad) - dz * math.cos(-rad);
+            float sizeX = ellipseData.Size.x * 0.5f;
+            float sizeY = ellipseData.Size.y * 0.5f;
 
-            float sizeX = ellipseData.Size.x;
-            float sizeY = ellipseData.Size.y;
+            float x = dx * cos - dz * sin;
+            float y = (sizeX / sizeY) * (-dx * sin - dz * cos);
 
-            return (x * x) / (sizeX * sizeX) + (y * y) / (sizeY * sizeY) <= 1f;
+
+            return (x * x + y * y) < sizeX * sizeX;
         }
     }
 }

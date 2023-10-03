@@ -85,7 +85,7 @@ namespace GameMain
             InitWorker();
 
             InitPlayer();
-            
+
             uiManager.SetScreen(InGameNav.InGame);
         }
 

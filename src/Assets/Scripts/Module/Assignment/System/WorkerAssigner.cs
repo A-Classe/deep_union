@@ -4,6 +4,7 @@ using Module.Assignment.Utility;
 using Module.Working;
 using Unity.Burst;
 using VContainer;
+using Wanna.DebugEx;
 
 namespace Module.Assignment.System
 {
@@ -53,8 +54,12 @@ namespace Module.Assignment.System
                 for (int i = 0; i < cacheCount; i++)
                 {
                     Worker worker = assignWorkerCache[i];
-                    leaderAssignableArea.AssignableArea.RemoveWorker(worker);
-                    activeArea.AddWorker(worker);
+
+                    if (activeArea.CanAssign())
+                    {
+                        leaderAssignableArea.AssignableArea.RemoveWorker(worker);
+                        activeArea.AddWorker(worker);
+                    }
                 }
             }
         }

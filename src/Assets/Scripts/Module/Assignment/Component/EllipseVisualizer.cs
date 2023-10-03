@@ -11,7 +11,6 @@ namespace Module.Assignment.Component
     {
         [SerializeField] private float debugHeight = 1f;
         [SerializeField] private int debugResolution = 50;
-        [SerializeField] private bool debugRotation;
 
         private EllipseData ellipseData;
 
@@ -24,31 +23,25 @@ namespace Module.Assignment.Component
         {
             Gizmos.color = Color.green;
 
-            var angleStep = 360f / debugResolution;
+            var angleStep = 2f * Mathf.PI / debugResolution;
+            var center = transform.position;
+            var xRadius = ellipseData.Size.x * 0.5f;
+            var yRadius = ellipseData.Size.y * 0.5f;
 
-            Vector3 prevPoint = Vector3.zero;
+            Quaternion rotation = Quaternion.AngleAxis(ellipseData.Rotation, Vector3.up);
+            Vector3 startPoint = center + new Vector3(Mathf.Cos(0f) * xRadius, debugHeight, Mathf.Sin(0f) * yRadius);
 
-            for (var i = 0; i <= debugResolution; i++)
+            for (int i = 1; i <= debugResolution; i++)
             {
-                var angle = i * angleStep + ellipseData.Rotation;
-                var position = transform.position;
+                float angle = i * angleStep;
+                Vector3 endPoint = center + new Vector3(Mathf.Cos(angle) * xRadius, debugHeight, Mathf.Sin(angle) * yRadius);
+                Gizmos.DrawLine(Rotate(startPoint), Rotate(endPoint));
+                startPoint = endPoint;
+            }
 
-                var x = position.x + ellipseData.Size.x * 0.5f * Mathf.Cos(angle * Mathf.Deg2Rad);
-                var z = position.z + ellipseData.Size.y * 0.5f * Mathf.Sin(angle * Mathf.Deg2Rad);
-                
-                var currentPoint = new Vector3(x, position.y + debugHeight, z);
-                
-                if (debugRotation)
-                {
-                    DebugEx.Log(currentPoint);
-                }
-
-                if (i > 0)
-                {
-                    Gizmos.DrawLine(prevPoint, currentPoint);
-                }
-
-                prevPoint = currentPoint;
+            Vector3 Rotate(Vector3 point)
+            {
+                return rotation * (point - center) + center;
             }
         }
     }
