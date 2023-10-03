@@ -6,10 +6,8 @@ using Module.Assignment.Component;
 using Module.Player.Controller;
 using Module.Task;
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.Rendering.Universal;
 using VContainer;
-using Wanna.DebugEx;
 
 namespace GameMain.Task
 {

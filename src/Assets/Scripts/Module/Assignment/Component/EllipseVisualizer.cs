@@ -1,6 +1,5 @@
 using Module.Assignment.Utility;
 using UnityEngine;
-using Wanna.DebugEx;
 
 namespace Module.Assignment.Component
 {

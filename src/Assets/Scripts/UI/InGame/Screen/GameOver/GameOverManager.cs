@@ -4,7 +4,6 @@ using Core.Utility.UI.Component;
 using Core.Utility.UI.Component.Cursor;
 using Core.Utility.UI.Navigation;
 using UnityEngine;
-using Wanna.DebugEx;
 
 namespace UI.InGame.Screen.GameOver
 {

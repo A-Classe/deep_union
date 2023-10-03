@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
-using Wanna.DebugEx;
-using Random = UnityEngine.Random;
+﻿using UnityEngine;
 
 namespace Module.Working.Factory
 {

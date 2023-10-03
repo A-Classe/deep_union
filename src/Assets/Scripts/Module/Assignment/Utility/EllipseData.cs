@@ -1,7 +1,6 @@
 ﻿using System;
 using Unity.Burst;
 using Unity.Mathematics;
-using Wanna.DebugEx;
 
 namespace Module.Assignment.Utility
 {

@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using Wanna.DebugEx;
 
 namespace GameMain.System
 {

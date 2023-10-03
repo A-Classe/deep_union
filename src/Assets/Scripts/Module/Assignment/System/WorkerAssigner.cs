@@ -4,7 +4,6 @@ using Module.Assignment.Utility;
 using Module.Working;
 using Unity.Burst;
 using VContainer;
-using Wanna.DebugEx;
 
 namespace Module.Assignment.System
 {

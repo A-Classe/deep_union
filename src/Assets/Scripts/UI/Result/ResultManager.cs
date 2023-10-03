@@ -5,7 +5,6 @@ using Core.Utility.UI;
 using Core.Utility.UI.Component;
 using Core.Utility.UI.Component.Cursor;
 using Core.Utility.UI.Navigation;
-using TMPro;
 using UnityEngine;
 
 namespace UI.Result
