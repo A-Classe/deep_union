@@ -34,7 +34,7 @@ namespace Module.Assignment.Component
 
         public float Intensity => intensity;
 
-        public EllipseData EllipseData => new EllipseData(transform.position, ellipseData.Size, rotation);
+        public EllipseData EllipseData => new EllipseData(transform.position, size * factor, rotation);
         private EllipseData ellipseData;
 
         public IReadOnlyList<Worker> AssignedWorkers => assignedWorkers;

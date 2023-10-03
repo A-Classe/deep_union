@@ -12,11 +12,11 @@ namespace Module.Assignment.Utility
         {
             float distance = math.distancesq(ellipseA.Position, ellipseB.Position);
 
-            float2 sizeA = ellipseA.Size;
-            float2 sizeB = ellipseB.Size;
+            float2 sizeA = ellipseA.Size * 0.5f;
+            float2 sizeB = ellipseB.Size * 0.5f;
 
-            float radiusA = math.max(sizeA.x, sizeB.y);
-            float radiusB = math.max(sizeA.x, sizeB.y);
+            float radiusA = math.max(sizeA.x, sizeA.y);
+            float radiusB = math.max(sizeB.x, sizeB.y);
 
             return distance <= radiusA * radiusA + radiusB * radiusB;
         }
