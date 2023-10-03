@@ -13,6 +13,7 @@ namespace Module.Working.Controller
         private InputEvent controlEvent;
 
         private Camera followCamera;
+        private Vector3 velocity;
 
         private void Awake()
         {
@@ -32,13 +33,13 @@ namespace Module.Working.Controller
 
             float moveX = input.x * controlSpeed * Time.deltaTime;
             float moveY = input.y * controlSpeed * Time.deltaTime;
-            
+
             Vector3 move = new Vector3(moveX, 0f, moveY);
 
-            Vector3 position = transform.position + move;
-            if (!InViewport(position)) return;
+            velocity += move;
+            if (!InViewport(transform.position)) return;
 
-            transform.position = position;
+            transform.position += velocity * Time.deltaTime;
         }
 
         private bool InViewport(Vector3 position)
