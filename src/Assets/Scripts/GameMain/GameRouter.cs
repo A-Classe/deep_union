@@ -1,5 +1,6 @@
 ﻿using System;
 using System.GameProgress;
+using Core.Model.Scene;
 using Core.NavMesh;
 using Core.Scenes;
 using Core.Utility.Player;
@@ -26,8 +27,6 @@ namespace GameMain
         private readonly SpawnParam spawnParam;
         private readonly GameParam gameParam;
 
-        private readonly LeadPointConnector leadPointConnector;
-
         private readonly PlayerController playerController;
         private readonly CameraController cameraController;
         private readonly WorkerController workerController;
@@ -47,7 +46,6 @@ namespace GameMain
         public GameRouter(
             SpawnParam spawnParam,
             GameParam gameParam,
-            LeadPointConnector leadPointConnector,
             WorkerSpawner workerSpawner,
             WorkerController workerController,
             PlayerController playerController,
@@ -62,8 +60,6 @@ namespace GameMain
         {
             this.spawnParam = spawnParam;
             this.gameParam = gameParam;
-
-            this.leadPointConnector = leadPointConnector;
 
             this.playerController = playerController;
             this.cameraController = cameraController;
@@ -90,8 +86,7 @@ namespace GameMain
 
             InitPlayer();
             
-            uiManager.SetSceneChanger(sceneChanger);
-            uiManager.SetScreen(InGameNav.InGame);
+            InitScene();
         }
 
         /// <summary>
@@ -119,6 +114,24 @@ namespace GameMain
             cameraController.SetFollowTarget(playerController.transform);
 
             workerController.SetCamera(cameraController.GetCamera());
+        }
+
+        private void InitScene()
+        {
+            uiManager.SetSceneChanger(sceneChanger);
+            uiManager.SetScreen(InGameNav.InGame);
+            
+            progressObserver.OnCompleted += () =>
+            {
+                sceneChanger.LoadResult(
+                    new GameResult
+                    {
+                        Hp = 20,
+                        Resource = 30,
+                        stageCode = (int) sceneChanger.GetInGame()
+                    }
+                );
+            };
         }
 
         public void Dispose()

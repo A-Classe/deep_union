@@ -42,14 +42,7 @@ namespace UI.InGame
             gameOverManager.OnRetry += () =>
             {
                 navigation.SetActive(false);
-                /* todo: テスト用にretryでresultに遷移 */
-                sceneChanger.LoadResult(new GameResult
-                {
-                    WorkerCount = 22,
-                    Hp = 50,
-                    Resource = 45,
-                    stageCode = (int)sceneChanger.GetInGame()
-                });
+                sceneChanger.LoadInGame(sceneChanger.GetInGame());
             };
             
             /*todo: 以下テスト用 */
