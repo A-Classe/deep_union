@@ -1,8 +1,6 @@
 using System.GameProgress;
-using Module.Assignment;
 using Module.Assignment.Component;
 using Module.Task;
-using Module.Working.Controller;
 using UnityDebugSheet.Runtime.Core.Scripts;
 using UnityEngine;
 using VContainer;
@@ -15,30 +13,35 @@ namespace Debug
         private readonly ResourceContainer resourceContainer;
         private readonly LeaderAssignableArea leaderAssignableArea;
         private readonly StageProgressObserver stageProgressObserver;
+        private readonly DebugToolPage debugToolPage;
 
         [Inject]
-        public SceneDebugTool(ResourceContainer resourceContainer, LeaderAssignableArea leaderAssignableArea, StageProgressObserver stageProgressObserver)
+        public SceneDebugTool(
+            ResourceContainer resourceContainer,
+            LeaderAssignableArea leaderAssignableArea,
+            StageProgressObserver stageProgressObserver,
+            DebugSheet debugSheet
+        )
         {
             this.resourceContainer = resourceContainer;
             this.leaderAssignableArea = leaderAssignableArea;
             this.stageProgressObserver = stageProgressObserver;
+            this.debugToolPage = debugSheet.GetOrCreateInitialPage<DebugToolPage>();
         }
 
         public void Start()
         {
-            DebugToolPage initialPage = DebugSheet.Instance.GetOrCreateInitialPage<DebugToolPage>();
+            debugToolPage.SetUp(stageProgressObserver);
 
-            initialPage.SetUp(stageProgressObserver);
-
-            initialPage.AddPageLinkButton<TaskDebugPage>("Task",
+            debugToolPage.AddPageLinkButton<TaskDebugPage>("Task",
                 icon: Resources.Load<Sprite>(AssetKeys.Resources.Icon.Model));
-            initialPage.AddPageLinkButton<PlayerDebugPage>("Player",
+            debugToolPage.AddPageLinkButton<PlayerDebugPage>("Player",
                 icon: Resources.Load<Sprite>(AssetKeys.Resources.Icon.CharacterViewer), onLoad: data =>
                 {
                     data.page.SetUp(resourceContainer, leaderAssignableArea);
                 });
 
-            initialPage.Reload();
+            debugToolPage.Reload();
         }
     }
 }

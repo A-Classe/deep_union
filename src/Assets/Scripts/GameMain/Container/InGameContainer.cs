@@ -1,7 +1,7 @@
 ﻿using System.GameProgress;
 using System.Linq;
 using Core.NavMesh;
-using Core.Utility.User;
+using Core.User;
 using Core.Utility;
 using Core.Utility.Player;
 using Debug;
@@ -19,6 +19,8 @@ using Module.Working;
 using Module.Working.Controller;
 using Module.Working.Factory;
 using UI.HUD;
+using UI.InGame;
+using UnityDebugSheet.Runtime.Core.Scripts;
 using UnityEngine;
 using UnityEngine.Serialization;
 using VContainer;
@@ -40,6 +42,7 @@ namespace GameMain.Container
         [SerializeField] private GoalPoint goalPoint;
         [SerializeField] private TaskProgressPool progressPool;
         [SerializeField] private PlayerStatusVisualizer playerStatusVisualizer;
+        [SerializeField] private DebugSheet debugSheet;
 
         [SerializeField] private InGameUIManager inGameUIManager;
 
@@ -63,7 +66,6 @@ namespace GameMain.Container
 
             builder.Register<WorkerSpawner>(Lifetime.Singleton);
             builder.Register<WorkerAgent>(Lifetime.Singleton);
-            builder.Register<LeadPointConnector>(Lifetime.Singleton);
             builder.Register<StageProgressObserver>(Lifetime.Singleton);
             builder.Register<RuntimeNavMeshBaker>(Lifetime.Singleton);
             builder.Register<ResourceContainer>(Lifetime.Singleton);
@@ -83,6 +85,7 @@ namespace GameMain.Container
             builder.RegisterInstance(inGameUIManager);
             builder.RegisterInstance(new PlayerStatus(gameParam.ConvertToStatus()));
             builder.RegisterInstance(playerStatusVisualizer);
+            builder.RegisterInstance(debugSheet);
 
             builder.RegisterBuildCallback(container =>
             {

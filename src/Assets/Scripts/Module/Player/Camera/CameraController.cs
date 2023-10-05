@@ -1,7 +1,6 @@
 using System;
 using Module.Player.Camera.State;
 using UnityEngine;
-using Wanna.DebugEx;
 
 namespace Module.Player.Camera
 {

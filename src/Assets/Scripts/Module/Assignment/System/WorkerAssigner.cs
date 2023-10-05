@@ -53,8 +53,12 @@ namespace Module.Assignment.System
                 for (int i = 0; i < cacheCount; i++)
                 {
                     Worker worker = assignWorkerCache[i];
-                    leaderAssignableArea.AssignableArea.RemoveWorker(worker);
-                    activeArea.AddWorker(worker);
+
+                    if (activeArea.CanAssign())
+                    {
+                        leaderAssignableArea.AssignableArea.RemoveWorker(worker);
+                        activeArea.AddWorker(worker);
+                    }
                 }
             }
         }
