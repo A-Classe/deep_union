@@ -53,8 +53,12 @@ namespace Module.Assignment.System
                 for (int i = 0; i < cacheCount; i++)
                 {
                     Worker worker = releaseWorkerCache[i];
-                    activeArea.RemoveWorker(worker);
-                    leaderArea.AddWorker(worker);
+
+                    if (leaderArea.CanAssign())
+                    {
+                        activeArea.RemoveWorker(worker);
+                        leaderArea.AddWorker(worker);
+                    }
                 }
             }
         }
@@ -65,8 +69,11 @@ namespace Module.Assignment.System
 
             foreach (Worker worker in workers)
             {
-                assignableArea.RemoveWorker(worker);
-                leaderAssignableArea.AssignableArea.AddWorker(worker);
+                if (leaderAssignableArea.AssignableArea.CanAssign())
+                {
+                    assignableArea.RemoveWorker(worker);
+                    leaderAssignableArea.AssignableArea.AddWorker(worker);
+                }
             }
         }
     }

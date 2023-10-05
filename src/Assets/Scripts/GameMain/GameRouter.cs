@@ -1,10 +1,10 @@
 ﻿using System;
 using System.GameProgress;
+using Core.Model.Scene;
 using Core.NavMesh;
+using Core.Scenes;
 using Core.Utility.Player;
 using GameMain.Presenter;
-using GameMain.UI;
-using Module.Assignment;
 using Module.Assignment.Component;
 using Module.Player.Camera;
 using Module.Player.Controller;
@@ -13,7 +13,7 @@ using Module.Task;
 using Module.Working;
 using Module.Working.Controller;
 using Module.Working.Factory;
-using UnityEngine;
+using UI.InGame;
 using VContainer;
 using VContainer.Unity;
 
@@ -26,8 +26,6 @@ namespace GameMain
     {
         private readonly SpawnParam spawnParam;
         private readonly GameParam gameParam;
-
-        private readonly LeadPointConnector leadPointConnector;
 
         private readonly PlayerController playerController;
         private readonly CameraController cameraController;
@@ -42,11 +40,12 @@ namespace GameMain
 
         private readonly InGameUIManager uiManager;
 
+        private readonly SceneChanger sceneChanger;
+
         [Inject]
         public GameRouter(
             SpawnParam spawnParam,
             GameParam gameParam,
-            LeadPointConnector leadPointConnector,
             WorkerSpawner workerSpawner,
             WorkerController workerController,
             PlayerController playerController,
@@ -55,13 +54,12 @@ namespace GameMain
             RuntimeNavMeshBaker runtimeNavMeshBaker,
             TaskActivator taskActivator,
             LeaderAssignableArea leaderAssignableArea,
-            InGameUIManager uiManager
+            InGameUIManager uiManager,
+            SceneChanger sceneChanger
         )
         {
             this.spawnParam = spawnParam;
             this.gameParam = gameParam;
-
-            this.leadPointConnector = leadPointConnector;
 
             this.playerController = playerController;
             this.cameraController = cameraController;
@@ -75,6 +73,8 @@ namespace GameMain
             this.workerSpawner = workerSpawner;
 
             this.uiManager = uiManager;
+
+            this.sceneChanger = sceneChanger;
         }
 
         public void Start()
@@ -86,7 +86,7 @@ namespace GameMain
 
             InitPlayer();
             
-            uiManager.SetScreen(InGameNav.InGame);
+            InitScene();
         }
 
         /// <summary>
@@ -114,6 +114,24 @@ namespace GameMain
             cameraController.SetFollowTarget(playerController.transform);
 
             workerController.SetCamera(cameraController.GetCamera());
+        }
+
+        private void InitScene()
+        {
+            uiManager.SetSceneChanger(sceneChanger);
+            uiManager.SetScreen(InGameNav.InGame);
+            
+            progressObserver.OnCompleted += () =>
+            {
+                sceneChanger.LoadResult(
+                    new GameResult
+                    {
+                        Hp = 20,
+                        Resource = 30,
+                        stageCode = (int) sceneChanger.GetInGame()
+                    }
+                );
+            };
         }
 
         public void Dispose()

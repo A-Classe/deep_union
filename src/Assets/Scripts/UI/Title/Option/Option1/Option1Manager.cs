@@ -37,7 +37,7 @@ namespace UI.Title.Option.Option1
         public override void Initialized(ContentTransform content)
         {
             base.Initialized(content);
-            SetState(Nav.Video);
+            //SetState(Nav.Video);
         }
 
         /// <summary>
@@ -80,11 +80,19 @@ namespace UI.Title.Option.Option1
             {
                 // 上向きの入力
                 case > 0:
-                    nextNav = current.Value == Nav.Video ? Nav.Back : current.Value - 1;
+                    if(current.Value == Nav.Video)
+                    {
+                        return;
+                    }
+                    nextNav = current.Value - 1;
                     break;
                 // 下向きの入力
                 case < 0:
-                    nextNav = current.Value == Nav.Back ? Nav.Video : current.Value + 1;
+                    if(current.Value == Nav.Back)
+                    {
+                        return;
+                    }
+                    nextNav = current.Value + 1;
                     break;
                 default:
                     return; // Y軸の入力がない場合、何もしない

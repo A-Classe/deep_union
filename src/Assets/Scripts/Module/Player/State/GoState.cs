@@ -1,6 +1,5 @@
 using Module.Player.Controller;
 using UnityEngine;
-using Wanna.DebugEx;
 
 namespace Module.Player.State
 {

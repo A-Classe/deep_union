@@ -1,14 +1,12 @@
-using Module.Assignment;
 using Module.Assignment.Component;
 using Module.Player.Controller;
 using Module.Player.State;
-using Module.Working.Controller;
 using VContainer;
 using VContainer.Unity;
 
 namespace GameMain.Presenter
 {
-    public class LeaderPresenter : IInitializable
+    public class LeaderPresenter : IStartable
     {
         private readonly PlayerController playerController;
         private readonly LeaderAssignableArea leaderAssignableArea;
@@ -20,7 +18,7 @@ namespace GameMain.Presenter
             this.leaderAssignableArea = leaderAssignableArea;
         }
 
-        public void Initialize()
+        public void Start()
         {
             playerController.OnStateChanged += state =>
             {

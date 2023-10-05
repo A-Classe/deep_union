@@ -2,9 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Serialization;
 using VContainer;
-using Wanna.DebugEx;
 
 namespace Module.Task
 {
@@ -92,9 +90,7 @@ namespace Module.Task
             //進捗が1に到達したら完了
             if (currentProgress >= 1f)
             {
-                ChangeState(TaskState.Completed);
-                OnComplete();
-                OnCompleted?.Invoke(this);
+                ForceComplete();
             }
         }
 
@@ -124,19 +120,35 @@ namespace Module.Task
             OnStateChanged?.Invoke(state);
         }
 
+        protected void ForceComplete()
+        {
+            currentProgress = 1f;
+            ChangeState(TaskState.Completed);
+            OnComplete();
+            OnCompleted?.Invoke(this);
+        }
+
         protected virtual void OnStart() { }
 
         protected virtual void OnCancel() { }
 
         protected virtual void OnComplete() { }
 
-        protected void Disable()
+        public void SetDetection(bool isEnabled)
         {
             foreach (Collider col in taskColliders)
             {
-                col.enabled = false;
+                col.enabled = isEnabled;
             }
+        }
 
+        public void Enable()
+        {
+            gameObject.SetActive(true);
+        }
+
+        protected void Disable()
+        {
             gameObject.SetActive(false);
         }
     }

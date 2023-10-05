@@ -9,19 +9,24 @@ namespace Debug
 {
     public class RootDebugTool : IStartable
     {
+        private readonly DebugSheet debugSheet;
+        private readonly DebugToolPage debugToolPage;
+
         [Inject]
-        public RootDebugTool() { }
+        public RootDebugTool(DebugSheet debugSheet)
+        {
+            this.debugSheet = debugSheet;
+            debugToolPage = debugSheet.GetOrCreateInitialPage<DebugToolPage>();
+        }
 
         public void Start()
         {
-            DefaultDebugPageBase initialPage = DebugSheet.Instance.GetOrCreateInitialPage<DebugToolPage>();
-
-            initialPage.AddPageLinkButton<GraphyDebugPage>("Graphy",
+            debugToolPage.AddPageLinkButton<GraphyDebugPage>("Graphy",
                 icon: Resources.Load<Sprite>(AssetKeys.Resources.Icon.FPS),
                 onLoad: x => x.page.Setup(GraphyManager.Instance), priority: 100);
-            DebugSheet.Instance.GetComponent<Canvas>().enabled = true;
+            debugSheet.GetComponent<Canvas>().enabled = true;
 
-            initialPage.Reload();
+            debugToolPage.Reload();
         }
     }
 }

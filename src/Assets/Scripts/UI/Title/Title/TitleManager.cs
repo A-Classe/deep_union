@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace UI.Title.Title
 {
-    internal class TitleManager : UIManager
+    public class TitleManager : UIManager
     {
         public enum Nav
         {
@@ -37,7 +37,7 @@ namespace UI.Title.Title
         public override void Initialized(ContentTransform content)
         {
             base.Initialized(content);
-            SetState(Nav.Start);
+            //SetState(Nav.Start);
         }
 
         public override void Clicked()
@@ -76,11 +76,19 @@ namespace UI.Title.Title
             {
                 // 上向きの入力
                 case > 0:
-                    nextNav = current.Value == Nav.Start ? Nav.Quit : current.Value - 1;
+                    if(current.Value == Nav.Start)
+                    {
+                        return;
+                    }
+                    nextNav = current.Value - 1;
                     break;
                 // 下向きの入力
                 case < 0:
-                    nextNav = current.Value == Nav.Quit ? Nav.Start : current.Value + 1;
+                    if(current.Value == Nav.Quit)
+                    {
+                        return;
+                    }
+                    nextNav = current.Value + 1;
                     break;
                 default:
                     return; // Y軸の入力がない場合、何もしない

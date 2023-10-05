@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace UI.Title.Quit
 {
-    internal class QuitManager : UIManager
+    public class QuitManager : UIManager
     {
         public enum Nav
         {
@@ -61,11 +61,30 @@ namespace UI.Title.Quit
                 return;
             }
 
-            if (direction.y != 0)
+            Nav nextNav;
+
+            switch (direction.y)
             {
-                var nextNav = current == Nav.No ? Nav.Yes : Nav.No;
-                SetState(nextNav);
+                case > 0:
+                    if(current.Value == Nav.Yes)
+                    {
+                        return;
+                    }
+                    nextNav = Nav.Yes;
+                    break;
+
+                case < 0:
+                    if(current.Value == Nav.No)
+                    {
+                        return;
+                    }
+                    nextNav = Nav.No;
+                    break;
+
+                default:
+                    return;
             }
+            SetState(nextNav);
         }
 
         public override void Finished(ContentTransform content, Action onFinished)

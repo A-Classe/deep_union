@@ -33,9 +33,6 @@ namespace UI.Title.Option.Option3
             cursor.AddPoint(Nav.Effect, effect.rectTransform);
             cursor.AddPoint(Nav.Back, back.rectTransform);
             current = Nav.Master;
-            master.Setup(100f, 0f, 70f);
-            music.Setup(100f, 0f, 70f);
-            effect.Setup(100f, 0f, 70f);
         }
 
         public override void Initialized(ContentTransform content)
@@ -102,11 +99,19 @@ namespace UI.Title.Option.Option3
             {
                 // 上向きの入力
                 case > 0:
-                    nextNav = current.Value == Nav.Master ? Nav.Back : current.Value - 1;
+                    if(current.Value == Nav.Master)
+                    {
+                        return;
+                    }
+                    nextNav = current.Value - 1;
                     break;
                 // 下向きの入力
                 case < 0:
-                    nextNav = current.Value == Nav.Back ? Nav.Master : current.Value + 1;
+                    if(current.Value == Nav.Back)
+                    {
+                        return;
+                    }
+                    nextNav = current.Value + 1;
                     break;
                 default:
                     return; // Y軸の入力がない場合、何もしない
@@ -121,6 +126,11 @@ namespace UI.Title.Option.Option3
 
         public void SetValues(int masterVol, int musicVol, int effectVol)
         {
+            // initialize
+            master.Setup(100f, 0f, 70f);
+            music.Setup(100f, 0f, 70f);
+            effect.Setup(100f, 0f, 70f);
+            
             master.SetValue(masterVol);
             music.SetValue(musicVol);
             effect.SetValue(effectVol);

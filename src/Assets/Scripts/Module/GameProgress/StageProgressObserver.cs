@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using Module.Player.Controller;
 using UnityEngine;
 using VContainer;
-using Wanna.DebugEx;
 
 namespace System.GameProgress
 {
@@ -16,7 +13,7 @@ namespace System.GameProgress
     {
         private readonly PlayerController playerController;
         private readonly GoalPoint goalPoint;
-        private readonly CancellationTokenSource cTokenSource;
+        private CancellationTokenSource cTokenSource;
 
         public event Action OnCompleted;
 

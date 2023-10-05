@@ -27,6 +27,7 @@ namespace GameMain.Presenter.Resource
                 collectableTask.OnCollected += count =>
                 {
                     resourceContainer.Add(count);
+                    DebugEx.Log($"ResourceCount: {resourceContainer.ResourceCount}");
                 };
             }
         }

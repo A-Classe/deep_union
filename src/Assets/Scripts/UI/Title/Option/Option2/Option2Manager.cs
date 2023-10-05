@@ -35,7 +35,6 @@ namespace UI.Title.Option.Option2
             cursor.AddPoint(Nav.Brightness, bright.rectTransform);
             cursor.AddPoint(Nav.Back, back.rectTransform);
             current = Nav.FullScreen;
-            bright.Setup(100f, 0f, 70f);
         }
 
         public override void Initialized(ContentTransform content)
@@ -91,11 +90,19 @@ namespace UI.Title.Option.Option2
             {
                 // 上向きの入力
                 case > 0:
-                    nextNav = current.Value == Nav.FullScreen ? Nav.Back : current.Value - 1;
+                    if(current.Value == Nav.FullScreen)
+                    {
+                        return;
+                    }
+                    nextNav = current.Value - 1;
                     break;
                 // 下向きの入力
                 case < 0:
-                    nextNav = current.Value == Nav.Back ? Nav.FullScreen : current.Value + 1;
+                    if (current.Value == Nav.Back)
+                    {
+                        return;
+                    }
+                    nextNav = current.Value + 1;
                     break;
                 default:
                     return; // Y軸の入力がない場合、何もしない
@@ -112,6 +119,10 @@ namespace UI.Title.Option.Option2
 
         public void SetValues(bool fullscreen, int brightVal)
         {
+            // initialize
+            bright.Setup(100f, 0f, 70f);
+            
+            fullScreen.SetState(fullscreen);
             bright.SetValue(brightVal);
         }
 

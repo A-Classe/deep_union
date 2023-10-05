@@ -1,29 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using AnimationPro.RunTime;
+using Core.Scenes;
+using Core.User;
 using Core.Utility.UI.Component;
 using Core.Utility.UI.Component.Cursor;
 using Core.Utility.UI.Navigation;
-using Core.Utility.User;
 using UnityEngine;
 
 namespace UI.Title.StageSelect
 {
     public class StageSelectManager : UIManager
     {
-        public enum Nav
-        {
-            Stage1,
-            Stage2,
-            Stage3,
-            Stage4,
-            Stage5,
-            Back
-        }
-
+        
         [SerializeField] private SimpleUnderBarController bar;
 
-        [SerializeField] private CursorController<Nav> cursor;
+        [SerializeField] private CursorController<StageNavigation> cursor;
         [SerializeField] private StageButton stage1;
         [SerializeField] private StageButton stage2;
         [SerializeField] private StageButton stage3;
@@ -31,24 +23,24 @@ namespace UI.Title.StageSelect
         [SerializeField] private StageButton stage5;
         [SerializeField] private FadeInOutButton back;
 
-        private Nav? current;
+        private StageNavigation? current;
 
         private void Start()
         {
-            cursor.AddPoint(Nav.Stage1, stage1.rectTransform);
-            cursor.AddPoint(Nav.Stage2, stage2.rectTransform);
-            cursor.AddPoint(Nav.Stage3, stage3.rectTransform);
-            cursor.AddPoint(Nav.Stage4, stage4.rectTransform);
-            cursor.AddPoint(Nav.Stage5, stage5.rectTransform);
-            cursor.AddPoint(Nav.Back, back.rectTransform);
-            current = Nav.Stage1;
+            cursor.AddPoint(StageNavigation.Stage1, stage1.rectTransform);
+            cursor.AddPoint(StageNavigation.Stage2, stage2.rectTransform);
+            cursor.AddPoint(StageNavigation.Stage3, stage3.rectTransform);
+            cursor.AddPoint(StageNavigation.Stage4, stage4.rectTransform);
+            cursor.AddPoint(StageNavigation.Stage5, stage5.rectTransform);
+            cursor.AddPoint(StageNavigation.Back, back.rectTransform);
+            current = StageNavigation.Stage1;
         }
 
         public override void Initialized(ContentTransform content)
         {
             base.Initialized(content);
             bar.AnimateIn();
-            SetState(Nav.Stage1);
+            SetState(StageNavigation.Stage1);
         }
 
         /// <summary>
@@ -60,22 +52,22 @@ namespace UI.Title.StageSelect
             if (!current.HasValue) return;
             switch (current.Value)
             {
-                case Nav.Stage1:
-                    OnStage?.Invoke(Nav.Stage1);
+                case StageNavigation.Stage1:
+                    OnStage?.Invoke(StageNavigation.Stage1);
                     break;
-                case Nav.Stage2:
-                    OnStage?.Invoke(Nav.Stage2);
+                case StageNavigation.Stage2:
+                    OnStage?.Invoke(StageNavigation.Stage2);
                     break;
-                case Nav.Stage3:
-                    OnStage?.Invoke(Nav.Stage3);
+                case StageNavigation.Stage3:
+                    OnStage?.Invoke(StageNavigation.Stage3);
                     break;
-                case Nav.Stage4:
-                    OnStage?.Invoke(Nav.Stage4);
+                case StageNavigation.Stage4:
+                    OnStage?.Invoke(StageNavigation.Stage4);
                     break;
-                case Nav.Stage5:
-                    OnStage?.Invoke(Nav.Stage5);
+                case StageNavigation.Stage5:
+                    OnStage?.Invoke(StageNavigation.Stage5);
                     break;
-                case Nav.Back:
+                case StageNavigation.Back:
                     back.OnPlay(() => OnBack?.Invoke());
                     break;
                 default:
@@ -87,21 +79,29 @@ namespace UI.Title.StageSelect
         {
             if (!current.HasValue)
             {
-                SetState(Nav.Stage1);
+                SetState(StageNavigation.Stage1);
                 return;
             }
 
-            Nav nextNav;
+            StageNavigation nextNav;
 
             switch (direction.y)
             {
                 // 上向きの入力
                 case > 0:
-                    nextNav = current.Value == Nav.Stage1 ? Nav.Back : current.Value - 1;
+                    if(current.Value == StageNavigation.Stage1)
+                    {
+                        return;
+                    }
+                    nextNav = current.Value - 1;
                     break;
                 // 下向きの入力
                 case < 0:
-                    nextNav = current.Value == Nav.Back ? Nav.Stage1 : current.Value + 1;
+                    if(current.Value == StageNavigation.Back)
+                    {
+                        return;
+                    }
+                    nextNav = current.Value + 1;
                     break;
                 default:
                     return; // Y軸の入力がない場合、何もしない
@@ -120,7 +120,7 @@ namespace UI.Title.StageSelect
 
         public event Action OnBack;
 
-        public event Action<Nav> OnStage;
+        public event Action<StageNavigation> OnStage;
 
         public void SetScores(Dictionary<StageData.Stage, uint> scores)
         {
@@ -146,7 +146,7 @@ namespace UI.Title.StageSelect
         }
 
 
-        private void SetState(Nav setNav)
+        private void SetState(StageNavigation setNav)
         {
             current = setNav;
             cursor.SetPoint(setNav);
