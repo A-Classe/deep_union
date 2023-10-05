@@ -36,7 +36,7 @@ namespace Module.Assignment.System
             foreach (AssignableArea activeArea in activeAreas)
             {
                 //範囲同士の円形判定を行い、計算が必要な範囲を絞る
-                if (activeArea.Intensity == 0 || !CollisionUtil.IsCollideCircle(leaderArea.EllipseData, activeArea.EllipseData))
+                if (!activeArea.enabled || !CollisionUtil.IsCollideCircle(leaderArea.EllipseData, activeArea.EllipseData))
                     continue;
 
                 int cacheCount = 0;

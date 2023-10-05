@@ -48,7 +48,6 @@ namespace GameMain.Task
             while (playerStatus.Hp > 0 && !cancellationToken.IsCancellationRequested)
             {
                 playerStatus.RemoveHp(poisonDamage);
-                DebugEx.Log($"PlayerHP: {playerStatus.Hp}");
 
                 await UniTask.Delay(TimeSpan.FromSeconds(damageInterval), cancellationToken: cancellationToken);
             }

@@ -34,6 +34,7 @@ namespace GameMain.Task
 
         private async UniTaskVoid DisableSequence()
         {
+            SetDetection(false);
             Disable();
 
             await navMeshBaker.Bake();
