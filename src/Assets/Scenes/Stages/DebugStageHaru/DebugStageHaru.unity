@@ -1292,6 +1292,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 667e500447ce48f2916fe836e8cabc8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &241675938 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1027691987, guid: a9e893c375aaf4541bf60405b51adc86,
+    type: 3}
+  m_PrefabInstance: {fileID: 241675931}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 910c4663d8b46e941afd3fc971d356e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &245182848
 GameObject:
   m_ObjectHideFlags: 0
@@ -3674,13 +3686,13 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 67
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 1113591
+    m_Bits: 1244663
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -3699,14 +3711,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 449680199}
-  m_LocalRotation: {x: 0.39949292, y: 0.0028135304, z: -0.0010556699, w: 0.91673136}
-  m_LocalPosition: {x: -0.02, y: 13.65, z: -10.75}
+  m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
+  m_LocalPosition: {x: 0, y: 7.5, z: -11.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 47.093, y: 0.363, z: 0.026}
+  m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
 --- !u!1001 &449882857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4591,6 +4603,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4669662423628923104, guid: d734dd73d3ba5af4fad585dc2c0eac45,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 997.9839
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669662423628923104, guid: d734dd73d3ba5af4fad585dc2c0eac45,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 997.9839
+      objectReference: {fileID: 0}
     - target: {fileID: 4669662424169538515, guid: d734dd73d3ba5af4fad585dc2c0eac45,
         type: 3}
       propertyPath: m_Name
@@ -4830,7 +4852,7 @@ MonoBehaviour:
   cameraController: {fileID: 449680200}
   goalPoint: {fileID: 1473537254}
   progressPool: {fileID: 1339084536}
-  playerStatusVisualizer: {fileID: 1027691987}
+  playerStatusVisualizer: {fileID: 241675938}
   debugSheet: {fileID: 652649744}
   inGameUIManager: {fileID: 149019584}
   leaderAssignableArea: {fileID: 241675934}
@@ -7622,18 +7644,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1027691987 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1027691987, guid: a9e893c375aaf4541bf60405b51adc86,
-    type: 3}
-  m_PrefabInstance: {fileID: 241675931}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 910c4663d8b46e941afd3fc971d356e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1055176125
 GameObject:
   m_ObjectHideFlags: 0
