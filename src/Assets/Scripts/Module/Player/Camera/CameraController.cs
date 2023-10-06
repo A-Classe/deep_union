@@ -13,6 +13,7 @@ namespace Module.Player.Camera
         [SerializeField] private float rotationSpeed = 1f;
         [SerializeField] private float upRate = 1f;
         [SerializeField] private float inclination = 1f;
+        [SerializeField] private float vertical = 1f;
 
         private ICameraState currentState;
         private ICameraState[] states;
@@ -34,12 +35,13 @@ namespace Module.Player.Camera
 
             var y = depth * Math.Sin(angleInRadians);
             var horizontalDistance = depth * Math.Cos(angleInRadians);
-            var distance = Vector3.Distance(followTarget.position, leaderTarget.position);
+            //var distance = Vector3.Distance(followTarget.position, leaderTarget.position);
+            var distance = leaderTarget.position.z- followTarget.position.x;
 
             Vector3 horizontalOffset = -followTarget.forward * (float)horizontalDistance;
             Vector3 targetPosition = followTarget.position + horizontalOffset + Vector3.up * (float)y;
 
-            targetPosition.y = (-Mathf.Atan(inclination * (distance - 5f / inclination)) + Mathf.PI / 2) * upRate + targetPosition.y;
+            targetPosition.y = (-Mathf.Atan(inclination * (distance - vertical / inclination)) + Mathf.PI / 2) * upRate + targetPosition.y;
 
             transform.position = targetPosition;
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler((float)cameraAngle, 0f, 0f), Time.deltaTime);
