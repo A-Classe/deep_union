@@ -36,7 +36,7 @@ namespace Module.Player.Camera
             var y = depth * Math.Sin(angleInRadians);
             var horizontalDistance = depth * Math.Cos(angleInRadians);
             //var distance = Vector3.Distance(followTarget.position, leaderTarget.position);
-            var distance = leaderTarget.position.z- followTarget.position.x;
+            var distance = leaderTarget.position.z- followTarget.position.z;
 
             Vector3 horizontalOffset = -followTarget.forward * (float)horizontalDistance;
             Vector3 targetPosition = followTarget.position + horizontalOffset + Vector3.up * (float)y;
