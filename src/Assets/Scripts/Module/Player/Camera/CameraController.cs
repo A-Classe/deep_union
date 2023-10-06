@@ -1,6 +1,7 @@
 using System;
 using Module.Player.Camera.State;
 using UnityEngine;
+using Wanna.DebugEx;
 
 namespace Module.Player.Camera
 {
@@ -10,6 +11,8 @@ namespace Module.Player.Camera
         [SerializeField] private Transform leaderTarget;
         [SerializeField] private float maxRotationRate = 0.3f;
         [SerializeField] private float rotationSpeed = 1f;
+        [SerializeField] private float upRate = 1f;
+        [SerializeField] private float inclination = 1f;
 
         private ICameraState currentState;
         private ICameraState[] states;
@@ -31,9 +34,12 @@ namespace Module.Player.Camera
 
             var y = depth * Math.Sin(angleInRadians);
             var horizontalDistance = depth * Math.Cos(angleInRadians);
+            var distance = Vector3.Distance(followTarget.position, leaderTarget.position);
 
             Vector3 horizontalOffset = -followTarget.forward * (float)horizontalDistance;
             Vector3 targetPosition = followTarget.position + horizontalOffset + Vector3.up * (float)y;
+
+            targetPosition.y = (-Mathf.Atan(inclination * (distance - 5f / inclination)) + Mathf.PI / 2) * upRate + targetPosition.y;
 
             transform.position = targetPosition;
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler((float)cameraAngle, 0f, 0f), Time.deltaTime);
