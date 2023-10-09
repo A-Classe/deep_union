@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: wall_1
-  m_Shader: {fileID: -6465566751694194690, guid: 89e25ecefde78254ab32062d3ec89a96,
+  m_Shader: {fileID: -6465566751694194690, guid: ed6b934a693c7dc4c840ac37bebe1853,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -16,7 +16,8 @@ Material:
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap: {}
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -81,9 +82,12 @@ Material:
     m_Floats:
     - _1st_Shadow: 0.81
     - _2nd_Shadow: 0.18
+    - _Alpha: 0.51
     - _AlphaClip: 0
+    - _AmbientOcclusion: 12.51
     - _Blend: 0
     - _BumpScale: 1
+    - _CastShadows: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
@@ -109,7 +113,9 @@ Material:
     - _Surface: 0
     - _UVSec: 0
     - _WorkflowMode: 1
+    - _ZTest: 4
     - _ZWrite: 1
+    - _ZWriteControl: 0
     m_Colors:
     - _BaseColor: {r: 0.39999086, g: 0.28923655, b: 0, a: 1}
     - _Color: {r: 0.39999083, g: 0.28923652, b: 0, a: 1}

@@ -66,7 +66,6 @@ namespace GameMain.Container
 
             builder.Register<WorkerSpawner>(Lifetime.Singleton);
             builder.Register<WorkerAgent>(Lifetime.Singleton);
-            builder.Register<LeadPointConnector>(Lifetime.Singleton);
             builder.Register<StageProgressObserver>(Lifetime.Singleton);
             builder.Register<RuntimeNavMeshBaker>(Lifetime.Singleton);
             builder.Register<ResourceContainer>(Lifetime.Singleton);
