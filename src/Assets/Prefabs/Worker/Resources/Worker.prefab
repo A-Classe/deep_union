@@ -369,6 +369,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7035d78dc3c8ecc44985541b5ca6baeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathDuration: 2
+  cutOffRenderers:
+  - {fileID: 2788936211508069371}
+  - {fileID: 8788843966102197578}
+  - {fileID: 1616506015283080929}
+  - {fileID: 4595129260345674312}
   animator: {fileID: 44649153341351246}
 --- !u!195 &3517807995307944588
 NavMeshAgent:
@@ -594,7 +600,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6192038577375338894}
   - component: {fileID: 44649153341351246}
-  - component: {fileID: 1710548395336783092}
+  - component: {fileID: 7450286666525781053}
   m_Layer: 16
   m_Name: worker
   m_TagString: Untagged
@@ -643,8 +649,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!136 &1710548395336783092
-CapsuleCollider:
+--- !u!135 &7450286666525781053
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -652,11 +658,10 @@ CapsuleCollider:
   m_GameObject: {fileID: 6819957179933047604}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.3
-  m_Height: 1.57
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.84, z: 0}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.4090551
+  m_Center: {x: 0, y: 0.89662874, z: 0}
 --- !u!1 &6979695726037318826
 GameObject:
   m_ObjectHideFlags: 0

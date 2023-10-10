@@ -45,6 +45,7 @@ namespace Module.Working
             {
                 var worker = workerPool.Get();
                 activeWorkers.Add(worker);
+                worker.OnDead += Remove;
             }
 
             return activeWorkers.AsSpan().Slice(activeWorkers.Count - count, count);
@@ -56,6 +57,7 @@ namespace Module.Working
         public void AddActiveWorker(Worker worker)
         {
             activeWorkers.Add(worker);
+            worker.OnDead += Remove;
         }
 
         /// <summary>

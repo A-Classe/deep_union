@@ -1,33 +1,47 @@
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using Core.Utility;
 using Cysharp.Threading.Tasks;
 using Module.Assignment;
+using Module.Working;
 using UnityEngine;
 using VContainer;
+using Wanna.DebugEx;
+using Random = UnityEngine.Random;
 
 namespace GameMain.Task
 {
     public class PoisonArea : MonoBehaviour, IInjectable
     {
         [SerializeField] private uint poisonDamage = 5;
-        [SerializeField] private float damageInterval = 2f;
+        [SerializeField] private float playerDamageInterval = 1f;
+        [SerializeField] private float workerDamageInterval = 1f;
         private PlayerStatus playerStatus;
+        private WorkerAgent workerAgent;
 
-        private CancellationTokenSource cTokenSource;
+        private List<Worker> workers = new List<Worker>();
+        private bool isPlayerEnter;
 
         [Inject]
-        public void Construct(PlayerStatus playerStatus)
+        public void Construct(PlayerStatus playerStatus, WorkerAgent workerAgent)
         {
             this.playerStatus = playerStatus;
+            this.workerAgent = workerAgent;
+
+            PlayerDamageLoop(this.GetCancellationTokenOnDestroy()).Forget();
+            WorkerDamageLoop(this.GetCancellationTokenOnDestroy()).Forget();
         }
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
             {
-                cTokenSource = new CancellationTokenSource();
-                DamageLoop(cTokenSource.Token).Forget();
+                isPlayerEnter = true;
+            }
+            else if (other.transform.parent.TryGetComponent(out Worker worker))
+            {
+                workers.Add(worker);
             }
         }
 
@@ -35,18 +49,41 @@ namespace GameMain.Task
         {
             if (other.CompareTag("Player"))
             {
-                cTokenSource?.Cancel();
-                cTokenSource?.Dispose();
+                isPlayerEnter = false;
+            }
+            else if (other.transform.parent.TryGetComponent(out Worker worker))
+            {
+                workers.Remove(worker);
             }
         }
 
-        private async UniTaskVoid DamageLoop(CancellationToken cancellationToken)
+        private async UniTaskVoid PlayerDamageLoop(CancellationToken cancellationToken)
         {
-            while (playerStatus.Hp > 0 && !cancellationToken.IsCancellationRequested)
+            while (!cancellationToken.IsCancellationRequested)
             {
-                playerStatus.RemoveHp(poisonDamage);
+                if (isPlayerEnter)
+                {
+                    playerStatus.RemoveHp(poisonDamage);
+                }
 
-                await UniTask.Delay(TimeSpan.FromSeconds(damageInterval), cancellationToken: cancellationToken);
+                await UniTask.Delay(TimeSpan.FromSeconds(playerDamageInterval), cancellationToken: cancellationToken);
+            }
+        }
+
+
+        private async UniTaskVoid WorkerDamageLoop(CancellationToken cancellationToken)
+        {
+            while (!cancellationToken.IsCancellationRequested)
+            {
+                if (workers.Count > 0)
+                {
+                    int index = Random.Range(0, workers.Count);
+                    Worker worker = workers[index];
+                    workers.RemoveAt(index);
+                    worker.Kill();
+                }
+
+                await UniTask.Delay(TimeSpan.FromSeconds(workerDamageInterval), cancellationToken: cancellationToken);
             }
         }
     }
