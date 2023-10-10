@@ -81,7 +81,6 @@ namespace Module.Assignment.System
         private void OnTaskCompleted(BaseTask task)
         {
             workerReleaser.ReleaseAllWorkers(task.GetComponentInChildren<AssignableArea>());
-            task.OnCompleted -= OnTaskCompleted;
         }
 
         public void Tick()
