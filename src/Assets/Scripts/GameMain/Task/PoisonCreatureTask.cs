@@ -5,5 +5,11 @@ using UnityEngine;
 
 namespace Module.Task
 {
-    public class PoisonCreatureTask : BaseTask { }
+    public class PoisonCreatureTask : BaseTask
+    {
+        protected override void OnComplete()
+        {
+            Disable();
+        }
+    }
 }

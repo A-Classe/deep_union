@@ -88,7 +88,7 @@ namespace Module.Working
 
         private static void OnWorkerRelease(Worker worker)
         {
-            worker.Disable();
+            worker.Disable().Forget();
         }
 
         private static void OnWorkerDestroy(Worker worker)

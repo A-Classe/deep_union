@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Threading;
 using Core.Utility;
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using Module.Assignment;
+using Module.Task;
 using Module.Working;
 using UnityEngine;
+using UnityEngine.VFX;
 using VContainer;
-using Wanna.DebugEx;
 using Random = UnityEngine.Random;
 
 namespace GameMain.Task
@@ -17,20 +19,34 @@ namespace GameMain.Task
         [SerializeField] private uint poisonDamage = 5;
         [SerializeField] private float playerDamageInterval = 1f;
         [SerializeField] private float workerDamageInterval = 1f;
+        [SerializeField] private float disappearDuration = 1f;
+        [SerializeField] private float moveOffset = 1f;
+        [Space] [SerializeField] private PoisonCreatureTask[] poisonCreatureTasks;
+        [SerializeField] private VisualEffect toxicEffect1;
+        [SerializeField] private VisualEffect toxicEffect2;
+        [SerializeField] private Transform poisonWaterArea;
+        [SerializeField] private ParticleSystem smokeEffect;
+
+        private int killedCount;
         private PlayerStatus playerStatus;
-        private WorkerAgent workerAgent;
 
         private List<Worker> workers = new List<Worker>();
+        private CancellationTokenSource cTokenSource;
         private bool isPlayerEnter;
 
         [Inject]
-        public void Construct(PlayerStatus playerStatus, WorkerAgent workerAgent)
+        public void Construct(PlayerStatus playerStatus)
         {
             this.playerStatus = playerStatus;
-            this.workerAgent = workerAgent;
+            cTokenSource = new CancellationTokenSource();
 
-            PlayerDamageLoop(this.GetCancellationTokenOnDestroy()).Forget();
-            WorkerDamageLoop(this.GetCancellationTokenOnDestroy()).Forget();
+            foreach (PoisonCreatureTask creatureTask in poisonCreatureTasks)
+            {
+                creatureTask.OnCompleted += OnPoisonCreatureKilled;
+            }
+
+            PlayerDamageLoop(cTokenSource.Token).Forget();
+            WorkerDamageLoop(cTokenSource.Token).Forget();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -54,6 +70,30 @@ namespace GameMain.Task
             else if (other.transform.parent.TryGetComponent(out Worker worker))
             {
                 workers.Remove(worker);
+            }
+        }
+
+        private void OnPoisonCreatureKilled(BaseTask _)
+        {
+            killedCount++;
+
+            if (killedCount >= poisonCreatureTasks.Length)
+            {
+                poisonWaterArea.DOMoveZ(moveOffset, disappearDuration).Play();
+                poisonWaterArea.DOScaleY(0f, disappearDuration)
+                    .Play()
+                    .OnComplete(() =>
+                    {
+                        gameObject.SetActive(false);
+                    });
+
+                toxicEffect1.Stop();
+                toxicEffect2.Stop();
+                smokeEffect.Stop();
+
+                cTokenSource.Cancel();
+                cTokenSource.Dispose();
+                cTokenSource = null;
             }
         }
 
@@ -85,6 +125,12 @@ namespace GameMain.Task
 
                 await UniTask.Delay(TimeSpan.FromSeconds(workerDamageInterval), cancellationToken: cancellationToken);
             }
+        }
+
+        private void OnDestroy()
+        {
+            cTokenSource?.Cancel();
+            cTokenSource?.Dispose();
         }
     }
 }

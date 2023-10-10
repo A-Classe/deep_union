@@ -105,7 +105,7 @@ namespace Module.Working
             gameObject.SetActive(true);
         }
 
-        public async void Disable()
+        public async UniTaskVoid Disable()
         {
             await DeathCutoff(this.GetCancellationTokenOnDestroy());
 
