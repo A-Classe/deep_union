@@ -1,4 +1,5 @@
 using System;
+using Core.NavMesh;
 using Cysharp.Threading.Tasks;
 using GameMain.System;
 using Module.Assignment;
@@ -22,6 +23,7 @@ namespace GameMain.Task
         private Transform playerTarget;
         private PlayerController playerController;
         private PlayerStatus playerStatus;
+        private RuntimeNavMeshBaker navMeshBaker;
 
         private bool isAdsorption;
         private Transform adsorptionTarget;
@@ -32,6 +34,7 @@ namespace GameMain.Task
         {
             playerController = container.Resolve<PlayerController>();
             playerStatus = container.Resolve<PlayerStatus>();
+            navMeshBaker = container.Resolve<RuntimeNavMeshBaker>();
             decalProjector.enabled = false;
             simpleAgent.SetActive(false);
 
@@ -39,12 +42,12 @@ namespace GameMain.Task
             Disable();
         }
 
-        protected override void ManagedUpdate(float deltaTime) { }
-
         private void OnEnable()
         {
             decalProjector.enabled = true;
             simpleAgent.SetActive(true);
+
+            navMeshBaker?.Bake().Forget();
         }
 
         private void Update()

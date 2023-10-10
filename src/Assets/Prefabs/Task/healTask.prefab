@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1689977097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1689977098}
+  - component: {fileID: 1689977099}
+  m_Layer: 10
+  m_Name: Collision
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1689977098
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689977097}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8106131013788965581}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1689977099
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689977097}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &11699557729879083
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,9 +728,10 @@ GameObject:
   - component: {fileID: 8106131013788965581}
   - component: {fileID: 5555152211124401754}
   - component: {fileID: 8010398702377416055}
-  - component: {fileID: 4574683760816099959}
-  - component: {fileID: 1703818971}
-  m_Layer: 0
+  - component: {fileID: 5006821236983038749}
+  - component: {fileID: 1703818973}
+  - component: {fileID: 1561450045}
+  m_Layer: 8
   m_Name: healTask
   m_TagString: Task
   m_Icon: {fileID: 0}
@@ -705,6 +751,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9104331493660101918}
+  - {fileID: 1689977098}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -758,20 +805,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4574683760816099959
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8798224403364023010}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1703818971
+--- !u!114 &5006821236983038749
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -780,13 +814,58 @@ MonoBehaviour:
   m_GameObject: {fileID: 8798224403364023010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ade7a25f3f2d2df418fc3f372bb6f91f, type: 3}
+  m_Script: {fileID: 11500000, guid: 399bb407e7cf0b046861498b4bc2f4a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mw: 0
+  mw: 1
   state: 0
   currentProgress: 0
   currentWorkerCount: 0
+  navMeshAgent: {fileID: 1703818973}
+  assignableArea: {fileID: 8177856091316181010}
+  collision: {fileID: 1689977099}
+  addHp: 10
+  moveSpeed: 5
+  minWorkerCount: 10
+  maxWorkerCount: 30
+--- !u!195 &1703818973
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8798224403364023010}
+  m_Enabled: 0
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 0
+--- !u!54 &1561450045
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8798224403364023010}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 3
 --- !u!1 &9104331493660101919
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,7 +877,6 @@ GameObject:
   - component: {fileID: 9104331493660101918}
   - component: {fileID: 8177856091316181010}
   - component: {fileID: 1341522716374464683}
-  - component: {fileID: 9104331493493063023}
   - component: {fileID: 689969917440007055}
   m_Layer: 8
   m_Name: DetectableArea
@@ -839,6 +917,7 @@ MonoBehaviour:
   lightProjector: {fileID: 2094165392034516240}
   ellipseVisualizer: {fileID: 1341522716374464683}
   intensity: 0
+  rotation: 0
   size:
     x: 4
     y: 4
@@ -860,20 +939,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugHeight: 0.3
   debugResolution: 50
---- !u!114 &9104331493493063023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9104331493660101919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08fd352dd79a5a54bb65b949bb927ef4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  assignableArea: {fileID: 8177856091316181010}
-  maxIntensity: 0.5
 --- !u!114 &689969917440007055
 MonoBehaviour:
   m_ObjectHideFlags: 0
