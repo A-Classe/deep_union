@@ -36,9 +36,7 @@ namespace GameMain.Task
 
             assignableArea.OnWorkerEnter += async _ =>
             {
-                if (WorkerCount > maxWorkerCount)
-                    navMeshAgent.enabled = false;
-                else if (WorkerCount >= minWorkerCount)
+                if (WorkerCount >= minWorkerCount)
                 {
                     collision.gameObject.layer = LayerMask.NameToLayer("Detection");
                     await runtimeNavMeshBaker.Bake();
@@ -75,7 +73,8 @@ namespace GameMain.Task
                 navMeshAgent.SetDestination(playerController.transform.position);
 
                 //対数関数的な変化に調整
-                float speed = Mathf.Log10(WorkerCount - minWorkerCount + 2) * moveSpeed * Time.deltaTime;
+                int workerCount = Mathf.Min(WorkerCount, maxWorkerCount);
+                float speed = Mathf.Log10(workerCount - minWorkerCount + 2) * moveSpeed * Time.deltaTime;
                 transform.position = Vector3.Lerp(transform.position, navMeshAgent.nextPosition, speed);
             }
         }
