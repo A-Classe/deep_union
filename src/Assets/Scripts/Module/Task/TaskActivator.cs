@@ -43,11 +43,16 @@ namespace Module.Task
 
                 if (IsPassed(viewPos))
                 {
+                    task.Disable();
                     head++;
                 }
                 else if (!IsAhead(viewPos))
                 {
                     tail++;
+                }
+                else
+                {
+                    task.Disable();
                 }
             }
         }
@@ -75,6 +80,7 @@ namespace Module.Task
             if (IsPassed(viewPos))
             {
                 OnTaskDeactivated?.Invoke(task);
+                task.Disable();
                 head++;
             }
         }
@@ -89,6 +95,7 @@ namespace Module.Task
 
             if (!IsAhead(viewPos))
             {
+                task.Enable();
                 OnTaskActivated?.Invoke(task);
                 tail++;
             }

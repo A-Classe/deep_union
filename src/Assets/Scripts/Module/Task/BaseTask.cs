@@ -147,7 +147,7 @@ namespace Module.Task
             gameObject.SetActive(true);
         }
 
-        protected void Disable()
+        public void Disable()
         {
             gameObject.SetActive(false);
         }
