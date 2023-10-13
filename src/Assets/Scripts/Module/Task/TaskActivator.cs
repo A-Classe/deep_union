@@ -16,6 +16,7 @@ namespace Module.Task
         private int head;
         private int tail;
 
+        public event Action OnTaskCreated;
         public event Action<BaseTask> OnTaskActivated;
         public event Action<BaseTask> OnTaskDeactivated;
 
@@ -25,17 +26,9 @@ namespace Module.Task
             this.gameParam = gameParam;
             mainCamera = Camera.main;
             tasks = SortTaskOrder(TaskUtil.FindSceneTasks<BaseTask>());
-
-            Initialize();
         }
 
-        private BaseTask[] SortTaskOrder(IEnumerable<BaseTask> tasks)
-        {
-            float camZ = mainCamera.transform.position.z;
-            return tasks.OrderBy(task => task.transform.position.z - camZ).ToArray();
-        }
-
-        private void Initialize()
+        public void Start()
         {
             foreach (BaseTask task in tasks)
             {
@@ -55,6 +48,14 @@ namespace Module.Task
                     task.Disable();
                 }
             }
+
+            OnTaskCreated?.Invoke();
+        }
+
+        private BaseTask[] SortTaskOrder(IEnumerable<BaseTask> tasks)
+        {
+            float camZ = mainCamera.transform.position.z;
+            return tasks.OrderBy(task => task.transform.position.z - camZ).ToArray();
         }
 
         public ReadOnlySpan<BaseTask> GetActiveTasks()

@@ -142,12 +142,12 @@ namespace Module.Task
             }
         }
 
-        public void Enable()
+        public virtual void Enable()
         {
             gameObject.SetActive(true);
         }
 
-        public void Disable()
+        public virtual void Disable()
         {
             gameObject.SetActive(false);
         }

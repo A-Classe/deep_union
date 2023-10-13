@@ -9,7 +9,7 @@ namespace GameMain.UI
     /// <summary>
     /// 進捗バーの更新を行うクラス
     /// </summary>
-    public class ProgressBarSwitcher : IStartable, ITickable
+    public class ProgressBarSwitcher : ITickable
     {
         private readonly TaskProgressPool taskProgressPool;
         private readonly TaskActivator taskActivator;
@@ -21,9 +21,11 @@ namespace GameMain.UI
             this.taskProgressPool = taskProgressPool;
             this.taskActivator = taskActivator;
             activeViews = new Queue<(BaseTask task, TaskProgressView view)>();
+
+            this.taskActivator.OnTaskCreated += Initialize;
         }
 
-        public void Start()
+        public void Initialize()
         {
             foreach (var task in taskActivator.GetActiveTasks())
             {
