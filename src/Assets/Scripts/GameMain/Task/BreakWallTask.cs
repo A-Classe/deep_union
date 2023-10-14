@@ -13,7 +13,7 @@ namespace GameMain.Task
     /// - タスク終了後にgameObjectを削除する
     /// - 完了にしなければplayerは前に進めない
     /// </summary>
-    public class DeletedObjectTask : BaseTask
+    public class BreakWallTask : BaseTask
     {
         /// <summary>
         /// タスク終了後にhitしたplayerのstateを変更する
