@@ -55,7 +55,7 @@ namespace Module.Assignment.Component
 
         private void Awake()
         {
-            assignPoints = new AutoInstanceList<AssignPoint>(assignPointPrefab, pointParent, 5, size/2);
+            assignPoints = new AutoInstanceList<AssignPoint>(assignPointPrefab, pointParent, 20, size / 2);
             assignPoints.SetList(GetComponentsInChildren<AssignPoint>().ToList());
             assignedWorkers = new List<Worker>();
 
@@ -156,7 +156,7 @@ namespace Module.Assignment.Component
 
         void SetEnableAssignPointDebug(bool enable)
         {
-            assignPoints = new AutoInstanceList<AssignPoint>(assignPointPrefab, pointParent, 5, size/2);
+            assignPoints = new AutoInstanceList<AssignPoint>(assignPointPrefab, pointParent, 20, size / 2);
             assignPoints.SetList(GetComponentsInChildren<AssignPoint>().ToList());
 
             //アサインポイントのデブッグを有効化する
