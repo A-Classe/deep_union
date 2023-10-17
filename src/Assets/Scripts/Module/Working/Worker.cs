@@ -16,6 +16,7 @@ namespace Module.Working
     [RequireComponent(typeof(NavMeshAgent))]
     public class Worker : MonoBehaviour
     {
+        [SerializeField] private bool initialized;
         [SerializeField] private float deathDuration;
         [SerializeField] private Renderer[] cutOffRenderers;
         private List<Material> cutOffMaterials;
@@ -33,7 +34,6 @@ namespace Module.Working
         public bool IsWorldMoving { get; set; }
         public Action<Worker> OnDead { get; set; }
 
-        private bool initialized;
 
         public async UniTaskVoid Initialize()
         {
