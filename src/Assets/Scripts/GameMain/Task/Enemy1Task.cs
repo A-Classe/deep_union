@@ -9,6 +9,7 @@ using Module.Task;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using VContainer;
+using Wanna.DebugEx;
 
 namespace GameMain.Task
 {
@@ -39,7 +40,7 @@ namespace GameMain.Task
             simpleAgent.SetActive(false);
 
             SetDetection(false);
-            Disable();
+            base.Disable();
         }
 
         private void OnEnable()
@@ -84,7 +85,7 @@ namespace GameMain.Task
         {
             isAdsorption = true;
             SetDetection(false);
-            Disable();
+            base.Disable();
             assignableArea.enabled = false;
         }
 
@@ -95,7 +96,17 @@ namespace GameMain.Task
             playerStatus.RemoveHp(attackPoint);
 
             ForceComplete();
-            Disable();
+            base.Disable();
         }
+
+
+        public void ForceEnable()
+        {
+            gameObject.SetActive(true);
+        }
+
+        public override void Enable() { }
+
+        public override void Disable() { }
     }
 }

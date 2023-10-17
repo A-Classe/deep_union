@@ -4,10 +4,12 @@ using Module.Assignment.Component;
 using Module.Task;
 using VContainer;
 using VContainer.Unity;
+using Wanna.DebugEx;
+using NotImplementedException = System.NotImplementedException;
 
 namespace Module.Assignment.System
 {
-    public class AssignmentSystem : ITickable
+    public class AssignmentSystem : ITickable, IStartable
     {
         private readonly WorkerAssigner workerAssigner;
         private readonly WorkerReleaser workerReleaser;
@@ -48,7 +50,7 @@ namespace Module.Assignment.System
                 assignState = AssignState.Idle;
             };
 
-            SetActiveAreas();
+            taskActivator.OnTaskCreated += SetActiveAreas;
         }
 
         private void SetActiveAreas()
@@ -56,26 +58,36 @@ namespace Module.Assignment.System
             //タスクのアサインエリアを登録
             foreach (BaseTask task in taskActivator.GetActiveTasks())
             {
-                activeAreas.Add(task.GetComponentInChildren<AssignableArea>());
+                AssignableArea assignableArea = task.GetComponentInChildren<AssignableArea>();
+                assignableArea.enabled = true;
+                activeAreas.Add(assignableArea);
 
                 task.OnCompleted += OnTaskCompleted;
             }
 
             taskActivator.OnTaskActivated += task =>
             {
-                activeAreas.Add(task.GetComponentInChildren<AssignableArea>());
+                AssignableArea assignableArea = task.GetComponentInChildren<AssignableArea>();
+                assignableArea.enabled = true;
+                activeAreas.Add(assignableArea);
 
                 task.OnCompleted += OnTaskCompleted;
             };
 
             taskActivator.OnTaskDeactivated += task =>
             {
+                activeAreas[0].enabled = false;
                 OnTaskCompleted(task);
                 activeAreas.RemoveAt(0);
             };
 
             workerAssigner.SetActiveAreas(activeAreas);
             workerReleaser.SetActiveAreas(activeAreas);
+        }
+
+        public void Start()
+        {
+            taskActivator.Start();
         }
 
         private void OnTaskCompleted(BaseTask task)

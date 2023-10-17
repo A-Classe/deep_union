@@ -140,6 +140,8 @@ namespace Module.Assignment.Component
             worker.SetFollowTarget(transform, assignPoint.transform);
             assignedWorkers.Add(worker);
             OnWorkerEnter?.Invoke(worker);
+
+            worker.OnDead += RemoveWorker;
         }
 
         public void RemoveWorker(Worker worker)
@@ -147,6 +149,8 @@ namespace Module.Assignment.Component
             assignedWorkers.Remove(worker);
             OnWorkerExit?.Invoke(worker);
             ReleaseAssignPoint(worker.Target);
+
+            worker.OnDead -= RemoveWorker;
         }
 
         void SetEnableAssignPointDebug(bool enable)

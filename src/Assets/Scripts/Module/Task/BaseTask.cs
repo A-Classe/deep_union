@@ -26,8 +26,25 @@ namespace Module.Task
         public TaskState State => state;
         public int MonoWork => mw;
 
-        public event Action<float> OnProgressChanged;
+        /// <summary>
+        /// 作業開始時のイベント
+        /// </summary>
+        public event Action<BaseTask> OnStarted;
+
+        /// <summary>
+        /// 作業中断時のイベント
+        /// </summary>
+        public event Action<BaseTask> OnCanceled;
+
+        /// <summary>
+        /// 作業完了時のイベント
+        /// </summary>
         public event Action<BaseTask> OnCompleted;
+
+        /// <summary>
+        /// 進捗更新時のイベント
+        /// </summary>
+        public event Action<float> OnProgressChanged;
 
         /// <summary>
         ///     現在割り当てられているワーカー数
@@ -104,12 +121,14 @@ namespace Module.Task
             {
                 ChangeState(TaskState.InProgress);
                 OnStart();
+                OnStarted?.Invoke(this);
             }
             //作業量が0になったらキャンセル
             else if (prevWorkerCount > 0f && currentWorkerCount == 0f)
             {
                 ChangeState(TaskState.Idle);
                 OnCancel();
+                OnCanceled?.Invoke(this);
             }
         }
 
@@ -142,12 +161,12 @@ namespace Module.Task
             }
         }
 
-        public void Enable()
+        public virtual void Enable()
         {
             gameObject.SetActive(true);
         }
 
-        protected void Disable()
+        public virtual void Disable()
         {
             gameObject.SetActive(false);
         }

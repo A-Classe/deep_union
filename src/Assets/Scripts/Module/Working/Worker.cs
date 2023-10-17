@@ -1,5 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using Cysharp.Threading.Tasks;
 using Module.Working.State;
 using UnityEngine;
 using UnityEngine.AI;
@@ -13,6 +16,11 @@ namespace Module.Working
     [RequireComponent(typeof(NavMeshAgent))]
     public class Worker : MonoBehaviour
     {
+        [SerializeField] private float deathDuration;
+        [SerializeField] private Renderer[] cutOffRenderers;
+        private List<Material> cutOffMaterials;
+        private int cutOffId = Shader.PropertyToID("_CutOffHeight");
+
         private IWorkerState currentState;
         private IWorkerState[] workerStates;
         private NavMeshAgent navMeshAgent;
@@ -23,6 +31,7 @@ namespace Module.Working
 
         public bool IsLocked { get; private set; }
         public bool IsWorldMoving { get; set; }
+        public Action<Worker> OnDead { get; set; }
 
         private void Awake()
         {
@@ -34,7 +43,19 @@ namespace Module.Working
                 new WorkState(this)
             };
 
+
             SetWorkerState(WorkerState.Idle);
+
+            cutOffMaterials = new List<Material>();
+            IEnumerable<Material[]> materials = cutOffRenderers.Select(renderer => renderer.materials);
+
+            foreach (Material[] rendMaterial in materials)
+            {
+                foreach (Material material in rendMaterial)
+                {
+                    cutOffMaterials.Add(material);
+                }
+            }
         }
 
         private void Update()
@@ -74,14 +95,46 @@ namespace Module.Working
             navMeshAgent.enabled = !isLocked;
         }
 
+        public void Kill()
+        {
+            OnDead?.Invoke(this);
+        }
+
         public void Enable()
         {
             gameObject.SetActive(true);
         }
 
-        public void Disable()
+        public async UniTaskVoid Disable()
         {
-            gameObject.SetActive(true);
+            await DeathCutoff(this.GetCancellationTokenOnDestroy());
+
+            gameObject.SetActive(false);
+            SetWorkerState(WorkerState.Idle);
+            OnDead = null;
+        }
+
+        private async UniTask DeathCutoff(CancellationToken cancellationToken)
+        {
+            float currentValue = 0f;
+            float currentTime = 0f;
+
+            while (!cancellationToken.IsCancellationRequested)
+            {
+                currentValue = Mathf.Lerp(0f, 12f, Mathf.InverseLerp(0f, deathDuration, currentTime));
+
+                foreach (Material material in cutOffMaterials)
+                {
+                    material.SetFloat(cutOffId, currentValue);
+                }
+
+                if (currentTime > deathDuration)
+                    return;
+
+                currentTime += Time.fixedDeltaTime;
+
+                await UniTask.Yield(PlayerLoopTiming.FixedUpdate, cancellationToken);
+            }
         }
 
         public void Dispose()
