@@ -4,11 +4,10 @@ using UnityEngine;
 
 namespace GameMain.SoundPlayer
 {
-    public class BreakWallTaskSoundPlayer : TaskSoundPlayer<BreakWallTask> // â†ã“ã‚Œã‚’ç¶™æ‰¿ã™ã‚‹ <>å†…ã¯å¯¾è±¡ã®ã‚¿ã‚¹ã‚¯ã®å‹
+    public class ResourceTaskSoundPlayer : TaskSoundPlayer<ResourceTask> // ©‚±‚ê‚ğŒp³‚·‚é <>“à‚Í‘ÎÛ‚Ìƒ^ƒXƒN‚ÌŒ^
     {
-        //AudioClipã‚’ç”¨æ„ã™ã‚‹
+        //AudioClip‚ğ—pˆÓ‚·‚é
         [SerializeField] private AudioClip BreakingSound;
-        [SerializeField] private AudioClip BreakedSound;
 
         protected override void OnStart()
         {
@@ -19,20 +18,19 @@ namespace GameMain.SoundPlayer
 
         private void OnTaskStarted(BaseTask _)
         {
-            // å£Šã—ã¦ã„ã‚‹éŸ³ã‚’ãƒ«ãƒ¼ãƒ—ã§é³´ã‚‰ã™
+            // ‰ó‚µ‚Ä‚¢‚é‰¹‚ğƒ‹[ƒv‚Å–Â‚ç‚·
             AudioSource.PlayOneShot(BreakingSound);
         }
 
         private void OnTaskCanceled(BaseTask _)
         {
-            // ãªã£ã¦ã„ã‚‹éŸ³ã‚’æ­¢ã‚ã‚‹
+            // ‚È‚Á‚Ä‚¢‚é‰¹‚ğ~‚ß‚é
             AudioSource.Stop();
         }
 
         private void OnTaskCompleted(BaseTask _)
         {
-            // å£Šã‚ŒãŸéŸ³ã‚’ä¸€åº¦é³´ã‚‰ã™
-            AudioSource.PlayOneShot(BreakedSound);
+
         }
     }
 }
