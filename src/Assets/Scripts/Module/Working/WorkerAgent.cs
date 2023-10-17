@@ -77,7 +77,7 @@ namespace Module.Working
 
             if (obj.TryGetComponent(out Worker worker))
             {
-                worker.Initialize();
+                worker.Initialize().Forget();
                 return worker;
             }
 

@@ -35,7 +35,7 @@ namespace Module.Working
 
         private bool initialized;
 
-        public void Initialize()
+        public async UniTaskVoid Initialize()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
             workerStates = new IWorkerState[]
@@ -58,6 +58,10 @@ namespace Module.Working
                     cutOffMaterials.Add(material);
                 }
             }
+
+
+            navMeshAgent.enabled = true;
+            await UniTask.WaitUntil(() => navMeshAgent.isOnNavMesh, cancellationToken: this.GetCancellationTokenOnDestroy());
 
             initialized = true;
         }

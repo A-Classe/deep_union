@@ -26,7 +26,7 @@ namespace GameMain.Task
 
             foreach (Worker worker in imprisonedWorkers)
             {
-                worker.Initialize();
+                worker.Initialize().Forget();
                 worker.SetLockState(true);
             }
         }
