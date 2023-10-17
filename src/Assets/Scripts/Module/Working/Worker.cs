@@ -33,7 +33,9 @@ namespace Module.Working
         public bool IsWorldMoving { get; set; }
         public Action<Worker> OnDead { get; set; }
 
-        private void Awake()
+        private bool initialized;
+
+        public void Initialize()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
             workerStates = new IWorkerState[]
@@ -56,10 +58,15 @@ namespace Module.Working
                     cutOffMaterials.Add(material);
                 }
             }
+
+            initialized = true;
         }
 
         private void Update()
         {
+            if (!initialized)
+                return;
+
             currentState?.Update();
         }
 

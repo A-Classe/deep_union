@@ -75,7 +75,11 @@ namespace Module.Working
             var obj = Object.Instantiate(workerPrefab);
             obj.name = $"Worker_{workerPool.CountAll}";
 
-            if (obj.TryGetComponent(out Worker worker)) return worker;
+            if (obj.TryGetComponent(out Worker worker))
+            {
+                worker.Initialize();
+                return worker;
+            }
 
             DebugEx.LogWarning($"WorkerAgent: {obj.name}に{nameof(Worker)}コンポーネントがアタッチされていません");
             return null;
