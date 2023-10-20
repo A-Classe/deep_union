@@ -4,6 +4,7 @@ using Module.Assignment.Utility;
 using Module.Working;
 using Unity.Burst;
 using VContainer;
+using Wanna.DebugEx;
 
 namespace Module.Assignment.System
 {
@@ -32,6 +33,7 @@ namespace Module.Assignment.System
         {
             AssignableArea leaderArea = leaderAssignableArea.AssignableArea;
             IReadOnlyList<Worker> leaderWorkers = leaderAssignableArea.AssignableArea.AssignedWorkers;
+
 
             foreach (AssignableArea activeArea in activeAreas)
             {

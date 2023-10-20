@@ -45,6 +45,7 @@ namespace Module.Working
             {
                 var worker = workerPool.Get();
                 activeWorkers.Add(worker);
+                worker.OnDead += Remove;
             }
 
             return activeWorkers.AsSpan().Slice(activeWorkers.Count - count, count);
@@ -56,6 +57,7 @@ namespace Module.Working
         public void AddActiveWorker(Worker worker)
         {
             activeWorkers.Add(worker);
+            worker.OnDead += Remove;
         }
 
         /// <summary>
@@ -73,7 +75,11 @@ namespace Module.Working
             var obj = Object.Instantiate(workerPrefab);
             obj.name = $"Worker_{workerPool.CountAll}";
 
-            if (obj.TryGetComponent(out Worker worker)) return worker;
+            if (obj.TryGetComponent(out Worker worker))
+            {
+                worker.Initialize().Forget();
+                return worker;
+            }
 
             DebugEx.LogWarning($"WorkerAgent: {obj.name}に{nameof(Worker)}コンポーネントがアタッチされていません");
             return null;
@@ -86,7 +92,7 @@ namespace Module.Working
 
         private static void OnWorkerRelease(Worker worker)
         {
-            worker.Disable();
+            worker.Disable().Forget();
         }
 
         private static void OnWorkerDestroy(Worker worker)

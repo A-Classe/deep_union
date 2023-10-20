@@ -41,6 +41,9 @@ namespace Module.Working.State
 
         public void Update()
         {
+            if (navMeshAgent.pathStatus == NavMeshPathStatus.PathInvalid)
+                return;
+
             prevPos = currentPos;
             currentPos = worker.transform.position;
 
