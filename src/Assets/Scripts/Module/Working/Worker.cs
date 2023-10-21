@@ -16,6 +16,7 @@ namespace Module.Working
     [RequireComponent(typeof(NavMeshAgent))]
     public class Worker : MonoBehaviour
     {
+        [SerializeField] private bool initialized;
         [SerializeField] private float deathDuration;
         [SerializeField] private Renderer[] cutOffRenderers;
         private List<Material> cutOffMaterials;
@@ -33,7 +34,8 @@ namespace Module.Working
         public bool IsWorldMoving { get; set; }
         public Action<Worker> OnDead { get; set; }
 
-        private void Awake()
+
+        public async UniTaskVoid Initialize()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
             workerStates = new IWorkerState[]
@@ -56,10 +58,19 @@ namespace Module.Working
                     cutOffMaterials.Add(material);
                 }
             }
+
+
+            navMeshAgent.enabled = true;
+            await UniTask.WaitUntil(() => navMeshAgent.isOnNavMesh, cancellationToken: this.GetCancellationTokenOnDestroy());
+
+            initialized = true;
         }
 
         private void Update()
         {
+            if (!initialized)
+                return;
+
             currentState?.Update();
         }
 
