@@ -55,7 +55,7 @@ namespace GameMain.Task
             {
                 isPlayerEnter = true;
             }
-            else if (other.transform.parent.TryGetComponent(out Worker worker))
+            else if (other.transform.parent != null && other.transform.parent.TryGetComponent(out Worker worker))
             {
                 workers.Add(worker);
             }
@@ -67,7 +67,7 @@ namespace GameMain.Task
             {
                 isPlayerEnter = false;
             }
-            else if (other.transform.parent.TryGetComponent(out Worker worker))
+            else if (other.transform.parent != null && other.transform.parent.TryGetComponent(out Worker worker))
             {
                 workers.Remove(worker);
             }
