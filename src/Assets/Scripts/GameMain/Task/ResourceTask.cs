@@ -15,22 +15,11 @@ namespace GameMain.Task
     /// </summary>
     public class ResourceTask : BaseTask
     {
-        [SerializeField] private AssignableArea assignableArea;
-        [SerializeField] private CollectableTask collectableTask;
-        [SerializeField] private GameObject resourceItem;
         private RuntimeNavMeshBaker navMeshBaker;
-        private PlayerController playerController;
 
         public override void Initialize(IObjectResolver container)
         {
             navMeshBaker = container.Resolve<RuntimeNavMeshBaker>();
-            playerController = container.Resolve<PlayerController>();
-
-            collectableTask.OnCollected += count =>
-            {
-                Worker worker = assignableArea.AssignedWorkers[Random.Range(0, assignableArea.AssignedWorkers.Count)];
-                GameObject item = Instantiate(resourceItem, worker.transform.position, Quaternion.identity);
-            };
         }
 
         protected override void OnComplete()
