@@ -105,6 +105,8 @@ MonoBehaviour:
     x: 1
     y: 1
   debugAssignPoints: 1
+  assignPointPrefab: {fileID: 0}
+  pointParent: {fileID: 0}
 --- !u!114 &7838267265210189784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1859,6 +1861,10 @@ MonoBehaviour:
   - {fileID: 1478299815150840842}
   - {fileID: 1478299813488991265}
   - {fileID: 1478299813609990075}
+  maxCutOfHeight: 14
+  duration: 3
+  sphereRenderer: {fileID: 7639210307817906111}
+  floorParticle: {fileID: 1609861790791512572}
 --- !u!82 &-6351147449891235480
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2536,6 +2542,18 @@ PrefabInstance:
 --- !u!4 &1287424460729808932 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5986165145177844621, guid: f0232d361f2d51849accfb0084aee024,
+    type: 3}
+  m_PrefabInstance: {fileID: 4814058564313453481}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1609861790791512572 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6096070726124479061, guid: f0232d361f2d51849accfb0084aee024,
+    type: 3}
+  m_PrefabInstance: {fileID: 4814058564313453481}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7639210307817906111 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2940029835200269334, guid: f0232d361f2d51849accfb0084aee024,
     type: 3}
   m_PrefabInstance: {fileID: 4814058564313453481}
   m_PrefabAsset: {fileID: 0}
