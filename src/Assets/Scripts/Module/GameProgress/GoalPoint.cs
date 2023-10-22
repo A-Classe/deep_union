@@ -14,6 +14,11 @@ namespace System.GameProgress
         {
             rect = GetComponent<RectTransform>();
         }
+        
+        private void Start()
+        {
+            rect = GetComponent<RectTransform>();
+        }
 
         private void Update()
         {

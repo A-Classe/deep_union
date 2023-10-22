@@ -111,31 +111,23 @@ namespace Module.Assignment.Component
             if (assignPoints.Count == 0)
                 return null;
 
-            assignPoints.Sort((a, b) =>
+            float minDistance = float.MaxValue;
+            AssignPoint nearestPoint = null;
+
+            foreach (AssignPoint point in assignPoints)
+            {
+                float distance = (point.transform.position - target).sqrMagnitude;
+
+                if (minDistance > distance)
                 {
-                    Vector3 p1 = target - a.transform.position;
-                    Vector3 p2 = target - b.transform.position;
-                    float distance = p1.sqrMagnitude - p2.sqrMagnitude;
-
-                    if (distance > 0)
-                    {
-                        return 1;
-                    }
-
-                    if (distance < 0)
-                    {
-                        return -1;
-                    }
-
-                    return 0;
+                    minDistance = distance;
+                    nearestPoint = point;
                 }
-            );
+            }
 
+            assignPoints.Remove(nearestPoint);
 
-            Transform assignPoint = assignPoints[0].transform;
-            assignPoints.RemoveAt(0);
-
-            return assignPoint;
+            return nearestPoint.transform;
         }
 
         public void AddWorker(Worker worker)
