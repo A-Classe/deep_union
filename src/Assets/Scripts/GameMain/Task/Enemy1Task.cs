@@ -98,7 +98,8 @@ namespace GameMain.Task
         {
             if (isAdsorption)
             {
-                transform.position = adsorptionTarget.position + adsorptionOffset;
+                Vector3 adsorptionPosition = adsorptionTarget == null ? Vector3.zero : adsorptionTarget.position;
+                transform.position = adsorptionPosition + adsorptionOffset;
             }
             else
             {
@@ -128,8 +129,9 @@ namespace GameMain.Task
         {
             isAdsorption = true;
             SetDetection(false);
-            base.Disable();
             assignableArea.enabled = false;
+
+            ExplodeSequence().Forget();
         }
 
         private async UniTaskVoid ExplodeSequence()
