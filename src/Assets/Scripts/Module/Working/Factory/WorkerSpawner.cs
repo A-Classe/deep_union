@@ -3,6 +3,7 @@ using Module.Working.State;
 using UnityEngine;
 using UnityEngine.AI;
 using VContainer;
+using Wanna.DebugEx;
 
 namespace Module.Working.Factory
 {
@@ -30,11 +31,24 @@ namespace Module.Working.Factory
         {
             var addedWorkers = workerAgent.Add(spawnCount);
 
-            foreach (var worker in addedWorkers)
+            int layerMask = 1 << LayerMask.NameToLayer("Stage");
+
+            if (Physics.Raycast(Vector3.up * 100f, Vector3.down, out RaycastHit hitInfo, 1000f, layerMask))
             {
-                WorkerCreateModel createModel = new WorkerCreateModel(WorkerState.Idle, Vector3.zero, spawnPoint.transform);
-                InitWorker(worker, createModel);
+                Vector3 position = hitInfo.point + new Vector3(0f, 0.5f, 0f);
+
+                foreach (var worker in addedWorkers)
+                {
+                    WorkerCreateModel createModel = new WorkerCreateModel(WorkerState.Idle, position,
+                        spawnPoint.transform);
+                    InitWorker(worker, createModel);
+                }
             }
+            else
+            {
+                DebugEx.LogWarning("設置できるポイントがありません。");
+            }
+
 
             return addedWorkers;
         }

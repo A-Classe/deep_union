@@ -959,6 +959,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 10399286, guid: a9e893c375aaf4541bf60405b51adc86, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981239344727599969, guid: a9e893c375aaf4541bf60405b51adc86,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270945238794327998, guid: a9e893c375aaf4541bf60405b51adc86,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270945238794327998, guid: a9e893c375aaf4541bf60405b51adc86,
+        type: 3}
+      propertyPath: controlSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270945238794327998, guid: a9e893c375aaf4541bf60405b51adc86,
+        type: 3}
+      propertyPath: staticFriction
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8011763557642929953, guid: a9e893c375aaf4541bf60405b51adc86,
         type: 3}
       propertyPath: m_Name
@@ -1047,7 +1071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &241675934 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1027691987, guid: a9e893c375aaf4541bf60405b51adc86,
+  m_CorrespondingSourceObject: {fileID: 241675937, guid: a9e893c375aaf4541bf60405b51adc86,
     type: 3}
   m_PrefabInstance: {fileID: 241675931}
   m_PrefabAsset: {fileID: 0}
@@ -2306,6 +2330,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1917205706}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &395160968 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4270945238794327969, guid: a9e893c375aaf4541bf60405b51adc86,
+    type: 3}
+  m_PrefabInstance: {fileID: 241675931}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &419939408
 GameObject:
   m_ObjectHideFlags: 0
@@ -3026,6 +3056,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 302721fd12bb450cb53280a3b433ca26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leaderTarget: {fileID: 395160968}
+  maxRotationRate: 0.15
+  rotationSpeed: 1.5
+  upRate: 3.05
+  inclination: 0.06
+  vertical: 0.84
 --- !u!114 &449680201
 MonoBehaviour:
   m_ObjectHideFlags: 0

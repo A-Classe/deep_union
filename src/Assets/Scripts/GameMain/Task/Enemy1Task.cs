@@ -1,4 +1,5 @@
 using System;
+using Core.NavMesh;
 using Cysharp.Threading.Tasks;
 using GameMain.System;
 using Module.Assignment;
@@ -8,6 +9,7 @@ using Module.Task;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using VContainer;
+using Wanna.DebugEx;
 
 namespace GameMain.Task
 {
@@ -22,6 +24,7 @@ namespace GameMain.Task
         private Transform playerTarget;
         private PlayerController playerController;
         private PlayerStatus playerStatus;
+        private RuntimeNavMeshBaker navMeshBaker;
 
         private bool isAdsorption;
         private Transform adsorptionTarget;
@@ -32,19 +35,20 @@ namespace GameMain.Task
         {
             playerController = container.Resolve<PlayerController>();
             playerStatus = container.Resolve<PlayerStatus>();
+            navMeshBaker = container.Resolve<RuntimeNavMeshBaker>();
             decalProjector.enabled = false;
             simpleAgent.SetActive(false);
 
             SetDetection(false);
-            Disable();
+            base.Disable();
         }
-
-        protected override void ManagedUpdate(float deltaTime) { }
 
         private void OnEnable()
         {
             decalProjector.enabled = true;
             simpleAgent.SetActive(true);
+
+            navMeshBaker?.Bake().Forget();
         }
 
         private void Update()
@@ -81,7 +85,7 @@ namespace GameMain.Task
         {
             isAdsorption = true;
             SetDetection(false);
-            Disable();
+            base.Disable();
             assignableArea.enabled = false;
         }
 
@@ -92,7 +96,17 @@ namespace GameMain.Task
             playerStatus.RemoveHp(attackPoint);
 
             ForceComplete();
-            Disable();
+            base.Disable();
         }
+
+
+        public void ForceEnable()
+        {
+            gameObject.SetActive(true);
+        }
+
+        public override void Enable() { }
+
+        public override void Disable() { }
     }
 }
