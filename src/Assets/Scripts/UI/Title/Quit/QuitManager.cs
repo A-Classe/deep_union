@@ -28,13 +28,16 @@ namespace UI.Title.Quit
             cursor.AddPoint(Nav.Yes, yes.rectTransform);
             cursor.AddPoint(Nav.No, no.rectTransform);
             current = null;
+
+            SetState(Nav.Yes);
         }
 
-        public override void Initialized(ContentTransform content)
+        public override void Initialized(ContentTransform content, bool isReset = false)
         {
-            base.Initialized(content);
+            base.Initialized(content, isReset);
             bar.AnimateIn();
-            SetState(Nav.Yes);
+            
+            if (isReset) { SetState(Nav.Yes);}
         }
 
         public override void Clicked()

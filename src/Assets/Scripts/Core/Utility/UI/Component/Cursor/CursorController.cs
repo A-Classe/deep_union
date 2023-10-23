@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using AnimationPro.RunTime;
 using UnityEngine;
 
@@ -14,6 +15,8 @@ namespace Core.Utility.UI.Component.Cursor
 
         private T currentPoint;
 
+        private bool isInitialize = false;
+
         public void AddPoint(T key, RectTransform rectT)
         {
             points.Add(key, rectT);
@@ -21,8 +24,10 @@ namespace Core.Utility.UI.Component.Cursor
 
         public void SetPoint(T key)
         {
-            if (currentPoint.Equals(key)) return;
+            if (currentPoint.Equals(key) && isInitialize) return;
+            isInitialize = true;
 
+            if (!points.Keys.Contains(key)) return;
             currentPoint = key;
             Animated(points[key]);
         }

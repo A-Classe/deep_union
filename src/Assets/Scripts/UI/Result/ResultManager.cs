@@ -38,12 +38,15 @@ namespace UI.Result
             cursor.AddPoint(Nav.Retry, retry.rectTransform);
             cursor.AddPoint(Nav.Select, select.rectTransform);
             current = Nav.Next;
+            
+            SetState(Nav.Next);
         }
 
-        public override void Initialized(ContentTransform content)
+        public override void Initialized(ContentTransform content, bool isReset)
         {
-            base.Initialized(content);
-            SetState(Nav.Next);
+            base.Initialized(content, isReset);
+            
+            if (isReset) { SetState(Nav.Next); }
         }
 
         public override void Clicked()

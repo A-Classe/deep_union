@@ -32,12 +32,14 @@ namespace UI.Title.Option.Option1
             cursor.AddPoint(Nav.KeyConfig, keyConfig.rectTransform);
             cursor.AddPoint(Nav.Back, back.rectTransform);
             current = Nav.Video;
+
+            SetState(Nav.Video);
         }
 
-        public override void Initialized(ContentTransform content)
+        public override void Initialized(ContentTransform content, bool isReset = false)
         {
-            base.Initialized(content);
-            //SetState(Nav.Video);
+            base.Initialized(content, isReset);
+            if (isReset) { SetState(Nav.Video); }
         }
 
         /// <summary>

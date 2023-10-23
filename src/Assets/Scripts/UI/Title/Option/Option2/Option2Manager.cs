@@ -35,12 +35,14 @@ namespace UI.Title.Option.Option2
             cursor.AddPoint(Nav.Brightness, bright.rectTransform);
             cursor.AddPoint(Nav.Back, back.rectTransform);
             current = Nav.FullScreen;
-        }
 
-        public override void Initialized(ContentTransform content)
-        {
-            base.Initialized(content);
             SetState(Nav.FullScreen);
+        }
+        
+        public override void Initialized(ContentTransform content, bool isReset = false)
+        {
+            base.Initialized(content, isReset);
+            if (isReset) { SetState(Nav.FullScreen); }
         }
 
         /// <summary>

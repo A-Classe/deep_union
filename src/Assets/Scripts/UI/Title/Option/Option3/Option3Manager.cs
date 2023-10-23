@@ -33,12 +33,14 @@ namespace UI.Title.Option.Option3
             cursor.AddPoint(Nav.Effect, effect.rectTransform);
             cursor.AddPoint(Nav.Back, back.rectTransform);
             current = Nav.Master;
-        }
 
-        public override void Initialized(ContentTransform content)
-        {
-            base.Initialized(content);
             SetState(Nav.Master);
+        }
+        
+        public override void Initialized(ContentTransform content, bool isReset = false)
+        {
+            base.Initialized(content, isReset);
+            if (isReset) { SetState(Nav.Master); }
         }
 
         /// <summary>

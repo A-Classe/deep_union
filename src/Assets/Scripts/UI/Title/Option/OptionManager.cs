@@ -38,15 +38,18 @@ namespace UI.Title.Option
             navigation = new Navigation<Nav>(initialManagers);
 
             SetNavigation();
+            
+            navigation.SetScreen(Nav.Option1);
         }
 
 
-        public override void Initialized(ContentTransform content)
+        public override void Initialized(ContentTransform content, bool isReset)
         {
-            base.Initialized(content);
+            base.Initialized(content, isReset);
             navigation.SetActive(true);
             bar.AnimateIn();
-            navigation.SetScreen(Nav.Option1);
+          
+            if (isReset) { navigation.SetScreen(Nav.Option1, isReset: true); }
         }
 
         public override void Select(Vector2 direction)
@@ -97,13 +100,13 @@ namespace UI.Title.Option
                 switch (nav)
                 {
                     case Option1Manager.Nav.Video:
-                        NavigateToVideo();
+                        NavigateToVideo(true);
                         break;
                     case Option1Manager.Nav.Audio:
-                        NavigateToAudio();
+                        NavigateToAudio(true);
                         break;
                     case Option1Manager.Nav.KeyConfig:
-                        NavigateToKeyConfig();
+                        NavigateToKeyConfig(true);
                         break;
                 }
             };
@@ -161,17 +164,17 @@ namespace UI.Title.Option
             preference = manager;
         }
 
-        private void NavigateToVideo()
+        private void NavigateToVideo(bool isReset)
         {
-            navigation.SetScreen(Nav.Option2);
+            navigation.SetScreen(Nav.Option2, isReset: isReset);
             preference.Load();
             var user = preference.GetUserData();
             option2.SetValues(user.fullScreen.value, user.bright.value);
         }
 
-        private void NavigateToAudio()
+        private void NavigateToAudio(bool isReset)
         {
-            navigation.SetScreen(Nav.Option3);
+            navigation.SetScreen(Nav.Option3, isReset: isReset);
             preference.Load();
             var user = preference.GetUserData();
             option3.SetValues(
@@ -181,9 +184,9 @@ namespace UI.Title.Option
             );
         }
 
-        private void NavigateToKeyConfig()
+        private void NavigateToKeyConfig(bool isReset)
         {
-            navigation.SetScreen(Nav.Option4);
+            navigation.SetScreen(Nav.Option4, isReset: isReset);
         }
 
         private enum Nav

@@ -69,7 +69,7 @@ namespace GameMain
             switch (route)
             {
                 case TitleNavigation.StageSelect:
-                    NavigateToPlay();
+                    NavigateToPlay(true);
                     break;
                 default:
                     NavigateToTitle();
@@ -87,10 +87,10 @@ namespace GameMain
         {
             navigation.OnCancel += _ => { OnCanceled(); };
 
-            title.OnQuit += NavigateToQuit;
-            title.OnOption += NavigateToOption;
-            title.OnCredit += NavigateToCredit;
-            title.OnPlay += NavigateToPlay;
+            title.OnQuit += () => { NavigateToQuit(true); };
+            title.OnOption += () => { NavigateToOption(true); };
+            title.OnCredit += () => { NavigateToCredit(true); };
+            title.OnPlay += () => { NavigateToPlay(true); };
 
             quit.OnClick += isQuit =>
             {
@@ -118,14 +118,16 @@ namespace GameMain
             {
                 throw new NotImplementedException("not found navigation : " + nav);
             }
-
-            navigation.SetActive(false);
+            else
+            {
+                navigation.SetActive(false);
+            }
         }
 
         private void NavigateToTitle()
         {
             navigation.SetActive(true);
-            navigation.SetScreen(TitleNavigation.Title);
+            navigation.SetScreen(TitleNavigation.Title, isReset: false);
         }
 
         private void OnCanceled()
@@ -133,7 +135,7 @@ namespace GameMain
             switch (navigation.GetCurrentNav())
             {
                 case TitleNavigation.Title:
-                    NavigateToQuit();
+                    NavigateToQuit(true);
                     break;
                 case TitleNavigation.Option:
                     break;
@@ -144,26 +146,26 @@ namespace GameMain
         }
 
 
-        private void NavigateToPlay()
+        private void NavigateToPlay(bool isReset)
         {
             data.Load();
-            navigation.SetScreen(TitleNavigation.StageSelect);
+            navigation.SetScreen(TitleNavigation.StageSelect, isReset: isReset);
             stageSelect.SetScores(data.GetStageData());
         }
 
-        private void NavigateToCredit()
+        private void NavigateToCredit(bool isReset)
         {
-            navigation.SetScreen(TitleNavigation.Credit);
+            navigation.SetScreen(TitleNavigation.Credit, isReset: isReset);
         }
 
-        private void NavigateToQuit()
+        private void NavigateToQuit(bool isReset)
         {
-            navigation.SetScreen(TitleNavigation.Quit);
+            navigation.SetScreen(TitleNavigation.Quit, isReset: isReset);
         }
 
-        private void NavigateToOption()
+        private void NavigateToOption(bool isReset)
         {
-            navigation.SetScreen(TitleNavigation.Option);
+            navigation.SetScreen(TitleNavigation.Option, isReset: isReset);
             navigation.SetActive(false);
         }
     }

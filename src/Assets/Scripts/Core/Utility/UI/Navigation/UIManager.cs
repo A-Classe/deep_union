@@ -6,7 +6,7 @@ namespace Core.Utility.UI.Navigation
 {
     public abstract class UIManager: AnimationBehaviour
     {
-        public virtual void Initialized(ContentTransform content)
+        public virtual void Initialized(ContentTransform content, bool isReset = false)
         {
             gameObject.SetActive(true);
             OnCancel();

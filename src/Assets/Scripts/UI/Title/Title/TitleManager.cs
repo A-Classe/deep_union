@@ -32,12 +32,8 @@ namespace UI.Title.Title
             cursor.AddPoint(Nav.Credit, credit.rectTransform);
             cursor.AddPoint(Nav.Quit, quit.rectTransform);
             current = Nav.Start;
-        }
 
-        public override void Initialized(ContentTransform content)
-        {
-            base.Initialized(content);
-            //SetState(Nav.Start);
+            SetState(Nav.Start);
         }
 
         public override void Clicked()
