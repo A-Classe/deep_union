@@ -18,7 +18,7 @@ namespace GameMain.Task
     {
         [Header("爆破ダメージ")] [SerializeField] private uint attackPoint;
         [SerializeField] private float explodeStartWaitTime;
-        [SerializeField] private float explodeWaitTime;
+        [SerializeField] private float disableBodyDelay;
 
         [Header("ダメージとスケールの比例関数")]
         [SerializeField]
@@ -33,8 +33,8 @@ namespace GameMain.Task
         [SerializeField] private AssignableArea assignableArea;
         [SerializeField] private Animator animator;
         [SerializeField] private Transform scaleBody;
-        [SerializeField] private GameObject explodeObject;
         [SerializeField] private Renderer bodyRenderer;
+        [SerializeField] private BombEffectEvent bombEffectEvent;
 
         private Transform playerTarget;
         private PlayerController playerController;
@@ -98,7 +98,7 @@ namespace GameMain.Task
         {
             if (isAdsorption)
             {
-                Vector3 adsorptionPosition = adsorptionTarget == null ? Vector3.zero : adsorptionTarget.position;
+                Vector3 adsorptionPosition = adsorptionTarget == null ? transform.position : adsorptionTarget.position;
                 transform.position = adsorptionPosition + adsorptionOffset;
             }
             else
@@ -141,14 +141,22 @@ namespace GameMain.Task
             animator.SetTrigger(CanBomb);
             await UniTask.Delay(TimeSpan.FromSeconds(explodeStartWaitTime));
 
+            DisableBody().Forget();
+
             //爆破エフェクト開始
-            explodeObject.SetActive(true);
-            await UniTask.Delay(TimeSpan.FromSeconds(explodeWaitTime));
+            await bombEffectEvent.Bomb();
 
             playerStatus.RemoveHp(attackPoint);
 
             ForceComplete();
             base.Disable();
+        }
+
+        private async UniTaskVoid DisableBody()
+        {
+            await UniTask.Delay(TimeSpan.FromSeconds(disableBodyDelay));
+
+            animator.gameObject.SetActive(false);
         }
 
 
