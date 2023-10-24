@@ -126,7 +126,7 @@ Module.Task.Editor.BaseTaskEditor 連携図</div>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock">
-<p class="definition"> <a class="el" href="BaseTaskEditor_8cs_source.html">BaseTaskEditor.cs</a> の <a class="el" href="BaseTaskEditor_8cs_source.html#l00010">10</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="BaseTaskEditor_8cs_source.html">BaseTaskEditor.cs</a> の <a class="el" href="BaseTaskEditor_8cs_source.html#l00007">7</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">関数詳解</h2>
 <a id="a79c968949e6118a4e821293d9a6df768"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a79c968949e6118a4e821293d9a6df768">&#9670;&nbsp;</a></span>DrawDebugSettings()</h2>
@@ -151,23 +151,23 @@ Module.Task.Editor.BaseTaskEditor 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTaskEditor_8cs_source.html">BaseTaskEditor.cs</a> の <a class="el" href="BaseTaskEditor_8cs_source.html#l00050">50</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            EditorGUILayout.Space();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a6797bc23f93fbd40d47746ea1f4302ee">foldDebug</a> = <a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a3121b6df07d6bd9dd818f0eaddc3d82e">Foldout</a>(<span class="stringliteral">&quot;Debug View&quot;</span>, <a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a6797bc23f93fbd40d47746ea1f4302ee">foldDebug</a>);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a6797bc23f93fbd40d47746ea1f4302ee">foldDebug</a>)</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                SerializedProperty state = serializedObject.FindProperty(<span class="stringliteral">&quot;state&quot;</span>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                SerializedProperty currentProgress = serializedObject.FindProperty(<span class="stringliteral">&quot;currentProgress&quot;</span>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                SerializedProperty currentWorkerCount = serializedObject.FindProperty(<span class="stringliteral">&quot;currentWorkerCount&quot;</span>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                EditorGUILayout.LabelField(<span class="stringliteral">&quot;タスクの状態&quot;</span>, ((<a class="code" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a>)state.enumValueFlag).ToString());</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                EditorGUILayout.LabelField(<span class="stringliteral">&quot;進捗率&quot;</span>, $<span class="stringliteral">&quot;{currentProgress.floatValue * 100f}%&quot;</span>);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                EditorGUILayout.LabelField(<span class="stringliteral">&quot;ワーカー数&quot;</span>, currentWorkerCount.intValue.ToString());</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
-<div class="ttc" id="aclassModule_1_1Task_1_1Editor_1_1BaseTaskEditor_html_a3121b6df07d6bd9dd818f0eaddc3d82e"><div class="ttname"><a href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a3121b6df07d6bd9dd818f0eaddc3d82e">Module.Task.Editor.BaseTaskEditor.Foldout</a></div><div class="ttdeci">static bool Foldout(string title, bool display)</div><div class="ttdef"><b>Definition:</b> <a href="BaseTaskEditor_8cs_source.html#l00082">BaseTaskEditor.cs:82</a></div></div>
-<div class="ttc" id="aclassModule_1_1Task_1_1Editor_1_1BaseTaskEditor_html_a6797bc23f93fbd40d47746ea1f4302ee"><div class="ttname"><a href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a6797bc23f93fbd40d47746ea1f4302ee">Module.Task.Editor.BaseTaskEditor.foldDebug</a></div><div class="ttdeci">bool foldDebug</div><div class="ttdef"><b>Definition:</b> <a href="BaseTaskEditor_8cs_source.html#l00013">BaseTaskEditor.cs:13</a></div></div>
+<p class="definition"> <a class="el" href="BaseTaskEditor_8cs_source.html">BaseTaskEditor.cs</a> の <a class="el" href="BaseTaskEditor_8cs_source.html#l00047">47</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            EditorGUILayout.Space();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a6797bc23f93fbd40d47746ea1f4302ee">foldDebug</a> = <a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a3121b6df07d6bd9dd818f0eaddc3d82e">Foldout</a>(<span class="stringliteral">&quot;Debug View&quot;</span>, <a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a6797bc23f93fbd40d47746ea1f4302ee">foldDebug</a>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a6797bc23f93fbd40d47746ea1f4302ee">foldDebug</a>)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                SerializedProperty state = serializedObject.FindProperty(<span class="stringliteral">&quot;state&quot;</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                SerializedProperty currentProgress = serializedObject.FindProperty(<span class="stringliteral">&quot;currentProgress&quot;</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                SerializedProperty currentWorkerCount = serializedObject.FindProperty(<span class="stringliteral">&quot;currentWorkerCount&quot;</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                EditorGUILayout.LabelField(<span class="stringliteral">&quot;タスクの状態&quot;</span>, ((<a class="code" href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">TaskState</a>)state.enumValueFlag).ToString());</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                EditorGUILayout.LabelField(<span class="stringliteral">&quot;進捗率&quot;</span>, $<span class="stringliteral">&quot;{currentProgress.floatValue * 100f}%&quot;</span>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                EditorGUILayout.LabelField(<span class="stringliteral">&quot;ワーカー数&quot;</span>, currentWorkerCount.intValue.ToString());</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Task_1_1Editor_1_1BaseTaskEditor_html_a3121b6df07d6bd9dd818f0eaddc3d82e"><div class="ttname"><a href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a3121b6df07d6bd9dd818f0eaddc3d82e">Module.Task.Editor.BaseTaskEditor.Foldout</a></div><div class="ttdeci">static bool Foldout(string title, bool display)</div><div class="ttdef"><b>Definition:</b> <a href="BaseTaskEditor_8cs_source.html#l00079">BaseTaskEditor.cs:79</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1Editor_1_1BaseTaskEditor_html_a6797bc23f93fbd40d47746ea1f4302ee"><div class="ttname"><a href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a6797bc23f93fbd40d47746ea1f4302ee">Module.Task.Editor.BaseTaskEditor.foldDebug</a></div><div class="ttdeci">bool foldDebug</div><div class="ttdef"><b>Definition:</b> <a href="BaseTaskEditor_8cs_source.html#l00010">BaseTaskEditor.cs:10</a></div></div>
 <div class="ttc" id="anamespaceModule_1_1Task_html_a5559ca3b155ae70ee91b579e8e01f985"><div class="ttname"><a href="namespaceModule_1_1Task.html#a5559ca3b155ae70ee91b579e8e01f985">Module.Task.TaskState</a></div><div class="ttdeci">TaskState</div><div class="ttdoc">タスクの状態</div><div class="ttdef"><b>Definition:</b> <a href="TaskState_8cs_source.html#l00006">TaskState.cs:7</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 呼び出し関係図:</div>
@@ -213,21 +213,21 @@ Module.Task.Editor.BaseTaskEditor 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTaskEditor_8cs_source.html">BaseTaskEditor.cs</a> の <a class="el" href="BaseTaskEditor_8cs_source.html#l00066">66</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            SerializedProperty iterator = serializedObject.GetIterator();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="comment">//既に表示してるやつはスキップ</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 5; i++)</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                iterator.NextVisible(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">bool</span> enterChildren = <span class="keyword">true</span>; iterator.NextVisible(enterChildren); enterChildren = <span class="keyword">false</span>)</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                EditorGUILayout.PropertyField(iterator, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
+<p class="definition"> <a class="el" href="BaseTaskEditor_8cs_source.html">BaseTaskEditor.cs</a> の <a class="el" href="BaseTaskEditor_8cs_source.html#l00063">63</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            SerializedProperty iterator = serializedObject.GetIterator();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="comment">//既に表示してるやつはスキップ</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 5; i++)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                iterator.NextVisible(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">bool</span> enterChildren = <span class="keyword">true</span>; iterator.NextVisible(enterChildren); enterChildren = <span class="keyword">false</span>)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                EditorGUILayout.PropertyField(iterator, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
 </div><!-- fragment --><div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -264,19 +264,19 @@ Module.Task.Editor.BaseTaskEditor 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTaskEditor_8cs_source.html">BaseTaskEditor.cs</a> の <a class="el" href="BaseTaskEditor_8cs_source.html#l00027">27</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            EditorGUILayout.Space();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#acce96ee7ba0c812da5097a95ed485a59">foldGeneral</a> = <a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a3121b6df07d6bd9dd818f0eaddc3d82e">Foldout</a>(<span class="stringliteral">&quot;General Settings&quot;</span>, <a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#acce96ee7ba0c812da5097a95ed485a59">foldGeneral</a>);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#acce96ee7ba0c812da5097a95ed485a59">foldGeneral</a>)</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                SerializedProperty mw = serializedObject.FindProperty(<span class="stringliteral">&quot;mw&quot;</span>);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                mw.intValue = EditorGUILayout.IntField(<span class="stringliteral">&quot;MonoWork&quot;</span>, mw.intValue);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                mw.intValue = Mathf.Clamp(mw.intValue, 1, <span class="keywordtype">int</span>.MaxValue);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
-<div class="ttc" id="aclassModule_1_1Task_1_1Editor_1_1BaseTaskEditor_html_acce96ee7ba0c812da5097a95ed485a59"><div class="ttname"><a href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#acce96ee7ba0c812da5097a95ed485a59">Module.Task.Editor.BaseTaskEditor.foldGeneral</a></div><div class="ttdeci">bool foldGeneral</div><div class="ttdef"><b>Definition:</b> <a href="BaseTaskEditor_8cs_source.html#l00012">BaseTaskEditor.cs:12</a></div></div>
+<p class="definition"> <a class="el" href="BaseTaskEditor_8cs_source.html">BaseTaskEditor.cs</a> の <a class="el" href="BaseTaskEditor_8cs_source.html#l00024">24</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            EditorGUILayout.Space();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#acce96ee7ba0c812da5097a95ed485a59">foldGeneral</a> = <a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a3121b6df07d6bd9dd818f0eaddc3d82e">Foldout</a>(<span class="stringliteral">&quot;General Settings&quot;</span>, <a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#acce96ee7ba0c812da5097a95ed485a59">foldGeneral</a>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#acce96ee7ba0c812da5097a95ed485a59">foldGeneral</a>)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                SerializedProperty mw = serializedObject.FindProperty(<span class="stringliteral">&quot;mw&quot;</span>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                mw.intValue = EditorGUILayout.IntField(<span class="stringliteral">&quot;MonoWork&quot;</span>, mw.intValue);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                mw.intValue = Mathf.Clamp(mw.intValue, 1, <span class="keywordtype">int</span>.MaxValue);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Task_1_1Editor_1_1BaseTaskEditor_html_acce96ee7ba0c812da5097a95ed485a59"><div class="ttname"><a href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#acce96ee7ba0c812da5097a95ed485a59">Module.Task.Editor.BaseTaskEditor.foldGeneral</a></div><div class="ttdeci">bool foldGeneral</div><div class="ttdef"><b>Definition:</b> <a href="BaseTaskEditor_8cs_source.html#l00009">BaseTaskEditor.cs:9</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -321,17 +321,17 @@ Module.Task.Editor.BaseTaskEditor 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTaskEditor_8cs_source.html">BaseTaskEditor.cs</a> の <a class="el" href="BaseTaskEditor_8cs_source.html#l00040">40</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            EditorGUILayout.Space();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a5a49f06d277cbc9b2aec24bae34d8f32">foldMain</a> = <a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a3121b6df07d6bd9dd818f0eaddc3d82e">Foldout</a>(<span class="stringliteral">&quot;Main Settings&quot;</span>, <a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a5a49f06d277cbc9b2aec24bae34d8f32">foldMain</a>);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a5a49f06d277cbc9b2aec24bae34d8f32">foldMain</a>)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#ab07e7df8a84d8e327b337edee27aa986">DrawDefaultProperty</a>();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
-<div class="ttc" id="aclassModule_1_1Task_1_1Editor_1_1BaseTaskEditor_html_a5a49f06d277cbc9b2aec24bae34d8f32"><div class="ttname"><a href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a5a49f06d277cbc9b2aec24bae34d8f32">Module.Task.Editor.BaseTaskEditor.foldMain</a></div><div class="ttdeci">bool foldMain</div><div class="ttdef"><b>Definition:</b> <a href="BaseTaskEditor_8cs_source.html#l00014">BaseTaskEditor.cs:14</a></div></div>
-<div class="ttc" id="aclassModule_1_1Task_1_1Editor_1_1BaseTaskEditor_html_ab07e7df8a84d8e327b337edee27aa986"><div class="ttname"><a href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#ab07e7df8a84d8e327b337edee27aa986">Module.Task.Editor.BaseTaskEditor.DrawDefaultProperty</a></div><div class="ttdeci">void DrawDefaultProperty()</div><div class="ttdef"><b>Definition:</b> <a href="BaseTaskEditor_8cs_source.html#l00066">BaseTaskEditor.cs:66</a></div></div>
+<p class="definition"> <a class="el" href="BaseTaskEditor_8cs_source.html">BaseTaskEditor.cs</a> の <a class="el" href="BaseTaskEditor_8cs_source.html#l00037">37</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            EditorGUILayout.Space();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a5a49f06d277cbc9b2aec24bae34d8f32">foldMain</a> = <a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a3121b6df07d6bd9dd818f0eaddc3d82e">Foldout</a>(<span class="stringliteral">&quot;Main Settings&quot;</span>, <a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a5a49f06d277cbc9b2aec24bae34d8f32">foldMain</a>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a5a49f06d277cbc9b2aec24bae34d8f32">foldMain</a>)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#ab07e7df8a84d8e327b337edee27aa986">DrawDefaultProperty</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Task_1_1Editor_1_1BaseTaskEditor_html_a5a49f06d277cbc9b2aec24bae34d8f32"><div class="ttname"><a href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a5a49f06d277cbc9b2aec24bae34d8f32">Module.Task.Editor.BaseTaskEditor.foldMain</a></div><div class="ttdeci">bool foldMain</div><div class="ttdef"><b>Definition:</b> <a href="BaseTaskEditor_8cs_source.html#l00011">BaseTaskEditor.cs:11</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1Editor_1_1BaseTaskEditor_html_ab07e7df8a84d8e327b337edee27aa986"><div class="ttname"><a href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#ab07e7df8a84d8e327b337edee27aa986">Module.Task.Editor.BaseTaskEditor.DrawDefaultProperty</a></div><div class="ttdeci">void DrawDefaultProperty()</div><div class="ttdef"><b>Definition:</b> <a href="BaseTaskEditor_8cs_source.html#l00063">BaseTaskEditor.cs:63</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -388,34 +388,34 @@ Module.Task.Editor.BaseTaskEditor 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTaskEditor_8cs_source.html">BaseTaskEditor.cs</a> の <a class="el" href="BaseTaskEditor_8cs_source.html#l00082">82</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            var style = <span class="keyword">new</span> GUIStyle(<span class="stringliteral">&quot;ShurikenModuleTitle&quot;</span>);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            style.font = EditorStyles.whiteBoldLabel.font;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            style.border = <span class="keyword">new</span> RectOffset(15, 7, 4, 4);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            style.fixedHeight = 22;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            style.contentOffset = <span class="keyword">new</span> Vector2(20f, -2f);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            style.fontSize = 13;</div>
+<p class="definition"> <a class="el" href="BaseTaskEditor_8cs_source.html">BaseTaskEditor.cs</a> の <a class="el" href="BaseTaskEditor_8cs_source.html#l00079">79</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            var style = <span class="keyword">new</span> GUIStyle(<span class="stringliteral">&quot;ShurikenModuleTitle&quot;</span>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            style.font = EditorStyles.whiteBoldLabel.font;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            style.border = <span class="keyword">new</span> RectOffset(15, 7, 4, 4);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            style.fixedHeight = 22;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            style.contentOffset = <span class="keyword">new</span> Vector2(20f, -2f);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            style.fontSize = 13;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            var rect = GUILayoutUtility.GetRect(16f, 22f, style);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            GUI.Box(rect, title, style);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            var rect = GUILayoutUtility.GetRect(16f, 22f, style);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            GUI.Box(rect, title, style);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            var e = Event.current;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            var toggleRect = <span class="keyword">new</span> Rect(rect.x + 4f, rect.y + 2f, 13f, 13f);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">if</span> (e.type == EventType.Repaint)</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                EditorStyles.foldout.Draw(toggleRect, <span class="keyword">false</span>, <span class="keyword">false</span>, display, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">if</span> (e.type == EventType.MouseDown &amp;&amp; rect.Contains(e.mousePosition))</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                display = !display;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                e.Use();</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordflow">return</span> display;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            var e = Event.current;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            var toggleRect = <span class="keyword">new</span> Rect(rect.x + 4f, rect.y + 2f, 13f, 13f);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">if</span> (e.type == EventType.Repaint)</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                EditorStyles.foldout.Draw(toggleRect, <span class="keyword">false</span>, <span class="keyword">false</span>, display, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">if</span> (e.type == EventType.MouseDown &amp;&amp; rect.Contains(e.mousePosition))</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                display = !display;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                e.Use();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">return</span> display;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
 </div><!-- fragment --><div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -454,19 +454,19 @@ Module.Task.Editor.BaseTaskEditor 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTaskEditor_8cs_source.html">BaseTaskEditor.cs</a> の <a class="el" href="BaseTaskEditor_8cs_source.html#l00016">16</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            serializedObject.Update();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a7f5fdf7ccaf50ed79609a508814983c4">DrawGeneralSettings</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a64ceff802a1fcb8ced1863f1747b7dde">DrawMainSettings</a>();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a79c968949e6118a4e821293d9a6df768">DrawDebugSettings</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            serializedObject.ApplyModifiedProperties();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
-<div class="ttc" id="aclassModule_1_1Task_1_1Editor_1_1BaseTaskEditor_html_a64ceff802a1fcb8ced1863f1747b7dde"><div class="ttname"><a href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a64ceff802a1fcb8ced1863f1747b7dde">Module.Task.Editor.BaseTaskEditor.DrawMainSettings</a></div><div class="ttdeci">void DrawMainSettings()</div><div class="ttdef"><b>Definition:</b> <a href="BaseTaskEditor_8cs_source.html#l00040">BaseTaskEditor.cs:40</a></div></div>
-<div class="ttc" id="aclassModule_1_1Task_1_1Editor_1_1BaseTaskEditor_html_a79c968949e6118a4e821293d9a6df768"><div class="ttname"><a href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a79c968949e6118a4e821293d9a6df768">Module.Task.Editor.BaseTaskEditor.DrawDebugSettings</a></div><div class="ttdeci">void DrawDebugSettings()</div><div class="ttdef"><b>Definition:</b> <a href="BaseTaskEditor_8cs_source.html#l00050">BaseTaskEditor.cs:50</a></div></div>
-<div class="ttc" id="aclassModule_1_1Task_1_1Editor_1_1BaseTaskEditor_html_a7f5fdf7ccaf50ed79609a508814983c4"><div class="ttname"><a href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a7f5fdf7ccaf50ed79609a508814983c4">Module.Task.Editor.BaseTaskEditor.DrawGeneralSettings</a></div><div class="ttdeci">void DrawGeneralSettings()</div><div class="ttdef"><b>Definition:</b> <a href="BaseTaskEditor_8cs_source.html#l00027">BaseTaskEditor.cs:27</a></div></div>
+<p class="definition"> <a class="el" href="BaseTaskEditor_8cs_source.html">BaseTaskEditor.cs</a> の <a class="el" href="BaseTaskEditor_8cs_source.html#l00013">13</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            serializedObject.Update();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a7f5fdf7ccaf50ed79609a508814983c4">DrawGeneralSettings</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a64ceff802a1fcb8ced1863f1747b7dde">DrawMainSettings</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <a class="code" href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a79c968949e6118a4e821293d9a6df768">DrawDebugSettings</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            serializedObject.ApplyModifiedProperties();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Task_1_1Editor_1_1BaseTaskEditor_html_a64ceff802a1fcb8ced1863f1747b7dde"><div class="ttname"><a href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a64ceff802a1fcb8ced1863f1747b7dde">Module.Task.Editor.BaseTaskEditor.DrawMainSettings</a></div><div class="ttdeci">void DrawMainSettings()</div><div class="ttdef"><b>Definition:</b> <a href="BaseTaskEditor_8cs_source.html#l00037">BaseTaskEditor.cs:37</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1Editor_1_1BaseTaskEditor_html_a79c968949e6118a4e821293d9a6df768"><div class="ttname"><a href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a79c968949e6118a4e821293d9a6df768">Module.Task.Editor.BaseTaskEditor.DrawDebugSettings</a></div><div class="ttdeci">void DrawDebugSettings()</div><div class="ttdef"><b>Definition:</b> <a href="BaseTaskEditor_8cs_source.html#l00047">BaseTaskEditor.cs:47</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1Editor_1_1BaseTaskEditor_html_a7f5fdf7ccaf50ed79609a508814983c4"><div class="ttname"><a href="classModule_1_1Task_1_1Editor_1_1BaseTaskEditor.html#a7f5fdf7ccaf50ed79609a508814983c4">Module.Task.Editor.BaseTaskEditor.DrawGeneralSettings</a></div><div class="ttdeci">void DrawGeneralSettings()</div><div class="ttdef"><b>Definition:</b> <a href="BaseTaskEditor_8cs_source.html#l00024">BaseTaskEditor.cs:24</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -504,7 +504,7 @@ Module.Task.Editor.BaseTaskEditor 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTaskEditor_8cs_source.html">BaseTaskEditor.cs</a> の <a class="el" href="BaseTaskEditor_8cs_source.html#l00013">13</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="BaseTaskEditor_8cs_source.html">BaseTaskEditor.cs</a> の <a class="el" href="BaseTaskEditor_8cs_source.html#l00010">10</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -528,7 +528,7 @@ Module.Task.Editor.BaseTaskEditor 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTaskEditor_8cs_source.html">BaseTaskEditor.cs</a> の <a class="el" href="BaseTaskEditor_8cs_source.html#l00012">12</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="BaseTaskEditor_8cs_source.html">BaseTaskEditor.cs</a> の <a class="el" href="BaseTaskEditor_8cs_source.html#l00009">9</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -552,7 +552,7 @@ Module.Task.Editor.BaseTaskEditor 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="BaseTaskEditor_8cs_source.html">BaseTaskEditor.cs</a> の <a class="el" href="BaseTaskEditor_8cs_source.html#l00014">14</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="BaseTaskEditor_8cs_source.html">BaseTaskEditor.cs</a> の <a class="el" href="BaseTaskEditor_8cs_source.html#l00011">11</a> 行目に定義があります。</p>
 
 </div>
 </div>

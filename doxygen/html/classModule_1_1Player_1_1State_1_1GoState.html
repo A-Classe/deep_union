@@ -111,7 +111,7 @@ Module.Player.State.GoState 連携図</div>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock">
-<p class="definition"> <a class="el" href="GoState_8cs_source.html">GoState.cs</a> の <a class="el" href="GoState_8cs_source.html#l00007">7</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="GoState_8cs_source.html">GoState.cs</a> の <a class="el" href="GoState_8cs_source.html#l00006">6</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
 <a id="a22bcbcbdc6e64384f8451cfd7c2e1e71"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a22bcbcbdc6e64384f8451cfd7c2e1e71">&#9670;&nbsp;</a></span>GoState()</h2>
@@ -137,11 +137,11 @@ Module.Player.State.GoState 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="GoState_8cs_source.html">GoState.cs</a> の <a class="el" href="GoState_8cs_source.html#l00010">10</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            this.controller = <a class="code" href="classModule_1_1Player_1_1State_1_1GoState.html#aaec176a9009cb3f0b37656e8902c2270">controller</a>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        }</div>
-<div class="ttc" id="aclassModule_1_1Player_1_1State_1_1GoState_html_aaec176a9009cb3f0b37656e8902c2270"><div class="ttname"><a href="classModule_1_1Player_1_1State_1_1GoState.html#aaec176a9009cb3f0b37656e8902c2270">Module.Player.State.GoState.controller</a></div><div class="ttdeci">readonly PlayerController controller</div><div class="ttdef"><b>Definition:</b> <a href="GoState_8cs_source.html#l00009">GoState.cs:9</a></div></div>
+<p class="definition"> <a class="el" href="GoState_8cs_source.html">GoState.cs</a> の <a class="el" href="GoState_8cs_source.html#l00009">9</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            this.controller = <a class="code" href="classModule_1_1Player_1_1State_1_1GoState.html#aaec176a9009cb3f0b37656e8902c2270">controller</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Player_1_1State_1_1GoState_html_aaec176a9009cb3f0b37656e8902c2270"><div class="ttname"><a href="classModule_1_1Player_1_1State_1_1GoState.html#aaec176a9009cb3f0b37656e8902c2270">Module.Player.State.GoState.controller</a></div><div class="ttdeci">readonly PlayerController controller</div><div class="ttdef"><b>Definition:</b> <a href="GoState_8cs_source.html#l00008">GoState.cs:8</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -186,13 +186,13 @@ Module.Player.State.GoState 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="GoState_8cs_source.html">GoState.cs</a> の <a class="el" href="GoState_8cs_source.html#l00016">16</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            var transform = <a class="code" href="classModule_1_1Player_1_1State_1_1GoState.html#aaec176a9009cb3f0b37656e8902c2270">controller</a>.transform;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            var position = transform.position;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            var updatePosition = Vector3.Lerp(position, position + transform.forward * <a class="code" href="classModule_1_1Player_1_1State_1_1GoState.html#aaec176a9009cb3f0b37656e8902c2270">controller</a>.<a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerController.html#abbadfeaa43f2dea68e028811f248a420">Speed</a>, Time.deltaTime);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <a class="code" href="classModule_1_1Player_1_1State_1_1GoState.html#aaec176a9009cb3f0b37656e8902c2270">controller</a>.transform.position = updatePosition;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        }</div>
+<p class="definition"> <a class="el" href="GoState_8cs_source.html">GoState.cs</a> の <a class="el" href="GoState_8cs_source.html#l00015">15</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            var transform = <a class="code" href="classModule_1_1Player_1_1State_1_1GoState.html#aaec176a9009cb3f0b37656e8902c2270">controller</a>.transform;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            var position = transform.position;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            var updatePosition = Vector3.Lerp(position, position + transform.forward * <a class="code" href="classModule_1_1Player_1_1State_1_1GoState.html#aaec176a9009cb3f0b37656e8902c2270">controller</a>.<a class="code" href="classModule_1_1Player_1_1Controller_1_1PlayerController.html#abbadfeaa43f2dea68e028811f248a420">Speed</a>, Time.deltaTime);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <a class="code" href="classModule_1_1Player_1_1State_1_1GoState.html#aaec176a9009cb3f0b37656e8902c2270">controller</a>.transform.position = updatePosition;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
 <div class="ttc" id="aclassModule_1_1Player_1_1Controller_1_1PlayerController_html_abbadfeaa43f2dea68e028811f248a420"><div class="ttname"><a href="classModule_1_1Player_1_1Controller_1_1PlayerController.html#abbadfeaa43f2dea68e028811f248a420">Module.Player.Controller.PlayerController.Speed</a></div><div class="ttdeci">float Speed</div><div class="ttdef"><b>Definition:</b> <a href="PlayerController_8cs_source.html#l00016">PlayerController.cs:16</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -218,7 +218,7 @@ Module.Player.State.GoState 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="GoState_8cs_source.html">GoState.cs</a> の <a class="el" href="GoState_8cs_source.html#l00009">9</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="GoState_8cs_source.html">GoState.cs</a> の <a class="el" href="GoState_8cs_source.html#l00008">8</a> 行目に定義があります。</p>
 
 </div>
 </div>

@@ -122,15 +122,15 @@ System.GameProgress.StageProgressObserver 連携図</div>
 <tr class="separator:a221a39cd62a6ca1965816624760ecb5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6917506c5d77cf80980406d84c4a8bc7"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="classSystem_1_1GameProgress_1_1GoalPoint.html">GoalPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a6917506c5d77cf80980406d84c4a8bc7">goalPoint</a></td></tr>
 <tr class="separator:a6917506c5d77cf80980406d84c4a8bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c232bd6410be7657c2783a89923ca17"><td class="memItemLeft" align="right" valign="top">readonly CancellationTokenSource&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a0c232bd6410be7657c2783a89923ca17">cTokenSource</a></td></tr>
-<tr class="separator:a0c232bd6410be7657c2783a89923ca17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeac87fff1b64a57c368989ea83433924"><td class="memItemLeft" align="right" valign="top">CancellationTokenSource&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#aeac87fff1b64a57c368989ea83433924">cTokenSource</a></td></tr>
+<tr class="separator:aeac87fff1b64a57c368989ea83433924"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8a6643376c2b107e4759f083ba1d45b"><td class="memItemLeft" align="right" valign="top">readonly float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#af8a6643376c2b107e4759f083ba1d45b">initDistance</a></td></tr>
 <tr class="separator:af8a6643376c2b107e4759f083ba1d45b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>ステージ進捗を監視するクラス </p>
 
-<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00015">15</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00012">12</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
 <a id="aeda15d78e0cdedb2108d63587cbb143c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeda15d78e0cdedb2108d63587cbb143c">&#9670;&nbsp;</a></span>StageProgressObserver()</h2>
@@ -166,19 +166,19 @@ System.GameProgress.StageProgressObserver 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00028">28</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            this.playerController = <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a221a39cd62a6ca1965816624760ecb5f">playerController</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            this.<a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a6917506c5d77cf80980406d84c4a8bc7">goalPoint</a> = <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a6917506c5d77cf80980406d84c4a8bc7">goalPoint</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a0c232bd6410be7657c2783a89923ca17">cTokenSource</a> = <span class="keyword">new</span> CancellationTokenSource();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#af8a6643376c2b107e4759f083ba1d45b">initDistance</a> = <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#ad9222a33c19f20489c3a47b7a6d95759">GetDistance</a>();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
-<div class="ttc" id="aclassSystem_1_1GameProgress_1_1StageProgressObserver_html_a0c232bd6410be7657c2783a89923ca17"><div class="ttname"><a href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a0c232bd6410be7657c2783a89923ca17">System.GameProgress.StageProgressObserver.cTokenSource</a></div><div class="ttdeci">readonly CancellationTokenSource cTokenSource</div><div class="ttdef"><b>Definition:</b> <a href="StageProgressObserver_8cs_source.html#l00019">StageProgressObserver.cs:19</a></div></div>
-<div class="ttc" id="aclassSystem_1_1GameProgress_1_1StageProgressObserver_html_a221a39cd62a6ca1965816624760ecb5f"><div class="ttname"><a href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a221a39cd62a6ca1965816624760ecb5f">System.GameProgress.StageProgressObserver.playerController</a></div><div class="ttdeci">readonly PlayerController playerController</div><div class="ttdef"><b>Definition:</b> <a href="StageProgressObserver_8cs_source.html#l00017">StageProgressObserver.cs:17</a></div></div>
-<div class="ttc" id="aclassSystem_1_1GameProgress_1_1StageProgressObserver_html_a6917506c5d77cf80980406d84c4a8bc7"><div class="ttname"><a href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a6917506c5d77cf80980406d84c4a8bc7">System.GameProgress.StageProgressObserver.goalPoint</a></div><div class="ttdeci">readonly GoalPoint goalPoint</div><div class="ttdef"><b>Definition:</b> <a href="StageProgressObserver_8cs_source.html#l00018">StageProgressObserver.cs:18</a></div></div>
-<div class="ttc" id="aclassSystem_1_1GameProgress_1_1StageProgressObserver_html_ad9222a33c19f20489c3a47b7a6d95759"><div class="ttname"><a href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#ad9222a33c19f20489c3a47b7a6d95759">System.GameProgress.StageProgressObserver.GetDistance</a></div><div class="ttdeci">float GetDistance()</div><div class="ttdef"><b>Definition:</b> <a href="StageProgressObserver_8cs_source.html#l00054">StageProgressObserver.cs:54</a></div></div>
-<div class="ttc" id="aclassSystem_1_1GameProgress_1_1StageProgressObserver_html_af8a6643376c2b107e4759f083ba1d45b"><div class="ttname"><a href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#af8a6643376c2b107e4759f083ba1d45b">System.GameProgress.StageProgressObserver.initDistance</a></div><div class="ttdeci">readonly float initDistance</div><div class="ttdef"><b>Definition:</b> <a href="StageProgressObserver_8cs_source.html#l00025">StageProgressObserver.cs:25</a></div></div>
+<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00025">25</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            this.playerController = <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a221a39cd62a6ca1965816624760ecb5f">playerController</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            this.<a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a6917506c5d77cf80980406d84c4a8bc7">goalPoint</a> = <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a6917506c5d77cf80980406d84c4a8bc7">goalPoint</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#aeac87fff1b64a57c368989ea83433924">cTokenSource</a> = <span class="keyword">new</span> CancellationTokenSource();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#af8a6643376c2b107e4759f083ba1d45b">initDistance</a> = <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#ad9222a33c19f20489c3a47b7a6d95759">GetDistance</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
+<div class="ttc" id="aclassSystem_1_1GameProgress_1_1StageProgressObserver_html_a221a39cd62a6ca1965816624760ecb5f"><div class="ttname"><a href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a221a39cd62a6ca1965816624760ecb5f">System.GameProgress.StageProgressObserver.playerController</a></div><div class="ttdeci">readonly PlayerController playerController</div><div class="ttdef"><b>Definition:</b> <a href="StageProgressObserver_8cs_source.html#l00014">StageProgressObserver.cs:14</a></div></div>
+<div class="ttc" id="aclassSystem_1_1GameProgress_1_1StageProgressObserver_html_a6917506c5d77cf80980406d84c4a8bc7"><div class="ttname"><a href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a6917506c5d77cf80980406d84c4a8bc7">System.GameProgress.StageProgressObserver.goalPoint</a></div><div class="ttdeci">readonly GoalPoint goalPoint</div><div class="ttdef"><b>Definition:</b> <a href="StageProgressObserver_8cs_source.html#l00015">StageProgressObserver.cs:15</a></div></div>
+<div class="ttc" id="aclassSystem_1_1GameProgress_1_1StageProgressObserver_html_ad9222a33c19f20489c3a47b7a6d95759"><div class="ttname"><a href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#ad9222a33c19f20489c3a47b7a6d95759">System.GameProgress.StageProgressObserver.GetDistance</a></div><div class="ttdeci">float GetDistance()</div><div class="ttdef"><b>Definition:</b> <a href="StageProgressObserver_8cs_source.html#l00051">StageProgressObserver.cs:51</a></div></div>
+<div class="ttc" id="aclassSystem_1_1GameProgress_1_1StageProgressObserver_html_aeac87fff1b64a57c368989ea83433924"><div class="ttname"><a href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#aeac87fff1b64a57c368989ea83433924">System.GameProgress.StageProgressObserver.cTokenSource</a></div><div class="ttdeci">CancellationTokenSource cTokenSource</div><div class="ttdef"><b>Definition:</b> <a href="StageProgressObserver_8cs_source.html#l00016">StageProgressObserver.cs:16</a></div></div>
+<div class="ttc" id="aclassSystem_1_1GameProgress_1_1StageProgressObserver_html_af8a6643376c2b107e4759f083ba1d45b"><div class="ttname"><a href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#af8a6643376c2b107e4759f083ba1d45b">System.GameProgress.StageProgressObserver.initDistance</a></div><div class="ttdeci">readonly float initDistance</div><div class="ttdef"><b>Definition:</b> <a href="StageProgressObserver_8cs_source.html#l00022">StageProgressObserver.cs:22</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -215,11 +215,11 @@ System.GameProgress.StageProgressObserver 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00048">48</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a0c232bd6410be7657c2783a89923ca17">cTokenSource</a>.Cancel();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a0c232bd6410be7657c2783a89923ca17">cTokenSource</a>.Dispose();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
+<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00045">45</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#aeac87fff1b64a57c368989ea83433924">cTokenSource</a>.Cancel();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#aeac87fff1b64a57c368989ea83433924">cTokenSource</a>.Dispose();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
 </div><!-- fragment --><div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -255,10 +255,10 @@ System.GameProgress.StageProgressObserver 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00054">54</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a6917506c5d77cf80980406d84c4a8bc7">goalPoint</a>.transform.position - <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a221a39cd62a6ca1965816624760ecb5f">playerController</a>.transform.position).z;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
+<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00051">51</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a6917506c5d77cf80980406d84c4a8bc7">goalPoint</a>.transform.position - <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a221a39cd62a6ca1965816624760ecb5f">playerController</a>.transform.position).z;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
 </div><!-- fragment --><div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -294,18 +294,18 @@ System.GameProgress.StageProgressObserver 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00037">37</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="comment">//ゴール到着まで待機</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            await UniTask.WaitUntil(() =&gt; <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#ac3f146e32f24787e2d5158c07d11389a">Progress</a> &gt;= 1f, cancellationToken: <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a0c232bd6410be7657c2783a89923ca17">cTokenSource</a>.Token);</div>
+<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00034">34</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="comment">//ゴール到着まで待機</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            await UniTask.WaitUntil(() =&gt; <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#ac3f146e32f24787e2d5158c07d11389a">Progress</a> &gt;= 1f, cancellationToken: <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#aeac87fff1b64a57c368989ea83433924">cTokenSource</a>.Token);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#aeac87fff1b64a57c368989ea83433924">cTokenSource</a>.IsCancellationRequested)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a0c232bd6410be7657c2783a89923ca17">cTokenSource</a>.IsCancellationRequested)</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a4590773a3c423e7aed7911d65e5552eb">OnCompleted</a>?.Invoke();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
-<div class="ttc" id="aclassSystem_1_1GameProgress_1_1StageProgressObserver_html_a4590773a3c423e7aed7911d65e5552eb"><div class="ttname"><a href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a4590773a3c423e7aed7911d65e5552eb">System.GameProgress.StageProgressObserver.OnCompleted</a></div><div class="ttdeci">Action OnCompleted</div><div class="ttdef"><b>Definition:</b> <a href="StageProgressObserver_8cs_source.html#l00021">StageProgressObserver.cs:21</a></div></div>
-<div class="ttc" id="aclassSystem_1_1GameProgress_1_1StageProgressObserver_html_ac3f146e32f24787e2d5158c07d11389a"><div class="ttname"><a href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#ac3f146e32f24787e2d5158c07d11389a">System.GameProgress.StageProgressObserver.Progress</a></div><div class="ttdeci">float Progress</div><div class="ttdef"><b>Definition:</b> <a href="StageProgressObserver_8cs_source.html#l00023">StageProgressObserver.cs:23</a></div></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a4590773a3c423e7aed7911d65e5552eb">OnCompleted</a>?.Invoke();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
+<div class="ttc" id="aclassSystem_1_1GameProgress_1_1StageProgressObserver_html_a4590773a3c423e7aed7911d65e5552eb"><div class="ttname"><a href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#a4590773a3c423e7aed7911d65e5552eb">System.GameProgress.StageProgressObserver.OnCompleted</a></div><div class="ttdeci">Action OnCompleted</div><div class="ttdef"><b>Definition:</b> <a href="StageProgressObserver_8cs_source.html#l00018">StageProgressObserver.cs:18</a></div></div>
+<div class="ttc" id="aclassSystem_1_1GameProgress_1_1StageProgressObserver_html_ac3f146e32f24787e2d5158c07d11389a"><div class="ttname"><a href="classSystem_1_1GameProgress_1_1StageProgressObserver.html#ac3f146e32f24787e2d5158c07d11389a">System.GameProgress.StageProgressObserver.Progress</a></div><div class="ttdeci">float Progress</div><div class="ttdef"><b>Definition:</b> <a href="StageProgressObserver_8cs_source.html#l00020">StageProgressObserver.cs:20</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -319,8 +319,8 @@ System.GameProgress.StageProgressObserver 連携図</div>
 </div>
 </div>
 <h2 class="groupheader">メンバ詳解</h2>
-<a id="a0c232bd6410be7657c2783a89923ca17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c232bd6410be7657c2783a89923ca17">&#9670;&nbsp;</a></span>cTokenSource</h2>
+<a id="aeac87fff1b64a57c368989ea83433924"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeac87fff1b64a57c368989ea83433924">&#9670;&nbsp;</a></span>cTokenSource</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -329,7 +329,7 @@ System.GameProgress.StageProgressObserver 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">readonly CancellationTokenSource System.GameProgress.StageProgressObserver.cTokenSource</td>
+          <td class="memname">CancellationTokenSource System.GameProgress.StageProgressObserver.cTokenSource</td>
         </tr>
       </table>
   </td>
@@ -339,7 +339,7 @@ System.GameProgress.StageProgressObserver 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00019">19</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00016">16</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -363,7 +363,7 @@ System.GameProgress.StageProgressObserver 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00018">18</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00015">15</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -387,7 +387,7 @@ System.GameProgress.StageProgressObserver 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00025">25</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00022">22</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -411,7 +411,7 @@ System.GameProgress.StageProgressObserver 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00017">17</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00014">14</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -436,7 +436,7 @@ System.GameProgress.StageProgressObserver 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00023">23</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00020">20</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -453,7 +453,7 @@ System.GameProgress.StageProgressObserver 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00021">21</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="StageProgressObserver_8cs_source.html">StageProgressObserver.cs</a> の <a class="el" href="StageProgressObserver_8cs_source.html#l00018">18</a> 行目に定義があります。</p>
 
 </div>
 </div>

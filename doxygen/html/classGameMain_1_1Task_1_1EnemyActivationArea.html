@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: GameMain.Task.EnemyActivationArea クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceGameMain.html">GameMain</a></li><li class="navelem"><a class="el" href="namespaceGameMain_1_1Task.html">Task</a></li><li class="navelem"><a class="el" href="classGameMain_1_1Task_1_1EnemyActivationArea.html">EnemyActivationArea</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classGameMain_1_1Task_1_1EnemyActivationArea-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">GameMain.Task.EnemyActivationArea クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+GameMain.Task.EnemyActivationArea の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classGameMain_1_1Task_1_1EnemyActivationArea__inherit__graph.png" border="0" usemap="#aGameMain_8Task_8EnemyActivationArea_inherit__map" alt="Inheritance graph"/></div>
+<map name="aGameMain_8Task_8EnemyActivationArea_inherit__map" id="aGameMain_8Task_8EnemyActivationArea_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,131,276,223"/>
+<area shape="rect" title=" " alt="" coords="79,5,203,83"/>
+</map>
+</div>
+<div class="dynheader">
+GameMain.Task.EnemyActivationArea 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classGameMain_1_1Task_1_1EnemyActivationArea__coll__graph.png" border="0" usemap="#aGameMain_8Task_8EnemyActivationArea_coll__map" alt="Collaboration graph"/></div>
+<map name="aGameMain_8Task_8EnemyActivationArea_coll__map" id="aGameMain_8Task_8EnemyActivationArea_coll__map">
+<area shape="rect" title=" " alt="" coords="5,1596,276,1688"/>
+<area shape="rect" title=" " alt="" coords="316,27,440,105"/>
+<area shape="rect" href="classModule_1_1Task_1_1BaseTask.html" title="全てのタスクのベースクラス" alt="" coords="157,204,340,604"/>
+<area shape="rect" href="classGameMain_1_1System_1_1SimpleAgent.html" title=" " alt="" coords="227,628,460,735"/>
+<area shape="rect" href="classModule_1_1Player_1_1Controller_1_1PlayerController.html" title="プレイヤーの操作に関するクラス" alt="" coords="448,292,633,516"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html" title="アサイン範囲を設定するクラス" alt="" coords="994,759,1229,1188"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html" title="楕円判定をビジュアライズするクラス" alt="" coords="1005,343,1239,465"/>
+<area shape="rect" href="classGameMain_1_1Task_1_1Enemy1Task.html" title=" " alt="" coords="361,1251,573,1533"/>
+<area shape="rect" href="interfaceModule_1_1Task_1_1ITaskSystem.html" title="タスクにゲームループを適用するインターフェース" alt="" coords="120,20,292,112"/>
+<area shape="rect" href="classCore_1_1NavMesh_1_1RuntimeNavMeshBaker.html" title=" " alt="" coords="349,913,586,1034"/>
+<area shape="rect" title=" " alt="" coords="464,13,665,119"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1PlayerStatus.html" title=" " alt="" coords="773,876,969,1071"/>
+<area shape="rect" href="classCore_1_1Utility_1_1AutoInstanceList.html" title=" " alt="" coords="709,285,981,523"/>
+<area shape="rect" href="structModule_1_1Assignment_1_1Utility_1_1EllipseData.html" title=" " alt="" coords="1122,5,1319,127"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a627ab201b51ef8504c5c5ccf4b0e5ec9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Task_1_1EnemyActivationArea.html#a627ab201b51ef8504c5c5ccf4b0e5ec9">Start</a> ()</td></tr>
+<tr class="separator:a627ab201b51ef8504c5c5ccf4b0e5ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3557dc9f4a4335575f20c86ac3f880e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Task_1_1EnemyActivationArea.html#a3557dc9f4a4335575f20c86ac3f880e7">OnTriggerEnter</a> (Collider other)</td></tr>
+<tr class="separator:a3557dc9f4a4335575f20c86ac3f880e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a7e118860ae37707045991717265116fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGameMain_1_1Task_1_1Enemy1Task.html">Enemy1Task</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Task_1_1EnemyActivationArea.html#a7e118860ae37707045991717265116fc">baseTasks</a></td></tr>
+<tr class="separator:a7e118860ae37707045991717265116fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="EnemyActivationArea_8cs_source.html">EnemyActivationArea.cs</a> の <a class="el" href="EnemyActivationArea_8cs_source.html#l00006">6</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="a3557dc9f4a4335575f20c86ac3f880e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3557dc9f4a4335575f20c86ac3f880e7">&#9670;&nbsp;</a></span>OnTriggerEnter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameMain.Task.EnemyActivationArea.OnTriggerEnter </td>
+          <td>(</td>
+          <td class="paramtype">Collider&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="EnemyActivationArea_8cs_source.html">EnemyActivationArea.cs</a> の <a class="el" href="EnemyActivationArea_8cs_source.html#l00015">15</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keywordflow">if</span> (other.CompareTag(<span class="stringliteral">&quot;Player&quot;</span>))</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                <span class="keywordflow">foreach</span> (Enemy1Task enemy1Task <span class="keywordflow">in</span> <a class="code" href="classGameMain_1_1Task_1_1EnemyActivationArea.html#a7e118860ae37707045991717265116fc">baseTasks</a>)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                    enemy1Task.ForceEnable();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                    enemy1Task.SetDetection(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
+<div class="ttc" id="aclassGameMain_1_1Task_1_1EnemyActivationArea_html_a7e118860ae37707045991717265116fc"><div class="ttname"><a href="classGameMain_1_1Task_1_1EnemyActivationArea.html#a7e118860ae37707045991717265116fc">GameMain.Task.EnemyActivationArea.baseTasks</a></div><div class="ttdeci">Enemy1Task[] baseTasks</div><div class="ttdef"><b>Definition:</b> <a href="EnemyActivationArea_8cs_source.html#l00008">EnemyActivationArea.cs:8</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classGameMain_1_1Task_1_1EnemyActivationArea_a3557dc9f4a4335575f20c86ac3f880e7_cgraph.png" border="0" usemap="#aclassGameMain_1_1Task_1_1EnemyActivationArea_a3557dc9f4a4335575f20c86ac3f880e7_cgraph" alt=""/></div>
+<map name="aclassGameMain_1_1Task_1_1EnemyActivationArea_a3557dc9f4a4335575f20c86ac3f880e7_cgraph" id="aclassGameMain_1_1Task_1_1EnemyActivationArea_a3557dc9f4a4335575f20c86ac3f880e7_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,247,80"/>
+<area shape="rect" href="classGameMain_1_1Task_1_1Enemy1Task.html#a237370854d7ab5450a525b780af29d90" title=" " alt="" coords="295,5,511,47"/>
+<area shape="rect" href="classModule_1_1Task_1_1BaseTask.html#a9ac3603c3238aa0fddc4345e1ac2e054" title=" " alt="" coords="306,71,499,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a627ab201b51ef8504c5c5ccf4b0e5ec9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a627ab201b51ef8504c5c5ccf4b0e5ec9">&#9670;&nbsp;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameMain.Task.EnemyActivationArea.Start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="EnemyActivationArea_8cs_source.html">EnemyActivationArea.cs</a> の <a class="el" href="EnemyActivationArea_8cs_source.html#l00010">10</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            <a class="code" href="classGameMain_1_1Task_1_1EnemyActivationArea.html#a7e118860ae37707045991717265116fc">baseTasks</a> = GetComponentsInChildren&lt;Enemy1Task&gt;(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a7e118860ae37707045991717265116fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e118860ae37707045991717265116fc">&#9670;&nbsp;</a></span>baseTasks</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGameMain_1_1Task_1_1Enemy1Task.html">Enemy1Task</a> [] GameMain.Task.EnemyActivationArea.baseTasks</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="EnemyActivationArea_8cs_source.html">EnemyActivationArea.cs</a> の <a class="el" href="EnemyActivationArea_8cs_source.html#l00008">8</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>src/Assets/Scripts/GameMain/Task/<a class="el" href="EnemyActivationArea_8cs_source.html">EnemyActivationArea.cs</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

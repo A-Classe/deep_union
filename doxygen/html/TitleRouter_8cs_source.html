@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>release control: src/Assets/Scripts/UI/Title/TitleRouter.cs ソースファイル</title>
+<title>release control: src/Assets/Scripts/GameMain/TitleRouter.cs ソースファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_60e49c277f934197d3c4330be1be2379.html">UI</a></li><li class="navelem"><a class="el" href="dir_deca420f2aedab284ceec80601a241a4.html">Title</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_2663a91e34b059a736b32b20a5ff248b.html">GameMain</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -69,180 +69,200 @@ $(function() {
 <div class="title">TitleRouter.cs</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="TitleRouter_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceSystem.html">System</a>.Collections.Generic;</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceCore.html">Core</a>.<a class="code" href="namespaceCore_1_1Utility.html">Utility</a>.<a class="code" href="namespaceCore_1_1Utility_1_1UI.html">UI</a>.<a class="code" href="namespaceCore_1_1Utility_1_1UI_1_1Navigation.html">Navigation</a>;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceCore.html">Core</a>.<a class="code" href="namespaceCore_1_1Utility.html">Utility</a>.<a class="code" href="namespaceCore_1_1Utility_1_1User.html">User</a>;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceUI.html">UI</a>.<a class="code" href="namespaceUI_1_1Title.html">Title</a>.<a class="code" href="namespaceUI_1_1Title_1_1Credit.html">Credit</a>;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceUI.html">UI</a>.<a class="code" href="namespaceUI_1_1Title.html">Title</a>.<a class="code" href="namespaceUI_1_1Title_1_1Option.html">Option</a>;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceUI.html">UI</a>.<a class="code" href="namespaceUI_1_1Title.html">Title</a>.<a class="code" href="namespaceUI_1_1Title_1_1Quit.html">Quit</a>;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceUI.html">UI</a>.<a class="code" href="namespaceUI_1_1Title.html">Title</a>.<a class="code" href="namespaceUI_1_1Title_1_1StageSelect.html">StageSelect</a>;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceUI.html">UI</a>.<a class="code" href="namespaceUI_1_1Title.html">Title</a>.<a class="code" href="namespaceUI_1_1Title_1_1Title.html">Title</a>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using</span> VContainer;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using</span> VContainer.Unity;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceUI_1_1Title.html">UI.Title</a></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">internal</span> <span class="keyword">class </span>TitleRouter : IStartable</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">private</span> readonly CreditManager credit;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">private</span> readonly <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html">UserPreference</a> data;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">private</span> readonly <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Navigation&lt;Nav&gt;</a> navigation;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<a href="TitleRouter_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceSystem.html">System</a>;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceSystem.html">System</a>.Collections.Generic;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceCore.html">Core</a>.<a class="code" href="namespaceCore_1_1Scenes.html">Scenes</a>;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceCore.html">Core</a>.<a class="code" href="namespaceCore_1_1User.html">User</a>;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceCore.html">Core</a>.<a class="code" href="namespaceCore_1_1Utility.html">Utility</a>.<a class="code" href="namespaceCore_1_1Utility_1_1UI.html">UI</a>.<a class="code" href="namespaceCore_1_1Utility_1_1UI_1_1Navigation.html">Navigation</a>;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceUI.html">UI</a>.<a class="code" href="namespaceUI_1_1Title.html">Title</a>.<a class="code" href="namespaceUI_1_1Title_1_1Credit.html">Credit</a>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceUI.html">UI</a>.<a class="code" href="namespaceUI_1_1Title.html">Title</a>.<a class="code" href="namespaceUI_1_1Title_1_1Option.html">Option</a>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceUI.html">UI</a>.<a class="code" href="namespaceUI_1_1Title.html">Title</a>.<a class="code" href="namespaceUI_1_1Title_1_1Quit.html">Quit</a>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceUI.html">UI</a>.<a class="code" href="namespaceUI_1_1Title.html">Title</a>.<a class="code" href="namespaceUI_1_1Title_1_1StageSelect.html">StageSelect</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceUI.html">UI</a>.<a class="code" href="namespaceUI_1_1Title.html">Title</a>.<a class="code" href="namespaceUI_1_1Title_1_1Title.html">Title</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using</span> VContainer;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">using</span> VContainer.Unity;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceGameMain.html">GameMain</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">internal</span> <span class="keyword">class </span>TitleRouter : IStartable</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">private</span> readonly <a class="code" href="classUI_1_1Title_1_1Credit_1_1CreditManager.html">CreditManager</a> credit;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">private</span> readonly <a class="code" href="classCore_1_1User_1_1UserPreference.html">UserPreference</a> data;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">private</span> readonly <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Navigation&lt;TitleNavigation&gt;</a> navigation;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">private</span> readonly <a class="code" href="classUI_1_1Title_1_1Option_1_1OptionManager.html">OptionManager</a> option;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">private</span> readonly QuitManager quit;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">private</span> readonly <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html">StageSelectManager</a> stageSelect;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">private</span> readonly TitleManager title;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        [Inject]</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">public</span> TitleRouter(</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            TitleManager titleManager,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            QuitManager quitManager,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="classUI_1_1Title_1_1Option_1_1OptionManager.html">OptionManager</a> optionManager,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            CreditManager creditManager,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html">StageSelectManager</a> stageSelectManager,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1User_1_1UserPreference.html">UserPreference</a> dataManager</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        )</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            title = titleManager;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            quit = quitManager;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            option = optionManager;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            credit = creditManager;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            stageSelect = stageSelectManager;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            data = dataManager;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            option.SetPreference(data);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            var initialManagers = <span class="keyword">new</span> Dictionary&lt;Nav, UIManager&gt;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                { Nav.Title, title },</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                { Nav.Quit, quit },</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                { Nav.Option, option },</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                { Nav.Credit, credit },</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                { Nav.StageSelect, stageSelect }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            };</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            navigation = <span class="keyword">new</span> <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Navigation&lt;Nav&gt;</a>(initialManagers);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> Start()</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            SetNavigation();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            NavigateToTitle();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            data.Delete();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            data.Load();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> SetNavigation()</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            navigation.OnCancel += _ =&gt; { OnCanceled(); };</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            title.OnQuit += NavigateToQuit;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            title.OnOption += NavigateToOption;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            title.OnCredit += NavigateToCredit;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            title.OnPlay += NavigateToPlay;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            quit.OnClick += isQuit =&gt;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keywordflow">if</span> (isQuit)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                    NavigateToTitle();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            };</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            option.OnBack += NavigateToTitle;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            stageSelect.OnStage += StageSelected;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            stageSelect.OnBack += NavigateToTitle;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">private</span> readonly <a class="code" href="classUI_1_1Title_1_1Option_1_1OptionManager.html">OptionManager</a> option;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">private</span> readonly <a class="code" href="classUI_1_1Title_1_1Quit_1_1QuitManager.html">QuitManager</a> quit;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">private</span> readonly <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html">StageSelectManager</a> stageSelect;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">private</span> readonly <a class="code" href="classUI_1_1Title_1_1Title_1_1TitleManager.html">TitleManager</a> title;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">private</span> readonly <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html">SceneChanger</a> sceneChanger;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        [Inject]</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">public</span> TitleRouter(</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="classUI_1_1Title_1_1Title_1_1TitleManager.html">TitleManager</a> titleManager,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="classUI_1_1Title_1_1Quit_1_1QuitManager.html">QuitManager</a> quitManager,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <a class="code" href="classUI_1_1Title_1_1Option_1_1OptionManager.html">OptionManager</a> optionManager,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <a class="code" href="classUI_1_1Title_1_1Credit_1_1CreditManager.html">CreditManager</a> creditManager,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html">StageSelectManager</a> stageSelectManager,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="classCore_1_1User_1_1UserPreference.html">UserPreference</a> dataManager,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html">SceneChanger</a> sceneChanger</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        )</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            title = titleManager;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            quit = quitManager;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            option = optionManager;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            credit = creditManager;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            stageSelect = stageSelectManager;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            this.sceneChanger = sceneChanger;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            data = dataManager;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            option.SetPreference(data);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            var initialManagers = <span class="keyword">new</span> Dictionary&lt;TitleNavigation, UIManager&gt;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                { <a class="code" href="namespaceCore_1_1Scenes.html#a1e1c8a1558c71b62f20f51134e14efaf">TitleNavigation</a>.Title, title },</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                { <a class="code" href="namespaceCore_1_1Scenes.html#a1e1c8a1558c71b62f20f51134e14efaf">TitleNavigation</a>.Quit, quit },</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                { <a class="code" href="namespaceCore_1_1Scenes.html#a1e1c8a1558c71b62f20f51134e14efaf">TitleNavigation</a>.Option, option },</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                { <a class="code" href="namespaceCore_1_1Scenes.html#a1e1c8a1558c71b62f20f51134e14efaf">TitleNavigation</a>.Credit, credit },</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                { <a class="code" href="namespaceCore_1_1Scenes.html#a1e1c8a1558c71b62f20f51134e14efaf">TitleNavigation</a>.StageSelect, stageSelect }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            };</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            navigation = <span class="keyword">new</span> <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Navigation&lt;TitleNavigation&gt;</a>(initialManagers);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> Start()</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            SetNavigation();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            var route = sceneChanger.<a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#a22ab98520c975cb4deab2d0db2fe1b47">GetTitle</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            navigation.SetActive(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">switch</span> (route)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="namespaceCore_1_1Scenes.html#a1e1c8a1558c71b62f20f51134e14efaf">TitleNavigation</a>.StageSelect:</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    NavigateToPlay();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                    NavigateToTitle();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="comment">/* デバッグ用 */</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="comment">// data.Delete();</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            data.Load();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> SetNavigation()</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            navigation.OnCancel += _ =&gt; { OnCanceled(); };</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            title.OnQuit += NavigateToQuit;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            title.OnOption += NavigateToOption;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            title.OnCredit += NavigateToCredit;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            title.OnPlay += NavigateToPlay;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> StageSelected(<a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html">StageSelectManager</a>.<a class="code" href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">Nav</a> nav)</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <a class="code" href="namespaceDebug.html">Debug</a>.Log(<span class="stringliteral">&quot;StageSelected : &quot;</span> + nav);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> NavigateToTitle()</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            navigation.SetActive(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            navigation.SetScreen(Nav.Title);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> OnCanceled()</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordflow">switch</span> (navigation.GetCurrentNav())</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                <span class="keywordflow">case</span> Nav.Title:</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    NavigateToQuit();</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <span class="keywordflow">case</span> Nav.Option:</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                    NavigateToTitle();</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            }</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        }</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            quit.OnClick += isQuit =&gt;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <span class="keywordflow">if</span> (isQuit)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                    NavigateToTitle();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            };</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            option.OnBack += NavigateToTitle;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            stageSelect.OnStage += StageSelected;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            stageSelect.OnBack += NavigateToTitle;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> StageSelected(<a class="code" href="namespaceCore_1_1Scenes.html#a2487f1c50108955d9fc48ed8077a50b9">StageNavigation</a> nav)</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keywordflow">if</span> (!sceneChanger.<a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#ae1f13dd24adf1d7d150f53b4ff5780fc">LoadInGame</a>(nav.ToStage()))</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="AssignmentSystem_8cs.html#a7a85b43499dc35c8c0961ea4c6fff885">NotImplementedException</a>(<span class="stringliteral">&quot;not found navigation : &quot;</span> + nav);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            }</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> NavigateToPlay()</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            data.Load();</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            navigation.SetScreen(Nav.StageSelect);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            stageSelect.SetScores(data.GetStageData());</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> NavigateToCredit()</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        {</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            navigation.SetScreen(Nav.Credit);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> NavigateToQuit()</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        {</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            navigation.SetScreen(Nav.Quit);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        }</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> NavigateToOption()</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        {</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            navigation.SetScreen(Nav.Option);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            navigation.SetActive(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        }</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keyword">private</span> <span class="keyword">enum</span> Nav</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        {</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            Title,</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <a class="code" href="namespaceGameMain_1_1UI.html#a69cf1dc661959747c491f84eb830b9dfa054b4f3ea543c990f6b125f41af6ebf7">Option</a>,</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            Quit,</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            Credit,</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            StageSelect</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            navigation.SetActive(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> NavigateToTitle()</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            navigation.SetActive(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            navigation.SetScreen(<a class="code" href="namespaceCore_1_1Scenes.html#a1e1c8a1558c71b62f20f51134e14efaf">TitleNavigation</a>.Title);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> OnCanceled()</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="keywordflow">switch</span> (navigation.GetCurrentNav())</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="namespaceCore_1_1Scenes.html#a1e1c8a1558c71b62f20f51134e14efaf">TitleNavigation</a>.Title:</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                    NavigateToQuit();</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="namespaceCore_1_1Scenes.html#a1e1c8a1558c71b62f20f51134e14efaf">TitleNavigation</a>.Option:</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                    NavigateToTitle();</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> NavigateToPlay()</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            data.Load();</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            navigation.SetScreen(<a class="code" href="namespaceCore_1_1Scenes.html#a1e1c8a1558c71b62f20f51134e14efaf">TitleNavigation</a>.StageSelect);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            stageSelect.SetScores(data.GetStageData());</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        }</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;}</div>
-<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation&lt; Nav &gt;</a></div></div>
-<div class="ttc" id="aclassCore_1_1Utility_1_1User_1_1UserPreference_html"><div class="ttname"><a href="classCore_1_1Utility_1_1User_1_1UserPreference.html">Core.Utility.User.UserPreference</a></div><div class="ttdoc">データ保存の中継クラス 絶対にこれを介して保存する</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00013">UserPreference.cs:14</a></div></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> NavigateToCredit()</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            navigation.SetScreen(<a class="code" href="namespaceCore_1_1Scenes.html#a1e1c8a1558c71b62f20f51134e14efaf">TitleNavigation</a>.Credit);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> NavigateToQuit()</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        {</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            navigation.SetScreen(<a class="code" href="namespaceCore_1_1Scenes.html#a1e1c8a1558c71b62f20f51134e14efaf">TitleNavigation</a>.Quit);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        }</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> NavigateToOption()</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        {</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            navigation.SetScreen(<a class="code" href="namespaceCore_1_1Scenes.html#a1e1c8a1558c71b62f20f51134e14efaf">TitleNavigation</a>.Option);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            navigation.SetActive(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        }</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    }</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div>
+<div class="ttc" id="aAssignmentSystem_8cs_html_a7a85b43499dc35c8c0961ea4c6fff885"><div class="ttname"><a href="AssignmentSystem_8cs.html#a7a85b43499dc35c8c0961ea4c6fff885">NotImplementedException</a></div><div class="ttdeci">System.NotImplementedException NotImplementedException</div><div class="ttdef"><b>Definition:</b> <a href="AssignmentSystem_8cs_source.html#l00008">AssignmentSystem.cs:8</a></div></div>
+<div class="ttc" id="aclassCore_1_1Scenes_1_1SceneChanger_html"><div class="ttname"><a href="classCore_1_1Scenes_1_1SceneChanger.html">Core.Scenes.SceneChanger</a></div><div class="ttdoc">シーン間を遷移する時に必ず使う パラメーターもここで管理</div><div class="ttdef"><b>Definition:</b> <a href="SceneChanger_8cs_source.html#l00012">SceneChanger.cs:13</a></div></div>
+<div class="ttc" id="aclassCore_1_1Scenes_1_1SceneChanger_html_a22ab98520c975cb4deab2d0db2fe1b47"><div class="ttname"><a href="classCore_1_1Scenes_1_1SceneChanger.html#a22ab98520c975cb4deab2d0db2fe1b47">Core.Scenes.SceneChanger.GetTitle</a></div><div class="ttdeci">TitleNavigation GetTitle()</div><div class="ttdoc">タイトルに遷移する時の初期画面のnav</div></div>
+<div class="ttc" id="aclassCore_1_1Scenes_1_1SceneChanger_html_ae1f13dd24adf1d7d150f53b4ff5780fc"><div class="ttname"><a href="classCore_1_1Scenes_1_1SceneChanger.html#ae1f13dd24adf1d7d150f53b4ff5780fc">Core.Scenes.SceneChanger.LoadInGame</a></div><div class="ttdeci">bool LoadInGame(StageData.Stage routeNav)</div><div class="ttdoc">:TODO 引数見て、各stageに遷移</div><div class="ttdef"><b>Definition:</b> <a href="SceneChanger_8cs_source.html#l00049">SceneChanger.cs:49</a></div></div>
+<div class="ttc" id="aclassCore_1_1User_1_1UserPreference_html"><div class="ttname"><a href="classCore_1_1User_1_1UserPreference.html">Core.User.UserPreference</a></div><div class="ttdoc">データ保存の中継クラス 絶対にこれを介して保存する</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00013">UserPreference.cs:14</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation&lt; TitleNavigation &gt;</a></div></div>
+<div class="ttc" id="aclassUI_1_1Title_1_1Credit_1_1CreditManager_html"><div class="ttname"><a href="classUI_1_1Title_1_1Credit_1_1CreditManager.html">UI.Title.Credit.CreditManager</a></div><div class="ttdef"><b>Definition:</b> <a href="CreditManager_8cs_source.html#l00005">CreditManager.cs:6</a></div></div>
 <div class="ttc" id="aclassUI_1_1Title_1_1Option_1_1OptionManager_html"><div class="ttname"><a href="classUI_1_1Title_1_1Option_1_1OptionManager.html">UI.Title.Option.OptionManager</a></div><div class="ttdef"><b>Definition:</b> <a href="OptionManager_8cs_source.html#l00015">OptionManager.cs:16</a></div></div>
-<div class="ttc" id="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_html"><div class="ttname"><a href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html">UI.Title.StageSelect.StageSelectManager</a></div><div class="ttdef"><b>Definition:</b> <a href="StageSelectManager_8cs_source.html#l00012">StageSelectManager.cs:13</a></div></div>
-<div class="ttc" id="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_html_afe7dbbcf43c6b5e386715dfc253c317f"><div class="ttname"><a href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html#afe7dbbcf43c6b5e386715dfc253c317f">UI.Title.StageSelect.StageSelectManager.Nav</a></div><div class="ttdeci">Nav</div><div class="ttdef"><b>Definition:</b> <a href="StageSelectManager_8cs_source.html#l00014">StageSelectManager.cs:15</a></div></div>
+<div class="ttc" id="aclassUI_1_1Title_1_1Quit_1_1QuitManager_html"><div class="ttname"><a href="classUI_1_1Title_1_1Quit_1_1QuitManager.html">UI.Title.Quit.QuitManager</a></div><div class="ttdef"><b>Definition:</b> <a href="QuitManager_8cs_source.html#l00010">QuitManager.cs:11</a></div></div>
+<div class="ttc" id="aclassUI_1_1Title_1_1StageSelect_1_1StageSelectManager_html"><div class="ttname"><a href="classUI_1_1Title_1_1StageSelect_1_1StageSelectManager.html">UI.Title.StageSelect.StageSelectManager</a></div><div class="ttdef"><b>Definition:</b> <a href="StageSelectManager_8cs_source.html#l00013">StageSelectManager.cs:14</a></div></div>
+<div class="ttc" id="aclassUI_1_1Title_1_1Title_1_1TitleManager_html"><div class="ttname"><a href="classUI_1_1Title_1_1Title_1_1TitleManager.html">UI.Title.Title.TitleManager</a></div><div class="ttdef"><b>Definition:</b> <a href="TitleManager_8cs_source.html#l00010">TitleManager.cs:11</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1Scenes_html"><div class="ttname"><a href="namespaceCore_1_1Scenes.html">Core.Scenes</a></div><div class="ttdef"><b>Definition:</b> <a href="SceneChanger_8cs_source.html#l00006">SceneChanger.cs:7</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1Scenes_html_a1e1c8a1558c71b62f20f51134e14efaf"><div class="ttname"><a href="namespaceCore_1_1Scenes.html#a1e1c8a1558c71b62f20f51134e14efaf">Core.Scenes.TitleNavigation</a></div><div class="ttdeci">TitleNavigation</div><div class="ttdef"><b>Definition:</b> <a href="TitleNavigation_8cs_source.html#l00003">TitleNavigation.cs:4</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1Scenes_html_a2487f1c50108955d9fc48ed8077a50b9"><div class="ttname"><a href="namespaceCore_1_1Scenes.html#a2487f1c50108955d9fc48ed8077a50b9">Core.Scenes.StageNavigation</a></div><div class="ttdeci">StageNavigation</div><div class="ttdef"><b>Definition:</b> <a href="StageNavigation_8cs_source.html#l00005">StageNavigation.cs:6</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1User_html"><div class="ttname"><a href="namespaceCore_1_1User.html">Core.User</a></div><div class="ttdef"><b>Definition:</b> <a href="DataManager_8cs_source.html#l00007">DataManager.cs:8</a></div></div>
 <div class="ttc" id="anamespaceCore_1_1Utility_1_1UI_1_1Navigation_html"><div class="ttname"><a href="namespaceCore_1_1Utility_1_1UI_1_1Navigation.html">Core.Utility.UI.Navigation</a></div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00009">Navigation.cs:10</a></div></div>
 <div class="ttc" id="anamespaceCore_1_1Utility_1_1UI_html"><div class="ttname"><a href="namespaceCore_1_1Utility_1_1UI.html">Core.Utility.UI</a></div><div class="ttdef"><b>Definition:</b> <a href="AnimateObject_8cs_source.html#l00005">AnimateObject.cs:6</a></div></div>
-<div class="ttc" id="anamespaceCore_1_1Utility_1_1User_html"><div class="ttname"><a href="namespaceCore_1_1Utility_1_1User.html">Core.Utility.User</a></div><div class="ttdef"><b>Definition:</b> <a href="DataManager_8cs_source.html#l00007">DataManager.cs:8</a></div></div>
-<div class="ttc" id="anamespaceCore_1_1Utility_html"><div class="ttname"><a href="namespaceCore_1_1Utility.html">Core.Utility</a></div><div class="ttdef"><b>Definition:</b> <a href="IInjectable_8cs_source.html#l00001">IInjectable.cs:2</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1Utility_html"><div class="ttname"><a href="namespaceCore_1_1Utility.html">Core.Utility</a></div><div class="ttdef"><b>Definition:</b> <a href="AutoInstanceList_8cs_source.html#l00008">AutoInstanceList.cs:9</a></div></div>
 <div class="ttc" id="anamespaceCore_html"><div class="ttname"><a href="namespaceCore.html">Core</a></div><div class="ttdef"><b>Definition:</b> <a href="InputActionAssetProfile_8cs_source.html#l00004">InputActionAssetProfile.cs:5</a></div></div>
-<div class="ttc" id="anamespaceDebug_html"><div class="ttname"><a href="namespaceDebug.html">Debug</a></div><div class="ttdef"><b>Definition:</b> <a href="AssetKeys_8cs_source.html#l00002">AssetKeys.cs:3</a></div></div>
-<div class="ttc" id="anamespaceGameMain_1_1UI_html_a69cf1dc661959747c491f84eb830b9dfa054b4f3ea543c990f6b125f41af6ebf7"><div class="ttname"><a href="namespaceGameMain_1_1UI.html#a69cf1dc661959747c491f84eb830b9dfa054b4f3ea543c990f6b125f41af6ebf7">GameMain.UI.InGameNav.Option</a></div><div class="ttdeci">@ Option</div></div>
+<div class="ttc" id="anamespaceGameMain_html"><div class="ttname"><a href="namespaceGameMain.html">GameMain</a></div><div class="ttdef"><b>Definition:</b> <a href="GameParam_8cs_source.html#l00003">GameParam.cs:4</a></div></div>
 <div class="ttc" id="anamespaceSystem_html"><div class="ttname"><a href="namespaceSystem.html">System</a></div><div class="ttdef"><b>Definition:</b> <a href="GameSequenceHandler_8cs_source.html#l00007">GameSequenceHandler.cs:8</a></div></div>
-<div class="ttc" id="anamespaceUI_1_1Title_1_1Credit_html"><div class="ttname"><a href="namespaceUI_1_1Title_1_1Credit.html">UI.Title.Credit</a></div><div class="ttdef"><b>Definition:</b> <a href="CreditManager_8cs_source.html#l00006">CreditManager.cs:7</a></div></div>
+<div class="ttc" id="anamespaceUI_1_1Title_1_1Credit_html"><div class="ttname"><a href="namespaceUI_1_1Title_1_1Credit.html">UI.Title.Credit</a></div><div class="ttdef"><b>Definition:</b> <a href="CreditManager_8cs_source.html#l00003">CreditManager.cs:4</a></div></div>
 <div class="ttc" id="anamespaceUI_1_1Title_1_1Option_html"><div class="ttname"><a href="namespaceUI_1_1Title_1_1Option.html">UI.Title.Option</a></div><div class="ttdef"><b>Definition:</b> <a href="Option1Cursor_8cs_source.html#l00003">Option1Cursor.cs:4</a></div></div>
 <div class="ttc" id="anamespaceUI_1_1Title_1_1Quit_html"><div class="ttname"><a href="namespaceUI_1_1Title_1_1Quit.html">UI.Title.Quit</a></div><div class="ttdef"><b>Definition:</b> <a href="QuitCursor_8cs_source.html#l00003">QuitCursor.cs:4</a></div></div>
-<div class="ttc" id="anamespaceUI_1_1Title_1_1StageSelect_html"><div class="ttname"><a href="namespaceUI_1_1Title_1_1StageSelect.html">UI.Title.StageSelect</a></div><div class="ttdef"><b>Definition:</b> <a href="StageSelectCursor_8cs_source.html#l00003">StageSelectCursor.cs:4</a></div></div>
+<div class="ttc" id="anamespaceUI_1_1Title_1_1StageSelect_html"><div class="ttname"><a href="namespaceUI_1_1Title_1_1StageSelect.html">UI.Title.StageSelect</a></div><div class="ttdef"><b>Definition:</b> <a href="StageSelectCursor_8cs_source.html#l00004">StageSelectCursor.cs:5</a></div></div>
 <div class="ttc" id="anamespaceUI_1_1Title_1_1Title_html"><div class="ttname"><a href="namespaceUI_1_1Title_1_1Title.html">UI.Title.Title</a></div><div class="ttdef"><b>Definition:</b> <a href="TitleCursor_8cs_source.html#l00003">TitleCursor.cs:4</a></div></div>
-<div class="ttc" id="anamespaceUI_1_1Title_html"><div class="ttname"><a href="namespaceUI_1_1Title.html">UI.Title</a></div><div class="ttdef"><b>Definition:</b> <a href="CreditManager_8cs_source.html#l00006">CreditManager.cs:7</a></div></div>
-<div class="ttc" id="anamespaceUI_html"><div class="ttname"><a href="namespaceUI.html">UI</a></div><div class="ttdef"><b>Definition:</b> <a href="TaskProgressPool_8cs_source.html#l00007">TaskProgressPool.cs:8</a></div></div>
+<div class="ttc" id="anamespaceUI_1_1Title_html"><div class="ttname"><a href="namespaceUI_1_1Title.html">UI.Title</a></div><div class="ttdef"><b>Definition:</b> <a href="CreditManager_8cs_source.html#l00003">CreditManager.cs:4</a></div></div>
+<div class="ttc" id="anamespaceUI_html"><div class="ttname"><a href="namespaceUI.html">UI</a></div><div class="ttdef"><b>Definition:</b> <a href="TaskProgressPool_8cs_source.html#l00004">TaskProgressPool.cs:5</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

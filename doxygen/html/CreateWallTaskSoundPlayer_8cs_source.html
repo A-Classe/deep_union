@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: src/Assets/Scripts/GameMain/SoundPlayer/CreateWallTaskSoundPlayer.cs ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_2663a91e34b059a736b32b20a5ff248b.html">GameMain</a></li><li class="navelem"><a class="el" href="dir_c5c29a28801b8beb70d6bf67524aae85.html">SoundPlayer</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">CreateWallTaskSoundPlayer.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="CreateWallTaskSoundPlayer_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceGameMain.html">GameMain</a>.<a class="code" href="namespaceGameMain_1_1Task.html">Task</a>;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceModule.html">Module</a>.<a class="code" href="namespaceModule_1_1Task.html">Task</a>;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceGameMain_1_1SoundPlayer.html">GameMain.SoundPlayer</a></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer.html">    7</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer.html">CreateWallTaskSoundPlayer</a> : <a class="code" href="classGameMain_1_1SoundPlayer_1_1TaskSoundPlayer.html">TaskSoundPlayer</a>&lt;CreateWallTask&gt; <span class="comment">// ←これを継承する &lt;&gt;内は対象のタスクの型</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <span class="comment">//AudioClipを用意する</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer.html#ae191cec3cf4cded14e2b3da9061053f2">   10</a></span>&#160;        [SerializeField] <span class="keyword">private</span> AudioClip <a class="code" href="classGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer.html#ae191cec3cf4cded14e2b3da9061053f2">CreateSound</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer.html#a695f35ca2a525adfbaf206778e2d0f31">   12</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="classGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer.html#a695f35ca2a525adfbaf206778e2d0f31">OnStart</a>()</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <a class="code" href="classGameMain_1_1SoundPlayer_1_1TaskSoundPlayer.html#a92780a773b1d967e26e49cfcc4fc2c83">Task</a>.OnStarted += <a class="code" href="classGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer.html#a0a6026249a0e0f8311cbde9071113894">OnTaskStarted</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <a class="code" href="classGameMain_1_1SoundPlayer_1_1TaskSoundPlayer.html#a92780a773b1d967e26e49cfcc4fc2c83">Task</a>.OnCanceled += <a class="code" href="classGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer.html#ae2d08618fb86ac6ff54d6e242c90f48f">OnTaskCanceled</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <a class="code" href="classGameMain_1_1SoundPlayer_1_1TaskSoundPlayer.html#a92780a773b1d967e26e49cfcc4fc2c83">Task</a>.OnCompleted += <a class="code" href="classGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer.html#aeed548ba62c195a3b475383b1173dfa9">OnTaskCompleted</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        }</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer.html#a0a6026249a0e0f8311cbde9071113894">   19</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer.html#a0a6026249a0e0f8311cbde9071113894">OnTaskStarted</a>(<a class="code" href="classModule_1_1Task_1_1BaseTask.html">BaseTask</a> _)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="comment">// 作っている音をループで鳴らす</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <a class="code" href="classGameMain_1_1SoundPlayer_1_1TaskSoundPlayer.html#a5cc758999584fc4ce79f3ac4bb6548a3">AudioSource</a>.PlayOneShot(<a class="code" href="classGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer.html#ae191cec3cf4cded14e2b3da9061053f2">CreateSound</a>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer.html#ae2d08618fb86ac6ff54d6e242c90f48f">   25</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer.html#ae2d08618fb86ac6ff54d6e242c90f48f">OnTaskCanceled</a>(<a class="code" href="classModule_1_1Task_1_1BaseTask.html">BaseTask</a> _)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="comment">// なっている音を止める</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <a class="code" href="classGameMain_1_1SoundPlayer_1_1TaskSoundPlayer.html#a5cc758999584fc4ce79f3ac4bb6548a3">AudioSource</a>.Stop();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer.html#aeed548ba62c195a3b475383b1173dfa9">   31</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer.html#aeed548ba62c195a3b475383b1173dfa9">OnTaskCompleted</a>(<a class="code" href="classModule_1_1Task_1_1BaseTask.html">BaseTask</a> _)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="ttc" id="aclassGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer_html"><div class="ttname"><a href="classGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer.html">GameMain.SoundPlayer.CreateWallTaskSoundPlayer</a></div><div class="ttdef"><b>Definition:</b> <a href="CreateWallTaskSoundPlayer_8cs_source.html#l00007">CreateWallTaskSoundPlayer.cs:8</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer_html_a0a6026249a0e0f8311cbde9071113894"><div class="ttname"><a href="classGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer.html#a0a6026249a0e0f8311cbde9071113894">GameMain.SoundPlayer.CreateWallTaskSoundPlayer.OnTaskStarted</a></div><div class="ttdeci">void OnTaskStarted(BaseTask _)</div><div class="ttdef"><b>Definition:</b> <a href="CreateWallTaskSoundPlayer_8cs_source.html#l00019">CreateWallTaskSoundPlayer.cs:19</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer_html_a695f35ca2a525adfbaf206778e2d0f31"><div class="ttname"><a href="classGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer.html#a695f35ca2a525adfbaf206778e2d0f31">GameMain.SoundPlayer.CreateWallTaskSoundPlayer.OnStart</a></div><div class="ttdeci">override void OnStart()</div><div class="ttdef"><b>Definition:</b> <a href="CreateWallTaskSoundPlayer_8cs_source.html#l00012">CreateWallTaskSoundPlayer.cs:12</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer_html_ae191cec3cf4cded14e2b3da9061053f2"><div class="ttname"><a href="classGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer.html#ae191cec3cf4cded14e2b3da9061053f2">GameMain.SoundPlayer.CreateWallTaskSoundPlayer.CreateSound</a></div><div class="ttdeci">AudioClip CreateSound</div><div class="ttdef"><b>Definition:</b> <a href="CreateWallTaskSoundPlayer_8cs_source.html#l00010">CreateWallTaskSoundPlayer.cs:10</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer_html_ae2d08618fb86ac6ff54d6e242c90f48f"><div class="ttname"><a href="classGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer.html#ae2d08618fb86ac6ff54d6e242c90f48f">GameMain.SoundPlayer.CreateWallTaskSoundPlayer.OnTaskCanceled</a></div><div class="ttdeci">void OnTaskCanceled(BaseTask _)</div><div class="ttdef"><b>Definition:</b> <a href="CreateWallTaskSoundPlayer_8cs_source.html#l00025">CreateWallTaskSoundPlayer.cs:25</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer_html_aeed548ba62c195a3b475383b1173dfa9"><div class="ttname"><a href="classGameMain_1_1SoundPlayer_1_1CreateWallTaskSoundPlayer.html#aeed548ba62c195a3b475383b1173dfa9">GameMain.SoundPlayer.CreateWallTaskSoundPlayer.OnTaskCompleted</a></div><div class="ttdeci">void OnTaskCompleted(BaseTask _)</div><div class="ttdef"><b>Definition:</b> <a href="CreateWallTaskSoundPlayer_8cs_source.html#l00031">CreateWallTaskSoundPlayer.cs:31</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1SoundPlayer_1_1TaskSoundPlayer_html"><div class="ttname"><a href="classGameMain_1_1SoundPlayer_1_1TaskSoundPlayer.html">GameMain.SoundPlayer.TaskSoundPlayer</a></div><div class="ttdoc">タスクのサウンド機能のベースクラス</div><div class="ttdef"><b>Definition:</b> <a href="TaskSoundPlayer_8cs_source.html#l00013">TaskSoundPlayer.cs:14</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1SoundPlayer_1_1TaskSoundPlayer_html_a5cc758999584fc4ce79f3ac4bb6548a3"><div class="ttname"><a href="classGameMain_1_1SoundPlayer_1_1TaskSoundPlayer.html#a5cc758999584fc4ce79f3ac4bb6548a3">GameMain.SoundPlayer.TaskSoundPlayer&lt; CreateWallTask &gt;::AudioSource</a></div><div class="ttdeci">AudioSource AudioSource</div><div class="ttdef"><b>Definition:</b> <a href="TaskSoundPlayer_8cs_source.html#l00015">TaskSoundPlayer.cs:15</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1SoundPlayer_1_1TaskSoundPlayer_html_a92780a773b1d967e26e49cfcc4fc2c83"><div class="ttname"><a href="classGameMain_1_1SoundPlayer_1_1TaskSoundPlayer.html#a92780a773b1d967e26e49cfcc4fc2c83">GameMain.SoundPlayer.TaskSoundPlayer&lt; CreateWallTask &gt;::Task</a></div><div class="ttdeci">T Task</div><div class="ttdef"><b>Definition:</b> <a href="TaskSoundPlayer_8cs_source.html#l00016">TaskSoundPlayer.cs:16</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html">Module.Task.BaseTask</a></div><div class="ttdoc">全てのタスクのベースクラス</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00013">BaseTask.cs:14</a></div></div>
+<div class="ttc" id="anamespaceGameMain_1_1SoundPlayer_html"><div class="ttname"><a href="namespaceGameMain_1_1SoundPlayer.html">GameMain.SoundPlayer</a></div><div class="ttdef"><b>Definition:</b> <a href="BreakWallTaskSoundPlayer_8cs_source.html#l00005">BreakWallTaskSoundPlayer.cs:6</a></div></div>
+<div class="ttc" id="anamespaceGameMain_1_1Task_html"><div class="ttname"><a href="namespaceGameMain_1_1Task.html">GameMain.Task</a></div><div class="ttdef"><b>Definition:</b> <a href="BreakWallTask_8cs_source.html#l00010">BreakWallTask.cs:11</a></div></div>
+<div class="ttc" id="anamespaceGameMain_html"><div class="ttname"><a href="namespaceGameMain.html">GameMain</a></div><div class="ttdef"><b>Definition:</b> <a href="GameParam_8cs_source.html#l00003">GameParam.cs:4</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Task_html"><div class="ttname"><a href="namespaceModule_1_1Task.html">Module.Task</a></div><div class="ttdef"><b>Definition:</b> <a href="CollectableTask_8cs_source.html#l00012">CollectableTask.cs:13</a></div></div>
+<div class="ttc" id="anamespaceModule_html"><div class="ttname"><a href="namespaceModule.html">Module</a></div><div class="ttdef"><b>Definition:</b> <a href="CollectableTask_8cs_source.html#l00012">CollectableTask.cs:13</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['stage_1663',['Stage',['../classCore_1_1Utility_1_1User_1_1StageData.html#ad3459928d4b866ea3c276011d1279136',1,'Core::Utility::User::StageData']]]
+  ['stage_2074',['Stage',['../classCore_1_1User_1_1StageData.html#ab4c99798d6b2939dc749f2b263f1d59e',1,'Core::User::StageData']]],
+  ['stagenavigation_2075',['StageNavigation',['../namespaceCore_1_1Scenes.html#a2487f1c50108955d9fc48ed8077a50b9',1,'Core::Scenes']]]
 ];

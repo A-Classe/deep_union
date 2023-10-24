@@ -58,7 +58,8 @@ var menudata={children:[
 {text:"t",url:"functions_t.html#index_t"},
 {text:"u",url:"functions_u.html#index_u"},
 {text:"v",url:"functions_v.html#index_v"},
-{text:"w",url:"functions_w.html#index_w"}]},
+{text:"w",url:"functions_w.html#index_w"},
+{text:"y",url:"functions_y.html#index_y"}]},
 {text:"関数",url:"functions_func.html",children:[
 {text:"a",url:"functions_func.html#index_a"},
 {text:"b",url:"functions_func_b.html#index_b"},
@@ -103,7 +104,8 @@ var menudata={children:[
 {text:"t",url:"functions_vars_t.html#index_t"},
 {text:"u",url:"functions_vars_u.html#index_u"},
 {text:"v",url:"functions_vars_v.html#index_v"},
-{text:"w",url:"functions_vars_w.html#index_w"}]},
+{text:"w",url:"functions_vars_w.html#index_w"},
+{text:"y",url:"functions_vars_y.html#index_y"}]},
 {text:"列挙型",url:"functions_enum.html"},
 {text:"プロパティ",url:"functions_prop.html",children:[
 {text:"a",url:"functions_prop.html#index_a"},
@@ -114,6 +116,7 @@ var menudata={children:[
 {text:"i",url:"functions_prop.html#index_i"},
 {text:"k",url:"functions_prop.html#index_k"},
 {text:"m",url:"functions_prop.html#index_m"},
+{text:"o",url:"functions_prop.html#index_o"},
 {text:"p",url:"functions_prop.html#index_p"},
 {text:"r",url:"functions_prop.html#index_r"},
 {text:"s",url:"functions_prop.html#index_s"},
@@ -121,7 +124,11 @@ var menudata={children:[
 {text:"u",url:"functions_prop.html#index_u"},
 {text:"v",url:"functions_prop.html#index_v"},
 {text:"w",url:"functions_prop.html#index_w"}]},
-{text:"イベント",url:"functions_evnt.html"}]}]},
+{text:"イベント",url:"functions_evnt.html",children:[
+{text:"c",url:"functions_evnt.html#index_c"},
+{text:"o",url:"functions_evnt.html#index_o"},
+{text:"p",url:"functions_evnt.html#index_p"},
+{text:"s",url:"functions_evnt.html#index_s"}]}]}]},
 {text:"ファイル",url:"files.html",children:[
 {text:"ファイル一覧",url:"files.html"},
 {text:"ファイルメンバ",url:"globals.html",children:[

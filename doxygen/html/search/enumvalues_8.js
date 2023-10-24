@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['option_1679',['Option',['../namespaceGameMain_1_1UI.html#a69cf1dc661959747c491f84eb830b9dfa054b4f3ea543c990f6b125f41af6ebf7',1,'GameMain::UI']]],
-  ['option1_1680',['Option1',['../classUI_1_1Title_1_1Option_1_1OptionManager.html#aa88ccb1bbcf2b276c9e7a2e625e7053da4a8a2ec81ee4243d77b05eb831e33f9e',1,'UI::Title::Option::OptionManager']]],
-  ['option2_1681',['Option2',['../classUI_1_1Title_1_1Option_1_1OptionManager.html#aa88ccb1bbcf2b276c9e7a2e625e7053da170ed59680978587831ba34a54031448',1,'UI::Title::Option::OptionManager']]],
-  ['option3_1682',['Option3',['../classUI_1_1Title_1_1Option_1_1OptionManager.html#aa88ccb1bbcf2b276c9e7a2e625e7053daf967b2c995e5c1898037c8a0112ab160',1,'UI::Title::Option::OptionManager']]],
-  ['option4_1683',['Option4',['../classUI_1_1Title_1_1Option_1_1OptionManager.html#aa88ccb1bbcf2b276c9e7a2e625e7053da37da91914cfb1255dc604315ef44b6c3',1,'UI::Title::Option::OptionManager']]]
+  ['next_2094',['Next',['../classUI_1_1Result_1_1ResultManager.html#a766634a8ebc2ec85e9c5479ba0f49bf1a10ac3d04253ef7e1ddc73e6091c0cd55',1,'UI::Result::ResultManager']]],
+  ['no_2095',['No',['../classUI_1_1Title_1_1Quit_1_1QuitManager.html#a21b0a8cb7bc1a641ed4ab6e16c15015aabafd7322c6e97d25b6299b5d6fe8920b',1,'UI::Title::Quit::QuitManager']]]
 ];

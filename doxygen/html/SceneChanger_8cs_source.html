@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: src/Assets/Scripts/Core/Scenes/SceneChanger.cs ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_fede226f1245c80472226816c0f2cbdb.html">Core</a></li><li class="navelem"><a class="el" href="dir_9baace6a1d4a9a93edf9ea15512058f8.html">Scenes</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">SceneChanger.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="SceneChanger_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceCore.html">Core</a>.<a class="code" href="namespaceCore_1_1Model.html">Model</a>.<a class="code" href="namespaceCore_1_1Model_1_1Scene.html">Scene</a>;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceCore.html">Core</a>.<a class="code" href="namespaceCore_1_1User.html">User</a>;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> JetBrains.Annotations;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> UnityEngine.SceneManagement;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="namespaceCore_1_1Scenes.html">    6</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceCore_1_1Scenes.html">Core.Scenes</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classCore_1_1Scenes_1_1SceneChanger.html">   12</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html">SceneChanger</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classCore_1_1Scenes_1_1SceneChanger.html#a6ab392307ada63e4e7d5d747f0455fdf">   14</a></span>&#160;        <span class="keyword">private</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#a6ab392307ada63e4e7d5d747f0455fdf">TitleRoute</a> = <span class="stringliteral">&quot;Scenes/Other/Titles_Test&quot;</span>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classCore_1_1Scenes_1_1SceneChanger.html#a79272fc102d061f09560483cdb6c21b8">   15</a></span>&#160;        <span class="keyword">private</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#a79272fc102d061f09560483cdb6c21b8">InGameRoute</a> = <span class="stringliteral">&quot;Scenes/Other/InGameUI_Test/InGameUI_Test&quot;</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classCore_1_1Scenes_1_1SceneChanger.html#aa02e842b0656008f9bf342eb4897e74f">   16</a></span>&#160;        <span class="keyword">private</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#aa02e842b0656008f9bf342eb4897e74f">ResultRoute</a> = <span class="stringliteral">&quot;Scenes/Other/Result_Test&quot;</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classCore_1_1Scenes_1_1SceneChanger.html#ac084c13917a629235c8121cd3a73fdd6">   18</a></span>&#160;        <span class="keyword">private</span> <a class="code" href="namespaceCore_1_1Scenes.html#a1e1c8a1558c71b62f20f51134e14efaf">TitleNavigation</a> <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#ac084c13917a629235c8121cd3a73fdd6">route</a> = <a class="code" href="namespaceCore_1_1Scenes.html#a1e1c8a1558c71b62f20f51134e14efaf">TitleNavigation</a>.Title;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classCore_1_1Scenes_1_1SceneChanger.html#a04b2a02a021a27b25f794dc9ffbf5a98">   20</a></span>&#160;        [CanBeNull] <span class="keyword">private</span> <span class="keywordtype">string</span> <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#a04b2a02a021a27b25f794dc9ffbf5a98">currentRoute</a> = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classCore_1_1Scenes_1_1SceneChanger.html#af08ac60f8a2e4c2b96a23c6b75a5e571">   27</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#af08ac60f8a2e4c2b96a23c6b75a5e571">LoadTitle</a>(<a class="code" href="namespaceCore_1_1Scenes.html#a1e1c8a1558c71b62f20f51134e14efaf">TitleNavigation</a> routeNav = <a class="code" href="namespaceCore_1_1Scenes.html#a1e1c8a1558c71b62f20f51134e14efaf">TitleNavigation</a>.Title)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#ac084c13917a629235c8121cd3a73fdd6">route</a> = routeNav;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            SceneManager.LoadScene(<a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#a6ab392307ada63e4e7d5d747f0455fdf">TitleRoute</a>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#a04b2a02a021a27b25f794dc9ffbf5a98">currentRoute</a> = <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#a6ab392307ada63e4e7d5d747f0455fdf">TitleRoute</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classCore_1_1Scenes_1_1SceneChanger.html#a22ab98520c975cb4deab2d0db2fe1b47">   40</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="namespaceCore_1_1Scenes.html#a1e1c8a1558c71b62f20f51134e14efaf">TitleNavigation</a> <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#a22ab98520c975cb4deab2d0db2fe1b47">GetTitle</a>() =&gt; <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#ac084c13917a629235c8121cd3a73fdd6">route</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classCore_1_1Scenes_1_1SceneChanger.html#a6ddd3c8ad122f72d39e0f7d8c5295464">   43</a></span>&#160;        <span class="keyword">private</span> <a class="code" href="classCore_1_1User_1_1StageData.html">StageData</a>.<a class="code" href="classCore_1_1User_1_1StageData.html#ab4c99798d6b2939dc749f2b263f1d59e">Stage</a> <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#a6ddd3c8ad122f72d39e0f7d8c5295464">inGameRoute</a> = <a class="code" href="classCore_1_1User_1_1StageData.html">StageData</a>.<a class="code" href="classCore_1_1User_1_1StageData.html#ab4c99798d6b2939dc749f2b263f1d59e">Stage</a>.Stage1;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classCore_1_1Scenes_1_1SceneChanger.html#ae1f13dd24adf1d7d150f53b4ff5780fc">   49</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#ae1f13dd24adf1d7d150f53b4ff5780fc">LoadInGame</a>(<a class="code" href="classCore_1_1User_1_1StageData.html">StageData</a>.<a class="code" href="classCore_1_1User_1_1StageData.html#ab4c99798d6b2939dc749f2b263f1d59e">Stage</a> routeNav)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#a6ddd3c8ad122f72d39e0f7d8c5295464">inGameRoute</a> = routeNav;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            SceneManager.LoadScene(<a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#a79272fc102d061f09560483cdb6c21b8">InGameRoute</a>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#a04b2a02a021a27b25f794dc9ffbf5a98">currentRoute</a> = <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#a79272fc102d061f09560483cdb6c21b8">InGameRoute</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classCore_1_1Scenes_1_1SceneChanger.html#ab0951b78403f9c5f53fbbc941a1e1bb0">   58</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="classCore_1_1User_1_1StageData.html">StageData</a>.<a class="code" href="classCore_1_1User_1_1StageData.html#ab4c99798d6b2939dc749f2b263f1d59e">Stage</a> <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#ab0951b78403f9c5f53fbbc941a1e1bb0">GetInGame</a>() =&gt; <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#a6ddd3c8ad122f72d39e0f7d8c5295464">inGameRoute</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classCore_1_1Scenes_1_1SceneChanger.html#a32d580ec3c517fc4b3dbdc2e8c90e2e3">   60</a></span>&#160;        <span class="keyword">private</span> <a class="code" href="structCore_1_1Model_1_1Scene_1_1GameResult.html">GameResult</a> <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#a32d580ec3c517fc4b3dbdc2e8c90e2e3">results</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classCore_1_1Scenes_1_1SceneChanger.html#a6b2f48b1a08468ee531a9ac4e8029185">   66</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#a6b2f48b1a08468ee531a9ac4e8029185">LoadResult</a>(</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <a class="code" href="structCore_1_1Model_1_1Scene_1_1GameResult.html">GameResult</a> param</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        )</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#a32d580ec3c517fc4b3dbdc2e8c90e2e3">results</a> = param;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            SceneManager.LoadScene(<a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#aa02e842b0656008f9bf342eb4897e74f">ResultRoute</a>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#a04b2a02a021a27b25f794dc9ffbf5a98">currentRoute</a> = <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#aa02e842b0656008f9bf342eb4897e74f">ResultRoute</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">// private void CurrentUnload()</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="comment">// {</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="comment">//     if (currentRoute != null)</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="comment">//     {</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="comment">//         SceneManager.UnloadSceneAsync(currentRoute);</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="comment">//     }</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="comment">// }</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classCore_1_1Scenes_1_1SceneChanger.html#ab505b9655e49d6d04d741ad96d576ee1">   84</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="structCore_1_1Model_1_1Scene_1_1GameResult.html">GameResult</a> <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#ab505b9655e49d6d04d741ad96d576ee1">GetResultParam</a>() =&gt; <a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#a32d580ec3c517fc4b3dbdc2e8c90e2e3">results</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
+<div class="ttc" id="aclassCore_1_1Scenes_1_1SceneChanger_html"><div class="ttname"><a href="classCore_1_1Scenes_1_1SceneChanger.html">Core.Scenes.SceneChanger</a></div><div class="ttdoc">シーン間を遷移する時に必ず使う パラメーターもここで管理</div><div class="ttdef"><b>Definition:</b> <a href="SceneChanger_8cs_source.html#l00012">SceneChanger.cs:13</a></div></div>
+<div class="ttc" id="aclassCore_1_1Scenes_1_1SceneChanger_html_a04b2a02a021a27b25f794dc9ffbf5a98"><div class="ttname"><a href="classCore_1_1Scenes_1_1SceneChanger.html#a04b2a02a021a27b25f794dc9ffbf5a98">Core.Scenes.SceneChanger.currentRoute</a></div><div class="ttdeci">string currentRoute</div><div class="ttdef"><b>Definition:</b> <a href="SceneChanger_8cs_source.html#l00020">SceneChanger.cs:20</a></div></div>
+<div class="ttc" id="aclassCore_1_1Scenes_1_1SceneChanger_html_a22ab98520c975cb4deab2d0db2fe1b47"><div class="ttname"><a href="classCore_1_1Scenes_1_1SceneChanger.html#a22ab98520c975cb4deab2d0db2fe1b47">Core.Scenes.SceneChanger.GetTitle</a></div><div class="ttdeci">TitleNavigation GetTitle()</div><div class="ttdoc">タイトルに遷移する時の初期画面のnav</div></div>
+<div class="ttc" id="aclassCore_1_1Scenes_1_1SceneChanger_html_a32d580ec3c517fc4b3dbdc2e8c90e2e3"><div class="ttname"><a href="classCore_1_1Scenes_1_1SceneChanger.html#a32d580ec3c517fc4b3dbdc2e8c90e2e3">Core.Scenes.SceneChanger.results</a></div><div class="ttdeci">GameResult results</div><div class="ttdef"><b>Definition:</b> <a href="SceneChanger_8cs_source.html#l00060">SceneChanger.cs:60</a></div></div>
+<div class="ttc" id="aclassCore_1_1Scenes_1_1SceneChanger_html_a6ab392307ada63e4e7d5d747f0455fdf"><div class="ttname"><a href="classCore_1_1Scenes_1_1SceneChanger.html#a6ab392307ada63e4e7d5d747f0455fdf">Core.Scenes.SceneChanger.TitleRoute</a></div><div class="ttdeci">const string TitleRoute</div><div class="ttdef"><b>Definition:</b> <a href="SceneChanger_8cs_source.html#l00014">SceneChanger.cs:14</a></div></div>
+<div class="ttc" id="aclassCore_1_1Scenes_1_1SceneChanger_html_a6b2f48b1a08468ee531a9ac4e8029185"><div class="ttname"><a href="classCore_1_1Scenes_1_1SceneChanger.html#a6b2f48b1a08468ee531a9ac4e8029185">Core.Scenes.SceneChanger.LoadResult</a></div><div class="ttdeci">bool LoadResult(GameResult param)</div><div class="ttdoc">Resultへの遷移</div><div class="ttdef"><b>Definition:</b> <a href="SceneChanger_8cs_source.html#l00066">SceneChanger.cs:66</a></div></div>
+<div class="ttc" id="aclassCore_1_1Scenes_1_1SceneChanger_html_a6ddd3c8ad122f72d39e0f7d8c5295464"><div class="ttname"><a href="classCore_1_1Scenes_1_1SceneChanger.html#a6ddd3c8ad122f72d39e0f7d8c5295464">Core.Scenes.SceneChanger.inGameRoute</a></div><div class="ttdeci">StageData.Stage inGameRoute</div><div class="ttdef"><b>Definition:</b> <a href="SceneChanger_8cs_source.html#l00043">SceneChanger.cs:43</a></div></div>
+<div class="ttc" id="aclassCore_1_1Scenes_1_1SceneChanger_html_a79272fc102d061f09560483cdb6c21b8"><div class="ttname"><a href="classCore_1_1Scenes_1_1SceneChanger.html#a79272fc102d061f09560483cdb6c21b8">Core.Scenes.SceneChanger.InGameRoute</a></div><div class="ttdeci">const string InGameRoute</div><div class="ttdef"><b>Definition:</b> <a href="SceneChanger_8cs_source.html#l00015">SceneChanger.cs:15</a></div></div>
+<div class="ttc" id="aclassCore_1_1Scenes_1_1SceneChanger_html_aa02e842b0656008f9bf342eb4897e74f"><div class="ttname"><a href="classCore_1_1Scenes_1_1SceneChanger.html#aa02e842b0656008f9bf342eb4897e74f">Core.Scenes.SceneChanger.ResultRoute</a></div><div class="ttdeci">const string ResultRoute</div><div class="ttdef"><b>Definition:</b> <a href="SceneChanger_8cs_source.html#l00016">SceneChanger.cs:16</a></div></div>
+<div class="ttc" id="aclassCore_1_1Scenes_1_1SceneChanger_html_ab0951b78403f9c5f53fbbc941a1e1bb0"><div class="ttname"><a href="classCore_1_1Scenes_1_1SceneChanger.html#ab0951b78403f9c5f53fbbc941a1e1bb0">Core.Scenes.SceneChanger.GetInGame</a></div><div class="ttdeci">StageData.Stage GetInGame()</div></div>
+<div class="ttc" id="aclassCore_1_1Scenes_1_1SceneChanger_html_ab505b9655e49d6d04d741ad96d576ee1"><div class="ttname"><a href="classCore_1_1Scenes_1_1SceneChanger.html#ab505b9655e49d6d04d741ad96d576ee1">Core.Scenes.SceneChanger.GetResultParam</a></div><div class="ttdeci">GameResult GetResultParam()</div></div>
+<div class="ttc" id="aclassCore_1_1Scenes_1_1SceneChanger_html_ac084c13917a629235c8121cd3a73fdd6"><div class="ttname"><a href="classCore_1_1Scenes_1_1SceneChanger.html#ac084c13917a629235c8121cd3a73fdd6">Core.Scenes.SceneChanger.route</a></div><div class="ttdeci">TitleNavigation route</div><div class="ttdef"><b>Definition:</b> <a href="SceneChanger_8cs_source.html#l00018">SceneChanger.cs:18</a></div></div>
+<div class="ttc" id="aclassCore_1_1Scenes_1_1SceneChanger_html_ae1f13dd24adf1d7d150f53b4ff5780fc"><div class="ttname"><a href="classCore_1_1Scenes_1_1SceneChanger.html#ae1f13dd24adf1d7d150f53b4ff5780fc">Core.Scenes.SceneChanger.LoadInGame</a></div><div class="ttdeci">bool LoadInGame(StageData.Stage routeNav)</div><div class="ttdoc">:TODO 引数見て、各stageに遷移</div><div class="ttdef"><b>Definition:</b> <a href="SceneChanger_8cs_source.html#l00049">SceneChanger.cs:49</a></div></div>
+<div class="ttc" id="aclassCore_1_1Scenes_1_1SceneChanger_html_af08ac60f8a2e4c2b96a23c6b75a5e571"><div class="ttname"><a href="classCore_1_1Scenes_1_1SceneChanger.html#af08ac60f8a2e4c2b96a23c6b75a5e571">Core.Scenes.SceneChanger.LoadTitle</a></div><div class="ttdeci">bool LoadTitle(TitleNavigation routeNav=TitleNavigation.Title)</div><div class="ttdoc">タイトル画面への遷移</div><div class="ttdef"><b>Definition:</b> <a href="SceneChanger_8cs_source.html#l00027">SceneChanger.cs:27</a></div></div>
+<div class="ttc" id="aclassCore_1_1User_1_1StageData_html"><div class="ttname"><a href="classCore_1_1User_1_1StageData.html">Core.User.StageData</a></div><div class="ttdef"><b>Definition:</b> <a href="UserSetting_8cs_source.html#l00042">UserSetting.cs:43</a></div></div>
+<div class="ttc" id="aclassCore_1_1User_1_1StageData_html_ab4c99798d6b2939dc749f2b263f1d59e"><div class="ttname"><a href="classCore_1_1User_1_1StageData.html#ab4c99798d6b2939dc749f2b263f1d59e">Core.User.StageData.Stage</a></div><div class="ttdeci">Stage</div><div class="ttdef"><b>Definition:</b> <a href="UserSetting_8cs_source.html#l00051">UserSetting.cs:52</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1Model_1_1Scene_html"><div class="ttname"><a href="namespaceCore_1_1Model_1_1Scene.html">Core.Model.Scene</a></div><div class="ttdef"><b>Definition:</b> <a href="GameResult_8cs_source.html#l00001">GameResult.cs:2</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1Model_html"><div class="ttname"><a href="namespaceCore_1_1Model.html">Core.Model</a></div><div class="ttdef"><b>Definition:</b> <a href="CameraModel_8cs_source.html#l00001">CameraModel.cs:2</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1Scenes_html"><div class="ttname"><a href="namespaceCore_1_1Scenes.html">Core.Scenes</a></div><div class="ttdef"><b>Definition:</b> <a href="SceneChanger_8cs_source.html#l00006">SceneChanger.cs:7</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1Scenes_html_a1e1c8a1558c71b62f20f51134e14efaf"><div class="ttname"><a href="namespaceCore_1_1Scenes.html#a1e1c8a1558c71b62f20f51134e14efaf">Core.Scenes.TitleNavigation</a></div><div class="ttdeci">TitleNavigation</div><div class="ttdef"><b>Definition:</b> <a href="TitleNavigation_8cs_source.html#l00003">TitleNavigation.cs:4</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1User_html"><div class="ttname"><a href="namespaceCore_1_1User.html">Core.User</a></div><div class="ttdef"><b>Definition:</b> <a href="DataManager_8cs_source.html#l00007">DataManager.cs:8</a></div></div>
+<div class="ttc" id="anamespaceCore_html"><div class="ttname"><a href="namespaceCore.html">Core</a></div><div class="ttdef"><b>Definition:</b> <a href="InputActionAssetProfile_8cs_source.html#l00004">InputActionAssetProfile.cs:5</a></div></div>
+<div class="ttc" id="astructCore_1_1Model_1_1Scene_1_1GameResult_html"><div class="ttname"><a href="structCore_1_1Model_1_1Scene_1_1GameResult.html">Core.Model.Scene.GameResult</a></div><div class="ttdef"><b>Definition:</b> <a href="GameResult_8cs_source.html#l00003">GameResult.cs:4</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

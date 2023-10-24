@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['value_1744',['Value',['../classCore_1_1Utility_1_1UI_1_1Component_1_1SliderController.html#a50ead337294819da25462ea55b9f3e11',1,'Core::Utility::UI::Component::SliderController']]]
+  ['usesubtextoricon_2167',['UseSubTextOrIcon',['../classDebug_1_1TaskPageLinkButtonCellModel.html#a4182595dc9243244a0e70eec966b4b7c',1,'Debug::TaskPageLinkButtonCellModel']]]
 ];

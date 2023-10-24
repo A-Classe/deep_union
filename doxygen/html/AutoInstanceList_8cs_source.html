@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: src/Assets/Scripts/Core/Utility/AutoInstanceList.cs ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_fede226f1245c80472226816c0f2cbdb.html">Core</a></li><li class="navelem"><a class="el" href="dir_93d41ab0abe9308e8c43968b6ceba6ae.html">Utility</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">AutoInstanceList.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="AutoInstanceList_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceSystem.html">System</a>;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceSystem.html">System</a>.Collections;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceSystem.html">System</a>.Collections.Generic;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="AutoInstanceList_8cs.html#aef19bab18b9814edeef255c43e4f6bbc">    5</a></span>&#160;<span class="keyword">using</span> <a class="code" href="AutoInstanceList_8cs.html#aef19bab18b9814edeef255c43e4f6bbc">Object</a> = UnityEngine.Object;</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="AutoInstanceList_8cs.html#a832e8f52fca5a678819ec96269dcb532">    6</a></span>&#160;<span class="keyword">using</span> <a class="code" href="AutoInstanceList_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a> = UnityEngine.Random;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="namespaceCore_1_1Utility.html">    8</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceCore_1_1Utility.html">Core.Utility</a></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1AutoInstanceList.html">   14</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html">AutoInstanceList</a>&lt;T&gt; : List&lt;T&gt; where T : MonoBehaviour</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1AutoInstanceList.html#aa660027c44b5b179a6c6c74e9f73637a">   16</a></span>&#160;        <span class="keyword">private</span> GameObject <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#aa660027c44b5b179a6c6c74e9f73637a">instancePrefab</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1AutoInstanceList.html#a25c551d538814ca20cc7a76002a24a83">   17</a></span>&#160;        <span class="keyword">private</span> Transform <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#a25c551d538814ca20cc7a76002a24a83">parentTransform</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1AutoInstanceList.html#af371cd92404b7f63f3c44ba482513453">   18</a></span>&#160;        <span class="keyword">private</span> uint <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#af371cd92404b7f63f3c44ba482513453">buffer</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1AutoInstanceList.html#a7fe962a1dacd51659f86c9c2f9a9c999">   20</a></span>&#160;        <span class="keyword">private</span> Vector2 <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#a7fe962a1dacd51659f86c9c2f9a9c999">randomSize</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1AutoInstanceList.html#ae3734ae2b9eb6a80751303176e6e1705">   28</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#ae3734ae2b9eb6a80751303176e6e1705">AutoInstanceList</a>(GameObject prefab, Transform parent, uint <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#af371cd92404b7f63f3c44ba482513453">buffer</a>, Vector2 <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#a7fe962a1dacd51659f86c9c2f9a9c999">randomSize</a>)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#aa660027c44b5b179a6c6c74e9f73637a">instancePrefab</a> = prefab;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#a25c551d538814ca20cc7a76002a24a83">parentTransform</a> = parent;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            this.buffer = <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#af371cd92404b7f63f3c44ba482513453">buffer</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            this.randomSize = <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#a7fe962a1dacd51659f86c9c2f9a9c999">randomSize</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1AutoInstanceList.html#a4280ea3a5581925e962ff6e0e0c5b1c6">   36</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#a4280ea3a5581925e962ff6e0e0c5b1c6">SetList</a>(List&lt;T&gt; list)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">foreach</span> (var monoBehaviour <span class="keywordflow">in</span> list)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                Add(monoBehaviour);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1AutoInstanceList.html#a8c666d8cb301be4bc6ee086b5b3640d1">   44</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#a8c666d8cb301be4bc6ee086b5b3640d1">CheckAndRefillBuffer</a>()</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">if</span> (Count &lt;= <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#af371cd92404b7f63f3c44ba482513453">buffer</a>)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#aa660027c44b5b179a6c6c74e9f73637a">instancePrefab</a> == <span class="keyword">null</span> || <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#a25c551d538814ca20cc7a76002a24a83">parentTransform</a> == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keywordtype">int</span> itemsToInstantiate = (int)<a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#af371cd92404b7f63f3c44ba482513453">buffer</a> - Count;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; itemsToInstantiate; i++)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#a922b11a076f9aa2ed15db476df64091d">AddToBufferAsync</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1AutoInstanceList.html#a50f6dd78e12e3bcb45c7f6012f0ea771">   57</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">new</span> <span class="keywordtype">bool</span> <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#a50f6dd78e12e3bcb45c7f6012f0ea771">Remove</a>(T item)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordtype">bool</span> result = base.Remove(item);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#a8c666d8cb301be4bc6ee086b5b3640d1">CheckAndRefillBuffer</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1AutoInstanceList.html#a6e089ff5bbed9b7761bd59ae7fced7e1">   64</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">new</span> <span class="keywordtype">void</span> <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#a6e089ff5bbed9b7761bd59ae7fced7e1">RemoveAt</a>(<span class="keywordtype">int</span> index)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            base.RemoveAt(index);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#a8c666d8cb301be4bc6ee086b5b3640d1">CheckAndRefillBuffer</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1AutoInstanceList.html#a922b11a076f9aa2ed15db476df64091d">   70</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#a922b11a076f9aa2ed15db476df64091d">AddToBufferAsync</a>()</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <a class="code" href="classCore_1_1Utility_1_1CoroutineRunner.html">CoroutineRunner</a>.<a class="code" href="classCore_1_1Utility_1_1CoroutineRunner.html#a75d8f9e7ec49ee5af694927600bbd572">StartCoroutine</a>(<a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#ac39143f8afbbf59f900491bc29cc2d0d">CreateInstance</a>());</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1AutoInstanceList.html#ac39143f8afbbf59f900491bc29cc2d0d">   75</a></span>&#160;        <span class="keyword">private</span> IEnumerator <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#ac39143f8afbbf59f900491bc29cc2d0d">CreateInstance</a>()</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForEndOfFrame();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="comment">// random area</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordtype">double</span> theta = 2.0f * Math.PI * <a class="code" href="AutoInstanceList_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a>.value;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordtype">double</span> radius = <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#a7fe962a1dacd51659f86c9c2f9a9c999">randomSize</a>.x * Math.Sqrt(<a class="code" href="AutoInstanceList_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a>.value);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            Vector3 spawn = <span class="keyword">new</span> Vector3(</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#a25c551d538814ca20cc7a76002a24a83">parentTransform</a>.position.x + (<span class="keywordtype">float</span>)(radius * Math.Cos(theta)), </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#a25c551d538814ca20cc7a76002a24a83">parentTransform</a>.position.y,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#a25c551d538814ca20cc7a76002a24a83">parentTransform</a>.position.z + (<span class="keywordtype">float</span>)(radius * Math.Sin(theta))</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            );</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            var instance = <a class="code" href="AutoInstanceList_8cs.html#aef19bab18b9814edeef255c43e4f6bbc">Object</a>.Instantiate(<a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#aa660027c44b5b179a6c6c74e9f73637a">instancePrefab</a>, spawn, Quaternion.identity, <a class="code" href="classCore_1_1Utility_1_1AutoInstanceList.html#a25c551d538814ca20cc7a76002a24a83">parentTransform</a>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            instance.name = <span class="stringliteral">&quot;Point_Clone&quot;</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            T component = instance.GetComponent&lt;T&gt;();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">if</span> (component)</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                Add(component);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1CoroutineRunner.html">   97</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class </span><a class="code" href="classCore_1_1Utility_1_1CoroutineRunner.html">CoroutineRunner</a></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1CoroutineRunner.html#aa3cb854fd3b6d777f70795cb7ad82848">   99</a></span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> <a class="code" href="classCore_1_1Utility_1_1CoroutineRunnerBehaviour.html">CoroutineRunnerBehaviour</a> <a class="code" href="classCore_1_1Utility_1_1CoroutineRunner.html#aa3cb854fd3b6d777f70795cb7ad82848">_coroutineRunner</a> = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1CoroutineRunner.html#a097ed576f8c7aa2e13cb9faa8fae5f60">  100</a></span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> <a class="code" href="classCore_1_1Utility_1_1CoroutineRunnerBehaviour.html">CoroutineRunnerBehaviour</a> <a class="code" href="classCore_1_1Utility_1_1CoroutineRunner.html#a097ed576f8c7aa2e13cb9faa8fae5f60">coroutineRunner</a></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keyword">get</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classCore_1_1Utility_1_1CoroutineRunner.html#aa3cb854fd3b6d777f70795cb7ad82848">_coroutineRunner</a> == <span class="keyword">null</span>)</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                    var go = <span class="keyword">new</span> GameObject(<span class="stringliteral">&quot;CoroutineRunner&quot;</span>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                    <a class="code" href="classCore_1_1Utility_1_1CoroutineRunner.html#aa3cb854fd3b6d777f70795cb7ad82848">_coroutineRunner</a> = go.AddComponent&lt;<a class="code" href="classCore_1_1Utility_1_1CoroutineRunnerBehaviour.html">CoroutineRunnerBehaviour</a>&gt;();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classCore_1_1Utility_1_1CoroutineRunner.html#aa3cb854fd3b6d777f70795cb7ad82848">_coroutineRunner</a>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1CoroutineRunner.html#a75d8f9e7ec49ee5af694927600bbd572">  113</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> Coroutine <a class="code" href="classCore_1_1Utility_1_1CoroutineRunner.html#a75d8f9e7ec49ee5af694927600bbd572">StartCoroutine</a>(IEnumerator routine)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classCore_1_1Utility_1_1CoroutineRunner.html#a097ed576f8c7aa2e13cb9faa8fae5f60">coroutineRunner</a>.StartCoroutine(routine);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1CoroutineRunnerBehaviour.html">  119</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classCore_1_1Utility_1_1CoroutineRunnerBehaviour.html">CoroutineRunnerBehaviour</a> : MonoBehaviour</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    {</div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="classCore_1_1Utility_1_1CoroutineRunnerBehaviour.html#acc7d4fea7f7ad53c46a381fa086cadbe">  121</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classCore_1_1Utility_1_1CoroutineRunnerBehaviour.html#acc7d4fea7f7ad53c46a381fa086cadbe">Awake</a>()</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            DontDestroyOnLoad(this.gameObject);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
+<div class="ttc" id="aAutoInstanceList_8cs_html_a832e8f52fca5a678819ec96269dcb532"><div class="ttname"><a href="AutoInstanceList_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a></div><div class="ttdeci">UnityEngine.Random Random</div><div class="ttdef"><b>Definition:</b> <a href="AutoInstanceList_8cs_source.html#l00006">AutoInstanceList.cs:6</a></div></div>
+<div class="ttc" id="aAutoInstanceList_8cs_html_aef19bab18b9814edeef255c43e4f6bbc"><div class="ttname"><a href="AutoInstanceList_8cs.html#aef19bab18b9814edeef255c43e4f6bbc">Object</a></div><div class="ttdeci">UnityEngine.Object Object</div><div class="ttdef"><b>Definition:</b> <a href="AutoInstanceList_8cs_source.html#l00005">AutoInstanceList.cs:5</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1AutoInstanceList_html"><div class="ttname"><a href="classCore_1_1Utility_1_1AutoInstanceList.html">Core.Utility.AutoInstanceList</a></div><div class="ttdoc">指定サイズ以下になると自動でリストに追加を行うList拡張</div><div class="ttdef"><b>Definition:</b> <a href="AutoInstanceList_8cs_source.html#l00014">AutoInstanceList.cs:15</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1AutoInstanceList_html_a25c551d538814ca20cc7a76002a24a83"><div class="ttname"><a href="classCore_1_1Utility_1_1AutoInstanceList.html#a25c551d538814ca20cc7a76002a24a83">Core.Utility.AutoInstanceList.parentTransform</a></div><div class="ttdeci">Transform parentTransform</div><div class="ttdef"><b>Definition:</b> <a href="AutoInstanceList_8cs_source.html#l00017">AutoInstanceList.cs:17</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1AutoInstanceList_html_a4280ea3a5581925e962ff6e0e0c5b1c6"><div class="ttname"><a href="classCore_1_1Utility_1_1AutoInstanceList.html#a4280ea3a5581925e962ff6e0e0c5b1c6">Core.Utility.AutoInstanceList.SetList</a></div><div class="ttdeci">void SetList(List&lt; T &gt; list)</div><div class="ttdef"><b>Definition:</b> <a href="AutoInstanceList_8cs_source.html#l00036">AutoInstanceList.cs:36</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1AutoInstanceList_html_a50f6dd78e12e3bcb45c7f6012f0ea771"><div class="ttname"><a href="classCore_1_1Utility_1_1AutoInstanceList.html#a50f6dd78e12e3bcb45c7f6012f0ea771">Core.Utility.AutoInstanceList.Remove</a></div><div class="ttdeci">new bool Remove(T item)</div><div class="ttdef"><b>Definition:</b> <a href="AutoInstanceList_8cs_source.html#l00057">AutoInstanceList.cs:57</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1AutoInstanceList_html_a6e089ff5bbed9b7761bd59ae7fced7e1"><div class="ttname"><a href="classCore_1_1Utility_1_1AutoInstanceList.html#a6e089ff5bbed9b7761bd59ae7fced7e1">Core.Utility.AutoInstanceList.RemoveAt</a></div><div class="ttdeci">new void RemoveAt(int index)</div><div class="ttdef"><b>Definition:</b> <a href="AutoInstanceList_8cs_source.html#l00064">AutoInstanceList.cs:64</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1AutoInstanceList_html_a7fe962a1dacd51659f86c9c2f9a9c999"><div class="ttname"><a href="classCore_1_1Utility_1_1AutoInstanceList.html#a7fe962a1dacd51659f86c9c2f9a9c999">Core.Utility.AutoInstanceList.randomSize</a></div><div class="ttdeci">Vector2 randomSize</div><div class="ttdef"><b>Definition:</b> <a href="AutoInstanceList_8cs_source.html#l00020">AutoInstanceList.cs:20</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1AutoInstanceList_html_a8c666d8cb301be4bc6ee086b5b3640d1"><div class="ttname"><a href="classCore_1_1Utility_1_1AutoInstanceList.html#a8c666d8cb301be4bc6ee086b5b3640d1">Core.Utility.AutoInstanceList.CheckAndRefillBuffer</a></div><div class="ttdeci">void CheckAndRefillBuffer()</div><div class="ttdef"><b>Definition:</b> <a href="AutoInstanceList_8cs_source.html#l00044">AutoInstanceList.cs:44</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1AutoInstanceList_html_a922b11a076f9aa2ed15db476df64091d"><div class="ttname"><a href="classCore_1_1Utility_1_1AutoInstanceList.html#a922b11a076f9aa2ed15db476df64091d">Core.Utility.AutoInstanceList.AddToBufferAsync</a></div><div class="ttdeci">void AddToBufferAsync()</div><div class="ttdef"><b>Definition:</b> <a href="AutoInstanceList_8cs_source.html#l00070">AutoInstanceList.cs:70</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1AutoInstanceList_html_aa660027c44b5b179a6c6c74e9f73637a"><div class="ttname"><a href="classCore_1_1Utility_1_1AutoInstanceList.html#aa660027c44b5b179a6c6c74e9f73637a">Core.Utility.AutoInstanceList.instancePrefab</a></div><div class="ttdeci">GameObject instancePrefab</div><div class="ttdef"><b>Definition:</b> <a href="AutoInstanceList_8cs_source.html#l00016">AutoInstanceList.cs:16</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1AutoInstanceList_html_ac39143f8afbbf59f900491bc29cc2d0d"><div class="ttname"><a href="classCore_1_1Utility_1_1AutoInstanceList.html#ac39143f8afbbf59f900491bc29cc2d0d">Core.Utility.AutoInstanceList.CreateInstance</a></div><div class="ttdeci">IEnumerator CreateInstance()</div><div class="ttdef"><b>Definition:</b> <a href="AutoInstanceList_8cs_source.html#l00075">AutoInstanceList.cs:75</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1AutoInstanceList_html_ae3734ae2b9eb6a80751303176e6e1705"><div class="ttname"><a href="classCore_1_1Utility_1_1AutoInstanceList.html#ae3734ae2b9eb6a80751303176e6e1705">Core.Utility.AutoInstanceList.AutoInstanceList</a></div><div class="ttdeci">AutoInstanceList(GameObject prefab, Transform parent, uint buffer, Vector2 randomSize)</div><div class="ttdef"><b>Definition:</b> <a href="AutoInstanceList_8cs_source.html#l00028">AutoInstanceList.cs:28</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1AutoInstanceList_html_af371cd92404b7f63f3c44ba482513453"><div class="ttname"><a href="classCore_1_1Utility_1_1AutoInstanceList.html#af371cd92404b7f63f3c44ba482513453">Core.Utility.AutoInstanceList.buffer</a></div><div class="ttdeci">uint buffer</div><div class="ttdef"><b>Definition:</b> <a href="AutoInstanceList_8cs_source.html#l00018">AutoInstanceList.cs:18</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1CoroutineRunnerBehaviour_html"><div class="ttname"><a href="classCore_1_1Utility_1_1CoroutineRunnerBehaviour.html">Core.Utility.CoroutineRunnerBehaviour</a></div><div class="ttdef"><b>Definition:</b> <a href="AutoInstanceList_8cs_source.html#l00119">AutoInstanceList.cs:120</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1CoroutineRunnerBehaviour_html_acc7d4fea7f7ad53c46a381fa086cadbe"><div class="ttname"><a href="classCore_1_1Utility_1_1CoroutineRunnerBehaviour.html#acc7d4fea7f7ad53c46a381fa086cadbe">Core.Utility.CoroutineRunnerBehaviour.Awake</a></div><div class="ttdeci">void Awake()</div><div class="ttdef"><b>Definition:</b> <a href="AutoInstanceList_8cs_source.html#l00121">AutoInstanceList.cs:121</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1CoroutineRunner_html"><div class="ttname"><a href="classCore_1_1Utility_1_1CoroutineRunner.html">Core.Utility.CoroutineRunner</a></div><div class="ttdef"><b>Definition:</b> <a href="AutoInstanceList_8cs_source.html#l00097">AutoInstanceList.cs:98</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1CoroutineRunner_html_a097ed576f8c7aa2e13cb9faa8fae5f60"><div class="ttname"><a href="classCore_1_1Utility_1_1CoroutineRunner.html#a097ed576f8c7aa2e13cb9faa8fae5f60">Core.Utility.CoroutineRunner.coroutineRunner</a></div><div class="ttdeci">static CoroutineRunnerBehaviour coroutineRunner</div><div class="ttdef"><b>Definition:</b> <a href="AutoInstanceList_8cs_source.html#l00100">AutoInstanceList.cs:101</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1CoroutineRunner_html_a75d8f9e7ec49ee5af694927600bbd572"><div class="ttname"><a href="classCore_1_1Utility_1_1CoroutineRunner.html#a75d8f9e7ec49ee5af694927600bbd572">Core.Utility.CoroutineRunner.StartCoroutine</a></div><div class="ttdeci">static Coroutine StartCoroutine(IEnumerator routine)</div><div class="ttdef"><b>Definition:</b> <a href="AutoInstanceList_8cs_source.html#l00113">AutoInstanceList.cs:113</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1CoroutineRunner_html_aa3cb854fd3b6d777f70795cb7ad82848"><div class="ttname"><a href="classCore_1_1Utility_1_1CoroutineRunner.html#aa3cb854fd3b6d777f70795cb7ad82848">Core.Utility.CoroutineRunner._coroutineRunner</a></div><div class="ttdeci">static CoroutineRunnerBehaviour _coroutineRunner</div><div class="ttdef"><b>Definition:</b> <a href="AutoInstanceList_8cs_source.html#l00099">AutoInstanceList.cs:99</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1Utility_html"><div class="ttname"><a href="namespaceCore_1_1Utility.html">Core.Utility</a></div><div class="ttdef"><b>Definition:</b> <a href="AutoInstanceList_8cs_source.html#l00008">AutoInstanceList.cs:9</a></div></div>
+<div class="ttc" id="anamespaceSystem_html"><div class="ttname"><a href="namespaceSystem.html">System</a></div><div class="ttdef"><b>Definition:</b> <a href="GameSequenceHandler_8cs_source.html#l00007">GameSequenceHandler.cs:8</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

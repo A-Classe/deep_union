@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: src/Assets/Scripts/UI/Result/ResultManager.cs ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_60e49c277f934197d3c4330be1be2379.html">UI</a></li><li class="navelem"><a class="el" href="dir_244638eccea1512469364bd137a6d51a.html">Result</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ResultManager.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ResultManager_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceSystem.html">System</a>;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> AnimationPro.RunTime;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceCore.html">Core</a>.<a class="code" href="namespaceCore_1_1Model.html">Model</a>.<a class="code" href="namespaceCore_1_1Model_1_1Scene.html">Scene</a>;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceCore.html">Core</a>.<a class="code" href="namespaceCore_1_1Utility.html">Utility</a>.<a class="code" href="namespaceCore_1_1Utility_1_1UI.html">UI</a>;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceCore.html">Core</a>.<a class="code" href="namespaceCore_1_1Utility.html">Utility</a>.<a class="code" href="namespaceCore_1_1Utility_1_1UI.html">UI</a>.<a class="code" href="namespaceCore_1_1Utility_1_1UI_1_1Component.html">Component</a>;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceCore.html">Core</a>.<a class="code" href="namespaceCore_1_1Utility.html">Utility</a>.<a class="code" href="namespaceCore_1_1Utility_1_1UI.html">UI</a>.<a class="code" href="namespaceCore_1_1Utility_1_1UI_1_1Component.html">Component</a>.<a class="code" href="namespaceCore_1_1Utility_1_1UI_1_1Component_1_1Cursor.html">Cursor</a>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceCore.html">Core</a>.<a class="code" href="namespaceCore_1_1Utility.html">Utility</a>.<a class="code" href="namespaceCore_1_1Utility_1_1UI.html">UI</a>.<a class="code" href="namespaceCore_1_1Utility_1_1UI_1_1Navigation.html">Navigation</a>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceUI_1_1Result.html">UI.Result</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classUI_1_1Result_1_1ResultManager.html">   15</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classUI_1_1Result_1_1ResultManager.html">ResultManager</a>: <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html">UIManager</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classUI_1_1Result_1_1ResultManager.html#a766634a8ebc2ec85e9c5479ba0f49bf1">   17</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a766634a8ebc2ec85e9c5479ba0f49bf1">Nav</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            Next,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            Retry,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a4c8b95b3b55c7370a68ce0b856a2d63e">Select</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classUI_1_1Result_1_1ResultManager.html#a07781ecb1b6f6c740f53b18c98a63bc2">   24</a></span>&#160;        [SerializeField] <span class="keyword">private</span> <a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html">CursorController&lt;Nav&gt;</a> <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a07781ecb1b6f6c740f53b18c98a63bc2">cursor</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classUI_1_1Result_1_1ResultManager.html#a9d0cf596ca1fec20e55943f8794c8ac9">   25</a></span>&#160;        [SerializeField] <span class="keyword">private</span> <a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html">FadeInOutButton</a> <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a9d0cf596ca1fec20e55943f8794c8ac9">next</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classUI_1_1Result_1_1ResultManager.html#af660e7bfdecc051e92c54fbb8813785a">   26</a></span>&#160;        [SerializeField] <span class="keyword">private</span> <a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html">FadeInOutButton</a> <a class="code" href="classUI_1_1Result_1_1ResultManager.html#af660e7bfdecc051e92c54fbb8813785a">retry</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classUI_1_1Result_1_1ResultManager.html#a210da7916c5652440427ccc8fbe32a5b">   27</a></span>&#160;        [SerializeField] <span class="keyword">private</span> <a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html">FadeInOutButton</a> <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a210da7916c5652440427ccc8fbe32a5b">select</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classUI_1_1Result_1_1ResultManager.html#a3271f6c5c1859eecf00b582edc3eff8c">   29</a></span>&#160;        [SerializeField] <span class="keyword">private</span> <a class="code" href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html">TextInAnimationObject</a> <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a3271f6c5c1859eecf00b582edc3eff8c">worker</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classUI_1_1Result_1_1ResultManager.html#afd640f4fe26643ce37b65ac402b49394">   30</a></span>&#160;        [SerializeField] <span class="keyword">private</span> <a class="code" href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html">TextInAnimationObject</a> <a class="code" href="classUI_1_1Result_1_1ResultManager.html#afd640f4fe26643ce37b65ac402b49394">hp</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classUI_1_1Result_1_1ResultManager.html#ab1223ee03b2bcc94bf4da053eb423e38">   31</a></span>&#160;        [SerializeField] <span class="keyword">private</span> <a class="code" href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html">TextInAnimationObject</a> <a class="code" href="classUI_1_1Result_1_1ResultManager.html#ab1223ee03b2bcc94bf4da053eb423e38">resource</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classUI_1_1Result_1_1ResultManager.html#a20ae3ce2b5aceec6af6f371633fc6c72">   33</a></span>&#160;        <span class="keyword">private</span> <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a766634a8ebc2ec85e9c5479ba0f49bf1">Nav</a>? <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a20ae3ce2b5aceec6af6f371633fc6c72">current</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classUI_1_1Result_1_1ResultManager.html#a14ca95221623349a9f088f1c6a2b225d">   35</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a14ca95221623349a9f088f1c6a2b225d">Start</a>()</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a07781ecb1b6f6c740f53b18c98a63bc2">cursor</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#a763ab2eb7280acd430567dcf64fb372a">AddPoint</a>(<a class="code" href="classUI_1_1Result_1_1ResultManager.html#a766634a8ebc2ec85e9c5479ba0f49bf1">Nav</a>.Next, <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a9d0cf596ca1fec20e55943f8794c8ac9">next</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a3423e76e3e9a1700a0dcf1beb29818e7">rectTransform</a>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a07781ecb1b6f6c740f53b18c98a63bc2">cursor</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#a763ab2eb7280acd430567dcf64fb372a">AddPoint</a>(<a class="code" href="classUI_1_1Result_1_1ResultManager.html#a766634a8ebc2ec85e9c5479ba0f49bf1">Nav</a>.Retry, <a class="code" href="classUI_1_1Result_1_1ResultManager.html#af660e7bfdecc051e92c54fbb8813785a">retry</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a3423e76e3e9a1700a0dcf1beb29818e7">rectTransform</a>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a07781ecb1b6f6c740f53b18c98a63bc2">cursor</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#a763ab2eb7280acd430567dcf64fb372a">AddPoint</a>(<a class="code" href="classUI_1_1Result_1_1ResultManager.html#a766634a8ebc2ec85e9c5479ba0f49bf1">Nav</a>.Select, <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a210da7916c5652440427ccc8fbe32a5b">select</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a3423e76e3e9a1700a0dcf1beb29818e7">rectTransform</a>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a20ae3ce2b5aceec6af6f371633fc6c72">current</a> = <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a766634a8ebc2ec85e9c5479ba0f49bf1">Nav</a>.Next;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classUI_1_1Result_1_1ResultManager.html#a53f43b6b96daccaee8505b277bee6e00">   43</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a53f43b6b96daccaee8505b277bee6e00">Initialized</a>(ContentTransform content)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            base.Initialized(content);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a81bea4d5f9df733ff129dd5f6452185b">SetState</a>(<a class="code" href="classUI_1_1Result_1_1ResultManager.html#a766634a8ebc2ec85e9c5479ba0f49bf1">Nav</a>.Next);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classUI_1_1Result_1_1ResultManager.html#ab27e284d82b8da2eafc474d44bb7b9ee">   49</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="classUI_1_1Result_1_1ResultManager.html#ab27e284d82b8da2eafc474d44bb7b9ee">Clicked</a>()</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classUI_1_1Result_1_1ResultManager.html#a20ae3ce2b5aceec6af6f371633fc6c72">current</a>.HasValue) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">switch</span> (<a class="code" href="classUI_1_1Result_1_1ResultManager.html#a20ae3ce2b5aceec6af6f371633fc6c72">current</a>.Value)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a766634a8ebc2ec85e9c5479ba0f49bf1">Nav</a>.Next:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                    <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a9d0cf596ca1fec20e55943f8794c8ac9">next</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a6efc8a73fe3f9a7a2cb0b434dbe4f524">OnPlay</a>(() =&gt; <a class="code" href="classUI_1_1Result_1_1ResultManager.html#ac89e10ec8742cf66afa21b2f82797aed">OnNext</a>?.Invoke());</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a766634a8ebc2ec85e9c5479ba0f49bf1">Nav</a>.Retry:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    <a class="code" href="classUI_1_1Result_1_1ResultManager.html#af660e7bfdecc051e92c54fbb8813785a">retry</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a6efc8a73fe3f9a7a2cb0b434dbe4f524">OnPlay</a>(() =&gt; <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a944ad8eff537c50f91954b8aa782fc51">OnRetry</a>?.Invoke());</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a766634a8ebc2ec85e9c5479ba0f49bf1">Nav</a>.Select:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                    <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a210da7916c5652440427ccc8fbe32a5b">select</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a6efc8a73fe3f9a7a2cb0b434dbe4f524">OnPlay</a>(() =&gt; <a class="code" href="classUI_1_1Result_1_1ResultManager.html#add102c3560fbcb374d49fd97ae854afe">OnSelect</a>?.Invoke());</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentOutOfRangeException();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classUI_1_1Result_1_1ResultManager.html#a4c8b95b3b55c7370a68ce0b856a2d63e">   68</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a4c8b95b3b55c7370a68ce0b856a2d63e">Select</a>(Vector2 direction)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classUI_1_1Result_1_1ResultManager.html#a20ae3ce2b5aceec6af6f371633fc6c72">current</a>.HasValue)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a81bea4d5f9df733ff129dd5f6452185b">SetState</a>(<a class="code" href="classUI_1_1Result_1_1ResultManager.html#a766634a8ebc2ec85e9c5479ba0f49bf1">Nav</a>.Next);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a766634a8ebc2ec85e9c5479ba0f49bf1">Nav</a> nextNav;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">switch</span> (direction.y)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="comment">// 上向きの入力</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keywordflow">case</span> &gt; 0:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    nextNav = <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a20ae3ce2b5aceec6af6f371633fc6c72">current</a>.Value == <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a766634a8ebc2ec85e9c5479ba0f49bf1">Nav</a>.Next ? <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a766634a8ebc2ec85e9c5479ba0f49bf1">Nav</a>.Next : <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a20ae3ce2b5aceec6af6f371633fc6c72">current</a>.Value - 1;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="comment">// 下向きの入力</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="keywordflow">case</span> &lt; 0:</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                    nextNav = <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a20ae3ce2b5aceec6af6f371633fc6c72">current</a>.Value == <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a766634a8ebc2ec85e9c5479ba0f49bf1">Nav</a>.Select ? <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a766634a8ebc2ec85e9c5479ba0f49bf1">Nav</a>.Select : <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a20ae3ce2b5aceec6af6f371633fc6c72">current</a>.Value + 1;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                    <span class="keywordflow">return</span>; <span class="comment">// Y軸の入力がない場合、何もしない</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a81bea4d5f9df733ff129dd5f6452185b">SetState</a>(nextNav);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classUI_1_1Result_1_1ResultManager.html#ac89e10ec8742cf66afa21b2f82797aed">   96</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">event</span> Action <a class="code" href="classUI_1_1Result_1_1ResultManager.html#ac89e10ec8742cf66afa21b2f82797aed">OnNext</a>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classUI_1_1Result_1_1ResultManager.html#a944ad8eff537c50f91954b8aa782fc51">   98</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">event</span> Action <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a944ad8eff537c50f91954b8aa782fc51">OnRetry</a>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classUI_1_1Result_1_1ResultManager.html#add102c3560fbcb374d49fd97ae854afe">  100</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">event</span> Action <a class="code" href="classUI_1_1Result_1_1ResultManager.html#add102c3560fbcb374d49fd97ae854afe">OnSelect</a>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classUI_1_1Result_1_1ResultManager.html#a81bea4d5f9df733ff129dd5f6452185b">  104</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a81bea4d5f9df733ff129dd5f6452185b">SetState</a>(<a class="code" href="classUI_1_1Result_1_1ResultManager.html#a766634a8ebc2ec85e9c5479ba0f49bf1">Nav</a> setNav)</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a20ae3ce2b5aceec6af6f371633fc6c72">current</a> = setNav;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a07781ecb1b6f6c740f53b18c98a63bc2">cursor</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#aaa1e5c0a4627bd775feeee2d0ab2baeb">SetPoint</a>(setNav);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classUI_1_1Result_1_1ResultManager.html#a3bcd86ea602bb2bd5f41b78e8973f4b8">  110</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a3bcd86ea602bb2bd5f41b78e8973f4b8">SetScore</a>(<a class="code" href="structCore_1_1Model_1_1Scene_1_1GameResult.html">GameResult</a> result, Action onFinished)</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a3271f6c5c1859eecf00b582edc3eff8c">worker</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html#a5e157387c3bd91bc9b840c069b0751a9">SetText</a>(result.<a class="code" href="structCore_1_1Model_1_1Scene_1_1GameResult.html#aaf3126912c432db7b9821ef08f7b8ba6">WorkerCount</a>.ToString());</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <a class="code" href="classUI_1_1Result_1_1ResultManager.html#afd640f4fe26643ce37b65ac402b49394">hp</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html#a5e157387c3bd91bc9b840c069b0751a9">SetText</a>(result.<a class="code" href="structCore_1_1Model_1_1Scene_1_1GameResult.html#a32533659c30ae3d3c9107ff47d1fb491">Hp</a>.ToString());</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <a class="code" href="classUI_1_1Result_1_1ResultManager.html#ab1223ee03b2bcc94bf4da053eb423e38">resource</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html#a5e157387c3bd91bc9b840c069b0751a9">SetText</a>(result.<a class="code" href="structCore_1_1Model_1_1Scene_1_1GameResult.html#aa3d52ce835be7409e17620071d163024">Resource</a>.ToString());</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a970d492cedc0d7d61f7821d1486e29cc">StartAnimation</a>(onFinished);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="classUI_1_1Result_1_1ResultManager.html#a970d492cedc0d7d61f7821d1486e29cc">  118</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a970d492cedc0d7d61f7821d1486e29cc">StartAnimation</a>(Action onFinished)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <a class="code" href="classUI_1_1Result_1_1ResultManager.html#a3271f6c5c1859eecf00b582edc3eff8c">worker</a>.Animation(<a class="code" href="classUI_1_1Result_1_1ResultManager.html#a3271f6c5c1859eecf00b582edc3eff8c">worker</a>.FadeIn(Easings.Default(0.5f, 0.4f)));</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <a class="code" href="classUI_1_1Result_1_1ResultManager.html#afd640f4fe26643ce37b65ac402b49394">hp</a>.Animation(<a class="code" href="classUI_1_1Result_1_1ResultManager.html#afd640f4fe26643ce37b65ac402b49394">hp</a>.FadeIn(Easings.Default(0.5f, 1f)));</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <a class="code" href="classUI_1_1Result_1_1ResultManager.html#ab1223ee03b2bcc94bf4da053eb423e38">resource</a>.Animation(<a class="code" href="classUI_1_1Result_1_1ResultManager.html#ab1223ee03b2bcc94bf4da053eb423e38">resource</a>.FadeIn(Easings.Default(0.5f, 1.6f)),</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                <span class="keyword">new</span> AnimationListener</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                    OnFinished = onFinished</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            );</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController_html"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html">Core.Utility.UI.Component.Cursor.CursorController&lt; Nav &gt;</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController_html_a763ab2eb7280acd430567dcf64fb372a"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#a763ab2eb7280acd430567dcf64fb372a">Core.Utility.UI.Component.Cursor.CursorController.AddPoint</a></div><div class="ttdeci">void AddPoint(T key, RectTransform rectT)</div><div class="ttdef"><b>Definition:</b> <a href="CursorController_8cs_source.html#l00017">CursorController.cs:17</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController_html_aaa1e5c0a4627bd775feeee2d0ab2baeb"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#aaa1e5c0a4627bd775feeee2d0ab2baeb">Core.Utility.UI.Component.Cursor.CursorController.SetPoint</a></div><div class="ttdeci">void SetPoint(T key)</div><div class="ttdef"><b>Definition:</b> <a href="CursorController_8cs_source.html#l00022">CursorController.cs:22</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton_html"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html">Core.Utility.UI.Component.FadeInOutButton</a></div><div class="ttdef"><b>Definition:</b> <a href="FadeInOutButton_8cs_source.html#l00007">FadeInOutButton.cs:8</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton_html_a3423e76e3e9a1700a0dcf1beb29818e7"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a3423e76e3e9a1700a0dcf1beb29818e7">Core.Utility.UI.Component.FadeInOutButton.rectTransform</a></div><div class="ttdeci">RectTransform rectTransform</div><div class="ttdef"><b>Definition:</b> <a href="FadeInOutButton_8cs_source.html#l00009">FadeInOutButton.cs:9</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton_html_a6efc8a73fe3f9a7a2cb0b434dbe4f524"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a6efc8a73fe3f9a7a2cb0b434dbe4f524">Core.Utility.UI.Component.FadeInOutButton.OnPlay</a></div><div class="ttdeci">void OnPlay(Action onFinished)</div><div class="ttdef"><b>Definition:</b> <a href="FadeInOutButton_8cs_source.html#l00017">FadeInOutButton.cs:17</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager_html"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html">Core.Utility.UI.Navigation.UIManager</a></div><div class="ttdef"><b>Definition:</b> <a href="UIManager_8cs_source.html#l00007">UIManager.cs:8</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1TextInAnimationObject_html"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html">Core.Utility.UI.TextInAnimationObject</a></div><div class="ttdef"><b>Definition:</b> <a href="TextInAnimationObject_8cs_source.html#l00008">TextInAnimationObject.cs:9</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1TextInAnimationObject_html_a5e157387c3bd91bc9b840c069b0751a9"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html#a5e157387c3bd91bc9b840c069b0751a9">Core.Utility.UI.TextInAnimationObject.SetText</a></div><div class="ttdeci">void SetText(string text)</div><div class="ttdef"><b>Definition:</b> <a href="TextInAnimationObject_8cs_source.html#l00020">TextInAnimationObject.cs:20</a></div></div>
+<div class="ttc" id="aclassUI_1_1Result_1_1ResultManager_html"><div class="ttname"><a href="classUI_1_1Result_1_1ResultManager.html">UI.Result.ResultManager</a></div><div class="ttdoc">リザルト画面のセレクター</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00015">ResultManager.cs:16</a></div></div>
+<div class="ttc" id="aclassUI_1_1Result_1_1ResultManager_html_a07781ecb1b6f6c740f53b18c98a63bc2"><div class="ttname"><a href="classUI_1_1Result_1_1ResultManager.html#a07781ecb1b6f6c740f53b18c98a63bc2">UI.Result.ResultManager.cursor</a></div><div class="ttdeci">CursorController&lt; Nav &gt; cursor</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00024">ResultManager.cs:24</a></div></div>
+<div class="ttc" id="aclassUI_1_1Result_1_1ResultManager_html_a14ca95221623349a9f088f1c6a2b225d"><div class="ttname"><a href="classUI_1_1Result_1_1ResultManager.html#a14ca95221623349a9f088f1c6a2b225d">UI.Result.ResultManager.Start</a></div><div class="ttdeci">void Start()</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00035">ResultManager.cs:35</a></div></div>
+<div class="ttc" id="aclassUI_1_1Result_1_1ResultManager_html_a20ae3ce2b5aceec6af6f371633fc6c72"><div class="ttname"><a href="classUI_1_1Result_1_1ResultManager.html#a20ae3ce2b5aceec6af6f371633fc6c72">UI.Result.ResultManager.current</a></div><div class="ttdeci">Nav? current</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00033">ResultManager.cs:33</a></div></div>
+<div class="ttc" id="aclassUI_1_1Result_1_1ResultManager_html_a210da7916c5652440427ccc8fbe32a5b"><div class="ttname"><a href="classUI_1_1Result_1_1ResultManager.html#a210da7916c5652440427ccc8fbe32a5b">UI.Result.ResultManager.select</a></div><div class="ttdeci">FadeInOutButton select</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00027">ResultManager.cs:27</a></div></div>
+<div class="ttc" id="aclassUI_1_1Result_1_1ResultManager_html_a3271f6c5c1859eecf00b582edc3eff8c"><div class="ttname"><a href="classUI_1_1Result_1_1ResultManager.html#a3271f6c5c1859eecf00b582edc3eff8c">UI.Result.ResultManager.worker</a></div><div class="ttdeci">TextInAnimationObject worker</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00029">ResultManager.cs:29</a></div></div>
+<div class="ttc" id="aclassUI_1_1Result_1_1ResultManager_html_a3bcd86ea602bb2bd5f41b78e8973f4b8"><div class="ttname"><a href="classUI_1_1Result_1_1ResultManager.html#a3bcd86ea602bb2bd5f41b78e8973f4b8">UI.Result.ResultManager.SetScore</a></div><div class="ttdeci">void SetScore(GameResult result, Action onFinished)</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00110">ResultManager.cs:110</a></div></div>
+<div class="ttc" id="aclassUI_1_1Result_1_1ResultManager_html_a4c8b95b3b55c7370a68ce0b856a2d63e"><div class="ttname"><a href="classUI_1_1Result_1_1ResultManager.html#a4c8b95b3b55c7370a68ce0b856a2d63e">UI.Result.ResultManager.Select</a></div><div class="ttdeci">override void Select(Vector2 direction)</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00068">ResultManager.cs:68</a></div></div>
+<div class="ttc" id="aclassUI_1_1Result_1_1ResultManager_html_a53f43b6b96daccaee8505b277bee6e00"><div class="ttname"><a href="classUI_1_1Result_1_1ResultManager.html#a53f43b6b96daccaee8505b277bee6e00">UI.Result.ResultManager.Initialized</a></div><div class="ttdeci">override void Initialized(ContentTransform content)</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00043">ResultManager.cs:43</a></div></div>
+<div class="ttc" id="aclassUI_1_1Result_1_1ResultManager_html_a766634a8ebc2ec85e9c5479ba0f49bf1"><div class="ttname"><a href="classUI_1_1Result_1_1ResultManager.html#a766634a8ebc2ec85e9c5479ba0f49bf1">UI.Result.ResultManager.Nav</a></div><div class="ttdeci">Nav</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00017">ResultManager.cs:18</a></div></div>
+<div class="ttc" id="aclassUI_1_1Result_1_1ResultManager_html_a81bea4d5f9df733ff129dd5f6452185b"><div class="ttname"><a href="classUI_1_1Result_1_1ResultManager.html#a81bea4d5f9df733ff129dd5f6452185b">UI.Result.ResultManager.SetState</a></div><div class="ttdeci">void SetState(Nav setNav)</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00104">ResultManager.cs:104</a></div></div>
+<div class="ttc" id="aclassUI_1_1Result_1_1ResultManager_html_a944ad8eff537c50f91954b8aa782fc51"><div class="ttname"><a href="classUI_1_1Result_1_1ResultManager.html#a944ad8eff537c50f91954b8aa782fc51">UI.Result.ResultManager.OnRetry</a></div><div class="ttdeci">Action OnRetry</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00098">ResultManager.cs:98</a></div></div>
+<div class="ttc" id="aclassUI_1_1Result_1_1ResultManager_html_a970d492cedc0d7d61f7821d1486e29cc"><div class="ttname"><a href="classUI_1_1Result_1_1ResultManager.html#a970d492cedc0d7d61f7821d1486e29cc">UI.Result.ResultManager.StartAnimation</a></div><div class="ttdeci">void StartAnimation(Action onFinished)</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00118">ResultManager.cs:118</a></div></div>
+<div class="ttc" id="aclassUI_1_1Result_1_1ResultManager_html_a9d0cf596ca1fec20e55943f8794c8ac9"><div class="ttname"><a href="classUI_1_1Result_1_1ResultManager.html#a9d0cf596ca1fec20e55943f8794c8ac9">UI.Result.ResultManager.next</a></div><div class="ttdeci">FadeInOutButton next</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00025">ResultManager.cs:25</a></div></div>
+<div class="ttc" id="aclassUI_1_1Result_1_1ResultManager_html_ab1223ee03b2bcc94bf4da053eb423e38"><div class="ttname"><a href="classUI_1_1Result_1_1ResultManager.html#ab1223ee03b2bcc94bf4da053eb423e38">UI.Result.ResultManager.resource</a></div><div class="ttdeci">TextInAnimationObject resource</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00031">ResultManager.cs:31</a></div></div>
+<div class="ttc" id="aclassUI_1_1Result_1_1ResultManager_html_ab27e284d82b8da2eafc474d44bb7b9ee"><div class="ttname"><a href="classUI_1_1Result_1_1ResultManager.html#ab27e284d82b8da2eafc474d44bb7b9ee">UI.Result.ResultManager.Clicked</a></div><div class="ttdeci">override void Clicked()</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00049">ResultManager.cs:49</a></div></div>
+<div class="ttc" id="aclassUI_1_1Result_1_1ResultManager_html_ac89e10ec8742cf66afa21b2f82797aed"><div class="ttname"><a href="classUI_1_1Result_1_1ResultManager.html#ac89e10ec8742cf66afa21b2f82797aed">UI.Result.ResultManager.OnNext</a></div><div class="ttdeci">Action OnNext</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00096">ResultManager.cs:96</a></div></div>
+<div class="ttc" id="aclassUI_1_1Result_1_1ResultManager_html_add102c3560fbcb374d49fd97ae854afe"><div class="ttname"><a href="classUI_1_1Result_1_1ResultManager.html#add102c3560fbcb374d49fd97ae854afe">UI.Result.ResultManager.OnSelect</a></div><div class="ttdeci">Action OnSelect</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00100">ResultManager.cs:100</a></div></div>
+<div class="ttc" id="aclassUI_1_1Result_1_1ResultManager_html_af660e7bfdecc051e92c54fbb8813785a"><div class="ttname"><a href="classUI_1_1Result_1_1ResultManager.html#af660e7bfdecc051e92c54fbb8813785a">UI.Result.ResultManager.retry</a></div><div class="ttdeci">FadeInOutButton retry</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00026">ResultManager.cs:26</a></div></div>
+<div class="ttc" id="aclassUI_1_1Result_1_1ResultManager_html_afd640f4fe26643ce37b65ac402b49394"><div class="ttname"><a href="classUI_1_1Result_1_1ResultManager.html#afd640f4fe26643ce37b65ac402b49394">UI.Result.ResultManager.hp</a></div><div class="ttdeci">TextInAnimationObject hp</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00030">ResultManager.cs:30</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1Model_1_1Scene_html"><div class="ttname"><a href="namespaceCore_1_1Model_1_1Scene.html">Core.Model.Scene</a></div><div class="ttdef"><b>Definition:</b> <a href="GameResult_8cs_source.html#l00001">GameResult.cs:2</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1Model_html"><div class="ttname"><a href="namespaceCore_1_1Model.html">Core.Model</a></div><div class="ttdef"><b>Definition:</b> <a href="CameraModel_8cs_source.html#l00001">CameraModel.cs:2</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_html"><div class="ttname"><a href="namespaceCore_1_1Utility_1_1UI_1_1Component_1_1Cursor.html">Core.Utility.UI.Component.Cursor</a></div><div class="ttdef"><b>Definition:</b> <a href="CursorController_8cs_source.html#l00006">CursorController.cs:7</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1Utility_1_1UI_1_1Component_html"><div class="ttname"><a href="namespaceCore_1_1Utility_1_1UI_1_1Component.html">Core.Utility.UI.Component</a></div><div class="ttdef"><b>Definition:</b> <a href="CursorController_8cs_source.html#l00006">CursorController.cs:7</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1Utility_1_1UI_1_1Navigation_html"><div class="ttname"><a href="namespaceCore_1_1Utility_1_1UI_1_1Navigation.html">Core.Utility.UI.Navigation</a></div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00009">Navigation.cs:10</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1Utility_1_1UI_html"><div class="ttname"><a href="namespaceCore_1_1Utility_1_1UI.html">Core.Utility.UI</a></div><div class="ttdef"><b>Definition:</b> <a href="AnimateObject_8cs_source.html#l00005">AnimateObject.cs:6</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1Utility_html"><div class="ttname"><a href="namespaceCore_1_1Utility.html">Core.Utility</a></div><div class="ttdef"><b>Definition:</b> <a href="AutoInstanceList_8cs_source.html#l00008">AutoInstanceList.cs:9</a></div></div>
+<div class="ttc" id="anamespaceCore_html"><div class="ttname"><a href="namespaceCore.html">Core</a></div><div class="ttdef"><b>Definition:</b> <a href="InputActionAssetProfile_8cs_source.html#l00004">InputActionAssetProfile.cs:5</a></div></div>
+<div class="ttc" id="anamespaceSystem_html"><div class="ttname"><a href="namespaceSystem.html">System</a></div><div class="ttdef"><b>Definition:</b> <a href="GameSequenceHandler_8cs_source.html#l00007">GameSequenceHandler.cs:8</a></div></div>
+<div class="ttc" id="anamespaceUI_1_1Result_html"><div class="ttname"><a href="namespaceUI_1_1Result.html">UI.Result</a></div><div class="ttdef"><b>Definition:</b> <a href="ResultCursor_8cs_source.html#l00003">ResultCursor.cs:4</a></div></div>
+<div class="ttc" id="astructCore_1_1Model_1_1Scene_1_1GameResult_html"><div class="ttname"><a href="structCore_1_1Model_1_1Scene_1_1GameResult.html">Core.Model.Scene.GameResult</a></div><div class="ttdef"><b>Definition:</b> <a href="GameResult_8cs_source.html#l00003">GameResult.cs:4</a></div></div>
+<div class="ttc" id="astructCore_1_1Model_1_1Scene_1_1GameResult_html_a32533659c30ae3d3c9107ff47d1fb491"><div class="ttname"><a href="structCore_1_1Model_1_1Scene_1_1GameResult.html#a32533659c30ae3d3c9107ff47d1fb491">Core.Model.Scene.GameResult.Hp</a></div><div class="ttdeci">int Hp</div><div class="ttdef"><b>Definition:</b> <a href="GameResult_8cs_source.html#l00007">GameResult.cs:7</a></div></div>
+<div class="ttc" id="astructCore_1_1Model_1_1Scene_1_1GameResult_html_aa3d52ce835be7409e17620071d163024"><div class="ttname"><a href="structCore_1_1Model_1_1Scene_1_1GameResult.html#aa3d52ce835be7409e17620071d163024">Core.Model.Scene.GameResult.Resource</a></div><div class="ttdeci">int Resource</div><div class="ttdef"><b>Definition:</b> <a href="GameResult_8cs_source.html#l00009">GameResult.cs:9</a></div></div>
+<div class="ttc" id="astructCore_1_1Model_1_1Scene_1_1GameResult_html_aaf3126912c432db7b9821ef08f7b8ba6"><div class="ttname"><a href="structCore_1_1Model_1_1Scene_1_1GameResult.html#aaf3126912c432db7b9821ef08f7b8ba6">Core.Model.Scene.GameResult.WorkerCount</a></div><div class="ttdeci">int WorkerCount</div><div class="ttdef"><b>Definition:</b> <a href="GameResult_8cs_source.html#l00005">GameResult.cs:5</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

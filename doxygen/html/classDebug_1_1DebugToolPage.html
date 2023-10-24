@@ -124,7 +124,7 @@ Debug.DebugToolPage 連携図</div>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock">
-<p class="definition"> <a class="el" href="DebugToolPage_8cs_source.html">DebugToolPage.cs</a> の <a class="el" href="DebugToolPage_8cs_source.html#l00009">9</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="DebugToolPage_8cs_source.html">DebugToolPage.cs</a> の <a class="el" href="DebugToolPage_8cs_source.html#l00006">6</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">関数詳解</h2>
 <a id="a6bf643f61a5c2c0ba426583e7237e64f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6bf643f61a5c2c0ba426583e7237e64f">&#9670;&nbsp;</a></span>SetUp()</h2>
@@ -150,19 +150,19 @@ Debug.DebugToolPage 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="DebugToolPage_8cs_source.html">DebugToolPage.cs</a> の <a class="el" href="DebugToolPage_8cs_source.html#l00016">16</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            this.stageProgress = <a class="code" href="classDebug_1_1DebugToolPage.html#af53c17b89e3082a37d332d2f004c02c5">stageProgress</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <a class="code" href="classDebug_1_1DebugToolPage.html#ae9bfe19460bca1a4272aab7d826cfc56">progressObserver</a> =</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                LabelObserver&lt;StageProgressObserver&gt;.Create(<span class="keyword">this</span>, observer =&gt;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                    var progress = observer.Progress * 100f;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                    <span class="keywordflow">return</span> $<span class="stringliteral">&quot;GameProgress: {progress:0}%&quot;</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                });</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
-<div class="ttc" id="aclassDebug_1_1DebugToolPage_html_ae9bfe19460bca1a4272aab7d826cfc56"><div class="ttname"><a href="classDebug_1_1DebugToolPage.html#ae9bfe19460bca1a4272aab7d826cfc56">Debug.DebugToolPage.progressObserver</a></div><div class="ttdeci">LabelObserver&lt; StageProgressObserver &gt; progressObserver</div><div class="ttdef"><b>Definition:</b> <a href="DebugToolPage_8cs_source.html#l00014">DebugToolPage.cs:14</a></div></div>
-<div class="ttc" id="aclassDebug_1_1DebugToolPage_html_af53c17b89e3082a37d332d2f004c02c5"><div class="ttname"><a href="classDebug_1_1DebugToolPage.html#af53c17b89e3082a37d332d2f004c02c5">Debug.DebugToolPage.stageProgress</a></div><div class="ttdeci">StageProgressObserver stageProgress</div><div class="ttdef"><b>Definition:</b> <a href="DebugToolPage_8cs_source.html#l00012">DebugToolPage.cs:12</a></div></div>
+<p class="definition"> <a class="el" href="DebugToolPage_8cs_source.html">DebugToolPage.cs</a> の <a class="el" href="DebugToolPage_8cs_source.html#l00013">13</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            this.stageProgress = <a class="code" href="classDebug_1_1DebugToolPage.html#af53c17b89e3082a37d332d2f004c02c5">stageProgress</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <a class="code" href="classDebug_1_1DebugToolPage.html#ae9bfe19460bca1a4272aab7d826cfc56">progressObserver</a> =</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                LabelObserver&lt;StageProgressObserver&gt;.Create(<span class="keyword">this</span>, observer =&gt;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                    var progress = observer.Progress * 100f;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                    <span class="keywordflow">return</span> $<span class="stringliteral">&quot;GameProgress: {progress:0}%&quot;</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                });</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
+<div class="ttc" id="aclassDebug_1_1DebugToolPage_html_ae9bfe19460bca1a4272aab7d826cfc56"><div class="ttname"><a href="classDebug_1_1DebugToolPage.html#ae9bfe19460bca1a4272aab7d826cfc56">Debug.DebugToolPage.progressObserver</a></div><div class="ttdeci">LabelObserver&lt; StageProgressObserver &gt; progressObserver</div><div class="ttdef"><b>Definition:</b> <a href="DebugToolPage_8cs_source.html#l00011">DebugToolPage.cs:11</a></div></div>
+<div class="ttc" id="aclassDebug_1_1DebugToolPage_html_af53c17b89e3082a37d332d2f004c02c5"><div class="ttname"><a href="classDebug_1_1DebugToolPage.html#af53c17b89e3082a37d332d2f004c02c5">Debug.DebugToolPage.stageProgress</a></div><div class="ttdeci">StageProgressObserver stageProgress</div><div class="ttdef"><b>Definition:</b> <a href="DebugToolPage_8cs_source.html#l00009">DebugToolPage.cs:9</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -198,13 +198,13 @@ Debug.DebugToolPage 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="DebugToolPage_8cs_source.html">DebugToolPage.cs</a> の <a class="el" href="DebugToolPage_8cs_source.html#l00028">28</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="classDebug_1_1DebugToolPage.html#ae9bfe19460bca1a4272aab7d826cfc56">progressObserver</a>.Update(<a class="code" href="classDebug_1_1DebugToolPage.html#af53c17b89e3082a37d332d2f004c02c5">stageProgress</a>);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            RefreshDataAt(<a class="code" href="classDebug_1_1DebugToolPage.html#ae9bfe19460bca1a4272aab7d826cfc56">progressObserver</a>.CellId);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            Reload();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
+<p class="definition"> <a class="el" href="DebugToolPage_8cs_source.html">DebugToolPage.cs</a> の <a class="el" href="DebugToolPage_8cs_source.html#l00025">25</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <a class="code" href="classDebug_1_1DebugToolPage.html#ae9bfe19460bca1a4272aab7d826cfc56">progressObserver</a>.Update(<a class="code" href="classDebug_1_1DebugToolPage.html#af53c17b89e3082a37d332d2f004c02c5">stageProgress</a>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            RefreshDataAt(<a class="code" href="classDebug_1_1DebugToolPage.html#ae9bfe19460bca1a4272aab7d826cfc56">progressObserver</a>.CellId);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            Reload();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -229,7 +229,7 @@ Debug.DebugToolPage 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="DebugToolPage_8cs_source.html">DebugToolPage.cs</a> の <a class="el" href="DebugToolPage_8cs_source.html#l00014">14</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="DebugToolPage_8cs_source.html">DebugToolPage.cs</a> の <a class="el" href="DebugToolPage_8cs_source.html#l00011">11</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -253,7 +253,7 @@ Debug.DebugToolPage 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="DebugToolPage_8cs_source.html">DebugToolPage.cs</a> の <a class="el" href="DebugToolPage_8cs_source.html#l00012">12</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="DebugToolPage_8cs_source.html">DebugToolPage.cs</a> の <a class="el" href="DebugToolPage_8cs_source.html#l00009">9</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -278,7 +278,7 @@ Debug.DebugToolPage 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="DebugToolPage_8cs_source.html">DebugToolPage.cs</a> の <a class="el" href="DebugToolPage_8cs_source.html#l00011">11</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="DebugToolPage_8cs_source.html">DebugToolPage.cs</a> の <a class="el" href="DebugToolPage_8cs_source.html#l00008">8</a> 行目に定義があります。</p>
 
 </div>
 </div>
