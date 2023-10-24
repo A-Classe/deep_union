@@ -1,6 +1,10 @@
 using Core.NavMesh;
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
+using Module.Assignment.Component;
+using Module.Player.Controller;
 using Module.Task;
+using Module.Working;
 using UnityEngine;
 using VContainer;
 
@@ -11,8 +15,6 @@ namespace GameMain.Task
     /// </summary>
     public class ResourceTask : BaseTask
     {
-        [SerializeField] CollectableTask collectableTask;
-
         private RuntimeNavMeshBaker navMeshBaker;
 
         public override void Initialize(IObjectResolver container)

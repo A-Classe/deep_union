@@ -4,6 +4,7 @@ using Module.Assignment.Utility;
 using Module.Working;
 using Unity.Burst;
 using VContainer;
+using Wanna.DebugEx;
 
 namespace Module.Assignment.System
 {
@@ -33,6 +34,7 @@ namespace Module.Assignment.System
             AssignableArea leaderArea = leaderAssignableArea.AssignableArea;
             IReadOnlyList<Worker> leaderWorkers = leaderAssignableArea.AssignableArea.AssignedWorkers;
 
+
             foreach (AssignableArea activeArea in activeAreas)
             {
                 //範囲同士の円形判定を行い、計算が必要な範囲を絞る
@@ -53,8 +55,12 @@ namespace Module.Assignment.System
                 for (int i = 0; i < cacheCount; i++)
                 {
                     Worker worker = assignWorkerCache[i];
-                    leaderAssignableArea.AssignableArea.RemoveWorker(worker);
-                    activeArea.AddWorker(worker);
+
+                    if (activeArea.CanAssign())
+                    {
+                        leaderAssignableArea.AssignableArea.RemoveWorker(worker);
+                        activeArea.AddWorker(worker);
+                    }
                 }
             }
         }

@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.AI;
-using Wanna.DebugEx;
 
 namespace Module.Working.State
 {
@@ -42,6 +41,9 @@ namespace Module.Working.State
 
         public void Update()
         {
+            if (navMeshAgent.pathStatus == NavMeshPathStatus.PathInvalid)
+                return;
+
             prevPos = currentPos;
             currentPos = worker.transform.position;
 

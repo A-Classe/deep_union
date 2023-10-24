@@ -10,11 +10,13 @@ namespace Module.Assignment.Utility
     {
         public readonly float3 Position;
         public readonly float2 Size;
+        public readonly float Rotation;
 
-        public EllipseData(float3 position, float2 size)
+        public EllipseData(float3 position, float2 size, float rotation)
         {
             Position = position;
             Size = size;
+            Rotation = rotation;
         }
     }
 }

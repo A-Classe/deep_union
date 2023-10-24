@@ -15,18 +15,23 @@ namespace Core.Utility.UI.Component
 
         public void SetValue(float value)
         {
-            slider.value = value;
-            if (text != null)
-            {
-                text.text = ((int)value).ToString();
-            }
+            Set(value);
         }
 
         public void Setup(float maxValue, float minValue, float value)
         {
             slider.maxValue = maxValue;
             slider.minValue = minValue;
+            Set(value);
+        }
+
+        private void Set(float value)
+        {
             slider.value = value;
+            if (text != null)
+            {
+                text.text = ((int)value).ToString();
+            }
         }
         
         [NonSerialized] public RectTransform rectTransform;

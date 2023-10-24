@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace Module.Player.Camera.State
 {
     internal class FollowState : ICameraState

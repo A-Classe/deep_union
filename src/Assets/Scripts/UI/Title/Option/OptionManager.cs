@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using AnimationPro.RunTime;
+using Core.User;
 using Core.Utility.UI.Component;
 using Core.Utility.UI.Navigation;
-using Core.Utility.User;
 using UI.Title.Option.Option1;
 using UI.Title.Option.Option2;
 using UI.Title.Option.Option3;

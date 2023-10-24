@@ -9,7 +9,7 @@ namespace System.GameProgress
     /// <summary>
     /// ステージ進捗のプレゼンター
     /// </summary>
-    public class GameSequenceHandler : IInitializable
+    public class GameSequenceHandler : IInitializable, IDisposable
     {
         private readonly StageProgressObserver progressObserver;
         private readonly PlayerController playerController;
@@ -31,5 +31,7 @@ namespace System.GameProgress
             playerController.SetState(PlayerState.Pause);
             DebugEx.Log("Completed!");
         }
+
+        public void Dispose() { }
     }
 }

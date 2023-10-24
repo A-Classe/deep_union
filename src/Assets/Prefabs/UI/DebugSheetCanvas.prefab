@@ -1301,6 +1301,7 @@ GameObject:
   - component: {fileID: 4669662424169538526}
   - component: {fileID: 4669662424169538521}
   - component: {fileID: 3277350397732956170}
+  - component: {fileID: 652649741}
   m_Layer: 5
   m_Name: DebugSheetCanvas
   m_TagString: Untagged
@@ -1406,7 +1407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e8881c41cf8aa34cbaac690a6e56432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _singleton: 1
+  _singleton: 0
   _flickToOpen: 0
   _clickToOpen: 8
   _clickCountToOpen: 3
@@ -1461,6 +1462,20 @@ MonoBehaviour:
   flicked:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &652649741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4669662424169538515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e42b8ccde0374afaa6022c7caf80cdc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyOnStart: 1
+  graphy: {fileID: 0}
 --- !u!1 &4669662424340793035
 GameObject:
   m_ObjectHideFlags: 0

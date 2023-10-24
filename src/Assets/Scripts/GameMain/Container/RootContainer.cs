@@ -1,8 +1,6 @@
-using Core.Utility.Player;
+using Core.Scenes;
 using Debug;
 using GameMain.Presenter;
-using Module.Assignment;
-using UnityDebugSheet.Runtime.Core.Scripts;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -21,6 +19,7 @@ namespace GameMain.Container
             }
 
             builder.RegisterInstance(gameParam);
+            builder.RegisterInstance(new SceneChanger());
         }
     }
 }
