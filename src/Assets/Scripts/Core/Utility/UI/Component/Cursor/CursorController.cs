@@ -37,8 +37,6 @@ namespace Core.Utility.UI.Component.Cursor
             var position = rect.position;
             float leftX = position.x - rect.rect.width / 2f;
             float rightX = position.x + rect.rect.width / 2f;
-            Debug.Log(leftX);
-            Debug.Log(rightX);
 
             var leftT = left.transform.position;
             left.OnCancel();

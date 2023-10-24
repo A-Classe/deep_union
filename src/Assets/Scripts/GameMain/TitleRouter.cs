@@ -96,6 +96,7 @@ namespace GameMain
             {
                 if (isQuit)
                 {
+                    // TODO: ゲームを終了させる
                 }
                 else
                 {
