@@ -37,11 +37,13 @@ namespace Core.Utility.UI.Component.Cursor
             var position = rect.position;
             float leftX = position.x - rect.rect.width / 2f;
             float rightX = position.x + rect.rect.width / 2f;
+            Debug.Log(leftX);
+            Debug.Log(rightX);
 
             var leftT = left.transform.position;
             left.OnCancel();
             left.Animation(
-                this.SlideTo(new Vector2(leftX - leftT.x, position.y - leftT.y), Easings.CircIn(0.3f)),
+                this.SlideTo(new Vector2(leftX - leftT.x, position.y - leftT.y), Easings.Default(0.3f)),
                 new AnimationListener()
                 {
                     OnFinished = () =>
@@ -55,7 +57,7 @@ namespace Core.Utility.UI.Component.Cursor
             var rightT = right.transform.position;
             right.OnCancel();
             right.Animation(
-                this.SlideTo(new Vector2(rightX - rightT.x, position.y - rightT.y), Easings.CircIn(0.3f)),
+                this.SlideTo(new Vector2(rightX - rightT.x, position.y - rightT.y), Easings.Default(0.3f)),
                 new AnimationListener()
                 {
                     OnFinished = () =>
