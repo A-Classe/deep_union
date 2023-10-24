@@ -22,9 +22,28 @@ namespace GameMain.Task
 
         private RuntimeNavMeshBaker navMeshBaker;
 
+        /// <summary>
+        /// progressに応じて0,1.. lastのGameObject.activeを切り替える
+        /// </summary>
+        [SerializeField] private GameObject[] types;
+        /// <summary>
+        /// 表示中のobjectIndex
+        /// </summary>
+        private int currentIndex;
+        
+
         public override void Initialize(IObjectResolver container)
         {
             navMeshBaker = container.Resolve<RuntimeNavMeshBaker>();
+            OnProgressChanged += OnProgress;
+
+            if (types.Length == 0)
+            {
+                throw new NotImplementedException();
+            }
+
+            currentIndex = 0;
+            UpdateObject();
         }
 
         protected override void OnComplete()
@@ -57,6 +76,34 @@ namespace GameMain.Task
 
             controller.SetState(PlayerState.Wait);
             onComplete = () => controller.SetState(PlayerState.Go);
+        }
+
+        /// <summary>
+        /// progressのcallbackを受け取る
+        /// typesのlengthとcurrentIndexから次に切り替えが必要なタイミングを見つける
+        /// </summary>
+        /// <param name="value">progress count 0..1</param>
+        private void OnProgress(float value)
+        {
+            float range =  (float)(currentIndex + 1) / types.Length;
+            if (value > range)
+            {
+                UnityEngine.Debug.Log(value);
+                currentIndex++;
+                UpdateObject();
+            }
+        }
+        
+        /// <summary>
+        /// currentIndexに応じてobjectを切り替える
+        /// </summary>
+        private void UpdateObject()
+        {
+            foreach (var type in types)
+            {
+                type.SetActive(false);
+            }
+            types[currentIndex].SetActive(true);
         }
     }
 }
