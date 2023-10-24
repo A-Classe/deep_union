@@ -127,6 +127,9 @@ namespace GameMain.Task
 
         protected override void OnComplete()
         {
+            if (isAdsorption)
+                return;
+
             isAdsorption = true;
             SetDetection(false);
             assignableArea.enabled = false;
