@@ -33,12 +33,15 @@ namespace UI.InGame.Screen.GameOver
             cursor.AddPoint(Nav.Retry, retry.rectTransform);
             cursor.AddPoint(Nav.StageSelect, stage.rectTransform);
             current = Nav.Retry;
+
+            SetState(Nav.Retry);
         }
 
-        public override void Initialized(ContentTransform content)
+        public override void Initialized(ContentTransform content, bool isReset)
         {
-            base.Initialized(content);
-            SetState(Nav.Retry);
+            base.Initialized(content, isReset);
+
+            if (isReset) { SetState(Nav.Retry); }
         }
 
         /// <summary>

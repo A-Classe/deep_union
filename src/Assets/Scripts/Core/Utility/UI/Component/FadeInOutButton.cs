@@ -16,7 +16,8 @@ namespace Core.Utility.UI.Component
 
         public void OnPlay(Action onFinished)
         {
-            FadeOut(() => FadeIn(onFinished));
+            //FadeOut(() => FadeIn(onFinished));
+            FadeOut(onFinished);
         }
 
         private void FadeIn(Action onFinished)

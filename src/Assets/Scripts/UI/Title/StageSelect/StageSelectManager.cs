@@ -34,13 +34,16 @@ namespace UI.Title.StageSelect
             cursor.AddPoint(StageNavigation.Stage5, stage5.rectTransform);
             cursor.AddPoint(StageNavigation.Back, back.rectTransform);
             current = StageNavigation.Stage1;
+
+            SetState(StageNavigation.Stage1);
         }
 
-        public override void Initialized(ContentTransform content)
+        public override void Initialized(ContentTransform content, bool isReset = false)
         {
-            base.Initialized(content);
+            base.Initialized(content, isReset);
             bar.AnimateIn();
-            SetState(StageNavigation.Stage1);
+
+            if (isReset) { SetState(StageNavigation.Stage1); }
         }
 
         /// <summary>
@@ -89,11 +92,19 @@ namespace UI.Title.StageSelect
             {
                 // 上向きの入力
                 case > 0:
-                    nextNav = current.Value == StageNavigation.Stage1 ? StageNavigation.Back : current.Value - 1;
+                    if(current.Value == StageNavigation.Stage1)
+                    {
+                        return;
+                    }
+                    nextNav = current.Value - 1;
                     break;
                 // 下向きの入力
                 case < 0:
-                    nextNav = current.Value == StageNavigation.Back ? StageNavigation.Stage1 : current.Value + 1;
+                    if(current.Value == StageNavigation.Back)
+                    {
+                        return;
+                    }
+                    nextNav = current.Value + 1;
                     break;
                 default:
                     return; // Y軸の入力がない場合、何もしない

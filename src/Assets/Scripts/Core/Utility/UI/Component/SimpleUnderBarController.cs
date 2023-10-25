@@ -36,7 +36,7 @@ namespace Core.Utility.UI.Component
 
         public void AnimateIn(Action onFinished = null)
         {
-            var easing = Easings.QuartIn(1f);
+            var easing = Easings.QuartOut(1f);
             bar.OnCancel();
             leftAnchor.OnCancel();
             rightAnchor.OnCancel();
@@ -64,7 +64,7 @@ namespace Core.Utility.UI.Component
                         leftAnchor.rectTransform.localPosition = iPosLeft;
                     }
                 }
-                );
+            );
             rightAnchor.Animation(
                 rightAnchor.SlideTo(new Vector2(bar.rectTransform.rect.size.x / 2f, 0f), easing),
                 new AnimationListener()

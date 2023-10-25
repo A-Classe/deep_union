@@ -35,12 +35,14 @@ namespace UI.Title.Option.Option2
             cursor.AddPoint(Nav.Brightness, bright.rectTransform);
             cursor.AddPoint(Nav.Back, back.rectTransform);
             current = Nav.FullScreen;
-        }
 
-        public override void Initialized(ContentTransform content)
-        {
-            base.Initialized(content);
             SetState(Nav.FullScreen);
+        }
+        
+        public override void Initialized(ContentTransform content, bool isReset = false)
+        {
+            base.Initialized(content, isReset);
+            if (isReset) { SetState(Nav.FullScreen); }
         }
 
         /// <summary>
@@ -90,11 +92,19 @@ namespace UI.Title.Option.Option2
             {
                 // 上向きの入力
                 case > 0:
-                    nextNav = current.Value == Nav.FullScreen ? Nav.Back : current.Value - 1;
+                    if(current.Value == Nav.FullScreen)
+                    {
+                        return;
+                    }
+                    nextNav = current.Value - 1;
                     break;
                 // 下向きの入力
                 case < 0:
-                    nextNav = current.Value == Nav.Back ? Nav.FullScreen : current.Value + 1;
+                    if (current.Value == Nav.Back)
+                    {
+                        return;
+                    }
+                    nextNav = current.Value + 1;
                     break;
                 default:
                     return; // Y軸の入力がない場合、何もしない
