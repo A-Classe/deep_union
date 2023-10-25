@@ -5,6 +5,7 @@ using DG.Tweening;
 using GameMain.System;
 using Module.Assignment;
 using Module.Assignment.Component;
+using Module.Player;
 using Module.Player.Controller;
 using Module.Task;
 using UnityEngine;

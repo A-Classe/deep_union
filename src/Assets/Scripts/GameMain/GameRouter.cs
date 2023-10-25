@@ -142,6 +142,10 @@ namespace GameMain
         public void Tick()
         {
             taskActivator.Tick();
+            
+            // TODO: ステージの座標と距離感を決める
+            int progress = (int)progressObserver.GetDistance();
+            uiManager.UpdateStageProgress(progress);
         }
     }
 }

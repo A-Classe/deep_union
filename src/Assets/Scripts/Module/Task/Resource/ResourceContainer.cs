@@ -26,6 +26,11 @@ namespace Module.Task
             set { resourceCount = Mathf.Clamp(value, 0, gameParam.MaxResourceCount); }
             get { return resourceCount; }
         }
+        
+        /// <summary>
+        /// リソースの最大数
+        /// </summary>
+        public int MaxResourceCount => gameParam.MaxResourceCount;
 
         /// <summary>
         /// リソース数が変化した時に送信されるイベント。(前のリソース数, 現在のリソース数)

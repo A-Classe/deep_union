@@ -2,7 +2,7 @@
 using Core.Model.Player;
 using Wanna.DebugEx;
 
-namespace Module.Assignment
+namespace Module.Player
 {
     public class PlayerStatus
     {

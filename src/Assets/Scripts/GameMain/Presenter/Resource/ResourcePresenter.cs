@@ -1,4 +1,5 @@
 using Module.Task;
+using UI.InGame;
 using VContainer;
 using VContainer.Unity;
 using Wanna.DebugEx;
@@ -11,12 +12,17 @@ namespace GameMain.Presenter.Resource
     public class ResourcePresenter : IInitializable
     {
         private readonly ResourceContainer resourceContainer;
+        private readonly InGameUIManager uiManager;
         private readonly CollectableTask[] collectableTasks;
 
         [Inject]
-        public ResourcePresenter(ResourceContainer resourceContainer)
+        public ResourcePresenter(
+            ResourceContainer resourceContainer,
+            InGameUIManager uiManager
+        )
         {
             this.resourceContainer = resourceContainer;
+            this.uiManager = uiManager;
             collectableTasks = TaskUtil.FindSceneTasks<CollectableTask>();
         }
 
@@ -30,6 +36,13 @@ namespace GameMain.Presenter.Resource
                     DebugEx.Log($"ResourceCount: {resourceContainer.ResourceCount}");
                 };
             }
+            
+            uint initialResourceCount = resourceContainer.MaxResourceCount > 0 ? (uint)resourceContainer.MaxResourceCount : 0u;
+            uiManager.SetResourceCount(0u, initialResourceCount);
+            resourceContainer.OnResourceChanged += (_, current) =>
+            {
+                uiManager.SetResourceCount((uint)current);
+            };
         }
     }
 }

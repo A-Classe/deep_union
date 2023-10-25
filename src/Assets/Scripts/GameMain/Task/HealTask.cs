@@ -3,6 +3,7 @@ using Core.NavMesh;
 using Cysharp.Threading.Tasks;
 using Module.Assignment;
 using Module.Assignment.Component;
+using Module.Player;
 using Module.Player.Controller;
 using Module.Task;
 using UnityEngine;

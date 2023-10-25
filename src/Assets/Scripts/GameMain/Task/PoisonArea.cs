@@ -5,6 +5,7 @@ using Core.Utility;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Module.Assignment;
+using Module.Player;
 using Module.Task;
 using Module.Working;
 using UnityEngine;
