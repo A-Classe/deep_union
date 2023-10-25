@@ -107,7 +107,7 @@ namespace GameMain
         /// </summary>
         private void InitPlayer()
         {
-            playerController.InitParam(gameParam.ConvertToPlayerModel());
+            playerController.InitParam(gameParam);
             playerController.PlayerStart();
             playerController.SetState(PlayerState.Go);
 
