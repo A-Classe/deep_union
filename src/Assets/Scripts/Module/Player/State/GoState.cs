@@ -15,6 +15,7 @@ namespace Module.Player.State
         private readonly InputEvent rotateInput;
 
         private float rotationSpeed;
+        private float currentSpeed;
         private float currentRotation;
 
         public GoState(PlayerController controller, Rigidbody rigidbody)
@@ -36,8 +37,11 @@ namespace Module.Player.State
 
             var transform = controller.transform;
             var forward = transform.forward;
-            rigidbody.velocity += forward * (gameParam.MoveAccelaration * inputY);
-            rigidbody.velocity = forward * Vector3.ClampMagnitude(rigidbody.velocity, gameParam.MaxSpeed).magnitude;
+
+            currentSpeed += gameParam.MoveAccelaration * inputY;
+            currentSpeed = Mathf.Clamp(currentSpeed, gameParam.MinSpeed, gameParam.MaxSpeed);
+
+            rigidbody.velocity = forward * currentSpeed;
 
             // 回転速度を増加
             rotationSpeed += inputX * gameParam.TorqueAccelaration * Time.deltaTime;
