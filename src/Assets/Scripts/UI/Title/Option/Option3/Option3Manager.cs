@@ -33,12 +33,14 @@ namespace UI.Title.Option.Option3
             cursor.AddPoint(Nav.Effect, effect.rectTransform);
             cursor.AddPoint(Nav.Back, back.rectTransform);
             current = Nav.Master;
-        }
 
-        public override void Initialized(ContentTransform content)
-        {
-            base.Initialized(content);
             SetState(Nav.Master);
+        }
+        
+        public override void Initialized(ContentTransform content, bool isReset = false)
+        {
+            base.Initialized(content, isReset);
+            if (isReset) { SetState(Nav.Master); }
         }
 
         /// <summary>
@@ -99,11 +101,19 @@ namespace UI.Title.Option.Option3
             {
                 // 上向きの入力
                 case > 0:
-                    nextNav = current.Value == Nav.Master ? Nav.Back : current.Value - 1;
+                    if(current.Value == Nav.Master)
+                    {
+                        return;
+                    }
+                    nextNav = current.Value - 1;
                     break;
                 // 下向きの入力
                 case < 0:
-                    nextNav = current.Value == Nav.Back ? Nav.Master : current.Value + 1;
+                    if(current.Value == Nav.Back)
+                    {
+                        return;
+                    }
+                    nextNav = current.Value + 1;
                     break;
                 default:
                     return; // Y軸の入力がない場合、何もしない
