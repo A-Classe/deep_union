@@ -41,6 +41,8 @@ namespace Module.Working
 
             activeWorkers = new List<Worker>(workersCapacity);
             workerPrefab = Resources.Load<GameObject>("Worker");
+            
+            uiManager.SetWorkerCount(0u, workersCapacity);
         }
 
         /// <summary>

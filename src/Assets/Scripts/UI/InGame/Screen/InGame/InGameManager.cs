@@ -2,12 +2,10 @@ using Core.Utility.UI.Navigation;
 using TMPro;
 using Unity.Plastic.Antlr3.Runtime;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace UI.InGame.Screen.InGame
 {
-    // todo: 
     public class InGameManager: UIManager
     {
         // hp
@@ -27,6 +25,10 @@ namespace UI.InGame.Screen.InGame
         
         // workers
         [SerializeField] private TextMeshProUGUI currentWorkers;
+        [SerializeField] private RectTransform workersIcon;
+        private uint? maxWorkersValue;
+        [SerializeField] private float startOffsetY;// -205
+        [SerializeField] private float endOffsetY; // -37
 
         public override void Select(Vector2 direction)
         {
@@ -38,7 +40,7 @@ namespace UI.InGame.Screen.InGame
             // NOP.
         }
 
-        public void SetHP(uint current, uint? max = null)
+        public void SetHp(uint current, uint? max = null)
         {
             if (max.HasValue)
             {
@@ -83,10 +85,28 @@ namespace UI.InGame.Screen.InGame
             gaugeRes.fillAmount = (float)current / maxResValue.Value;
         }
 
-        public void SetWorkerCount(uint value)
+        public void SetWorkerCount(uint value, uint? max = null)
         {
+            if (max.HasValue)
+            {
+                maxWorkersValue = max.Value;
+            }
+            
+            if (!maxWorkersValue.HasValue)
+            {
+                throw new MismatchedNotSetException();
+            }
+            
+            if (value > maxWorkersValue.Value) return;
+
             currentWorkers.text = value.ToString();
+            
+            // set position background raw image 
+            Vector3 position = workersIcon.localPosition;
+            float offsetRate = endOffsetY - startOffsetY;
+            position.y = startOffsetY + offsetRate * ((float)value / maxWorkersValue.Value);
+            
+            workersIcon.localPosition = position;
         }
-        
     }
 }

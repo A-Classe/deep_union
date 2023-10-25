@@ -74,17 +74,17 @@ namespace UI.InGame
         {
             if (max.HasValue)
             {
-                inGameManager.SetHP((uint)current, (uint)max.Value);
+                inGameManager.SetHp((uint)current, (uint)max.Value);
             }
             else
             {
-                inGameManager.SetHP((uint)current);   
+                inGameManager.SetHp((uint)current);   
             }
         }
         
-        public void SetWorkerCount(uint value)
+        public void SetWorkerCount(uint value, uint? max = null)
         {
-            inGameManager.SetWorkerCount(value);
+            inGameManager.SetWorkerCount(value, max);
         }
         
         public void SetResourceCount(uint current, uint? max = null)
