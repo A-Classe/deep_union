@@ -1,3 +1,5 @@
+using AnimationPro.RunTime;
+using Core.Utility.UI;
 using Core.Utility.UI.Navigation;
 using TMPro;
 using Unity.Plastic.Antlr3.Runtime;
@@ -29,7 +31,7 @@ namespace UI.InGame.Screen.InGame
 
         // workers
         [SerializeField] private TextMeshProUGUI currentWorkers;
-        [SerializeField] private RectTransform workersIcon;
+        [SerializeField] private AnimateObject workersIcon;
         private uint? maxWorkersValue;
         [SerializeField] private float startOffsetY;// -205
         [SerializeField] private float endOffsetY; // -37
@@ -110,12 +112,30 @@ namespace UI.InGame.Screen.InGame
 
             currentWorkers.text = value.ToString();
             
-            // set position background raw image 
-            Vector3 position = workersIcon.localPosition;
+
+           UpdateWorkersMoviePosition(value);
+        }
+        
+        // set position background raw image 
+        private void UpdateWorkersMoviePosition(uint value)
+        {
+            if (!maxWorkersValue.HasValue || !workersIcon.rectTransform) return;
+            Vector3 position = workersIcon.rectTransform.localPosition;
             float offsetRate = endOffsetY - startOffsetY;
-            position.y = startOffsetY + offsetRate * ((float)value / maxWorkersValue.Value);
+            float updatePositionY = startOffsetY + offsetRate * ((float)value / maxWorkersValue.Value);
             
-            workersIcon.localPosition = position;
+            workersIcon.OnCancel();
+            workersIcon.Animation(
+                workersIcon.SlideTo(updatePositionY - position.y, AnimationAPI.SlideDirection.Vertical, Easings.Default(1f)),
+                new AnimationListener()
+                {
+                    OnFinished = () =>
+                    {
+                        position.y = updatePositionY;
+                        workersIcon.rectTransform.localPosition = position;
+                    }
+                }
+            );
         }
     }
 }
