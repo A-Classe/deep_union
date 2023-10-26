@@ -34,7 +34,6 @@ namespace Module.Player
         private void SetHp(short newHp)
         {
             hp = Math.Clamp(newHp, (short)0, maxHp);
-            DebugEx.Log($"PlayerHP: {hp}");
             OnHpChanged?.Invoke(hp);
         }
 

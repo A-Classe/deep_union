@@ -12,6 +12,7 @@ namespace UI.InGame.Screen.InGame
         [SerializeField] private TextMeshProUGUI currentHp;
         [SerializeField] private TextMeshProUGUI maxHp;
         [SerializeField] private Slider sliderHp;
+        [SerializeField] private Image gaugeHpBackground;
         private uint? maxHpValue;
         
         // progress
@@ -59,6 +60,10 @@ namespace UI.InGame.Screen.InGame
 
             currentHp.text = current.ToString();
             sliderHp.value = current;
+            gaugeHpBackground.color = current switch {
+                _ when current > maxHpValue.Value * 0.3f => Color.green,
+                _ => Color.red
+            };
         }
 
         public void SetStageProgress(uint value)
