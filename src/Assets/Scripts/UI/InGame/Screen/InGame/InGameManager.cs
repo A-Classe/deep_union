@@ -23,7 +23,10 @@ namespace UI.InGame.Screen.InGame
         [SerializeField] private TextMeshProUGUI maxRes;
         [SerializeField] private Image gaugeRes;
         private uint? maxResValue;
-        
+
+        private const float StartOffsetAmount = 0.37f;
+        private const float EndOffsetAmount = 0.63f;
+
         // workers
         [SerializeField] private TextMeshProUGUI currentWorkers;
         [SerializeField] private RectTransform workersIcon;
@@ -87,7 +90,8 @@ namespace UI.InGame.Screen.InGame
             if (current > maxResValue.Value) return;
 
             currentRes.text = current.ToString();
-            gaugeRes.fillAmount = (float)current / maxResValue.Value;
+            float rate = (float)current / maxResValue.Value;
+            gaugeRes.fillAmount = StartOffsetAmount + (EndOffsetAmount - StartOffsetAmount) * rate;
         }
 
         public void SetWorkerCount(uint value, uint? max = null)
