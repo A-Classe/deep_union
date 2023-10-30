@@ -88,7 +88,6 @@ namespace GameMain.Task
             float range =  (float)(currentIndex + 1) / types.Length;
             if (value > range)
             {
-                UnityEngine.Debug.Log(value);
                 currentIndex++;
                 UpdateObject();
             }

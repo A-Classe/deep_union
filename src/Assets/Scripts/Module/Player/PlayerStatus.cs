@@ -2,7 +2,7 @@
 using Core.Model.Player;
 using Wanna.DebugEx;
 
-namespace Module.Assignment
+namespace Module.Player
 {
     public class PlayerStatus
     {
@@ -34,7 +34,6 @@ namespace Module.Assignment
         private void SetHp(short newHp)
         {
             hp = Math.Clamp(newHp, (short)0, maxHp);
-            DebugEx.Log($"PlayerHP: {hp}");
             OnHpChanged?.Invoke(hp);
         }
 

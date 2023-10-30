@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Core.Utility;
+using UI.InGame;
 using UnityEngine;
 using UnityEngine.Pool;
 using VContainer;
@@ -19,11 +20,17 @@ namespace Module.Working
         private readonly ObjectPool<Worker> workerPool;
         private readonly GameObject workerPrefab;
 
+        private readonly InGameUIManager uiManager;
+
         public ReadOnlySpan<Worker> ActiveWorkers => activeWorkers.AsSpan();
 
         [Inject]
-        public WorkerAgent()
+        public WorkerAgent(
+            InGameUIManager uiManager
+        )
         {
+            this.uiManager = uiManager;
+
             //プーリングする
             workerPool = new ObjectPool<Worker>(
                 CreateWorker,
@@ -34,6 +41,8 @@ namespace Module.Working
 
             activeWorkers = new List<Worker>(workersCapacity);
             workerPrefab = Resources.Load<GameObject>("Worker");
+            
+            uiManager.SetWorkerCount(0u, workersCapacity);
         }
 
         /// <summary>
@@ -47,6 +56,7 @@ namespace Module.Working
                 activeWorkers.Add(worker);
                 worker.OnDead += Remove;
             }
+            UpdateWorkerCount();
 
             return activeWorkers.AsSpan().Slice(activeWorkers.Count - count, count);
         }
@@ -58,6 +68,7 @@ namespace Module.Working
         {
             activeWorkers.Add(worker);
             worker.OnDead += Remove;
+            UpdateWorkerCount();
         }
 
         /// <summary>
@@ -68,6 +79,7 @@ namespace Module.Working
         {
             workerPool.Release(worker);
             activeWorkers.Remove(worker);
+            UpdateWorkerCount();
         }
 
         private Worker CreateWorker()
@@ -98,6 +110,12 @@ namespace Module.Working
         private static void OnWorkerDestroy(Worker worker)
         {
             worker.Dispose();
+        }
+
+        private void UpdateWorkerCount()
+        {
+            uint count = activeWorkers.Count > 0 ? (uint)activeWorkers.Count : 0;
+            uiManager.SetWorkerCount(count);
         }
     }
 }

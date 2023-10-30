@@ -64,6 +64,33 @@ namespace UI.InGame
         {
             sceneChanger = scene;
         }
+
+        public void UpdateStageProgress(int value)
+        {
+            inGameManager.SetStageProgress((uint)value);
+        }
+        
+        public void SetHP(short current, short? max = null)
+        {
+            if (max.HasValue)
+            {
+                inGameManager.SetHp((uint)current, (uint)max.Value);
+            }
+            else
+            {
+                inGameManager.SetHp((uint)current);   
+            }
+        }
+        
+        public void SetWorkerCount(uint value, uint? max = null)
+        {
+            inGameManager.SetWorkerCount(value, max);
+        }
+        
+        public void SetResourceCount(uint current, uint? max = null)
+        {
+            inGameManager.SetResource(current, max);
+        }
     }
     
     public enum InGameNav {
