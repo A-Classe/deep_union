@@ -1,7 +1,7 @@
+using System;
 using System.Collections.Generic;
-using Core.Input;
-using Core.Model.Scene;
 using Core.Scenes;
+using Core.User;
 using Core.Utility.UI.Navigation;
 using UI.InGame.Screen.GameOver;
 using UI.InGame.Screen.InGame;
@@ -18,6 +18,9 @@ namespace UI.InGame
         private Navigation<InGameNav> navigation;
 
         private SceneChanger sceneChanger;
+
+        public event Action OnGameInactive;
+        public event Action OnGameActive;
 
         private void Awake()
         {
@@ -44,20 +47,35 @@ namespace UI.InGame
                 navigation.SetActive(false);
                 sceneChanger.LoadInGame(sceneChanger.GetInGame());
             };
-            
-            /*todo: 以下テスト用 */
-            var escEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.ESC);
-            escEvent.Started += _ =>
+
+            optionManager.OnBack += () =>
             {
-                navigation.SetScreen(InGameNav.GameOver);
+                navigation.SetActive(true);
+                navigation.SetScreen(InGameNav.InGame);
+                OnGameActive?.Invoke();
             };
             
             navigation.SetActive(true);
         }
 
-        public void SetScreen(InGameNav nav)
+        public void StartGame(UserPreference preference)
         {
-            navigation.SetScreen(nav);
+            optionManager.SetPreference(preference);
+            navigation.SetActive(true);
+            navigation.SetScreen(InGameNav.InGame);
+        }
+
+        public void StartOption()
+        {
+            navigation.SetScreen(InGameNav.Option, isReset: true);
+            navigation.SetActive(false);
+            OnGameInactive?.Invoke();
+        }
+
+        public void SetGameOver()
+        {
+            navigation.SetScreen(InGameNav.GameOver, isReset: true);
+            OnGameInactive?.Invoke();
         }
 
         public void SetSceneChanger(SceneChanger scene)
@@ -70,7 +88,7 @@ namespace UI.InGame
             inGameManager.SetStageProgress((uint)value);
         }
         
-        public void SetHP(short current, short? max = null)
+        public void SetHp(short current, short? max = null)
         {
             if (max.HasValue)
             {
