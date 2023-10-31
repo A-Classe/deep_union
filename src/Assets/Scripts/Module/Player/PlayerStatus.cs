@@ -1,9 +1,11 @@
 ﻿using System;
 using Core.Model.Player;
-using Wanna.DebugEx;
 
 namespace Module.Player
 {
+    /// <summary>
+    /// ゲームの進行に関するプレイヤーのステータスの管理
+    /// </summary>
     public class PlayerStatus
     {
         private readonly short maxHp;
@@ -12,7 +14,12 @@ namespace Module.Player
         public short Hp => hp;
         public short MaxHp => maxHp;
 
+        /// <summary>
+        /// 現在のHPと比較して変更があった場合のみ呼ばれる
+        /// </summary>
         public event Action<short> OnHpChanged;
+
+        public event Action OnCallHpZero;
 
         public PlayerStatus(PlayerStatusModel model)
         {
@@ -33,8 +40,14 @@ namespace Module.Player
 
         private void SetHp(short newHp)
         {
-            hp = Math.Clamp(newHp, (short)0, maxHp);
+            var newer = Math.Clamp(newHp, (short)0, maxHp);
+            if (hp == newer) return;
+            hp = newer;
             OnHpChanged?.Invoke(hp);
+            if (hp == 0)
+            {
+                OnCallHpZero?.Invoke();
+            }
         }
 
         private static short Parse(uint value)

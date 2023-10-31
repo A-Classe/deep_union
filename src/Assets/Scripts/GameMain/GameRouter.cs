@@ -1,8 +1,10 @@
 ﻿using System;
 using System.GameProgress;
+using Core.Input;
 using Core.Model.Scene;
 using Core.NavMesh;
 using Core.Scenes;
+using Core.User;
 using Core.Utility.Player;
 using GameMain.Presenter;
 using Module.Assignment.Component;
@@ -42,6 +44,8 @@ namespace GameMain
 
         private readonly SceneChanger sceneChanger;
 
+        private readonly UserPreference preference;
+
         [Inject]
         public GameRouter(
             SpawnParam spawnParam,
@@ -55,7 +59,8 @@ namespace GameMain
             TaskActivator taskActivator,
             LeaderAssignableArea leaderAssignableArea,
             InGameUIManager uiManager,
-            SceneChanger sceneChanger
+            SceneChanger sceneChanger,
+            UserPreference preference
         )
         {
             this.spawnParam = spawnParam;
@@ -75,6 +80,8 @@ namespace GameMain
             this.uiManager = uiManager;
 
             this.sceneChanger = sceneChanger;
+
+            this.preference = preference;
         }
 
         public void Start()
@@ -114,12 +121,15 @@ namespace GameMain
             cameraController.SetFollowTarget(playerController.transform);
 
             workerController.SetCamera(cameraController.GetCamera());
+
+            uiManager.OnGameInactive += OnCallGameInactive;
+            uiManager.OnGameActive += OnCallGameActive;
         }
 
         private void InitScene()
         {
             uiManager.SetSceneChanger(sceneChanger);
-            uiManager.SetScreen(InGameNav.InGame);
+            uiManager.StartGame(preference);
             
             progressObserver.OnCompleted += () =>
             {
@@ -131,6 +141,15 @@ namespace GameMain
                         stageCode = (int) sceneChanger.GetInGame()
                     }
                 );
+            };
+            
+            var escEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.ESC);
+            escEvent.Canceled += _ =>
+            {
+                if (playerController.GetState() != PlayerState.Pause)
+                {
+                    uiManager.StartOption();
+                }
             };
         }
 
@@ -146,6 +165,19 @@ namespace GameMain
             // TODO: ステージの座標と距離感を決める
             int progress = (int)progressObserver.GetDistance();
             uiManager.UpdateStageProgress(progress);
+        }
+
+        // HPが0になった時 or オプション画面で
+        private void OnCallGameInactive()
+        {
+            workerController.SetPlayed(false);
+            playerController.SetState(PlayerState.Pause);
+        }
+
+        private void OnCallGameActive()
+        {
+            workerController.SetPlayed(true);
+            playerController.SetState(PlayerState.Go);
         }
     }
 }
