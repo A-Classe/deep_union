@@ -9,10 +9,11 @@ namespace Core.Utility.Player
         {
             return new PlayerInitModel
             {
-                speed = param.PlayerSpeed
+                accel = param.MoveAccelaration,
+                maxSpeed = param.MaxSpeed
             };
         }
-        
+
         public static PlayerStatusModel ConvertToStatus(this GameParam param)
         {
             return new PlayerStatusModel
