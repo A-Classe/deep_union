@@ -18,6 +18,8 @@ namespace Core.Input
        public readonly Guid Assign = new Guid("22d85c45-cf1a-422d-acb8-7b1768215f89");
        public readonly Guid Release = new Guid("d5850a10-c25d-48a6-920c-80db9074d4c4");
        public readonly Guid ESC = new Guid("472655fd-8b18-4875-aae9-5b33d2815fc3");
+       public readonly Guid Move = new Guid("dfe40a5f-6c4e-4a89-bb42-c59fdfa6c029");
+       public readonly Guid Rotate = new Guid("ac8d6d16-519b-4e2c-94e7-b37afd5385d0");
     }
 
     public class Title
