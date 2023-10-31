@@ -14,13 +14,14 @@ namespace Module.Working.Controller
 
         [Header("静的摩擦力")] [SerializeField] private float staticFriction;
         [Header("最大速度")] [SerializeField] private float maxSpeed;
-
+        [SerializeField] private Transform target;
         [SerializeField] private Vector3 velocity;
 
         private InputEvent controlEvent;
 
         private Camera followCamera;
         private Vector2 input;
+        private float beforeZ;
 
         private void Awake()
         {
@@ -31,6 +32,9 @@ namespace Module.Working.Controller
         private void Update()
         {
             input = controlEvent.ReadValue<Vector2>();
+            transform.position += new Vector3(0f, 0f, target.position.z - beforeZ);
+
+            beforeZ = target.position.z;
         }
 
         private void FixedUpdate()
@@ -54,7 +58,7 @@ namespace Module.Working.Controller
 
             if (!InViewport(nextPos))
             {
-                velocity = Vector3.zero;   
+                velocity = Vector3.zero;
             }
 
             transform.position = Clamp(nextPos);

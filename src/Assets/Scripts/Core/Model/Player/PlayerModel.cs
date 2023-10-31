@@ -7,7 +7,8 @@ namespace Core.Model.Player
         // ReSharper disable once UnassignedField.Global
         public Vector3? startPosition;
 
-        public float? speed;
+        public float? accel;
+        public float? maxSpeed;
     }
 
     public struct PlayerStatusModel
