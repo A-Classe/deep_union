@@ -27,13 +27,19 @@ namespace Module.Player.Controller
         public void Initialize()
         {
             maxHp = playerStatus.MaxHp;
-            uiManager.SetHP(maxHp, maxHp);
+            uiManager.SetHp(maxHp, maxHp);
 
             playerStatus.OnHpChanged += hp =>
             {
-                uiManager.SetHP(hp);
+                uiManager.SetHp(hp);
                 statusVisualizer.SetHpRate(1 - Mathf.InverseLerp(0f, maxHp, hp));
             };
+            playerStatus.OnCallHpZero += OnCallHpZero;
+        }
+
+        private void OnCallHpZero()
+        {
+            uiManager.SetGameOver();
         }
     }
 }

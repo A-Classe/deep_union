@@ -23,10 +23,13 @@ namespace Module.Working.Controller
         private Vector2 input;
         private float beforeZ;
 
+        private bool isPlaying = false;
+
         private void Awake()
         {
             //入力イベントの生成
             controlEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Control);
+            isPlaying = true;
         }
 
         private void Update()
@@ -39,6 +42,7 @@ namespace Module.Working.Controller
 
         private void FixedUpdate()
         {
+            if (!isPlaying) return;
             if (input != Vector2.zero)
             {
                 Vector2 vel = input * (controlSpeed * Time.fixedDeltaTime);
@@ -91,6 +95,11 @@ namespace Module.Working.Controller
         public void SetCamera(Camera cam)
         {
             followCamera = cam;
+        }
+
+        public void SetPlayed(bool value)
+        {
+            isPlaying = value;
         }
     }
 }
