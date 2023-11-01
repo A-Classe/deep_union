@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Core.NavMesh;
 using Core.Utility;
 using Cysharp.Threading.Tasks;
@@ -11,6 +12,7 @@ using Module.Player;
 using Module.Player.Controller;
 using Module.Task;
 using Module.Working;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using VContainer;
@@ -25,6 +27,8 @@ namespace GameMain.Task
         [SerializeField] private int workerDamageCount;
         [SerializeField] private float explodeStartWaitTime;
         [SerializeField] private float disableBodyDelay;
+        [SerializeField] private LayerMask damageLayer;
+        [SerializeField] private float damageRangeFixOffset;
 
         [Header("ダメージとスケールの比例関数")]
         [SerializeField]
@@ -160,9 +164,8 @@ namespace GameMain.Task
             //爆破エフェクト開始
             await bombEffectEvent.Bomb();
 
-            playerStatus.RemoveHp(attackPoint);
-            DamageWorker();
-
+            DetectExplosionArea();
+            Damage();
 
             ForceComplete();
             base.Disable();
@@ -175,30 +178,40 @@ namespace GameMain.Task
             animator.gameObject.SetActive(false);
         }
 
-        private void DamageWorker()
+        private void DetectExplosionArea()
         {
             //周囲のコライダーを取得
             Vector3 origin = explodeEffectSphere.position;
-            float radius = explodeEffectSphere.localScale.x;
-            int count = Physics.OverlapSphereNonAlloc(origin, radius, workerDamageBuffer);
+            float radius = transform.localScale.x * explodeEffectSphere.localScale.x * damageRangeFixOffset;
+            int count = Physics.OverlapSphereNonAlloc(origin, radius, workerDamageBuffer, damageLayer);
 
-            //ランダムで指定数キル
-            Span<Collider> result = workerDamageBuffer.AsSpan(0, count);
-            workerDamageBufferList.AddRange(result);
+            workerDamageBufferList.AddRange(workerDamageBuffer.Take(count));
+        }
 
-            int killedCount = 0;
+        private void Damage()
+        {
+            int damagedCount = 0;
+            bool isPlayerDamaged = false;
 
-            while (workerDamageBufferList.Count > 0 && killedCount < workerDamageCount)
+            //プレイヤーにダメージを与える & ワーカーを倒すまで繰り返す
+            while (workerDamageBufferList.Count > 0 && (damagedCount < workerDamageCount || !isPlayerDamaged))
             {
                 int index = Random.Range(0, workerDamageBufferList.Count);
                 Transform obj = workerDamageBufferList[index].transform;
 
-                if (obj.parent != null && obj.parent.TryGetComponent(out Worker worker))
+                //Damage to player
+                if (obj.CompareTag("Player"))
+                {
+                    playerStatus.RemoveHp(attackPoint);
+                    isPlayerDamaged = true;
+                }
+                //Damage to worker
+                else if (obj.parent != null && obj.parent.TryGetComponent(out Worker worker))
                 {
                     if (!worker.IsLocked)
                     {
                         worker.Kill();
-                        killedCount++;
+                        damagedCount++;
                     }
                 }
 
@@ -217,5 +230,13 @@ namespace GameMain.Task
         public override void Enable() { }
 
         public override void Disable() { }
+
+        private void OnDrawGizmosSelected()
+        {
+            Vector3 origin = explodeEffectSphere.position;
+            float radius = transform.localScale.x * explodeEffectSphere.localScale.x * damageRangeFixOffset;
+            Gizmos.color = new Color(1f, 0f, 0f, 0.4f);
+            Gizmos.DrawSphere(origin, radius);
+        }
     }
 }
