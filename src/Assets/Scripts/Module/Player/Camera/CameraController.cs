@@ -30,7 +30,7 @@ namespace Module.Player.Camera
             Initialize();
         }
 
-        private void FixedUpdate()
+        private void LateUpdate()
         {
             if (followTarget == null) return;
             var angleInRadians = followAngle * Mathf.Deg2Rad;
