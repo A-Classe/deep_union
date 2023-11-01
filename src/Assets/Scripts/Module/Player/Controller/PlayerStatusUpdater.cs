@@ -38,15 +38,16 @@ namespace Module.Player.Controller
         public void Initialize()
         {
             maxHp = playerStatus.MaxHp;
-            uiManager.SetHP(maxHp, maxHp);
+            uiManager.SetHp(maxHp, maxHp);
 
             playerStatus.OnHpChanged += hp =>
             {
-                uiManager.SetHP(hp);
+                uiManager.SetHp(hp);
                 statusVisualizer.SetHpRate(1 - Mathf.InverseLerp(0f, maxHp, hp));
             };
 
             DecreaseHpLoop(cTokenSource.Token).Forget();
+            playerStatus.OnCallHpZero += OnCallHpZero;
         }
 
         async UniTaskVoid DecreaseHpLoop(CancellationToken cancellationToken)
@@ -56,6 +57,11 @@ namespace Module.Player.Controller
                 await UniTask.Delay(TimeSpan.FromSeconds(gameParam.DecereseHpSpeed), cancellationToken: cancellationToken);
                 playerStatus.RemoveHp(gameParam.DecereseHpAmount);
             }
+        }
+        
+        private void OnCallHpZero()
+        {
+            uiManager.SetGameOver();
         }
 
         public void Dispose()
