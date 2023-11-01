@@ -10,9 +10,10 @@ namespace GameMain.Presenter
         public float MaxSpeed = 1f;
         [Header("回転加速度")] public float TorqueAccelaration = 1f;
         [Header("回転制限")] public float AngleLimit = 1f;
+        [Header("１秒でHPが減るスピード")] public float DecereseHpSpeed = 1f;
+        [Header("1回でHPが減る量")] public uint DecereseHpAmount = 1;
 
-        [Space]
-        public float AssignIntensity = 1f;
+        [Space] public float AssignIntensity = 1f;
         public float ReleaseIntensity = 0.3f;
 
         public float CollectFactor = 1f;
