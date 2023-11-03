@@ -1,5 +1,8 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Core.NavMesh;
+using Core.Utility;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using GameMain.System;
@@ -8,18 +11,24 @@ using Module.Assignment.Component;
 using Module.Player;
 using Module.Player.Controller;
 using Module.Task;
+using Module.Working;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using VContainer;
 using Wanna.DebugEx;
+using Random = UnityEngine.Random;
 
 namespace GameMain.Task
 {
     public class Enemy1Task : BaseTask
     {
         [Header("爆破ダメージ")] [SerializeField] private uint attackPoint;
+        [SerializeField] private int workerDamageCount;
         [SerializeField] private float explodeStartWaitTime;
         [SerializeField] private float disableBodyDelay;
+        [SerializeField] private LayerMask damageLayer;
+        [SerializeField] private float damageRangeFixOffset;
 
         [Header("ダメージとスケールの比例関数")]
         [SerializeField]
@@ -34,6 +43,7 @@ namespace GameMain.Task
         [SerializeField] private AssignableArea assignableArea;
         [SerializeField] private Animator animator;
         [SerializeField] private Transform scaleBody;
+        [SerializeField] private Transform explodeEffectSphere;
         [SerializeField] private Renderer bodyRenderer;
         [SerializeField] private BombEffectEvent bombEffectEvent;
 
@@ -42,6 +52,8 @@ namespace GameMain.Task
         private PlayerStatus playerStatus;
         private RuntimeNavMeshBaker navMeshBaker;
         private Material bodyMaterial;
+        private Collider[] workerDamageBuffer;
+        private List<Collider> workerDamageBufferList;
         [SerializeField] private Color blinkColor;
 
         private bool isAdsorption;
@@ -59,6 +71,8 @@ namespace GameMain.Task
             playerStatus = container.Resolve<PlayerStatus>();
             navMeshBaker = container.Resolve<RuntimeNavMeshBaker>();
             bodyMaterial = bodyRenderer.material;
+            workerDamageBuffer = new Collider[64];
+            workerDamageBufferList = new List<Collider>();
 
             decalProjector.enabled = false;
             simpleAgent.SetActive(false);
@@ -150,7 +164,8 @@ namespace GameMain.Task
             //爆破エフェクト開始
             await bombEffectEvent.Bomb();
 
-            playerStatus.RemoveHp(attackPoint);
+            DetectExplosionArea();
+            Damage();
 
             ForceComplete();
             base.Disable();
@@ -163,6 +178,49 @@ namespace GameMain.Task
             animator.gameObject.SetActive(false);
         }
 
+        private void DetectExplosionArea()
+        {
+            //周囲のコライダーを取得
+            Vector3 origin = explodeEffectSphere.position;
+            float radius = transform.localScale.x * explodeEffectSphere.localScale.x * damageRangeFixOffset;
+            int count = Physics.OverlapSphereNonAlloc(origin, radius, workerDamageBuffer, damageLayer);
+
+            workerDamageBufferList.AddRange(workerDamageBuffer.Take(count));
+        }
+
+        private void Damage()
+        {
+            int damagedCount = 0;
+            bool isPlayerDamaged = false;
+
+            //プレイヤーにダメージを与える & ワーカーを倒すまで繰り返す
+            while (workerDamageBufferList.Count > 0 && (damagedCount < workerDamageCount || !isPlayerDamaged))
+            {
+                int index = Random.Range(0, workerDamageBufferList.Count);
+                Transform obj = workerDamageBufferList[index].transform;
+
+                //Damage to player
+                if (obj.CompareTag("Player"))
+                {
+                    playerStatus.RemoveHp(attackPoint);
+                    isPlayerDamaged = true;
+                }
+                //Damage to worker
+                else if (obj.parent != null && obj.parent.TryGetComponent(out Worker worker))
+                {
+                    if (!worker.IsLocked)
+                    {
+                        worker.Kill();
+                        damagedCount++;
+                    }
+                }
+
+                workerDamageBufferList.RemoveAt(index);
+            }
+
+            workerDamageBufferList.Clear();
+        }
+
 
         public void ForceEnable()
         {
@@ -172,5 +230,13 @@ namespace GameMain.Task
         public override void Enable() { }
 
         public override void Disable() { }
+
+        private void OnDrawGizmosSelected()
+        {
+            Vector3 origin = explodeEffectSphere.position;
+            float radius = transform.localScale.x * explodeEffectSphere.localScale.x * damageRangeFixOffset;
+            Gizmos.color = new Color(1f, 0f, 0f, 0.4f);
+            Gizmos.DrawSphere(origin, radius);
+        }
     }
 }
