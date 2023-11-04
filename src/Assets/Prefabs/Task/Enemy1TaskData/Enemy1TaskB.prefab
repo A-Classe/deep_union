@@ -393,7 +393,7 @@ GameObject:
   - component: {fileID: 1639914516561481880}
   - component: {fileID: 2087504105297971556}
   m_Layer: 8
-  m_Name: Enemy1Task
+  m_Name: Enemy1TaskB
   m_TagString: Task
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -431,10 +431,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mw: 30
+  acceptAttacks: 1
   state: 0
   currentProgress: 0
   currentWorkerCount: 0
   attackPoint: 10
+  attackPointToOtherTask: 0
   workerDamageCount: 10
   explodeStartWaitTime: 1.5
   disableBodyDelay: 0.3
@@ -442,6 +444,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 65600
   damageRangeFixOffset: 1.52
+  showExplodeRange: 0
   damageScaleCurve:
     serializedVersion: 2
     m_Curve:
@@ -1467,17 +1470,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 54d480dc3ff889b43bb7a2f6bdedc433, type: 2}
+      objectReference: {fileID: 2100000, guid: 990460dd25a08bb4aadc9443831714a8, type: 2}
     - target: {fileID: 8638738022587689067, guid: dd661999a25bc45459237d4d97c3efc7,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: fa12da4200175c74aae7b482cb0320b6, type: 2}
+      objectReference: {fileID: 2100000, guid: 990460dd25a08bb4aadc9443831714a8, type: 2}
     - target: {fileID: 8638738022587689067, guid: dd661999a25bc45459237d4d97c3efc7,
         type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 4ca7d39a452e4974cbbcf1f785eba027, type: 2}
+      objectReference: {fileID: 2100000, guid: 990460dd25a08bb4aadc9443831714a8, type: 2}
     - target: {fileID: 9135584494663476756, guid: dd661999a25bc45459237d4d97c3efc7,
         type: 3}
       propertyPath: m_Layer

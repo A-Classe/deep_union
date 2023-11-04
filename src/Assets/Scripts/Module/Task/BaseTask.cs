@@ -13,6 +13,7 @@ namespace Module.Task
     public abstract class BaseTask : MonoBehaviour, ITaskSystem
     {
         [SerializeField] private int mw;
+        [SerializeField] private bool acceptAttacks;
 
         private List<Collider> taskColliders;
 
@@ -21,10 +22,12 @@ namespace Module.Task
         [SerializeField] private float currentProgress;
         [SerializeField] private int currentWorkerCount;
         private float prevWorkerCount;
+        private int enqueuedMonoWork;
 
         public float Progress => currentProgress;
         public TaskState State => state;
         public int MonoWork => mw;
+        public bool AcceptAttacks => acceptAttacks;
 
         /// <summary>
         /// 作業開始時のイベント
@@ -78,7 +81,11 @@ namespace Module.Task
         /// <param name="deltaTime">Time.deltaTime</param>
         void ITaskSystem.TaskSystemUpdate(float deltaTime)
         {
-            UpdateProgress(deltaTime);
+            if (state != TaskState.Completed && currentWorkerCount != 0f)
+            {
+                UpdateProgress(deltaTime);
+            }
+
             ManagedUpdate(deltaTime);
         }
 
@@ -90,12 +97,16 @@ namespace Module.Task
         /// <param name="deltaTime">Time.deltaTime</param>
         protected virtual void ManagedUpdate(float deltaTime) { }
 
+
+        public void ForceWork(int monoWork)
+        {
+            enqueuedMonoWork = monoWork;
+            UpdateProgress(Time.deltaTime);
+        }
+
         private void UpdateProgress(float deltaTime)
         {
-            if (state == TaskState.Completed || currentWorkerCount == 0f)
-                return;
-
-            float currentMw = Mathf.Clamp(mw * currentProgress + currentWorkerCount * deltaTime, 0f, mw);
+            float currentMw = Mathf.Clamp(mw * currentProgress + currentWorkerCount * deltaTime + enqueuedMonoWork, 0f, mw);
             float prevProgress = currentProgress;
             currentProgress = Mathf.InverseLerp(0f, mw, currentMw);
 
@@ -109,6 +120,8 @@ namespace Module.Task
             {
                 ForceComplete();
             }
+
+            enqueuedMonoWork = 0;
         }
 
         private void OnMonoWorkUpdated()
