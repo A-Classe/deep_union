@@ -121,7 +121,11 @@ namespace GameMain.Task
                     int index = Random.Range(0, workers.Count);
                     Worker worker = workers[index];
                     workers.RemoveAt(index);
-                    worker.Kill();
+
+                    if (!worker.IsLocked)
+                    {
+                        worker.Kill();
+                    }
                 }
 
                 await UniTask.Delay(TimeSpan.FromSeconds(workerDamageInterval), cancellationToken: cancellationToken);
