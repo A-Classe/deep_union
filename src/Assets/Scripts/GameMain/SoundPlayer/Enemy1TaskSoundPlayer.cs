@@ -13,20 +13,14 @@ namespace GameMain.SoundPlayer
         {
             Task.OnStarted += OnTaskStarted;
             Task.OnCanceled += OnTaskCanceled;
-            Task.OnCompleted += OnTaskCompleted;
+            Task.OnBomb += OnBomb;
         }
 
-        private void OnTaskStarted(BaseTask _)
-        {
-            
-        }
+        private void OnTaskStarted(BaseTask _) { }
 
-        private void OnTaskCanceled(BaseTask _)
-        {
-            
-        }
+        private void OnTaskCanceled(BaseTask _) { }
 
-        private void OnTaskCompleted(BaseTask _)
+        private void OnBomb()
         {
             // ”š”­‚µ‚½‰¹‚ð–Â‚ç‚·
             AudioSource.PlayOneShot(BombSound);

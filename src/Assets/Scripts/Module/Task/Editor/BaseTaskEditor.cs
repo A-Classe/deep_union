@@ -28,9 +28,12 @@ namespace Module.Task.Editor
             if (foldGeneral)
             {
                 SerializedProperty mw = serializedObject.FindProperty("mw");
+                SerializedProperty acceptAttacks = serializedObject.FindProperty("acceptAttacks");
 
                 mw.intValue = EditorGUILayout.IntField("MonoWork", mw.intValue);
                 mw.intValue = Mathf.Clamp(mw.intValue, 1, int.MaxValue);
+
+                acceptAttacks.boolValue = EditorGUILayout.Toggle("AcceptAttacks", acceptAttacks.boolValue);
             }
         }
 
@@ -65,7 +68,7 @@ namespace Module.Task.Editor
             SerializedProperty iterator = serializedObject.GetIterator();
 
             //既に表示してるやつはスキップ
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 6; i++)
             {
                 iterator.NextVisible(true);
             }
