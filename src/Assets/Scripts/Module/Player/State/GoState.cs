@@ -10,6 +10,7 @@ namespace Module.Player.State
     {
         private readonly PlayerController controller;
         private readonly GameParam gameParam;
+        private readonly MovementSetting movementSetting;
         private readonly Rigidbody rigidbody;
         private readonly InputEvent moveInput;
         private readonly InputEvent rotateInput;
@@ -18,11 +19,12 @@ namespace Module.Player.State
         private float currentSpeed;
         private float currentRotation;
 
-        public GoState(PlayerController controller, Rigidbody rigidbody)
+        public GoState(PlayerController controller, Rigidbody rigidbody, MovementSetting movementSetting)
         {
             this.controller = controller;
             this.gameParam = controller.gameParam;
             this.rigidbody = rigidbody;
+            this.movementSetting = movementSetting;
 
             moveInput = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Move);
             rotateInput = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Rotate);
@@ -38,16 +40,30 @@ namespace Module.Player.State
             var transform = controller.transform;
             var forward = transform.forward;
 
-            currentSpeed += gameParam.MoveAccelaration * inputY;
-            currentSpeed = Mathf.Clamp(currentSpeed, gameParam.MinSpeed, gameParam.MaxSpeed);
+            if (inputY != 0f)
+            {
+                currentSpeed += inputY * gameParam.MoveAccelaration  * Time.fixedDeltaTime;
+            }
+            else
+            {
+                currentSpeed -= movementSetting.MoveResistance * Time.fixedDeltaTime;
+            }
 
+            currentSpeed = Mathf.Clamp(currentSpeed, gameParam.MinSpeed, gameParam.MaxSpeed);
             rigidbody.velocity = forward * currentSpeed;
 
-            // 回転速度を増加
-            rotationSpeed += inputX * gameParam.TorqueAccelaration * Time.deltaTime;
-
-            // 現在の回転を更新
-            currentRotation += rotationSpeed * Time.deltaTime;
+            if (inputX != 0f)
+            {
+                // 回転速度を増加
+                rotationSpeed += inputX * gameParam.TorqueAccelaration * Time.fixedDeltaTime;    
+            }
+            else
+            {
+                rotationSpeed -= Mathf.Sign(rotationSpeed) * movementSetting.RotateResistance * Time.fixedDeltaTime;    
+            }
+            
+            rotationSpeed = Mathf.Clamp(rotationSpeed, gameParam.MinRotateSpeed, gameParam.MaxRotateSpeed);
+            currentRotation += rotationSpeed;
 
             if (currentRotation < -gameParam.AngleLimit || gameParam.AngleLimit < currentRotation)
             {
