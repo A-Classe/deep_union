@@ -8,6 +8,11 @@ namespace GameMain.Presenter
         [Header("移動加速度")] public float MoveAccelaration = 1f;
         [Header("速度制限")] public float MinSpeed = 1f;
         public float MaxSpeed = 1f;
+        
+        
+        [Header("回転速度制限")] public float MinRotateSpeed = 1f;
+        public float MaxRotateSpeed = 1f;
+        
         [Header("回転加速度")] public float TorqueAccelaration = 1f;
         [Header("回転制限")] public float AngleLimit = 1f;
         [Header("１秒でHPが減るスピード")] public float DecereseHpSpeed = 1f;
