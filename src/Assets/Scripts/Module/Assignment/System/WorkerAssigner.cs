@@ -21,7 +21,7 @@ namespace Module.Assignment.System
         {
             this.leaderAssignableArea = leaderAssignableArea;
 
-            assignWorkerCache = new Worker[64];
+            assignWorkerCache = new Worker[128];
         }
 
         public void SetActiveAreas(IReadOnlyList<AssignableArea> activeAreas)
@@ -47,6 +47,12 @@ namespace Module.Assignment.System
                 {
                     if (CollisionUtil.InEllipse(worker.transform.position, activeArea.EllipseData))
                     {
+                        if (cacheCount >= assignWorkerCache.Length)
+                        {
+                            DebugEx.LogError("リーダーの割り当て上限を超えました！");
+                            return;
+                        }
+
                         assignWorkerCache[cacheCount] = worker;
                         cacheCount++;
                     }
