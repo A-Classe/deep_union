@@ -1,7 +1,6 @@
 using System;
 using Module.Player.Camera.State;
 using UnityEngine;
-using Wanna.DebugEx;
 
 namespace Module.Player.Camera
 {
@@ -32,7 +31,7 @@ namespace Module.Player.Camera
 
         private void LateUpdate()
         {
-            if (followTarget == null) return;
+            if (followTarget == null || currentState.GetState() == CameraState.Idle) return;
             var angleInRadians = followAngle * Mathf.Deg2Rad;
 
             var y = depth * Math.Sin(angleInRadians);

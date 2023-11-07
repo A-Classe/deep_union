@@ -117,6 +117,7 @@ namespace UI.Title.Option
                 var data = preference.GetUserData();
                 data.fullScreen.value = isOn;
                 preference.SetUserData(data);
+                Screen.fullScreen = isOn;
             };
             option2.OnBrightness += value =>
             {

@@ -29,6 +29,7 @@ namespace UI.Result
         [SerializeField] private TextInAnimationObject worker;
         [SerializeField] private TextInAnimationObject hp;
         [SerializeField] private TextInAnimationObject resource;
+        [SerializeField] private TextInAnimationObject result;
 
         private Nav? current;
 
@@ -115,6 +116,7 @@ namespace UI.Result
             worker.SetText(result.WorkerCount.ToString());
             hp.SetText(result.Hp.ToString());
             resource.SetText(result.Resource.ToString());
+            this.result.SetText(result.GetScore().ToString());
             StartAnimation(onFinished);
         }
 
