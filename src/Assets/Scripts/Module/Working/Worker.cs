@@ -71,7 +71,10 @@ namespace Module.Working
             if (!initialized)
                 return;
 
-            currentState?.Update();
+            if (navMeshAgent.pathStatus != NavMeshPathStatus.PathInvalid)
+            {
+                currentState?.Update();
+            }
         }
 
         /// <summary>
