@@ -6,12 +6,20 @@ using UnityEngine;
 
 namespace Module.Player.Controller
 {
+    [Serializable]
+    public class MovementSetting
+    {
+        public float MoveResistance;
+        public float RotateResistance;
+    }
+    
     /// <summary>
     /// プレイヤーの操作に関するクラス
     /// </summary>
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private Rigidbody rig;
+        [SerializeField] private MovementSetting setting;
         private Vector3? startPosition;
         private IPlayerState currentState;
 
@@ -32,7 +40,7 @@ namespace Module.Player.Controller
             states = new IPlayerState[]
             {
                 new WaitState(),
-                new GoState(this, rig),
+                new GoState(this, rig, setting),
                 new PauseState(rig)
             };
 

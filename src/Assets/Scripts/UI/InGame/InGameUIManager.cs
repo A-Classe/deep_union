@@ -5,6 +5,7 @@ using Core.User;
 using Core.Utility.UI.Navigation;
 using UI.InGame.Screen.GameOver;
 using UI.InGame.Screen.InGame;
+using UI.InGame.Screen.Pause;
 using UI.Title.Option;
 using UnityEngine;
 
@@ -14,6 +15,7 @@ namespace UI.InGame
     {
         [SerializeField] private InGameManager inGameManager;
         [SerializeField] private GameOverManager gameOverManager;
+        [SerializeField] private PauseManager pauseManager;
         [SerializeField] private OptionManager optionManager;
         private Navigation<InGameNav> navigation;
 
@@ -29,7 +31,8 @@ namespace UI.InGame
                 {
                     { InGameNav.InGame, inGameManager },
                     { InGameNav.GameOver, gameOverManager },
-                    { InGameNav.Option, optionManager }
+                    { InGameNav.Option, optionManager },
+                    { InGameNav.Pause, pauseManager }
                 }
             );
         }
@@ -51,8 +54,35 @@ namespace UI.InGame
             optionManager.OnBack += () =>
             {
                 navigation.SetActive(true);
-                navigation.SetScreen(InGameNav.InGame);
+                navigation.SetScreen(InGameNav.Pause);
                 OnGameActive?.Invoke();
+            };
+            
+            pauseManager.OnClick += nav =>
+            {
+                switch (nav)
+                {
+                    case PauseManager.Nav.Resume:
+                        navigation.SetActive(true);
+                        navigation.SetScreen(InGameNav.InGame);
+                        OnGameActive?.Invoke();
+                        break;
+                    case PauseManager.Nav.Option:
+                        navigation.SetScreen(InGameNav.Option, isReset: true);
+                        navigation.SetActive(false);
+                        OnGameInactive?.Invoke();
+                        break;
+                    case PauseManager.Nav.Restart:
+                        navigation.SetActive(false);
+                        sceneChanger.LoadInGame(sceneChanger.GetInGame());
+                        break;
+                    case PauseManager.Nav.Exit:
+                        navigation.SetActive(false);
+                        sceneChanger.LoadTitle(TitleNavigation.StageSelect);
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(nav), nav, null);
+                }
             };
             
             navigation.SetActive(true);
@@ -65,10 +95,10 @@ namespace UI.InGame
             navigation.SetScreen(InGameNav.InGame);
         }
 
-        public void StartOption()
+        public void StartPause()
         {
-            navigation.SetScreen(InGameNav.Option, isReset: true);
-            navigation.SetActive(false);
+            navigation.SetActive(true);
+            navigation.SetScreen(InGameNav.Pause, isReset: true);
             OnGameInactive?.Invoke();
         }
 
@@ -118,6 +148,7 @@ namespace UI.InGame
         
         GameOver,
         Option,
+        Pause,
         InGame,
     }
 }

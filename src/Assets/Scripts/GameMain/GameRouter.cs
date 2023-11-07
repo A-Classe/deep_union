@@ -148,7 +148,7 @@ namespace GameMain
             {
                 if (playerController.GetState() != PlayerState.Pause)
                 {
-                    uiManager.StartOption();
+                    uiManager.StartPause();
                 }
             };
         }
