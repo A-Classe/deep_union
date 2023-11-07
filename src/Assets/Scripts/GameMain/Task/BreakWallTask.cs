@@ -6,6 +6,7 @@ using Module.Player.State;
 using Module.Task;
 using UnityEngine;
 using VContainer;
+using Random = UnityEngine.Random;
 
 namespace GameMain.Task
 {
@@ -25,19 +26,20 @@ namespace GameMain.Task
         /// <summary>
         /// progressに応じて0,1.. lastのGameObject.activeを切り替える
         /// </summary>
-        [SerializeField] private GameObject[] types;
+        [SerializeField]
+        private GameObject[] types;
+
         /// <summary>
         /// 表示中のobjectIndex
         /// </summary>
         private int currentIndex;
-        
 
         public override void Initialize(IObjectResolver container)
         {
             navMeshBaker = container.Resolve<RuntimeNavMeshBaker>();
             OnProgressChanged += OnProgress;
 
-            if (types.Length == 0)
+            if (types.Length < 1)
             {
                 throw new NotImplementedException();
             }
@@ -85,15 +87,14 @@ namespace GameMain.Task
         /// <param name="value">progress count 0..1</param>
         private void OnProgress(float value)
         {
-            float range =  (float)(currentIndex + 1) / types.Length;
-            if (value > range)
+            float range = (float)(currentIndex + 1) / (types.Length - 1);
+            if (value >= range)
             {
-                UnityEngine.Debug.Log(value);
                 currentIndex++;
                 UpdateObject();
             }
         }
-        
+
         /// <summary>
         /// currentIndexに応じてobjectを切り替える
         /// </summary>
@@ -103,7 +104,10 @@ namespace GameMain.Task
             {
                 type.SetActive(false);
             }
+
             types[currentIndex].SetActive(true);
         }
+
+        public override void Disable() { }
     }
 }

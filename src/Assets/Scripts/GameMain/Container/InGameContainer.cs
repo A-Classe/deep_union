@@ -12,6 +12,7 @@ using GameMain.UI;
 using Module.Assignment;
 using Module.Assignment.Component;
 using Module.Assignment.System;
+using Module.Player;
 using Module.Player.Camera;
 using Module.Player.Controller;
 using Module.Task;

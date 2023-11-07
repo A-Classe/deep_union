@@ -71,7 +71,10 @@ namespace Module.Working
             if (!initialized)
                 return;
 
-            currentState?.Update();
+            if (navMeshAgent.pathStatus != NavMeshPathStatus.PathInvalid)
+            {
+                currentState?.Update();
+            }
         }
 
         /// <summary>
@@ -113,11 +116,14 @@ namespace Module.Working
 
         public void Enable()
         {
+            SetLockState(false);
             gameObject.SetActive(true);
         }
 
         public async UniTaskVoid Disable()
         {
+            SetLockState(true);
+
             await DeathCutoff(this.GetCancellationTokenOnDestroy());
 
             gameObject.SetActive(false);

@@ -23,7 +23,7 @@ namespace Debug
             this.resourceContainer = resourceContainer;
             playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
 
-            speedObserver = LabelObserver<PlayerController>.Create(this, controller => $"Speed: {controller.Speed}");
+            //speedObserver = LabelObserver<PlayerController>.Create(this, controller => $"Speed: {controller.Accel}");
             stateObserver = LabelObserver<PlayerController>.Create(this, controller => $"State: {controller.GetState()}");
             workerCountObserver = LabelObserver<LeaderAssignableArea>.Create(this, leader => $"WorkerCount: {leaderAssignableArea.WorkerCount}");
             resourceObserver = LabelObserver<ResourceContainer>.Create(this, container => $"ResourceCount: {container.ResourceCount}");

@@ -48,7 +48,7 @@ namespace System.GameProgress
             cTokenSource.Dispose();
         }
 
-        float GetDistance()
+        public float GetDistance()
         {
             return (goalPoint.transform.position - playerController.transform.position).z;
         }

@@ -54,7 +54,7 @@ namespace Core.Utility.UI.Navigation
             clickEvent.Started += OnClick;
 
             cancelEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.Title.Cancel);
-            cancelEvent.Started += ctx =>
+            cancelEvent.Canceled += ctx =>
             {
                 if (!isActive) return;
                 OnCancel?.Invoke(ctx);
@@ -67,7 +67,7 @@ namespace Core.Utility.UI.Navigation
             if (Math.Abs(moveValue.y) > 0.05f || Math.Abs(moveValue.x) > 0.05f) OnMove(moveValue);
         }
 
-        public void SetScreen(T nav, bool isAnimate = true)
+        public void SetScreen(T nav, bool isAnimate = true, bool isReset = false)
         {
             if (!isActive) return;
             
@@ -96,11 +96,11 @@ namespace Core.Utility.UI.Navigation
                 if (current == null) throw new NotImplementedException();
                 if (isAnimate)
                 {
-                    current.Initialized(current.GetContext().FadeIn(Easings.Default(0.3f)));
+                    current.Initialized(current.GetContext().FadeIn(Easings.Default(0.3f)), isReset);
                 }
                 else
                 {
-                    current.Initialized(current.GetContext().SlideTo(new Vector2(0,0), Easings.Default(0.1f)));
+                    current.Initialized(current.GetContext().SlideTo(new Vector2(0,0), Easings.Default(0.1f)), isReset);
                 }
             }
         }

@@ -1,3 +1,4 @@
+using System;
 using Core.Model.Scene;
 using Core.User;
 using JetBrains.Annotations;
@@ -48,10 +49,18 @@ namespace Core.Scenes
         /// <returns>遷移できなければfalseを返す</returns>
         public bool LoadInGame(StageData.Stage routeNav)
         {
-            inGameRoute = routeNav;
-            SceneManager.LoadScene(InGameRoute);
-            currentRoute = InGameRoute;
-            return true;
+            try
+            {
+                inGameRoute = routeNav;
+                SceneManager.LoadScene(InGameRoute);
+                currentRoute = InGameRoute;
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
         }
 
         

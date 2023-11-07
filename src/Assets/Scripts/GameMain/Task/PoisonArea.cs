@@ -5,6 +5,7 @@ using Core.Utility;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Module.Assignment;
+using Module.Player;
 using Module.Task;
 using Module.Working;
 using UnityEngine;
@@ -120,7 +121,11 @@ namespace GameMain.Task
                     int index = Random.Range(0, workers.Count);
                     Worker worker = workers[index];
                     workers.RemoveAt(index);
-                    worker.Kill();
+
+                    if (!worker.IsLocked)
+                    {
+                        worker.Kill();
+                    }
                 }
 
                 await UniTask.Delay(TimeSpan.FromSeconds(workerDamageInterval), cancellationToken: cancellationToken);

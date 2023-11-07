@@ -28,13 +28,16 @@ namespace UI.Title.Quit
             cursor.AddPoint(Nav.Yes, yes.rectTransform);
             cursor.AddPoint(Nav.No, no.rectTransform);
             current = null;
+
+            SetState(Nav.Yes);
         }
 
-        public override void Initialized(ContentTransform content)
+        public override void Initialized(ContentTransform content, bool isReset = false)
         {
-            base.Initialized(content);
+            base.Initialized(content, isReset);
             bar.AnimateIn();
-            SetState(Nav.Yes);
+            
+            if (isReset) { SetState(Nav.Yes);}
         }
 
         public override void Clicked()
@@ -61,11 +64,30 @@ namespace UI.Title.Quit
                 return;
             }
 
-            if (direction.y != 0)
+            Nav nextNav;
+
+            switch (direction.y)
             {
-                var nextNav = current == Nav.No ? Nav.Yes : Nav.No;
-                SetState(nextNav);
+                case > 0:
+                    if(current.Value == Nav.Yes)
+                    {
+                        return;
+                    }
+                    nextNav = Nav.Yes;
+                    break;
+
+                case < 0:
+                    if(current.Value == Nav.No)
+                    {
+                        return;
+                    }
+                    nextNav = Nav.No;
+                    break;
+
+                default:
+                    return;
             }
+            SetState(nextNav);
         }
 
         public override void Finished(ContentTransform content, Action onFinished)

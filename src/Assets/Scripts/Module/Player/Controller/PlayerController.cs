@@ -1,30 +1,31 @@
 using System;
 using Core.Model.Player;
+using GameMain.Presenter;
 using Module.Player.State;
 using UnityEngine;
 
 namespace Module.Player.Controller
 {
+    [Serializable]
+    public class MovementSetting
+    {
+        public float MoveResistance;
+        public float RotateResistance;
+    }
+    
     /// <summary>
     /// プレイヤーの操作に関するクラス
     /// </summary>
     public class PlayerController : MonoBehaviour
     {
+        [SerializeField] private Rigidbody rig;
+        [SerializeField] private MovementSetting setting;
         private Vector3? startPosition;
-        private float speed = 1f;
-
-        public float Speed => speed;
-
         private IPlayerState currentState;
 
         private IPlayerState[] states;
         public event Action<PlayerState> OnStateChanged;
-
-        private void Awake()
-        {
-            Initialize();
-        }
-
+        [NonSerialized] public GameParam gameParam;
 
         private void FixedUpdate()
         {
@@ -39,8 +40,8 @@ namespace Module.Player.Controller
             states = new IPlayerState[]
             {
                 new WaitState(),
-                new GoState(this),
-                new PauseState()
+                new GoState(this, rig, setting),
+                new PauseState(rig)
             };
 
             SetState(PlayerState.Pause);
@@ -67,10 +68,10 @@ namespace Module.Player.Controller
             OnStateChanged?.Invoke(state);
         }
 
-        public void InitParam(PlayerInitModel model)
+        public void InitParam(GameParam gameParam)
         {
-            speed = model.speed ?? 1f;
-            startPosition = model.startPosition;
+            this.gameParam = gameParam;
+            Initialize();
         }
 
         /// <summary>

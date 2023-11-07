@@ -14,6 +14,8 @@ namespace Module.Player.Camera
         [SerializeField] private float upRate = 1f;
         [SerializeField] private float inclination = 1f;
         [SerializeField] private float vertical = 1f;
+        [SerializeField] private float minAngleX = 40f;
+        [SerializeField] private float maxAngleX = 50f;
 
         private ICameraState currentState;
         private ICameraState[] states;
@@ -28,7 +30,7 @@ namespace Module.Player.Camera
             Initialize();
         }
 
-        private void FixedUpdate()
+        private void LateUpdate()
         {
             if (followTarget == null) return;
             var angleInRadians = followAngle * Mathf.Deg2Rad;
@@ -36,7 +38,7 @@ namespace Module.Player.Camera
             var y = depth * Math.Sin(angleInRadians);
             var horizontalDistance = depth * Math.Cos(angleInRadians);
             //var distance = Vector3.Distance(followTarget.position, leaderTarget.position);
-            var distance = leaderTarget.position.z- followTarget.position.z;
+            var distance = leaderTarget.position.z - followTarget.position.z;
 
             Vector3 horizontalOffset = -followTarget.forward * (float)horizontalDistance;
             Vector3 targetPosition = followTarget.position + horizontalOffset + Vector3.up * (float)y;
@@ -53,7 +55,11 @@ namespace Module.Player.Camera
         {
             var targetRotation = Quaternion.LookRotation(leaderTarget.position - transform.position);
             var slerpRotation = Quaternion.Slerp(transform.rotation, targetRotation, maxRotationRate);
-            transform.rotation = Quaternion.Slerp(transform.rotation, slerpRotation, Time.fixedDeltaTime * rotationSpeed);
+
+            Vector3 eulerAngles = slerpRotation.eulerAngles;
+            eulerAngles.x = Mathf.Clamp(eulerAngles.x, minAngleX, maxAngleX);
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(eulerAngles), Time.fixedDeltaTime * rotationSpeed);
         }
 
         private void Initialize()
