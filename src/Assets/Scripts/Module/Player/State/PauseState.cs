@@ -13,6 +13,12 @@ namespace Module.Player.State
 
         public PlayerState GetState() => PlayerState.Pause;
 
-        public void Update() { }
+        public void Update()
+        {
+            if (rigidbody.velocity != Vector3.zero)
+            {
+                rigidbody.velocity = Vector3.zero;
+            }
+        }
     }
 }

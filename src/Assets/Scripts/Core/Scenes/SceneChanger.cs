@@ -13,7 +13,7 @@ namespace Core.Scenes
     public class SceneChanger
     {
         private const string TitleRoute = "Scenes/Other/Titles_Test";
-        private const string InGameRoute = "Scenes/Other/InGameUI_Test/InGameUI_Test";
+        private const string InGameRoute = "Scenes/Stages/Stage/Stage";
         private const string ResultRoute = "Scenes/Other/Result_Test";
         
         private TitleNavigation route = TitleNavigation.Title;

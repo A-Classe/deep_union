@@ -97,6 +97,11 @@ namespace GameMain
                 if (isQuit)
                 {
                     // TODO: ゲームを終了させる
+#if UNITY_EDITOR
+                    UnityEditor.EditorApplication.isPlaying = false;
+#else
+                    Application.Quit();
+#endif
                 }
                 else
                 {

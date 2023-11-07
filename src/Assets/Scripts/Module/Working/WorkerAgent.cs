@@ -117,5 +117,7 @@ namespace Module.Working
             uint count = activeWorkers.Count > 0 ? (uint)activeWorkers.Count : 0;
             uiManager.SetWorkerCount(count);
         }
+        
+        public int WorkerCount() => activeWorkers.Count;
     }
 }

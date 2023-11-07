@@ -1,8 +1,8 @@
+using System;
 using AnimationPro.RunTime;
 using Core.Utility.UI;
 using Core.Utility.UI.Navigation;
 using TMPro;
-using Unity.Plastic.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -64,7 +64,7 @@ namespace UI.InGame.Screen.InGame
 
             if (!maxHpValue.HasValue)
             {
-                throw new MismatchedNotSetException();
+                throw new Exception();
             }
 
             if (current > maxHpValue.Value) return;
@@ -99,7 +99,7 @@ namespace UI.InGame.Screen.InGame
 
             if (!maxResValue.HasValue)
             {
-                throw new MismatchedNotSetException();
+                throw new Exception();
             }
 
             if (current > maxResValue.Value) return;
@@ -118,7 +118,7 @@ namespace UI.InGame.Screen.InGame
             
             if (!maxWorkersValue.HasValue)
             {
-                throw new MismatchedNotSetException();
+                throw new Exception();
             }
             
             if (value > maxWorkersValue.Value) return;
