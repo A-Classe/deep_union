@@ -3,33 +3,32 @@ on:
   push:
   workflow_dispatch: {}
 jobs:
-  build:
-    name: Run the Unity build
+  buildForAllSupportedPlatforms:
+    name: Build for ${{ matrix.targetPlatform }}
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        targetPlatform:
+          - StandaloneWindows64 # Build a Windows 64-bit standalone.
     steps:
-      # actions/checkout@v2 を利用して作業ディレクトリに
-      # Unity プロジェクトの中身をダウンロードしてくる
-      - name: Check out my unity project.
-        uses: actions/checkout@v3
-
-      # GameCI の Builder を利用して、
-      # Unity プロジェクトのビルドを実行する
-      - name: Run the WebGL build
-        uses: game-ci/unity-builder@v3
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          lfs: true
+      - uses: actions/cache@v3
+        with:
+          path: Library
+          key: Library-${{ matrix.targetPlatform }}
+          restore-keys: Library-
+      - uses: game-ci/unity-builder@v3
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
+          targetPlatform: ${{ matrix.targetPlatform }}
           projectPath: ./src
-          # 今回は WebGL ビルドを行いたいため WebGL を指定する
-          # WebGL 以外の指定可能な値は下記に記載の値が利用可能
-          # ref: https://docs.unity3d.com/ScriptReference/BuildTarget.html
-          targetPlatform: StandaloneWindows64
-
           unityVersion: 2021.3.23f1
-
-      # Builder で出力した WebGL ビルドをアーティファクトでダウンロード可能にする
-      - name: Upload the WebGL Build
-        uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
-          name: Build
-          path: build
+          name: Build-${{ matrix.targetPlatform }}
+          path: build/${{ matrix.targetPlatform }}
