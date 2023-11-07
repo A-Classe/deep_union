@@ -26,12 +26,13 @@ namespace GameMain.Task
         /// <summary>
         /// progressに応じて0,1.. lastのGameObject.activeを切り替える
         /// </summary>
-        [SerializeField] private GameObject[] types;
+        [SerializeField]
+        private GameObject[] types;
+
         /// <summary>
         /// 表示中のobjectIndex
         /// </summary>
         private int currentIndex;
-        
 
         public override void Initialize(IObjectResolver container)
         {
@@ -86,14 +87,14 @@ namespace GameMain.Task
         /// <param name="value">progress count 0..1</param>
         private void OnProgress(float value)
         {
-            float range =  (float)(currentIndex + 1) / (types.Length - 1);
+            float range = (float)(currentIndex + 1) / (types.Length - 1);
             if (value >= range)
             {
                 currentIndex++;
                 UpdateObject();
             }
         }
-        
+
         /// <summary>
         /// currentIndexに応じてobjectを切り替える
         /// </summary>
@@ -103,6 +104,7 @@ namespace GameMain.Task
             {
                 type.SetActive(false);
             }
+
             types[currentIndex].SetActive(true);
         }
 

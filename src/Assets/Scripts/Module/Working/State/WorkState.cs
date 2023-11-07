@@ -42,7 +42,7 @@ namespace Module.Working.State
 
             workerAnimator.SetBool(IsFollowing, false);
             workerAnimator.SetBool(IsWorking, true);
-            
+
             //作業しているワーカーには衝突しない
             navMeshAgent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
         }
@@ -61,7 +61,10 @@ namespace Module.Working.State
 
         public void Update()
         {
-            navMeshAgent.SetDestination(worker.Target.position);
+            if (navMeshAgent.pathStatus != NavMeshPathStatus.PathInvalid)
+            {
+                navMeshAgent.SetDestination(worker.Target.position);
+            }
         }
 
         public void Dispose()
