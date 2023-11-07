@@ -11,11 +11,10 @@ namespace Module.Working.Controller
     public class WorkerController : MonoBehaviour
     {
         [Header("移動速度")] [SerializeField] private float controlSpeed;
-
-        [Header("静的摩擦力")] [SerializeField] private float staticFriction;
         [Header("最大速度")] [SerializeField] private float maxSpeed;
+
         [SerializeField] private Transform target;
-        [SerializeField] private Vector3 velocity;
+        [SerializeField] private Rigidbody rig;
 
         private InputEvent controlEvent;
 
@@ -35,7 +34,11 @@ namespace Module.Working.Controller
         private void Update()
         {
             input = controlEvent.ReadValue<Vector2>();
-            transform.position += new Vector3(0f, 0f, target.position.z - beforeZ);
+        }
+
+        private void UpdatePlayerOffset()
+        {
+            rig.position += new Vector3(0f, 0f, target.position.z - beforeZ);
 
             beforeZ = target.position.z;
         }
@@ -43,29 +46,34 @@ namespace Module.Working.Controller
         private void FixedUpdate()
         {
             if (!isPlaying) return;
+
+            Vector3 velocity = rig.velocity;
+
             if (input != Vector2.zero)
             {
                 Vector2 vel = input * (controlSpeed * Time.fixedDeltaTime);
                 velocity += new Vector3(vel.x, 0, vel.y);
             }
-            else
-            {
-                float friction = staticFriction * Time.fixedDeltaTime;
-                float frictionMagnitude = velocity.magnitude - friction;
+            // else
+            // {
+            //     float friction = staticFriction * Time.fixedDeltaTime;
+            //     float frictionMagnitude = velocity.magnitude - friction;
+            //
+            //     velocity = velocity.normalized * frictionMagnitude;
+            // }
 
-                velocity = velocity.normalized * frictionMagnitude;
-            }
+            rig.velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
 
-            velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
-
-            Vector3 nextPos = transform.position + velocity * Time.fixedDeltaTime;
+            Vector3 nextPos = rig.position + velocity * Time.fixedDeltaTime;
 
             if (!InViewport(nextPos))
             {
-                velocity = Vector3.zero;
+                rig.velocity = Vector3.zero;
             }
 
-            transform.position = Clamp(nextPos);
+            rig.position = Clamp(nextPos);
+            
+            UpdatePlayerOffset();
         }
 
         private bool InViewport(Vector3 worldPoint)

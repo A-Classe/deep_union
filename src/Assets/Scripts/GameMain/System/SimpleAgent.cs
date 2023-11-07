@@ -9,6 +9,9 @@ namespace GameMain.System
 
         public void Move(Vector3 target)
         {
+            if (rig.isKinematic)
+                return;
+            
             rig.velocity = (target - transform.position).normalized * speed;
             transform.LookAt(target);
         }
