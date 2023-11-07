@@ -1,9 +1,10 @@
-name: Run the WebGL build
+name: Run the Unity build
 on:
+  push:
   workflow_dispatch: {}
 jobs:
   build:
-    name: Run the build
+    name: Run the Unity build
     runs-on: ubuntu-latest
     steps:
       # actions/checkout@v2 を利用して作業ディレクトリに
@@ -14,14 +15,15 @@ jobs:
       # GameCI の Builder を利用して、
       # Unity プロジェクトのビルドを実行する
       - name: Run the WebGL build
-        uses: game-ci/unity-builder@v2
+        uses: game-ci/unity-builder@v3
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
+          projectPath: ./src
           # 今回は WebGL ビルドを行いたいため WebGL を指定する
           # WebGL 以外の指定可能な値は下記に記載の値が利用可能
           # ref: https://docs.unity3d.com/ScriptReference/BuildTarget.html
-          targetPlatform: StandaloneWindows
+          targetPlatform: StandaloneWindows64
 
           unityVersion: 2021.3.23f1
 
