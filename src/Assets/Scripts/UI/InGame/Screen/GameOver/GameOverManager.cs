@@ -22,6 +22,7 @@ namespace UI.InGame.Screen.GameOver
         }
 
         private Navigation<Nav> navigation;
+        [SerializeField] private SimpleUnderBarController bar;
         [SerializeField] private CursorController<Nav> cursor;
         [SerializeField] private FadeInOutButton retry;
         [SerializeField] private FadeInOutButton stage;
@@ -40,6 +41,7 @@ namespace UI.InGame.Screen.GameOver
         public override void Initialized(ContentTransform content, bool isReset)
         {
             base.Initialized(content, isReset);
+            bar.AnimateIn();
 
             if (isReset) { SetState(Nav.Retry); }
         }
