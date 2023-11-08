@@ -8,7 +8,9 @@ using Core.User;
 using Core.Utility.Player;
 using GameMain.Presenter;
 using Module.Assignment.Component;
+using Module.Player;
 using Module.Player.Camera;
+using Module.Player.Camera.State;
 using Module.Player.Controller;
 using Module.Player.State;
 using Module.Task;
@@ -46,6 +48,12 @@ namespace GameMain
 
         private readonly UserPreference preference;
 
+        private readonly PlayerStatus playerStatus;
+
+        private readonly ResourceContainer resourceContainer;
+
+        private readonly WorkerAgent workerAgent;
+
         [Inject]
         public GameRouter(
             SpawnParam spawnParam,
@@ -60,7 +68,10 @@ namespace GameMain
             LeaderAssignableArea leaderAssignableArea,
             InGameUIManager uiManager,
             SceneChanger sceneChanger,
-            UserPreference preference
+            UserPreference preference,
+            PlayerStatus playerStatus,
+            ResourceContainer resourceContainer,
+            WorkerAgent workerAgent
         )
         {
             this.spawnParam = spawnParam;
@@ -82,6 +93,12 @@ namespace GameMain
             this.sceneChanger = sceneChanger;
 
             this.preference = preference;
+
+            this.playerStatus = playerStatus;
+
+            this.resourceContainer = resourceContainer;
+            
+            this.workerAgent = workerAgent;
         }
 
         public void Start()
@@ -119,6 +136,7 @@ namespace GameMain
             playerController.SetState(PlayerState.Go);
 
             cameraController.SetFollowTarget(playerController.transform);
+            cameraController.SetState(CameraState.Follow);
 
             workerController.SetCamera(cameraController.GetCamera());
 
@@ -136,9 +154,10 @@ namespace GameMain
                 sceneChanger.LoadResult(
                     new GameResult
                     {
-                        Hp = 20,
-                        Resource = 30,
-                        stageCode = (int) sceneChanger.GetInGame()
+                        Hp = playerStatus.Hp,
+                        Resource = resourceContainer.ResourceCount,
+                        stageCode = (int) sceneChanger.GetInGame(),
+                        WorkerCount = workerAgent.WorkerCount()
                     }
                 );
             };
@@ -172,12 +191,14 @@ namespace GameMain
         {
             workerController.SetPlayed(false);
             playerController.SetState(PlayerState.Pause);
+            cameraController.SetState(CameraState.Idle);
         }
 
         private void OnCallGameActive()
         {
             workerController.SetPlayed(true);
             playerController.SetState(PlayerState.Go);
+            cameraController.SetState(CameraState.Follow);
         }
     }
 }
