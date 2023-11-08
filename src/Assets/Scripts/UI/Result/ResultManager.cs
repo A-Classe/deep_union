@@ -29,7 +29,11 @@ namespace UI.Result
         [SerializeField] private TextInAnimationObject worker;
         [SerializeField] private TextInAnimationObject hp;
         [SerializeField] private TextInAnimationObject resource;
+        [SerializeField] private TextInAnimationObject score;
         [SerializeField] private TextInAnimationObject result;
+
+        [SerializeField] private AudioSource audioSource;
+        [SerializeField] private AudioClip gameClear;
 
         private Nav? current;
 
@@ -41,6 +45,8 @@ namespace UI.Result
             current = Nav.Next;
             
             SetState(Nav.Next);
+
+            audioSource.PlayOneShot(gameClear);
         }
 
         public override void Initialized(ContentTransform content, bool isReset)
@@ -124,7 +130,9 @@ namespace UI.Result
         {
             worker.Animation(worker.FadeIn(Easings.Default(0.5f, 0.4f)));
             hp.Animation(hp.FadeIn(Easings.Default(0.5f, 1f)));
-            resource.Animation(resource.FadeIn(Easings.Default(0.5f, 1.6f)),
+            resource.Animation(resource.FadeIn(Easings.Default(0.5f, 1.6f)));
+            score.Animation(score.FadeIn(Easings.Default(0.5f, 2.2f)));
+            result.Animation(resource.FadeIn(Easings.Default(0.5f, 2.2f)),
                 new AnimationListener
                 {
                     OnFinished = onFinished

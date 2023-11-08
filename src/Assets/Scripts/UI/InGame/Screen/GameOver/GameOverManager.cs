@@ -27,6 +27,9 @@ namespace UI.InGame.Screen.GameOver
         [SerializeField] private FadeInOutButton retry;
         [SerializeField] private FadeInOutButton stage;
 
+        [SerializeField] private AudioSource audioSource;
+        [SerializeField] private AudioClip gameOver;
+
         private Nav? current;
 
         private void Start()
@@ -36,6 +39,10 @@ namespace UI.InGame.Screen.GameOver
             current = Nav.Retry;
 
             SetState(Nav.Retry);
+
+            //アルファ用にくっつける。後で消してください
+            audioSource.Stop();
+            audioSource.PlayOneShot(gameOver);
         }
 
         public override void Initialized(ContentTransform content, bool isReset)
