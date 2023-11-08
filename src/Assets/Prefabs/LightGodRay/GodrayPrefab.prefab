@@ -43,7 +43,7 @@ ParticleSystem:
   m_GameObject: {fileID: 6878255451075723143}
   serializedVersion: 8
   lengthInSec: 5
-  simulationSpeed: 0.19
+  simulationSpeed: 1.18
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -286,7 +286,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 74.53
+      scalar: 285.6
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -663,7 +663,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 25
+    angle: 38.93
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -749,7 +749,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 50
+      value: 248.3
       mode: 0
       spread: 0
       speed:
@@ -4890,10 +4890,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7917208061596934089, guid: 76058b4276caf489c9438ee8e829549a,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7917208061596934095, guid: 76058b4276caf489c9438ee8e829549a,
         type: 3}
       propertyPath: m_Name
       value: Dust
+      objectReference: {fileID: 0}
+    - target: {fileID: 7917208061596934095, guid: 76058b4276caf489c9438ee8e829549a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76058b4276caf489c9438ee8e829549a, type: 3}
