@@ -23,6 +23,11 @@ namespace GameMain.Task
         [SerializeField] private int minWorkerCount;
         [SerializeField] private int maxWorkerCount;
 
+        [SerializeField] private AudioSource audioSource;
+        [SerializeField] private AudioClip HealSound;
+        [SerializeField] private GameObject collideObj;
+        [SerializeField] private GameObject healObj;
+
         private PlayerController playerController;
         private RuntimeNavMeshBaker runtimeNavMeshBaker;
         private PlayerStatus playerStatus;
@@ -86,7 +91,11 @@ namespace GameMain.Task
             {
                 playerStatus.AddHp(addHp);
                 ForceComplete();
-                Disable();
+
+                audioSource.PlayOneShot(HealSound);
+                collideObj.SetActive(false);
+                healObj.SetActive(false);
+                //Disable();
             }
         }
     }

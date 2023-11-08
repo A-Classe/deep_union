@@ -769,6 +769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mw: 1
+  acceptAttacks: 0
   state: 0
   currentProgress: 0
   currentWorkerCount: 0
@@ -779,6 +780,10 @@ MonoBehaviour:
   moveSpeed: 5
   minWorkerCount: 10
   maxWorkerCount: 30
+  audioSource: {fileID: 6981878997597987576}
+  HealSound: {fileID: 8300000, guid: 8719ca82af1819344a43042355c08743, type: 3}
+  collideObj: {fileID: 1689977097}
+  healObj: {fileID: 9184461193990643031}
 --- !u!195 &1703818973
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -828,8 +833,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.68
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1130,6 +1135,12 @@ PrefabInstance:
 --- !u!4 &9184461193990643018 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9184461192326743540, guid: 2eb294e81f9f5754896e8b324a83a7eb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1825773758}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9184461193990643031 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9184461192326743529, guid: 2eb294e81f9f5754896e8b324a83a7eb,
     type: 3}
   m_PrefabInstance: {fileID: 1825773758}
   m_PrefabAsset: {fileID: 0}
