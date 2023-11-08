@@ -55,7 +55,6 @@ namespace UI.InGame
             {
                 navigation.SetActive(true);
                 navigation.SetScreen(InGameNav.Pause);
-                OnGameActive?.Invoke();
             };
             
             pauseManager.OnClick += nav =>
