@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9026914678012626790}
+  - component: {fileID: 1587206462}
+  - component: {fileID: 1587206463}
   m_Layer: 0
   m_Name: GODRAY
   m_TagString: Untagged
@@ -33,6 +35,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!205 &1587206462
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6609127182302585256}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.01802497
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 6549074437182110321}
+    - renderer: {fileID: 1176788418164543302}
+    - renderer: {fileID: 1176788418164543302}
+  m_Enabled: 1
+--- !u!114 &1587206463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6609127182302585256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32808f901608ccf45b453dd1c94896fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myLight: {fileID: 8396503856485360790}
+  updateInterval: 0.1
+  allowDistance: 4000
 --- !u!1001 &402654777649935896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -115,11 +153,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 8147253233366192782, guid: 9e3f818eba816954287e2a77b581304d,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e3f818eba816954287e2a77b581304d, type: 3}
 --- !u!4 &8978648264750121 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 398958255722857009, guid: 9e3f818eba816954287e2a77b581304d,
+    type: 3}
+  m_PrefabInstance: {fileID: 402654777649935896}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1176788418164543302 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1567902171730409822, guid: 9e3f818eba816954287e2a77b581304d,
+    type: 3}
+  m_PrefabInstance: {fileID: 402654777649935896}
+  m_PrefabAsset: {fileID: 0}
+--- !u!108 &8396503856485360790 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 8147253233366192782, guid: 9e3f818eba816954287e2a77b581304d,
     type: 3}
   m_PrefabInstance: {fileID: 402654777649935896}
   m_PrefabAsset: {fileID: 0}
@@ -212,6 +267,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d654987ce5ae64142bc689478cb0a45a, type: 3}
+--- !u!199 &6549074437182110321 stripped
+ParticleSystemRenderer:
+  m_CorrespondingSourceObject: {fileID: 6878255451075723136, guid: d654987ce5ae64142bc689478cb0a45a,
+    type: 3}
+  m_PrefabInstance: {fileID: 402654779179238897}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6549074437182110323 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6878255451075723138, guid: d654987ce5ae64142bc689478cb0a45a,
