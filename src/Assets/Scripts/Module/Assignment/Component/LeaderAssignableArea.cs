@@ -3,6 +3,7 @@ using GameMain.Presenter;
 using Module.Working;
 using Module.Working.State;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Module.Assignment.Component
 {

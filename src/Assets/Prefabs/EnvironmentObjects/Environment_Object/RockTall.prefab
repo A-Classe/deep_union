@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1972686787114766269}
   - component: {fileID: 4422577776163669376}
+  - component: {fileID: 1266486417979283533}
   m_Layer: 0
   m_Name: RockTall
   m_TagString: Untagged
@@ -47,6 +48,25 @@ CapsuleCollider:
   m_Height: 5.4
   m_Direction: 1
   m_Center: {x: 0, y: 2.1, z: -0.01}
+--- !u!205 &1266486417979283533
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9140298471021587964}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 1
+  m_AnimateCrossFading: 1
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.033973858
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 7907189502930515234}
+  m_Enabled: 1
 --- !u!1001 &8825488829163792806
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -141,6 +161,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f296be423e0a9d444a24fb6bbb2e0be2, type: 3}
+--- !u!23 &7907189502930515234 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: f296be423e0a9d444a24fb6bbb2e0be2,
+    type: 3}
+  m_PrefabInstance: {fileID: 8825488829163792806}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9074988724386860621 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f296be423e0a9d444a24fb6bbb2e0be2,

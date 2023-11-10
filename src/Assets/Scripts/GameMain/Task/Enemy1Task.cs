@@ -161,7 +161,7 @@ namespace GameMain.Task
             Damage();
 
             ForceComplete();
-            base.Disable();
+            Disable();
         }
 
         private async UniTaskVoid DisableBody()
@@ -227,8 +227,6 @@ namespace GameMain.Task
         }
 
         public override void Enable() { }
-
-        public override void Disable() { }
 
         private void OnDrawGizmos()
         {

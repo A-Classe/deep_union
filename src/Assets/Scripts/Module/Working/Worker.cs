@@ -138,7 +138,7 @@ namespace Module.Working
 
             while (!cancellationToken.IsCancellationRequested)
             {
-                currentValue = Mathf.Lerp(0f, 12f, Mathf.InverseLerp(0f, deathDuration, currentTime));
+                currentValue = Mathf.Lerp(12f, 0f, Mathf.InverseLerp(0f, deathDuration, currentTime));
 
                 foreach (Material material in cutOffMaterials)
                 {

@@ -56,7 +56,6 @@ namespace GameMain.Task
         private async UniTaskVoid DisableSequence()
         {
             SetDetection(false);
-            Disable();
 
             await navMeshBaker.Bake();
 
@@ -107,7 +106,5 @@ namespace GameMain.Task
 
             types[currentIndex].SetActive(true);
         }
-
-        public override void Disable() { }
     }
 }

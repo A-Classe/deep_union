@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 737818850}
   - component: {fileID: 737818849}
   - component: {fileID: 737818854}
+  - component: {fileID: 533557232}
   m_Layer: 11
   m_Name: PoisonTask
   m_TagString: Untagged
@@ -200,6 +201,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 3
+--- !u!205 &533557232
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809895263976331911}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.013190112
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 6760559165615458827}
+    - renderer: {fileID: 6760559163674845677}
+    - renderer: {fileID: 1336461908151332040}
+    - renderer: {fileID: 5337822310381216747}
+    - renderer: {fileID: 5337822309950283769}
+  m_Enabled: 1
 --- !u!1 &5337822309950283718
 GameObject:
   m_ObjectHideFlags: 0
@@ -1058,12 +1082,12 @@ PrefabInstance:
     - target: {fileID: 4950811710354882306, guid: 442da039d7a981f4cb3270ba9aab7d8c,
         type: 3}
       propertyPath: m_Size.x
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4950811710354882306, guid: 442da039d7a981f4cb3270ba9aab7d8c,
         type: 3}
       propertyPath: m_Size.y
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5329908340290504891, guid: 442da039d7a981f4cb3270ba9aab7d8c,
         type: 3}
@@ -1346,6 +1370,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75e9930976c53364c9a8cbfe676405f5, type: 3}
+--- !u!199 &1336461908151332040 stripped
+ParticleSystemRenderer:
+  m_CorrespondingSourceObject: {fileID: 6386051608033378347, guid: 75e9930976c53364c9a8cbfe676405f5,
+    type: 3}
+  m_PrefabInstance: {fileID: 5337822309452819683}
+  m_PrefabAsset: {fileID: 0}
 --- !u!198 &1336461908151332041 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 6386051608033378346, guid: 75e9930976c53364c9a8cbfe676405f5,
@@ -1458,6 +1488,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5337822310158554767}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &6760559165615458827 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 2380b6d8591274945b90ebb0cc98afce,
+    type: 3}
+  m_PrefabInstance: {fileID: 5337822310158554767}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5337822310902234473
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1560,6 +1596,12 @@ PrefabInstance:
 --- !u!4 &5591632770998082178 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 925eddbb44b5f8942acbcc61522acaf8,
+    type: 3}
+  m_PrefabInstance: {fileID: 5337822310902234473}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6760559163674845677 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 925eddbb44b5f8942acbcc61522acaf8,
     type: 3}
   m_PrefabInstance: {fileID: 5337822310902234473}
   m_PrefabAsset: {fileID: 0}

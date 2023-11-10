@@ -25,37 +25,29 @@ namespace Module.Task
         {
             this.gameParam = gameParam;
             mainCamera = Camera.main;
-            tasks = SortTaskOrder(TaskUtil.FindSceneTasks<BaseTask>());
+
+            float camZ = mainCamera.transform.position.z;
+            tasks = TaskUtil.FindSceneTasks<BaseTask>().OrderBy(task => task.transform.position.z - camZ).ToArray();
+            tail = tasks.Length - 1;
         }
 
         public void Start()
         {
             foreach (BaseTask task in tasks)
             {
-                Vector3 viewPos = mainCamera.WorldToViewportPoint(task.transform.position);
-
-                if (IsPassed(viewPos))
+                if (IsPassed(task.transform.position))
                 {
                     task.Disable();
                     head++;
                 }
-                else if (!IsAhead(viewPos))
-                {
-                    tail++;
-                }
-                else
+                else if (IsAhead(task.transform.position))
                 {
                     task.Disable();
+                    tail--;
                 }
             }
 
             OnTaskCreated?.Invoke();
-        }
-
-        private BaseTask[] SortTaskOrder(IEnumerable<BaseTask> tasks)
-        {
-            float camZ = mainCamera.transform.position.z;
-            return tasks.OrderBy(task => task.transform.position.z - camZ).ToArray();
         }
 
         public ReadOnlySpan<BaseTask> GetActiveTasks()
@@ -76,9 +68,8 @@ namespace Module.Task
                 return;
 
             BaseTask task = tasks[head];
-            Vector3 viewPos = mainCamera.WorldToViewportPoint(task.transform.position);
 
-            if (IsPassed(viewPos))
+            if (IsPassed(task.transform.position))
             {
                 OnTaskDeactivated?.Invoke(task);
                 task.Disable();
@@ -92,9 +83,8 @@ namespace Module.Task
                 return;
 
             BaseTask task = tasks[tail];
-            Vector3 viewPos = mainCamera.WorldToViewportPoint(task.transform.position);
 
-            if (!IsAhead(viewPos))
+            if (!IsAhead(task.transform.position))
             {
                 task.Enable();
                 OnTaskActivated?.Invoke(task);
@@ -102,14 +92,14 @@ namespace Module.Task
             }
         }
 
-        bool IsAhead(Vector4 viewPos)
+        bool IsAhead(Vector3 taskPos)
         {
-            return viewPos.y > gameParam.ActivateTaskRange;
+            return taskPos.z - mainCamera.transform.position.z > gameParam.ActivateTaskRange;
         }
 
-        bool IsPassed(Vector3 viewPos)
+        bool IsPassed(Vector3 taskPos)
         {
-            return viewPos.y < gameParam.DeactivateTaskRange;
+            return mainCamera.transform.position.z - taskPos.z > gameParam.DeactivateTaskRange;
         }
     }
 }

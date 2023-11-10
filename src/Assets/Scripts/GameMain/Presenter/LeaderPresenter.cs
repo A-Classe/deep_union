@@ -16,6 +16,8 @@ namespace GameMain.Presenter
         {
             this.playerController = playerController;
             this.leaderAssignableArea = leaderAssignableArea;
+            
+            
         }
 
         public void Start()

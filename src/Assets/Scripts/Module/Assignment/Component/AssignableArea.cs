@@ -100,7 +100,7 @@ namespace Module.Assignment.Component
         {
             if (assignPoints.Count == 0)
             {
-                DebugEx.LogWarning("登録できるAssignPointはありません！");
+                //DebugEx.LogWarning("登録できるAssignPointはありません！");
             }
 
             return assignPoints.Count > 0;
