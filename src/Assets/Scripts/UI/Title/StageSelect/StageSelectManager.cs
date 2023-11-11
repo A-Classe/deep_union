@@ -92,19 +92,23 @@ namespace UI.Title.StageSelect
             {
                 // 上向きの入力
                 case > 0:
-                    if(current.Value == StageNavigation.Stage1)
-                    {
-                        return;
-                    }
-                    nextNav = current.Value - 1;
+                    //if(current.Value == StageNavigation.Stage1)
+                    //{
+                    //    return;
+                    //}
+                    //nextNav = current.Value - 1;
+                    //アルファ用
+                    nextNav = StageNavigation.Stage1;
                     break;
                 // 下向きの入力
                 case < 0:
-                    if(current.Value == StageNavigation.Back)
-                    {
-                        return;
-                    }
-                    nextNav = current.Value + 1;
+                    //if(current.Value == StageNavigation.Back)
+                    //{
+                    //    return;
+                    //}
+                    //nextNav = current.Value + 1;
+                    //アルファ用
+                    nextNav = StageNavigation.Back;
                     break;
                 default:
                     return; // Y軸の入力がない場合、何もしない
