@@ -226,8 +226,6 @@ namespace GameMain.Task
             navMeshBaker?.Bake().Forget();
         }
 
-        public override void Enable() { }
-
         private void OnDrawGizmos()
         {
             if (!showExplodeRange)

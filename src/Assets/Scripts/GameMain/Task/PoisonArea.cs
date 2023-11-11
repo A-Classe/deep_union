@@ -80,7 +80,7 @@ namespace GameMain.Task
 
             if (killedCount >= poisonCreatureTasks.Length)
             {
-                poisonWaterArea.DOMoveZ(moveOffset, disappearDuration).Play();
+                poisonWaterArea.DOLocalMoveZ(moveOffset, disappearDuration).Play();
                 poisonWaterArea.DOScaleY(0f, disappearDuration)
                     .Play()
                     .OnComplete(() =>

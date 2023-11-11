@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace GameMain.SoundPlayer
 {
-    public class ResourceTaskSoundPlayer : TaskSoundPlayer<ResourceTask> // ©‚±‚ê‚ğŒp³‚·‚é <>“à‚Í‘ÎÛ‚Ìƒ^ƒXƒN‚ÌŒ^
+    public class ResourceTaskSoundPlayer : TaskSoundPlayer<ResourceTask> // â†ã“ã‚Œã‚’ç¶™æ‰¿ã™ã‚‹ <>å†…ã¯å¯¾è±¡ã®ã‚¿ã‚¹ã‚¯ã®å‹
     {
-        //AudioClip‚ğ—pˆÓ‚·‚é
+        //AudioClipã‚’ç”¨æ„ã™ã‚‹
         [SerializeField] private AudioClip BreakingSound;
 
         protected override void OnStart()
@@ -18,13 +18,13 @@ namespace GameMain.SoundPlayer
 
         private void OnTaskStarted(BaseTask _)
         {
-            // ‰ó‚µ‚Ä‚¢‚é‰¹‚ğƒ‹[ƒv‚Å–Â‚ç‚·
+            // å£Šã—ã¦ã„ã‚‹éŸ³ã‚’ãƒ«ãƒ¼ãƒ—ã§é³´ã‚‰ã™
             AudioSource.PlayOneShot(BreakingSound);
         }
 
         private void OnTaskCanceled(BaseTask _)
         {
-            // ‚È‚Á‚Ä‚¢‚é‰¹‚ğ~‚ß‚é
+            // ãªã£ã¦ã„ã‚‹éŸ³ã‚’æ­¢ã‚ã‚‹
             AudioSource.Stop();
         }
 

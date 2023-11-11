@@ -34,6 +34,7 @@ namespace GameMain.Task
 
         public override void Initialize(IObjectResolver container)
         {
+            collision.gameObject.layer = LayerMask.NameToLayer("Detection");
             playerController = container.Resolve<PlayerController>();
             runtimeNavMeshBaker = container.Resolve<RuntimeNavMeshBaker>();
             playerStatus = container.Resolve<PlayerStatus>();
@@ -44,7 +45,6 @@ namespace GameMain.Task
             {
                 if (WorkerCount >= minWorkerCount)
                 {
-                    collision.gameObject.layer = LayerMask.NameToLayer("Detection");
                     await runtimeNavMeshBaker.Bake();
                     navMeshAgent.enabled = true;
                 }
@@ -95,8 +95,16 @@ namespace GameMain.Task
                 audioSource.PlayOneShot(HealSound);
                 collideObj.SetActive(false);
                 healObj.SetActive(false);
-                //Disable();
+                WaitSound().Forget();
             }
+        }
+
+        //仮でヒール音を待機
+        private async UniTaskVoid WaitSound()
+        {
+            await UniTask.Delay(TimeSpan.FromSeconds(1f));
+
+            Disable();
         }
     }
 }
