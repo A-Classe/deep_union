@@ -29,7 +29,7 @@ namespace UI.Title.Quit
             cursor.AddPoint(Nav.No, no.rectTransform);
             current = null;
 
-            SetState(Nav.Yes);
+            SetState(Nav.No);
         }
 
         public override void Initialized(ContentTransform content, bool isReset = false)
@@ -37,7 +37,7 @@ namespace UI.Title.Quit
             base.Initialized(content, isReset);
             bar.AnimateIn();
             
-            if (isReset) { SetState(Nav.Yes);}
+            if (isReset) { SetState(Nav.No);}
         }
 
         public override void Clicked()
