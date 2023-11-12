@@ -14,7 +14,6 @@ namespace Module.Working.Controller
         [Header("最大速度")] [SerializeField] private float maxSpeed;
 
         [SerializeField] private Transform target;
-        [SerializeField] private Rigidbody targetRig;
         [SerializeField] private Rigidbody rig;
 
         private InputEvent controlEvent;
@@ -30,6 +29,7 @@ namespace Module.Working.Controller
             //入力イベントの生成
             controlEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Control);
             isPlaying = true;
+            beforeZ = target.position.z;
         }
 
         private void Update()
