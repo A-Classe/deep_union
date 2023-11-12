@@ -14,6 +14,7 @@ namespace Module.Working.Controller
         [Header("最大速度")] [SerializeField] private float maxSpeed;
 
         [SerializeField] private Transform target;
+        [SerializeField] private Rigidbody targetRig;
         [SerializeField] private Rigidbody rig;
 
         private InputEvent controlEvent;
@@ -51,16 +52,12 @@ namespace Module.Working.Controller
 
             if (input != Vector2.zero)
             {
-                Vector2 vel = input * (controlSpeed * Time.fixedDeltaTime);
-                velocity += new Vector3(vel.x, 0, vel.y);
+                Vector3 forward = target.forward * input.y;
+                Vector3 right = target.right * input.x;
+                Vector3 dir = (forward + right).normalized;
+                Vector3 vel = dir * (controlSpeed * Time.fixedDeltaTime);
+                velocity += new Vector3(vel.x, 0, vel.z);
             }
-            // else
-            // {
-            //     float friction = staticFriction * Time.fixedDeltaTime;
-            //     float frictionMagnitude = velocity.magnitude - friction;
-            //
-            //     velocity = velocity.normalized * frictionMagnitude;
-            // }
 
             rig.velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
 
@@ -72,7 +69,7 @@ namespace Module.Working.Controller
             }
 
             rig.position = Clamp(nextPos);
-            
+
             UpdatePlayerOffset();
         }
 
