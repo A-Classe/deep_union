@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8874486113129362559
+--- !u!114 &-7653307672361429326
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,12 +20,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: "\u30DE\u30C6\u30EA\u30A2\u30EB.005"
-  m_Shader: {fileID: -6465566751694194690, guid: 72310fa569343124f8bb55a63f3ed933,
-    type: 3}
+  m_Name: MinimapCamera_Mat
+  m_Shader: {fileID: 4800000, guid: b4d6c42c5ba84eb7924a332694e780fb, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 1
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -98,43 +97,46 @@ Material:
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
+    - _CutOffHeight: 1000
     - _Cutoff: 0.5
+    - _DepthThreshold: 0
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _GlossMapScale: 1
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
-    - _LifeColorTime: 0.060000002
-    - _LifeLineSpeed: 0.5
+    - _FadeOutStrength: 0.29
+    - _GlossMapScale: 0
+    - _Glossiness: 0
+    - _GlossyReflections: 0
+    - _HeightThreshold: 0.05
     - _Metallic: 0
-    - _Mode: 0
-    - _Noise: 0
-    - _NoiseAddScale: 3.35
     - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _PolygonNum: 10
-    - _PolygonRadius: 0
-    - _PolygonSize: 1
-    - _QueueControl: 0
+    - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Rotate: 90
+    - _RippleCenterX: 0.5
+    - _RippleCenterY: 0.5
+    - _RippleCount: 4
+    - _RippleSpeed: 0.31
+    - _RippleStrength: 1
+    - _RippleWidth: 0.01
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _StepTime: 8.13
     - _Surface: 0
-    - _UVSec: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0, g: 0.9063317, b: 0.20718095, a: 1}
-    - _Color: {r: 0, g: 0.9063317, b: 0.20718092, a: 1}
-    - _EmissionColor: {r: 0, g: 20, b: 0, a: 20}
-    - _LightColor: {r: 0.26454648, g: 1, b: 0.081760935, a: 0}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FarColor: {r: 0, g: 0, b: 1, a: 1}
+    - _HighColor: {r: 0.3066038, g: 0.7155625, b: 1, a: 1}
+    - _LowColor: {r: 0.3322802, g: 0.41636044, b: 0.5377358, a: 1}
+    - _NearColor: {r: 1, g: 0.7688679, b: 0.7688679, a: 1}
+    - _RippleCenter: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - _RippleCenters: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+    - _RippleColor: {r: 0.6575844, g: 1, b: 0.23113209, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _UV_Size: {r: 3, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []

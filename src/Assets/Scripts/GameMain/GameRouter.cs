@@ -5,9 +5,9 @@ using Core.Model.Scene;
 using Core.NavMesh;
 using Core.Scenes;
 using Core.User;
-using Core.Utility.Player;
 using GameMain.Presenter;
 using Module.Assignment.Component;
+using Module.Minimap;
 using Module.Player;
 using Module.Player.Camera;
 using Module.Player.Camera.State;
@@ -54,6 +54,8 @@ namespace GameMain
 
         private readonly WorkerAgent workerAgent;
 
+        private readonly MiniMapBuilder miniMapBuilder;
+
         [Inject]
         public GameRouter(
             SpawnParam spawnParam,
@@ -71,7 +73,8 @@ namespace GameMain
             UserPreference preference,
             PlayerStatus playerStatus,
             ResourceContainer resourceContainer,
-            WorkerAgent workerAgent
+            WorkerAgent workerAgent,
+            MiniMapBuilder miniMapBuilder
         )
         {
             this.spawnParam = spawnParam;
@@ -99,12 +102,16 @@ namespace GameMain
             this.resourceContainer = resourceContainer;
             
             this.workerAgent = workerAgent;
+
+            this.miniMapBuilder = miniMapBuilder;
         }
 
         public void Start()
         {
             runtimeNavMeshBaker.Build();
             progressObserver.Start().Forget();
+            
+            miniMapBuilder.Build();
 
             InitWorker();
 

@@ -12,6 +12,7 @@ using GameMain.UI;
 using Module.Assignment;
 using Module.Assignment.Component;
 using Module.Assignment.System;
+using Module.Minimap;
 using Module.Player;
 using Module.Player.Camera;
 using Module.Player.Controller;
@@ -74,6 +75,7 @@ namespace GameMain.Container
             builder.Register<WorkerReleaser>(Lifetime.Singleton);
             builder.Register<TaskActivator>(Lifetime.Singleton);
             builder.Register<UserPreference>(Lifetime.Singleton);
+            builder.Register<MiniMapBuilder>(Lifetime.Singleton);
 
             builder.RegisterInstance(spawnPoint);
             builder.RegisterInstance(spawnParam);
