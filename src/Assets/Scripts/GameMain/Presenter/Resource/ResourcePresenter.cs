@@ -1,3 +1,4 @@
+using Module.Extension.Task;
 using Module.Task;
 using Module.UI.InGame;
 using VContainer;
