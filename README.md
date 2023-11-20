@@ -4,7 +4,7 @@
 [スプリントバックログ](https://github.com/orgs/A-Classe/projects/16)
 
 
-## Setup
+## Setup (デバッグのみであれば不要)
 - commit template
 ```
 git config commit.template .commit_template
