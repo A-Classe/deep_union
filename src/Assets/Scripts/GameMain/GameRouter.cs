@@ -20,6 +20,7 @@ using Module.Working.Factory;
 using UI.InGame;
 using VContainer;
 using VContainer.Unity;
+using Wanna.DebugEx;
 
 namespace GameMain
 {
@@ -103,6 +104,7 @@ namespace GameMain
 
         public void Start()
         {
+            DebugEx.Log("a");
             runtimeNavMeshBaker.Build();
             progressObserver.Start().Forget();
 
