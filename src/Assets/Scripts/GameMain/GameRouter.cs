@@ -104,7 +104,6 @@ namespace GameMain
 
         public void Start()
         {
-            DebugEx.Log("a");
             runtimeNavMeshBaker.Build();
             progressObserver.Start().Forget();
 
