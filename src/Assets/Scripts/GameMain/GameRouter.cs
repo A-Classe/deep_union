@@ -111,7 +111,7 @@ namespace GameMain
             runtimeNavMeshBaker.Build();
             progressObserver.Start().Forget();
             
-            miniMapBuilder.Build();
+            InitMinimap();
 
             InitWorker();
 
@@ -120,6 +120,14 @@ namespace GameMain
             InitScene();
         }
 
+        private void InitMinimap()
+        {
+            miniMapBuilder.OnBuildFinished += buildData =>
+            {
+                uiManager.SetMinimapParam(buildData);
+            };
+            miniMapBuilder.Build();
+        }
         /// <summary>
         /// workerのセットアップ
         /// </summary>
@@ -175,6 +183,15 @@ namespace GameMain
                 if (playerController.GetState() != PlayerState.Pause)
                 {
                     uiManager.StartPause();
+                }
+            };
+
+            var minimapEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.MiniMap);
+            minimapEvent.Canceled += _ =>
+            {
+                if (playerController.GetState() != PlayerState.Pause)
+                {
+                    uiManager.StartMinimap();
                 }
             };
         }

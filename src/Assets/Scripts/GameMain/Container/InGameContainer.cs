@@ -22,6 +22,7 @@ using Module.Working.Controller;
 using Module.Working.Factory;
 using UI.HUD;
 using UI.InGame;
+using UI.InGame.Screen.Minimap;
 using UnityDebugSheet.Runtime.Core.Scripts;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -47,6 +48,7 @@ namespace GameMain.Container
         [SerializeField] private DebugSheet debugSheet;
 
         [SerializeField] private InGameUIManager inGameUIManager;
+        [SerializeField] private MinimapController minimapController;
 
         [FormerlySerializedAs("leaderAssignEvent")]
         [SerializeField]
@@ -89,6 +91,7 @@ namespace GameMain.Container
             builder.RegisterInstance(new PlayerStatus(gameParam.ConvertToStatus()));
             builder.RegisterInstance(playerStatusVisualizer);
             builder.RegisterInstance(debugSheet);
+            builder.RegisterInstance(minimapController);
 
             builder.RegisterBuildCallback(container =>
             {

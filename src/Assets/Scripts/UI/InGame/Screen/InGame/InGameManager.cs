@@ -1,9 +1,10 @@
 using System;
 using AnimationPro.RunTime;
+using Core.Model.Minimap;
 using Core.Utility.UI;
 using Core.Utility.UI.Navigation;
 using TMPro;
-using Unity.VisualScripting.Antlr3.Runtime;
+using UI.InGame.Screen.Minimap;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -42,10 +43,15 @@ namespace UI.InGame.Screen.InGame
         private uint? maxWorkersValue;
         [SerializeField] private float startOffsetY;// -205
         [SerializeField] private float endOffsetY; // -37
+        
+        [SerializeField] private MinimapController minimapController;
+
+        public event Action OnMinimapClick;
+        
 
         public override void Select(Vector2 direction)
         {
-            // NOP.
+            OnMinimapClick?.Invoke();
         }
 
         public override void Clicked()
@@ -150,6 +156,11 @@ namespace UI.InGame.Screen.InGame
                     }
                 }
             );
+        }
+
+        public void SetMinimapParam(MiniMapBuild data)
+        {
+            minimapController.SetProfile(MinimapState.MiniView, new InStateProfile {});
         }
     }
 }

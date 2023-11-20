@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Core.Model.Minimap;
 using Core.Scenes;
 using Core.User;
 using Core.Utility.UI.Navigation;
@@ -23,6 +24,14 @@ namespace UI.InGame
 
         public event Action OnGameInactive;
         public event Action OnGameActive;
+        
+        private enum State
+        {
+            Main,
+            Minimap
+        }
+
+        private State state = State.Main;
 
         private void Awake()
         {
@@ -83,6 +92,17 @@ namespace UI.InGame
                         throw new ArgumentOutOfRangeException(nameof(nav), nav, null);
                 }
             };
+            inGameManager.OnMinimapClick += () =>
+            {
+                navigation.SetActive(true);
+                state = State.Main;
+                OnGameActive?.Invoke();
+            };
+
+            navigation.OnCancel += _ =>
+            {
+                Debug.Log("cancel");
+            };
             
             navigation.SetActive(true);
         }
@@ -104,6 +124,12 @@ namespace UI.InGame
         public void SetGameOver()
         {
             navigation.SetScreen(InGameNav.GameOver, isReset: true);
+            OnGameInactive?.Invoke();
+        }
+
+        public void StartMinimap()
+        {
+            state = State.Minimap;
             OnGameInactive?.Invoke();
         }
 
@@ -138,13 +164,20 @@ namespace UI.InGame
         {
             inGameManager.SetResource(current, max);
         }
+
+        public void SetMinimapParam(MiniMapBuild data)
+        {
+            inGameManager.SetMinimapParam(data);
+        }
+        
     }
-    
-    public enum InGameNav {
+
+    public enum InGameNav
+    {
         /**
          Tutorial*** ...
          */
-        
+
         GameOver,
         Option,
         Pause,

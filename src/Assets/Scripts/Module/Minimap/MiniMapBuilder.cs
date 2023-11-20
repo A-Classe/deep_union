@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
+using Core.Model.Minimap;
 using Module.Task;
-using UI.InGame;
 using UnityEngine;
 using UnityEngine.AI;
 using VContainer;
@@ -10,11 +10,11 @@ namespace Module.Minimap
 {
     public class MiniMapBuilder
     {
-        
-        private readonly InGameUIManager inGameUIManager;
-        
-
         private readonly TaskActivator taskActivator;
+
+        private float focusDepth = 500f;
+
+        private Vector3 lastPosition = Vector3.zero;
         
         private struct MeshData
         {
@@ -23,43 +23,47 @@ namespace Module.Minimap
         }
         
         private const float CutOffHeight = 4f;
+
+        private GameObject mapObject;
+
+        private Vector3 mapCenter;
+
+        public event Action<MiniMapBuild> OnBuildFinished;
         
         
         
         [Inject]
         public MiniMapBuilder(
-            InGameUIManager inGameUIManager,
             TaskActivator taskActivator
         )
         {
-            this.inGameUIManager = inGameUIManager;
 
             this.taskActivator = taskActivator;
-        }
-        
-        private void SetActiveAreas()
-        {
-            ReadOnlySpan<BaseTask> tasks = taskActivator.GetActiveTasks();
-            //タスクのアサインエリアを登録
-            foreach (BaseTask task in tasks)
-            {
-                Debug.Log(task);
-            }
-            Debug.Log(tasks.Length);
         }
 
         public void Build()
         {
              BaseTask[] tasks = TaskUtil.FindSceneTasks<BaseTask>();
-             Debug.Log(tasks.Length);
-            BuildMeshAsync();
+             // Debug.Log(tasks.Length);
+             BuildMeshAsync();
         }
 
         private async void BuildMeshAsync()
         {
             NavMeshTriangulation triangulation = NavMesh.CalculateTriangulation();
             MeshData meshData = await System.Threading.Tasks.Task.Run(() => GenerateMesh(triangulation));
-            SetupMesh(meshData);
+            
+            mapObject = SetupMesh(meshData);
+            //
+            // minimapController.transform.position = cameraPosition;
+            // minimapController.transform.LookAt(mapCenter);
+            //
+            OnBuildFinished?.Invoke(new MiniMapBuild
+            {
+                MinimapCenter = mapCenter,
+                MiniMapObject = mapObject
+            });
+
         }
 
         MeshData GenerateMesh(NavMeshTriangulation triangulation)
@@ -103,12 +107,17 @@ namespace Module.Minimap
             };
         }
 
-        private void SetupMesh(MeshData meshData)
+        private GameObject SetupMesh(MeshData meshData)
         {
             Mesh mesh = new Mesh();
             mesh.vertices = meshData.Vertices;
             mesh.triangles = meshData.Triangles;
             mesh.RecalculateBounds();
+            
+            // バウンディングボックスの中心を取得
+            Vector3 meshCenter = mesh.bounds.center;
+            mapCenter = meshCenter;
+
             // メッシュを表示するオブジェクトを作成
             GameObject meshObj = new GameObject("NavMeshRepresentation");
             meshObj.layer = LayerMask.NameToLayer("UI");
@@ -120,8 +129,11 @@ namespace Module.Minimap
             MeshRenderer meshRenderer = meshObj.AddComponent<MeshRenderer>();
 
             // メッシュにマテリアルを設定 (デフォルトマテリアルを使用)
-            meshRenderer.material = new Material(Shader.Find("Universal Render Pipeline/Lit"));
+            Material material = new Material(Shader.Find("Universal Render Pipeline/Lit"));
+            material.color = Color.clear;
+            meshRenderer.material = material;
+
+            return meshObj;
         }
-        
     }
 }
