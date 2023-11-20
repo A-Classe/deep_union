@@ -19,20 +19,33 @@ namespace Module.Working
         [SerializeField] private bool initialized;
         [SerializeField] private float deathDuration;
         [SerializeField] private Renderer[] cutOffRenderers;
-        private List<Material> cutOffMaterials;
-        private int cutOffId = Shader.PropertyToID("_CutOffHeight");
-
-        private IWorkerState currentState;
-        private IWorkerState[] workerStates;
-        private NavMeshAgent navMeshAgent;
 
         public Animator animator;
+
+        private IWorkerState currentState;
+        private readonly int cutOffId = Shader.PropertyToID("_CutOffHeight");
+        private List<Material> cutOffMaterials;
+        private NavMeshAgent navMeshAgent;
+        private IWorkerState[] workerStates;
         public Transform AreaTarget { get; private set; }
         public Transform Target { get; private set; }
 
         public bool IsLocked { get; private set; }
         public bool IsWorldMoving { get; set; }
         public Action<Worker> OnDead { get; set; }
+
+        private void Update()
+        {
+            if (!initialized)
+                return;
+
+            if (navMeshAgent.pathStatus != NavMeshPathStatus.PathInvalid) currentState?.Update();
+        }
+
+        private void OnDestroy()
+        {
+            foreach (var state in workerStates) state.Dispose();
+        }
 
 
         public async UniTaskVoid Initialize()
@@ -49,36 +62,22 @@ namespace Module.Working
             SetWorkerState(WorkerState.Idle);
 
             cutOffMaterials = new List<Material>();
-            IEnumerable<Material[]> materials = cutOffRenderers.Select(renderer => renderer.materials);
+            var materials = cutOffRenderers.Select(renderer => renderer.materials);
 
-            foreach (Material[] rendMaterial in materials)
-            {
-                foreach (Material material in rendMaterial)
-                {
-                    cutOffMaterials.Add(material);
-                }
-            }
+            foreach (var rendMaterial in materials)
+            foreach (var material in rendMaterial)
+                cutOffMaterials.Add(material);
 
 
             navMeshAgent.enabled = true;
-            await UniTask.WaitUntil(() => navMeshAgent.isOnNavMesh, cancellationToken: this.GetCancellationTokenOnDestroy());
+            await UniTask.WaitUntil(() => navMeshAgent.isOnNavMesh,
+                cancellationToken: this.GetCancellationTokenOnDestroy());
 
             initialized = true;
         }
 
-        private void Update()
-        {
-            if (!initialized)
-                return;
-
-            if (navMeshAgent.pathStatus != NavMeshPathStatus.PathInvalid)
-            {
-                currentState?.Update();
-            }
-        }
-
         /// <summary>
-        /// ワーカーの状態をセットします
+        ///     ワーカーの状態をセットします
         /// </summary>
         /// <param name="workerState">セットするWorkerState</param>
         public void SetWorkerState(WorkerState workerState)
@@ -133,17 +132,14 @@ namespace Module.Working
 
         private async UniTask DeathCutoff(CancellationToken cancellationToken)
         {
-            float currentValue = 0f;
-            float currentTime = 0f;
+            var currentValue = 0f;
+            var currentTime = 0f;
 
             while (!cancellationToken.IsCancellationRequested)
             {
                 currentValue = Mathf.Lerp(12f, 0f, Mathf.InverseLerp(0f, deathDuration, currentTime));
 
-                foreach (Material material in cutOffMaterials)
-                {
-                    material.SetFloat(cutOffId, currentValue);
-                }
+                foreach (var material in cutOffMaterials) material.SetFloat(cutOffId, currentValue);
 
                 if (currentTime > deathDuration)
                     return;
@@ -156,20 +152,9 @@ namespace Module.Working
 
         public void Dispose()
         {
-            foreach (IWorkerState state in workerStates)
-            {
-                state.Dispose();
-            }
+            foreach (var state in workerStates) state.Dispose();
 
             Destroy(gameObject);
-        }
-
-        private void OnDestroy()
-        {
-            foreach (IWorkerState state in workerStates)
-            {
-                state.Dispose();
-            }
         }
     }
 }

@@ -1,7 +1,6 @@
 using System;
 using Core.NavMesh;
 using Cysharp.Threading.Tasks;
-using Module.Assignment;
 using Module.Assignment.Component;
 using Module.Player;
 using Module.Player.Controller;
@@ -9,7 +8,6 @@ using Module.Task;
 using UnityEngine;
 using UnityEngine.AI;
 using VContainer;
-using Wanna.DebugEx;
 
 namespace GameMain.Task
 {
@@ -29,8 +27,35 @@ namespace GameMain.Task
         [SerializeField] private GameObject healObj;
 
         private PlayerController playerController;
-        private RuntimeNavMeshBaker runtimeNavMeshBaker;
         private PlayerStatus playerStatus;
+        private RuntimeNavMeshBaker runtimeNavMeshBaker;
+
+        private void Update()
+        {
+            if (navMeshAgent.enabled && WorkerCount >= minWorkerCount)
+            {
+                navMeshAgent.SetDestination(playerController.transform.position);
+
+                //対数関数的な変化に調整
+                var workerCount = Mathf.Min(WorkerCount, maxWorkerCount);
+                var speed = Mathf.Log10(workerCount - minWorkerCount + 2) * moveSpeed * Time.deltaTime;
+                transform.position = Vector3.Lerp(transform.position, navMeshAgent.nextPosition, speed);
+            }
+        }
+
+        private void OnCollisionEnter(Collision other)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                playerStatus.AddHp(addHp);
+                ForceComplete();
+
+                audioSource.PlayOneShot(HealSound);
+                collideObj.SetActive(false);
+                healObj.SetActive(false);
+                WaitSound().Forget();
+            }
+        }
 
         public override void Initialize(IObjectResolver container)
         {
@@ -66,37 +91,11 @@ namespace GameMain.Task
             navMeshAgent.updatePosition = false;
             navMeshAgent.enabled = true;
 
-            await UniTask.WaitUntil(() => navMeshAgent.isOnNavMesh, cancellationToken: this.GetCancellationTokenOnDestroy());
+            await UniTask.WaitUntil(() => navMeshAgent.isOnNavMesh,
+                cancellationToken: this.GetCancellationTokenOnDestroy());
             await runtimeNavMeshBaker.Bake();
 
             navMeshAgent.enabled = false;
-        }
-
-        private void Update()
-        {
-            if (navMeshAgent.enabled && WorkerCount >= minWorkerCount)
-            {
-                navMeshAgent.SetDestination(playerController.transform.position);
-
-                //対数関数的な変化に調整
-                int workerCount = Mathf.Min(WorkerCount, maxWorkerCount);
-                float speed = Mathf.Log10(workerCount - minWorkerCount + 2) * moveSpeed * Time.deltaTime;
-                transform.position = Vector3.Lerp(transform.position, navMeshAgent.nextPosition, speed);
-            }
-        }
-
-        private void OnCollisionEnter(Collision other)
-        {
-            if (other.gameObject.CompareTag("Player"))
-            {
-                playerStatus.AddHp(addHp);
-                ForceComplete();
-
-                audioSource.PlayOneShot(HealSound);
-                collideObj.SetActive(false);
-                healObj.SetActive(false);
-                WaitSound().Forget();
-            }
         }
 
         //仮でヒール音を待機

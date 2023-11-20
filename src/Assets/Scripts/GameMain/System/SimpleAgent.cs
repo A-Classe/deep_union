@@ -11,7 +11,7 @@ namespace GameMain.System
         {
             if (rig.isKinematic)
                 return;
-            
+
             rig.velocity = (target - transform.position).normalized * speed;
             transform.LookAt(target);
         }

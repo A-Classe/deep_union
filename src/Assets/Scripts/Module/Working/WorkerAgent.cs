@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Core.Utility;
-using UI.InGame;
+using Module.UI.InGame;
 using UnityEngine;
 using UnityEngine.Pool;
 using VContainer;
@@ -17,12 +17,10 @@ namespace Module.Working
     {
         private const int workersCapacity = 128;
         private readonly List<Worker> activeWorkers;
-        private readonly ObjectPool<Worker> workerPool;
-        private readonly GameObject workerPrefab;
 
         private readonly InGameUIManager uiManager;
-
-        public ReadOnlySpan<Worker> ActiveWorkers => activeWorkers.AsSpan();
+        private readonly ObjectPool<Worker> workerPool;
+        private readonly GameObject workerPrefab;
 
         [Inject]
         public WorkerAgent(
@@ -41,9 +39,11 @@ namespace Module.Working
 
             activeWorkers = new List<Worker>(workersCapacity);
             workerPrefab = Resources.Load<GameObject>("Worker");
-            
+
             uiManager.SetWorkerCount(0u, workersCapacity);
         }
+
+        public ReadOnlySpan<Worker> ActiveWorkers => activeWorkers.AsSpan();
 
         /// <summary>
         ///     Workerを指定数追加します
@@ -56,13 +56,14 @@ namespace Module.Working
                 activeWorkers.Add(worker);
                 worker.OnDead += Remove;
             }
+
             UpdateWorkerCount();
 
             return activeWorkers.AsSpan().Slice(activeWorkers.Count - count, count);
         }
 
         /// <summary>
-        ///    外部からのWorkerを追加します
+        ///     外部からのWorkerを追加します
         /// </summary>
         public void AddActiveWorker(Worker worker)
         {
@@ -114,10 +115,13 @@ namespace Module.Working
 
         private void UpdateWorkerCount()
         {
-            uint count = activeWorkers.Count > 0 ? (uint)activeWorkers.Count : 0;
+            var count = activeWorkers.Count > 0 ? (uint)activeWorkers.Count : 0;
             uiManager.SetWorkerCount(count);
         }
-        
-        public int WorkerCount() => activeWorkers.Count;
+
+        public int WorkerCount()
+        {
+            return activeWorkers.Count;
+        }
     }
 }

@@ -4,23 +4,22 @@ using Module.Assignment.Component;
 using Module.Task;
 using VContainer;
 using VContainer.Unity;
-using Wanna.DebugEx;
-using NotImplementedException = System.NotImplementedException;
 
 namespace Module.Assignment.System
 {
     public class AssignmentSystem : ITickable, IStartable
     {
-        private readonly WorkerAssigner workerAssigner;
-        private readonly WorkerReleaser workerReleaser;
-        private readonly TaskActivator taskActivator;
+        private readonly List<AssignableArea> activeAreas;
         private readonly InputEvent assignEvent;
         private readonly InputEvent releaseEvent;
-        private readonly List<AssignableArea> activeAreas;
+        private readonly TaskActivator taskActivator;
+        private readonly WorkerAssigner workerAssigner;
+        private readonly WorkerReleaser workerReleaser;
         private AssignState assignState = AssignState.Idle;
 
         [Inject]
-        public AssignmentSystem(WorkerAssigner workerAssigner, WorkerReleaser workerReleaser, TaskActivator taskActivator)
+        public AssignmentSystem(WorkerAssigner workerAssigner, WorkerReleaser workerReleaser,
+            TaskActivator taskActivator)
         {
             this.workerAssigner = workerAssigner;
             this.workerReleaser = workerReleaser;
@@ -30,35 +29,41 @@ namespace Module.Assignment.System
             assignEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Assign);
             releaseEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Release);
 
-            assignEvent.Started += _ =>
-            {
-                assignState = AssignState.Assign;
-            };
+            assignEvent.Started += _ => { assignState = AssignState.Assign; };
 
-            assignEvent.Canceled += _ =>
-            {
-                assignState = AssignState.Idle;
-            };
+            assignEvent.Canceled += _ => { assignState = AssignState.Idle; };
 
-            releaseEvent.Started += _ =>
-            {
-                assignState = AssignState.Release;
-            };
+            releaseEvent.Started += _ => { assignState = AssignState.Release; };
 
-            releaseEvent.Canceled += _ =>
-            {
-                assignState = AssignState.Idle;
-            };
+            releaseEvent.Canceled += _ => { assignState = AssignState.Idle; };
 
             taskActivator.OnTaskCreated += SetActiveAreas;
+        }
+
+        public void Start()
+        {
+            taskActivator.Start();
+        }
+
+        public void Tick()
+        {
+            switch (assignState)
+            {
+                case AssignState.Assign:
+                    workerAssigner.Update();
+                    break;
+                case AssignState.Release:
+                    workerReleaser.Update();
+                    break;
+            }
         }
 
         private void SetActiveAreas()
         {
             //タスクのアサインエリアを登録
-            foreach (BaseTask task in taskActivator.GetActiveTasks())
+            foreach (var task in taskActivator.GetActiveTasks())
             {
-                AssignableArea assignableArea = task.GetComponentInChildren<AssignableArea>();
+                var assignableArea = task.GetComponentInChildren<AssignableArea>();
                 assignableArea.enabled = true;
                 activeAreas.Add(assignableArea);
 
@@ -67,7 +72,7 @@ namespace Module.Assignment.System
 
             taskActivator.OnTaskActivated += task =>
             {
-                AssignableArea assignableArea = task.GetComponentInChildren<AssignableArea>();
+                var assignableArea = task.GetComponentInChildren<AssignableArea>();
                 assignableArea.enabled = true;
                 activeAreas.Add(assignableArea);
 
@@ -85,27 +90,9 @@ namespace Module.Assignment.System
             workerReleaser.SetActiveAreas(activeAreas);
         }
 
-        public void Start()
-        {
-            taskActivator.Start();
-        }
-
         private void OnTaskCompleted(BaseTask task)
         {
             workerReleaser.ReleaseAllWorkers(task.GetComponentInChildren<AssignableArea>());
-        }
-
-        public void Tick()
-        {
-            switch (assignState)
-            {
-                case AssignState.Assign:
-                    workerAssigner.Update();
-                    break;
-                case AssignState.Release:
-                    workerReleaser.Update();
-                    break;
-            }
         }
     }
 }

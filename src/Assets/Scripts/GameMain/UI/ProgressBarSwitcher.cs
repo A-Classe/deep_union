@@ -1,19 +1,19 @@
 using System.Collections.Generic;
 using Module.Task;
-using UI.HUD;
+using Module.UI.HUD;
 using VContainer;
 using VContainer.Unity;
 
 namespace GameMain.UI
 {
     /// <summary>
-    /// 進捗バーの更新を行うクラス
+    ///     進捗バーの更新を行うクラス
     /// </summary>
     public class ProgressBarSwitcher : ITickable
     {
-        private readonly TaskProgressPool taskProgressPool;
-        private readonly TaskActivator taskActivator;
         private readonly Queue<(BaseTask task, TaskProgressView view)> activeViews;
+        private readonly TaskActivator taskActivator;
+        private readonly TaskProgressPool taskProgressPool;
 
         [Inject]
         public ProgressBarSwitcher(TaskProgressPool taskProgressPool, TaskActivator taskActivator)
@@ -25,21 +25,9 @@ namespace GameMain.UI
             this.taskActivator.OnTaskCreated += Initialize;
         }
 
-        public void Initialize()
-        {
-            foreach (var task in taskActivator.GetActiveTasks())
-            {
-                OnTaskActivated(task);
-            }
-
-            //ゲーム開始時に画面内に存在するタスクの進捗バー表示
-            taskActivator.OnTaskActivated += OnTaskActivated;
-            taskActivator.OnTaskDeactivated += OnTaskDeactivated;
-        }
-
         public void Tick()
         {
-            foreach ((BaseTask task, TaskProgressView view) element in activeViews)
+            foreach (var element in activeViews)
             {
                 if (!element.view.IsEnabled)
                     continue;
@@ -56,13 +44,22 @@ namespace GameMain.UI
             }
         }
 
-        void OnTaskActivated(BaseTask task)
+        public void Initialize()
+        {
+            foreach (var task in taskActivator.GetActiveTasks()) OnTaskActivated(task);
+
+            //ゲーム開始時に画面内に存在するタスクの進捗バー表示
+            taskActivator.OnTaskActivated += OnTaskActivated;
+            taskActivator.OnTaskDeactivated += OnTaskDeactivated;
+        }
+
+        private void OnTaskActivated(BaseTask task)
         {
             var view = taskProgressPool.GetProgressView(task.transform);
             activeViews.Enqueue((task, view));
         }
 
-        void OnTaskDeactivated(BaseTask task)
+        private void OnTaskDeactivated(BaseTask task)
         {
             var element = activeViews.Dequeue();
             taskProgressPool.ReleaseProgressView(element.view);

@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace GameMain.SoundPlayer
 {
-    public class Enemy1TaskSoundPlayer : TaskSoundPlayer<Enemy1Task> // ©‚±‚ê‚ğŒp³‚·‚é <>“à‚Í‘ÎÛ‚Ìƒ^ƒXƒN‚ÌŒ^
+    public class Enemy1TaskSoundPlayer : TaskSoundPlayer<Enemy1Task> // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ <>ï¿½ï¿½ï¿½Í‘ÎÛ‚Ìƒ^ï¿½Xï¿½Nï¿½ÌŒ^
     {
-        //AudioClip‚ğ—pˆÓ‚·‚é
+        //AudioClipï¿½ï¿½pï¿½Ó‚ï¿½ï¿½ï¿½
         [SerializeField] private AudioClip BombSound;
 
         protected override void OnStart()
@@ -16,13 +16,17 @@ namespace GameMain.SoundPlayer
             Task.OnBomb += OnBomb;
         }
 
-        private void OnTaskStarted(BaseTask _) { }
+        private void OnTaskStarted(BaseTask _)
+        {
+        }
 
-        private void OnTaskCanceled(BaseTask _) { }
+        private void OnTaskCanceled(BaseTask _)
+        {
+        }
 
         private void OnBomb()
         {
-            // ”š”­‚µ‚½‰¹‚ğ–Â‚ç‚·
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â‚ç‚·
             AudioSource.PlayOneShot(BombSound);
         }
     }

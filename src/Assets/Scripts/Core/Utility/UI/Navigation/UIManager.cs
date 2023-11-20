@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Core.Utility.UI.Navigation
 {
-    public abstract class UIManager: AnimationBehaviour
+    public abstract class UIManager : AnimationBehaviour
     {
         public virtual void Initialized(ContentTransform content, bool isReset = false)
         {
@@ -13,9 +13,13 @@ namespace Core.Utility.UI.Navigation
             Animation(content);
         }
 
-        public virtual void Select(Vector2 direction) {}
+        public virtual void Select(Vector2 direction)
+        {
+        }
 
-        public virtual void Clicked() {}
+        public virtual void Clicked()
+        {
+        }
 
         public virtual void Finished(ContentTransform content, Action onFinished)
         {
@@ -33,6 +37,9 @@ namespace Core.Utility.UI.Navigation
             );
         }
 
-        public AnimationBehaviour GetContext() => this;
+        public AnimationBehaviour GetContext()
+        {
+            return this;
+        }
     }
 }

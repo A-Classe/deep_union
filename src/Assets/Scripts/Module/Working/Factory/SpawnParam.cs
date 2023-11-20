@@ -1,4 +1,5 @@
 using UnityEngine;
+
 // ReSharper disable NotAccessedField.Global
 
 namespace Module.Working.Factory

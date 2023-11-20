@@ -8,19 +8,19 @@ using Debug;
 using GameMain.Presenter;
 using GameMain.Presenter.Resource;
 using GameMain.Presenter.Working;
+using GameMain.Router;
 using GameMain.UI;
-using Module.Assignment;
 using Module.Assignment.Component;
 using Module.Assignment.System;
 using Module.Player;
 using Module.Player.Camera;
 using Module.Player.Controller;
 using Module.Task;
+using Module.UI.HUD;
+using Module.UI.InGame;
 using Module.Working;
 using Module.Working.Controller;
 using Module.Working.Factory;
-using UI.HUD;
-using UI.InGame;
 using UnityDebugSheet.Runtime.Core.Scripts;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -31,8 +31,7 @@ namespace GameMain.Container
 {
     public class InGameContainer : LifetimeScope
     {
-        [Header("ここにシーン上のインスタンスを登録")]
-        [SerializeField]
+        [Header("ここにシーン上のインスタンスを登録")] [SerializeField]
         private SpawnPoint spawnPoint;
 
         [SerializeField] private GameParam gameParam;
@@ -47,8 +46,7 @@ namespace GameMain.Container
 
         [SerializeField] private InGameUIManager inGameUIManager;
 
-        [FormerlySerializedAs("leaderAssignEvent")]
-        [SerializeField]
+        [FormerlySerializedAs("leaderAssignEvent")] [SerializeField]
         private LeaderAssignableArea leaderAssignableArea;
 
 
@@ -94,10 +92,7 @@ namespace GameMain.Container
                     .OfType<IInjectable>()
                     .Select(injectable => (injectable as MonoBehaviour)?.gameObject);
 
-                foreach (GameObject injectable in injectables)
-                {
-                    container.InjectGameObject(injectable);
-                }
+                foreach (var injectable in injectables) container.InjectGameObject(injectable);
             });
         }
     }

@@ -7,11 +7,6 @@ namespace GameMain.Task
     {
         private Action onCollide;
 
-        public void SetCollideEvent(Action onCollide)
-        {
-            this.onCollide = onCollide;
-        }
-
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
@@ -19,6 +14,11 @@ namespace GameMain.Task
                 onCollide?.Invoke();
                 Destroy(gameObject);
             }
+        }
+
+        public void SetCollideEvent(Action onCollide)
+        {
+            this.onCollide = onCollide;
         }
     }
 }

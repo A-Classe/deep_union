@@ -30,7 +30,6 @@ namespace GameMain.SoundPlayer
 
         private void OnTaskCompleted(BaseTask _)
         {
-            
         }
     }
 }

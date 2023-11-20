@@ -1,7 +1,5 @@
-using System;
 using Core.Input;
 using UnityEngine;
-using Wanna.DebugEx;
 
 namespace Module.Working.Controller
 {
@@ -15,14 +13,14 @@ namespace Module.Working.Controller
 
         [SerializeField] private Transform target;
         [SerializeField] private Rigidbody rig;
+        private float beforeZ;
 
         private InputEvent controlEvent;
 
         private Camera followCamera;
         private Vector2 input;
-        private float beforeZ;
 
-        private bool isPlaying = false;
+        private bool isPlaying;
 
         private void Awake()
         {
@@ -37,6 +35,32 @@ namespace Module.Working.Controller
             input = controlEvent.ReadValue<Vector2>();
         }
 
+        private void FixedUpdate()
+        {
+            if (!isPlaying) return;
+
+            var velocity = rig.velocity;
+
+            if (input != Vector2.zero)
+            {
+                var forward = target.forward * input.y;
+                var right = target.right * input.x;
+                var dir = (forward + right).normalized;
+                var vel = dir * (controlSpeed * Time.fixedDeltaTime);
+                velocity += new Vector3(vel.x, 0, vel.z);
+            }
+
+            rig.velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
+
+            var nextPos = rig.position + velocity * Time.fixedDeltaTime;
+
+            if (!InViewport(nextPos)) rig.velocity = Vector3.zero;
+
+            rig.position = Clamp(nextPos);
+
+            UpdatePlayerOffset();
+        }
+
         private void UpdatePlayerOffset()
         {
             rig.position += new Vector3(0f, 0f, target.position.z - beforeZ);
@@ -44,54 +68,25 @@ namespace Module.Working.Controller
             beforeZ = target.position.z;
         }
 
-        private void FixedUpdate()
-        {
-            if (!isPlaying) return;
-
-            Vector3 velocity = rig.velocity;
-
-            if (input != Vector2.zero)
-            {
-                Vector3 forward = target.forward * input.y;
-                Vector3 right = target.right * input.x;
-                Vector3 dir = (forward + right).normalized;
-                Vector3 vel = dir * (controlSpeed * Time.fixedDeltaTime);
-                velocity += new Vector3(vel.x, 0, vel.z);
-            }
-
-            rig.velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
-
-            Vector3 nextPos = rig.position + velocity * Time.fixedDeltaTime;
-
-            if (!InViewport(nextPos))
-            {
-                rig.velocity = Vector3.zero;
-            }
-
-            rig.position = Clamp(nextPos);
-
-            UpdatePlayerOffset();
-        }
-
         private bool InViewport(Vector3 worldPoint)
         {
-            Vector3 inViewport = followCamera.WorldToViewportPoint(worldPoint);
+            var inViewport = followCamera.WorldToViewportPoint(worldPoint);
 
-            return (inViewport.x is > 0 and < 1 &&
-                    inViewport.y is > 0 and < 1 &&
-                    inViewport.z > 0);
+            return inViewport.x is > 0 and < 1 &&
+                   inViewport.y is > 0 and < 1 &&
+                   inViewport.z > 0;
         }
 
 
         private Vector3 Clamp(Vector3 nextPosition)
         {
-            Vector3 viewportPoint = followCamera.WorldToViewportPoint(nextPosition);
+            var viewportPoint = followCamera.WorldToViewportPoint(nextPosition);
 
             // オブジェクトの位置が画面外に出ないようにクランプ
             viewportPoint.x = Mathf.Clamp01(viewportPoint.x);
             viewportPoint.y = Mathf.Clamp01(viewportPoint.y);
 
-            Vector3 worldPoint = followCamera.ViewportToWorldPoint(viewportPoint);
+            var worldPoint = followCamera.ViewportToWorldPoint(viewportPoint);
             worldPoint.y = nextPosition.y;
 
             return worldPoint;

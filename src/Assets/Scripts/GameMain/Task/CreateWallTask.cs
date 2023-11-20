@@ -9,9 +9,9 @@ namespace GameMain.Task
     public class CreateWallTask : BaseTask
     {
         [SerializeField] private GameObject[] types;
-        private RuntimeNavMeshBaker navMeshBaker;
 
         private int currentIndex;
+        private RuntimeNavMeshBaker navMeshBaker;
 
         public override void Initialize(IObjectResolver container)
         {
@@ -23,13 +23,13 @@ namespace GameMain.Task
         }
 
         /// <summary>
-        /// progressのcallbackを受け取る
-        /// typesのlengthとcurrentIndexから次に切り替えが必要なタイミングを見つける
+        ///     progressのcallbackを受け取る
+        ///     typesのlengthとcurrentIndexから次に切り替えが必要なタイミングを見つける
         /// </summary>
         /// <param name="value">progress count 0..1</param>
         private void OnProgress(float value)
         {
-            float range = (float)(currentIndex + 1) / (types.Length - 1);
+            var range = (float)(currentIndex + 1) / (types.Length - 1);
             if (value >= range)
             {
                 currentIndex++;
@@ -43,14 +43,11 @@ namespace GameMain.Task
         }
 
         /// <summary>
-        /// currentIndexに応じてobjectを切り替える
+        ///     currentIndexに応じてobjectを切り替える
         /// </summary>
         private void UpdateObject()
         {
-            foreach (var type in types)
-            {
-                type.SetActive(false);
-            }
+            foreach (var type in types) type.SetActive(false);
 
             types[currentIndex].SetActive(true);
         }

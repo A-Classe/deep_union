@@ -5,14 +5,13 @@ using GameMain.Presenter;
 using GameMain.Task;
 using Module.Assignment.Component;
 using Module.Player.Controller;
-using Module.Working;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace Module.Task
 {
     /// <summary>
-    /// 資源を一時的に収集するクラス
+    ///     資源を一時的に収集するクラス
     /// </summary>
     [RequireComponent(typeof(BaseTask))]
     public class CollectableTask : MonoBehaviour
@@ -22,12 +21,10 @@ namespace Module.Task
         [SerializeField] private GameObject resourceItem;
         [SerializeField] private float targetOffset = 3f;
         [SerializeField] private int resourceCount;
-
-        private BaseTask targetTask;
         private CancellationTokenSource collectCanceller;
         private PlayerController playerController;
 
-        public event Action<int> OnCollected;
+        private BaseTask targetTask;
 
         private void Awake()
         {
@@ -36,6 +33,8 @@ namespace Module.Task
 
             playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         }
+
+        public event Action<int> OnCollected;
 
         private void OnStateChanged(TaskState state)
         {
@@ -50,10 +49,8 @@ namespace Module.Task
                 collectCanceller?.Dispose();
 
                 if (state == TaskState.Completed)
-                {
                     //完了時は余ったリソースも送る(仕様としては例外的)
                     SendResource();
-                }
             }
         }
 
@@ -77,7 +74,7 @@ namespace Module.Task
 
         private async UniTask WaitForCollectionStep(CancellationToken cancellationToken)
         {
-            float checkTime = 0f;
+            var checkTime = 0f;
 
             await UniTask.WaitUntil(() =>
             {
@@ -89,28 +86,29 @@ namespace Module.Task
 
         private void SendResource()
         {
-            Worker worker = assignableArea.AssignedWorkers[Random.Range(0, assignableArea.AssignedWorkers.Count)];
-            GameObject item = Instantiate(resourceItem, worker.transform.position, Quaternion.identity);
+            var worker = assignableArea.AssignedWorkers[Random.Range(0, assignableArea.AssignedWorkers.Count)];
+            var item = Instantiate(resourceItem, worker.transform.position, Quaternion.identity);
 
-            int countCache = resourceCount;
-            ResourceItem itemComponent = item.GetComponent<ResourceItem>();
+            var countCache = resourceCount;
+            var itemComponent = item.GetComponent<ResourceItem>();
             itemComponent.SetCollideEvent(() => OnCollected?.Invoke(countCache));
 
-            Rigidbody rig = item.GetComponent<Rigidbody>();
-            Vector3 target = playerController.transform.position;
+            var rig = item.GetComponent<Rigidbody>();
+            var target = playerController.transform.position;
             target.z += targetOffset;
-            Vector3 velocity = CalculateForce(item.transform.position, target, 45f);
+            var velocity = CalculateForce(item.transform.position, target, 45f);
             rig.AddForce(velocity * rig.mass, ForceMode.Impulse);
         }
 
-        Vector3 CalculateForce(Vector3 start, Vector3 target, float angle)
+        private Vector3 CalculateForce(Vector3 start, Vector3 target, float angle)
         {
-            float rad = angle * Mathf.Deg2Rad;
+            var rad = angle * Mathf.Deg2Rad;
 
-            float x = Vector2.Distance(new Vector2(start.x, start.z), new Vector2(target.x, target.z));
-            float y = start.y - target.y;
+            var x = Vector2.Distance(new Vector2(start.x, start.z), new Vector2(target.x, target.z));
+            var y = start.y - target.y;
 
-            float speed = Mathf.Sqrt(-Physics.gravity.y * Mathf.Pow(x, 2) / (2 * Mathf.Pow(Mathf.Cos(rad), 2) * (x * Mathf.Tan(rad) + y)));
+            var speed = Mathf.Sqrt(-Physics.gravity.y * Mathf.Pow(x, 2) /
+                                   (2 * Mathf.Pow(Mathf.Cos(rad), 2) * (x * Mathf.Tan(rad) + y)));
 
             return new Vector3(target.x - start.x, x * Mathf.Tan(rad), target.z - start.z).normalized * speed;
         }

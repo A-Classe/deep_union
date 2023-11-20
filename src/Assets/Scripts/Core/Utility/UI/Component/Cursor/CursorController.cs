@@ -6,16 +6,15 @@ using UnityEngine;
 
 namespace Core.Utility.UI.Component.Cursor
 {
-    public class CursorController<T>: AnimationBehaviour where T : Enum
+    public class CursorController<T> : AnimationBehaviour where T : Enum
     {
-        private Dictionary<T, RectTransform> points = new ();
-
         [SerializeField] private AnimateObject left;
         [SerializeField] private AnimateObject right;
 
         private T currentPoint;
 
-        private bool isInitialize = false;
+        private bool isInitialize;
+        private readonly Dictionary<T, RectTransform> points = new();
 
         public void AddPoint(T key, RectTransform rectT)
         {
@@ -35,14 +34,14 @@ namespace Core.Utility.UI.Component.Cursor
         private void Animated(RectTransform rect)
         {
             var position = rect.position;
-            float leftX = position.x - rect.rect.width / 2f;
-            float rightX = position.x + rect.rect.width / 2f;
+            var leftX = position.x - rect.rect.width / 2f;
+            var rightX = position.x + rect.rect.width / 2f;
 
             var leftT = left.transform.position;
             left.OnCancel();
             left.Animation(
                 this.SlideTo(new Vector2(leftX - leftT.x, position.y - leftT.y), Easings.Default(0.3f)),
-                new AnimationListener()
+                new AnimationListener
                 {
                     OnFinished = () =>
                     {
@@ -56,7 +55,7 @@ namespace Core.Utility.UI.Component.Cursor
             right.OnCancel();
             right.Animation(
                 this.SlideTo(new Vector2(rightX - rightT.x, position.y - rightT.y), Easings.Default(0.3f)),
-                new AnimationListener()
+                new AnimationListener
                 {
                     OnFinished = () =>
                     {

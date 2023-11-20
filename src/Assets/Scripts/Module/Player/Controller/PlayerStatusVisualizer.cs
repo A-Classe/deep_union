@@ -4,9 +4,9 @@ namespace Module.Player.Controller
 {
     public class PlayerStatusVisualizer : MonoBehaviour
     {
+        private static readonly int LifeColorTime = Shader.PropertyToID("_LifeColorTime");
         [SerializeField] private Renderer lifeRenderer;
         [SerializeField] private Material lifeMaterial;
-        private static readonly int LifeColorTime = Shader.PropertyToID("_LifeColorTime");
 
         private void Start()
         {

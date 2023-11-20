@@ -5,14 +5,15 @@ namespace Module.Working.State
 {
     public class FollowState : IWorkerState
     {
+        private static readonly int IsFollowing = Animator.StringToHash("Following");
         private readonly NavMeshAgent navMeshAgent;
         private readonly Worker worker;
         private readonly Animator workerAnimator;
+        private Vector3 currentPos;
 
-        private static readonly int IsFollowing = Animator.StringToHash("Following");
+        private bool isMoving;
 
         private Vector3 prevPos;
-        private Vector3 currentPos;
 
         public FollowState(Worker worker)
         {
@@ -25,8 +26,6 @@ namespace Module.Working.State
         }
 
         public WorkerState WorkerState => WorkerState.Following;
-
-        private bool isMoving;
 
         public void OnStart()
         {
@@ -63,16 +62,18 @@ namespace Module.Working.State
             }
         }
 
-        bool IsStopped()
+        public void Dispose()
+        {
+        }
+
+        private bool IsStopped()
         {
             return isMoving && navMeshAgent.velocity.sqrMagnitude == 0f && !worker.IsWorldMoving;
         }
 
-        bool IsMoved()
+        private bool IsMoved()
         {
             return !isMoving && navMeshAgent.velocity.sqrMagnitude > 0f;
         }
-
-        public void Dispose() { }
     }
 }

@@ -1,4 +1,3 @@
-using Module.Task;
 using UnityEngine;
 
 namespace GameMain.Task
@@ -15,13 +14,11 @@ namespace GameMain.Task
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
-            {
-                foreach (Enemy1Task enemy1Task in baseTasks)
+                foreach (var enemy1Task in baseTasks)
                 {
                     enemy1Task.ForceEnable();
                     enemy1Task.SetDetection(true);
                 }
-            }
         }
     }
 }

@@ -4,7 +4,6 @@ using System.Threading;
 using Core.Utility;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using Module.Assignment;
 using Module.Player;
 using Module.Task;
 using Module.Working;
@@ -27,13 +26,35 @@ namespace GameMain.Task
         [SerializeField] private VisualEffect toxicEffect2;
         [SerializeField] private Transform poisonWaterArea;
         [SerializeField] private ParticleSystem smokeEffect;
+        private CancellationTokenSource cTokenSource;
+        private bool isPlayerEnter;
 
         private int killedCount;
         private PlayerStatus playerStatus;
 
-        private List<Worker> workers = new List<Worker>();
-        private CancellationTokenSource cTokenSource;
-        private bool isPlayerEnter;
+        private readonly List<Worker> workers = new();
+
+        private void OnDestroy()
+        {
+            cTokenSource?.Cancel();
+            cTokenSource?.Dispose();
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Player"))
+                isPlayerEnter = true;
+            else if (other.transform.parent != null && other.transform.parent.TryGetComponent(out Worker worker))
+                workers.Add(worker);
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag("Player"))
+                isPlayerEnter = false;
+            else if (other.transform.parent != null && other.transform.parent.TryGetComponent(out Worker worker))
+                workers.Remove(worker);
+        }
 
         [Inject]
         public void Construct(PlayerStatus playerStatus)
@@ -41,37 +62,10 @@ namespace GameMain.Task
             this.playerStatus = playerStatus;
             cTokenSource = new CancellationTokenSource();
 
-            foreach (PoisonCreatureTask creatureTask in poisonCreatureTasks)
-            {
-                creatureTask.OnCompleted += OnPoisonCreatureKilled;
-            }
+            foreach (var creatureTask in poisonCreatureTasks) creatureTask.OnCompleted += OnPoisonCreatureKilled;
 
             PlayerDamageLoop(cTokenSource.Token).Forget();
             WorkerDamageLoop(cTokenSource.Token).Forget();
-        }
-
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.CompareTag("Player"))
-            {
-                isPlayerEnter = true;
-            }
-            else if (other.transform.parent != null && other.transform.parent.TryGetComponent(out Worker worker))
-            {
-                workers.Add(worker);
-            }
-        }
-
-        private void OnTriggerExit(Collider other)
-        {
-            if (other.CompareTag("Player"))
-            {
-                isPlayerEnter = false;
-            }
-            else if (other.transform.parent != null && other.transform.parent.TryGetComponent(out Worker worker))
-            {
-                workers.Remove(worker);
-            }
         }
 
         private void OnPoisonCreatureKilled(BaseTask _)
@@ -83,10 +77,7 @@ namespace GameMain.Task
                 poisonWaterArea.DOLocalMoveZ(moveOffset, disappearDuration).Play();
                 poisonWaterArea.DOScaleY(0f, disappearDuration)
                     .Play()
-                    .OnComplete(() =>
-                    {
-                        gameObject.SetActive(false);
-                    });
+                    .OnComplete(() => { gameObject.SetActive(false); });
 
                 toxicEffect1.Stop();
                 toxicEffect2.Stop();
@@ -102,10 +93,7 @@ namespace GameMain.Task
         {
             while (!cancellationToken.IsCancellationRequested)
             {
-                if (isPlayerEnter)
-                {
-                    playerStatus.RemoveHp(poisonDamage);
-                }
+                if (isPlayerEnter) playerStatus.RemoveHp(poisonDamage);
 
                 await UniTask.Delay(TimeSpan.FromSeconds(playerDamageInterval), cancellationToken: cancellationToken);
             }
@@ -118,24 +106,15 @@ namespace GameMain.Task
             {
                 if (workers.Count > 0)
                 {
-                    int index = Random.Range(0, workers.Count);
-                    Worker worker = workers[index];
+                    var index = Random.Range(0, workers.Count);
+                    var worker = workers[index];
                     workers.RemoveAt(index);
 
-                    if (!worker.IsLocked)
-                    {
-                        worker.Kill();
-                    }
+                    if (!worker.IsLocked) worker.Kill();
                 }
 
                 await UniTask.Delay(TimeSpan.FromSeconds(workerDamageInterval), cancellationToken: cancellationToken);
             }
-        }
-
-        private void OnDestroy()
-        {
-            cTokenSource?.Cancel();
-            cTokenSource?.Dispose();
         }
     }
 }

@@ -5,11 +5,10 @@ using UnityEngine;
 
 namespace Core.Utility.UI
 {
-    public class TextInAnimationObject: AnimationBehaviour
+    public class TextInAnimationObject : AnimationBehaviour
     {
-        [NonSerialized] public RectTransform rectTransform;
-
         [SerializeField] private TextMeshProUGUI text;
+        [NonSerialized] public RectTransform rectTransform;
 
         protected override void Awake()
         {

@@ -10,18 +10,12 @@ namespace Core.Utility.UI.Component
         private const string OnText = "ON";
 
         private const string OffText = "OFF";
-        
-        public bool IsOn { get; private set; }
 
         [SerializeField] private TextMeshProUGUI text;
-        
-        public void SetState(bool isOn)
-        {
-            IsOn = isOn;
-            text.text = isOn ? OnText : OffText;
-        }
-        
+
         [NonSerialized] public RectTransform rectTransform;
+
+        public bool IsOn { get; private set; }
 
         protected override void Awake()
         {
@@ -29,6 +23,10 @@ namespace Core.Utility.UI.Component
             rectTransform = GetComponent<RectTransform>();
         }
 
-        
+        public void SetState(bool isOn)
+        {
+            IsOn = isOn;
+            text.text = isOn ? OnText : OffText;
+        }
     }
 }

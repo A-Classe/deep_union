@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace GameMain.SoundPlayer
 {
-    public class IncreaseTaskSoundPlayer : TaskSoundPlayer<IncreaseWorkerTask> // ©‚±‚ê‚ğŒp³‚·‚é <>“à‚Í‘ÎÛ‚Ìƒ^ƒXƒN‚ÌŒ^
+    public class IncreaseTaskSoundPlayer : TaskSoundPlayer<IncreaseWorkerTask> // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ <>ï¿½ï¿½ï¿½Í‘ÎÛ‚Ìƒ^ï¿½Xï¿½Nï¿½ÌŒ^
     {
-        //AudioClip‚ğ—pˆÓ‚·‚é
+        //AudioClipï¿½ï¿½pï¿½Ó‚ï¿½ï¿½ï¿½
         [SerializeField] private AudioClip CompleteSound;
 
         protected override void OnStart()
@@ -18,17 +18,15 @@ namespace GameMain.SoundPlayer
 
         private void OnTaskStarted(BaseTask _)
         {
-            
         }
 
         private void OnTaskCanceled(BaseTask _)
         {
-            
         }
 
         private void OnTaskCompleted(BaseTask _)
         {
-            // Š®—¹‚µ‚½‰¹‚ğ–Â‚ç‚·
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â‚ç‚·
             AudioSource.PlayOneShot(CompleteSound);
         }
     }

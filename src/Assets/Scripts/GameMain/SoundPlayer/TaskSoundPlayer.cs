@@ -25,6 +25,8 @@ namespace GameMain.SoundPlayer
             OnStart();
         }
 
-        protected virtual void OnStart() { }
+        protected virtual void OnStart()
+        {
+        }
     }
 }

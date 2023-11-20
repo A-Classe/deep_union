@@ -7,21 +7,26 @@ using UnityEngine.SceneManagement;
 namespace Core.Scenes
 {
     /// <summary>
-    /// シーン間を遷移する時に必ず使う
-    /// パラメーターもここで管理
+    ///     シーン間を遷移する時に必ず使う
+    ///     パラメーターもここで管理
     /// </summary>
     public class SceneChanger
     {
         private const string TitleRoute = "Scenes/Other/Titles_Test";
         private const string InGameRoute = "Scenes/Stages/Stage/Stage";
         private const string ResultRoute = "Scenes/Other/Result_Test";
-        
+
+        [CanBeNull] private string currentRoute;
+
+
+        private StageData.Stage inGameRoute = StageData.Stage.Stage1;
+
+        private GameResult results;
+
         private TitleNavigation route = TitleNavigation.Title;
 
-        [CanBeNull] private string currentRoute = null;
-        
         /// <summary>
-        /// タイトル画面への遷移
+        ///     タイトル画面への遷移
         /// </summary>
         /// <param name="routeNav"></param>
         /// <returns>遷移できなければfalseを返す</returns>
@@ -30,20 +35,21 @@ namespace Core.Scenes
             route = routeNav;
             SceneManager.LoadScene(TitleRoute);
             currentRoute = TitleRoute;
-            
+
             return true;
         }
 
         /// <summary>
-        /// タイトルに遷移する時の初期画面のnav
+        ///     タイトルに遷移する時の初期画面のnav
         /// </summary>
         /// <returns>navgation</returns>
-        public TitleNavigation GetTitle() => route;
-        
+        public TitleNavigation GetTitle()
+        {
+            return route;
+        }
 
-        private StageData.Stage inGameRoute = StageData.Stage.Stage1;
         /// <summary>
-        /// :TODO 引数見て、各stageに遷移
+        ///     :TODO 引数見て、各stageに遷移
         /// </summary>
         /// <param name="routeNav"></param>
         /// <returns>遷移できなければfalseを返す</returns>
@@ -60,15 +66,16 @@ namespace Core.Scenes
             {
                 return false;
             }
-
         }
 
-        
-        public StageData.Stage GetInGame() => inGameRoute;
 
-        private GameResult results;
+        public StageData.Stage GetInGame()
+        {
+            return inGameRoute;
+        }
+
         /// <summary>
-        /// Resultへの遷移
+        ///     Resultへの遷移
         /// </summary>
         /// <param name="param"></param>
         /// <returns>遷移できなければfalseを返す</returns>
@@ -90,6 +97,9 @@ namespace Core.Scenes
         //     }
         // }
 
-        public GameResult GetResultParam() => results;
+        public GameResult GetResultParam()
+        {
+            return results;
+        }
     }
 }

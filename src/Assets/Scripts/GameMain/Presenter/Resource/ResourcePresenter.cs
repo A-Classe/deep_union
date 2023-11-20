@@ -1,19 +1,18 @@
 using Module.Task;
-using UI.InGame;
+using Module.UI.InGame;
 using VContainer;
 using VContainer.Unity;
-using Wanna.DebugEx;
 
 namespace GameMain.Presenter.Resource
 {
     /// <summary>
-    /// タスクとリソース管理クラスのプレゼンタークラス
+    ///     タスクとリソース管理クラスのプレゼンタークラス
     /// </summary>
     public class ResourcePresenter : IInitializable
     {
+        private readonly CollectableTask[] collectableTasks;
         private readonly ResourceContainer resourceContainer;
         private readonly InGameUIManager uiManager;
-        private readonly CollectableTask[] collectableTasks;
 
         [Inject]
         public ResourcePresenter(
@@ -29,19 +28,12 @@ namespace GameMain.Presenter.Resource
         public void Initialize()
         {
             foreach (var collectableTask in collectableTasks)
-            {
-                collectableTask.OnCollected += count =>
-                {
-                    resourceContainer.Add(count);
-                };
-            }
-            
-            uint initialResourceCount = resourceContainer.MaxResourceCount > 0 ? (uint)resourceContainer.MaxResourceCount : 0u;
+                collectableTask.OnCollected += count => { resourceContainer.Add(count); };
+
+            var initialResourceCount =
+                resourceContainer.MaxResourceCount > 0 ? (uint)resourceContainer.MaxResourceCount : 0u;
             uiManager.SetResourceCount(0u, initialResourceCount);
-            resourceContainer.OnResourceChanged += (_, current) =>
-            {
-                uiManager.SetResourceCount((uint)current);
-            };
+            resourceContainer.OnResourceChanged += (_, current) => { uiManager.SetResourceCount((uint)current); };
         }
     }
 }

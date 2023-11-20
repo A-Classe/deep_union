@@ -1,5 +1,4 @@
 using System;
-using Core.Model.Player;
 using GameMain.Presenter;
 using Module.Player.State;
 using UnityEngine;
@@ -12,28 +11,29 @@ namespace Module.Player.Controller
         public float MoveResistance;
         public float RotateResistance;
     }
-    
+
     /// <summary>
-    /// プレイヤーの操作に関するクラス
+    ///     プレイヤーの操作に関するクラス
     /// </summary>
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private Rigidbody rig;
         [SerializeField] private MovementSetting setting;
-        private Vector3? startPosition;
         private IPlayerState currentState;
+        [NonSerialized] public GameParam gameParam;
+        private Vector3? startPosition;
 
         private IPlayerState[] states;
-        public event Action<PlayerState> OnStateChanged;
-        [NonSerialized] public GameParam gameParam;
 
         private void FixedUpdate()
         {
             StateUpdate();
         }
 
+        public event Action<PlayerState> OnStateChanged;
+
         /// <summary>
-        /// objectの初期化
+        ///     objectの初期化
         /// </summary>
         private void Initialize()
         {
@@ -48,7 +48,7 @@ namespace Module.Player.Controller
         }
 
         /// <summary>
-        /// 移動に関するupdate
+        ///     移動に関するupdate
         /// </summary>
         private void StateUpdate()
         {
@@ -75,20 +75,20 @@ namespace Module.Player.Controller
         }
 
         /// <summary>
-        /// ゲーム開始時に実行する
+        ///     ゲーム開始時に実行する
         /// </summary>
         public void PlayerStart()
         {
-            if (startPosition.HasValue)
-            {
-                transform.position = startPosition.Value;
-            }
+            if (startPosition.HasValue) transform.position = startPosition.Value;
         }
 
         /// <summary>
-        /// ステータスの取得
+        ///     ステータスの取得
         /// </summary>
         /// <returns>Playerの状態を返す</returns>
-        public PlayerState GetState() => currentState.GetState();
+        public PlayerState GetState()
+        {
+            return currentState.GetState();
+        }
     }
 }

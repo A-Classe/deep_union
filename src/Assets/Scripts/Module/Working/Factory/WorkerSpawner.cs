@@ -8,12 +8,12 @@ using Wanna.DebugEx;
 namespace Module.Working.Factory
 {
     /// <summary>
-    /// ワーカーをスポーンするクラス
+    ///     ワーカーをスポーンするクラス
     /// </summary>
     public class WorkerSpawner
     {
-        private readonly WorkerAgent workerAgent;
         private readonly SpawnPoint spawnPoint;
+        private readonly WorkerAgent workerAgent;
 
         [Inject]
         public WorkerSpawner(WorkerAgent workerAgent, SpawnPoint spawnPoint)
@@ -23,7 +23,7 @@ namespace Module.Working.Factory
         }
 
         /// <summary>
-        /// 指定した数のワーカーをスポーンします
+        ///     指定した数のワーカーをスポーンします
         /// </summary>
         /// <param name="spawnCount">スポーンするワーカーの数</param>
         /// <returns>スポーンしたワーカーのコレクション</returns>
@@ -31,15 +31,15 @@ namespace Module.Working.Factory
         {
             var addedWorkers = workerAgent.Add(spawnCount);
 
-            int layerMask = 1 << LayerMask.NameToLayer("Stage");
+            var layerMask = 1 << LayerMask.NameToLayer("Stage");
 
-            if (Physics.Raycast(Vector3.up * 100f, Vector3.down, out RaycastHit hitInfo, 1000f, layerMask))
+            if (Physics.Raycast(Vector3.up * 100f, Vector3.down, out var hitInfo, 1000f, layerMask))
             {
-                Vector3 position = hitInfo.point + new Vector3(0f, 0.5f, 0f);
+                var position = hitInfo.point + new Vector3(0f, 0.5f, 0f);
 
                 foreach (var worker in addedWorkers)
                 {
-                    WorkerCreateModel createModel = new WorkerCreateModel(WorkerState.Idle, position,
+                    var createModel = new WorkerCreateModel(WorkerState.Idle, position,
                         spawnPoint.transform);
                     InitWorker(worker, createModel);
                 }
@@ -53,10 +53,10 @@ namespace Module.Working.Factory
             return addedWorkers;
         }
 
-        void InitWorker(Worker worker, WorkerCreateModel createModel)
+        private void InitWorker(Worker worker, WorkerCreateModel createModel)
         {
             worker.transform.SetParent(createModel.Parent);
-            NavMeshAgent agent = worker.GetComponent<NavMeshAgent>();
+            var agent = worker.GetComponent<NavMeshAgent>();
             agent.Warp(createModel.Position);
 
             worker.SetWorkerState(createModel.State);

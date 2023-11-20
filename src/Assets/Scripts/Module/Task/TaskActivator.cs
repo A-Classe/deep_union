@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using GameMain.Presenter;
 using UnityEngine;
@@ -16,25 +15,24 @@ namespace Module.Task
         private int head;
         private int tail;
 
-        public event Action OnTaskCreated;
-        public event Action<BaseTask> OnTaskActivated;
-        public event Action<BaseTask> OnTaskDeactivated;
-
         [Inject]
         public TaskActivator(GameParam gameParam)
         {
             this.gameParam = gameParam;
             mainCamera = Camera.main;
 
-            float camZ = mainCamera.transform.position.z;
+            var camZ = mainCamera.transform.position.z;
             tasks = TaskUtil.FindSceneTasks<BaseTask>().OrderBy(task => task.transform.position.z - camZ).ToArray();
             tail = tasks.Length - 1;
         }
 
+        public event Action OnTaskCreated;
+        public event Action<BaseTask> OnTaskActivated;
+        public event Action<BaseTask> OnTaskDeactivated;
+
         public void Start()
         {
-            foreach (BaseTask task in tasks)
-            {
+            foreach (var task in tasks)
                 if (IsPassed(task.transform.position))
                 {
                     task.Disable();
@@ -45,7 +43,6 @@ namespace Module.Task
                     task.Disable();
                     tail--;
                 }
-            }
 
             OnTaskCreated?.Invoke();
         }
@@ -62,12 +59,12 @@ namespace Module.Task
             UpdateTail();
         }
 
-        void UpdateHead()
+        private void UpdateHead()
         {
             if (head >= tasks.Length)
                 return;
 
-            BaseTask task = tasks[head];
+            var task = tasks[head];
 
             if (IsPassed(task.transform.position))
             {
@@ -77,12 +74,12 @@ namespace Module.Task
             }
         }
 
-        void UpdateTail()
+        private void UpdateTail()
         {
             if (tail >= tasks.Length)
                 return;
 
-            BaseTask task = tasks[tail];
+            var task = tasks[tail];
 
             if (!IsAhead(task.transform.position))
             {
@@ -92,12 +89,12 @@ namespace Module.Task
             }
         }
 
-        bool IsAhead(Vector3 taskPos)
+        private bool IsAhead(Vector3 taskPos)
         {
             return taskPos.z - mainCamera.transform.position.z > gameParam.ActivateTaskRange;
         }
 
-        bool IsPassed(Vector3 taskPos)
+        private bool IsPassed(Vector3 taskPos)
         {
             return mainCamera.transform.position.z - taskPos.z > gameParam.DeactivateTaskRange;
         }

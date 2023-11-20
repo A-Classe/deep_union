@@ -11,14 +11,14 @@ namespace Module.Player.State
             this.rigidbody = rigidbody;
         }
 
-        public PlayerState GetState() => PlayerState.Pause;
+        public PlayerState GetState()
+        {
+            return PlayerState.Pause;
+        }
 
         public void Update()
         {
-            if (rigidbody.velocity != Vector3.zero)
-            {
-                rigidbody.velocity = Vector3.zero;
-            }
+            if (rigidbody.velocity != Vector3.zero) rigidbody.velocity = Vector3.zero;
         }
     }
 }
