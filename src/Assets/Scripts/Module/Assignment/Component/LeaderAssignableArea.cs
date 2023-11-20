@@ -3,23 +3,22 @@ using GameMain.Presenter;
 using Module.Working;
 using Module.Working.State;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace Module.Assignment.Component
 {
     /// <summary>
-    /// リーダーのアサイン機能を拡張するクラス
+    ///     リーダーのアサイン機能を拡張するクラス
     /// </summary>
     public class LeaderAssignableArea : MonoBehaviour
     {
         [SerializeField] private AssignableArea assignableArea;
         [SerializeField] private GameParam gameParam;
+        private InputEvent assignEvent;
+        private float defaultIntensity;
+        private bool isWorldMoving;
+        private InputEvent releaseEvent;
 
         public int WorkerCount => assignableArea.AssignedWorkers.Count;
-        private InputEvent assignEvent;
-        private InputEvent releaseEvent;
-        private bool isWorldMoving;
-        private float defaultIntensity;
 
         public AssignableArea AssignableArea => assignableArea;
 
@@ -33,29 +32,17 @@ namespace Module.Assignment.Component
 
             defaultIntensity = assignableArea.Intensity;
 
-            assignEvent.Started += _ =>
-            {
-                assignableArea.SetLightIntensity(gameParam.AssignIntensity);
-            };
+            assignEvent.Started += _ => { assignableArea.SetLightIntensity(gameParam.AssignIntensity); };
 
-            assignEvent.Canceled += _ =>
-            {
-                assignableArea.SetLightIntensity(defaultIntensity);
-            };
+            assignEvent.Canceled += _ => { assignableArea.SetLightIntensity(defaultIntensity); };
 
-            releaseEvent.Started += _ =>
-            {
-                assignableArea.SetLightIntensity(gameParam.ReleaseIntensity);
-            };
+            releaseEvent.Started += _ => { assignableArea.SetLightIntensity(gameParam.ReleaseIntensity); };
 
-            releaseEvent.Canceled += _ =>
-            {
-                assignableArea.SetLightIntensity(defaultIntensity);
-            };
+            releaseEvent.Canceled += _ => { assignableArea.SetLightIntensity(defaultIntensity); };
         }
 
         /// <summary>
-        /// ワーカーの目標をリーダーに設定します
+        ///     ワーカーの目標をリーダーに設定します
         /// </summary>
         /// <param name="worker">設定するワーカー</param>
         private void AddWorker(Worker worker)
@@ -73,10 +60,7 @@ namespace Module.Assignment.Component
         {
             isWorldMoving = enable;
 
-            foreach (Worker worker in assignableArea.AssignedWorkers)
-            {
-                worker.IsWorldMoving = enable;
-            }
+            foreach (var worker in assignableArea.AssignedWorkers) worker.IsWorldMoving = enable;
         }
     }
 }

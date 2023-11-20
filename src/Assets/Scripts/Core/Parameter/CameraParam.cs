@@ -1,4 +1,5 @@
 using UnityEngine;
+
 namespace Core.Parameter
 {
     public class CameraParam : ScriptableObject
@@ -8,6 +9,5 @@ namespace Core.Parameter
         public float FollowAngle = 88f;
 
         public float CameraAngle = 65f;
-
     }
 }

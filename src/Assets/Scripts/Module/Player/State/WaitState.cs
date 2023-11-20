@@ -2,7 +2,10 @@ namespace Module.Player.State
 {
     internal class WaitState : IPlayerState
     {
-        public PlayerState GetState() => PlayerState.Wait;
+        public PlayerState GetState()
+        {
+            return PlayerState.Wait;
+        }
 
         public void Update()
         {

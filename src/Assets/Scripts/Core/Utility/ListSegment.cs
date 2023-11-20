@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+
 // ReSharper disable RedundantExtendsListEntry
 
 // 参考
@@ -9,9 +10,9 @@ using System.Collections.Generic;
 namespace Core.Utility
 {
     /// <summary>
-    /// ArraySegmentのList版
-    /// リストの性質上、親リストが変更されるとセグメントの内容も変わるので注意
-    /// また、バージョン変更を監視しないため、イテレート時にコレクションを変更しないでください
+    ///     ArraySegmentのList版
+    ///     リストの性質上、親リストが変更されるとセグメントの内容も変わるので注意
+    ///     また、バージョン変更を監視しないため、イテレート時にコレクションを変更しないでください
     /// </summary>
     /// <typeparam name="T">要素の型</typeparam>
     public readonly struct ListSegment<T> : IList<T>, IReadOnlyList<T>
@@ -38,25 +39,37 @@ namespace Core.Utility
 
         public int IndexOf(T item)
         {
-            int index = list.IndexOf(item);
+            var index = list.IndexOf(item);
 
-            if (startIndex <= index && index <= startIndex + Count)
-            {
-                return index - startIndex;
-            }
+            if (startIndex <= index && index <= startIndex + Count) return index - startIndex;
 
             return -1;
         }
 
-        void IList<T>.Insert(int index, T item) => throw new NotSupportedException();
+        void IList<T>.Insert(int index, T item)
+        {
+            throw new NotSupportedException();
+        }
 
-        void IList<T>.RemoveAt(int index) => throw new NotSupportedException();
+        void IList<T>.RemoveAt(int index)
+        {
+            throw new NotSupportedException();
+        }
 
-        void ICollection<T>.Add(T item) => throw new NotSupportedException();
+        void ICollection<T>.Add(T item)
+        {
+            throw new NotSupportedException();
+        }
 
-        void ICollection<T>.Clear() => throw new NotSupportedException();
+        void ICollection<T>.Clear()
+        {
+            throw new NotSupportedException();
+        }
 
-        public bool Contains(T item) => IndexOf(item) >= 0;
+        public bool Contains(T item)
+        {
+            return IndexOf(item) >= 0;
+        }
 
         public void CopyTo(T[] array, int arrayIndex)
         {
@@ -69,27 +82,33 @@ namespace Core.Utility
                     Array.Copy(source, startIndex, array, arrayIndex, Count);
                     break;
                 default:
-                    for (int i = 0; i < Count; i++)
+                    for (var i = 0; i < Count; i++)
                         array[i] = list[i + startIndex];
                     break;
             }
         }
 
-        bool ICollection<T>.Remove(T item) => throw new NotSupportedException();
+        bool ICollection<T>.Remove(T item)
+        {
+            throw new NotSupportedException();
+        }
 
         public IEnumerator<T> GetEnumerator()
         {
             return new Enumerator(list);
         }
 
-        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
 
         [Serializable]
         public struct Enumerator : IEnumerator<T>, IDisposable, IEnumerator
         {
-            private IList<T> list;
             private T current;
             private int index;
+            private IList<T> list;
 
             internal Enumerator(IList<T> ls)
             {
@@ -99,12 +118,14 @@ namespace Core.Utility
                 current = default;
             }
 
-            public void Dispose() { }
+            public void Dispose()
+            {
+            }
 
             public bool MoveNext()
             {
                 if ((uint)index >= (uint)list.Count)
-                    return this.MoveNextRare();
+                    return MoveNextRare();
 
                 current = list[index];
 
@@ -112,27 +133,21 @@ namespace Core.Utility
                 return true;
             }
 
-            private bool MoveNextRare()
-            {
-                index = list.Count + 1;
-                current = default;
-                return false;
-            }
+            public T Current => current;
 
-            public T Current
-            {
-                get => current;
-            }
-
-            object IEnumerator.Current
-            {
-                get { return Current; }
-            }
+            object IEnumerator.Current => Current;
 
             void IEnumerator.Reset()
             {
                 index = 0;
                 current = default;
+            }
+
+            private bool MoveNextRare()
+            {
+                index = list.Count + 1;
+                current = default;
+                return false;
             }
         }
     }

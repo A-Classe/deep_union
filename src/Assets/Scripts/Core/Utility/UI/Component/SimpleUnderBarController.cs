@@ -4,32 +4,35 @@ using UnityEngine;
 
 namespace Core.Utility.UI.Component
 {
-    public class SimpleUnderBarController: MonoBehaviour
+    public class SimpleUnderBarController : MonoBehaviour
     {
         [SerializeField] private AnimateObject bar;
         [SerializeField] private AnimateObject leftAnchor;
         [SerializeField] private AnimateObject rightAnchor;
-
-        private Vector3 iPosLeft;
         private Vector3 fPosLeft;
-        
-        private Vector3 iPosRight;
         private Vector3 fPosRight;
 
+        private Vector3 iPosLeft;
+
+        private Vector3 iPosRight;
+
         private bool isInit;
+
         private void Start()
         {
             if (isInit)
             {
                 leftAnchor.rectTransform.localPosition = fPosLeft;
                 rightAnchor.rectTransform.localPosition = fPosRight;
-            };
+            }
+
+            ;
             iPosLeft = leftAnchor.rectTransform.localPosition;
             fPosLeft = iPosLeft - new Vector3(-bar.rectTransform.rect.size.x / 2f, 0f, 0f);
             iPosRight = rightAnchor.rectTransform.localPosition;
             fPosRight = iPosRight - new Vector3(bar.rectTransform.rect.size.x / 2f, 0f, 0f);
             isInit = true;
-            
+
             leftAnchor.rectTransform.localPosition = fPosLeft;
             rightAnchor.rectTransform.localPosition = fPosRight;
         }
@@ -42,12 +45,9 @@ namespace Core.Utility.UI.Component
             rightAnchor.OnCancel();
             bar.Animation(
                 bar.ScaleIn(new Vector2(2f, 1f), easing),
-                new AnimationListener()
+                new AnimationListener
                 {
-                    OnStart = () =>
-                    {
-                        bar.rectTransform.localScale = new Vector3(0f, 1f, 1f);  
-                    },
+                    OnStart = () => { bar.rectTransform.localScale = new Vector3(0f, 1f, 1f); },
                     OnFinished = () =>
                     {
                         bar.rectTransform.localScale = new Vector3(1f, 1f, 1f);
@@ -57,26 +57,18 @@ namespace Core.Utility.UI.Component
             );
             leftAnchor.Animation(
                 leftAnchor.SlideTo(new Vector2(-bar.rectTransform.rect.size.x / 2f, 0f), easing),
-                new AnimationListener()
+                new AnimationListener
                 {
-                    OnFinished= () =>
-                    {
-                        leftAnchor.rectTransform.localPosition = iPosLeft;
-                    }
+                    OnFinished = () => { leftAnchor.rectTransform.localPosition = iPosLeft; }
                 }
             );
             rightAnchor.Animation(
                 rightAnchor.SlideTo(new Vector2(bar.rectTransform.rect.size.x / 2f, 0f), easing),
-                new AnimationListener()
+                new AnimationListener
                 {
-                    OnFinished = () =>
-                    {
-                        rightAnchor.rectTransform.localPosition = iPosRight;
-                    }
+                    OnFinished = () => { rightAnchor.rectTransform.localPosition = iPosRight; }
                 }
             );
-
-            
         }
 
         public void AnimateOut(Action onFinished = null)
@@ -89,12 +81,9 @@ namespace Core.Utility.UI.Component
             rightAnchor.OnCancel();
             bar.Animation(
                 bar.ScaleIn(new Vector2(0f, 1f), easing),
-                new AnimationListener()
+                new AnimationListener
                 {
-                    OnStart = () =>
-                    {
-                        bar.rectTransform.localScale = new Vector3(1f, 1f, 1f);
-                    },
+                    OnStart = () => { bar.rectTransform.localScale = new Vector3(1f, 1f, 1f); },
                     OnFinished = () =>
                     {
                         bar.rectTransform.localScale = new Vector3(0f, 1f, 1f);
@@ -104,22 +93,16 @@ namespace Core.Utility.UI.Component
             );
             leftAnchor.Animation(
                 leftAnchor.SlideTo(new Vector2(bar.rectTransform.rect.size.x / 2f, 0f), easing),
-                new AnimationListener()
+                new AnimationListener
                 {
-                    OnFinished = () =>
-                    {
-                        leftAnchor.rectTransform.localPosition = fPosLeft;
-                    }
+                    OnFinished = () => { leftAnchor.rectTransform.localPosition = fPosLeft; }
                 }
             );
             rightAnchor.Animation(
                 rightAnchor.SlideTo(new Vector2(-bar.rectTransform.rect.size.x / 2f, 0f), easing),
-                new AnimationListener()
+                new AnimationListener
                 {
-                    OnFinished = () =>
-                    {
-                        rightAnchor.rectTransform.localPosition = fPosRight;
-                    }
+                    OnFinished = () => { rightAnchor.rectTransform.localPosition = fPosRight; }
                 }
             );
         }

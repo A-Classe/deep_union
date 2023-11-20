@@ -2,7 +2,7 @@ using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using GameMain.Presenter;
-using UI.InGame;
+using Module.UI.InGame;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -11,12 +11,12 @@ namespace Module.Player.Controller
 {
     public class PlayerStatusUpdater : IInitializable, IDisposable
     {
-        private readonly PlayerStatus playerStatus;
         private readonly GameParam gameParam;
+        private readonly PlayerStatus playerStatus;
         private readonly PlayerStatusVisualizer statusVisualizer;
         private readonly InGameUIManager uiManager;
 
-        private CancellationTokenSource cTokenSource;
+        private readonly CancellationTokenSource cTokenSource;
         private short maxHp;
 
         [Inject]
@@ -35,6 +35,11 @@ namespace Module.Player.Controller
             cTokenSource = new CancellationTokenSource();
         }
 
+        public void Dispose()
+        {
+            cTokenSource?.Dispose();
+        }
+
         public void Initialize()
         {
             maxHp = playerStatus.MaxHp;
@@ -50,23 +55,19 @@ namespace Module.Player.Controller
             playerStatus.OnCallHpZero += OnCallHpZero;
         }
 
-        async UniTaskVoid DecreaseHpLoop(CancellationToken cancellationToken)
+        private async UniTaskVoid DecreaseHpLoop(CancellationToken cancellationToken)
         {
             while (!cancellationToken.IsCancellationRequested)
             {
-                await UniTask.Delay(TimeSpan.FromSeconds(gameParam.DecereseHpSpeed), cancellationToken: cancellationToken);
+                await UniTask.Delay(TimeSpan.FromSeconds(gameParam.DecereseHpSpeed),
+                    cancellationToken: cancellationToken);
                 playerStatus.RemoveHp(gameParam.DecereseHpAmount);
             }
         }
-        
+
         private void OnCallHpZero()
         {
             uiManager.SetGameOver();
-        }
-
-        public void Dispose()
-        {
-            cTokenSource?.Dispose();
         }
     }
 }

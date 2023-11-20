@@ -9,8 +9,8 @@ namespace Module.Assignment.Utility
     public readonly struct EllipseData
     {
         public readonly float3 Position;
-        public readonly float2 Size;
         public readonly float Rotation;
+        public readonly float2 Size;
 
         public EllipseData(float3 position, float2 size, float rotation)
         {

@@ -8,16 +8,14 @@ namespace GameMain.Presenter
 {
     public class LeaderPresenter : IStartable
     {
-        private readonly PlayerController playerController;
         private readonly LeaderAssignableArea leaderAssignableArea;
+        private readonly PlayerController playerController;
 
         [Inject]
         public LeaderPresenter(PlayerController playerController, LeaderAssignableArea leaderAssignableArea)
         {
             this.playerController = playerController;
             this.leaderAssignableArea = leaderAssignableArea;
-            
-            
         }
 
         public void Start()

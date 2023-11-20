@@ -13,7 +13,6 @@ namespace Core.Model.Scene
 
     public static class GameResultEx
     {
-        
         public static uint GetScore(this GameResult result)
         {
             /* todo: スコアを計算する */

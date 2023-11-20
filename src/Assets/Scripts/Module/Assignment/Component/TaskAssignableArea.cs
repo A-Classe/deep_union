@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Module.Assignment.Component
 {
     /// <summary>
-    /// タスクのアサイン機能を拡張するクラス
+    ///     タスクのアサイン機能を拡張するクラス
     /// </summary>
     public class TaskAssignableArea : MonoBehaviour
     {

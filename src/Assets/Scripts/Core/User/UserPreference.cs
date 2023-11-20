@@ -7,16 +7,16 @@ using UnityEngine;
 namespace Core.User
 {
     /// <summary>
-    /// データ保存の中継クラス
-    /// 絶対にこれを介して保存する
+    ///     データ保存の中継クラス
+    ///     絶対にこれを介して保存する
     /// </summary>
     public class UserPreference
     {
         private static readonly string RootPath = Application.persistentDataPath;
         private static readonly string SaveDirPath = Path.Combine(RootPath, "preference");
-        private readonly string saveFilePath = "preference.json";
 
         private readonly DataManager dataManager = new();
+        private readonly string saveFilePath = "preference.json";
 
         public UserPreference()
         {
@@ -25,17 +25,14 @@ namespace Core.User
 
         private void EnsureDirectoryExists()
         {
-            if (!Directory.Exists(SaveDirPath))
-            {
-                Directory.CreateDirectory(SaveDirPath);
-            }
+            if (!Directory.Exists(SaveDirPath)) Directory.CreateDirectory(SaveDirPath);
         }
 
         public void Load()
         {
             dataManager.Load(GetFilePath());
         }
-        
+
         public UserData GetUserData()
         {
             return dataManager.Get<UserData>();
@@ -48,21 +45,21 @@ namespace Core.User
 
         public void SetMasterVolume(int vol)
         {
-            UserData data = dataManager.Get<UserData>();
+            var data = dataManager.Get<UserData>();
             data.masterVolume.value = vol;
             dataManager.Set(data);
         }
-        
+
         public void SetMusicVolume(int vol)
         {
-            UserData data = dataManager.Get<UserData>();
+            var data = dataManager.Get<UserData>();
             data.musicVolume.value = vol;
             dataManager.Set(data);
         }
-        
+
         public void SetEffectVolume(int vol)
         {
-            UserData data = dataManager.Get<UserData>();
+            var data = dataManager.Get<UserData>();
             data.effectVolume.value = vol;
             dataManager.Set(data);
         }
@@ -76,7 +73,7 @@ namespace Core.User
         {
             dataManager.Set(data);
         }
-        
+
         public void SetStageData(StageData.Stage stage, uint score)
         {
             var data = dataManager.Get<StageData>();

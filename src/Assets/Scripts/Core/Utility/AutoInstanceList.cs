@@ -8,19 +8,18 @@ using Random = UnityEngine.Random;
 namespace Core.Utility
 {
     /// <summary>
-    /// 指定サイズ以下になると自動でリストに追加を行うList拡張
+    ///     指定サイズ以下になると自動でリストに追加を行うList拡張
     /// </summary>
     /// <typeparam name="T">リストの型</typeparam>
     public class AutoInstanceList<T> : List<T> where T : MonoBehaviour
     {
-        private GameObject instancePrefab;
-        private Transform parentTransform;
-        private uint buffer;
+        private readonly uint buffer;
+        private readonly GameObject instancePrefab;
+        private readonly Transform parentTransform;
 
-        private Vector2 randomSize;
+        private readonly Vector2 randomSize;
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="prefab">生成するインスタンス</param>
         /// <param name="parent">生成したobjを入れる親</param>
@@ -35,10 +34,7 @@ namespace Core.Utility
 
         public void SetList(List<T> list)
         {
-            foreach (var monoBehaviour in list)
-            {
-                Add(monoBehaviour);
-            }
+            foreach (var monoBehaviour in list) Add(monoBehaviour);
         }
 
         private void CheckAndRefillBuffer()
@@ -46,17 +42,14 @@ namespace Core.Utility
             if (Count <= buffer)
             {
                 if (instancePrefab == null || parentTransform == null) return;
-                int itemsToInstantiate = (int)buffer - Count;
-                for (int i = 0; i < itemsToInstantiate; i++)
-                {
-                    AddToBufferAsync();
-                }
+                var itemsToInstantiate = (int)buffer - Count;
+                for (var i = 0; i < itemsToInstantiate; i++) AddToBufferAsync();
             }
         }
-        
+
         public new bool Remove(T item)
         {
-            bool result = base.Remove(item);
+            var result = base.Remove(item);
             CheckAndRefillBuffer();
             return result;
         }
@@ -76,27 +69,25 @@ namespace Core.Utility
         {
             yield return new WaitForEndOfFrame();
             // random area
-            double theta = 2.0f * Math.PI * Random.value;
-            double radius = randomSize.x * Math.Sqrt(Random.value);
-            Vector3 spawn = new Vector3(
-                parentTransform.position.x + (float)(radius * Math.Cos(theta)), 
+            var theta = 2.0f * Math.PI * Random.value;
+            var radius = randomSize.x * Math.Sqrt(Random.value);
+            var spawn = new Vector3(
+                parentTransform.position.x + (float)(radius * Math.Cos(theta)),
                 parentTransform.position.y,
                 parentTransform.position.z + (float)(radius * Math.Sin(theta))
             );
-            
+
             var instance = Object.Instantiate(instancePrefab, spawn, Quaternion.identity, parentTransform);
             instance.name = "Point_Clone";
-            T component = instance.GetComponent<T>();
-            if (component)
-            {
-                Add(component);
-            }
+            var component = instance.GetComponent<T>();
+            if (component) Add(component);
         }
     }
 
     public static class CoroutineRunner
     {
-        private static CoroutineRunnerBehaviour _coroutineRunner = null;
+        private static CoroutineRunnerBehaviour _coroutineRunner;
+
         private static CoroutineRunnerBehaviour coroutineRunner
         {
             get
@@ -106,6 +97,7 @@ namespace Core.Utility
                     var go = new GameObject("CoroutineRunner");
                     _coroutineRunner = go.AddComponent<CoroutineRunnerBehaviour>();
                 }
+
                 return _coroutineRunner;
             }
         }
@@ -120,7 +112,7 @@ namespace Core.Utility
     {
         private void Awake()
         {
-            DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(gameObject);
         }
     }
 }

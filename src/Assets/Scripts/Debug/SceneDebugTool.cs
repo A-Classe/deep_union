@@ -10,10 +10,10 @@ namespace Debug
 {
     public sealed class SceneDebugTool : IStartable
     {
-        private readonly ResourceContainer resourceContainer;
-        private readonly LeaderAssignableArea leaderAssignableArea;
-        private readonly StageProgressObserver stageProgressObserver;
         private readonly DebugToolPage debugToolPage;
+        private readonly LeaderAssignableArea leaderAssignableArea;
+        private readonly ResourceContainer resourceContainer;
+        private readonly StageProgressObserver stageProgressObserver;
 
         [Inject]
         public SceneDebugTool(
@@ -26,7 +26,7 @@ namespace Debug
             this.resourceContainer = resourceContainer;
             this.leaderAssignableArea = leaderAssignableArea;
             this.stageProgressObserver = stageProgressObserver;
-            this.debugToolPage = debugSheet.GetOrCreateInitialPage<DebugToolPage>();
+            debugToolPage = debugSheet.GetOrCreateInitialPage<DebugToolPage>();
         }
 
         public void Start()
@@ -36,10 +36,8 @@ namespace Debug
             debugToolPage.AddPageLinkButton<TaskDebugPage>("Task",
                 icon: Resources.Load<Sprite>(AssetKeys.Resources.Icon.Model));
             debugToolPage.AddPageLinkButton<PlayerDebugPage>("Player",
-                icon: Resources.Load<Sprite>(AssetKeys.Resources.Icon.CharacterViewer), onLoad: data =>
-                {
-                    data.page.SetUp(resourceContainer, leaderAssignableArea);
-                });
+                icon: Resources.Load<Sprite>(AssetKeys.Resources.Icon.CharacterViewer),
+                onLoad: data => { data.page.SetUp(resourceContainer, leaderAssignableArea); });
 
             debugToolPage.Reload();
         }

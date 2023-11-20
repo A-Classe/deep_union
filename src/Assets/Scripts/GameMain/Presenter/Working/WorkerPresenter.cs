@@ -5,12 +5,14 @@ using VContainer.Unity;
 namespace GameMain.Presenter.Working
 {
     /// <summary>
-    /// ワーカーアサイン機能のプレゼンタークラス
+    ///     ワーカーアサイン機能のプレゼンタークラス
     /// </summary>
     public class WorkerPresenter : IInitializable
     {
         [Inject]
-        public WorkerPresenter() { }
+        public WorkerPresenter()
+        {
+        }
 
         public void Initialize()
         {

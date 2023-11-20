@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Module.Assignment.Component
 {
     /// <summary>
-    /// 楕円判定をビジュアライズするクラス
+    ///     楕円判定をビジュアライズするクラス
     /// </summary>
     public class EllipseVisualizer : MonoBehaviour
     {
@@ -12,11 +12,6 @@ namespace Module.Assignment.Component
         [SerializeField] private int debugResolution = 50;
 
         private EllipseData ellipseData;
-
-        public void SetEllipse(EllipseData ellipseData)
-        {
-            this.ellipseData = ellipseData;
-        }
 
         private void OnDrawGizmos()
         {
@@ -27,13 +22,14 @@ namespace Module.Assignment.Component
             var xRadius = ellipseData.Size.x * 0.5f;
             var yRadius = ellipseData.Size.y * 0.5f;
 
-            Quaternion rotation = Quaternion.AngleAxis(ellipseData.Rotation, Vector3.up);
-            Vector3 startPoint = center + new Vector3(Mathf.Cos(0f) * xRadius, debugHeight, Mathf.Sin(0f) * yRadius);
+            var rotation = Quaternion.AngleAxis(ellipseData.Rotation, Vector3.up);
+            var startPoint = center + new Vector3(Mathf.Cos(0f) * xRadius, debugHeight, Mathf.Sin(0f) * yRadius);
 
-            for (int i = 1; i <= debugResolution; i++)
+            for (var i = 1; i <= debugResolution; i++)
             {
-                float angle = i * angleStep;
-                Vector3 endPoint = center + new Vector3(Mathf.Cos(angle) * xRadius, debugHeight, Mathf.Sin(angle) * yRadius);
+                var angle = i * angleStep;
+                var endPoint =
+                    center + new Vector3(Mathf.Cos(angle) * xRadius, debugHeight, Mathf.Sin(angle) * yRadius);
                 Gizmos.DrawLine(Rotate(startPoint), Rotate(endPoint));
                 startPoint = endPoint;
             }
@@ -42,6 +38,11 @@ namespace Module.Assignment.Component
             {
                 return rotation * (point - center) + center;
             }
+        }
+
+        public void SetEllipse(EllipseData ellipseData)
+        {
+            this.ellipseData = ellipseData;
         }
     }
 }

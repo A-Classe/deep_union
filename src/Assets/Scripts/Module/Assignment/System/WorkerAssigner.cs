@@ -11,8 +11,8 @@ namespace Module.Assignment.System
     [BurstCompile]
     public class WorkerAssigner
     {
-        private readonly LeaderAssignableArea leaderAssignableArea;
         private readonly Worker[] assignWorkerCache;
+        private readonly LeaderAssignableArea leaderAssignableArea;
 
         private IReadOnlyList<AssignableArea> activeAreas;
 
@@ -31,20 +31,20 @@ namespace Module.Assignment.System
 
         public void Update()
         {
-            AssignableArea leaderArea = leaderAssignableArea.AssignableArea;
-            IReadOnlyList<Worker> leaderWorkers = leaderAssignableArea.AssignableArea.AssignedWorkers;
+            var leaderArea = leaderAssignableArea.AssignableArea;
+            var leaderWorkers = leaderAssignableArea.AssignableArea.AssignedWorkers;
 
 
-            foreach (AssignableArea activeArea in activeAreas)
+            foreach (var activeArea in activeAreas)
             {
                 //範囲同士の円形判定を行い、計算が必要な範囲を絞る
-                if (!activeArea.enabled || !CollisionUtil.IsCollideCircle(leaderArea.EllipseData, activeArea.EllipseData))
+                if (!activeArea.enabled ||
+                    !CollisionUtil.IsCollideCircle(leaderArea.EllipseData, activeArea.EllipseData))
                     continue;
 
-                int cacheCount = 0;
+                var cacheCount = 0;
 
-                foreach (Worker worker in leaderWorkers)
-                {
+                foreach (var worker in leaderWorkers)
                     if (CollisionUtil.InEllipse(worker.transform.position, activeArea.EllipseData))
                     {
                         if (cacheCount >= assignWorkerCache.Length)
@@ -56,11 +56,10 @@ namespace Module.Assignment.System
                         assignWorkerCache[cacheCount] = worker;
                         cacheCount++;
                     }
-                }
 
-                for (int i = 0; i < cacheCount; i++)
+                for (var i = 0; i < cacheCount; i++)
                 {
-                    Worker worker = assignWorkerCache[i];
+                    var worker = assignWorkerCache[i];
 
                     if (activeArea.CanAssign())
                     {
