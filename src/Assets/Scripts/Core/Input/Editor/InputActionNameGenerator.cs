@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 using System.Text;
 using UnityEditor;
@@ -8,7 +7,7 @@ using UnityEngine.InputSystem;
 namespace Core.Input.Editor
 {
     /// <summary>
-    /// InputActionのGuidを全て生成するクラス
+    ///     InputActionのGuidを全て生成するクラス
     /// </summary>
     internal static class InputActionNameGenerator
     {
@@ -31,7 +30,8 @@ namespace Core.Input.Editor
             }
 
             profileAsset = Resources.Load<InputActionAssetProfile>("InputActionAssetProfile");
-            Debug.Assert(profileAsset != null, "InputActionAssetProfile was not found! \nPlease create a profile in the Resources folder.");
+            Debug.Assert(profileAsset != null,
+                "InputActionAssetProfile was not found! \nPlease create a profile in the Resources folder.");
         }
 
 
@@ -44,8 +44,8 @@ namespace Core.Input.Editor
         [MenuItem("InputSystem/GenerateActionName")]
         private static void Generate()
         {
-            InputActionAsset usingAsset = profileAsset.GetUsingAsset();
-            StringBuilder builder = new StringBuilder();
+            var usingAsset = profileAsset.GetUsingAsset();
+            var builder = new StringBuilder();
 
 
             //ActionMapを集めるクラスの生成
@@ -53,7 +53,7 @@ namespace Core.Input.Editor
             builder.Append("\n\n");
 
             //ActionMapのGuidを集めるクラスの生成
-            foreach (InputActionMap actionMap in usingAsset.actionMaps)
+            foreach (var actionMap in usingAsset.actionMaps)
             {
                 builder.Append(CreateInputActionCode(actionMap));
                 builder.Append("\n\n");
@@ -76,10 +76,10 @@ namespace Core.Input.Editor
 
         private static void CreateFile(StringBuilder builder)
         {
-            using (FileStream stream = File.Create(savePath))
+            using (var stream = File.Create(savePath))
             {
-                string generatedCode = builder.ToString();
-                byte[] bytes = new UTF8Encoding(true).GetBytes(generatedCode);
+                var generatedCode = builder.ToString();
+                var bytes = new UTF8Encoding(true).GetBytes(generatedCode);
                 stream.Write(bytes);
             }
 
@@ -101,17 +101,13 @@ namespace Core.Input.Editor
 
         private static StringBuilder CreateActionMapCode(InputActionAsset actionAsset)
         {
-            StringBuilder builder = new StringBuilder();
+            var builder = new StringBuilder();
 
-            if (actionAsset.actionMaps.Count == 0)
-            {
-                return builder;
-            }
+            if (actionAsset.actionMaps.Count == 0) return builder;
 
-            foreach (InputActionMap actionMap in actionAsset.actionMaps)
-            {
-                builder.Append($"       public static readonly {actionMap.name} {actionMap.name} = new {actionMap.name}();\n");
-            }
+            foreach (var actionMap in actionAsset.actionMaps)
+                builder.Append(
+                    $"       public static readonly {actionMap.name} {actionMap.name} = new {actionMap.name}();\n");
 
             //最後の改行は削除
             builder.Remove(builder.Length - 1, 1);
@@ -123,12 +119,10 @@ namespace Core.Input.Editor
 
         private static StringBuilder CreateInputActionCode(InputActionMap actionMap)
         {
-            StringBuilder builder = new StringBuilder();
+            var builder = new StringBuilder();
 
-            foreach (InputAction inputAction in actionMap)
-            {
+            foreach (var inputAction in actionMap)
                 builder.Append($"       public readonly Guid {inputAction.name} = new Guid(\"{inputAction.id}\");\n");
-            }
 
             //最後の改行は削除
             builder.Remove(builder.Length - 1, 1);
@@ -150,7 +144,7 @@ namespace Core.Input.Editor
                 builder.Append("\n    }");
             }
 
-            builder.Insert(0, $"    public{(isStatic ? " static" : String.Empty)} class {className}\n");
+            builder.Insert(0, $"    public{(isStatic ? " static" : string.Empty)} class {className}\n");
         }
 
 

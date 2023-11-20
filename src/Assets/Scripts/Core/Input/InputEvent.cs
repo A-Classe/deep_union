@@ -4,15 +4,11 @@ using UnityEngine.InputSystem;
 namespace Core.Input
 {
     /// <summary>
-    /// InputActionのラッパークラス
+    ///     InputActionのラッパークラス
     /// </summary>
     public class InputEvent
     {
         private readonly InputAction inputAction;
-
-        public event Action<InputAction.CallbackContext> Started;
-        public event Action<InputAction.CallbackContext> Performed;
-        public event Action<InputAction.CallbackContext> Canceled;
 
         public InputEvent(InputAction inputAction)
         {
@@ -22,6 +18,10 @@ namespace Core.Input
             inputAction.performed += OnPerformed;
             inputAction.canceled += OnCanceled;
         }
+
+        public event Action<InputAction.CallbackContext> Started;
+        public event Action<InputAction.CallbackContext> Performed;
+        public event Action<InputAction.CallbackContext> Canceled;
 
         private void OnStarted(InputAction.CallbackContext ctx)
         {

@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Editor
 {
     /// <summary>
-    /// タスクを自動生成するクラス
+    ///     タスクを自動生成するクラス
     /// </summary>
     internal static class TaskGenerator
     {

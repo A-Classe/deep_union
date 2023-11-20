@@ -5,10 +5,17 @@ namespace Debug
 {
     public sealed class DebugToolPage : DefaultDebugPageBase
     {
-        protected override string Title => "Debug Tool";
-        private StageProgressObserver stageProgress;
-
         private LabelObserver<StageProgressObserver> progressObserver;
+        private StageProgressObserver stageProgress;
+        protected override string Title => "Debug Tool";
+
+        private void Update()
+        {
+            progressObserver.Update(stageProgress);
+            RefreshDataAt(progressObserver.CellId);
+
+            Reload();
+        }
 
         public void SetUp(StageProgressObserver stageProgress)
         {
@@ -20,14 +27,6 @@ namespace Debug
                     var progress = observer.Progress * 100f;
                     return $"GameProgress: {progress:0}%";
                 });
-        }
-
-        private void Update()
-        {
-            progressObserver.Update(stageProgress);
-            RefreshDataAt(progressObserver.CellId);
-
-            Reload();
         }
     }
 }

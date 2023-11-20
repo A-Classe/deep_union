@@ -29,30 +29,28 @@ namespace Module.Assignment.System
 
         public void Update()
         {
-            EllipseData leaderEllipse = leaderAssignableArea.AssignableArea.EllipseData;
-            AssignableArea leaderArea = leaderAssignableArea.AssignableArea;
+            var leaderEllipse = leaderAssignableArea.AssignableArea.EllipseData;
+            var leaderArea = leaderAssignableArea.AssignableArea;
 
-            foreach (AssignableArea activeArea in activeAreas)
+            foreach (var activeArea in activeAreas)
             {
                 //範囲同士の円形判定を行い、計算が必要な範囲を絞る
                 if (!CollisionUtil.IsCollideCircle(leaderEllipse, activeArea.EllipseData))
                     continue;
 
-                int cacheCount = 0;
+                var cacheCount = 0;
 
-                foreach (Worker worker in activeArea.AssignedWorkers)
-                {
+                foreach (var worker in activeArea.AssignedWorkers)
                     if (CollisionUtil.InEllipse(worker.transform.position, leaderArea.EllipseData))
                     {
                         //イテレート中はコレクション変更できないので一旦キャッシュ
                         releaseWorkerCache[cacheCount] = worker;
                         cacheCount++;
                     }
-                }
 
-                for (int i = 0; i < cacheCount; i++)
+                for (var i = 0; i < cacheCount; i++)
                 {
-                    Worker worker = releaseWorkerCache[i];
+                    var worker = releaseWorkerCache[i];
 
                     if (leaderArea.CanAssign())
                     {
@@ -65,16 +63,14 @@ namespace Module.Assignment.System
 
         public void ReleaseAllWorkers(AssignableArea assignableArea)
         {
-            Worker[] workers = assignableArea.AssignedWorkers.ToArray();
+            var workers = assignableArea.AssignedWorkers.ToArray();
 
-            foreach (Worker worker in workers)
-            {
+            foreach (var worker in workers)
                 if (leaderAssignableArea.AssignableArea.CanAssign())
                 {
                     assignableArea.RemoveWorker(worker);
                     leaderAssignableArea.AssignableArea.AddWorker(worker);
                 }
-            }
         }
     }
 }

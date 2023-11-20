@@ -15,39 +15,18 @@ namespace Module.Task
         [SerializeField] private int mw;
         [SerializeField] private bool acceptAttacks;
 
-        private List<Collider> taskColliders;
-
         [SerializeField] protected TaskState state = TaskState.Idle;
 
         [SerializeField] private float currentProgress;
         [SerializeField] private int currentWorkerCount;
-        private float prevWorkerCount;
         private int enqueuedMonoWork;
+        private float prevWorkerCount;
+
+        private List<Collider> taskColliders;
 
         public float Progress => currentProgress;
-        public TaskState State => state;
         public int MonoWork => mw;
         public bool AcceptAttacks => acceptAttacks;
-
-        /// <summary>
-        /// 作業開始時のイベント
-        /// </summary>
-        public event Action<BaseTask> OnStarted;
-
-        /// <summary>
-        /// 作業中断時のイベント
-        /// </summary>
-        public event Action<BaseTask> OnCanceled;
-
-        /// <summary>
-        /// 作業完了時のイベント
-        /// </summary>
-        public event Action<BaseTask> OnCompleted;
-
-        /// <summary>
-        /// 進捗更新時のイベント
-        /// </summary>
-        public event Action<float> OnProgressChanged;
 
         /// <summary>
         ///     現在割り当てられているワーカー数
@@ -69,11 +48,15 @@ namespace Module.Task
             taskColliders.AddRange(GetComponents<Collider>());
         }
 
+        public TaskState State => state;
+
         /// <summary>
         ///     ゲーム開始時の初期化関数
         /// </summary>
         /// <param name="container"></param>
-        public virtual void Initialize(IObjectResolver container) { }
+        public virtual void Initialize(IObjectResolver container)
+        {
+        }
 
         /// <summary>
         ///     Taskの状態を更新するUpdate
@@ -81,13 +64,30 @@ namespace Module.Task
         /// <param name="deltaTime">Time.deltaTime</param>
         void ITaskSystem.TaskSystemUpdate(float deltaTime)
         {
-            if (state != TaskState.Completed && currentWorkerCount != 0f)
-            {
-                UpdateProgress(deltaTime);
-            }
+            if (state != TaskState.Completed && currentWorkerCount != 0f) UpdateProgress(deltaTime);
 
             ManagedUpdate(deltaTime);
         }
+
+        /// <summary>
+        ///     作業開始時のイベント
+        /// </summary>
+        public event Action<BaseTask> OnStarted;
+
+        /// <summary>
+        ///     作業中断時のイベント
+        /// </summary>
+        public event Action<BaseTask> OnCanceled;
+
+        /// <summary>
+        ///     作業完了時のイベント
+        /// </summary>
+        public event Action<BaseTask> OnCompleted;
+
+        /// <summary>
+        ///     進捗更新時のイベント
+        /// </summary>
+        public event Action<float> OnProgressChanged;
 
         public event Action<TaskState> OnStateChanged;
 
@@ -95,7 +95,9 @@ namespace Module.Task
         ///     ゲームの状態によって管理されるUpdate
         /// </summary>
         /// <param name="deltaTime">Time.deltaTime</param>
-        protected virtual void ManagedUpdate(float deltaTime) { }
+        protected virtual void ManagedUpdate(float deltaTime)
+        {
+        }
 
 
         public void ForceWork(int monoWork)
@@ -106,20 +108,15 @@ namespace Module.Task
 
         private void UpdateProgress(float deltaTime)
         {
-            float currentMw = Mathf.Clamp(mw * currentProgress + currentWorkerCount * deltaTime + enqueuedMonoWork, 0f, mw);
-            float prevProgress = currentProgress;
+            var currentMw = Mathf.Clamp(mw * currentProgress + currentWorkerCount * deltaTime + enqueuedMonoWork, 0f,
+                mw);
+            var prevProgress = currentProgress;
             currentProgress = Mathf.InverseLerp(0f, mw, currentMw);
 
-            if (currentProgress - prevProgress != 0)
-            {
-                OnProgressChanged?.Invoke(currentProgress);
-            }
+            if (currentProgress - prevProgress != 0) OnProgressChanged?.Invoke(currentProgress);
 
             //進捗が1に到達したら完了
-            if (currentProgress >= 1f)
-            {
-                ForceComplete();
-            }
+            if (currentProgress >= 1f) ForceComplete();
 
             enqueuedMonoWork = 0;
         }
@@ -160,18 +157,21 @@ namespace Module.Task
             OnCompleted?.Invoke(this);
         }
 
-        protected virtual void OnStart() { }
+        protected virtual void OnStart()
+        {
+        }
 
-        protected virtual void OnCancel() { }
+        protected virtual void OnCancel()
+        {
+        }
 
-        protected virtual void OnComplete() { }
+        protected virtual void OnComplete()
+        {
+        }
 
         public void SetDetection(bool isEnabled)
         {
-            foreach (Collider col in taskColliders)
-            {
-                col.enabled = isEnabled;
-            }
+            foreach (var col in taskColliders) col.enabled = isEnabled;
         }
 
         public virtual void Enable()

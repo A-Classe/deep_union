@@ -19,7 +19,7 @@ namespace Debug
 
         protected override void SetModel(TaskPageLinkButtonCellModel model)
         {
-            Type pageType = model.PageType ?? typeof(DebugPage);
+            var pageType = model.PageType ?? typeof(DebugPage);
 
             _contentsCanvasGroup.alpha = model.Interactable ? 1.0f : 0.3f;
 
@@ -68,11 +68,11 @@ namespace Debug
 
         public string PageTitleOverride { get; set; }
 
-        public CellIconModel Icon { get; } = new CellIconModel();
+        public CellIconModel Icon { get; } = new();
 
         public bool UseSubTextOrIcon { get; }
 
-        public CellTextsModel CellTexts { get; } = new CellTextsModel();
+        public CellTextsModel CellTexts { get; } = new();
 
         public bool ShowArrow { get; set; }
 
@@ -82,11 +82,11 @@ namespace Debug
 
         public DebugPageBase Prefab { get; set; }
 
-        public event Action<(string pageId, DebugPageBase page)> OnLoad;
-
         public string PageId { get; set; }
 
         public ColorBlock ColorBlock { get; set; }
+
+        public event Action<(string pageId, DebugPageBase page)> OnLoad;
 
         internal void InvokeOnLoad(string pageId, DebugPageBase debugPage)
         {

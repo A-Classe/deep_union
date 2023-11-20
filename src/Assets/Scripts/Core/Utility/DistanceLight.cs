@@ -1,7 +1,6 @@
 using System;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
-using Wanna.DebugEx;
 
 namespace Core.Utility
 {
@@ -24,7 +23,7 @@ namespace Core.Utility
         {
             while (!this.GetCancellationTokenOnDestroy().IsCancellationRequested)
             {
-                float squareDistanceFromCamera = (camTransform.position - transform.position).sqrMagnitude;
+                var squareDistanceFromCamera = (camTransform.position - transform.position).sqrMagnitude;
 
                 if (squareDistanceFromCamera <= allowDistance)
                 {

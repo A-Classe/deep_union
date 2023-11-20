@@ -8,25 +8,8 @@ using VContainer.Unity;
 
 namespace Core.Utility.UI.Navigation
 {
-    public class Navigation<T>: ITickable
+    public class Navigation<T> : ITickable
     {
-        private readonly Dictionary<T, UIManager> managers;
-        private UIManager current;
-        private T currentNav;
-        
-        private readonly InputEvent cancelEvent;
-        private readonly InputEvent clickEvent;
-        private readonly InputEvent moveEvent;
-        
-        private float currentTime;
-        private float initialInterval = StartInterval;
-
-        public event Action<InputAction.CallbackContext> OnCancel;
-
-        private bool isActive;
-        
-        public bool IsActive => isActive;
-
         /// <summary>
         ///     押し続けるたびに減らす感覚
         /// </summary>
@@ -37,15 +20,26 @@ namespace Core.Utility.UI.Navigation
         /// </summary>
         private const float StartInterval = 0.6f;
 
+        private readonly InputEvent cancelEvent;
+        private readonly InputEvent clickEvent;
+        private readonly Dictionary<T, UIManager> managers;
+
         /// <summary>
         ///     最小の呼び出し感覚
         /// </summary>
         private readonly float minInterval = 0.1f;
 
+        private readonly InputEvent moveEvent;
+        private UIManager current;
+        private T currentNav;
+
+        private float currentTime;
+        private float initialInterval = StartInterval;
+
         public Navigation(Dictionary<T, UIManager> initialManagers)
         {
             managers = initialManagers;
-            
+
             moveEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.Title.Move);
             moveEvent.Started += OnMoveStarted;
             moveEvent.Canceled += OnMoveCanceled;
@@ -56,10 +50,12 @@ namespace Core.Utility.UI.Navigation
             cancelEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.Title.Cancel);
             cancelEvent.Canceled += ctx =>
             {
-                if (!isActive) return;
+                if (!IsActive) return;
                 OnCancel?.Invoke(ctx);
             };
         }
+
+        public bool IsActive { get; private set; }
 
         public void Tick()
         {
@@ -67,10 +63,12 @@ namespace Core.Utility.UI.Navigation
             if (Math.Abs(moveValue.y) > 0.05f || Math.Abs(moveValue.x) > 0.05f) OnMove(moveValue);
         }
 
+        public event Action<InputAction.CallbackContext> OnCancel;
+
         public void SetScreen(T nav, bool isAnimate = true, bool isReset = false)
         {
-            if (!isActive) return;
-            
+            if (!IsActive) return;
+
             if (current == null)
             {
                 NavigateWith(nav);
@@ -78,16 +76,9 @@ namespace Core.Utility.UI.Navigation
             }
 
             if (isAnimate)
-            {
-                current.Finished(current.GetContext().FadeOut(Easings.Default(0.3f)), () =>
-                {
-                    NavigateWith(nav);
-                });
-            }
+                current.Finished(current.GetContext().FadeOut(Easings.Default(0.3f)), () => { NavigateWith(nav); });
             else
-            {
                 NavigateWith(nav);
-            }
 
             void NavigateWith(T n)
             {
@@ -95,19 +86,16 @@ namespace Core.Utility.UI.Navigation
                 currentNav = n;
                 if (current == null) throw new NotImplementedException();
                 if (isAnimate)
-                {
                     current.Initialized(current.GetContext().FadeIn(Easings.Default(0.3f)), isReset);
-                }
                 else
-                {
-                    current.Initialized(current.GetContext().SlideTo(new Vector2(0,0), Easings.Default(0.1f)), isReset);
-                }
+                    current.Initialized(current.GetContext().SlideTo(new Vector2(0, 0), Easings.Default(0.1f)),
+                        isReset);
             }
         }
-        
+
         private void OnMove(Vector2 input)
         {
-            if (!isActive) return;
+            if (!IsActive) return;
 
             currentTime += Time.deltaTime;
             // ReSharper disable once CompareOfFloatsByEqualityOperator
@@ -123,7 +111,7 @@ namespace Core.Utility.UI.Navigation
 
         private void OnMoveStarted(InputAction.CallbackContext context)
         {
-            if (!isActive) return;
+            if (!IsActive) return;
 
             var input = context.ReadValue<Vector2>();
             if (current != null) current.Select(input);
@@ -131,7 +119,7 @@ namespace Core.Utility.UI.Navigation
 
         private void OnMoveCanceled(InputAction.CallbackContext context)
         {
-            if (!isActive) return;
+            if (!IsActive) return;
 
             initialInterval = StartInterval;
             currentTime = 0f;
@@ -139,14 +127,19 @@ namespace Core.Utility.UI.Navigation
 
         private void OnClick(InputAction.CallbackContext _)
         {
-            if (!isActive) return;
+            if (!IsActive) return;
 
             if (current != null) current.Clicked();
         }
 
-        public T GetCurrentNav() => currentNav;
+        public T GetCurrentNav()
+        {
+            return currentNav;
+        }
 
-        public void SetActive(bool value) => isActive = value;
-
+        public void SetActive(bool value)
+        {
+            IsActive = value;
+        }
     }
 }

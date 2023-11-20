@@ -8,7 +8,6 @@ namespace Core.User
     [Serializable]
     public class KeyValue<TKey, TValue>
     {
-        public TKey Key { get; private set; }
         public TValue value;
 
         public KeyValue(TKey key, TValue value)
@@ -16,20 +15,22 @@ namespace Core.User
             Key = key;
             this.value = value;
         }
+
+        public TKey Key { get; private set; }
     }
 
     [Serializable]
-    public class UserData: IDefaultable<UserData>
+    public class UserData : IDefaultable<UserData>
     {
         public static readonly Expression<Func<UserData, object>> FullScreen = data => data.fullScreen;
-        public KeyValue<string, bool> fullScreen = new("fullScreen", true);
         public static readonly Expression<Func<UserData, object>> BrightVal = data => data.bright;
-        public KeyValue<string, int> bright = new("brightVal", 0);
         public static readonly Expression<Func<UserData, object>> MasterVol = data => data.masterVolume;
-        public KeyValue<string, int> masterVolume = new("masterVol", 0);
         public static readonly Expression<Func<UserData, object>> MusicVol = data => data.musicVolume;
-        public KeyValue<string, int> musicVolume = new("musicVol", 0);
         public static readonly Expression<Func<UserData, object>> EffectVol = data => data.effectVolume;
+        public KeyValue<string, bool> fullScreen = new("fullScreen", true);
+        public KeyValue<string, int> bright = new("brightVal", 0);
+        public KeyValue<string, int> masterVolume = new("masterVol", 0);
+        public KeyValue<string, int> musicVolume = new("musicVol", 0);
         public KeyValue<string, int> effectVolume = new("musicVol", 0);
 
         public UserData DefaultInstance()
@@ -39,14 +40,8 @@ namespace Core.User
     }
 
     [Serializable]
-    public class StageData: IDefaultable<StageData>
+    public class StageData : IDefaultable<StageData>
     {
-        public Dict<Stage, uint> stage = new ();
-        public StageData DefaultInstance()
-        {
-            return new StageData();
-        }
-        
         [Serializable]
         public enum Stage
         {
@@ -56,16 +51,25 @@ namespace Core.User
             Stage4,
             Stage5
         }
+
+        public Dict<Stage, uint> stage = new();
+
+        public StageData DefaultInstance()
+        {
+            return new StageData();
+        }
     }
-    
-    
+
+
     [Serializable]
     public class SerializableDictionary
     {
         public List<string> keys = new();
         public List<string> values = new();
 
-        public SerializableDictionary() { }
+        public SerializableDictionary()
+        {
+        }
 
         public SerializableDictionary(Dictionary<string, string> dict)
         {
@@ -79,22 +83,19 @@ namespace Core.User
         public Dictionary<string, string> ToDictionary()
         {
             var dict = new Dictionary<string, string>();
-            for (int i = 0; i < Mathf.Min(keys.Count, values.Count); i++)
-            {
-                dict[keys[i]] = values[i];
-            }
+            for (var i = 0; i < Mathf.Min(keys.Count, values.Count); i++) dict[keys[i]] = values[i];
             return dict;
         }
     }
-    
+
     [Serializable]
     //==================================================================
     // @brief Dictionary for JsonUtility
     //==================================================================
     public class Dict<TKey, TValue> : Dictionary<TKey, TValue>, ISerializationCallbackReceiver
     {
-        [SerializeField] private List<TKey> keys = new List<TKey>();
-        [SerializeField] private List<TValue> vals = new List<TValue>();
+        [SerializeField] private List<TKey> keys = new();
+        [SerializeField] private List<TValue> vals = new();
 
         public void OnBeforeSerialize()
         {
@@ -103,21 +104,20 @@ namespace Core.User
 
             using var e = GetEnumerator();
 
-            while ( e.MoveNext() )
+            while (e.MoveNext())
             {
-                keys.Add( e.Current.Key );
-                vals.Add( e.Current.Value );
+                keys.Add(e.Current.Key);
+                vals.Add(e.Current.Value);
             }
         }
 
         public void OnAfterDeserialize()
         {
-            this.Clear();
+            Clear();
 
-            int cnt = ( keys.Count<=vals.Count )? keys.Count : vals.Count;
-            for (int i=0; i<cnt; ++i )
+            var cnt = keys.Count <= vals.Count ? keys.Count : vals.Count;
+            for (var i = 0; i < cnt; ++i)
                 this[keys[i]] = vals[i];
-
         }
     }
 }

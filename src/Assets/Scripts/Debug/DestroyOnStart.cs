@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Debug
 {
-    public class DestroyOnStart:MonoBehaviour
+    public class DestroyOnStart : MonoBehaviour
     {
         [SerializeField] private bool destroyOnStart;
         [SerializeField] private GameObject graphy;

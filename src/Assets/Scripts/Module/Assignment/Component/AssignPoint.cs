@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Module.Assignment.Component
 {
     /// <summary>
-    /// アサインするポイントを設定するコンポーネント
+    ///     アサインするポイントを設定するコンポーネント
     /// </summary>
     public class AssignPoint : MonoBehaviour
     {

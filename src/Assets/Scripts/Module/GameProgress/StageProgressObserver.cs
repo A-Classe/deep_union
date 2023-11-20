@@ -7,19 +7,15 @@ using VContainer;
 namespace System.GameProgress
 {
     /// <summary>
-    /// ステージ進捗を監視するクラス
+    ///     ステージ進捗を監視するクラス
     /// </summary>
     public class StageProgressObserver
     {
-        private readonly PlayerController playerController;
         private readonly GoalPoint goalPoint;
-        private CancellationTokenSource cTokenSource;
-
-        public event Action OnCompleted;
-
-        public float Progress => Mathf.InverseLerp(initDistance, 0f, GetDistance());
 
         private readonly float initDistance;
+        private readonly PlayerController playerController;
+        private readonly CancellationTokenSource cTokenSource;
 
         [Inject]
         public StageProgressObserver(PlayerController playerController, GoalPoint goalPoint)
@@ -30,6 +26,10 @@ namespace System.GameProgress
 
             initDistance = GetDistance();
         }
+
+        public float Progress => Mathf.InverseLerp(initDistance, 0f, GetDistance());
+
+        public event Action OnCompleted;
 
         public async UniTaskVoid Start()
         {

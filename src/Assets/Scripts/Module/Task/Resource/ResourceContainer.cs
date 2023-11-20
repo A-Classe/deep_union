@@ -6,11 +6,13 @@ using VContainer;
 namespace Module.Task
 {
     /// <summary>
-    /// リソースを管理するクラス
+    ///     リソースを管理するクラス
     /// </summary>
     public class ResourceContainer
     {
         private readonly GameParam gameParam;
+
+        private int resourceCount;
 
         [Inject]
         public ResourceContainer(GameParam gameParam)
@@ -19,29 +21,27 @@ namespace Module.Task
         }
 
         /// <summary>
-        /// リソース数
+        ///     リソース数
         /// </summary>
         public int ResourceCount
         {
-            set { resourceCount = Mathf.Clamp(value, 0, gameParam.MaxResourceCount); }
-            get { return resourceCount; }
+            set => resourceCount = Mathf.Clamp(value, 0, gameParam.MaxResourceCount);
+            get => resourceCount;
         }
-        
+
         /// <summary>
-        /// リソースの最大数
+        ///     リソースの最大数
         /// </summary>
         public int MaxResourceCount => gameParam.MaxResourceCount;
 
         /// <summary>
-        /// リソース数が変化した時に送信されるイベント。(前のリソース数, 現在のリソース数)
+        ///     リソース数が変化した時に送信されるイベント。(前のリソース数, 現在のリソース数)
         /// </summary>
         public event Action<int, int> OnResourceChanged;
 
-        private int resourceCount;
-
         public void Add(int count)
         {
-            int prevResourceCount = resourceCount;
+            var prevResourceCount = resourceCount;
             ResourceCount += count;
 
             OnResourceChanged?.Invoke(prevResourceCount, resourceCount);
@@ -49,7 +49,7 @@ namespace Module.Task
 
         public void Remove(int count)
         {
-            int prevResourceCount = resourceCount;
+            var prevResourceCount = resourceCount;
             ResourceCount -= count;
 
             OnResourceChanged?.Invoke(prevResourceCount, resourceCount);

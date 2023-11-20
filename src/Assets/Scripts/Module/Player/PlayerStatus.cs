@@ -4,50 +4,45 @@ using Core.Model.Player;
 namespace Module.Player
 {
     /// <summary>
-    /// ゲームの進行に関するプレイヤーのステータスの管理
+    ///     ゲームの進行に関するプレイヤーのステータスの管理
     /// </summary>
     public class PlayerStatus
     {
-        private readonly short maxHp;
-        private short hp;
+        public PlayerStatus(PlayerStatusModel model)
+        {
+            if (model.maxHp.HasValue) MaxHp = model.maxHp.Value;
 
-        public short Hp => hp;
-        public short MaxHp => maxHp;
+            if (model.hp.HasValue) Hp = model.hp.Value;
+        }
+
+        public short Hp { get; private set; }
+
+        public short MaxHp { get; }
 
         /// <summary>
-        /// 現在のHPと比較して変更があった場合のみ呼ばれる
+        ///     現在のHPと比較して変更があった場合のみ呼ばれる
         /// </summary>
         public event Action<short> OnHpChanged;
 
         public event Action OnCallHpZero;
 
-        public PlayerStatus(PlayerStatusModel model)
-        {
-            if (model.maxHp.HasValue) maxHp = model.maxHp.Value;
-
-            if (model.hp.HasValue) hp = model.hp.Value;
-        }
-
         public void AddHp(uint value)
         {
-            SetHp((short)(hp + Parse(value)));
+            SetHp((short)(Hp + Parse(value)));
         }
 
         public void RemoveHp(uint value)
         {
-            SetHp((short)(hp - Parse(value)));
+            SetHp((short)(Hp - Parse(value)));
         }
 
         private void SetHp(short newHp)
         {
-            var newer = Math.Clamp(newHp, (short)0, maxHp);
-            if (hp == newer) return;
-            hp = newer;
-            OnHpChanged?.Invoke(hp);
-            if (hp == 0)
-            {
-                OnCallHpZero?.Invoke();
-            }
+            var newer = Math.Clamp(newHp, (short)0, MaxHp);
+            if (Hp == newer) return;
+            Hp = newer;
+            OnHpChanged?.Invoke(Hp);
+            if (Hp == 0) OnCallHpZero?.Invoke();
         }
 
         private static short Parse(uint value)
