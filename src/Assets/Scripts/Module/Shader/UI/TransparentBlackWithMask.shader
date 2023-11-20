@@ -3,6 +3,12 @@ Shader "Custom/TransparentBlackWithMask"
     Properties
     {
         _MainTex ("MainTex", 2D) = "white" {}
+        _Stencil ("Stencil Reference", Float) = 1
+        _StencilComp ("Stencil Comparison", Float) = 8.000000
+        _StencilOp ("Stencil Operation", Float) = 0.000000
+        _StencilWriteMask ("Stencil Write Mask", Float) = 255.000000
+        _StencilReadMask ("Stencil Read Mask", Float) = 255.000000
+        _ColorMask ("Color Mask", Float) = 15.000000
     }
     SubShader
     {
