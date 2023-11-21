@@ -151,7 +151,18 @@ namespace Module.UI.InGame.InGame
 
         public void SetMinimapParam(MiniMapBuild data)
         {
-            minimapController.SetProfile(MinimapState.MiniView, new InStateProfile {});
+            minimapController.SetCamera(data.MinimapCenter);
+            minimapController.First();
+        }
+        
+        public void SetFocusView()
+        {
+            minimapController.EnableFocusView();
+        }
+        
+        public void SetMiniView()
+        {
+            minimapController.DisableFocusView();
         }
     }
 }

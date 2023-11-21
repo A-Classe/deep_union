@@ -6,6 +6,12 @@ Shader "Custom/MinimapRenderer"
         _HeightThreshold ("Height Threshold", Range(0,1)) = 0.5
         _LowColor ("Low Color", Color) = (1,0,0,1)
         _HighColor ("High Color", Color) = (0,0,1,1)
+        _Stencil ("Stencil Reference", Float) = 1
+        _StencilComp ("Stencil Comparison", Float) = 8.000000
+        _StencilOp ("Stencil Operation", Float) = 0.000000
+        _StencilWriteMask ("Stencil Write Mask", Float) = 255.000000
+        _StencilReadMask ("Stencil Read Mask", Float) = 255.000000
+        _ColorMask ("Color Mask", Float) = 15.000000
     }
     SubShader
     {
@@ -55,17 +61,14 @@ Shader "Custom/MinimapRenderer"
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
-                float height = col.b; // Green channel as height
+                const float height = col.b; // Green channel as height
                 
                 // Change color based on height
                 if (height < _HeightThreshold)
                 {
                     return _LowColor;
                 }
-                else
-                {
-                    return _HighColor;
-                }
+                return _HighColor;
             }
             ENDCG
         }

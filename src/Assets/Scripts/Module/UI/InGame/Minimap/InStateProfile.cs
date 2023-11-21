@@ -4,7 +4,7 @@ namespace Module.UI.InGame.Minimap
 {
     internal struct InStateProfile
     {
-        public Vector3 RootUIPosition;
+        public Vector2 RootPositionAnchor;
 
         public Vector3 RootUIScale;
 

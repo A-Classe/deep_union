@@ -4,6 +4,12 @@ Shader "Custom/SimpleMultipleFadingRipples"
     {
         _RippleColor ("Ripple Color", Color) = (1,1,1,1)
         _CircleColor ("Circle Color", Color) = (0,1,0,1)
+        _Stencil ("Stencil Reference", Float) = 1
+        _StencilComp ("Stencil Comparison", Float) = 8.000000
+        _StencilOp ("Stencil Operation", Float) = 0.000000
+        _StencilWriteMask ("Stencil Write Mask", Float) = 255.000000
+        _StencilReadMask ("Stencil Read Mask", Float) = 255.000000
+        _ColorMask ("Color Mask", Float) = 15.000000
     }
 
     SubShader
@@ -84,8 +90,8 @@ Shader "Custom/SimpleMultipleFadingRipples"
                  // 円の計算
                 const float circleRadius = 0.02; // 円の半径
                 const float edgeSoftness = 0.01; // 円の端の柔らかさ
-                float distToCenter = distance(i.uv, rippleCenters.xy);
-                float circle = smoothstep(circleRadius, circleRadius - edgeSoftness, distToCenter);
+                const float distToCenter = distance(i.uv, rippleCenters.xy);
+                const float circle = smoothstep(circleRadius, circleRadius - edgeSoftness, distToCenter);
 
 
                 // 波紋と円の合成

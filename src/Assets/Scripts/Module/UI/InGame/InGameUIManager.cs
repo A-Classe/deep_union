@@ -94,6 +94,7 @@ namespace Module.UI.InGame
             };
             inGameManager.OnMinimapClick += () =>
             {
+                inGameManager.SetMiniView();
                 navigation.SetActive(true);
                 state = State.Main;
                 OnGameActive?.Invoke();
@@ -130,6 +131,7 @@ namespace Module.UI.InGame
         public void StartMinimap()
         {
             state = State.Minimap;
+            inGameManager.SetFocusView();
             OnGameInactive?.Invoke();
         }
 
