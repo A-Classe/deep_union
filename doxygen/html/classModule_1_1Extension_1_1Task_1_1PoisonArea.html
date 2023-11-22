@@ -1,0 +1,864 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: Module.Extension.Task.PoisonArea クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceModule.html">Module</a></li><li class="navelem"><a class="el" href="namespaceModule_1_1Extension.html">Extension</a></li><li class="navelem"><a class="el" href="namespaceModule_1_1Extension_1_1Task.html">Task</a></li><li class="navelem"><a class="el" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html">PoisonArea</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classModule_1_1Extension_1_1Task_1_1PoisonArea-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">Module.Extension.Task.PoisonArea クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Module.Extension.Task.PoisonArea の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1Extension_1_1Task_1_1PoisonArea__inherit__graph.png" border="0" usemap="#aModule_8Extension_8Task_8PoisonArea_inherit__map" alt="Inheritance graph"/></div>
+<map name="aModule_8Extension_8Task_8PoisonArea_inherit__map" id="aModule_8Extension_8Task_8PoisonArea_inherit__map">
+<area shape="rect" title=" " alt="" coords="9,131,257,501"/>
+<area shape="rect" title=" " alt="" coords="5,5,129,83"/>
+<area shape="rect" href="interfaceCore_1_1Utility_1_1IInjectable.html" title=" " alt="" coords="154,5,245,83"/>
+</map>
+</div>
+<div class="dynheader">
+Module.Extension.Task.PoisonArea 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1Extension_1_1Task_1_1PoisonArea__coll__graph.png" border="0" usemap="#aModule_8Extension_8Task_8PoisonArea_coll__map" alt="Collaboration graph"/></div>
+<map name="aModule_8Extension_8Task_8PoisonArea_coll__map" id="aModule_8Extension_8Task_8PoisonArea_coll__map">
+<area shape="rect" title=" " alt="" coords="186,868,434,1209"/>
+<area shape="rect" title=" " alt="" coords="5,13,129,90"/>
+<area shape="rect" href="classModule_1_1Task_1_1BaseTask.html" title="全てのタスクのベースクラス" alt="" coords="123,147,305,605"/>
+<area shape="rect" href="interfaceCore_1_1Utility_1_1IInjectable.html" title=" " alt="" coords="347,691,438,769"/>
+<area shape="rect" href="classModule_1_1Extension_1_1Task_1_1PoisonCreatureTask.html" title=" " alt="" coords="105,684,323,776"/>
+<area shape="rect" href="interfaceModule_1_1Task_1_1ITaskSystem.html" title="タスクにゲームループを適用するインターフェース" alt="" coords="153,5,325,97"/>
+<area shape="rect" href="classModule_1_1Player_1_1PlayerStatus.html" title="ゲームの進行に関するプレイヤーのステータスの管理" alt="" coords="462,655,662,805"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:aa9b4a76c903f1537629a0693797535cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#aa9b4a76c903f1537629a0693797535cb">Construct</a> (<a class="el" href="classModule_1_1Player_1_1PlayerStatus.html">PlayerStatus</a> <a class="el" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a23b1afecac587d407c1c6bbf0b7627c0">playerStatus</a>)</td></tr>
+<tr class="separator:aa9b4a76c903f1537629a0693797535cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:ad53886a3720cccb22abe2231920c5142"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#ad53886a3720cccb22abe2231920c5142">OnDestroy</a> ()</td></tr>
+<tr class="separator:ad53886a3720cccb22abe2231920c5142"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc29d9c02cafc6bcdc2fcbe45e18ddf7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#afc29d9c02cafc6bcdc2fcbe45e18ddf7">OnTriggerEnter</a> (Collider other)</td></tr>
+<tr class="separator:afc29d9c02cafc6bcdc2fcbe45e18ddf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a544ef69a248c94f797b22d6da7d042c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a544ef69a248c94f797b22d6da7d042c8">OnTriggerExit</a> (Collider other)</td></tr>
+<tr class="separator:a544ef69a248c94f797b22d6da7d042c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0482e297d96cc5a6e3ddad4b647810f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#ae0482e297d96cc5a6e3ddad4b647810f">OnPoisonCreatureKilled</a> (<a class="el" href="classModule_1_1Task_1_1BaseTask.html">BaseTask</a> _)</td></tr>
+<tr class="separator:ae0482e297d96cc5a6e3ddad4b647810f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91bd92644dc0aa8a293adf448986ac08"><td class="memItemLeft" align="right" valign="top">async UniTaskVoid&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a91bd92644dc0aa8a293adf448986ac08">PlayerDamageLoop</a> (CancellationToken cancellationToken)</td></tr>
+<tr class="separator:a91bd92644dc0aa8a293adf448986ac08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a898d7fde1bcf2f4192be63bf5a03c62a"><td class="memItemLeft" align="right" valign="top">async UniTaskVoid&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a898d7fde1bcf2f4192be63bf5a03c62a">WorkerDamageLoop</a> (CancellationToken cancellationToken)</td></tr>
+<tr class="separator:a898d7fde1bcf2f4192be63bf5a03c62a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:ae805ef7530cc59d57c777835f03dfcff"><td class="memItemLeft" align="right" valign="top">uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#ae805ef7530cc59d57c777835f03dfcff">poisonDamage</a> = 5</td></tr>
+<tr class="separator:ae805ef7530cc59d57c777835f03dfcff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7773d36e11093ca09a0d58ccae7c44df"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a7773d36e11093ca09a0d58ccae7c44df">playerDamageInterval</a> = 1f</td></tr>
+<tr class="separator:a7773d36e11093ca09a0d58ccae7c44df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ca89c306b0f8c2e28c4cc9cb4be078d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a7ca89c306b0f8c2e28c4cc9cb4be078d">workerDamageInterval</a> = 1f</td></tr>
+<tr class="separator:a7ca89c306b0f8c2e28c4cc9cb4be078d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64090fb7864ce01633eaf5119ffdc63c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a64090fb7864ce01633eaf5119ffdc63c">disappearDuration</a> = 1f</td></tr>
+<tr class="separator:a64090fb7864ce01633eaf5119ffdc63c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55b2010ae6f89dd7da0ff2b80aa82afd"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a55b2010ae6f89dd7da0ff2b80aa82afd">moveOffset</a> = 1f</td></tr>
+<tr class="separator:a55b2010ae6f89dd7da0ff2b80aa82afd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecf890c889373b8c94a46465c1bf7a33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classModule_1_1Extension_1_1Task_1_1PoisonCreatureTask.html">PoisonCreatureTask</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#aecf890c889373b8c94a46465c1bf7a33">poisonCreatureTasks</a></td></tr>
+<tr class="separator:aecf890c889373b8c94a46465c1bf7a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22973012fb481b01f98695cf8346b4ce"><td class="memItemLeft" align="right" valign="top">VisualEffect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a22973012fb481b01f98695cf8346b4ce">toxicEffect1</a></td></tr>
+<tr class="separator:a22973012fb481b01f98695cf8346b4ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e3a51145c0e62c3acc22091f7c9de8f"><td class="memItemLeft" align="right" valign="top">VisualEffect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a5e3a51145c0e62c3acc22091f7c9de8f">toxicEffect2</a></td></tr>
+<tr class="separator:a5e3a51145c0e62c3acc22091f7c9de8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb4b848601efca14c175b2b3b47b83e9"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#adb4b848601efca14c175b2b3b47b83e9">poisonWaterArea</a></td></tr>
+<tr class="separator:adb4b848601efca14c175b2b3b47b83e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55028825912065e72b557494f67ff236"><td class="memItemLeft" align="right" valign="top">ParticleSystem&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a55028825912065e72b557494f67ff236">smokeEffect</a></td></tr>
+<tr class="separator:a55028825912065e72b557494f67ff236"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82a4971ffcb4d5d296c06da8ca9d3f8b"><td class="memItemLeft" align="right" valign="top">CancellationTokenSource&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a82a4971ffcb4d5d296c06da8ca9d3f8b">cTokenSource</a></td></tr>
+<tr class="separator:a82a4971ffcb4d5d296c06da8ca9d3f8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0933c23d16ea1237fd060f61e75c8011"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a0933c23d16ea1237fd060f61e75c8011">isPlayerEnter</a></td></tr>
+<tr class="separator:a0933c23d16ea1237fd060f61e75c8011"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5e93edea4f38063a1019ded188b3ecb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#ae5e93edea4f38063a1019ded188b3ecb">killedCount</a></td></tr>
+<tr class="separator:ae5e93edea4f38063a1019ded188b3ecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23b1afecac587d407c1c6bbf0b7627c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classModule_1_1Player_1_1PlayerStatus.html">PlayerStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a23b1afecac587d407c1c6bbf0b7627c0">playerStatus</a></td></tr>
+<tr class="separator:a23b1afecac587d407c1c6bbf0b7627c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af315a0fbf5a48cb50df4d24eb9f33cae"><td class="memItemLeft" align="right" valign="top">readonly List&lt; <a class="el" href="classModule_1_1Working_1_1Worker.html">Worker</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#af315a0fbf5a48cb50df4d24eb9f33cae">workers</a> = new()</td></tr>
+<tr class="separator:af315a0fbf5a48cb50df4d24eb9f33cae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="PoisonArea_8cs_source.html">PoisonArea.cs</a> の <a class="el" href="PoisonArea_8cs_source.html#l00017">17</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="aa9b4a76c903f1537629a0693797535cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9b4a76c903f1537629a0693797535cb">&#9670;&nbsp;</a></span>Construct()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.Extension.Task.PoisonArea.Construct </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classModule_1_1Player_1_1PlayerStatus.html">PlayerStatus</a>&#160;</td>
+          <td class="paramname"><em>playerStatus</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PoisonArea_8cs_source.html">PoisonArea.cs</a> の <a class="el" href="PoisonArea_8cs_source.html#l00060">60</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            this.playerStatus = <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a23b1afecac587d407c1c6bbf0b7627c0">playerStatus</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a82a4971ffcb4d5d296c06da8ca9d3f8b">cTokenSource</a> = <span class="keyword">new</span> CancellationTokenSource();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">foreach</span> (var creatureTask <span class="keywordflow">in</span> <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#aecf890c889373b8c94a46465c1bf7a33">poisonCreatureTasks</a>) creatureTask.OnCompleted += <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#ae0482e297d96cc5a6e3ddad4b647810f">OnPoisonCreatureKilled</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a91bd92644dc0aa8a293adf448986ac08">PlayerDamageLoop</a>(<a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a82a4971ffcb4d5d296c06da8ca9d3f8b">cTokenSource</a>.Token).Forget();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a898d7fde1bcf2f4192be63bf5a03c62a">WorkerDamageLoop</a>(<a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a82a4971ffcb4d5d296c06da8ca9d3f8b">cTokenSource</a>.Token).Forget();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_html_a23b1afecac587d407c1c6bbf0b7627c0"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a23b1afecac587d407c1c6bbf0b7627c0">Module.Extension.Task.PoisonArea.playerStatus</a></div><div class="ttdeci">PlayerStatus playerStatus</div><div class="ttdef"><b>Definition:</b> <a href="PoisonArea_8cs_source.html#l00033">PoisonArea.cs:33</a></div></div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_html_a82a4971ffcb4d5d296c06da8ca9d3f8b"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a82a4971ffcb4d5d296c06da8ca9d3f8b">Module.Extension.Task.PoisonArea.cTokenSource</a></div><div class="ttdeci">CancellationTokenSource cTokenSource</div><div class="ttdef"><b>Definition:</b> <a href="PoisonArea_8cs_source.html#l00029">PoisonArea.cs:29</a></div></div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_html_a898d7fde1bcf2f4192be63bf5a03c62a"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a898d7fde1bcf2f4192be63bf5a03c62a">Module.Extension.Task.PoisonArea.WorkerDamageLoop</a></div><div class="ttdeci">async UniTaskVoid WorkerDamageLoop(CancellationToken cancellationToken)</div><div class="ttdef"><b>Definition:</b> <a href="PoisonArea_8cs_source.html#l00103">PoisonArea.cs:103</a></div></div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_html_a91bd92644dc0aa8a293adf448986ac08"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a91bd92644dc0aa8a293adf448986ac08">Module.Extension.Task.PoisonArea.PlayerDamageLoop</a></div><div class="ttdeci">async UniTaskVoid PlayerDamageLoop(CancellationToken cancellationToken)</div><div class="ttdef"><b>Definition:</b> <a href="PoisonArea_8cs_source.html#l00092">PoisonArea.cs:92</a></div></div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_html_ae0482e297d96cc5a6e3ddad4b647810f"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#ae0482e297d96cc5a6e3ddad4b647810f">Module.Extension.Task.PoisonArea.OnPoisonCreatureKilled</a></div><div class="ttdeci">void OnPoisonCreatureKilled(BaseTask _)</div><div class="ttdef"><b>Definition:</b> <a href="PoisonArea_8cs_source.html#l00071">PoisonArea.cs:71</a></div></div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_html_aecf890c889373b8c94a46465c1bf7a33"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#aecf890c889373b8c94a46465c1bf7a33">Module.Extension.Task.PoisonArea.poisonCreatureTasks</a></div><div class="ttdeci">PoisonCreatureTask[] poisonCreatureTasks</div><div class="ttdef"><b>Definition:</b> <a href="PoisonArea_8cs_source.html#l00024">PoisonArea.cs:24</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1Extension_1_1Task_1_1PoisonArea_aa9b4a76c903f1537629a0693797535cb_cgraph.png" border="0" usemap="#aclassModule_1_1Extension_1_1Task_1_1PoisonArea_aa9b4a76c903f1537629a0693797535cb_cgraph" alt=""/></div>
+<map name="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_aa9b4a76c903f1537629a0693797535cb_cgraph" id="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_aa9b4a76c903f1537629a0693797535cb_cgraph">
+<area shape="rect" title=" " alt="" coords="5,71,224,112"/>
+<area shape="rect" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#ae0482e297d96cc5a6e3ddad4b647810f" title=" " alt="" coords="272,5,491,47"/>
+<area shape="rect" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a91bd92644dc0aa8a293adf448986ac08" title=" " alt="" coords="272,71,491,112"/>
+<area shape="rect" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a898d7fde1bcf2f4192be63bf5a03c62a" title=" " alt="" coords="272,136,491,177"/>
+<area shape="rect" href="classModule_1_1Player_1_1PlayerStatus.html#ab802f28b91ad6a92100b53bfed32bc3e" title=" " alt="" coords="539,71,743,112"/>
+<area shape="rect" href="classModule_1_1Player_1_1PlayerStatus.html#a722dedd49882412ccbb4e0bf2369ddd2" title=" " alt="" coords="791,37,995,79"/>
+<area shape="rect" href="classModule_1_1Player_1_1PlayerStatus.html#acae61bc6785ce0c40ebf8bb1a2c598bb" title=" " alt="" coords="791,103,995,144"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad53886a3720cccb22abe2231920c5142"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad53886a3720cccb22abe2231920c5142">&#9670;&nbsp;</a></span>OnDestroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.Extension.Task.PoisonArea.OnDestroy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PoisonArea_8cs_source.html">PoisonArea.cs</a> の <a class="el" href="PoisonArea_8cs_source.html#l00037">37</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a82a4971ffcb4d5d296c06da8ca9d3f8b">cTokenSource</a>?.Cancel();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a82a4971ffcb4d5d296c06da8ca9d3f8b">cTokenSource</a>?.Dispose();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae0482e297d96cc5a6e3ddad4b647810f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0482e297d96cc5a6e3ddad4b647810f">&#9670;&nbsp;</a></span>OnPoisonCreatureKilled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.Extension.Task.PoisonArea.OnPoisonCreatureKilled </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classModule_1_1Task_1_1BaseTask.html">BaseTask</a>&#160;</td>
+          <td class="paramname"><em>_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PoisonArea_8cs_source.html">PoisonArea.cs</a> の <a class="el" href="PoisonArea_8cs_source.html#l00071">71</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#ae5e93edea4f38063a1019ded188b3ecb">killedCount</a>++;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#ae5e93edea4f38063a1019ded188b3ecb">killedCount</a> &gt;= <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#aecf890c889373b8c94a46465c1bf7a33">poisonCreatureTasks</a>.Length)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#adb4b848601efca14c175b2b3b47b83e9">poisonWaterArea</a>.DOLocalMoveZ(<a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a55b2010ae6f89dd7da0ff2b80aa82afd">moveOffset</a>, <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a64090fb7864ce01633eaf5119ffdc63c">disappearDuration</a>).Play();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#adb4b848601efca14c175b2b3b47b83e9">poisonWaterArea</a>.DOScaleY(0f, <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a64090fb7864ce01633eaf5119ffdc63c">disappearDuration</a>)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    .Play()</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    .OnComplete(() =&gt; { gameObject.SetActive(<span class="keyword">false</span>); });</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a22973012fb481b01f98695cf8346b4ce">toxicEffect1</a>.Stop();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a5e3a51145c0e62c3acc22091f7c9de8f">toxicEffect2</a>.Stop();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a55028825912065e72b557494f67ff236">smokeEffect</a>.Stop();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a82a4971ffcb4d5d296c06da8ca9d3f8b">cTokenSource</a>.Cancel();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a82a4971ffcb4d5d296c06da8ca9d3f8b">cTokenSource</a>.Dispose();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a82a4971ffcb4d5d296c06da8ca9d3f8b">cTokenSource</a> = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_html_a22973012fb481b01f98695cf8346b4ce"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a22973012fb481b01f98695cf8346b4ce">Module.Extension.Task.PoisonArea.toxicEffect1</a></div><div class="ttdeci">VisualEffect toxicEffect1</div><div class="ttdef"><b>Definition:</b> <a href="PoisonArea_8cs_source.html#l00025">PoisonArea.cs:25</a></div></div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_html_a55028825912065e72b557494f67ff236"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a55028825912065e72b557494f67ff236">Module.Extension.Task.PoisonArea.smokeEffect</a></div><div class="ttdeci">ParticleSystem smokeEffect</div><div class="ttdef"><b>Definition:</b> <a href="PoisonArea_8cs_source.html#l00028">PoisonArea.cs:28</a></div></div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_html_a55b2010ae6f89dd7da0ff2b80aa82afd"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a55b2010ae6f89dd7da0ff2b80aa82afd">Module.Extension.Task.PoisonArea.moveOffset</a></div><div class="ttdeci">float moveOffset</div><div class="ttdef"><b>Definition:</b> <a href="PoisonArea_8cs_source.html#l00023">PoisonArea.cs:23</a></div></div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_html_a5e3a51145c0e62c3acc22091f7c9de8f"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a5e3a51145c0e62c3acc22091f7c9de8f">Module.Extension.Task.PoisonArea.toxicEffect2</a></div><div class="ttdeci">VisualEffect toxicEffect2</div><div class="ttdef"><b>Definition:</b> <a href="PoisonArea_8cs_source.html#l00026">PoisonArea.cs:26</a></div></div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_html_a64090fb7864ce01633eaf5119ffdc63c"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a64090fb7864ce01633eaf5119ffdc63c">Module.Extension.Task.PoisonArea.disappearDuration</a></div><div class="ttdeci">float disappearDuration</div><div class="ttdef"><b>Definition:</b> <a href="PoisonArea_8cs_source.html#l00022">PoisonArea.cs:22</a></div></div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_html_adb4b848601efca14c175b2b3b47b83e9"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#adb4b848601efca14c175b2b3b47b83e9">Module.Extension.Task.PoisonArea.poisonWaterArea</a></div><div class="ttdeci">Transform poisonWaterArea</div><div class="ttdef"><b>Definition:</b> <a href="PoisonArea_8cs_source.html#l00027">PoisonArea.cs:27</a></div></div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_html_ae5e93edea4f38063a1019ded188b3ecb"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#ae5e93edea4f38063a1019ded188b3ecb">Module.Extension.Task.PoisonArea.killedCount</a></div><div class="ttdeci">int killedCount</div><div class="ttdef"><b>Definition:</b> <a href="PoisonArea_8cs_source.html#l00032">PoisonArea.cs:32</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1Extension_1_1Task_1_1PoisonArea_ae0482e297d96cc5a6e3ddad4b647810f_icgraph.png" border="0" usemap="#aclassModule_1_1Extension_1_1Task_1_1PoisonArea_ae0482e297d96cc5a6e3ddad4b647810f_icgraph" alt=""/></div>
+<map name="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_ae0482e297d96cc5a6e3ddad4b647810f_icgraph" id="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_ae0482e297d96cc5a6e3ddad4b647810f_icgraph">
+<area shape="rect" title=" " alt="" coords="272,5,491,47"/>
+<area shape="rect" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#aa9b4a76c903f1537629a0693797535cb" title=" " alt="" coords="5,5,224,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afc29d9c02cafc6bcdc2fcbe45e18ddf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc29d9c02cafc6bcdc2fcbe45e18ddf7">&#9670;&nbsp;</a></span>OnTriggerEnter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.Extension.Task.PoisonArea.OnTriggerEnter </td>
+          <td>(</td>
+          <td class="paramtype">Collider&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PoisonArea_8cs_source.html">PoisonArea.cs</a> の <a class="el" href="PoisonArea_8cs_source.html#l00043">43</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">if</span> (other.CompareTag(<span class="stringliteral">&quot;Player&quot;</span>))</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a0933c23d16ea1237fd060f61e75c8011">isPlayerEnter</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (other.transform.parent != <span class="keyword">null</span> &amp;&amp; other.transform.parent.TryGetComponent(out <a class="code" href="classModule_1_1Working_1_1Worker.html">Worker</a> worker))</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#af315a0fbf5a48cb50df4d24eb9f33cae">workers</a>.Add(worker);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_html_a0933c23d16ea1237fd060f61e75c8011"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a0933c23d16ea1237fd060f61e75c8011">Module.Extension.Task.PoisonArea.isPlayerEnter</a></div><div class="ttdeci">bool isPlayerEnter</div><div class="ttdef"><b>Definition:</b> <a href="PoisonArea_8cs_source.html#l00030">PoisonArea.cs:30</a></div></div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_html_af315a0fbf5a48cb50df4d24eb9f33cae"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#af315a0fbf5a48cb50df4d24eb9f33cae">Module.Extension.Task.PoisonArea.workers</a></div><div class="ttdeci">readonly List&lt; Worker &gt; workers</div><div class="ttdef"><b>Definition:</b> <a href="PoisonArea_8cs_source.html#l00035">PoisonArea.cs:35</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Worker_html"><div class="ttname"><a href="classModule_1_1Working_1_1Worker.html">Module.Working.Worker</a></div><div class="ttdoc">ワーカーの状態を管理するクラス</div><div class="ttdef"><b>Definition:</b> <a href="Worker_8cs_source.html#l00017">Worker.cs:18</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a544ef69a248c94f797b22d6da7d042c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a544ef69a248c94f797b22d6da7d042c8">&#9670;&nbsp;</a></span>OnTriggerExit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.Extension.Task.PoisonArea.OnTriggerExit </td>
+          <td>(</td>
+          <td class="paramtype">Collider&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PoisonArea_8cs_source.html">PoisonArea.cs</a> の <a class="el" href="PoisonArea_8cs_source.html#l00051">51</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">if</span> (other.CompareTag(<span class="stringliteral">&quot;Player&quot;</span>))</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a0933c23d16ea1237fd060f61e75c8011">isPlayerEnter</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (other.transform.parent != <span class="keyword">null</span> &amp;&amp; other.transform.parent.TryGetComponent(out <a class="code" href="classModule_1_1Working_1_1Worker.html">Worker</a> worker))</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#af315a0fbf5a48cb50df4d24eb9f33cae">workers</a>.Remove(worker);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a91bd92644dc0aa8a293adf448986ac08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91bd92644dc0aa8a293adf448986ac08">&#9670;&nbsp;</a></span>PlayerDamageLoop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async UniTaskVoid Module.Extension.Task.PoisonArea.PlayerDamageLoop </td>
+          <td>(</td>
+          <td class="paramtype">CancellationToken&#160;</td>
+          <td class="paramname"><em>cancellationToken</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PoisonArea_8cs_source.html">PoisonArea.cs</a> の <a class="el" href="PoisonArea_8cs_source.html#l00092">92</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">while</span> (!cancellationToken.IsCancellationRequested)</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a0933c23d16ea1237fd060f61e75c8011">isPlayerEnter</a>) <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a23b1afecac587d407c1c6bbf0b7627c0">playerStatus</a>.<a class="code" href="classModule_1_1Player_1_1PlayerStatus.html#ab802f28b91ad6a92100b53bfed32bc3e">RemoveHp</a>(<a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#ae805ef7530cc59d57c777835f03dfcff">poisonDamage</a>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                await UniTask.Delay(TimeSpan.FromSeconds(<a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a7773d36e11093ca09a0d58ccae7c44df">playerDamageInterval</a>), cancellationToken: cancellationToken);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_html_a7773d36e11093ca09a0d58ccae7c44df"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a7773d36e11093ca09a0d58ccae7c44df">Module.Extension.Task.PoisonArea.playerDamageInterval</a></div><div class="ttdeci">float playerDamageInterval</div><div class="ttdef"><b>Definition:</b> <a href="PoisonArea_8cs_source.html#l00020">PoisonArea.cs:20</a></div></div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_html_ae805ef7530cc59d57c777835f03dfcff"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#ae805ef7530cc59d57c777835f03dfcff">Module.Extension.Task.PoisonArea.poisonDamage</a></div><div class="ttdeci">uint poisonDamage</div><div class="ttdef"><b>Definition:</b> <a href="PoisonArea_8cs_source.html#l00019">PoisonArea.cs:19</a></div></div>
+<div class="ttc" id="aclassModule_1_1Player_1_1PlayerStatus_html_ab802f28b91ad6a92100b53bfed32bc3e"><div class="ttname"><a href="classModule_1_1Player_1_1PlayerStatus.html#ab802f28b91ad6a92100b53bfed32bc3e">Module.Player.PlayerStatus.RemoveHp</a></div><div class="ttdeci">void RemoveHp(uint value)</div><div class="ttdef"><b>Definition:</b> <a href="PlayerStatus_8cs_source.html#l00034">PlayerStatus.cs:34</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1Extension_1_1Task_1_1PoisonArea_a91bd92644dc0aa8a293adf448986ac08_cgraph.png" border="0" usemap="#aclassModule_1_1Extension_1_1Task_1_1PoisonArea_a91bd92644dc0aa8a293adf448986ac08_cgraph" alt=""/></div>
+<map name="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_a91bd92644dc0aa8a293adf448986ac08_cgraph" id="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_a91bd92644dc0aa8a293adf448986ac08_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,224,80"/>
+<area shape="rect" href="classModule_1_1Player_1_1PlayerStatus.html#ab802f28b91ad6a92100b53bfed32bc3e" title=" " alt="" coords="272,39,476,80"/>
+<area shape="rect" href="classModule_1_1Player_1_1PlayerStatus.html#a722dedd49882412ccbb4e0bf2369ddd2" title=" " alt="" coords="524,5,728,47"/>
+<area shape="rect" href="classModule_1_1Player_1_1PlayerStatus.html#acae61bc6785ce0c40ebf8bb1a2c598bb" title=" " alt="" coords="524,71,728,112"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1Extension_1_1Task_1_1PoisonArea_a91bd92644dc0aa8a293adf448986ac08_icgraph.png" border="0" usemap="#aclassModule_1_1Extension_1_1Task_1_1PoisonArea_a91bd92644dc0aa8a293adf448986ac08_icgraph" alt=""/></div>
+<map name="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_a91bd92644dc0aa8a293adf448986ac08_icgraph" id="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_a91bd92644dc0aa8a293adf448986ac08_icgraph">
+<area shape="rect" title=" " alt="" coords="272,5,491,47"/>
+<area shape="rect" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#aa9b4a76c903f1537629a0693797535cb" title=" " alt="" coords="5,5,224,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a898d7fde1bcf2f4192be63bf5a03c62a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a898d7fde1bcf2f4192be63bf5a03c62a">&#9670;&nbsp;</a></span>WorkerDamageLoop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async UniTaskVoid Module.Extension.Task.PoisonArea.WorkerDamageLoop </td>
+          <td>(</td>
+          <td class="paramtype">CancellationToken&#160;</td>
+          <td class="paramname"><em>cancellationToken</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PoisonArea_8cs_source.html">PoisonArea.cs</a> の <a class="el" href="PoisonArea_8cs_source.html#l00103">103</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">while</span> (!cancellationToken.IsCancellationRequested)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#af315a0fbf5a48cb50df4d24eb9f33cae">workers</a>.Count &gt; 0)</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                    var index = <a class="code" href="AutoInstanceList_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a>.Range(0, <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#af315a0fbf5a48cb50df4d24eb9f33cae">workers</a>.Count);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                    var worker = <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#af315a0fbf5a48cb50df4d24eb9f33cae">workers</a>[index];</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#af315a0fbf5a48cb50df4d24eb9f33cae">workers</a>.RemoveAt(index);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                    <span class="keywordflow">if</span> (!worker.IsLocked) worker.Kill();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                await UniTask.Delay(TimeSpan.FromSeconds(<a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a7ca89c306b0f8c2e28c4cc9cb4be078d">workerDamageInterval</a>), cancellationToken: cancellationToken);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        }</div>
+<div class="ttc" id="aAutoInstanceList_8cs_html_a832e8f52fca5a678819ec96269dcb532"><div class="ttname"><a href="AutoInstanceList_8cs.html#a832e8f52fca5a678819ec96269dcb532">Random</a></div><div class="ttdeci">UnityEngine.Random Random</div><div class="ttdef"><b>Definition:</b> <a href="AutoInstanceList_8cs_source.html#l00006">AutoInstanceList.cs:6</a></div></div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_html_a7ca89c306b0f8c2e28c4cc9cb4be078d"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#a7ca89c306b0f8c2e28c4cc9cb4be078d">Module.Extension.Task.PoisonArea.workerDamageInterval</a></div><div class="ttdeci">float workerDamageInterval</div><div class="ttdef"><b>Definition:</b> <a href="PoisonArea_8cs_source.html#l00021">PoisonArea.cs:21</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1Extension_1_1Task_1_1PoisonArea_a898d7fde1bcf2f4192be63bf5a03c62a_icgraph.png" border="0" usemap="#aclassModule_1_1Extension_1_1Task_1_1PoisonArea_a898d7fde1bcf2f4192be63bf5a03c62a_icgraph" alt=""/></div>
+<map name="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_a898d7fde1bcf2f4192be63bf5a03c62a_icgraph" id="aclassModule_1_1Extension_1_1Task_1_1PoisonArea_a898d7fde1bcf2f4192be63bf5a03c62a_icgraph">
+<area shape="rect" title=" " alt="" coords="272,5,491,47"/>
+<area shape="rect" href="classModule_1_1Extension_1_1Task_1_1PoisonArea.html#aa9b4a76c903f1537629a0693797535cb" title=" " alt="" coords="5,5,224,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a82a4971ffcb4d5d296c06da8ca9d3f8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82a4971ffcb4d5d296c06da8ca9d3f8b">&#9670;&nbsp;</a></span>cTokenSource</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CancellationTokenSource Module.Extension.Task.PoisonArea.cTokenSource</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PoisonArea_8cs_source.html">PoisonArea.cs</a> の <a class="el" href="PoisonArea_8cs_source.html#l00029">29</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a64090fb7864ce01633eaf5119ffdc63c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64090fb7864ce01633eaf5119ffdc63c">&#9670;&nbsp;</a></span>disappearDuration</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Module.Extension.Task.PoisonArea.disappearDuration = 1f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PoisonArea_8cs_source.html">PoisonArea.cs</a> の <a class="el" href="PoisonArea_8cs_source.html#l00022">22</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0933c23d16ea1237fd060f61e75c8011"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0933c23d16ea1237fd060f61e75c8011">&#9670;&nbsp;</a></span>isPlayerEnter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Module.Extension.Task.PoisonArea.isPlayerEnter</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PoisonArea_8cs_source.html">PoisonArea.cs</a> の <a class="el" href="PoisonArea_8cs_source.html#l00030">30</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae5e93edea4f38063a1019ded188b3ecb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5e93edea4f38063a1019ded188b3ecb">&#9670;&nbsp;</a></span>killedCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Module.Extension.Task.PoisonArea.killedCount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PoisonArea_8cs_source.html">PoisonArea.cs</a> の <a class="el" href="PoisonArea_8cs_source.html#l00032">32</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a55b2010ae6f89dd7da0ff2b80aa82afd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55b2010ae6f89dd7da0ff2b80aa82afd">&#9670;&nbsp;</a></span>moveOffset</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Module.Extension.Task.PoisonArea.moveOffset = 1f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PoisonArea_8cs_source.html">PoisonArea.cs</a> の <a class="el" href="PoisonArea_8cs_source.html#l00023">23</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7773d36e11093ca09a0d58ccae7c44df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7773d36e11093ca09a0d58ccae7c44df">&#9670;&nbsp;</a></span>playerDamageInterval</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Module.Extension.Task.PoisonArea.playerDamageInterval = 1f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PoisonArea_8cs_source.html">PoisonArea.cs</a> の <a class="el" href="PoisonArea_8cs_source.html#l00020">20</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a23b1afecac587d407c1c6bbf0b7627c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23b1afecac587d407c1c6bbf0b7627c0">&#9670;&nbsp;</a></span>playerStatus</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classModule_1_1Player_1_1PlayerStatus.html">PlayerStatus</a> Module.Extension.Task.PoisonArea.playerStatus</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PoisonArea_8cs_source.html">PoisonArea.cs</a> の <a class="el" href="PoisonArea_8cs_source.html#l00033">33</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aecf890c889373b8c94a46465c1bf7a33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecf890c889373b8c94a46465c1bf7a33">&#9670;&nbsp;</a></span>poisonCreatureTasks</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classModule_1_1Extension_1_1Task_1_1PoisonCreatureTask.html">PoisonCreatureTask</a> [] Module.Extension.Task.PoisonArea.poisonCreatureTasks</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PoisonArea_8cs_source.html">PoisonArea.cs</a> の <a class="el" href="PoisonArea_8cs_source.html#l00024">24</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae805ef7530cc59d57c777835f03dfcff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae805ef7530cc59d57c777835f03dfcff">&#9670;&nbsp;</a></span>poisonDamage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint Module.Extension.Task.PoisonArea.poisonDamage = 5</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PoisonArea_8cs_source.html">PoisonArea.cs</a> の <a class="el" href="PoisonArea_8cs_source.html#l00019">19</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="adb4b848601efca14c175b2b3b47b83e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb4b848601efca14c175b2b3b47b83e9">&#9670;&nbsp;</a></span>poisonWaterArea</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Transform Module.Extension.Task.PoisonArea.poisonWaterArea</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PoisonArea_8cs_source.html">PoisonArea.cs</a> の <a class="el" href="PoisonArea_8cs_source.html#l00027">27</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a55028825912065e72b557494f67ff236"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55028825912065e72b557494f67ff236">&#9670;&nbsp;</a></span>smokeEffect</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ParticleSystem Module.Extension.Task.PoisonArea.smokeEffect</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PoisonArea_8cs_source.html">PoisonArea.cs</a> の <a class="el" href="PoisonArea_8cs_source.html#l00028">28</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a22973012fb481b01f98695cf8346b4ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22973012fb481b01f98695cf8346b4ce">&#9670;&nbsp;</a></span>toxicEffect1</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VisualEffect Module.Extension.Task.PoisonArea.toxicEffect1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PoisonArea_8cs_source.html">PoisonArea.cs</a> の <a class="el" href="PoisonArea_8cs_source.html#l00025">25</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a5e3a51145c0e62c3acc22091f7c9de8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e3a51145c0e62c3acc22091f7c9de8f">&#9670;&nbsp;</a></span>toxicEffect2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VisualEffect Module.Extension.Task.PoisonArea.toxicEffect2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PoisonArea_8cs_source.html">PoisonArea.cs</a> の <a class="el" href="PoisonArea_8cs_source.html#l00026">26</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7ca89c306b0f8c2e28c4cc9cb4be078d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ca89c306b0f8c2e28c4cc9cb4be078d">&#9670;&nbsp;</a></span>workerDamageInterval</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Module.Extension.Task.PoisonArea.workerDamageInterval = 1f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PoisonArea_8cs_source.html">PoisonArea.cs</a> の <a class="el" href="PoisonArea_8cs_source.html#l00021">21</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af315a0fbf5a48cb50df4d24eb9f33cae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af315a0fbf5a48cb50df4d24eb9f33cae">&#9670;&nbsp;</a></span>workers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly List&lt;<a class="el" href="classModule_1_1Working_1_1Worker.html">Worker</a>&gt; Module.Extension.Task.PoisonArea.workers = new()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="PoisonArea_8cs_source.html">PoisonArea.cs</a> の <a class="el" href="PoisonArea_8cs_source.html#l00035">35</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>src/Assets/Scripts/Module/Extension/Task/<a class="el" href="PoisonArea_8cs_source.html">PoisonArea.cs</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

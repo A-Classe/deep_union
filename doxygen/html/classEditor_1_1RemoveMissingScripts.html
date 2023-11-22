@@ -126,7 +126,7 @@ Editor.RemoveMissingScripts 連携図</div>
 <p class="definition"> <a class="el" href="RemoveMissingScripts_8cs_source.html">RemoveMissingScripts.cs</a> の <a class="el" href="RemoveMissingScripts_8cs_source.html#l00010">10</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        {</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            var objs = Resources.FindObjectsOfTypeAll&lt;GameObject&gt;();</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="keywordtype">int</span> count = objs.Sum(GameObjectUtility.RemoveMonoBehavioursWithMissingScript);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            var count = objs.Sum(GameObjectUtility.RemoveMonoBehavioursWithMissingScript);</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <a class="code" href="namespaceDebug.html">Debug</a>.Log($<span class="stringliteral">&quot;Removed {count} missing scripts&quot;</span>);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        }</div>
 <div class="ttc" id="anamespaceDebug_html"><div class="ttname"><a href="namespaceDebug.html">Debug</a></div><div class="ttdef"><b>Definition:</b> <a href="AssetKeys_8cs_source.html#l00002">AssetKeys.cs:3</a></div></div>

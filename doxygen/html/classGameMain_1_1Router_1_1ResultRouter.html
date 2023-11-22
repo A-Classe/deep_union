@@ -1,0 +1,532 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: GameMain.Router.ResultRouter クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceGameMain.html">GameMain</a></li><li class="navelem"><a class="el" href="namespaceGameMain_1_1Router.html">Router</a></li><li class="navelem"><a class="el" href="classGameMain_1_1Router_1_1ResultRouter.html">ResultRouter</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-types">非公開型</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classGameMain_1_1Router_1_1ResultRouter-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">GameMain.Router.ResultRouter クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+GameMain.Router.ResultRouter の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classGameMain_1_1Router_1_1ResultRouter__inherit__graph.png" border="0" usemap="#aGameMain_8Router_8ResultRouter_inherit__map" alt="Inheritance graph"/></div>
+<map name="aGameMain_8Router_8ResultRouter_inherit__map" id="aGameMain_8Router_8ResultRouter_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,131,232,296"/>
+<area shape="rect" title=" " alt="" coords="76,5,161,83"/>
+</map>
+</div>
+<div class="dynheader">
+GameMain.Router.ResultRouter 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classGameMain_1_1Router_1_1ResultRouter__coll__graph.png" border="0" usemap="#aGameMain_8Router_8ResultRouter_coll__map" alt="Collaboration graph"/></div>
+<map name="aGameMain_8Router_8ResultRouter_coll__map" id="aGameMain_8Router_8ResultRouter_coll__map">
+<area shape="rect" title=" " alt="" coords="292,939,519,1045"/>
+<area shape="rect" title=" " alt="" coords="5,652,91,729"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html" title="データ保存の中継クラス 絶対にこれを介して保存する" alt="" coords="115,527,304,854"/>
+<area shape="rect" href="classCore_1_1User_1_1DataManager.html" title=" " alt="" coords="51,189,229,384"/>
+<area shape="rect" href="structCore_1_1Model_1_1Scene_1_1GameResult.html" title=" " alt="" coords="253,226,475,347"/>
+<area shape="rect" href="classCore_1_1Scenes_1_1SceneChanger.html" title="シーン間を遷移する時に必ず使う パラメーターもここで管理" alt="" coords="422,586,621,795"/>
+<area shape="rect" href="classCore_1_1User_1_1StageData.html" title=" " alt="" coords="500,248,657,325"/>
+<area shape="rect" href="interfaceCore_1_1User_1_1IDefaultable.html" title=" " alt="" coords="328,27,528,105"/>
+<area shape="rect" href="classCore_1_1User_1_1Dict.html" title=" " alt="" coords="552,5,723,127"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html" title=" " alt="" coords="645,505,835,876"/>
+<area shape="rect" href="classModule_1_1UI_1_1Result_1_1ResultManager.html" title="リザルト画面のセレクター" alt="" coords="860,593,1095,788"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html" title=" " alt="" coords="707,219,829,355"/>
+<area shape="rect" title=" " alt="" coords="887,27,1041,105"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html" title=" " alt="" coords="853,226,1075,347"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html" title=" " alt="" coords="1100,211,1295,362"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html" title=" " alt="" coords="1319,197,1548,377"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a569034e9a5cabe9ee5b4393f0d011459"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Router_1_1ResultRouter.html#a569034e9a5cabe9ee5b4393f0d011459">ResultRouter</a> (<a class="el" href="classCore_1_1User_1_1UserPreference.html">UserPreference</a> <a class="el" href="classGameMain_1_1Router_1_1ResultRouter.html#a72759abe3902d543b2d15e60b539e086">userPreference</a>, <a class="el" href="classCore_1_1Scenes_1_1SceneChanger.html">SceneChanger</a> <a class="el" href="classGameMain_1_1Router_1_1ResultRouter.html#a42f356afb23fe8d161fa578df8f396a8">sceneChanger</a>, <a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html">ResultManager</a> <a class="el" href="classGameMain_1_1Router_1_1ResultRouter.html#a3971d7acc16466096d902a1b7a01fa15">resultManager</a>)</td></tr>
+<tr class="separator:a569034e9a5cabe9ee5b4393f0d011459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24187fe96187b1ecd5cdfccc101178cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Router_1_1ResultRouter.html#a24187fe96187b1ecd5cdfccc101178cb">Start</a> ()</td></tr>
+<tr class="separator:a24187fe96187b1ecd5cdfccc101178cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
+非公開型</h2></td></tr>
+<tr class="memitem:a54f47ec08f7655a1c1581e27904b5b30"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Router_1_1ResultRouter.html#a54f47ec08f7655a1c1581e27904b5b30">Nav</a> { <a class="el" href="classGameMain_1_1Router_1_1ResultRouter.html#a54f47ec08f7655a1c1581e27904b5b30a56cfe2168b1a9e772e70ac25b83f8407">InResult</a>
+ }</td></tr>
+<tr class="separator:a54f47ec08f7655a1c1581e27904b5b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a5541d835e3c1dcefafa1d1eca7fcae57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Router_1_1ResultRouter.html#a5541d835e3c1dcefafa1d1eca7fcae57">SetNavigation</a> ()</td></tr>
+<tr class="separator:a5541d835e3c1dcefafa1d1eca7fcae57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a824db263826cd2fc055d2897f9d54b73"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Navigation</a>&lt; <a class="el" href="classGameMain_1_1Router_1_1ResultRouter.html#a54f47ec08f7655a1c1581e27904b5b30">Nav</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Router_1_1ResultRouter.html#a824db263826cd2fc055d2897f9d54b73">navigation</a></td></tr>
+<tr class="separator:a824db263826cd2fc055d2897f9d54b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3971d7acc16466096d902a1b7a01fa15"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html">ResultManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Router_1_1ResultRouter.html#a3971d7acc16466096d902a1b7a01fa15">resultManager</a></td></tr>
+<tr class="separator:a3971d7acc16466096d902a1b7a01fa15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42f356afb23fe8d161fa578df8f396a8"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="classCore_1_1Scenes_1_1SceneChanger.html">SceneChanger</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Router_1_1ResultRouter.html#a42f356afb23fe8d161fa578df8f396a8">sceneChanger</a></td></tr>
+<tr class="separator:a42f356afb23fe8d161fa578df8f396a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72759abe3902d543b2d15e60b539e086"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="classCore_1_1User_1_1UserPreference.html">UserPreference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Router_1_1ResultRouter.html#a72759abe3902d543b2d15e60b539e086">userPreference</a></td></tr>
+<tr class="separator:a72759abe3902d543b2d15e60b539e086"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a080eaab3e1eb47326021df26fc7c109d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCore_1_1Model_1_1Scene_1_1GameResult.html">GameResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Router_1_1ResultRouter.html#a080eaab3e1eb47326021df26fc7c109d">result</a></td></tr>
+<tr class="separator:a080eaab3e1eb47326021df26fc7c109d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="ResultRouter_8cs_source.html">ResultRouter.cs</a> の <a class="el" href="ResultRouter_8cs_source.html#l00012">12</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">列挙型メンバ詳解</h2>
+<a id="a54f47ec08f7655a1c1581e27904b5b30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54f47ec08f7655a1c1581e27904b5b30">&#9670;&nbsp;</a></span>Nav</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classGameMain_1_1Router_1_1ResultRouter.html#a54f47ec08f7655a1c1581e27904b5b30">GameMain.Router.ResultRouter.Nav</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="a54f47ec08f7655a1c1581e27904b5b30a56cfe2168b1a9e772e70ac25b83f8407"></a>InResult&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition"> <a class="el" href="ResultRouter_8cs_source.html">ResultRouter.cs</a> の <a class="el" href="ResultRouter_8cs_source.html#l00090">90</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            InResult</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a569034e9a5cabe9ee5b4393f0d011459"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a569034e9a5cabe9ee5b4393f0d011459">&#9670;&nbsp;</a></span>ResultRouter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameMain.Router.ResultRouter.ResultRouter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classCore_1_1User_1_1UserPreference.html">UserPreference</a>&#160;</td>
+          <td class="paramname"><em>userPreference</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classCore_1_1Scenes_1_1SceneChanger.html">SceneChanger</a>&#160;</td>
+          <td class="paramname"><em>sceneChanger</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html">ResultManager</a>&#160;</td>
+          <td class="paramname"><em>resultManager</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultRouter_8cs_source.html">ResultRouter.cs</a> の <a class="el" href="ResultRouter_8cs_source.html#l00024">24</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            this.userPreference = <a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a72759abe3902d543b2d15e60b539e086">userPreference</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            this.sceneChanger = <a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a42f356afb23fe8d161fa578df8f396a8">sceneChanger</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            this.resultManager = <a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a3971d7acc16466096d902a1b7a01fa15">resultManager</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="comment">// setup navigation</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a824db263826cd2fc055d2897f9d54b73">navigation</a> = <span class="keyword">new</span> <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Navigation&lt;Nav&gt;</a>(</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keyword">new</span> Dictionary&lt;Nav, UIManager&gt;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    { <a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a54f47ec08f7655a1c1581e27904b5b30">Nav</a>.InResult, <a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a3971d7acc16466096d902a1b7a01fa15">resultManager</a> }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            );</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation&lt; Nav &gt;</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Router_1_1ResultRouter_html_a3971d7acc16466096d902a1b7a01fa15"><div class="ttname"><a href="classGameMain_1_1Router_1_1ResultRouter.html#a3971d7acc16466096d902a1b7a01fa15">GameMain.Router.ResultRouter.resultManager</a></div><div class="ttdeci">readonly ResultManager resultManager</div><div class="ttdef"><b>Definition:</b> <a href="ResultRouter_8cs_source.html#l00016">ResultRouter.cs:16</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Router_1_1ResultRouter_html_a42f356afb23fe8d161fa578df8f396a8"><div class="ttname"><a href="classGameMain_1_1Router_1_1ResultRouter.html#a42f356afb23fe8d161fa578df8f396a8">GameMain.Router.ResultRouter.sceneChanger</a></div><div class="ttdeci">readonly SceneChanger sceneChanger</div><div class="ttdef"><b>Definition:</b> <a href="ResultRouter_8cs_source.html#l00018">ResultRouter.cs:18</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Router_1_1ResultRouter_html_a54f47ec08f7655a1c1581e27904b5b30"><div class="ttname"><a href="classGameMain_1_1Router_1_1ResultRouter.html#a54f47ec08f7655a1c1581e27904b5b30">GameMain.Router.ResultRouter.Nav</a></div><div class="ttdeci">Nav</div><div class="ttdef"><b>Definition:</b> <a href="ResultRouter_8cs_source.html#l00090">ResultRouter.cs:91</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Router_1_1ResultRouter_html_a72759abe3902d543b2d15e60b539e086"><div class="ttname"><a href="classGameMain_1_1Router_1_1ResultRouter.html#a72759abe3902d543b2d15e60b539e086">GameMain.Router.ResultRouter.userPreference</a></div><div class="ttdeci">readonly UserPreference userPreference</div><div class="ttdef"><b>Definition:</b> <a href="ResultRouter_8cs_source.html#l00019">ResultRouter.cs:19</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Router_1_1ResultRouter_html_a824db263826cd2fc055d2897f9d54b73"><div class="ttname"><a href="classGameMain_1_1Router_1_1ResultRouter.html#a824db263826cd2fc055d2897f9d54b73">GameMain.Router.ResultRouter.navigation</a></div><div class="ttdeci">readonly Navigation&lt; Nav &gt; navigation</div><div class="ttdef"><b>Definition:</b> <a href="ResultRouter_8cs_source.html#l00014">ResultRouter.cs:14</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a5541d835e3c1dcefafa1d1eca7fcae57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5541d835e3c1dcefafa1d1eca7fcae57">&#9670;&nbsp;</a></span>SetNavigation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameMain.Router.ResultRouter.SetNavigation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultRouter_8cs_source.html">ResultRouter.cs</a> の <a class="el" href="ResultRouter_8cs_source.html#l00060">60</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a3971d7acc16466096d902a1b7a01fa15">resultManager</a>.<a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a9ead6ed845beb00b3bb545fc92271ec9">OnNext</a> += () =&gt;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="comment">/* todo: 次のステージに飛ばす　*/</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                var currentStage = (<a class="code" href="classCore_1_1User_1_1StageData.html">StageData</a>.<a class="code" href="classCore_1_1User_1_1StageData.html#ab4c99798d6b2939dc749f2b263f1d59e">Stage</a>)<a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a080eaab3e1eb47326021df26fc7c109d">result</a>.<a class="code" href="structCore_1_1Model_1_1Scene_1_1GameResult.html#ae768b77865a0dd1b7a6892ea5ad98824">stageCode</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                if (currentStage != <a class="code" href="classCore_1_1User_1_1StageData.html">StageData</a>.<a class="code" href="classCore_1_1User_1_1StageData.html#ab4c99798d6b2939dc749f2b263f1d59e">Stage</a>.Stage5)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    <a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a824db263826cd2fc055d2897f9d54b73">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca">SetActive</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    <a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a42f356afb23fe8d161fa578df8f396a8">sceneChanger</a>.<a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#ae1f13dd24adf1d7d150f53b4ff5780fc">LoadInGame</a>(currentStage + 1);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            };</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a3971d7acc16466096d902a1b7a01fa15">resultManager</a>.<a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a32bac09db505968fc8c7d6413a80b42b">OnSelect</a> += () =&gt;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="comment">/* todo: ステージセレクトに直接遷移させる　*/</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a824db263826cd2fc055d2897f9d54b73">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca">SetActive</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a42f356afb23fe8d161fa578df8f396a8">sceneChanger</a>.<a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#af08ac60f8a2e4c2b96a23c6b75a5e571">LoadTitle</a>(<a class="code" href="namespaceCore_1_1Scenes.html#a1e1c8a1558c71b62f20f51134e14efaf">TitleNavigation</a>.StageSelect);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            };</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a3971d7acc16466096d902a1b7a01fa15">resultManager</a>.<a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a6ef193f40b879a273bf3e0c45e0faf8f">OnRetry</a> += () =&gt;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                var currentStage = (<a class="code" href="classCore_1_1User_1_1StageData.html">StageData</a>.<a class="code" href="classCore_1_1User_1_1StageData.html#ab4c99798d6b2939dc749f2b263f1d59e">Stage</a>)<a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a080eaab3e1eb47326021df26fc7c109d">result</a>.<a class="code" href="structCore_1_1Model_1_1Scene_1_1GameResult.html#ae768b77865a0dd1b7a6892ea5ad98824">stageCode</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                if (currentStage != <a class="code" href="classCore_1_1User_1_1StageData.html">StageData</a>.<a class="code" href="classCore_1_1User_1_1StageData.html#ab4c99798d6b2939dc749f2b263f1d59e">Stage</a>.Stage5)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                    <a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a824db263826cd2fc055d2897f9d54b73">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca">SetActive</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                    <a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a42f356afb23fe8d161fa578df8f396a8">sceneChanger</a>.<a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#ae1f13dd24adf1d7d150f53b4ff5780fc">LoadInGame</a>(currentStage);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            };</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Scenes_1_1SceneChanger_html_ae1f13dd24adf1d7d150f53b4ff5780fc"><div class="ttname"><a href="classCore_1_1Scenes_1_1SceneChanger.html#ae1f13dd24adf1d7d150f53b4ff5780fc">Core.Scenes.SceneChanger.LoadInGame</a></div><div class="ttdeci">bool LoadInGame(StageData.Stage routeNav)</div><div class="ttdoc">:TODO 引数見て、各stageに遷移</div><div class="ttdef"><b>Definition:</b> <a href="SceneChanger_8cs_source.html#l00056">SceneChanger.cs:56</a></div></div>
+<div class="ttc" id="aclassCore_1_1Scenes_1_1SceneChanger_html_af08ac60f8a2e4c2b96a23c6b75a5e571"><div class="ttname"><a href="classCore_1_1Scenes_1_1SceneChanger.html#af08ac60f8a2e4c2b96a23c6b75a5e571">Core.Scenes.SceneChanger.LoadTitle</a></div><div class="ttdeci">bool LoadTitle(TitleNavigation routeNav=TitleNavigation.Title)</div><div class="ttdoc">タイトル画面への遷移</div><div class="ttdef"><b>Definition:</b> <a href="SceneChanger_8cs_source.html#l00033">SceneChanger.cs:33</a></div></div>
+<div class="ttc" id="aclassCore_1_1User_1_1StageData_html"><div class="ttname"><a href="classCore_1_1User_1_1StageData.html">Core.User.StageData</a></div><div class="ttdef"><b>Definition:</b> <a href="UserSetting_8cs_source.html#l00043">UserSetting.cs:44</a></div></div>
+<div class="ttc" id="aclassCore_1_1User_1_1StageData_html_ab4c99798d6b2939dc749f2b263f1d59e"><div class="ttname"><a href="classCore_1_1User_1_1StageData.html#ab4c99798d6b2939dc749f2b263f1d59e">Core.User.StageData.Stage</a></div><div class="ttdeci">Stage</div><div class="ttdef"><b>Definition:</b> <a href="UserSetting_8cs_source.html#l00046">UserSetting.cs:47</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html_a710a31240ad99f5ee1d11eb6c4f32eca"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca">Core.Utility.UI.Navigation.Navigation.SetActive</a></div><div class="ttdeci">void SetActive(bool value)</div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00140">Navigation.cs:140</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Router_1_1ResultRouter_html_a080eaab3e1eb47326021df26fc7c109d"><div class="ttname"><a href="classGameMain_1_1Router_1_1ResultRouter.html#a080eaab3e1eb47326021df26fc7c109d">GameMain.Router.ResultRouter.result</a></div><div class="ttdeci">GameResult result</div><div class="ttdef"><b>Definition:</b> <a href="ResultRouter_8cs_source.html#l00021">ResultRouter.cs:21</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_html_a32bac09db505968fc8c7d6413a80b42b"><div class="ttname"><a href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a32bac09db505968fc8c7d6413a80b42b">Module.UI.Result.ResultManager.OnSelect</a></div><div class="ttdeci">Action OnSelect</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00110">ResultManager.cs:110</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_html_a6ef193f40b879a273bf3e0c45e0faf8f"><div class="ttname"><a href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a6ef193f40b879a273bf3e0c45e0faf8f">Module.UI.Result.ResultManager.OnRetry</a></div><div class="ttdeci">Action OnRetry</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00108">ResultManager.cs:108</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_html_a9ead6ed845beb00b3bb545fc92271ec9"><div class="ttname"><a href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a9ead6ed845beb00b3bb545fc92271ec9">Module.UI.Result.ResultManager.OnNext</a></div><div class="ttdeci">Action OnNext</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00106">ResultManager.cs:106</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1Scenes_html_a1e1c8a1558c71b62f20f51134e14efaf"><div class="ttname"><a href="namespaceCore_1_1Scenes.html#a1e1c8a1558c71b62f20f51134e14efaf">Core.Scenes.TitleNavigation</a></div><div class="ttdeci">TitleNavigation</div><div class="ttdef"><b>Definition:</b> <a href="TitleNavigation_8cs_source.html#l00003">TitleNavigation.cs:4</a></div></div>
+<div class="ttc" id="astructCore_1_1Model_1_1Scene_1_1GameResult_html_ae768b77865a0dd1b7a6892ea5ad98824"><div class="ttname"><a href="structCore_1_1Model_1_1Scene_1_1GameResult.html#ae768b77865a0dd1b7a6892ea5ad98824">Core.Model.Scene.GameResult.stageCode</a></div><div class="ttdeci">int stageCode</div><div class="ttdef"><b>Definition:</b> <a href="GameResult_8cs_source.html#l00011">GameResult.cs:11</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classGameMain_1_1Router_1_1ResultRouter_a5541d835e3c1dcefafa1d1eca7fcae57_cgraph.png" border="0" usemap="#aclassGameMain_1_1Router_1_1ResultRouter_a5541d835e3c1dcefafa1d1eca7fcae57_cgraph" alt=""/></div>
+<map name="aclassGameMain_1_1Router_1_1ResultRouter_a5541d835e3c1dcefafa1d1eca7fcae57_cgraph" id="aclassGameMain_1_1Router_1_1ResultRouter_a5541d835e3c1dcefafa1d1eca7fcae57_cgraph">
+<area shape="rect" title=" " alt="" coords="5,71,236,112"/>
+<area shape="rect" href="classCore_1_1Scenes_1_1SceneChanger.html#ae1f13dd24adf1d7d150f53b4ff5780fc" title=":TODO 引数見て、各stageに遷移" alt="" coords="284,5,487,47"/>
+<area shape="rect" href="classCore_1_1Scenes_1_1SceneChanger.html#af08ac60f8a2e4c2b96a23c6b75a5e571" title="タイトル画面への遷移" alt="" coords="284,71,487,112"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca" title=" " alt="" coords="290,136,481,177"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classGameMain_1_1Router_1_1ResultRouter_a5541d835e3c1dcefafa1d1eca7fcae57_icgraph.png" border="0" usemap="#aclassGameMain_1_1Router_1_1ResultRouter_a5541d835e3c1dcefafa1d1eca7fcae57_icgraph" alt=""/></div>
+<map name="aclassGameMain_1_1Router_1_1ResultRouter_a5541d835e3c1dcefafa1d1eca7fcae57_icgraph" id="aclassGameMain_1_1Router_1_1ResultRouter_a5541d835e3c1dcefafa1d1eca7fcae57_icgraph">
+<area shape="rect" title=" " alt="" coords="284,5,515,47"/>
+<area shape="rect" href="classGameMain_1_1Router_1_1ResultRouter.html#a24187fe96187b1ecd5cdfccc101178cb" title=" " alt="" coords="5,5,236,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a24187fe96187b1ecd5cdfccc101178cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24187fe96187b1ecd5cdfccc101178cb">&#9670;&nbsp;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameMain.Router.ResultRouter.Start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultRouter_8cs_source.html">ResultRouter.cs</a> の <a class="el" href="ResultRouter_8cs_source.html#l00045">45</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a5541d835e3c1dcefafa1d1eca7fcae57">SetNavigation</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a080eaab3e1eb47326021df26fc7c109d">result</a> = <a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a42f356afb23fe8d161fa578df8f396a8">sceneChanger</a>.<a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#ab505b9655e49d6d04d741ad96d576ee1">GetResultParam</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a3971d7acc16466096d902a1b7a01fa15">resultManager</a>.<a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a828898e7d723604bf89ba385ff4cd0d9">SetScore</a>(<a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a080eaab3e1eb47326021df26fc7c109d">result</a>, () =&gt;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a824db263826cd2fc055d2897f9d54b73">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca">SetActive</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a824db263826cd2fc055d2897f9d54b73">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3">SetScreen</a>(<a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a54f47ec08f7655a1c1581e27904b5b30">Nav</a>.InResult, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            });</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a72759abe3902d543b2d15e60b539e086">userPreference</a>.<a class="code" href="classCore_1_1User_1_1UserPreference.html#a5f43225f7a424396ff8541c6c7d3e040">Load</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a72759abe3902d543b2d15e60b539e086">userPreference</a>.<a class="code" href="classCore_1_1User_1_1UserPreference.html#a5fa10ba9a65afe198d9a97277c2bd5b8">SetStageData</a>((<a class="code" href="classCore_1_1User_1_1StageData.html">StageData</a>.<a class="code" href="classCore_1_1User_1_1StageData.html#ab4c99798d6b2939dc749f2b263f1d59e">Stage</a>)<a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a080eaab3e1eb47326021df26fc7c109d">result</a>.<a class="code" href="structCore_1_1Model_1_1Scene_1_1GameResult.html#ae768b77865a0dd1b7a6892ea5ad98824">stageCode</a>, <a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a080eaab3e1eb47326021df26fc7c109d">result</a>.GetScore());</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html#a72759abe3902d543b2d15e60b539e086">userPreference</a>.<a class="code" href="classCore_1_1User_1_1UserPreference.html#a3367839d7ebd1ed567a3fe23804fc80a">Save</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Scenes_1_1SceneChanger_html_ab505b9655e49d6d04d741ad96d576ee1"><div class="ttname"><a href="classCore_1_1Scenes_1_1SceneChanger.html#ab505b9655e49d6d04d741ad96d576ee1">Core.Scenes.SceneChanger.GetResultParam</a></div><div class="ttdeci">GameResult GetResultParam()</div><div class="ttdef"><b>Definition:</b> <a href="SceneChanger_8cs_source.html#l00100">SceneChanger.cs:100</a></div></div>
+<div class="ttc" id="aclassCore_1_1User_1_1UserPreference_html_a3367839d7ebd1ed567a3fe23804fc80a"><div class="ttname"><a href="classCore_1_1User_1_1UserPreference.html#a3367839d7ebd1ed567a3fe23804fc80a">Core.User.UserPreference.Save</a></div><div class="ttdeci">void Save()</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00089">UserPreference.cs:89</a></div></div>
+<div class="ttc" id="aclassCore_1_1User_1_1UserPreference_html_a5f43225f7a424396ff8541c6c7d3e040"><div class="ttname"><a href="classCore_1_1User_1_1UserPreference.html#a5f43225f7a424396ff8541c6c7d3e040">Core.User.UserPreference.Load</a></div><div class="ttdeci">void Load()</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00031">UserPreference.cs:31</a></div></div>
+<div class="ttc" id="aclassCore_1_1User_1_1UserPreference_html_a5fa10ba9a65afe198d9a97277c2bd5b8"><div class="ttname"><a href="classCore_1_1User_1_1UserPreference.html#a5fa10ba9a65afe198d9a97277c2bd5b8">Core.User.UserPreference.SetStageData</a></div><div class="ttdeci">void SetStageData(StageData data)</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00072">UserPreference.cs:72</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html_a4cf4005df3073cc3ee23a45a59eb38f3"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3">Core.Utility.UI.Navigation.Navigation.SetScreen</a></div><div class="ttdeci">void SetScreen(T nav, bool isAnimate=true, bool isReset=false)</div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00068">Navigation.cs:68</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Router_1_1ResultRouter_html_a5541d835e3c1dcefafa1d1eca7fcae57"><div class="ttname"><a href="classGameMain_1_1Router_1_1ResultRouter.html#a5541d835e3c1dcefafa1d1eca7fcae57">GameMain.Router.ResultRouter.SetNavigation</a></div><div class="ttdeci">void SetNavigation()</div><div class="ttdef"><b>Definition:</b> <a href="ResultRouter_8cs_source.html#l00060">ResultRouter.cs:60</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_html_a828898e7d723604bf89ba385ff4cd0d9"><div class="ttname"><a href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a828898e7d723604bf89ba385ff4cd0d9">Module.UI.Result.ResultManager.SetScore</a></div><div class="ttdeci">void SetScore(GameResult result, Action onFinished)</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00119">ResultManager.cs:119</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classGameMain_1_1Router_1_1ResultRouter_a24187fe96187b1ecd5cdfccc101178cb_cgraph.png" border="0" usemap="#aclassGameMain_1_1Router_1_1ResultRouter_a24187fe96187b1ecd5cdfccc101178cb_cgraph" alt=""/></div>
+<map name="aclassGameMain_1_1Router_1_1ResultRouter_a24187fe96187b1ecd5cdfccc101178cb_cgraph" id="aclassGameMain_1_1Router_1_1ResultRouter_a24187fe96187b1ecd5cdfccc101178cb_cgraph">
+<area shape="rect" title=" " alt="" coords="5,208,236,249"/>
+<area shape="rect" href="classCore_1_1Scenes_1_1SceneChanger.html#ab505b9655e49d6d04d741ad96d576ee1" title=" " alt="" coords="302,8,505,49"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html#a5f43225f7a424396ff8541c6c7d3e040" title=" " alt="" coords="291,74,515,101"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html#a3367839d7ebd1ed567a3fe23804fc80a" title=" " alt="" coords="291,127,516,154"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca" title=" " alt="" coords="595,173,785,215"/>
+<area shape="rect" href="classGameMain_1_1Router_1_1ResultRouter.html#a5541d835e3c1dcefafa1d1eca7fcae57" title=" " alt="" coords="288,237,519,279"/>
+<area shape="rect" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a828898e7d723604bf89ba385ff4cd0d9" title=" " alt="" coords="284,369,523,411"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3" title=" " alt="" coords="308,500,499,541"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html#a5fa10ba9a65afe198d9a97277c2bd5b8" title=" " alt="" coords="307,565,500,607"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html#ad7d8fd43df022c849becc33dcb537bbc" title=" " alt="" coords="593,5,787,47"/>
+<area shape="rect" href="classCore_1_1User_1_1DataManager.html#af52e53e411c9340934ddc84b957c4a07" title=" " alt="" coords="585,71,795,98"/>
+<area shape="rect" href="classCore_1_1User_1_1DataManager.html#a88d5a82ec500270fbb46991faca71a87" title=" " alt="" coords="584,122,796,149"/>
+<area shape="rect" href="classCore_1_1Scenes_1_1SceneChanger.html#ae1f13dd24adf1d7d150f53b4ff5780fc" title=":TODO 引数見て、各stageに遷移" alt="" coords="589,239,791,280"/>
+<area shape="rect" href="classCore_1_1Scenes_1_1SceneChanger.html#af08ac60f8a2e4c2b96a23c6b75a5e571" title="タイトル画面への遷移" alt="" coords="589,304,791,345"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html#a5e157387c3bd91bc9b840c069b0751a9" title=" " alt="" coords="579,369,801,411"/>
+<area shape="rect" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a34bd40cd1b4006a81eacf9e76798f444" title=" " alt="" coords="571,435,809,476"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a82c0d36cd008e231c62b0410f4d2196a" title=" " alt="" coords="595,500,785,541"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#abb6930c459fc8a9aa8d331dfbc739ba6" title=" " alt="" coords="595,565,785,607"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a385a3ad44bba7369d02aa90cbe07122b" title=" " alt="" coords="595,631,785,672"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a824db263826cd2fc055d2897f9d54b73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a824db263826cd2fc055d2897f9d54b73">&#9670;&nbsp;</a></span>navigation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Navigation</a>&lt;<a class="el" href="classGameMain_1_1Router_1_1ResultRouter.html#a54f47ec08f7655a1c1581e27904b5b30">Nav</a>&gt; GameMain.Router.ResultRouter.navigation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultRouter_8cs_source.html">ResultRouter.cs</a> の <a class="el" href="ResultRouter_8cs_source.html#l00014">14</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a080eaab3e1eb47326021df26fc7c109d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a080eaab3e1eb47326021df26fc7c109d">&#9670;&nbsp;</a></span>result</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structCore_1_1Model_1_1Scene_1_1GameResult.html">GameResult</a> GameMain.Router.ResultRouter.result</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultRouter_8cs_source.html">ResultRouter.cs</a> の <a class="el" href="ResultRouter_8cs_source.html#l00021">21</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3971d7acc16466096d902a1b7a01fa15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3971d7acc16466096d902a1b7a01fa15">&#9670;&nbsp;</a></span>resultManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly <a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html">ResultManager</a> GameMain.Router.ResultRouter.resultManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultRouter_8cs_source.html">ResultRouter.cs</a> の <a class="el" href="ResultRouter_8cs_source.html#l00016">16</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a42f356afb23fe8d161fa578df8f396a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42f356afb23fe8d161fa578df8f396a8">&#9670;&nbsp;</a></span>sceneChanger</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly <a class="el" href="classCore_1_1Scenes_1_1SceneChanger.html">SceneChanger</a> GameMain.Router.ResultRouter.sceneChanger</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultRouter_8cs_source.html">ResultRouter.cs</a> の <a class="el" href="ResultRouter_8cs_source.html#l00018">18</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a72759abe3902d543b2d15e60b539e086"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72759abe3902d543b2d15e60b539e086">&#9670;&nbsp;</a></span>userPreference</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly <a class="el" href="classCore_1_1User_1_1UserPreference.html">UserPreference</a> GameMain.Router.ResultRouter.userPreference</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultRouter_8cs_source.html">ResultRouter.cs</a> の <a class="el" href="ResultRouter_8cs_source.html#l00019">19</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>src/Assets/Scripts/GameMain/Router/<a class="el" href="ResultRouter_8cs_source.html">ResultRouter.cs</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

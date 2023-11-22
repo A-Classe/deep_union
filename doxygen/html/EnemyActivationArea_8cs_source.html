@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>release control: src/Assets/Scripts/GameMain/Task/EnemyActivationArea.cs ソースファイル</title>
+<title>release control: src/Assets/Scripts/Module/Extension/Task/EnemyActivationArea.cs ソースファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_2663a91e34b059a736b32b20a5ff248b.html">GameMain</a></li><li class="navelem"><a class="el" href="dir_cf968102d17d79ca8fb5c014785f714d.html">Task</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_b90377121573af7cb25ee89fc5236601.html">Module</a></li><li class="navelem"><a class="el" href="dir_cc9dd415d43ddbf70030581998ecd3a2.html">Extension</a></li><li class="navelem"><a class="el" href="dir_4c201c692ecf0a2635639f5959c9a85b.html">Task</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -69,43 +69,36 @@ $(function() {
 <div class="title">EnemyActivationArea.cs</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="EnemyActivationArea_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceModule.html">Module</a>.<a class="code" href="namespaceModule_1_1Task.html">Task</a>;</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceGameMain_1_1Task.html">GameMain.Task</a></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classGameMain_1_1Task_1_1EnemyActivationArea.html">    6</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classGameMain_1_1Task_1_1EnemyActivationArea.html">EnemyActivationArea</a> : MonoBehaviour</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    {</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classGameMain_1_1Task_1_1EnemyActivationArea.html#a7e118860ae37707045991717265116fc">    8</a></span>&#160;        <span class="keyword">private</span> <a class="code" href="classGameMain_1_1Task_1_1Enemy1Task.html">Enemy1Task</a>[] <a class="code" href="classGameMain_1_1Task_1_1EnemyActivationArea.html#a7e118860ae37707045991717265116fc">baseTasks</a>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classGameMain_1_1Task_1_1EnemyActivationArea.html#a627ab201b51ef8504c5c5ccf4b0e5ec9">   10</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classGameMain_1_1Task_1_1EnemyActivationArea.html#a627ab201b51ef8504c5c5ccf4b0e5ec9">Start</a>()</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            <a class="code" href="classGameMain_1_1Task_1_1EnemyActivationArea.html#a7e118860ae37707045991717265116fc">baseTasks</a> = GetComponentsInChildren&lt;Enemy1Task&gt;(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        }</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classGameMain_1_1Task_1_1EnemyActivationArea.html#a3557dc9f4a4335575f20c86ac3f880e7">   15</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classGameMain_1_1Task_1_1EnemyActivationArea.html#a3557dc9f4a4335575f20c86ac3f880e7">OnTriggerEnter</a>(Collider other)</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keywordflow">if</span> (other.CompareTag(<span class="stringliteral">&quot;Player&quot;</span>))</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                <span class="keywordflow">foreach</span> (<a class="code" href="classGameMain_1_1Task_1_1Enemy1Task.html">Enemy1Task</a> enemy1Task <span class="keywordflow">in</span> <a class="code" href="classGameMain_1_1Task_1_1EnemyActivationArea.html#a7e118860ae37707045991717265116fc">baseTasks</a>)</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                    enemy1Task.<a class="code" href="classGameMain_1_1Task_1_1Enemy1Task.html#a237370854d7ab5450a525b780af29d90">ForceEnable</a>();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                    enemy1Task.<a class="code" href="classModule_1_1Task_1_1BaseTask.html#a9ac3603c3238aa0fddc4345e1ac2e054">SetDetection</a>(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
-<div class="ttc" id="aclassGameMain_1_1Task_1_1Enemy1Task_html"><div class="ttname"><a href="classGameMain_1_1Task_1_1Enemy1Task.html">GameMain.Task.Enemy1Task</a></div><div class="ttdef"><b>Definition:</b> <a href="Enemy1Task_8cs_source.html#l00016">Enemy1Task.cs:17</a></div></div>
-<div class="ttc" id="aclassGameMain_1_1Task_1_1Enemy1Task_html_a237370854d7ab5450a525b780af29d90"><div class="ttname"><a href="classGameMain_1_1Task_1_1Enemy1Task.html#a237370854d7ab5450a525b780af29d90">GameMain.Task.Enemy1Task.ForceEnable</a></div><div class="ttdeci">void ForceEnable()</div><div class="ttdef"><b>Definition:</b> <a href="Enemy1Task_8cs_source.html#l00103">Enemy1Task.cs:103</a></div></div>
-<div class="ttc" id="aclassGameMain_1_1Task_1_1EnemyActivationArea_html"><div class="ttname"><a href="classGameMain_1_1Task_1_1EnemyActivationArea.html">GameMain.Task.EnemyActivationArea</a></div><div class="ttdef"><b>Definition:</b> <a href="EnemyActivationArea_8cs_source.html#l00006">EnemyActivationArea.cs:7</a></div></div>
-<div class="ttc" id="aclassGameMain_1_1Task_1_1EnemyActivationArea_html_a3557dc9f4a4335575f20c86ac3f880e7"><div class="ttname"><a href="classGameMain_1_1Task_1_1EnemyActivationArea.html#a3557dc9f4a4335575f20c86ac3f880e7">GameMain.Task.EnemyActivationArea.OnTriggerEnter</a></div><div class="ttdeci">void OnTriggerEnter(Collider other)</div><div class="ttdef"><b>Definition:</b> <a href="EnemyActivationArea_8cs_source.html#l00015">EnemyActivationArea.cs:15</a></div></div>
-<div class="ttc" id="aclassGameMain_1_1Task_1_1EnemyActivationArea_html_a627ab201b51ef8504c5c5ccf4b0e5ec9"><div class="ttname"><a href="classGameMain_1_1Task_1_1EnemyActivationArea.html#a627ab201b51ef8504c5c5ccf4b0e5ec9">GameMain.Task.EnemyActivationArea.Start</a></div><div class="ttdeci">void Start()</div><div class="ttdef"><b>Definition:</b> <a href="EnemyActivationArea_8cs_source.html#l00010">EnemyActivationArea.cs:10</a></div></div>
-<div class="ttc" id="aclassGameMain_1_1Task_1_1EnemyActivationArea_html_a7e118860ae37707045991717265116fc"><div class="ttname"><a href="classGameMain_1_1Task_1_1EnemyActivationArea.html#a7e118860ae37707045991717265116fc">GameMain.Task.EnemyActivationArea.baseTasks</a></div><div class="ttdeci">Enemy1Task[] baseTasks</div><div class="ttdef"><b>Definition:</b> <a href="EnemyActivationArea_8cs_source.html#l00008">EnemyActivationArea.cs:8</a></div></div>
-<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a9ac3603c3238aa0fddc4345e1ac2e054"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a9ac3603c3238aa0fddc4345e1ac2e054">Module.Task.BaseTask.SetDetection</a></div><div class="ttdeci">void SetDetection(bool isEnabled)</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00156">BaseTask.cs:156</a></div></div>
-<div class="ttc" id="anamespaceGameMain_1_1Task_html"><div class="ttname"><a href="namespaceGameMain_1_1Task.html">GameMain.Task</a></div><div class="ttdef"><b>Definition:</b> <a href="BreakWallTask_8cs_source.html#l00010">BreakWallTask.cs:11</a></div></div>
-<div class="ttc" id="anamespaceModule_1_1Task_html"><div class="ttname"><a href="namespaceModule_1_1Task.html">Module.Task</a></div><div class="ttdef"><b>Definition:</b> <a href="CollectableTask_8cs_source.html#l00012">CollectableTask.cs:13</a></div></div>
-<div class="ttc" id="anamespaceModule_html"><div class="ttname"><a href="namespaceModule.html">Module</a></div><div class="ttdef"><b>Definition:</b> <a href="CollectableTask_8cs_source.html#l00012">CollectableTask.cs:13</a></div></div>
+<a href="EnemyActivationArea_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceModule_1_1Extension_1_1Task.html">Module.Extension.Task</a></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="classModule_1_1Extension_1_1Task_1_1EnemyActivationArea.html">    5</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classModule_1_1Extension_1_1Task_1_1EnemyActivationArea.html">EnemyActivationArea</a> : MonoBehaviour</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    {</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classModule_1_1Extension_1_1Task_1_1EnemyActivationArea.html#ab3922ebffe64e8baa7e4d07e6616e08b">    7</a></span>&#160;        <span class="keyword">private</span> <a class="code" href="classModule_1_1Extension_1_1Task_1_1Enemy1Task.html">Enemy1Task</a>[] <a class="code" href="classModule_1_1Extension_1_1Task_1_1EnemyActivationArea.html#ab3922ebffe64e8baa7e4d07e6616e08b">baseTasks</a>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classModule_1_1Extension_1_1Task_1_1EnemyActivationArea.html#affd7f1c4573d9cd1cc06e9db7ba7ada2">    9</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Extension_1_1Task_1_1EnemyActivationArea.html#affd7f1c4573d9cd1cc06e9db7ba7ada2">Start</a>()</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            <a class="code" href="classModule_1_1Extension_1_1Task_1_1EnemyActivationArea.html#ab3922ebffe64e8baa7e4d07e6616e08b">baseTasks</a> = GetComponentsInChildren&lt;Enemy1Task&gt;(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        }</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classModule_1_1Extension_1_1Task_1_1EnemyActivationArea.html#aaf173d4a0beafd734a4f05f0172a2c2a">   14</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Extension_1_1Task_1_1EnemyActivationArea.html#aaf173d4a0beafd734a4f05f0172a2c2a">OnTriggerEnter</a>(Collider other)</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keywordflow">if</span> (other.CompareTag(<span class="stringliteral">&quot;Player&quot;</span>))</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                <span class="keywordflow">foreach</span> (var enemy1Task <span class="keywordflow">in</span> <a class="code" href="classModule_1_1Extension_1_1Task_1_1EnemyActivationArea.html#ab3922ebffe64e8baa7e4d07e6616e08b">baseTasks</a>)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                    enemy1Task.ForceEnable();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                    enemy1Task.SetDetection(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1Enemy1Task_html"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1Enemy1Task.html">Module.Extension.Task.Enemy1Task</a></div><div class="ttdef"><b>Definition:</b> <a href="Enemy1Task_8cs_source.html#l00020">Enemy1Task.cs:21</a></div></div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1EnemyActivationArea_html"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1EnemyActivationArea.html">Module.Extension.Task.EnemyActivationArea</a></div><div class="ttdef"><b>Definition:</b> <a href="EnemyActivationArea_8cs_source.html#l00005">EnemyActivationArea.cs:6</a></div></div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1EnemyActivationArea_html_aaf173d4a0beafd734a4f05f0172a2c2a"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1EnemyActivationArea.html#aaf173d4a0beafd734a4f05f0172a2c2a">Module.Extension.Task.EnemyActivationArea.OnTriggerEnter</a></div><div class="ttdeci">void OnTriggerEnter(Collider other)</div><div class="ttdef"><b>Definition:</b> <a href="EnemyActivationArea_8cs_source.html#l00014">EnemyActivationArea.cs:14</a></div></div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1EnemyActivationArea_html_ab3922ebffe64e8baa7e4d07e6616e08b"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1EnemyActivationArea.html#ab3922ebffe64e8baa7e4d07e6616e08b">Module.Extension.Task.EnemyActivationArea.baseTasks</a></div><div class="ttdeci">Enemy1Task[] baseTasks</div><div class="ttdef"><b>Definition:</b> <a href="EnemyActivationArea_8cs_source.html#l00007">EnemyActivationArea.cs:7</a></div></div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1EnemyActivationArea_html_affd7f1c4573d9cd1cc06e9db7ba7ada2"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1EnemyActivationArea.html#affd7f1c4573d9cd1cc06e9db7ba7ada2">Module.Extension.Task.EnemyActivationArea.Start</a></div><div class="ttdeci">void Start()</div><div class="ttdef"><b>Definition:</b> <a href="EnemyActivationArea_8cs_source.html#l00009">EnemyActivationArea.cs:9</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Extension_1_1Task_html"><div class="ttname"><a href="namespaceModule_1_1Extension_1_1Task.html">Module.Extension.Task</a></div><div class="ttdef"><b>Definition:</b> <a href="BombEffectEvent_8cs_source.html#l00004">BombEffectEvent.cs:5</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

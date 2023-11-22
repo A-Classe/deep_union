@@ -84,7 +84,7 @@ Module.Assignment.System.WorkerAssigner 連携図</div>
 <area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html" title="アサイン範囲を設定するクラス" alt="" coords="233,667,468,1096"/>
 <area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html" title="楕円判定をビジュアライズするクラス" alt="" coords="563,351,797,472"/>
 <area shape="rect" href="classModule_1_1Working_1_1Worker.html" title="ワーカーの状態を管理するクラス" alt="" coords="1025,219,1201,604"/>
-<area shape="rect" href="classGameMain_1_1Presenter_1_1GameParam.html" title=" " alt="" coords="492,777,735,986"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1GameParam.html" title=" " alt="" coords="492,769,735,993"/>
 <area shape="rect" title=" " alt="" coords="821,373,950,450"/>
 <area shape="rect" href="classCore_1_1Input_1_1InputEvent.html" title="InputActionのラッパークラス" alt="" coords="759,806,950,957"/>
 <area shape="rect" href="classCore_1_1Utility_1_1AutoInstanceList.html" title=" " alt="" coords="267,292,539,531"/>
@@ -104,10 +104,10 @@ Module.Assignment.System.WorkerAssigner 連携図</div>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 非公開変数類</h2></td></tr>
-<tr class="memitem:ac62a373fec14b89fdf37285813235d43"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html">LeaderAssignableArea</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Assignment_1_1System_1_1WorkerAssigner.html#ac62a373fec14b89fdf37285813235d43">leaderAssignableArea</a></td></tr>
-<tr class="separator:ac62a373fec14b89fdf37285813235d43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb2c79fb309e85d4cef3f7d67985d716"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="classModule_1_1Working_1_1Worker.html">Worker</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Assignment_1_1System_1_1WorkerAssigner.html#afb2c79fb309e85d4cef3f7d67985d716">assignWorkerCache</a></td></tr>
 <tr class="separator:afb2c79fb309e85d4cef3f7d67985d716"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac62a373fec14b89fdf37285813235d43"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html">LeaderAssignableArea</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Assignment_1_1System_1_1WorkerAssigner.html#ac62a373fec14b89fdf37285813235d43">leaderAssignableArea</a></td></tr>
+<tr class="separator:ac62a373fec14b89fdf37285813235d43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa894e155c6fea3a071e02fe6c3bc2da"><td class="memItemLeft" align="right" valign="top">IReadOnlyList&lt; <a class="el" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html">AssignableArea</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Assignment_1_1System_1_1WorkerAssigner.html#aaa894e155c6fea3a071e02fe6c3bc2da">activeAreas</a></td></tr>
 <tr class="separator:aaa894e155c6fea3a071e02fe6c3bc2da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -143,10 +143,10 @@ Module.Assignment.System.WorkerAssigner 連携図</div>
 <div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            this.leaderAssignableArea = <a class="code" href="classModule_1_1Assignment_1_1System_1_1WorkerAssigner.html#ac62a373fec14b89fdf37285813235d43">leaderAssignableArea</a>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <a class="code" href="classModule_1_1Assignment_1_1System_1_1WorkerAssigner.html#afb2c79fb309e85d4cef3f7d67985d716">assignWorkerCache</a> = <span class="keyword">new</span> <a class="code" href="classModule_1_1Working_1_1Worker.html">Worker</a>[64];</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <a class="code" href="classModule_1_1Assignment_1_1System_1_1WorkerAssigner.html#afb2c79fb309e85d4cef3f7d67985d716">assignWorkerCache</a> = <span class="keyword">new</span> <a class="code" href="classModule_1_1Working_1_1Worker.html">Worker</a>[128];</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
-<div class="ttc" id="aclassModule_1_1Assignment_1_1System_1_1WorkerAssigner_html_ac62a373fec14b89fdf37285813235d43"><div class="ttname"><a href="classModule_1_1Assignment_1_1System_1_1WorkerAssigner.html#ac62a373fec14b89fdf37285813235d43">Module.Assignment.System.WorkerAssigner.leaderAssignableArea</a></div><div class="ttdeci">readonly LeaderAssignableArea leaderAssignableArea</div><div class="ttdef"><b>Definition:</b> <a href="WorkerAssigner_8cs_source.html#l00014">WorkerAssigner.cs:14</a></div></div>
-<div class="ttc" id="aclassModule_1_1Assignment_1_1System_1_1WorkerAssigner_html_afb2c79fb309e85d4cef3f7d67985d716"><div class="ttname"><a href="classModule_1_1Assignment_1_1System_1_1WorkerAssigner.html#afb2c79fb309e85d4cef3f7d67985d716">Module.Assignment.System.WorkerAssigner.assignWorkerCache</a></div><div class="ttdeci">readonly Worker[] assignWorkerCache</div><div class="ttdef"><b>Definition:</b> <a href="WorkerAssigner_8cs_source.html#l00015">WorkerAssigner.cs:15</a></div></div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1System_1_1WorkerAssigner_html_ac62a373fec14b89fdf37285813235d43"><div class="ttname"><a href="classModule_1_1Assignment_1_1System_1_1WorkerAssigner.html#ac62a373fec14b89fdf37285813235d43">Module.Assignment.System.WorkerAssigner.leaderAssignableArea</a></div><div class="ttdeci">readonly LeaderAssignableArea leaderAssignableArea</div><div class="ttdef"><b>Definition:</b> <a href="WorkerAssigner_8cs_source.html#l00015">WorkerAssigner.cs:15</a></div></div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1System_1_1WorkerAssigner_html_afb2c79fb309e85d4cef3f7d67985d716"><div class="ttname"><a href="classModule_1_1Assignment_1_1System_1_1WorkerAssigner.html#afb2c79fb309e85d4cef3f7d67985d716">Module.Assignment.System.WorkerAssigner.assignWorkerCache</a></div><div class="ttdeci">readonly Worker[] assignWorkerCache</div><div class="ttdef"><b>Definition:</b> <a href="WorkerAssigner_8cs_source.html#l00014">WorkerAssigner.cs:14</a></div></div>
 <div class="ttc" id="aclassModule_1_1Working_1_1Worker_html"><div class="ttname"><a href="classModule_1_1Working_1_1Worker.html">Module.Working.Worker</a></div><div class="ttdoc">ワーカーの状態を管理するクラス</div><div class="ttdef"><b>Definition:</b> <a href="Worker_8cs_source.html#l00017">Worker.cs:18</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -219,45 +219,46 @@ Module.Assignment.System.WorkerAssigner 連携図</div>
 
 <p class="definition"> <a class="el" href="WorkerAssigner_8cs_source.html">WorkerAssigner.cs</a> の <a class="el" href="WorkerAssigner_8cs_source.html#l00032">32</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html">AssignableArea</a> leaderArea = <a class="code" href="classModule_1_1Assignment_1_1System_1_1WorkerAssigner.html#ac62a373fec14b89fdf37285813235d43">leaderAssignableArea</a>.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html#aca57c50818acabe7282173c69a79f5e6">AssignableArea</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            IReadOnlyList&lt;Worker&gt; leaderWorkers = <a class="code" href="classModule_1_1Assignment_1_1System_1_1WorkerAssigner.html#ac62a373fec14b89fdf37285813235d43">leaderAssignableArea</a>.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html#aca57c50818acabe7282173c69a79f5e6">AssignableArea</a>.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#adb07bde83b46876ff5afdb845dfb773f">AssignedWorkers</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            var leaderArea = <a class="code" href="classModule_1_1Assignment_1_1System_1_1WorkerAssigner.html#ac62a373fec14b89fdf37285813235d43">leaderAssignableArea</a>.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html#aca57c50818acabe7282173c69a79f5e6">AssignableArea</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            var leaderWorkers = <a class="code" href="classModule_1_1Assignment_1_1System_1_1WorkerAssigner.html#ac62a373fec14b89fdf37285813235d43">leaderAssignableArea</a>.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html#aca57c50818acabe7282173c69a79f5e6">AssignableArea</a>.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#adb07bde83b46876ff5afdb845dfb773f">AssignedWorkers</a>;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">foreach</span> (<a class="code" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html">AssignableArea</a> activeArea <span class="keywordflow">in</span> <a class="code" href="classModule_1_1Assignment_1_1System_1_1WorkerAssigner.html#aaa894e155c6fea3a071e02fe6c3bc2da">activeAreas</a>)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">foreach</span> (var activeArea <span class="keywordflow">in</span> <a class="code" href="classModule_1_1Assignment_1_1System_1_1WorkerAssigner.html#aaa894e155c6fea3a071e02fe6c3bc2da">activeAreas</a>)</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="comment">//範囲同士の円形判定を行い、計算が必要な範囲を絞る</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">if</span> (!activeArea.enabled || !<a class="code" href="classModule_1_1Assignment_1_1Utility_1_1CollisionUtil.html">CollisionUtil</a>.<a class="code" href="classModule_1_1Assignment_1_1Utility_1_1CollisionUtil.html#adc1a2e1c043b61260fefb563335f23ab">IsCollideCircle</a>(leaderArea.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a3b17d95ce9fa15c5f422cd0a68e5ca59">EllipseData</a>, activeArea.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a3b17d95ce9fa15c5f422cd0a68e5ca59">EllipseData</a>))</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordtype">int</span> cacheCount = 0;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">foreach</span> (<a class="code" href="classModule_1_1Working_1_1Worker.html">Worker</a> worker <span class="keywordflow">in</span> leaderWorkers)</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Assignment_1_1Utility_1_1CollisionUtil.html">CollisionUtil</a>.<a class="code" href="classModule_1_1Assignment_1_1Utility_1_1CollisionUtil.html#a6a80f64e7910b98310c18f817a0c4320">InEllipse</a>(worker.transform.position, activeArea.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a3b17d95ce9fa15c5f422cd0a68e5ca59">EllipseData</a>))</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">if</span> (!activeArea.enabled ||</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    !<a class="code" href="classModule_1_1Assignment_1_1Utility_1_1CollisionUtil.html">CollisionUtil</a>.<a class="code" href="classModule_1_1Assignment_1_1Utility_1_1CollisionUtil.html#adc1a2e1c043b61260fefb563335f23ab">IsCollideCircle</a>(leaderArea.EllipseData, activeArea.EllipseData))</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                var cacheCount = 0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keywordflow">foreach</span> (var worker <span class="keywordflow">in</span> leaderWorkers)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="classModule_1_1Assignment_1_1Utility_1_1CollisionUtil.html">CollisionUtil</a>.<a class="code" href="classModule_1_1Assignment_1_1Utility_1_1CollisionUtil.html#a6a80f64e7910b98310c18f817a0c4320">InEllipse</a>(worker.transform.position, activeArea.EllipseData))</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                        <a class="code" href="classModule_1_1Assignment_1_1System_1_1WorkerAssigner.html#afb2c79fb309e85d4cef3f7d67985d716">assignWorkerCache</a>[cacheCount] = worker;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                        cacheCount++;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; cacheCount; i++)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                    <a class="code" href="classModule_1_1Working_1_1Worker.html">Worker</a> worker = <a class="code" href="classModule_1_1Assignment_1_1System_1_1WorkerAssigner.html#afb2c79fb309e85d4cef3f7d67985d716">assignWorkerCache</a>[i];</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                    <span class="keywordflow">if</span> (activeArea.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a46a3ff5425d6d62330f8e644a02a3451">CanAssign</a>())</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                    {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                        <a class="code" href="classModule_1_1Assignment_1_1System_1_1WorkerAssigner.html#ac62a373fec14b89fdf37285813235d43">leaderAssignableArea</a>.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html#aca57c50818acabe7282173c69a79f5e6">AssignableArea</a>.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a48d269fea2f7eb30d37afa6a1824a4df">RemoveWorker</a>(worker);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                        activeArea.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a80e77697fbf11b427fa7ee0e11a68e12">AddWorker</a>(worker);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
-<div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1AssignableArea_html"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html">Module.Assignment.Component.AssignableArea</a></div><div class="ttdoc">アサイン範囲を設定するクラス</div><div class="ttdef"><b>Definition:</b> <a href="AssignableArea_8cs_source.html#l00018">AssignableArea.cs:19</a></div></div>
-<div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1AssignableArea_html_a3b17d95ce9fa15c5f422cd0a68e5ca59"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a3b17d95ce9fa15c5f422cd0a68e5ca59">Module.Assignment.Component.AssignableArea.EllipseData</a></div><div class="ttdeci">EllipseData EllipseData</div><div class="ttdef"><b>Definition:</b> <a href="AssignableArea_8cs_source.html#l00041">AssignableArea.cs:41</a></div></div>
-<div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1AssignableArea_html_a46a3ff5425d6d62330f8e644a02a3451"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a46a3ff5425d6d62330f8e644a02a3451">Module.Assignment.Component.AssignableArea.CanAssign</a></div><div class="ttdeci">bool CanAssign()</div><div class="ttdef"><b>Definition:</b> <a href="AssignableArea_8cs_source.html#l00099">AssignableArea.cs:99</a></div></div>
-<div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1AssignableArea_html_a48d269fea2f7eb30d37afa6a1824a4df"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a48d269fea2f7eb30d37afa6a1824a4df">Module.Assignment.Component.AssignableArea.RemoveWorker</a></div><div class="ttdeci">void RemoveWorker(Worker worker)</div><div class="ttdef"><b>Definition:</b> <a href="AssignableArea_8cs_source.html#l00152">AssignableArea.cs:152</a></div></div>
-<div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1AssignableArea_html_a80e77697fbf11b427fa7ee0e11a68e12"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a80e77697fbf11b427fa7ee0e11a68e12">Module.Assignment.Component.AssignableArea.AddWorker</a></div><div class="ttdeci">void AddWorker(Worker worker)</div><div class="ttdef"><b>Definition:</b> <a href="AssignableArea_8cs_source.html#l00141">AssignableArea.cs:141</a></div></div>
-<div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1AssignableArea_html_adb07bde83b46876ff5afdb845dfb773f"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#adb07bde83b46876ff5afdb845dfb773f">Module.Assignment.Component.AssignableArea.AssignedWorkers</a></div><div class="ttdeci">IReadOnlyList&lt; Worker &gt; AssignedWorkers</div><div class="ttdef"><b>Definition:</b> <a href="AssignableArea_8cs_source.html#l00044">AssignableArea.cs:44</a></div></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                        <span class="keywordflow">if</span> (cacheCount &gt;= <a class="code" href="classModule_1_1Assignment_1_1System_1_1WorkerAssigner.html#afb2c79fb309e85d4cef3f7d67985d716">assignWorkerCache</a>.Length)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                        {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                            DebugEx.LogError(<span class="stringliteral">&quot;リーダーの割り当て上限を超えました！&quot;</span>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                        }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        <a class="code" href="classModule_1_1Assignment_1_1System_1_1WorkerAssigner.html#afb2c79fb309e85d4cef3f7d67985d716">assignWorkerCache</a>[cacheCount] = worker;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                        cacheCount++;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordflow">for</span> (var i = 0; i &lt; cacheCount; i++)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                    var worker = <a class="code" href="classModule_1_1Assignment_1_1System_1_1WorkerAssigner.html#afb2c79fb309e85d4cef3f7d67985d716">assignWorkerCache</a>[i];</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    <span class="keywordflow">if</span> (activeArea.CanAssign())</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        <a class="code" href="classModule_1_1Assignment_1_1System_1_1WorkerAssigner.html#ac62a373fec14b89fdf37285813235d43">leaderAssignableArea</a>.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html#aca57c50818acabe7282173c69a79f5e6">AssignableArea</a>.<a class="code" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a48d269fea2f7eb30d37afa6a1824a4df">RemoveWorker</a>(worker);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        activeArea.AddWorker(worker);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1AssignableArea_html_a48d269fea2f7eb30d37afa6a1824a4df"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a48d269fea2f7eb30d37afa6a1824a4df">Module.Assignment.Component.AssignableArea.RemoveWorker</a></div><div class="ttdeci">void RemoveWorker(Worker worker)</div><div class="ttdef"><b>Definition:</b> <a href="AssignableArea_8cs_source.html#l00140">AssignableArea.cs:140</a></div></div>
+<div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1AssignableArea_html_adb07bde83b46876ff5afdb845dfb773f"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#adb07bde83b46876ff5afdb845dfb773f">Module.Assignment.Component.AssignableArea.AssignedWorkers</a></div><div class="ttdeci">IReadOnlyList&lt; Worker &gt; AssignedWorkers</div><div class="ttdef"><b>Definition:</b> <a href="AssignableArea_8cs_source.html#l00047">AssignableArea.cs:47</a></div></div>
 <div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea_html_aca57c50818acabe7282173c69a79f5e6"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1LeaderAssignableArea.html#aca57c50818acabe7282173c69a79f5e6">Module.Assignment.Component.LeaderAssignableArea.AssignableArea</a></div><div class="ttdeci">AssignableArea AssignableArea</div><div class="ttdef"><b>Definition:</b> <a href="LeaderAssignableArea_8cs_source.html#l00023">LeaderAssignableArea.cs:23</a></div></div>
 <div class="ttc" id="aclassModule_1_1Assignment_1_1Utility_1_1CollisionUtil_html"><div class="ttname"><a href="classModule_1_1Assignment_1_1Utility_1_1CollisionUtil.html">Module.Assignment.Utility.CollisionUtil</a></div><div class="ttdef"><b>Definition:</b> <a href="CollisionUtil_8cs_source.html#l00008">CollisionUtil.cs:9</a></div></div>
 <div class="ttc" id="aclassModule_1_1Assignment_1_1Utility_1_1CollisionUtil_html_a6a80f64e7910b98310c18f817a0c4320"><div class="ttname"><a href="classModule_1_1Assignment_1_1Utility_1_1CollisionUtil.html#a6a80f64e7910b98310c18f817a0c4320">Module.Assignment.Utility.CollisionUtil.InEllipse</a></div><div class="ttdeci">static bool InEllipse(in float3 pos, in EllipseData ellipseData)</div><div class="ttdef"><b>Definition:</b> <a href="CollisionUtil_8cs_source.html#l00025">CollisionUtil.cs:25</a></div></div>
@@ -267,15 +268,11 @@ Module.Assignment.System.WorkerAssigner 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classModule_1_1Assignment_1_1System_1_1WorkerAssigner_ae0d100cd809c51d48c1e8a764ae8c882_cgraph.png" border="0" usemap="#aclassModule_1_1Assignment_1_1System_1_1WorkerAssigner_ae0d100cd809c51d48c1e8a764ae8c882_cgraph" alt=""/></div>
 <map name="aclassModule_1_1Assignment_1_1System_1_1WorkerAssigner_ae0d100cd809c51d48c1e8a764ae8c882_cgraph" id="aclassModule_1_1Assignment_1_1System_1_1WorkerAssigner_ae0d100cd809c51d48c1e8a764ae8c882_cgraph">
-<area shape="rect" title=" " alt="" coords="5,192,213,233"/>
-<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a80e77697fbf11b427fa7ee0e11a68e12" title=" " alt="" coords="261,72,496,113"/>
-<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a48d269fea2f7eb30d37afa6a1824a4df" title=" " alt="" coords="565,136,800,177"/>
-<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a46a3ff5425d6d62330f8e644a02a3451" title=" " alt="" coords="261,192,496,233"/>
-<area shape="rect" href="classModule_1_1Assignment_1_1Utility_1_1CollisionUtil.html#a6a80f64e7910b98310c18f817a0c4320" title=" " alt="" coords="280,257,477,299"/>
-<area shape="rect" href="classModule_1_1Assignment_1_1Utility_1_1CollisionUtil.html#adc1a2e1c043b61260fefb563335f23ab" title=" " alt="" coords="279,323,478,364"/>
-<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#aff5099ab272b3aba5a0da4fa8c512c9c" title=" " alt="" coords="544,5,821,47"/>
-<area shape="rect" href="classModule_1_1Working_1_1Worker.html#af70118007fec13a8ae6ae3687eedc85d" title=" " alt="" coords="583,71,783,112"/>
-<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#ac32c145752850f570458ed176caa1ace" title=" " alt="" coords="869,136,1124,177"/>
+<area shape="rect" title=" " alt="" coords="5,71,213,112"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Utility_1_1CollisionUtil.html#a6a80f64e7910b98310c18f817a0c4320" title=" " alt="" coords="280,5,477,47"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Utility_1_1CollisionUtil.html#adc1a2e1c043b61260fefb563335f23ab" title=" " alt="" coords="279,71,478,112"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#a48d269fea2f7eb30d37afa6a1824a4df" title=" " alt="" coords="261,136,496,177"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html#ac32c145752850f570458ed176caa1ace" title=" " alt="" coords="544,136,799,177"/>
 </map>
 </div>
 <div class="dynheader">
@@ -335,7 +332,7 @@ Module.Assignment.System.WorkerAssigner 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="WorkerAssigner_8cs_source.html">WorkerAssigner.cs</a> の <a class="el" href="WorkerAssigner_8cs_source.html#l00015">15</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="WorkerAssigner_8cs_source.html">WorkerAssigner.cs</a> の <a class="el" href="WorkerAssigner_8cs_source.html#l00014">14</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -359,7 +356,7 @@ Module.Assignment.System.WorkerAssigner 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="WorkerAssigner_8cs_source.html">WorkerAssigner.cs</a> の <a class="el" href="WorkerAssigner_8cs_source.html#l00014">14</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="WorkerAssigner_8cs_source.html">WorkerAssigner.cs</a> の <a class="el" href="WorkerAssigner_8cs_source.html#l00015">15</a> 行目に定義があります。</p>
 
 </div>
 </div>

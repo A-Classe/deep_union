@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>release control: src/Assets/Scripts/GameMain/Task/PoisonCreatureTask.cs ソースファイル</title>
+<title>release control: src/Assets/Scripts/Module/Extension/Task/PoisonCreatureTask.cs ソースファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_2663a91e34b059a736b32b20a5ff248b.html">GameMain</a></li><li class="navelem"><a class="el" href="dir_cf968102d17d79ca8fb5c014785f714d.html">Task</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_b90377121573af7cb25ee89fc5236601.html">Module</a></li><li class="navelem"><a class="el" href="dir_cc9dd415d43ddbf70030581998ecd3a2.html">Extension</a></li><li class="navelem"><a class="el" href="dir_4c201c692ecf0a2635639f5959c9a85b.html">Task</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -69,28 +69,25 @@ $(function() {
 <div class="title">PoisonCreatureTask.cs</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="PoisonCreatureTask_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceSystem.html">System</a>.Collections;</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceSystem.html">System</a>.Collections.Generic;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceModule.html">Module</a>.<a class="code" href="namespaceModule_1_1Task.html">Task</a>;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceModule_1_1Task.html">Module.Task</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1PoisonCreatureTask.html">    8</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classModule_1_1Task_1_1PoisonCreatureTask.html">PoisonCreatureTask</a> : <a class="code" href="classModule_1_1Task_1_1BaseTask.html">BaseTask</a></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classModule_1_1Task_1_1PoisonCreatureTask.html#a025b0cd04cec104738bee57f431e4d49">   10</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Task_1_1PoisonCreatureTask.html#a025b0cd04cec104738bee57f431e4d49">OnComplete</a>()</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a03b38c879a916abb52d80c81330ac164">Disable</a>();</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        }</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    }</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<a href="PoisonCreatureTask_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceModule.html">Module</a>.<a class="code" href="namespaceModule_1_1Task.html">Task</a>;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceModule_1_1Extension_1_1Task.html">Module.Extension.Task</a></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="classModule_1_1Extension_1_1Task_1_1PoisonCreatureTask.html">    5</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonCreatureTask.html">PoisonCreatureTask</a> : <a class="code" href="classModule_1_1Task_1_1BaseTask.html">BaseTask</a></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    {</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classModule_1_1Extension_1_1Task_1_1PoisonCreatureTask.html#aae1213b0426bf1924c9e77efafa45f00">    7</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Extension_1_1Task_1_1PoisonCreatureTask.html#aae1213b0426bf1924c9e77efafa45f00">OnComplete</a>()</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;            <a class="code" href="classModule_1_1Task_1_1BaseTask.html#a03b38c879a916abb52d80c81330ac164">Disable</a>();</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        }</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    }</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1PoisonCreatureTask_html"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1PoisonCreatureTask.html">Module.Extension.Task.PoisonCreatureTask</a></div><div class="ttdef"><b>Definition:</b> <a href="PoisonCreatureTask_8cs_source.html#l00005">PoisonCreatureTask.cs:6</a></div></div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1PoisonCreatureTask_html_aae1213b0426bf1924c9e77efafa45f00"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1PoisonCreatureTask.html#aae1213b0426bf1924c9e77efafa45f00">Module.Extension.Task.PoisonCreatureTask.OnComplete</a></div><div class="ttdeci">override void OnComplete()</div><div class="ttdef"><b>Definition:</b> <a href="PoisonCreatureTask_8cs_source.html#l00007">PoisonCreatureTask.cs:7</a></div></div>
 <div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html">Module.Task.BaseTask</a></div><div class="ttdoc">全てのタスクのベースクラス</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00013">BaseTask.cs:14</a></div></div>
-<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a03b38c879a916abb52d80c81330ac164"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a03b38c879a916abb52d80c81330ac164">Module.Task.BaseTask.Disable</a></div><div class="ttdeci">virtual void Disable()</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00169">BaseTask.cs:169</a></div></div>
-<div class="ttc" id="aclassModule_1_1Task_1_1PoisonCreatureTask_html"><div class="ttname"><a href="classModule_1_1Task_1_1PoisonCreatureTask.html">Module.Task.PoisonCreatureTask</a></div><div class="ttdef"><b>Definition:</b> <a href="PoisonCreatureTask_8cs_source.html#l00008">PoisonCreatureTask.cs:9</a></div></div>
-<div class="ttc" id="aclassModule_1_1Task_1_1PoisonCreatureTask_html_a025b0cd04cec104738bee57f431e4d49"><div class="ttname"><a href="classModule_1_1Task_1_1PoisonCreatureTask.html#a025b0cd04cec104738bee57f431e4d49">Module.Task.PoisonCreatureTask.OnComplete</a></div><div class="ttdeci">override void OnComplete()</div><div class="ttdef"><b>Definition:</b> <a href="PoisonCreatureTask_8cs_source.html#l00010">PoisonCreatureTask.cs:10</a></div></div>
-<div class="ttc" id="anamespaceModule_1_1Task_html"><div class="ttname"><a href="namespaceModule_1_1Task.html">Module.Task</a></div><div class="ttdef"><b>Definition:</b> <a href="CollectableTask_8cs_source.html#l00012">CollectableTask.cs:13</a></div></div>
-<div class="ttc" id="anamespaceModule_html"><div class="ttname"><a href="namespaceModule.html">Module</a></div><div class="ttdef"><b>Definition:</b> <a href="CollectableTask_8cs_source.html#l00012">CollectableTask.cs:13</a></div></div>
-<div class="ttc" id="anamespaceSystem_html"><div class="ttname"><a href="namespaceSystem.html">System</a></div><div class="ttdef"><b>Definition:</b> <a href="GameSequenceHandler_8cs_source.html#l00007">GameSequenceHandler.cs:8</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1BaseTask_html_a03b38c879a916abb52d80c81330ac164"><div class="ttname"><a href="classModule_1_1Task_1_1BaseTask.html#a03b38c879a916abb52d80c81330ac164">Module.Task.BaseTask.Disable</a></div><div class="ttdeci">virtual void Disable()</div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00182">BaseTask.cs:182</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Extension_1_1Task_html"><div class="ttname"><a href="namespaceModule_1_1Extension_1_1Task.html">Module.Extension.Task</a></div><div class="ttdef"><b>Definition:</b> <a href="BombEffectEvent_8cs_source.html#l00004">BombEffectEvent.cs:5</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Task_html"><div class="ttname"><a href="namespaceModule_1_1Task.html">Module.Task</a></div><div class="ttdef"><b>Definition:</b> <a href="BaseTask_8cs_source.html#l00007">BaseTask.cs:8</a></div></div>
+<div class="ttc" id="anamespaceModule_html"><div class="ttname"><a href="namespaceModule.html">Module</a></div><div class="ttdef"><b>Definition:</b> <a href="AssignableArea_8cs_source.html#l00012">AssignableArea.cs:13</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

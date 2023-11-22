@@ -81,7 +81,7 @@ $(function() {
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classEditor_1_1RemoveMissingScripts.html#adc32e75b5d595e4330596bb374f674d8">   10</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classEditor_1_1RemoveMissingScripts.html#adc32e75b5d595e4330596bb374f674d8">Remove</a>()</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        {</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            var objs = Resources.FindObjectsOfTypeAll&lt;GameObject&gt;();</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="keywordtype">int</span> count = objs.Sum(GameObjectUtility.RemoveMonoBehavioursWithMissingScript);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            var count = objs.Sum(GameObjectUtility.RemoveMonoBehavioursWithMissingScript);</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <a class="code" href="namespaceDebug.html">Debug</a>.Log($<span class="stringliteral">&quot;Removed {count} missing scripts&quot;</span>);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        }</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    }</div>

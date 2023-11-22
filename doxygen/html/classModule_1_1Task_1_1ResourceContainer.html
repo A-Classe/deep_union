@@ -83,8 +83,8 @@ Module.Task.ResourceContainer 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classModule_1_1Task_1_1ResourceContainer__coll__graph.png" border="0" usemap="#aModule_8Task_8ResourceContainer_coll__map" alt="Collaboration graph"/></div>
 <map name="aModule_8Task_8ResourceContainer_coll__map" id="aModule_8Task_8ResourceContainer_coll__map">
-<area shape="rect" title="リソースを管理するクラス" alt="" coords="11,404,242,525"/>
-<area shape="rect" href="classGameMain_1_1Presenter_1_1GameParam.html" title=" " alt="" coords="5,132,248,341"/>
+<area shape="rect" title="リソースを管理するクラス" alt="" coords="11,419,242,555"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1GameParam.html" title=" " alt="" coords="5,132,248,356"/>
 <area shape="rect" title=" " alt="" coords="62,5,191,83"/>
 </map>
 </div>
@@ -103,6 +103,9 @@ Module.Task.ResourceContainer 連携図</div>
 <tr class="memitem:a06061aa9cec98182ff64cf5a3066bee1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Task_1_1ResourceContainer.html#a06061aa9cec98182ff64cf5a3066bee1">ResourceCount</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a06061aa9cec98182ff64cf5a3066bee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">リソース数  <a href="classModule_1_1Task_1_1ResourceContainer.html#a06061aa9cec98182ff64cf5a3066bee1">[詳解]</a><br /></td></tr>
 <tr class="separator:a06061aa9cec98182ff64cf5a3066bee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedfad7c16942a65ada8cab0823e8f042"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1Task_1_1ResourceContainer.html#aedfad7c16942a65ada8cab0823e8f042">MaxResourceCount</a><code> [get]</code></td></tr>
+<tr class="memdesc:aedfad7c16942a65ada8cab0823e8f042"><td class="mdescLeft">&#160;</td><td class="mdescRight">リソースの最大数  <a href="classModule_1_1Task_1_1ResourceContainer.html#aedfad7c16942a65ada8cab0823e8f042">[詳解]</a><br /></td></tr>
+<tr class="separator:aedfad7c16942a65ada8cab0823e8f042"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="events"></a>
 イベント</h2></td></tr>
@@ -146,10 +149,10 @@ Module.Task.ResourceContainer 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="ResourceContainer_8cs_source.html">ResourceContainer.cs</a> の <a class="el" href="ResourceContainer_8cs_source.html#l00016">16</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            this.gameParam = <a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#ac60e726250e1cdc4ef99bf8b884b3a2b">gameParam</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div>
+<p class="definition"> <a class="el" href="ResourceContainer_8cs_source.html">ResourceContainer.cs</a> の <a class="el" href="ResourceContainer_8cs_source.html#l00018">18</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            this.gameParam = <a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#ac60e726250e1cdc4ef99bf8b884b3a2b">gameParam</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
 <div class="ttc" id="aclassModule_1_1Task_1_1ResourceContainer_html_ac60e726250e1cdc4ef99bf8b884b3a2b"><div class="ttname"><a href="classModule_1_1Task_1_1ResourceContainer.html#ac60e726250e1cdc4ef99bf8b884b3a2b">Module.Task.ResourceContainer.gameParam</a></div><div class="ttdeci">readonly GameParam gameParam</div><div class="ttdef"><b>Definition:</b> <a href="ResourceContainer_8cs_source.html#l00013">ResourceContainer.cs:13</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -179,16 +182,16 @@ Module.Task.ResourceContainer 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="ResourceContainer_8cs_source.html">ResourceContainer.cs</a> の <a class="el" href="ResourceContainer_8cs_source.html#l00037">37</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordtype">int</span> prevResourceCount = <a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#a01a6055b705a53fdd5be2f80b66ee603">resourceCount</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#a06061aa9cec98182ff64cf5a3066bee1">ResourceCount</a> += count;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#a19e8762b757042f09945873f79984f59">OnResourceChanged</a>?.Invoke(prevResourceCount, <a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#a01a6055b705a53fdd5be2f80b66ee603">resourceCount</a>);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
-<div class="ttc" id="aclassModule_1_1Task_1_1ResourceContainer_html_a01a6055b705a53fdd5be2f80b66ee603"><div class="ttname"><a href="classModule_1_1Task_1_1ResourceContainer.html#a01a6055b705a53fdd5be2f80b66ee603">Module.Task.ResourceContainer.resourceCount</a></div><div class="ttdeci">int resourceCount</div><div class="ttdef"><b>Definition:</b> <a href="ResourceContainer_8cs_source.html#l00035">ResourceContainer.cs:35</a></div></div>
-<div class="ttc" id="aclassModule_1_1Task_1_1ResourceContainer_html_a06061aa9cec98182ff64cf5a3066bee1"><div class="ttname"><a href="classModule_1_1Task_1_1ResourceContainer.html#a06061aa9cec98182ff64cf5a3066bee1">Module.Task.ResourceContainer.ResourceCount</a></div><div class="ttdeci">int ResourceCount</div><div class="ttdoc">リソース数</div><div class="ttdef"><b>Definition:</b> <a href="ResourceContainer_8cs_source.html#l00024">ResourceContainer.cs:25</a></div></div>
-<div class="ttc" id="aclassModule_1_1Task_1_1ResourceContainer_html_a19e8762b757042f09945873f79984f59"><div class="ttname"><a href="classModule_1_1Task_1_1ResourceContainer.html#a19e8762b757042f09945873f79984f59">Module.Task.ResourceContainer.OnResourceChanged</a></div><div class="ttdeci">Action&lt; int, int &gt; OnResourceChanged</div><div class="ttdoc">リソース数が変化した時に送信されるイベント。(前のリソース数, 現在のリソース数)</div><div class="ttdef"><b>Definition:</b> <a href="ResourceContainer_8cs_source.html#l00033">ResourceContainer.cs:33</a></div></div>
+<p class="definition"> <a class="el" href="ResourceContainer_8cs_source.html">ResourceContainer.cs</a> の <a class="el" href="ResourceContainer_8cs_source.html#l00042">42</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            var prevResourceCount = <a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#a01a6055b705a53fdd5be2f80b66ee603">resourceCount</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#a06061aa9cec98182ff64cf5a3066bee1">ResourceCount</a> += count;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#a19e8762b757042f09945873f79984f59">OnResourceChanged</a>?.Invoke(prevResourceCount, <a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#a01a6055b705a53fdd5be2f80b66ee603">resourceCount</a>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Task_1_1ResourceContainer_html_a01a6055b705a53fdd5be2f80b66ee603"><div class="ttname"><a href="classModule_1_1Task_1_1ResourceContainer.html#a01a6055b705a53fdd5be2f80b66ee603">Module.Task.ResourceContainer.resourceCount</a></div><div class="ttdeci">int resourceCount</div><div class="ttdef"><b>Definition:</b> <a href="ResourceContainer_8cs_source.html#l00015">ResourceContainer.cs:15</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1ResourceContainer_html_a06061aa9cec98182ff64cf5a3066bee1"><div class="ttname"><a href="classModule_1_1Task_1_1ResourceContainer.html#a06061aa9cec98182ff64cf5a3066bee1">Module.Task.ResourceContainer.ResourceCount</a></div><div class="ttdeci">int ResourceCount</div><div class="ttdoc">リソース数</div><div class="ttdef"><b>Definition:</b> <a href="ResourceContainer_8cs_source.html#l00026">ResourceContainer.cs:27</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1ResourceContainer_html_a19e8762b757042f09945873f79984f59"><div class="ttname"><a href="classModule_1_1Task_1_1ResourceContainer.html#a19e8762b757042f09945873f79984f59">Module.Task.ResourceContainer.OnResourceChanged</a></div><div class="ttdeci">Action&lt; int, int &gt; OnResourceChanged</div><div class="ttdoc">リソース数が変化した時に送信されるイベント。(前のリソース数, 現在のリソース数)</div><div class="ttdef"><b>Definition:</b> <a href="ResourceContainer_8cs_source.html#l00040">ResourceContainer.cs:40</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -225,13 +228,13 @@ Module.Task.ResourceContainer 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="ResourceContainer_8cs_source.html">ResourceContainer.cs</a> の <a class="el" href="ResourceContainer_8cs_source.html#l00045">45</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordtype">int</span> prevResourceCount = <a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#a01a6055b705a53fdd5be2f80b66ee603">resourceCount</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#a06061aa9cec98182ff64cf5a3066bee1">ResourceCount</a> -= count;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#a19e8762b757042f09945873f79984f59">OnResourceChanged</a>?.Invoke(prevResourceCount, <a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#a01a6055b705a53fdd5be2f80b66ee603">resourceCount</a>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
+<p class="definition"> <a class="el" href="ResourceContainer_8cs_source.html">ResourceContainer.cs</a> の <a class="el" href="ResourceContainer_8cs_source.html#l00050">50</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            var prevResourceCount = <a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#a01a6055b705a53fdd5be2f80b66ee603">resourceCount</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#a06061aa9cec98182ff64cf5a3066bee1">ResourceCount</a> -= count;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#a19e8762b757042f09945873f79984f59">OnResourceChanged</a>?.Invoke(prevResourceCount, <a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#a01a6055b705a53fdd5be2f80b66ee603">resourceCount</a>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -280,11 +283,37 @@ Module.Task.ResourceContainer 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="ResourceContainer_8cs_source.html">ResourceContainer.cs</a> の <a class="el" href="ResourceContainer_8cs_source.html#l00035">35</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="ResourceContainer_8cs_source.html">ResourceContainer.cs</a> の <a class="el" href="ResourceContainer_8cs_source.html#l00015">15</a> 行目に定義があります。</p>
 
 </div>
 </div>
 <h2 class="groupheader">プロパティ詳解</h2>
+<a id="aedfad7c16942a65ada8cab0823e8f042"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedfad7c16942a65ada8cab0823e8f042">&#9670;&nbsp;</a></span>MaxResourceCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Module.Task.ResourceContainer.MaxResourceCount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>リソースの最大数 </p>
+
+<p class="definition"> <a class="el" href="ResourceContainer_8cs_source.html">ResourceContainer.cs</a> の <a class="el" href="ResourceContainer_8cs_source.html#l00035">35</a> 行目に定義があります。</p>
+
+</div>
+</div>
 <a id="a06061aa9cec98182ff64cf5a3066bee1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a06061aa9cec98182ff64cf5a3066bee1">&#9670;&nbsp;</a></span>ResourceCount</h2>
 
@@ -307,12 +336,12 @@ Module.Task.ResourceContainer 連携図</div>
 
 <p>リソース数 </p>
 
-<p class="definition"> <a class="el" href="ResourceContainer_8cs_source.html">ResourceContainer.cs</a> の <a class="el" href="ResourceContainer_8cs_source.html#l00024">24</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keyword">set</span> { <a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#a01a6055b705a53fdd5be2f80b66ee603">resourceCount</a> = Mathf.Clamp(value, 0, <a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#ac60e726250e1cdc4ef99bf8b884b3a2b">gameParam</a>.<a class="code" href="classGameMain_1_1Presenter_1_1GameParam.html#aae794b1fc7e58e946a48eb1cab8c1352">MaxResourceCount</a>); }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> <a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#a01a6055b705a53fdd5be2f80b66ee603">resourceCount</a>; }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
-<div class="ttc" id="aclassGameMain_1_1Presenter_1_1GameParam_html_aae794b1fc7e58e946a48eb1cab8c1352"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1GameParam.html#aae794b1fc7e58e946a48eb1cab8c1352">GameMain.Presenter.GameParam.MaxResourceCount</a></div><div class="ttdeci">int MaxResourceCount</div><div class="ttdef"><b>Definition:</b> <a href="GameParam_8cs_source.html#l00014">GameParam.cs:14</a></div></div>
+<p class="definition"> <a class="el" href="ResourceContainer_8cs_source.html">ResourceContainer.cs</a> の <a class="el" href="ResourceContainer_8cs_source.html#l00026">26</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keyword">set</span> =&gt; <a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#a01a6055b705a53fdd5be2f80b66ee603">resourceCount</a> = Mathf.Clamp(value, 0, <a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#ac60e726250e1cdc4ef99bf8b884b3a2b">gameParam</a>.<a class="code" href="classGameMain_1_1Presenter_1_1GameParam.html#aae794b1fc7e58e946a48eb1cab8c1352">MaxResourceCount</a>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keyword">get</span> =&gt; <a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#a01a6055b705a53fdd5be2f80b66ee603">resourceCount</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1GameParam_html_aae794b1fc7e58e946a48eb1cab8c1352"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1GameParam.html#aae794b1fc7e58e946a48eb1cab8c1352">GameMain.Presenter.GameParam.MaxResourceCount</a></div><div class="ttdeci">int MaxResourceCount</div><div class="ttdef"><b>Definition:</b> <a href="GameParam_8cs_source.html#l00026">GameParam.cs:26</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -331,7 +360,7 @@ Module.Task.ResourceContainer 連携図</div>
 
 <p>リソース数が変化した時に送信されるイベント。(前のリソース数, 現在のリソース数) </p>
 
-<p class="definition"> <a class="el" href="ResourceContainer_8cs_source.html">ResourceContainer.cs</a> の <a class="el" href="ResourceContainer_8cs_source.html#l00033">33</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="ResourceContainer_8cs_source.html">ResourceContainer.cs</a> の <a class="el" href="ResourceContainer_8cs_source.html#l00040">40</a> 行目に定義があります。</p>
 
 </div>
 </div>

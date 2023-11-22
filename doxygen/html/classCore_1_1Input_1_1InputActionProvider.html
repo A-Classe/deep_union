@@ -112,7 +112,7 @@ Core.Input.InputActionProvider 連携図</div>
 非公開変数類</h2></td></tr>
 <tr class="memitem:af0836834da4bd83996846479d1816599"><td class="memItemLeft" align="right" valign="top">InputActionAsset&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Input_1_1InputActionProvider.html#af0836834da4bd83996846479d1816599">inputActionAsset</a></td></tr>
 <tr class="separator:af0836834da4bd83996846479d1816599"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a774ee9e5200c532979cd1a306f3e9d1e"><td class="memItemLeft" align="right" valign="top">readonly List&lt; <a class="el" href="classCore_1_1Input_1_1InputEvent.html">InputEvent</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Input_1_1InputActionProvider.html#a774ee9e5200c532979cd1a306f3e9d1e">inputEvents</a> = new List&lt;<a class="el" href="classCore_1_1Input_1_1InputEvent.html">InputEvent</a>&gt;()</td></tr>
+<tr class="memitem:a774ee9e5200c532979cd1a306f3e9d1e"><td class="memItemLeft" align="right" valign="top">readonly List&lt; <a class="el" href="classCore_1_1Input_1_1InputEvent.html">InputEvent</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Input_1_1InputActionProvider.html#a774ee9e5200c532979cd1a306f3e9d1e">inputEvents</a> = new()</td></tr>
 <tr class="separator:a774ee9e5200c532979cd1a306f3e9d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
@@ -153,16 +153,16 @@ Core.Input.InputActionProvider 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="InputActionProvider_8cs_source.html">InputActionProvider.cs</a> の <a class="el" href="InputActionProvider_8cs_source.html#l00021">21</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            InputAction inputAction = <a class="code" href="classCore_1_1Input_1_1InputActionProvider.html#af0836834da4bd83996846479d1816599">inputActionAsset</a>.FindAction(guid);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <a class="code" href="namespaceDebug.html">Debug</a>.Assert(inputAction != <span class="keyword">null</span>);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            InputEvent inputEvent = <span class="keyword">new</span> InputEvent(inputAction);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <a class="code" href="classCore_1_1Input_1_1InputActionProvider.html#a774ee9e5200c532979cd1a306f3e9d1e">inputEvents</a>.Add(inputEvent);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">return</span> inputEvent;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
+<p class="definition"> <a class="el" href="InputActionProvider_8cs_source.html">InputActionProvider.cs</a> の <a class="el" href="InputActionProvider_8cs_source.html#l00026">26</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            var inputAction = <a class="code" href="classCore_1_1Input_1_1InputActionProvider.html#af0836834da4bd83996846479d1816599">inputActionAsset</a>.FindAction(guid);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <a class="code" href="namespaceDebug.html">Debug</a>.Assert(inputAction != <span class="keyword">null</span>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            var inputEvent = <span class="keyword">new</span> InputEvent(inputAction);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <a class="code" href="classCore_1_1Input_1_1InputActionProvider.html#a774ee9e5200c532979cd1a306f3e9d1e">inputEvents</a>.Add(inputEvent);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">return</span> inputEvent;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
 <div class="ttc" id="aclassCore_1_1Input_1_1InputActionProvider_html_a774ee9e5200c532979cd1a306f3e9d1e"><div class="ttname"><a href="classCore_1_1Input_1_1InputActionProvider.html#a774ee9e5200c532979cd1a306f3e9d1e">Core.Input.InputActionProvider.inputEvents</a></div><div class="ttdeci">readonly List&lt; InputEvent &gt; inputEvents</div><div class="ttdef"><b>Definition:</b> <a href="InputActionProvider_8cs_source.html#l00014">InputActionProvider.cs:14</a></div></div>
 <div class="ttc" id="aclassCore_1_1Input_1_1InputActionProvider_html_af0836834da4bd83996846479d1816599"><div class="ttname"><a href="classCore_1_1Input_1_1InputActionProvider.html#af0836834da4bd83996846479d1816599">Core.Input.InputActionProvider.inputActionAsset</a></div><div class="ttdeci">InputActionAsset inputActionAsset</div><div class="ttdef"><b>Definition:</b> <a href="InputActionProvider_8cs_source.html#l00013">InputActionProvider.cs:13</a></div></div>
 <div class="ttc" id="anamespaceDebug_html"><div class="ttname"><a href="namespaceDebug.html">Debug</a></div><div class="ttdef"><b>Definition:</b> <a href="AssetKeys_8cs_source.html#l00002">AssetKeys.cs:3</a></div></div>
@@ -192,26 +192,11 @@ Core.Input.InputActionProvider 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="InputActionProvider_8cs_source.html">InputActionProvider.cs</a> の <a class="el" href="InputActionProvider_8cs_source.html#l00032">32</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">foreach</span> (InputEvent inputEvent <span class="keywordflow">in</span> <a class="code" href="classCore_1_1Input_1_1InputActionProvider.html#a774ee9e5200c532979cd1a306f3e9d1e">inputEvents</a>)</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                inputEvent.Clear();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
-</div><!-- fragment --><div class="dynheader">
-呼び出し関係図:</div>
-<div class="dyncontent">
-<div class="center"><img src="classCore_1_1Input_1_1InputActionProvider_a3b328565d305e617dc58a0906694b9d5_cgraph.png" border="0" usemap="#aclassCore_1_1Input_1_1InputActionProvider_a3b328565d305e617dc58a0906694b9d5_cgraph" alt=""/></div>
-<map name="aclassCore_1_1Input_1_1InputActionProvider_a3b328565d305e617dc58a0906694b9d5_cgraph" id="aclassCore_1_1Input_1_1InputActionProvider_a3b328565d305e617dc58a0906694b9d5_cgraph">
-<area shape="rect" title=" " alt="" coords="5,71,229,112"/>
-<area shape="rect" href="classCore_1_1Input_1_1InputEvent.html#a9a638d28021bbc5e74db25658558780c" title=" " alt="" coords="277,78,479,105"/>
-<area shape="rect" href="classCore_1_1Input_1_1InputEvent.html#a01092f30ad7c35355021548352961a1b" title=" " alt="" coords="527,5,712,47"/>
-<area shape="rect" href="classCore_1_1Input_1_1InputEvent.html#a225b97dc493fdcd573881e3c86ff80c7" title=" " alt="" coords="527,71,712,112"/>
-<area shape="rect" href="classCore_1_1Input_1_1InputEvent.html#a741c9896bbcf8638fc3cc8744f2a050a" title=" " alt="" coords="527,136,712,177"/>
-</map>
-</div>
-
+<p class="definition"> <a class="el" href="InputActionProvider_8cs_source.html">InputActionProvider.cs</a> の <a class="el" href="InputActionProvider_8cs_source.html#l00021">21</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">foreach</span> (var inputEvent <span class="keywordflow">in</span> <a class="code" href="classCore_1_1Input_1_1InputActionProvider.html#a774ee9e5200c532979cd1a306f3e9d1e">inputEvents</a>) inputEvent.Clear();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a3349bc9e381f2c9eb5ec95e7cc7f0308"></a>
@@ -279,7 +264,7 @@ Core.Input.InputActionProvider 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">readonly List&lt;<a class="el" href="classCore_1_1Input_1_1InputEvent.html">InputEvent</a>&gt; Core.Input.InputActionProvider.inputEvents = new List&lt;<a class="el" href="classCore_1_1Input_1_1InputEvent.html">InputEvent</a>&gt;()</td>
+          <td class="memname">readonly List&lt;<a class="el" href="classCore_1_1Input_1_1InputEvent.html">InputEvent</a>&gt; Core.Input.InputActionProvider.inputEvents = new()</td>
         </tr>
       </table>
   </td>

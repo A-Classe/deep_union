@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>release control: src/Assets/Scripts/GameMain/Task/ResourceItem.cs ソースファイル</title>
+<title>release control: src/Assets/Scripts/Module/Extension/Task/ResourceItem.cs ソースファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_2663a91e34b059a736b32b20a5ff248b.html">GameMain</a></li><li class="navelem"><a class="el" href="dir_cf968102d17d79ca8fb5c014785f714d.html">Task</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_b90377121573af7cb25ee89fc5236601.html">Module</a></li><li class="navelem"><a class="el" href="dir_cc9dd415d43ddbf70030581998ecd3a2.html">Extension</a></li><li class="navelem"><a class="el" href="dir_4c201c692ecf0a2635639f5959c9a85b.html">Task</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -72,32 +72,32 @@ $(function() {
 <a href="ResourceItem_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceSystem.html">System</a>;</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceGameMain_1_1Task.html">GameMain.Task</a></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceModule_1_1Extension_1_1Task.html">Module.Extension.Task</a></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classGameMain_1_1Task_1_1ResourceItem.html">    6</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classGameMain_1_1Task_1_1ResourceItem.html">ResourceItem</a> : MonoBehaviour</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classModule_1_1Extension_1_1Task_1_1ResourceItem.html">    6</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classModule_1_1Extension_1_1Task_1_1ResourceItem.html">ResourceItem</a> : MonoBehaviour</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    {</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classGameMain_1_1Task_1_1ResourceItem.html#a4e71a5a612d6ac52d3f7a28bf426841b">    8</a></span>&#160;        <span class="keyword">private</span> Action <a class="code" href="classGameMain_1_1Task_1_1ResourceItem.html#a4e71a5a612d6ac52d3f7a28bf426841b">onCollide</a>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classModule_1_1Extension_1_1Task_1_1ResourceItem.html#a2093e46117f8630bf03c073dd9156257">    8</a></span>&#160;        <span class="keyword">private</span> Action <a class="code" href="classModule_1_1Extension_1_1Task_1_1ResourceItem.html#a2093e46117f8630bf03c073dd9156257">onCollide</a>;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classGameMain_1_1Task_1_1ResourceItem.html#a4a2258420a8cfb0ede3cc9d9a94b09b7">   10</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classGameMain_1_1Task_1_1ResourceItem.html#a4a2258420a8cfb0ede3cc9d9a94b09b7">SetCollideEvent</a>(Action <a class="code" href="classGameMain_1_1Task_1_1ResourceItem.html#a4e71a5a612d6ac52d3f7a28bf426841b">onCollide</a>)</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classModule_1_1Extension_1_1Task_1_1ResourceItem.html#ad621a4b7551a346d649c63c63250b831">   10</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Extension_1_1Task_1_1ResourceItem.html#ad621a4b7551a346d649c63c63250b831">OnTriggerEnter</a>(Collider other)</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            this.onCollide = <a class="code" href="classGameMain_1_1Task_1_1ResourceItem.html#a4e71a5a612d6ac52d3f7a28bf426841b">onCollide</a>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        }</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classGameMain_1_1Task_1_1ResourceItem.html#a3aa4f40f02389ee211410edf1a5077c4">   15</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classGameMain_1_1Task_1_1ResourceItem.html#a3aa4f40f02389ee211410edf1a5077c4">OnTriggerEnter</a>(Collider other)</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keywordflow">if</span> (other.CompareTag(<span class="stringliteral">&quot;Player&quot;</span>))</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                <a class="code" href="classGameMain_1_1Task_1_1ResourceItem.html#a4e71a5a612d6ac52d3f7a28bf426841b">onCollide</a>?.Invoke();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                Destroy(gameObject);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            }</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            <span class="keywordflow">if</span> (other.CompareTag(<span class="stringliteral">&quot;Player&quot;</span>))</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                <a class="code" href="classModule_1_1Extension_1_1Task_1_1ResourceItem.html#a2093e46117f8630bf03c073dd9156257">onCollide</a>?.Invoke();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                Destroy(gameObject);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            }</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        }</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classModule_1_1Extension_1_1Task_1_1ResourceItem.html#adb2e0eba0f0fe5340d669fa669bd6fb7">   19</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Extension_1_1Task_1_1ResourceItem.html#adb2e0eba0f0fe5340d669fa669bd6fb7">SetCollideEvent</a>(Action <a class="code" href="classModule_1_1Extension_1_1Task_1_1ResourceItem.html#a2093e46117f8630bf03c073dd9156257">onCollide</a>)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            this.onCollide = <a class="code" href="classModule_1_1Extension_1_1Task_1_1ResourceItem.html#a2093e46117f8630bf03c073dd9156257">onCollide</a>;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        }</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
-<div class="ttc" id="aclassGameMain_1_1Task_1_1ResourceItem_html"><div class="ttname"><a href="classGameMain_1_1Task_1_1ResourceItem.html">GameMain.Task.ResourceItem</a></div><div class="ttdef"><b>Definition:</b> <a href="ResourceItem_8cs_source.html#l00006">ResourceItem.cs:7</a></div></div>
-<div class="ttc" id="aclassGameMain_1_1Task_1_1ResourceItem_html_a3aa4f40f02389ee211410edf1a5077c4"><div class="ttname"><a href="classGameMain_1_1Task_1_1ResourceItem.html#a3aa4f40f02389ee211410edf1a5077c4">GameMain.Task.ResourceItem.OnTriggerEnter</a></div><div class="ttdeci">void OnTriggerEnter(Collider other)</div><div class="ttdef"><b>Definition:</b> <a href="ResourceItem_8cs_source.html#l00015">ResourceItem.cs:15</a></div></div>
-<div class="ttc" id="aclassGameMain_1_1Task_1_1ResourceItem_html_a4a2258420a8cfb0ede3cc9d9a94b09b7"><div class="ttname"><a href="classGameMain_1_1Task_1_1ResourceItem.html#a4a2258420a8cfb0ede3cc9d9a94b09b7">GameMain.Task.ResourceItem.SetCollideEvent</a></div><div class="ttdeci">void SetCollideEvent(Action onCollide)</div><div class="ttdef"><b>Definition:</b> <a href="ResourceItem_8cs_source.html#l00010">ResourceItem.cs:10</a></div></div>
-<div class="ttc" id="aclassGameMain_1_1Task_1_1ResourceItem_html_a4e71a5a612d6ac52d3f7a28bf426841b"><div class="ttname"><a href="classGameMain_1_1Task_1_1ResourceItem.html#a4e71a5a612d6ac52d3f7a28bf426841b">GameMain.Task.ResourceItem.onCollide</a></div><div class="ttdeci">Action onCollide</div><div class="ttdef"><b>Definition:</b> <a href="ResourceItem_8cs_source.html#l00008">ResourceItem.cs:8</a></div></div>
-<div class="ttc" id="anamespaceGameMain_1_1Task_html"><div class="ttname"><a href="namespaceGameMain_1_1Task.html">GameMain.Task</a></div><div class="ttdef"><b>Definition:</b> <a href="BreakWallTask_8cs_source.html#l00010">BreakWallTask.cs:11</a></div></div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1ResourceItem_html"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1ResourceItem.html">Module.Extension.Task.ResourceItem</a></div><div class="ttdef"><b>Definition:</b> <a href="ResourceItem_8cs_source.html#l00006">ResourceItem.cs:7</a></div></div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1ResourceItem_html_a2093e46117f8630bf03c073dd9156257"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1ResourceItem.html#a2093e46117f8630bf03c073dd9156257">Module.Extension.Task.ResourceItem.onCollide</a></div><div class="ttdeci">Action onCollide</div><div class="ttdef"><b>Definition:</b> <a href="ResourceItem_8cs_source.html#l00008">ResourceItem.cs:8</a></div></div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1ResourceItem_html_ad621a4b7551a346d649c63c63250b831"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1ResourceItem.html#ad621a4b7551a346d649c63c63250b831">Module.Extension.Task.ResourceItem.OnTriggerEnter</a></div><div class="ttdeci">void OnTriggerEnter(Collider other)</div><div class="ttdef"><b>Definition:</b> <a href="ResourceItem_8cs_source.html#l00010">ResourceItem.cs:10</a></div></div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1ResourceItem_html_adb2e0eba0f0fe5340d669fa669bd6fb7"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1ResourceItem.html#adb2e0eba0f0fe5340d669fa669bd6fb7">Module.Extension.Task.ResourceItem.SetCollideEvent</a></div><div class="ttdeci">void SetCollideEvent(Action onCollide)</div><div class="ttdef"><b>Definition:</b> <a href="ResourceItem_8cs_source.html#l00019">ResourceItem.cs:19</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Extension_1_1Task_html"><div class="ttname"><a href="namespaceModule_1_1Extension_1_1Task.html">Module.Extension.Task</a></div><div class="ttdef"><b>Definition:</b> <a href="BombEffectEvent_8cs_source.html#l00004">BombEffectEvent.cs:5</a></div></div>
 <div class="ttc" id="anamespaceSystem_html"><div class="ttname"><a href="namespaceSystem.html">System</a></div><div class="ttdef"><b>Definition:</b> <a href="GameSequenceHandler_8cs_source.html#l00007">GameSequenceHandler.cs:8</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

@@ -1,0 +1,980 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: Module.UI.Result.ResultManager クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceModule.html">Module</a></li><li class="navelem"><a class="el" href="namespaceModule_1_1UI.html">UI</a></li><li class="navelem"><a class="el" href="namespaceModule_1_1UI_1_1Result.html">Result</a></li><li class="navelem"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html">ResultManager</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#events">イベント</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classModule_1_1UI_1_1Result_1_1ResultManager-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">Module.UI.Result.ResultManager クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>リザルト画面のセレクター  
+ <a href="classModule_1_1UI_1_1Result_1_1ResultManager.html#details">[詳解]</a></p>
+<div class="dynheader">
+Module.UI.Result.ResultManager の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1Result_1_1ResultManager__inherit__graph.png" border="0" usemap="#aModule_8UI_8Result_8ResultManager_inherit__map" alt="Inheritance graph"/></div>
+<map name="aModule_8UI_8Result_8ResultManager_inherit__map" id="aModule_8UI_8Result_8ResultManager_inherit__map">
+<area shape="rect" title="リザルト画面のセレクター" alt="" coords="5,315,240,641"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html" title=" " alt="" coords="62,131,183,267"/>
+<area shape="rect" title=" " alt="" coords="45,5,200,83"/>
+</map>
+</div>
+<div class="dynheader">
+Module.UI.Result.ResultManager 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1Result_1_1ResultManager__coll__graph.png" border="0" usemap="#aModule_8UI_8Result_8ResultManager_coll__map" alt="Collaboration graph"/></div>
+<map name="aModule_8UI_8Result_8ResultManager_coll__map" id="aModule_8UI_8Result_8ResultManager_coll__map">
+<area shape="rect" title="リザルト画面のセレクター" alt="" coords="261,433,495,628"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html" title=" " alt="" coords="5,154,127,290"/>
+<area shape="rect" title=" " alt="" coords="185,5,339,83"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html" title=" " alt="" coords="151,161,373,283"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html" title=" " alt="" coords="398,147,593,297"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html" title=" " alt="" coords="617,132,846,312"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a89d7e2056d6d669c9a5c1a7185467cbc"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbc">Nav</a> { <a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbca10ac3d04253ef7e1ddc73e6091c0cd55">Next</a>
+, <a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbca6327b4e59f58137083214a1fec358855">Retry</a>
+, <a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbcae0626222614bdee31951d84c64e5e9ff">Select</a>
+ }</td></tr>
+<tr class="separator:a89d7e2056d6d669c9a5c1a7185467cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:adbb6217f8cd8ee53e8b45aa6752ac14d"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#adbb6217f8cd8ee53e8b45aa6752ac14d">Initialized</a> (ContentTransform content, bool isReset)</td></tr>
+<tr class="separator:adbb6217f8cd8ee53e8b45aa6752ac14d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38ddce859162397ee726ffb79999997f"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a38ddce859162397ee726ffb79999997f">Clicked</a> ()</td></tr>
+<tr class="separator:a38ddce859162397ee726ffb79999997f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2000118ba11fedf284d07f1677d2d7a"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ac2000118ba11fedf284d07f1677d2d7a">Select</a> (Vector2 direction)</td></tr>
+<tr class="separator:ac2000118ba11fedf284d07f1677d2d7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a828898e7d723604bf89ba385ff4cd0d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a828898e7d723604bf89ba385ff4cd0d9">SetScore</a> (<a class="el" href="structCore_1_1Model_1_1Scene_1_1GameResult.html">GameResult</a> <a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#aa44fc128e3050f944d4b919193c00723">result</a>, Action onFinished)</td></tr>
+<tr class="separator:a828898e7d723604bf89ba385ff4cd0d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34bd40cd1b4006a81eacf9e76798f444"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a34bd40cd1b4006a81eacf9e76798f444">StartAnimation</a> (Action onFinished)</td></tr>
+<tr class="separator:a34bd40cd1b4006a81eacf9e76798f444"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html">Core.Utility.UI.Navigation.UIManager</a> に属する継承公開メンバ関数</td></tr>
+<tr class="memitem:a82c0d36cd008e231c62b0410f4d2196a inherit pub_methods_classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a82c0d36cd008e231c62b0410f4d2196a">Finished</a> (ContentTransform content, Action onFinished)</td></tr>
+<tr class="separator:a82c0d36cd008e231c62b0410f4d2196a inherit pub_methods_classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb6930c459fc8a9aa8d331dfbc739ba6 inherit pub_methods_classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager"><td class="memItemLeft" align="right" valign="top">AnimationBehaviour&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#abb6930c459fc8a9aa8d331dfbc739ba6">GetContext</a> ()</td></tr>
+<tr class="separator:abb6930c459fc8a9aa8d331dfbc739ba6 inherit pub_methods_classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="events"></a>
+イベント</h2></td></tr>
+<tr class="memitem:a9ead6ed845beb00b3bb545fc92271ec9"><td class="memItemLeft" align="right" valign="top">Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a9ead6ed845beb00b3bb545fc92271ec9">OnNext</a></td></tr>
+<tr class="separator:a9ead6ed845beb00b3bb545fc92271ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ef193f40b879a273bf3e0c45e0faf8f"><td class="memItemLeft" align="right" valign="top">Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a6ef193f40b879a273bf3e0c45e0faf8f">OnRetry</a></td></tr>
+<tr class="separator:a6ef193f40b879a273bf3e0c45e0faf8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32bac09db505968fc8c7d6413a80b42b"><td class="memItemLeft" align="right" valign="top">Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a32bac09db505968fc8c7d6413a80b42b">OnSelect</a></td></tr>
+<tr class="separator:a32bac09db505968fc8c7d6413a80b42b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a707d91021fc7aa88e1ff5bcd18fa40f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a707d91021fc7aa88e1ff5bcd18fa40f3">Start</a> ()</td></tr>
+<tr class="separator:a707d91021fc7aa88e1ff5bcd18fa40f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd5d5ad10ffe4b7b535ba6a0a171c809"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#acd5d5ad10ffe4b7b535ba6a0a171c809">SetState</a> (<a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbc">Nav</a> setNav)</td></tr>
+<tr class="separator:acd5d5ad10ffe4b7b535ba6a0a171c809"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:ab22a497545373427daceb5a8a1ccdb6f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html">CursorController</a>&lt; <a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbc">Nav</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ab22a497545373427daceb5a8a1ccdb6f">cursor</a></td></tr>
+<tr class="separator:ab22a497545373427daceb5a8a1ccdb6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab00ee9f6379743c3516f1bac33cd131e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html">FadeInOutButton</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ab00ee9f6379743c3516f1bac33cd131e">next</a></td></tr>
+<tr class="separator:ab00ee9f6379743c3516f1bac33cd131e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4334ac0b863a1d824b140100139ec09f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html">FadeInOutButton</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a4334ac0b863a1d824b140100139ec09f">retry</a></td></tr>
+<tr class="separator:a4334ac0b863a1d824b140100139ec09f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6cdf5616ab61dacac0dc49069490980"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html">FadeInOutButton</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ae6cdf5616ab61dacac0dc49069490980">select</a></td></tr>
+<tr class="separator:ae6cdf5616ab61dacac0dc49069490980"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb4c16e5f45510e50bf186af8993c43e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html">TextInAnimationObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#afb4c16e5f45510e50bf186af8993c43e">worker</a></td></tr>
+<tr class="separator:afb4c16e5f45510e50bf186af8993c43e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa592901fa392fb0f740fbc9c151bfbc1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html">TextInAnimationObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#aa592901fa392fb0f740fbc9c151bfbc1">hp</a></td></tr>
+<tr class="separator:aa592901fa392fb0f740fbc9c151bfbc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac068dfd6457d30a28ed42a5c6e094019"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html">TextInAnimationObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ac068dfd6457d30a28ed42a5c6e094019">resource</a></td></tr>
+<tr class="separator:ac068dfd6457d30a28ed42a5c6e094019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad36fc6a5e00a42ddc51ddaaa17ceea1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html">TextInAnimationObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ad36fc6a5e00a42ddc51ddaaa17ceea1f">score</a></td></tr>
+<tr class="separator:ad36fc6a5e00a42ddc51ddaaa17ceea1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa44fc128e3050f944d4b919193c00723"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html">TextInAnimationObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#aa44fc128e3050f944d4b919193c00723">result</a></td></tr>
+<tr class="separator:aa44fc128e3050f944d4b919193c00723"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c4b11fc67d3b79a5ce8e21c54e26deb"><td class="memItemLeft" align="right" valign="top">AudioSource&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a0c4b11fc67d3b79a5ce8e21c54e26deb">audioSource</a></td></tr>
+<tr class="separator:a0c4b11fc67d3b79a5ce8e21c54e26deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08cd29e23e56904004eb055921e67293"><td class="memItemLeft" align="right" valign="top">AudioClip&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a08cd29e23e56904004eb055921e67293">gameClear</a></td></tr>
+<tr class="separator:a08cd29e23e56904004eb055921e67293"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3ada68da80d191e886a58f89c0864d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbc">Nav</a>?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ad3ada68da80d191e886a58f89c0864d1">current</a></td></tr>
+<tr class="separator:ad3ada68da80d191e886a58f89c0864d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>リザルト画面のセレクター </p>
+
+<p class="definition"> <a class="el" href="ResultManager_8cs_source.html">ResultManager.cs</a> の <a class="el" href="ResultManager_8cs_source.html#l00015">15</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">列挙型メンバ詳解</h2>
+<a id="a89d7e2056d6d669c9a5c1a7185467cbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89d7e2056d6d669c9a5c1a7185467cbc">&#9670;&nbsp;</a></span>Nav</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbc">Module.UI.Result.ResultManager.Nav</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="a89d7e2056d6d669c9a5c1a7185467cbca10ac3d04253ef7e1ddc73e6091c0cd55"></a>Next&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a89d7e2056d6d669c9a5c1a7185467cbca6327b4e59f58137083214a1fec358855"></a>Retry&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a89d7e2056d6d669c9a5c1a7185467cbcae0626222614bdee31951d84c64e5e9ff"></a>Select&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition"> <a class="el" href="ResultManager_8cs_source.html">ResultManager.cs</a> の <a class="el" href="ResultManager_8cs_source.html#l00017">17</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            Next,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            Retry,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ac2000118ba11fedf284d07f1677d2d7a">Select</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_html_ac2000118ba11fedf284d07f1677d2d7a"><div class="ttname"><a href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ac2000118ba11fedf284d07f1677d2d7a">Module.UI.Result.ResultManager.Select</a></div><div class="ttdeci">override void Select(Vector2 direction)</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00078">ResultManager.cs:78</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a38ddce859162397ee726ffb79999997f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38ddce859162397ee726ffb79999997f">&#9670;&nbsp;</a></span>Clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void Module.UI.Result.ResultManager.Clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a229baea4db34a9b99e3f5d2b7fcd3c3b">Core.Utility.UI.Navigation.UIManager</a>を再実装しています。</p>
+
+<p class="definition"> <a class="el" href="ResultManager_8cs_source.html">ResultManager.cs</a> の <a class="el" href="ResultManager_8cs_source.html#l00059">59</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ad3ada68da80d191e886a58f89c0864d1">current</a>.HasValue) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">switch</span> (<a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ad3ada68da80d191e886a58f89c0864d1">current</a>.Value)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbc">Nav</a>.Next:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ab00ee9f6379743c3516f1bac33cd131e">next</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a6efc8a73fe3f9a7a2cb0b434dbe4f524">OnPlay</a>(() =&gt; <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a9ead6ed845beb00b3bb545fc92271ec9">OnNext</a>?.Invoke());</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbc">Nav</a>.Retry:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a4334ac0b863a1d824b140100139ec09f">retry</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a6efc8a73fe3f9a7a2cb0b434dbe4f524">OnPlay</a>(() =&gt; <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a6ef193f40b879a273bf3e0c45e0faf8f">OnRetry</a>?.Invoke());</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbc">Nav</a>.Select:</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ae6cdf5616ab61dacac0dc49069490980">select</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a6efc8a73fe3f9a7a2cb0b434dbe4f524">OnPlay</a>(() =&gt; <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a32bac09db505968fc8c7d6413a80b42b">OnSelect</a>?.Invoke());</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentOutOfRangeException();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton_html_a6efc8a73fe3f9a7a2cb0b434dbe4f524"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a6efc8a73fe3f9a7a2cb0b434dbe4f524">Core.Utility.UI.Component.FadeInOutButton.OnPlay</a></div><div class="ttdeci">void OnPlay(Action onFinished)</div><div class="ttdef"><b>Definition:</b> <a href="FadeInOutButton_8cs_source.html#l00017">FadeInOutButton.cs:17</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_html_a32bac09db505968fc8c7d6413a80b42b"><div class="ttname"><a href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a32bac09db505968fc8c7d6413a80b42b">Module.UI.Result.ResultManager.OnSelect</a></div><div class="ttdeci">Action OnSelect</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00110">ResultManager.cs:110</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_html_a4334ac0b863a1d824b140100139ec09f"><div class="ttname"><a href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a4334ac0b863a1d824b140100139ec09f">Module.UI.Result.ResultManager.retry</a></div><div class="ttdeci">FadeInOutButton retry</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00026">ResultManager.cs:26</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_html_a6ef193f40b879a273bf3e0c45e0faf8f"><div class="ttname"><a href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a6ef193f40b879a273bf3e0c45e0faf8f">Module.UI.Result.ResultManager.OnRetry</a></div><div class="ttdeci">Action OnRetry</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00108">ResultManager.cs:108</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_html_a89d7e2056d6d669c9a5c1a7185467cbc"><div class="ttname"><a href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbc">Module.UI.Result.ResultManager.Nav</a></div><div class="ttdeci">Nav</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00017">ResultManager.cs:18</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_html_a9ead6ed845beb00b3bb545fc92271ec9"><div class="ttname"><a href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a9ead6ed845beb00b3bb545fc92271ec9">Module.UI.Result.ResultManager.OnNext</a></div><div class="ttdeci">Action OnNext</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00106">ResultManager.cs:106</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_html_ab00ee9f6379743c3516f1bac33cd131e"><div class="ttname"><a href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ab00ee9f6379743c3516f1bac33cd131e">Module.UI.Result.ResultManager.next</a></div><div class="ttdeci">FadeInOutButton next</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00025">ResultManager.cs:25</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_html_ad3ada68da80d191e886a58f89c0864d1"><div class="ttname"><a href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ad3ada68da80d191e886a58f89c0864d1">Module.UI.Result.ResultManager.current</a></div><div class="ttdeci">Nav? current</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00038">ResultManager.cs:38</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_html_ae6cdf5616ab61dacac0dc49069490980"><div class="ttname"><a href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ae6cdf5616ab61dacac0dc49069490980">Module.UI.Result.ResultManager.select</a></div><div class="ttdeci">FadeInOutButton select</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00027">ResultManager.cs:27</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1Result_1_1ResultManager_a38ddce859162397ee726ffb79999997f_cgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1Result_1_1ResultManager_a38ddce859162397ee726ffb79999997f_cgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1Result_1_1ResultManager_a38ddce859162397ee726ffb79999997f_cgraph" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_a38ddce859162397ee726ffb79999997f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,244,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a6efc8a73fe3f9a7a2cb0b434dbe4f524" title=" " alt="" coords="292,5,487,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#aa1574ad676bb9823b1db1b44124c74e8" title=" " alt="" coords="535,5,729,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adbb6217f8cd8ee53e8b45aa6752ac14d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbb6217f8cd8ee53e8b45aa6752ac14d">&#9670;&nbsp;</a></span>Initialized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void Module.UI.Result.ResultManager.Initialized </td>
+          <td>(</td>
+          <td class="paramtype">ContentTransform&#160;</td>
+          <td class="paramname"><em>content</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isReset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a385a3ad44bba7369d02aa90cbe07122b">Core.Utility.UI.Navigation.UIManager</a>を再実装しています。</p>
+
+<p class="definition"> <a class="el" href="ResultManager_8cs_source.html">ResultManager.cs</a> の <a class="el" href="ResultManager_8cs_source.html#l00052">52</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            base.Initialized(content, isReset);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">if</span> (isReset) <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#acd5d5ad10ffe4b7b535ba6a0a171c809">SetState</a>(<a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbc">Nav</a>.Next);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_html_acd5d5ad10ffe4b7b535ba6a0a171c809"><div class="ttname"><a href="classModule_1_1UI_1_1Result_1_1ResultManager.html#acd5d5ad10ffe4b7b535ba6a0a171c809">Module.UI.Result.ResultManager.SetState</a></div><div class="ttdeci">void SetState(Nav setNav)</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00113">ResultManager.cs:113</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1Result_1_1ResultManager_adbb6217f8cd8ee53e8b45aa6752ac14d_cgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1Result_1_1ResultManager_adbb6217f8cd8ee53e8b45aa6752ac14d_cgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1Result_1_1ResultManager_adbb6217f8cd8ee53e8b45aa6752ac14d_cgraph" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_adbb6217f8cd8ee53e8b45aa6752ac14d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,244,47"/>
+<area shape="rect" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#acd5d5ad10ffe4b7b535ba6a0a171c809" title=" " alt="" coords="292,5,531,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#aaa1e5c0a4627bd775feeee2d0ab2baeb" title=" " alt="" coords="579,5,809,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#a4b04b543aed3ca2bf06bd58f384917ee" title=" " alt="" coords="857,5,1096,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac2000118ba11fedf284d07f1677d2d7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2000118ba11fedf284d07f1677d2d7a">&#9670;&nbsp;</a></span>Select()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void Module.UI.Result.ResultManager.Select </td>
+          <td>(</td>
+          <td class="paramtype">Vector2&#160;</td>
+          <td class="paramname"><em>direction</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a361aea255401b1286eaa51bcc6eeaab8">Core.Utility.UI.Navigation.UIManager</a>を再実装しています。</p>
+
+<p class="definition"> <a class="el" href="ResultManager_8cs_source.html">ResultManager.cs</a> の <a class="el" href="ResultManager_8cs_source.html#l00078">78</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ad3ada68da80d191e886a58f89c0864d1">current</a>.HasValue)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#acd5d5ad10ffe4b7b535ba6a0a171c809">SetState</a>(<a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbc">Nav</a>.Next);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbc">Nav</a> nextNav;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordflow">switch</span> (direction.y)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="comment">// 上向きの入力</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordflow">case</span> &gt; 0:</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                    nextNav = <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ad3ada68da80d191e886a58f89c0864d1">current</a>.Value == <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbc">Nav</a>.Next ? <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbc">Nav</a>.Next : <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ad3ada68da80d191e886a58f89c0864d1">current</a>.Value - 1;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="comment">// 下向きの入力</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="keywordflow">case</span> &lt; 0:</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                    nextNav = <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ad3ada68da80d191e886a58f89c0864d1">current</a>.Value == <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbc">Nav</a>.Select ? <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbc">Nav</a>.Select : <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ad3ada68da80d191e886a58f89c0864d1">current</a>.Value + 1;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                    <span class="keywordflow">return</span>; <span class="comment">// Y軸の入力がない場合、何もしない</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#acd5d5ad10ffe4b7b535ba6a0a171c809">SetState</a>(nextNav);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1Result_1_1ResultManager_ac2000118ba11fedf284d07f1677d2d7a_cgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1Result_1_1ResultManager_ac2000118ba11fedf284d07f1677d2d7a_cgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1Result_1_1ResultManager_ac2000118ba11fedf284d07f1677d2d7a_cgraph" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_ac2000118ba11fedf284d07f1677d2d7a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,244,47"/>
+<area shape="rect" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#acd5d5ad10ffe4b7b535ba6a0a171c809" title=" " alt="" coords="292,5,531,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#aaa1e5c0a4627bd775feeee2d0ab2baeb" title=" " alt="" coords="579,5,809,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#a4b04b543aed3ca2bf06bd58f384917ee" title=" " alt="" coords="857,5,1096,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a828898e7d723604bf89ba385ff4cd0d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a828898e7d723604bf89ba385ff4cd0d9">&#9670;&nbsp;</a></span>SetScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.UI.Result.ResultManager.SetScore </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structCore_1_1Model_1_1Scene_1_1GameResult.html">GameResult</a>&#160;</td>
+          <td class="paramname"><em>result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Action&#160;</td>
+          <td class="paramname"><em>onFinished</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultManager_8cs_source.html">ResultManager.cs</a> の <a class="el" href="ResultManager_8cs_source.html#l00119">119</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#afb4c16e5f45510e50bf186af8993c43e">worker</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html#a5e157387c3bd91bc9b840c069b0751a9">SetText</a>(<a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#aa44fc128e3050f944d4b919193c00723">result</a>.WorkerCount.ToString());</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#aa592901fa392fb0f740fbc9c151bfbc1">hp</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html#a5e157387c3bd91bc9b840c069b0751a9">SetText</a>(<a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#aa44fc128e3050f944d4b919193c00723">result</a>.Hp.ToString());</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ac068dfd6457d30a28ed42a5c6e094019">resource</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html#a5e157387c3bd91bc9b840c069b0751a9">SetText</a>(<a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#aa44fc128e3050f944d4b919193c00723">result</a>.Resource.ToString());</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            this.result.SetText(<a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#aa44fc128e3050f944d4b919193c00723">result</a>.GetScore().ToString());</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a34bd40cd1b4006a81eacf9e76798f444">StartAnimation</a>(onFinished);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1TextInAnimationObject_html_a5e157387c3bd91bc9b840c069b0751a9"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html#a5e157387c3bd91bc9b840c069b0751a9">Core.Utility.UI.TextInAnimationObject.SetText</a></div><div class="ttdeci">void SetText(string text)</div><div class="ttdef"><b>Definition:</b> <a href="TextInAnimationObject_8cs_source.html#l00019">TextInAnimationObject.cs:19</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_html_a34bd40cd1b4006a81eacf9e76798f444"><div class="ttname"><a href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a34bd40cd1b4006a81eacf9e76798f444">Module.UI.Result.ResultManager.StartAnimation</a></div><div class="ttdeci">void StartAnimation(Action onFinished)</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00128">ResultManager.cs:128</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_html_aa44fc128e3050f944d4b919193c00723"><div class="ttname"><a href="classModule_1_1UI_1_1Result_1_1ResultManager.html#aa44fc128e3050f944d4b919193c00723">Module.UI.Result.ResultManager.result</a></div><div class="ttdeci">TextInAnimationObject result</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00033">ResultManager.cs:33</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_html_aa592901fa392fb0f740fbc9c151bfbc1"><div class="ttname"><a href="classModule_1_1UI_1_1Result_1_1ResultManager.html#aa592901fa392fb0f740fbc9c151bfbc1">Module.UI.Result.ResultManager.hp</a></div><div class="ttdeci">TextInAnimationObject hp</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00030">ResultManager.cs:30</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_html_ac068dfd6457d30a28ed42a5c6e094019"><div class="ttname"><a href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ac068dfd6457d30a28ed42a5c6e094019">Module.UI.Result.ResultManager.resource</a></div><div class="ttdeci">TextInAnimationObject resource</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00031">ResultManager.cs:31</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_html_afb4c16e5f45510e50bf186af8993c43e"><div class="ttname"><a href="classModule_1_1UI_1_1Result_1_1ResultManager.html#afb4c16e5f45510e50bf186af8993c43e">Module.UI.Result.ResultManager.worker</a></div><div class="ttdeci">TextInAnimationObject worker</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00029">ResultManager.cs:29</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1Result_1_1ResultManager_a828898e7d723604bf89ba385ff4cd0d9_cgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1Result_1_1ResultManager_a828898e7d723604bf89ba385ff4cd0d9_cgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1Result_1_1ResultManager_a828898e7d723604bf89ba385ff4cd0d9_cgraph" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_a828898e7d723604bf89ba385ff4cd0d9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,244,80"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html#a5e157387c3bd91bc9b840c069b0751a9" title=" " alt="" coords="300,5,523,47"/>
+<area shape="rect" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a34bd40cd1b4006a81eacf9e76798f444" title=" " alt="" coords="292,71,531,112"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1Result_1_1ResultManager_a828898e7d723604bf89ba385ff4cd0d9_icgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1Result_1_1ResultManager_a828898e7d723604bf89ba385ff4cd0d9_icgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1Result_1_1ResultManager_a828898e7d723604bf89ba385ff4cd0d9_icgraph" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_a828898e7d723604bf89ba385ff4cd0d9_icgraph">
+<area shape="rect" title=" " alt="" coords="284,5,523,47"/>
+<area shape="rect" href="classGameMain_1_1Router_1_1ResultRouter.html#a24187fe96187b1ecd5cdfccc101178cb" title=" " alt="" coords="5,5,236,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acd5d5ad10ffe4b7b535ba6a0a171c809"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd5d5ad10ffe4b7b535ba6a0a171c809">&#9670;&nbsp;</a></span>SetState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.UI.Result.ResultManager.SetState </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbc">Nav</a>&#160;</td>
+          <td class="paramname"><em>setNav</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultManager_8cs_source.html">ResultManager.cs</a> の <a class="el" href="ResultManager_8cs_source.html#l00113">113</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ad3ada68da80d191e886a58f89c0864d1">current</a> = setNav;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ab22a497545373427daceb5a8a1ccdb6f">cursor</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#aaa1e5c0a4627bd775feeee2d0ab2baeb">SetPoint</a>(setNav);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController_html_aaa1e5c0a4627bd775feeee2d0ab2baeb"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#aaa1e5c0a4627bd775feeee2d0ab2baeb">Core.Utility.UI.Component.Cursor.CursorController.SetPoint</a></div><div class="ttdeci">void SetPoint(T key)</div><div class="ttdef"><b>Definition:</b> <a href="CursorController_8cs_source.html#l00024">CursorController.cs:24</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_html_ab22a497545373427daceb5a8a1ccdb6f"><div class="ttname"><a href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ab22a497545373427daceb5a8a1ccdb6f">Module.UI.Result.ResultManager.cursor</a></div><div class="ttdeci">CursorController&lt; Nav &gt; cursor</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00024">ResultManager.cs:24</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1Result_1_1ResultManager_acd5d5ad10ffe4b7b535ba6a0a171c809_cgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1Result_1_1ResultManager_acd5d5ad10ffe4b7b535ba6a0a171c809_cgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1Result_1_1ResultManager_acd5d5ad10ffe4b7b535ba6a0a171c809_cgraph" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_acd5d5ad10ffe4b7b535ba6a0a171c809_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,244,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#aaa1e5c0a4627bd775feeee2d0ab2baeb" title=" " alt="" coords="292,5,523,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#a4b04b543aed3ca2bf06bd58f384917ee" title=" " alt="" coords="571,5,809,47"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1Result_1_1ResultManager_acd5d5ad10ffe4b7b535ba6a0a171c809_icgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1Result_1_1ResultManager_acd5d5ad10ffe4b7b535ba6a0a171c809_icgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1Result_1_1ResultManager_acd5d5ad10ffe4b7b535ba6a0a171c809_icgraph" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_acd5d5ad10ffe4b7b535ba6a0a171c809_icgraph">
+<area shape="rect" title=" " alt="" coords="292,71,531,112"/>
+<area shape="rect" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#adbb6217f8cd8ee53e8b45aa6752ac14d" title=" " alt="" coords="5,5,244,47"/>
+<area shape="rect" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ac2000118ba11fedf284d07f1677d2d7a" title=" " alt="" coords="5,71,244,112"/>
+<area shape="rect" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a707d91021fc7aa88e1ff5bcd18fa40f3" title=" " alt="" coords="5,136,244,177"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a707d91021fc7aa88e1ff5bcd18fa40f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a707d91021fc7aa88e1ff5bcd18fa40f3">&#9670;&nbsp;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.UI.Result.ResultManager.Start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultManager_8cs_source.html">ResultManager.cs</a> の <a class="el" href="ResultManager_8cs_source.html#l00040">40</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ab22a497545373427daceb5a8a1ccdb6f">cursor</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#a763ab2eb7280acd430567dcf64fb372a">AddPoint</a>(<a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbc">Nav</a>.Next, <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ab00ee9f6379743c3516f1bac33cd131e">next</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a3423e76e3e9a1700a0dcf1beb29818e7">rectTransform</a>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ab22a497545373427daceb5a8a1ccdb6f">cursor</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#a763ab2eb7280acd430567dcf64fb372a">AddPoint</a>(<a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbc">Nav</a>.Retry, <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a4334ac0b863a1d824b140100139ec09f">retry</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a3423e76e3e9a1700a0dcf1beb29818e7">rectTransform</a>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ab22a497545373427daceb5a8a1ccdb6f">cursor</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#a763ab2eb7280acd430567dcf64fb372a">AddPoint</a>(<a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbc">Nav</a>.Select, <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ae6cdf5616ab61dacac0dc49069490980">select</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a3423e76e3e9a1700a0dcf1beb29818e7">rectTransform</a>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ad3ada68da80d191e886a58f89c0864d1">current</a> = <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbc">Nav</a>.Next;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#acd5d5ad10ffe4b7b535ba6a0a171c809">SetState</a>(<a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbc">Nav</a>.Next);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a0c4b11fc67d3b79a5ce8e21c54e26deb">audioSource</a>.PlayOneShot(<a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a08cd29e23e56904004eb055921e67293">gameClear</a>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController_html_a763ab2eb7280acd430567dcf64fb372a"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#a763ab2eb7280acd430567dcf64fb372a">Core.Utility.UI.Component.Cursor.CursorController.AddPoint</a></div><div class="ttdeci">void AddPoint(T key, RectTransform rectT)</div><div class="ttdef"><b>Definition:</b> <a href="CursorController_8cs_source.html#l00019">CursorController.cs:19</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton_html_a3423e76e3e9a1700a0dcf1beb29818e7"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html#a3423e76e3e9a1700a0dcf1beb29818e7">Core.Utility.UI.Component.FadeInOutButton.rectTransform</a></div><div class="ttdeci">RectTransform rectTransform</div><div class="ttdef"><b>Definition:</b> <a href="FadeInOutButton_8cs_source.html#l00009">FadeInOutButton.cs:9</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_html_a08cd29e23e56904004eb055921e67293"><div class="ttname"><a href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a08cd29e23e56904004eb055921e67293">Module.UI.Result.ResultManager.gameClear</a></div><div class="ttdeci">AudioClip gameClear</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00036">ResultManager.cs:36</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_html_a0c4b11fc67d3b79a5ce8e21c54e26deb"><div class="ttname"><a href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a0c4b11fc67d3b79a5ce8e21c54e26deb">Module.UI.Result.ResultManager.audioSource</a></div><div class="ttdeci">AudioSource audioSource</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00035">ResultManager.cs:35</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1Result_1_1ResultManager_a707d91021fc7aa88e1ff5bcd18fa40f3_cgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1Result_1_1ResultManager_a707d91021fc7aa88e1ff5bcd18fa40f3_cgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1Result_1_1ResultManager_a707d91021fc7aa88e1ff5bcd18fa40f3_cgraph" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_a707d91021fc7aa88e1ff5bcd18fa40f3_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,244,80"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#a763ab2eb7280acd430567dcf64fb372a" title=" " alt="" coords="294,5,529,47"/>
+<area shape="rect" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#acd5d5ad10ffe4b7b535ba6a0a171c809" title=" " alt="" coords="292,71,531,112"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#aaa1e5c0a4627bd775feeee2d0ab2baeb" title=" " alt="" coords="579,71,809,112"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html#a4b04b543aed3ca2bf06bd58f384917ee" title=" " alt="" coords="857,71,1096,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a34bd40cd1b4006a81eacf9e76798f444"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34bd40cd1b4006a81eacf9e76798f444">&#9670;&nbsp;</a></span>StartAnimation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.UI.Result.ResultManager.StartAnimation </td>
+          <td>(</td>
+          <td class="paramtype">Action&#160;</td>
+          <td class="paramname"><em>onFinished</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultManager_8cs_source.html">ResultManager.cs</a> の <a class="el" href="ResultManager_8cs_source.html#l00128">128</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#afb4c16e5f45510e50bf186af8993c43e">worker</a>.Animation(<a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#afb4c16e5f45510e50bf186af8993c43e">worker</a>.FadeIn(Easings.Default(0.5f, 0.4f)));</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#aa592901fa392fb0f740fbc9c151bfbc1">hp</a>.Animation(<a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#aa592901fa392fb0f740fbc9c151bfbc1">hp</a>.FadeIn(Easings.Default(0.5f, 1f)));</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ac068dfd6457d30a28ed42a5c6e094019">resource</a>.Animation(<a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ac068dfd6457d30a28ed42a5c6e094019">resource</a>.FadeIn(Easings.Default(0.5f, 1.6f)));</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ad36fc6a5e00a42ddc51ddaaa17ceea1f">score</a>.Animation(<a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ad36fc6a5e00a42ddc51ddaaa17ceea1f">score</a>.FadeIn(Easings.Default(0.5f, 2.2f)));</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#aa44fc128e3050f944d4b919193c00723">result</a>.Animation(<a class="code" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ac068dfd6457d30a28ed42a5c6e094019">resource</a>.FadeIn(Easings.Default(0.5f, 2.2f)),</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                <span class="keyword">new</span> AnimationListener</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                    OnFinished = onFinished</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            );</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_html_ad36fc6a5e00a42ddc51ddaaa17ceea1f"><div class="ttname"><a href="classModule_1_1UI_1_1Result_1_1ResultManager.html#ad36fc6a5e00a42ddc51ddaaa17ceea1f">Module.UI.Result.ResultManager.score</a></div><div class="ttdeci">TextInAnimationObject score</div><div class="ttdef"><b>Definition:</b> <a href="ResultManager_8cs_source.html#l00032">ResultManager.cs:32</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1Result_1_1ResultManager_a34bd40cd1b4006a81eacf9e76798f444_icgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1Result_1_1ResultManager_a34bd40cd1b4006a81eacf9e76798f444_icgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1Result_1_1ResultManager_a34bd40cd1b4006a81eacf9e76798f444_icgraph" id="aclassModule_1_1UI_1_1Result_1_1ResultManager_a34bd40cd1b4006a81eacf9e76798f444_icgraph">
+<area shape="rect" title=" " alt="" coords="571,5,809,47"/>
+<area shape="rect" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a828898e7d723604bf89ba385ff4cd0d9" title=" " alt="" coords="284,5,523,47"/>
+<area shape="rect" href="classGameMain_1_1Router_1_1ResultRouter.html#a24187fe96187b1ecd5cdfccc101178cb" title=" " alt="" coords="5,5,236,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a0c4b11fc67d3b79a5ce8e21c54e26deb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c4b11fc67d3b79a5ce8e21c54e26deb">&#9670;&nbsp;</a></span>audioSource</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AudioSource Module.UI.Result.ResultManager.audioSource</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultManager_8cs_source.html">ResultManager.cs</a> の <a class="el" href="ResultManager_8cs_source.html#l00035">35</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad3ada68da80d191e886a58f89c0864d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3ada68da80d191e886a58f89c0864d1">&#9670;&nbsp;</a></span>current</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbc">Nav</a>? Module.UI.Result.ResultManager.current</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultManager_8cs_source.html">ResultManager.cs</a> の <a class="el" href="ResultManager_8cs_source.html#l00038">38</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab22a497545373427daceb5a8a1ccdb6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab22a497545373427daceb5a8a1ccdb6f">&#9670;&nbsp;</a></span>cursor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html">CursorController</a>&lt;<a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html#a89d7e2056d6d669c9a5c1a7185467cbc">Nav</a>&gt; Module.UI.Result.ResultManager.cursor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultManager_8cs_source.html">ResultManager.cs</a> の <a class="el" href="ResultManager_8cs_source.html#l00024">24</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a08cd29e23e56904004eb055921e67293"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08cd29e23e56904004eb055921e67293">&#9670;&nbsp;</a></span>gameClear</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AudioClip Module.UI.Result.ResultManager.gameClear</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultManager_8cs_source.html">ResultManager.cs</a> の <a class="el" href="ResultManager_8cs_source.html#l00036">36</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa592901fa392fb0f740fbc9c151bfbc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa592901fa392fb0f740fbc9c151bfbc1">&#9670;&nbsp;</a></span>hp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html">TextInAnimationObject</a> Module.UI.Result.ResultManager.hp</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultManager_8cs_source.html">ResultManager.cs</a> の <a class="el" href="ResultManager_8cs_source.html#l00030">30</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab00ee9f6379743c3516f1bac33cd131e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab00ee9f6379743c3516f1bac33cd131e">&#9670;&nbsp;</a></span>next</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html">FadeInOutButton</a> Module.UI.Result.ResultManager.next</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultManager_8cs_source.html">ResultManager.cs</a> の <a class="el" href="ResultManager_8cs_source.html#l00025">25</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac068dfd6457d30a28ed42a5c6e094019"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac068dfd6457d30a28ed42a5c6e094019">&#9670;&nbsp;</a></span>resource</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html">TextInAnimationObject</a> Module.UI.Result.ResultManager.resource</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultManager_8cs_source.html">ResultManager.cs</a> の <a class="el" href="ResultManager_8cs_source.html#l00031">31</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa44fc128e3050f944d4b919193c00723"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa44fc128e3050f944d4b919193c00723">&#9670;&nbsp;</a></span>result</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html">TextInAnimationObject</a> Module.UI.Result.ResultManager.result</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultManager_8cs_source.html">ResultManager.cs</a> の <a class="el" href="ResultManager_8cs_source.html#l00033">33</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4334ac0b863a1d824b140100139ec09f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4334ac0b863a1d824b140100139ec09f">&#9670;&nbsp;</a></span>retry</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html">FadeInOutButton</a> Module.UI.Result.ResultManager.retry</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultManager_8cs_source.html">ResultManager.cs</a> の <a class="el" href="ResultManager_8cs_source.html#l00026">26</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad36fc6a5e00a42ddc51ddaaa17ceea1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad36fc6a5e00a42ddc51ddaaa17ceea1f">&#9670;&nbsp;</a></span>score</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html">TextInAnimationObject</a> Module.UI.Result.ResultManager.score</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultManager_8cs_source.html">ResultManager.cs</a> の <a class="el" href="ResultManager_8cs_source.html#l00032">32</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae6cdf5616ab61dacac0dc49069490980"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6cdf5616ab61dacac0dc49069490980">&#9670;&nbsp;</a></span>select</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html">FadeInOutButton</a> Module.UI.Result.ResultManager.select</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultManager_8cs_source.html">ResultManager.cs</a> の <a class="el" href="ResultManager_8cs_source.html#l00027">27</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="afb4c16e5f45510e50bf186af8993c43e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb4c16e5f45510e50bf186af8993c43e">&#9670;&nbsp;</a></span>worker</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html">TextInAnimationObject</a> Module.UI.Result.ResultManager.worker</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultManager_8cs_source.html">ResultManager.cs</a> の <a class="el" href="ResultManager_8cs_source.html#l00029">29</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">イベント詳解</h2>
+<a id="a9ead6ed845beb00b3bb545fc92271ec9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ead6ed845beb00b3bb545fc92271ec9">&#9670;&nbsp;</a></span>OnNext</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Action Module.UI.Result.ResultManager.OnNext</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultManager_8cs_source.html">ResultManager.cs</a> の <a class="el" href="ResultManager_8cs_source.html#l00106">106</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6ef193f40b879a273bf3e0c45e0faf8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ef193f40b879a273bf3e0c45e0faf8f">&#9670;&nbsp;</a></span>OnRetry</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Action Module.UI.Result.ResultManager.OnRetry</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultManager_8cs_source.html">ResultManager.cs</a> の <a class="el" href="ResultManager_8cs_source.html#l00108">108</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a32bac09db505968fc8c7d6413a80b42b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32bac09db505968fc8c7d6413a80b42b">&#9670;&nbsp;</a></span>OnSelect</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Action Module.UI.Result.ResultManager.OnSelect</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResultManager_8cs_source.html">ResultManager.cs</a> の <a class="el" href="ResultManager_8cs_source.html#l00110">110</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>src/Assets/Scripts/Module/UI/Result/<a class="el" href="ResultManager_8cs_source.html">ResultManager.cs</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

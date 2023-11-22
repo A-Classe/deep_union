@@ -81,7 +81,7 @@ GameMain.Presenter.Resource.ResourcePresenter の継承関係図</div>
 <div class="dyncontent">
 <div class="center"><img src="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter__inherit__graph.png" border="0" usemap="#aGameMain_8Presenter_8Resource_8ResourcePresenter_inherit__map" alt="Inheritance graph"/></div>
 <map name="aGameMain_8Presenter_8Resource_8ResourcePresenter_inherit__map" id="aGameMain_8Presenter_8Resource_8ResourcePresenter_inherit__map">
-<area shape="rect" title="タスクとリソース管理クラスのプレゼンタークラス" alt="" coords="5,131,232,252"/>
+<area shape="rect" title="タスクとリソース管理クラスのプレゼンタークラス" alt="" coords="5,131,232,267"/>
 <area shape="rect" title=" " alt="" coords="67,5,170,83"/>
 </map>
 </div>
@@ -90,45 +90,76 @@ GameMain.Presenter.Resource.ResourcePresenter 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter__coll__graph.png" border="0" usemap="#aGameMain_8Presenter_8Resource_8ResourcePresenter_coll__map" alt="Collaboration graph"/></div>
 <map name="aGameMain_8Presenter_8Resource_8ResourcePresenter_coll__map" id="aGameMain_8Presenter_8Resource_8ResourcePresenter_coll__map">
-<area shape="rect" title="タスクとリソース管理クラスのプレゼンタークラス" alt="" coords="134,1416,361,1523"/>
-<area shape="rect" title=" " alt="" coords="5,1217,108,1295"/>
-<area shape="rect" href="classModule_1_1Task_1_1ResourceContainer.html" title="リソースを管理するクラス" alt="" coords="132,1195,363,1317"/>
-<area shape="rect" href="classGameMain_1_1Presenter_1_1GameParam.html" title=" " alt="" coords="362,777,605,986"/>
-<area shape="rect" href="classModule_1_1Task_1_1CollectableTask.html" title="資源を一時的に収集するクラス" alt="" coords="483,1159,692,1353"/>
-<area shape="rect" title=" " alt="" coords="419,365,548,443"/>
-<area shape="rect" title=" " alt="" coords="631,27,755,105"/>
-<area shape="rect" href="classModule_1_1Task_1_1BaseTask.html" title="全てのタスクのベースクラス" alt="" coords="191,204,373,604"/>
-<area shape="rect" href="classModule_1_1Player_1_1Controller_1_1PlayerController.html" title="プレイヤーの操作に関するクラス" alt="" coords="1417,292,1603,516"/>
-<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html" title="アサイン範囲を設定するクラス" alt="" coords="730,667,965,1096"/>
-<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html" title="楕円判定をビジュアライズするクラス" alt="" coords="730,343,965,465"/>
-<area shape="rect" href="interfaceModule_1_1Task_1_1ITaskSystem.html" title="タスクにゲームループを適用するインターフェース" alt="" coords="196,20,368,112"/>
-<area shape="rect" title=" " alt="" coords="1409,13,1611,119"/>
-<area shape="rect" href="classCore_1_1Utility_1_1AutoInstanceList.html" title=" " alt="" coords="989,285,1261,523"/>
-<area shape="rect" href="structModule_1_1Assignment_1_1Utility_1_1EllipseData.html" title=" " alt="" coords="983,5,1181,127"/>
+<area shape="rect" title="タスクとリソース管理クラスのプレゼンタークラス" alt="" coords="218,1957,445,2064"/>
+<area shape="rect" title=" " alt="" coords="96,1751,199,1829"/>
+<area shape="rect" href="classModule_1_1Task_1_1ResourceContainer.html" title="リソースを管理するクラス" alt="" coords="132,1525,363,1661"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1GameParam.html" title=" " alt="" coords="233,653,476,877"/>
+<area shape="rect" href="classModule_1_1Extension_1_1Task_1_1CollectableTask.html" title="資源を一時的に収集するクラス" alt="" coords="401,1693,678,1887"/>
+<area shape="rect" href="classModule_1_1Player_1_1Controller_1_1PlayerController.html" title="プレイヤーの操作に関するクラス" alt="" coords="559,1189,744,1384"/>
+<area shape="rect" title=" " alt="" coords="290,293,419,371"/>
+<area shape="rect" title=" " alt="" coords="988,293,1112,371"/>
+<area shape="rect" href="classModule_1_1Task_1_1BaseTask.html" title="全てのタスクのベースクラス" alt="" coords="23,536,206,995"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1AssignableArea.html" title="アサイン範囲を設定するクラス" alt="" coords="1106,1072,1341,1501"/>
+<area shape="rect" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html" title="楕円判定をビジュアライズするクラス" alt="" coords="1434,705,1669,826"/>
+<area shape="rect" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html" title=" " alt="" coords="2537,1685,2806,1895"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SimpleUnderBarController.html" title=" " alt="" coords="2254,675,2449,855"/>
+<area shape="rect" href="interfaceModule_1_1Task_1_1ITaskSystem.html" title="タスクにゲームループを適用するインターフェース" alt="" coords="28,286,200,378"/>
+<area shape="rect" title=" " alt="" coords="551,712,752,819"/>
+<area shape="rect" href="classModule_1_1Player_1_1Controller_1_1MovementSetting.html" title=" " alt="" coords="776,712,962,819"/>
+<area shape="rect" href="classCore_1_1Utility_1_1AutoInstanceList.html" title=" " alt="" coords="1088,646,1360,885"/>
+<area shape="rect" href="structModule_1_1Assignment_1_1Utility_1_1EllipseData.html" title=" " alt="" coords="1492,271,1689,393"/>
+<area shape="rect" href="classCore_1_1Scenes_1_1SceneChanger.html" title="シーン間を遷移する時に必ず使う パラメーターもここで管理" alt="" coords="2019,1182,2218,1391"/>
+<area shape="rect" href="structCore_1_1Model_1_1Scene_1_1GameResult.html" title=" " alt="" coords="2007,705,2230,826"/>
+<area shape="rect" href="classCore_1_1User_1_1StageData.html" title=" " alt="" coords="1825,727,1982,804"/>
+<area shape="rect" href="interfaceCore_1_1User_1_1IDefaultable.html" title=" " alt="" coords="1777,293,1977,371"/>
+<area shape="rect" href="classCore_1_1User_1_1Dict.html" title=" " alt="" coords="2001,271,2172,393"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html" title=" " alt="" coords="3129,1101,3329,1472"/>
+<area shape="rect" href="classModule_1_1UI_1_1InGame_1_1Pause_1_1PauseManager.html" title=" " alt="" coords="2729,690,2956,841"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html" title=" " alt="" coords="3434,264,3555,400"/>
+<area shape="rect" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html" title=" " alt="" coords="3492,1175,3707,1399"/>
+<area shape="rect" title=" " alt="" coords="4138,668,4365,863"/>
+<area shape="rect" href="classModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html" title=" " alt="" coords="3637,683,3864,848"/>
+<area shape="rect" title=" " alt="" coords="3888,690,4114,841"/>
+<area shape="rect" href="classModule_1_1UI_1_1Title_1_1Option_1_1Option4_1_1Option4Manager.html" title=" " alt="" coords="3336,705,3562,826"/>
+<area shape="rect" href="classModule_1_1UI_1_1InGame_1_1InGame_1_1InGameManager.html" title=" " alt="" coords="2473,580,2705,951"/>
+<area shape="rect" href="classModule_1_1UI_1_1InGame_1_1GameOver_1_1GameOverManager.html" title="ゲーム中のGameOverUI" alt="" coords="2884,1197,3104,1377"/>
+<area shape="rect" title=" " alt="" coords="3600,57,3754,134"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html" title=" " alt="" coords="3580,257,3774,407"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1ToggleController.html" title=" " alt="" coords="4289,249,4484,415"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SliderController.html" title=" " alt="" coords="3798,242,3993,422"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1AnimateObject.html" title=" " alt="" coords="2482,293,2696,371"/>
+<area shape="rect" href="classModule_1_1UI_1_1InGame_1_1Pause_1_1PauseCursor.html" title=" " alt="" coords="2729,286,2956,378"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html" title=" " alt="" coords="2722,5,2963,185"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html" title="データ保存の中継クラス 絶対にこれを介して保存する" alt="" coords="4494,602,4684,929"/>
+<area shape="rect" href="classCore_1_1User_1_1DataManager.html" title=" " alt="" coords="4508,235,4686,429"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html" title=" " alt="" coords="4036,242,4265,422"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html" title=" " alt="" coords="3031,580,3222,951"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:a244525432dda84ed7fc7617c1e7c5957"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a244525432dda84ed7fc7617c1e7c5957">ResourcePresenter</a> (<a class="el" href="classModule_1_1Task_1_1ResourceContainer.html">ResourceContainer</a> <a class="el" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a8e6e06136f0759d79d0deebdd4f640bb">resourceContainer</a>)</td></tr>
-<tr class="separator:a244525432dda84ed7fc7617c1e7c5957"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebc89f74ee15872c2785a71084a82554"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#aebc89f74ee15872c2785a71084a82554">ResourcePresenter</a> (<a class="el" href="classModule_1_1Task_1_1ResourceContainer.html">ResourceContainer</a> <a class="el" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a8e6e06136f0759d79d0deebdd4f640bb">resourceContainer</a>, <a class="el" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html">InGameUIManager</a> <a class="el" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a43dc41e7ae5dbfb5a797d3761fd6ddb5">uiManager</a>)</td></tr>
+<tr class="separator:aebc89f74ee15872c2785a71084a82554"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4685bda8b42b7e9304433b7352608255"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a4685bda8b42b7e9304433b7352608255">Initialize</a> ()</td></tr>
 <tr class="separator:a4685bda8b42b7e9304433b7352608255"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 非公開変数類</h2></td></tr>
+<tr class="memitem:a62c0881fde07324caa2c5fcd5d7aeef8"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="classModule_1_1Extension_1_1Task_1_1CollectableTask.html">CollectableTask</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a62c0881fde07324caa2c5fcd5d7aeef8">collectableTasks</a></td></tr>
+<tr class="separator:a62c0881fde07324caa2c5fcd5d7aeef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e6e06136f0759d79d0deebdd4f640bb"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="classModule_1_1Task_1_1ResourceContainer.html">ResourceContainer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a8e6e06136f0759d79d0deebdd4f640bb">resourceContainer</a></td></tr>
 <tr class="separator:a8e6e06136f0759d79d0deebdd4f640bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62c0881fde07324caa2c5fcd5d7aeef8"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="classModule_1_1Task_1_1CollectableTask.html">CollectableTask</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a62c0881fde07324caa2c5fcd5d7aeef8">collectableTasks</a></td></tr>
-<tr class="separator:a62c0881fde07324caa2c5fcd5d7aeef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43dc41e7ae5dbfb5a797d3761fd6ddb5"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html">InGameUIManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a43dc41e7ae5dbfb5a797d3761fd6ddb5">uiManager</a></td></tr>
+<tr class="separator:a43dc41e7ae5dbfb5a797d3761fd6ddb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>タスクとリソース管理クラスのプレゼンタークラス </p>
 
-<p class="definition"> <a class="el" href="ResourcePresenter_8cs_source.html">ResourcePresenter.cs</a> の <a class="el" href="ResourcePresenter_8cs_source.html#l00011">11</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="ResourcePresenter_8cs_source.html">ResourcePresenter.cs</a> の <a class="el" href="ResourcePresenter_8cs_source.html#l00012">12</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
-<a id="a244525432dda84ed7fc7617c1e7c5957"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a244525432dda84ed7fc7617c1e7c5957">&#9670;&nbsp;</a></span>ResourcePresenter()</h2>
+<a id="aebc89f74ee15872c2785a71084a82554"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebc89f74ee15872c2785a71084a82554">&#9670;&nbsp;</a></span>ResourcePresenter()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -140,8 +171,18 @@ GameMain.Presenter.Resource.ResourcePresenter 連携図</div>
           <td class="memname">GameMain.Presenter.Resource.ResourcePresenter.ResourcePresenter </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classModule_1_1Task_1_1ResourceContainer.html">ResourceContainer</a>&#160;</td>
-          <td class="paramname"><em>resourceContainer</em></td><td>)</td>
+          <td class="paramname"><em>resourceContainer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html">InGameUIManager</a>&#160;</td>
+          <td class="paramname"><em>uiManager</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -151,14 +192,16 @@ GameMain.Presenter.Resource.ResourcePresenter 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="ResourcePresenter_8cs_source.html">ResourcePresenter.cs</a> の <a class="el" href="ResourcePresenter_8cs_source.html#l00017">17</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            this.resourceContainer = <a class="code" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a8e6e06136f0759d79d0deebdd4f640bb">resourceContainer</a>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <a class="code" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a62c0881fde07324caa2c5fcd5d7aeef8">collectableTasks</a> = <a class="code" href="classModule_1_1Task_1_1TaskUtil.html">TaskUtil</a>.FindSceneTasks&lt;<a class="code" href="classModule_1_1Task_1_1CollectableTask.html">CollectableTask</a>&gt;();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
+<p class="definition"> <a class="el" href="ResourcePresenter_8cs_source.html">ResourcePresenter.cs</a> の <a class="el" href="ResourcePresenter_8cs_source.html#l00019">19</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            this.resourceContainer = <a class="code" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a8e6e06136f0759d79d0deebdd4f640bb">resourceContainer</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            this.uiManager = <a class="code" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a43dc41e7ae5dbfb5a797d3761fd6ddb5">uiManager</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a62c0881fde07324caa2c5fcd5d7aeef8">collectableTasks</a> = <a class="code" href="classModule_1_1Task_1_1TaskUtil.html">TaskUtil</a>.FindSceneTasks&lt;<a class="code" href="classModule_1_1Extension_1_1Task_1_1CollectableTask.html">CollectableTask</a>&gt;();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter_html_a43dc41e7ae5dbfb5a797d3761fd6ddb5"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a43dc41e7ae5dbfb5a797d3761fd6ddb5">GameMain.Presenter.Resource.ResourcePresenter.uiManager</a></div><div class="ttdeci">readonly InGameUIManager uiManager</div><div class="ttdef"><b>Definition:</b> <a href="ResourcePresenter_8cs_source.html#l00016">ResourcePresenter.cs:16</a></div></div>
 <div class="ttc" id="aclassGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter_html_a62c0881fde07324caa2c5fcd5d7aeef8"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a62c0881fde07324caa2c5fcd5d7aeef8">GameMain.Presenter.Resource.ResourcePresenter.collectableTasks</a></div><div class="ttdeci">readonly CollectableTask[] collectableTasks</div><div class="ttdef"><b>Definition:</b> <a href="ResourcePresenter_8cs_source.html#l00014">ResourcePresenter.cs:14</a></div></div>
-<div class="ttc" id="aclassGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter_html_a8e6e06136f0759d79d0deebdd4f640bb"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a8e6e06136f0759d79d0deebdd4f640bb">GameMain.Presenter.Resource.ResourcePresenter.resourceContainer</a></div><div class="ttdeci">readonly ResourceContainer resourceContainer</div><div class="ttdef"><b>Definition:</b> <a href="ResourcePresenter_8cs_source.html#l00013">ResourcePresenter.cs:13</a></div></div>
-<div class="ttc" id="aclassModule_1_1Task_1_1CollectableTask_html"><div class="ttname"><a href="classModule_1_1Task_1_1CollectableTask.html">Module.Task.CollectableTask</a></div><div class="ttdoc">資源を一時的に収集するクラス</div><div class="ttdef"><b>Definition:</b> <a href="CollectableTask_8cs_source.html#l00018">CollectableTask.cs:19</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter_html_a8e6e06136f0759d79d0deebdd4f640bb"><div class="ttname"><a href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a8e6e06136f0759d79d0deebdd4f640bb">GameMain.Presenter.Resource.ResourcePresenter.resourceContainer</a></div><div class="ttdeci">readonly ResourceContainer resourceContainer</div><div class="ttdef"><b>Definition:</b> <a href="ResourcePresenter_8cs_source.html#l00015">ResourcePresenter.cs:15</a></div></div>
+<div class="ttc" id="aclassModule_1_1Extension_1_1Task_1_1CollectableTask_html"><div class="ttname"><a href="classModule_1_1Extension_1_1Task_1_1CollectableTask.html">Module.Extension.Task.CollectableTask</a></div><div class="ttdoc">資源を一時的に収集するクラス</div><div class="ttdef"><b>Definition:</b> <a href="CollectableTask_8cs_source.html#l00017">CollectableTask.cs:18</a></div></div>
 <div class="ttc" id="aclassModule_1_1Task_1_1TaskUtil_html"><div class="ttname"><a href="classModule_1_1Task_1_1TaskUtil.html">Module.Task.TaskUtil</a></div><div class="ttdef"><b>Definition:</b> <a href="TaskUtil_8cs_source.html#l00006">TaskUtil.cs:7</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -187,25 +230,29 @@ GameMain.Presenter.Resource.ResourcePresenter 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="ResourcePresenter_8cs_source.html">ResourcePresenter.cs</a> の <a class="el" href="ResourcePresenter_8cs_source.html#l00023">23</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordflow">foreach</span> (var collectableTask <span class="keywordflow">in</span> <a class="code" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a62c0881fde07324caa2c5fcd5d7aeef8">collectableTasks</a>)</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                collectableTask.OnCollected += count =&gt;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                    <a class="code" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a8e6e06136f0759d79d0deebdd4f640bb">resourceContainer</a>.<a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#abaa4c97750ccb88f1fef631c9f5045d4">Add</a>(count);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                    DebugEx.Log($<span class="stringliteral">&quot;ResourceCount: {resourceContainer.ResourceCount}&quot;</span>);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                };</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
-<div class="ttc" id="aclassModule_1_1Task_1_1ResourceContainer_html_abaa4c97750ccb88f1fef631c9f5045d4"><div class="ttname"><a href="classModule_1_1Task_1_1ResourceContainer.html#abaa4c97750ccb88f1fef631c9f5045d4">Module.Task.ResourceContainer.Add</a></div><div class="ttdeci">void Add(int count)</div><div class="ttdef"><b>Definition:</b> <a href="ResourceContainer_8cs_source.html#l00037">ResourceContainer.cs:37</a></div></div>
+<p class="definition"> <a class="el" href="ResourcePresenter_8cs_source.html">ResourcePresenter.cs</a> の <a class="el" href="ResourcePresenter_8cs_source.html#l00029">29</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordflow">foreach</span> (var collectableTask <span class="keywordflow">in</span> <a class="code" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a62c0881fde07324caa2c5fcd5d7aeef8">collectableTasks</a>)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                collectableTask.OnCollected += count =&gt; { <a class="code" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a8e6e06136f0759d79d0deebdd4f640bb">resourceContainer</a>.<a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#abaa4c97750ccb88f1fef631c9f5045d4">Add</a>(count); };</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            var initialResourceCount =</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <a class="code" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a8e6e06136f0759d79d0deebdd4f640bb">resourceContainer</a>.<a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#aedfad7c16942a65ada8cab0823e8f042">MaxResourceCount</a> &gt; 0 ? (uint)<a class="code" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a8e6e06136f0759d79d0deebdd4f640bb">resourceContainer</a>.<a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#aedfad7c16942a65ada8cab0823e8f042">MaxResourceCount</a> : 0u;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <a class="code" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a43dc41e7ae5dbfb5a797d3761fd6ddb5">uiManager</a>.<a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#ade331c13c20fa41517fd3217bc60384f">SetResourceCount</a>(0u, initialResourceCount);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <a class="code" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a8e6e06136f0759d79d0deebdd4f640bb">resourceContainer</a>.<a class="code" href="classModule_1_1Task_1_1ResourceContainer.html#a19e8762b757042f09945873f79984f59">OnResourceChanged</a> += (_, current) =&gt; { <a class="code" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a43dc41e7ae5dbfb5a797d3761fd6ddb5">uiManager</a>.<a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#ade331c13c20fa41517fd3217bc60384f">SetResourceCount</a>((uint)current); };</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1Task_1_1ResourceContainer_html_a19e8762b757042f09945873f79984f59"><div class="ttname"><a href="classModule_1_1Task_1_1ResourceContainer.html#a19e8762b757042f09945873f79984f59">Module.Task.ResourceContainer.OnResourceChanged</a></div><div class="ttdeci">Action&lt; int, int &gt; OnResourceChanged</div><div class="ttdoc">リソース数が変化した時に送信されるイベント。(前のリソース数, 現在のリソース数)</div><div class="ttdef"><b>Definition:</b> <a href="ResourceContainer_8cs_source.html#l00040">ResourceContainer.cs:40</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1ResourceContainer_html_abaa4c97750ccb88f1fef631c9f5045d4"><div class="ttname"><a href="classModule_1_1Task_1_1ResourceContainer.html#abaa4c97750ccb88f1fef631c9f5045d4">Module.Task.ResourceContainer.Add</a></div><div class="ttdeci">void Add(int count)</div><div class="ttdef"><b>Definition:</b> <a href="ResourceContainer_8cs_source.html#l00042">ResourceContainer.cs:42</a></div></div>
+<div class="ttc" id="aclassModule_1_1Task_1_1ResourceContainer_html_aedfad7c16942a65ada8cab0823e8f042"><div class="ttname"><a href="classModule_1_1Task_1_1ResourceContainer.html#aedfad7c16942a65ada8cab0823e8f042">Module.Task.ResourceContainer.MaxResourceCount</a></div><div class="ttdeci">int MaxResourceCount</div><div class="ttdoc">リソースの最大数</div><div class="ttdef"><b>Definition:</b> <a href="ResourceContainer_8cs_source.html#l00035">ResourceContainer.cs:35</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_html_ade331c13c20fa41517fd3217bc60384f"><div class="ttname"><a href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#ade331c13c20fa41517fd3217bc60384f">Module.UI.InGame.InGameUIManager.SetResourceCount</a></div><div class="ttdeci">void SetResourceCount(uint current, uint? max=null)</div><div class="ttdef"><b>Definition:</b> <a href="InGameUIManager_8cs_source.html#l00133">InGameUIManager.cs:133</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter_a4685bda8b42b7e9304433b7352608255_cgraph.png" border="0" usemap="#aclassGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter_a4685bda8b42b7e9304433b7352608255_cgraph" alt=""/></div>
 <map name="aclassGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter_a4685bda8b42b7e9304433b7352608255_cgraph" id="aclassGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter_a4685bda8b42b7e9304433b7352608255_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,232,47"/>
-<area shape="rect" href="classModule_1_1Task_1_1ResourceContainer.html#abaa4c97750ccb88f1fef631c9f5045d4" title=" " alt="" coords="280,13,539,39"/>
+<area shape="rect" title=" " alt="" coords="5,27,232,69"/>
+<area shape="rect" href="classModule_1_1Task_1_1ResourceContainer.html#abaa4c97750ccb88f1fef631c9f5045d4" title=" " alt="" coords="287,5,545,32"/>
+<area shape="rect" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#ade331c13c20fa41517fd3217bc60384f" title=" " alt="" coords="280,57,552,98"/>
+<area shape="rect" href="classModule_1_1UI_1_1InGame_1_1InGame_1_1InGameManager.html#ac2ea3361ea4bc94c70b88d681621604b" title=" " alt="" coords="600,57,815,98"/>
 </map>
 </div>
 
@@ -222,7 +269,7 @@ GameMain.Presenter.Resource.ResourcePresenter 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">readonly <a class="el" href="classModule_1_1Task_1_1CollectableTask.html">CollectableTask</a> [] GameMain.Presenter.Resource.ResourcePresenter.collectableTasks</td>
+          <td class="memname">readonly <a class="el" href="classModule_1_1Extension_1_1Task_1_1CollectableTask.html">CollectableTask</a> [] GameMain.Presenter.Resource.ResourcePresenter.collectableTasks</td>
         </tr>
       </table>
   </td>
@@ -256,7 +303,31 @@ GameMain.Presenter.Resource.ResourcePresenter 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="ResourcePresenter_8cs_source.html">ResourcePresenter.cs</a> の <a class="el" href="ResourcePresenter_8cs_source.html#l00013">13</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="ResourcePresenter_8cs_source.html">ResourcePresenter.cs</a> の <a class="el" href="ResourcePresenter_8cs_source.html#l00015">15</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a43dc41e7ae5dbfb5a797d3761fd6ddb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43dc41e7ae5dbfb5a797d3761fd6ddb5">&#9670;&nbsp;</a></span>uiManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly <a class="el" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html">InGameUIManager</a> GameMain.Presenter.Resource.ResourcePresenter.uiManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ResourcePresenter_8cs_source.html">ResourcePresenter.cs</a> の <a class="el" href="ResourcePresenter_8cs_source.html#l00016">16</a> 行目に定義があります。</p>
 
 </div>
 </div>

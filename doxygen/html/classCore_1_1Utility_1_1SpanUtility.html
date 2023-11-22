@@ -78,7 +78,7 @@ Core.Utility.SpanUtility 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classCore_1_1Utility_1_1SpanUtility__coll__graph.png" border="0" usemap="#aCore_8Utility_8SpanUtility_coll__map" alt="Collaboration graph"/></div>
 <map name="aCore_8Utility_8SpanUtility_coll__map" id="aCore_8Utility_8SpanUtility_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,176,83"/>
+<area shape="rect" title=" " alt="" coords="5,5,176,112"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -86,16 +86,63 @@ Core.Utility.SpanUtility 連携図</div>
 クラス</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1SpanUtility_1_1__.html">_</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1SpanUtility_1_1ListDummy.html">ListDummy</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 静的公開メンバ関数</h2></td></tr>
 <tr class="memitem:a8fa374fea0c142276f6136c43b154210"><td class="memItemLeft" align="right" valign="top">static Span&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1SpanUtility.html#a8fa374fea0c142276f6136c43b154210">AsSpan&lt; T &gt;</a> (this List&lt; T &gt; list)</td></tr>
 <tr class="separator:a8fa374fea0c142276f6136c43b154210"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3550273abd2f6ea9041db78fea38f56a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1SpanUtility.html#a3550273abd2f6ea9041db78fea38f56a">AddRange&lt; T &gt;</a> (this List&lt; T &gt; list, ReadOnlySpan&lt; T &gt; span)</td></tr>
+<tr class="separator:a3550273abd2f6ea9041db78fea38f56a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe27b606bb4ef2bb0d6e3ea694386747"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1SpanUtility.html#abe27b606bb4ef2bb0d6e3ea694386747">InsertRange&lt; T &gt;</a> (this List&lt; T &gt; list, int index, ReadOnlySpan&lt; T &gt; span)</td></tr>
+<tr class="separator:abe27b606bb4ef2bb0d6e3ea694386747"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock">
 <p class="definition"> <a class="el" href="SpanUtility_8cs_source.html">SpanUtility.cs</a> の <a class="el" href="SpanUtility_8cs_source.html#l00007">7</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">関数詳解</h2>
+<a id="a3550273abd2f6ea9041db78fea38f56a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3550273abd2f6ea9041db78fea38f56a">&#9670;&nbsp;</a></span>AddRange&lt; T &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Core.Utility.SpanUtility.AddRange&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramtype">this List&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ReadOnlySpan&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>span</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="SpanUtility_8cs_source.html">SpanUtility.cs</a> の <a class="el" href="SpanUtility_8cs_source.html#l00015">15</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            list.InsertRange(list.Count, span);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a8fa374fea0c142276f6136c43b154210"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8fa374fea0c142276f6136c43b154210">&#9670;&nbsp;</a></span>AsSpan&lt; T &gt;()</h2>
 
@@ -120,10 +167,90 @@ Core.Utility.SpanUtility 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="SpanUtility_8cs_source.html">SpanUtility.cs</a> の <a class="el" href="SpanUtility_8cs_source.html#l00016">16</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordflow">return</span> Unsafe.As&lt;_&lt;T&gt;&gt;(list).Items.AsSpan(0, list.Count);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div>
+<p class="definition"> <a class="el" href="SpanUtility_8cs_source.html">SpanUtility.cs</a> の <a class="el" href="SpanUtility_8cs_source.html#l00010">10</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            <span class="keywordflow">return</span> Unsafe.As&lt;_&lt;T&gt;&gt;(list).Items.AsSpan(0, list.Count);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abe27b606bb4ef2bb0d6e3ea694386747"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe27b606bb4ef2bb0d6e3ea694386747">&#9670;&nbsp;</a></span>InsertRange&lt; T &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Core.Utility.SpanUtility.InsertRange&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramtype">this List&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ReadOnlySpan&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>span</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="SpanUtility_8cs_source.html">SpanUtility.cs</a> の <a class="el" href="SpanUtility_8cs_source.html#l00020">20</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordflow">if</span> (list is <span class="keyword">null</span>) <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentNullException();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> EnsureCapacity(List&lt;T&gt; original, ListDummy&lt;T&gt; dummy, <span class="keywordtype">int</span> min)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="keywordflow">if</span> (dummy._items.Length &lt; min)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> defaultCapacity = 4;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                    var newCapacity = dummy._items.Length == 0 ? defaultCapacity : dummy._items.Length * 2;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                    <span class="comment">// Allow the list to grow to maximum possible capacity (~2G elements) before encountering overflow.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                    <span class="comment">// Note that this check works even when _items.Length overflowed thanks to the (uint) cast</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                        maxArrayLength =</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                            0X7FEFFFFF; <span class="comment">// This size is compatible with Array.MaxArrayLength. (This is internal)</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    <span class="keywordflow">if</span> ((uint)newCapacity &gt; maxArrayLength) newCapacity = maxArrayLength;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    <span class="keywordflow">if</span> (newCapacity &lt; min) newCapacity = min;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    original.Capacity = newCapacity;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            var dummyList = Unsafe.As&lt;ListDummy&lt;T&gt;&gt;(list);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">if</span> ((uint)index &gt; (uint)dummyList._size) <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentOutOfRangeException();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            var count = span.Length;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">if</span> (count &gt; 0)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                EnsureCapacity(list, dummyList, dummyList._size + count);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keywordflow">if</span> (index &lt; dummyList._size)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    Array.Copy(dummyList._items, index, dummyList._items, index + count, dummyList._size - index);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                span.CopyTo(dummyList._items.AsSpan(index));</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                dummyList._size += count;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                dummyList._version++;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>

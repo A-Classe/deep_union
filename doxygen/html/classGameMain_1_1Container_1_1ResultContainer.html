@@ -87,14 +87,14 @@ GameMain.Container.ResultContainer 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classGameMain_1_1Container_1_1ResultContainer__coll__graph.png" border="0" usemap="#aGameMain_8Container_8ResultContainer_coll__map" alt="Collaboration graph"/></div>
 <map name="aGameMain_8Container_8ResultContainer_coll__map" id="aGameMain_8Container_8ResultContainer_coll__map">
-<area shape="rect" title=" " alt="" coords="124,617,328,709"/>
-<area shape="rect" title=" " alt="" coords="147,433,262,511"/>
-<area shape="rect" href="classUI_1_1Result_1_1ResultManager.html" title="リザルト画面のセレクター" alt="" coords="287,389,469,555"/>
-<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html" title=" " alt="" coords="5,147,127,283"/>
+<area shape="rect" title=" " alt="" coords="99,691,303,783"/>
+<area shape="rect" title=" " alt="" coords="122,492,237,569"/>
+<area shape="rect" href="classModule_1_1UI_1_1Result_1_1ResultManager.html" title="リザルト画面のセレクター" alt="" coords="261,433,495,628"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html" title=" " alt="" coords="5,154,127,290"/>
 <area shape="rect" title=" " alt="" coords="185,5,339,83"/>
-<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html" title=" " alt="" coords="151,154,373,275"/>
-<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html" title=" " alt="" coords="398,139,593,290"/>
-<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html" title=" " alt="" coords="617,132,846,297"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1TextInAnimationObject.html" title=" " alt="" coords="151,161,373,283"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html" title=" " alt="" coords="398,147,593,297"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html" title=" " alt="" coords="617,132,846,312"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -105,12 +105,12 @@ GameMain.Container.ResultContainer 連携図</div>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 非公開変数類</h2></td></tr>
-<tr class="memitem:a1d1d64b49d6aa95bff4e7147339507e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classUI_1_1Result_1_1ResultManager.html">ResultManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Container_1_1ResultContainer.html#a1d1d64b49d6aa95bff4e7147339507e6">resultManager</a></td></tr>
+<tr class="memitem:a1d1d64b49d6aa95bff4e7147339507e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html">ResultManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMain_1_1Container_1_1ResultContainer.html#a1d1d64b49d6aa95bff4e7147339507e6">resultManager</a></td></tr>
 <tr class="separator:a1d1d64b49d6aa95bff4e7147339507e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock">
-<p class="definition"> <a class="el" href="ResultContainer_8cs_source.html">ResultContainer.cs</a> の <a class="el" href="ResultContainer_8cs_source.html#l00009">9</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="ResultContainer_8cs_source.html">ResultContainer.cs</a> の <a class="el" href="ResultContainer_8cs_source.html#l00010">10</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">関数詳解</h2>
 <a id="a934e2d9f3b279514bd82ab4c3c966c61"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a934e2d9f3b279514bd82ab4c3c966c61">&#9670;&nbsp;</a></span>Configure()</h2>
@@ -136,17 +136,17 @@ GameMain.Container.ResultContainer 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="ResultContainer_8cs_source.html">ResultContainer.cs</a> の <a class="el" href="ResultContainer_8cs_source.html#l00013">13</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            builder.RegisterEntryPoint&lt;ResultRouter&gt;();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            builder.Register&lt;<a class="code" href="classCore_1_1User_1_1UserPreference.html">UserPreference</a>&gt;(Lifetime.Singleton);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            builder.RegisterInstance(<a class="code" href="classGameMain_1_1Container_1_1ResultContainer.html#a1d1d64b49d6aa95bff4e7147339507e6">resultManager</a>);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<p class="definition"> <a class="el" href="ResultContainer_8cs_source.html">ResultContainer.cs</a> の <a class="el" href="ResultContainer_8cs_source.html#l00014">14</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            builder.RegisterEntryPoint&lt;<a class="code" href="classGameMain_1_1Router_1_1ResultRouter.html">ResultRouter</a>&gt;();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            builder.Register&lt;<a class="code" href="classCore_1_1User_1_1UserPreference.html">UserPreference</a>&gt;(Lifetime.Singleton);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            builder.RegisterInstance(<a class="code" href="classGameMain_1_1Container_1_1ResultContainer.html#a1d1d64b49d6aa95bff4e7147339507e6">resultManager</a>);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
 <div class="ttc" id="aclassCore_1_1User_1_1UserPreference_html"><div class="ttname"><a href="classCore_1_1User_1_1UserPreference.html">Core.User.UserPreference</a></div><div class="ttdoc">データ保存の中継クラス 絶対にこれを介して保存する</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00013">UserPreference.cs:14</a></div></div>
-<div class="ttc" id="aclassGameMain_1_1Container_1_1ResultContainer_html_a1d1d64b49d6aa95bff4e7147339507e6"><div class="ttname"><a href="classGameMain_1_1Container_1_1ResultContainer.html#a1d1d64b49d6aa95bff4e7147339507e6">GameMain.Container.ResultContainer.resultManager</a></div><div class="ttdeci">ResultManager resultManager</div><div class="ttdef"><b>Definition:</b> <a href="ResultContainer_8cs_source.html#l00011">ResultContainer.cs:11</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Container_1_1ResultContainer_html_a1d1d64b49d6aa95bff4e7147339507e6"><div class="ttname"><a href="classGameMain_1_1Container_1_1ResultContainer.html#a1d1d64b49d6aa95bff4e7147339507e6">GameMain.Container.ResultContainer.resultManager</a></div><div class="ttdeci">ResultManager resultManager</div><div class="ttdef"><b>Definition:</b> <a href="ResultContainer_8cs_source.html#l00012">ResultContainer.cs:12</a></div></div>
+<div class="ttc" id="aclassGameMain_1_1Router_1_1ResultRouter_html"><div class="ttname"><a href="classGameMain_1_1Router_1_1ResultRouter.html">GameMain.Router.ResultRouter</a></div><div class="ttdef"><b>Definition:</b> <a href="ResultRouter_8cs_source.html#l00012">ResultRouter.cs:13</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -161,7 +161,7 @@ GameMain.Container.ResultContainer 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classUI_1_1Result_1_1ResultManager.html">ResultManager</a> GameMain.Container.ResultContainer.resultManager</td>
+          <td class="memname"><a class="el" href="classModule_1_1UI_1_1Result_1_1ResultManager.html">ResultManager</a> GameMain.Container.ResultContainer.resultManager</td>
         </tr>
       </table>
   </td>
@@ -171,7 +171,7 @@ GameMain.Container.ResultContainer 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="ResultContainer_8cs_source.html">ResultContainer.cs</a> の <a class="el" href="ResultContainer_8cs_source.html#l00011">11</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="ResultContainer_8cs_source.html">ResultContainer.cs</a> の <a class="el" href="ResultContainer_8cs_source.html#l00012">12</a> 行目に定義があります。</p>
 
 </div>
 </div>

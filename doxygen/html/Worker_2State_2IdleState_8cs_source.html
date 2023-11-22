@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: src/Assets/Scripts/Module/Worker/State/IdleState.cs ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e0c1ede47f21c4a643a1257f949f98e0.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f926ed287b3a4af2dd29994d6677bf6e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_b90377121573af7cb25ee89fc5236601.html">Module</a></li><li class="navelem"><a class="el" href="dir_f4cb7f0ccf86df2e3a1602a101d4f733.html">Worker</a></li><li class="navelem"><a class="el" href="dir_96cece05c2075395355aa071935c3a83.html">State</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">IdleState.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Worker_2State_2IdleState_8cs.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceModule_1_1Working_1_1State.html">Module.Working.State</a></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="classModule_1_1Working_1_1State_1_1IdleState.html">    5</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html">IdleState</a> : <a class="code" href="interfaceModule_1_1Working_1_1State_1_1IWorkerState.html">IWorkerState</a></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    {</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classModule_1_1Working_1_1State_1_1IdleState.html#afc5575b35b39b6d2135681e5fa868b74">    7</a></span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> readonly <span class="keywordtype">int</span> <a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#afc5575b35b39b6d2135681e5fa868b74">IsFollowing</a> = Animator.StringToHash(<span class="stringliteral">&quot;Following&quot;</span>);</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classModule_1_1Working_1_1State_1_1IdleState.html#ab2466ef649a8c725a17246ef2ec766c5">    8</a></span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> readonly <span class="keywordtype">int</span> <a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#ab2466ef649a8c725a17246ef2ec766c5">IsWorking</a> = Animator.StringToHash(<span class="stringliteral">&quot;Working&quot;</span>);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="comment">// ReSharper disable once NotAccessedField.Local</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classModule_1_1Working_1_1State_1_1IdleState.html#a5da0ccb7ca77085a547109fae5868634">   11</a></span>&#160;        <span class="keyword">private</span> readonly <a class="code" href="classModule_1_1Working_1_1Worker.html">Worker</a> <a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#a5da0ccb7ca77085a547109fae5868634">worker</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classModule_1_1Working_1_1State_1_1IdleState.html#af9e2ab9f28c159d20dcc254fc8a0c2d7">   12</a></span>&#160;        <span class="keyword">private</span> readonly Animator <a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#af9e2ab9f28c159d20dcc254fc8a0c2d7">workerAnimator</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classModule_1_1Working_1_1State_1_1IdleState.html#af4392f3c24a32a0a6fea5be178b4cd94">   14</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#af4392f3c24a32a0a6fea5be178b4cd94">IdleState</a>(<a class="code" href="classModule_1_1Working_1_1Worker.html">Worker</a> <a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#a5da0ccb7ca77085a547109fae5868634">worker</a>)</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            this.worker = <a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#a5da0ccb7ca77085a547109fae5868634">worker</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#af9e2ab9f28c159d20dcc254fc8a0c2d7">workerAnimator</a> = <a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#a5da0ccb7ca77085a547109fae5868634">worker</a>.<a class="code" href="classModule_1_1Working_1_1Worker.html#a0fdc258b73daced7db65642dd2d651b8">animator</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classModule_1_1Working_1_1State_1_1IdleState.html#a74e8309f6e3f50bb783a42e0ef85b2ee">   20</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="namespaceModule_1_1Working_1_1State.html#a6741b3bd2dd67b25e9e0477f35e01082">WorkerState</a> <a class="code" href="namespaceModule_1_1Working_1_1State.html#a6741b3bd2dd67b25e9e0477f35e01082">WorkerState</a> =&gt; <a class="code" href="namespaceModule_1_1Working_1_1State.html#a6741b3bd2dd67b25e9e0477f35e01082">WorkerState</a>.Idle;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classModule_1_1Working_1_1State_1_1IdleState.html#a29a038ab37a6e4f211f773799e8d1088">   22</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#a29a038ab37a6e4f211f773799e8d1088">OnStart</a>()</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#af9e2ab9f28c159d20dcc254fc8a0c2d7">workerAnimator</a>.SetBool(<a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#afc5575b35b39b6d2135681e5fa868b74">IsFollowing</a>, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#af9e2ab9f28c159d20dcc254fc8a0c2d7">workerAnimator</a>.SetBool(<a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#ab2466ef649a8c725a17246ef2ec766c5">IsWorking</a>, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classModule_1_1Working_1_1State_1_1IdleState.html#a5d9b6c38a0029e7fb8abafe4ce494c01">   28</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#a5d9b6c38a0029e7fb8abafe4ce494c01">OnStop</a>()</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classModule_1_1Working_1_1State_1_1IdleState.html#ac7ce3c87440b92aca3e856487e2d9059">   32</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#ac7ce3c87440b92aca3e856487e2d9059">Update</a>()</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classModule_1_1Working_1_1State_1_1IdleState.html#ab02dd9a27e6e02f37b12c4ed19bb549e">   36</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classModule_1_1Working_1_1State_1_1IdleState.html#ab02dd9a27e6e02f37b12c4ed19bb549e">Dispose</a>()</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="ttc" id="aclassModule_1_1Working_1_1State_1_1IdleState_html"><div class="ttname"><a href="classModule_1_1Working_1_1State_1_1IdleState.html">Module.Working.State.IdleState</a></div><div class="ttdef"><b>Definition:</b> <a href="Worker_2State_2IdleState_8cs_source.html#l00005">IdleState.cs:6</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1State_1_1IdleState_html_a29a038ab37a6e4f211f773799e8d1088"><div class="ttname"><a href="classModule_1_1Working_1_1State_1_1IdleState.html#a29a038ab37a6e4f211f773799e8d1088">Module.Working.State.IdleState.OnStart</a></div><div class="ttdeci">void OnStart()</div><div class="ttdef"><b>Definition:</b> <a href="Worker_2State_2IdleState_8cs_source.html#l00022">IdleState.cs:22</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1State_1_1IdleState_html_a5d9b6c38a0029e7fb8abafe4ce494c01"><div class="ttname"><a href="classModule_1_1Working_1_1State_1_1IdleState.html#a5d9b6c38a0029e7fb8abafe4ce494c01">Module.Working.State.IdleState.OnStop</a></div><div class="ttdeci">void OnStop()</div><div class="ttdef"><b>Definition:</b> <a href="Worker_2State_2IdleState_8cs_source.html#l00028">IdleState.cs:28</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1State_1_1IdleState_html_a5da0ccb7ca77085a547109fae5868634"><div class="ttname"><a href="classModule_1_1Working_1_1State_1_1IdleState.html#a5da0ccb7ca77085a547109fae5868634">Module.Working.State.IdleState.worker</a></div><div class="ttdeci">readonly Worker worker</div><div class="ttdef"><b>Definition:</b> <a href="Worker_2State_2IdleState_8cs_source.html#l00011">IdleState.cs:11</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1State_1_1IdleState_html_ab02dd9a27e6e02f37b12c4ed19bb549e"><div class="ttname"><a href="classModule_1_1Working_1_1State_1_1IdleState.html#ab02dd9a27e6e02f37b12c4ed19bb549e">Module.Working.State.IdleState.Dispose</a></div><div class="ttdeci">void Dispose()</div><div class="ttdef"><b>Definition:</b> <a href="Worker_2State_2IdleState_8cs_source.html#l00036">IdleState.cs:36</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1State_1_1IdleState_html_ab2466ef649a8c725a17246ef2ec766c5"><div class="ttname"><a href="classModule_1_1Working_1_1State_1_1IdleState.html#ab2466ef649a8c725a17246ef2ec766c5">Module.Working.State.IdleState.IsWorking</a></div><div class="ttdeci">static readonly int IsWorking</div><div class="ttdef"><b>Definition:</b> <a href="Worker_2State_2IdleState_8cs_source.html#l00008">IdleState.cs:8</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1State_1_1IdleState_html_ac7ce3c87440b92aca3e856487e2d9059"><div class="ttname"><a href="classModule_1_1Working_1_1State_1_1IdleState.html#ac7ce3c87440b92aca3e856487e2d9059">Module.Working.State.IdleState.Update</a></div><div class="ttdeci">void Update()</div><div class="ttdef"><b>Definition:</b> <a href="Worker_2State_2IdleState_8cs_source.html#l00032">IdleState.cs:32</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1State_1_1IdleState_html_af4392f3c24a32a0a6fea5be178b4cd94"><div class="ttname"><a href="classModule_1_1Working_1_1State_1_1IdleState.html#af4392f3c24a32a0a6fea5be178b4cd94">Module.Working.State.IdleState.IdleState</a></div><div class="ttdeci">IdleState(Worker worker)</div><div class="ttdef"><b>Definition:</b> <a href="Worker_2State_2IdleState_8cs_source.html#l00014">IdleState.cs:14</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1State_1_1IdleState_html_af9e2ab9f28c159d20dcc254fc8a0c2d7"><div class="ttname"><a href="classModule_1_1Working_1_1State_1_1IdleState.html#af9e2ab9f28c159d20dcc254fc8a0c2d7">Module.Working.State.IdleState.workerAnimator</a></div><div class="ttdeci">readonly Animator workerAnimator</div><div class="ttdef"><b>Definition:</b> <a href="Worker_2State_2IdleState_8cs_source.html#l00012">IdleState.cs:12</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1State_1_1IdleState_html_afc5575b35b39b6d2135681e5fa868b74"><div class="ttname"><a href="classModule_1_1Working_1_1State_1_1IdleState.html#afc5575b35b39b6d2135681e5fa868b74">Module.Working.State.IdleState.IsFollowing</a></div><div class="ttdeci">static readonly int IsFollowing</div><div class="ttdef"><b>Definition:</b> <a href="Worker_2State_2IdleState_8cs_source.html#l00007">IdleState.cs:7</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Worker_html"><div class="ttname"><a href="classModule_1_1Working_1_1Worker.html">Module.Working.Worker</a></div><div class="ttdoc">ワーカーの状態を管理するクラス</div><div class="ttdef"><b>Definition:</b> <a href="Worker_8cs_source.html#l00017">Worker.cs:18</a></div></div>
+<div class="ttc" id="aclassModule_1_1Working_1_1Worker_html_a0fdc258b73daced7db65642dd2d651b8"><div class="ttname"><a href="classModule_1_1Working_1_1Worker.html#a0fdc258b73daced7db65642dd2d651b8">Module.Working.Worker.animator</a></div><div class="ttdeci">Animator animator</div><div class="ttdef"><b>Definition:</b> <a href="Worker_8cs_source.html#l00023">Worker.cs:23</a></div></div>
+<div class="ttc" id="ainterfaceModule_1_1Working_1_1State_1_1IWorkerState_html"><div class="ttname"><a href="interfaceModule_1_1Working_1_1State_1_1IWorkerState.html">Module.Working.State.IWorkerState</a></div><div class="ttdef"><b>Definition:</b> <a href="IWorkerState_8cs_source.html#l00003">IWorkerState.cs:4</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Working_1_1State_html"><div class="ttname"><a href="namespaceModule_1_1Working_1_1State.html">Module.Working.State</a></div><div class="ttdef"><b>Definition:</b> <a href="Worker_2State_2FollowState_8cs_source.html#l00004">FollowState.cs:5</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1Working_1_1State_html_a6741b3bd2dd67b25e9e0477f35e01082"><div class="ttname"><a href="namespaceModule_1_1Working_1_1State.html#a6741b3bd2dd67b25e9e0477f35e01082">Module.Working.State.WorkerState</a></div><div class="ttdeci">WorkerState</div><div class="ttdoc">ワーカーの状態</div><div class="ttdef"><b>Definition:</b> <a href="WorkerState_8cs_source.html#l00006">WorkerState.cs:7</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

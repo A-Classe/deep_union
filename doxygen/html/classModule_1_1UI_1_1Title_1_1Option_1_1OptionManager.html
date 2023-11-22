@@ -1,0 +1,1080 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: Module.UI.Title.Option.OptionManager クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceModule.html">Module</a></li><li class="navelem"><a class="el" href="namespaceModule_1_1UI.html">UI</a></li><li class="navelem"><a class="el" href="namespaceModule_1_1UI_1_1Title.html">Title</a></li><li class="navelem"><a class="el" href="namespaceModule_1_1UI_1_1Title_1_1Option.html">Option</a></li><li class="navelem"><a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html">OptionManager</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pro-methods">限定公開メンバ関数</a> &#124;
+<a href="#events">イベント</a> &#124;
+<a href="#pri-types">非公開型</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">Module.UI.Title.Option.OptionManager クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Module.UI.Title.Option.OptionManager の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager__inherit__graph.png" border="0" usemap="#aModule_8UI_8Title_8Option_8OptionManager_inherit__map" alt="Inheritance graph"/></div>
+<map name="aModule_8UI_8Title_8Option_8OptionManager_inherit__map" id="aModule_8UI_8Title_8Option_8OptionManager_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,315,220,627"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html" title=" " alt="" coords="52,131,173,267"/>
+<area shape="rect" title=" " alt="" coords="35,5,190,83"/>
+</map>
+</div>
+<div class="dynheader">
+Module.UI.Title.Option.OptionManager 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager__coll__graph.png" border="0" usemap="#aModule_8UI_8Title_8Option_8OptionManager_coll__map" alt="Collaboration graph"/></div>
+<map name="aModule_8UI_8Title_8Option_8OptionManager_coll__map" id="aModule_8UI_8Title_8Option_8OptionManager_coll__map">
+<area shape="rect" title=" " alt="" coords="719,867,934,1091"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html" title=" " alt="" coords="257,161,378,297"/>
+<area shape="rect" title=" " alt="" coords="307,521,533,716"/>
+<area shape="rect" href="classModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html" title=" " alt="" coords="557,536,784,701"/>
+<area shape="rect" title=" " alt="" coords="808,543,1035,694"/>
+<area shape="rect" href="classModule_1_1UI_1_1Title_1_1Option_1_1Option4_1_1Option4Manager.html" title=" " alt="" coords="5,558,232,679"/>
+<area shape="rect" title=" " alt="" coords="423,5,577,83"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1ToggleController.html" title=" " alt="" coords="37,147,232,312"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SliderController.html" title=" " alt="" coords="403,139,597,319"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html" title=" " alt="" coords="621,154,816,305"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1AnimateObject.html" title=" " alt="" coords="1243,191,1456,268"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html" title="データ保存の中継クラス 絶対にこれを介して保存する" alt="" coords="1277,455,1467,782"/>
+<area shape="rect" href="classCore_1_1User_1_1DataManager.html" title=" " alt="" coords="1481,132,1658,327"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html" title=" " alt="" coords="840,139,1069,319"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html" title=" " alt="" coords="1491,433,1682,804"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SimpleUnderBarController.html" title=" " alt="" coords="1059,529,1253,709"/>
+<area shape="rect" title=" " alt="" coords="1094,191,1218,268"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a4c2e8acc40f36d8c1f525c23f0de1567"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a4c2e8acc40f36d8c1f525c23f0de1567">Initialized</a> (ContentTransform content, bool isReset)</td></tr>
+<tr class="separator:a4c2e8acc40f36d8c1f525c23f0de1567"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6c94aecc37db655cd818e66bd9aba16"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#ab6c94aecc37db655cd818e66bd9aba16">Select</a> (Vector2 direction)</td></tr>
+<tr class="separator:ab6c94aecc37db655cd818e66bd9aba16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a692bfcf93da121101458dde424c7781e"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a692bfcf93da121101458dde424c7781e">Clicked</a> ()</td></tr>
+<tr class="separator:a692bfcf93da121101458dde424c7781e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af909f3c02e0e428d7bb4ba5c07543e7c"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#af909f3c02e0e428d7bb4ba5c07543e7c">Finished</a> (ContentTransform content, Action onFinished)</td></tr>
+<tr class="separator:af909f3c02e0e428d7bb4ba5c07543e7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cc26aadaaeadef14f4c9d0ab0231bd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a6cc26aadaaeadef14f4c9d0ab0231bd0">SetPreference</a> (<a class="el" href="classCore_1_1User_1_1UserPreference.html">UserPreference</a> manager)</td></tr>
+<tr class="separator:a6cc26aadaaeadef14f4c9d0ab0231bd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html">Core.Utility.UI.Navigation.UIManager</a> に属する継承公開メンバ関数</td></tr>
+<tr class="memitem:abb6930c459fc8a9aa8d331dfbc739ba6 inherit pub_methods_classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager"><td class="memItemLeft" align="right" valign="top">AnimationBehaviour&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#abb6930c459fc8a9aa8d331dfbc739ba6">GetContext</a> ()</td></tr>
+<tr class="separator:abb6930c459fc8a9aa8d331dfbc739ba6 inherit pub_methods_classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:a3a98762af849c9a9722750d6126cd072"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a3a98762af849c9a9722750d6126cd072">Awake</a> ()</td></tr>
+<tr class="separator:a3a98762af849c9a9722750d6126cd072"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="events"></a>
+イベント</h2></td></tr>
+<tr class="memitem:a06c683c99de08bcf61e7adf9e23d9eb7"><td class="memItemLeft" align="right" valign="top">Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a06c683c99de08bcf61e7adf9e23d9eb7">OnBack</a></td></tr>
+<tr class="separator:a06c683c99de08bcf61e7adf9e23d9eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
+非公開型</h2></td></tr>
+<tr class="memitem:a50d1b9eddbb17590fa09a683231ebb48"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a50d1b9eddbb17590fa09a683231ebb48">Nav</a> { <a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a50d1b9eddbb17590fa09a683231ebb48a4a8a2ec81ee4243d77b05eb831e33f9e">Option1</a>
+, <a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a50d1b9eddbb17590fa09a683231ebb48a170ed59680978587831ba34a54031448">Option2</a>
+, <a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a50d1b9eddbb17590fa09a683231ebb48af967b2c995e5c1898037c8a0112ab160">Option3</a>
+, <a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a50d1b9eddbb17590fa09a683231ebb48a37da91914cfb1255dc604315ef44b6c3">Option4</a>
+ }</td></tr>
+<tr class="separator:a50d1b9eddbb17590fa09a683231ebb48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a4b862da2a6f4bce5a2683cd0a4e249b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a4b862da2a6f4bce5a2683cd0a4e249b8">SetNavigation</a> ()</td></tr>
+<tr class="separator:a4b862da2a6f4bce5a2683cd0a4e249b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57181cede02f33a7345b39ceafaa0c52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a57181cede02f33a7345b39ceafaa0c52">NavigateToVideo</a> (bool isReset)</td></tr>
+<tr class="separator:a57181cede02f33a7345b39ceafaa0c52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4921ad28e64daad0a466b5b241ce6c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#ab4921ad28e64daad0a466b5b241ce6c9">NavigateToAudio</a> (bool isReset)</td></tr>
+<tr class="separator:ab4921ad28e64daad0a466b5b241ce6c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a044c88aa6ff25295277bada06cbc56b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a044c88aa6ff25295277bada06cbc56b5">NavigateToKeyConfig</a> (bool isReset)</td></tr>
+<tr class="separator:a044c88aa6ff25295277bada06cbc56b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a83caac7834317c9758981f1382198146"><td class="memItemLeft" align="right" valign="top">Option1Manager&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a83caac7834317c9758981f1382198146">option1</a></td></tr>
+<tr class="separator:a83caac7834317c9758981f1382198146"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a333cfb2a7aa334a939d43f106506179f"><td class="memItemLeft" align="right" valign="top">Option2Manager&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a333cfb2a7aa334a939d43f106506179f">option2</a></td></tr>
+<tr class="separator:a333cfb2a7aa334a939d43f106506179f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16b53d11bc419684c3795e220b8dbae6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html">Option3Manager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a16b53d11bc419684c3795e220b8dbae6">option3</a></td></tr>
+<tr class="separator:a16b53d11bc419684c3795e220b8dbae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0572371e2d8d8ad0a2db5867a2d37ce4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1Option4_1_1Option4Manager.html">Option4Manager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a0572371e2d8d8ad0a2db5867a2d37ce4">option4</a></td></tr>
+<tr class="separator:a0572371e2d8d8ad0a2db5867a2d37ce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf213c9e00eb3e77b65bb83289329a09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SimpleUnderBarController.html">SimpleUnderBarController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#acf213c9e00eb3e77b65bb83289329a09">bar</a></td></tr>
+<tr class="separator:acf213c9e00eb3e77b65bb83289329a09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ce41364015dc645169fd609397548cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Navigation</a>&lt; <a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a50d1b9eddbb17590fa09a683231ebb48">Nav</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a4ce41364015dc645169fd609397548cc">navigation</a></td></tr>
+<tr class="separator:a4ce41364015dc645169fd609397548cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3725ccb256b1c83707cfae6c10d86911"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCore_1_1User_1_1UserPreference.html">UserPreference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a3725ccb256b1c83707cfae6c10d86911">preference</a></td></tr>
+<tr class="separator:a3725ccb256b1c83707cfae6c10d86911"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="OptionManager_8cs_source.html">OptionManager.cs</a> の <a class="el" href="OptionManager_8cs_source.html#l00015">15</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">列挙型メンバ詳解</h2>
+<a id="a50d1b9eddbb17590fa09a683231ebb48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50d1b9eddbb17590fa09a683231ebb48">&#9670;&nbsp;</a></span>Nav</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a50d1b9eddbb17590fa09a683231ebb48">Module.UI.Title.Option.OptionManager.Nav</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="a50d1b9eddbb17590fa09a683231ebb48a4a8a2ec81ee4243d77b05eb831e33f9e"></a>Option1&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a50d1b9eddbb17590fa09a683231ebb48a170ed59680978587831ba34a54031448"></a>Option2&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a50d1b9eddbb17590fa09a683231ebb48af967b2c995e5c1898037c8a0112ab160"></a>Option3&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a50d1b9eddbb17590fa09a683231ebb48a37da91914cfb1255dc604315ef44b6c3"></a>Option4&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition"> <a class="el" href="OptionManager_8cs_source.html">OptionManager.cs</a> の <a class="el" href="OptionManager_8cs_source.html#l00193">193</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        {</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            Option1,</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            Option2,</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            Option3,</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            Option4</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a3a98762af849c9a9722750d6126cd072"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a98762af849c9a9722750d6126cd072">&#9670;&nbsp;</a></span>Awake()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void Module.UI.Title.Option.OptionManager.Awake </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="OptionManager_8cs_source.html">OptionManager.cs</a> の <a class="el" href="OptionManager_8cs_source.html#l00028">28</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            base.Awake();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            var initialManagers = <span class="keyword">new</span> Dictionary&lt;Nav, UIManager&gt;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                { <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a50d1b9eddbb17590fa09a683231ebb48">Nav</a>.Option1, <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a83caac7834317c9758981f1382198146">option1</a> },</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                { <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a50d1b9eddbb17590fa09a683231ebb48">Nav</a>.Option2, <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a333cfb2a7aa334a939d43f106506179f">option2</a> },</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                { <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a50d1b9eddbb17590fa09a683231ebb48">Nav</a>.Option3, <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a16b53d11bc419684c3795e220b8dbae6">option3</a> },</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                { <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a50d1b9eddbb17590fa09a683231ebb48">Nav</a>.Option4, <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a0572371e2d8d8ad0a2db5867a2d37ce4">option4</a> }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            };</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a4ce41364015dc645169fd609397548cc">navigation</a> = <span class="keyword">new</span> <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Navigation&lt;Nav&gt;</a>(initialManagers);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a4b862da2a6f4bce5a2683cd0a4e249b8">SetNavigation</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a4ce41364015dc645169fd609397548cc">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3">SetScreen</a>(<a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a50d1b9eddbb17590fa09a683231ebb48">Nav</a>.Option1);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation&lt; Nav &gt;</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html_a4cf4005df3073cc3ee23a45a59eb38f3"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3">Core.Utility.UI.Navigation.Navigation.SetScreen</a></div><div class="ttdeci">void SetScreen(T nav, bool isAnimate=true, bool isReset=false)</div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00068">Navigation.cs:68</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_html_a0572371e2d8d8ad0a2db5867a2d37ce4"><div class="ttname"><a href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a0572371e2d8d8ad0a2db5867a2d37ce4">Module.UI.Title.Option.OptionManager.option4</a></div><div class="ttdeci">Option4Manager option4</div><div class="ttdef"><b>Definition:</b> <a href="OptionManager_8cs_source.html#l00020">OptionManager.cs:20</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_html_a16b53d11bc419684c3795e220b8dbae6"><div class="ttname"><a href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a16b53d11bc419684c3795e220b8dbae6">Module.UI.Title.Option.OptionManager.option3</a></div><div class="ttdeci">Option3Manager option3</div><div class="ttdef"><b>Definition:</b> <a href="OptionManager_8cs_source.html#l00019">OptionManager.cs:19</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_html_a333cfb2a7aa334a939d43f106506179f"><div class="ttname"><a href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a333cfb2a7aa334a939d43f106506179f">Module.UI.Title.Option.OptionManager.option2</a></div><div class="ttdeci">Option2Manager option2</div><div class="ttdef"><b>Definition:</b> <a href="OptionManager_8cs_source.html#l00018">OptionManager.cs:18</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_html_a4b862da2a6f4bce5a2683cd0a4e249b8"><div class="ttname"><a href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a4b862da2a6f4bce5a2683cd0a4e249b8">Module.UI.Title.Option.OptionManager.SetNavigation</a></div><div class="ttdeci">void SetNavigation()</div><div class="ttdef"><b>Definition:</b> <a href="OptionManager_8cs_source.html#l00084">OptionManager.cs:84</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_html_a4ce41364015dc645169fd609397548cc"><div class="ttname"><a href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a4ce41364015dc645169fd609397548cc">Module.UI.Title.Option.OptionManager.navigation</a></div><div class="ttdeci">Navigation&lt; Nav &gt; navigation</div><div class="ttdef"><b>Definition:</b> <a href="OptionManager_8cs_source.html#l00024">OptionManager.cs:24</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_html_a50d1b9eddbb17590fa09a683231ebb48"><div class="ttname"><a href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a50d1b9eddbb17590fa09a683231ebb48">Module.UI.Title.Option.OptionManager.Nav</a></div><div class="ttdeci">Nav</div><div class="ttdef"><b>Definition:</b> <a href="OptionManager_8cs_source.html#l00193">OptionManager.cs:194</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_html_a83caac7834317c9758981f1382198146"><div class="ttname"><a href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a83caac7834317c9758981f1382198146">Module.UI.Title.Option.OptionManager.option1</a></div><div class="ttdeci">Option1Manager option1</div><div class="ttdef"><b>Definition:</b> <a href="OptionManager_8cs_source.html#l00017">OptionManager.cs:17</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a3a98762af849c9a9722750d6126cd072_cgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a3a98762af849c9a9722750d6126cd072_cgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a3a98762af849c9a9722750d6126cd072_cgraph" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a3a98762af849c9a9722750d6126cd072_cgraph">
+<area shape="rect" title=" " alt="" coords="5,524,220,565"/>
+<area shape="rect" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a4b862da2a6f4bce5a2683cd0a4e249b8" title=" " alt="" coords="268,341,483,383"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3" title=" " alt="" coords="822,553,1013,595"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a66fb20844af6cbb1b759cbf564ee4e37" title=" " alt="" coords="546,253,741,295"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html#afb2b63f6be5bf21bed2541937bdeacb7" title=" " alt="" coords="821,312,1014,353"/>
+<area shape="rect" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#ab4921ad28e64daad0a466b5b241ce6c9" title=" " alt="" coords="536,436,751,477"/>
+<area shape="rect" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a044c88aa6ff25295277bada06cbc56b5" title=" " alt="" coords="533,553,753,595"/>
+<area shape="rect" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a57181cede02f33a7345b39ceafaa0c52" title=" " alt="" coords="536,371,751,412"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html#a3367839d7ebd1ed567a3fe23804fc80a" title=" " alt="" coords="531,137,756,163"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html#a5f26f61d12db081ae8a38a23bbce5d82" title=" " alt="" coords="547,619,740,660"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html#a27ca81bf3b5972254f54c713538456f3" title=" " alt="" coords="547,5,740,47"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html#a162ae9913bcf71dfbfd93e706e8c858b" title=" " alt="" coords="547,71,740,112"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html#aa66ec9afce25a257043f55d8fce077f0" title=" " alt="" coords="547,188,740,229"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html#a5f43225f7a424396ff8541c6c7d3e040" title=" " alt="" coords="805,378,1029,405"/>
+<area shape="rect" href="classModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html#ab3ea0a44c5e8d0b8cfe2fa6e60e48408" title=" " alt="" coords="804,436,1031,477"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html#ad7d8fd43df022c849becc33dcb537bbc" title=" " alt="" coords="1087,305,1281,347"/>
+<area shape="rect" href="classCore_1_1User_1_1DataManager.html#af52e53e411c9340934ddc84b957c4a07" title=" " alt="" coords="1079,371,1289,398"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a82c0d36cd008e231c62b0410f4d2196a" title=" " alt="" coords="1089,684,1279,725"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#abb6930c459fc8a9aa8d331dfbc739ba6" title=" " alt="" coords="1089,553,1279,595"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a385a3ad44bba7369d02aa90cbe07122b" title=" " alt="" coords="1089,619,1279,660"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SliderController.html#aaa432987f6826599520dd8136a6dcc04" title=" " alt="" coords="1087,488,1281,529"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SliderController.html#a36047529a89aa635a6a413b9e8be49c4" title=" " alt="" coords="1087,423,1281,464"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SliderController.html#aedd67b85e8bbf4c13362f18c5634b8f7" title=" " alt="" coords="1337,456,1532,497"/>
+<area shape="rect" href="classCore_1_1User_1_1DataManager.html#a88d5a82ec500270fbb46991faca71a87" title=" " alt="" coords="811,137,1023,163"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a692bfcf93da121101458dde424c7781e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a692bfcf93da121101458dde424c7781e">&#9670;&nbsp;</a></span>Clicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void Module.UI.Title.Option.OptionManager.Clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a229baea4db34a9b99e3f5d2b7fcd3c3b">Core.Utility.UI.Navigation.UIManager</a>を再実装しています。</p>
+
+<p class="definition"> <a class="el" href="OptionManager_8cs_source.html">OptionManager.cs</a> の <a class="el" href="OptionManager_8cs_source.html#l00059">59</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af909f3c02e0e428d7bb4ba5c07543e7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af909f3c02e0e428d7bb4ba5c07543e7c">&#9670;&nbsp;</a></span>Finished()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void Module.UI.Title.Option.OptionManager.Finished </td>
+          <td>(</td>
+          <td class="paramtype">ContentTransform&#160;</td>
+          <td class="paramname"><em>content</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Action&#160;</td>
+          <td class="paramname"><em>onFinished</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a82c0d36cd008e231c62b0410f4d2196a">Core.Utility.UI.Navigation.UIManager</a>を再実装しています。</p>
+
+<p class="definition"> <a class="el" href="OptionManager_8cs_source.html">OptionManager.cs</a> の <a class="el" href="OptionManager_8cs_source.html#l00063">63</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#acf213c9e00eb3e77b65bb83289329a09">bar</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SimpleUnderBarController.html#a281784c16ed7ce48be59e756d8c310b2">AnimateOut</a>(() =&gt;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                Animation(</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    content,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    <span class="keyword">new</span> AnimationListener</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                    {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        OnFinished = () =&gt;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                            gameObject.SetActive(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                            <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a4ce41364015dc645169fd609397548cc">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca">SetActive</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                            onFinished?.Invoke();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                );</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            });</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1SimpleUnderBarController_html_a281784c16ed7ce48be59e756d8c310b2"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Component_1_1SimpleUnderBarController.html#a281784c16ed7ce48be59e756d8c310b2">Core.Utility.UI.Component.SimpleUnderBarController.AnimateOut</a></div><div class="ttdeci">void AnimateOut(Action onFinished=null)</div><div class="ttdef"><b>Definition:</b> <a href="SimpleUnderBarController_8cs_source.html#l00074">SimpleUnderBarController.cs:74</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html_a710a31240ad99f5ee1d11eb6c4f32eca"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca">Core.Utility.UI.Navigation.Navigation.SetActive</a></div><div class="ttdeci">void SetActive(bool value)</div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00140">Navigation.cs:140</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_html_acf213c9e00eb3e77b65bb83289329a09"><div class="ttname"><a href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#acf213c9e00eb3e77b65bb83289329a09">Module.UI.Title.Option.OptionManager.bar</a></div><div class="ttdeci">SimpleUnderBarController bar</div><div class="ttdef"><b>Definition:</b> <a href="OptionManager_8cs_source.html#l00022">OptionManager.cs:22</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_af909f3c02e0e428d7bb4ba5c07543e7c_cgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_af909f3c02e0e428d7bb4ba5c07543e7c_cgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_af909f3c02e0e428d7bb4ba5c07543e7c_cgraph" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_af909f3c02e0e428d7bb4ba5c07543e7c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,220,80"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SimpleUnderBarController.html#a281784c16ed7ce48be59e756d8c310b2" title=" " alt="" coords="268,5,541,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca" title=" " alt="" coords="309,71,500,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4c2e8acc40f36d8c1f525c23f0de1567"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c2e8acc40f36d8c1f525c23f0de1567">&#9670;&nbsp;</a></span>Initialized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void Module.UI.Title.Option.OptionManager.Initialized </td>
+          <td>(</td>
+          <td class="paramtype">ContentTransform&#160;</td>
+          <td class="paramname"><em>content</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isReset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a385a3ad44bba7369d02aa90cbe07122b">Core.Utility.UI.Navigation.UIManager</a>を再実装しています。</p>
+
+<p class="definition"> <a class="el" href="OptionManager_8cs_source.html">OptionManager.cs</a> の <a class="el" href="OptionManager_8cs_source.html#l00046">46</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            base.Initialized(content, isReset);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a4ce41364015dc645169fd609397548cc">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca">SetActive</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#acf213c9e00eb3e77b65bb83289329a09">bar</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SimpleUnderBarController.html#a097a69b0447a4c40fc81093f188a87b6">AnimateIn</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">if</span> (isReset) <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a4ce41364015dc645169fd609397548cc">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3">SetScreen</a>(<a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a50d1b9eddbb17590fa09a683231ebb48">Nav</a>.Option1, isReset: <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Component_1_1SimpleUnderBarController_html_a097a69b0447a4c40fc81093f188a87b6"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Component_1_1SimpleUnderBarController.html#a097a69b0447a4c40fc81093f188a87b6">Core.Utility.UI.Component.SimpleUnderBarController.AnimateIn</a></div><div class="ttdeci">void AnimateIn(Action onFinished=null)</div><div class="ttdef"><b>Definition:</b> <a href="SimpleUnderBarController_8cs_source.html#l00040">SimpleUnderBarController.cs:40</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a4c2e8acc40f36d8c1f525c23f0de1567_cgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a4c2e8acc40f36d8c1f525c23f0de1567_cgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a4c2e8acc40f36d8c1f525c23f0de1567_cgraph" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a4c2e8acc40f36d8c1f525c23f0de1567_cgraph">
+<area shape="rect" title=" " alt="" coords="5,71,220,112"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SimpleUnderBarController.html#a097a69b0447a4c40fc81093f188a87b6" title=" " alt="" coords="268,5,531,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca" title=" " alt="" coords="304,71,495,112"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3" title=" " alt="" coords="304,136,495,177"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a82c0d36cd008e231c62b0410f4d2196a" title=" " alt="" coords="579,71,769,112"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#abb6930c459fc8a9aa8d331dfbc739ba6" title=" " alt="" coords="579,136,769,177"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a385a3ad44bba7369d02aa90cbe07122b" title=" " alt="" coords="579,201,769,243"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab4921ad28e64daad0a466b5b241ce6c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4921ad28e64daad0a466b5b241ce6c9">&#9670;&nbsp;</a></span>NavigateToAudio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.UI.Title.Option.OptionManager.NavigateToAudio </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isReset</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="OptionManager_8cs_source.html">OptionManager.cs</a> の <a class="el" href="OptionManager_8cs_source.html#l00176">176</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a4ce41364015dc645169fd609397548cc">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3">SetScreen</a>(<a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a50d1b9eddbb17590fa09a683231ebb48">Nav</a>.Option3, isReset: isReset);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a3725ccb256b1c83707cfae6c10d86911">preference</a>.<a class="code" href="classCore_1_1User_1_1UserPreference.html#a5f43225f7a424396ff8541c6c7d3e040">Load</a>();</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            var user = <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a3725ccb256b1c83707cfae6c10d86911">preference</a>.<a class="code" href="classCore_1_1User_1_1UserPreference.html#afb2b63f6be5bf21bed2541937bdeacb7">GetUserData</a>();</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a16b53d11bc419684c3795e220b8dbae6">option3</a>.<a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html#ab3ea0a44c5e8d0b8cfe2fa6e60e48408">SetValues</a>(</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                user.masterVolume.value,</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                user.musicVolume.value,</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                user.effectVolume.value</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            );</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1User_1_1UserPreference_html_a5f43225f7a424396ff8541c6c7d3e040"><div class="ttname"><a href="classCore_1_1User_1_1UserPreference.html#a5f43225f7a424396ff8541c6c7d3e040">Core.User.UserPreference.Load</a></div><div class="ttdeci">void Load()</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00031">UserPreference.cs:31</a></div></div>
+<div class="ttc" id="aclassCore_1_1User_1_1UserPreference_html_afb2b63f6be5bf21bed2541937bdeacb7"><div class="ttname"><a href="classCore_1_1User_1_1UserPreference.html#afb2b63f6be5bf21bed2541937bdeacb7">Core.User.UserPreference.GetUserData</a></div><div class="ttdeci">UserData GetUserData()</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00036">UserPreference.cs:36</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager_html_ab3ea0a44c5e8d0b8cfe2fa6e60e48408"><div class="ttname"><a href="classModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html#ab3ea0a44c5e8d0b8cfe2fa6e60e48408">Module.UI.Title.Option.Option3.Option3Manager.SetValues</a></div><div class="ttdeci">void SetValues(int masterVol, int musicVol, int effectVol)</div><div class="ttdef"><b>Definition:</b> <a href="Option3Manager_8cs_source.html#l00123">Option3Manager.cs:123</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_html_a3725ccb256b1c83707cfae6c10d86911"><div class="ttname"><a href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a3725ccb256b1c83707cfae6c10d86911">Module.UI.Title.Option.OptionManager.preference</a></div><div class="ttdeci">UserPreference preference</div><div class="ttdef"><b>Definition:</b> <a href="OptionManager_8cs_source.html#l00026">OptionManager.cs:26</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_ab4921ad28e64daad0a466b5b241ce6c9_cgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_ab4921ad28e64daad0a466b5b241ce6c9_cgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_ab4921ad28e64daad0a466b5b241ce6c9_cgraph" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_ab4921ad28e64daad0a466b5b241ce6c9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,143,220,184"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html#afb2b63f6be5bf21bed2541937bdeacb7" title=" " alt="" coords="285,23,478,64"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html#a5f43225f7a424396ff8541c6c7d3e040" title=" " alt="" coords="269,89,493,115"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3" title=" " alt="" coords="286,172,477,213"/>
+<area shape="rect" href="classModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html#ab3ea0a44c5e8d0b8cfe2fa6e60e48408" title=" " alt="" coords="268,319,495,360"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html#ad7d8fd43df022c849becc33dcb537bbc" title=" " alt="" coords="551,5,745,47"/>
+<area shape="rect" href="classCore_1_1User_1_1DataManager.html#af52e53e411c9340934ddc84b957c4a07" title=" " alt="" coords="543,71,753,98"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a82c0d36cd008e231c62b0410f4d2196a" title=" " alt="" coords="553,123,743,164"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#abb6930c459fc8a9aa8d331dfbc739ba6" title=" " alt="" coords="553,188,743,229"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a385a3ad44bba7369d02aa90cbe07122b" title=" " alt="" coords="553,253,743,295"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SliderController.html#aaa432987f6826599520dd8136a6dcc04" title=" " alt="" coords="551,319,745,360"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SliderController.html#a36047529a89aa635a6a413b9e8be49c4" title=" " alt="" coords="551,384,745,425"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SliderController.html#aedd67b85e8bbf4c13362f18c5634b8f7" title=" " alt="" coords="801,352,996,393"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_ab4921ad28e64daad0a466b5b241ce6c9_icgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_ab4921ad28e64daad0a466b5b241ce6c9_icgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_ab4921ad28e64daad0a466b5b241ce6c9_icgraph" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_ab4921ad28e64daad0a466b5b241ce6c9_icgraph">
+<area shape="rect" title=" " alt="" coords="531,5,745,47"/>
+<area shape="rect" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a4b862da2a6f4bce5a2683cd0a4e249b8" title=" " alt="" coords="268,5,483,47"/>
+<area shape="rect" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a3a98762af849c9a9722750d6126cd072" title=" " alt="" coords="5,5,220,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a044c88aa6ff25295277bada06cbc56b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a044c88aa6ff25295277bada06cbc56b5">&#9670;&nbsp;</a></span>NavigateToKeyConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.UI.Title.Option.OptionManager.NavigateToKeyConfig </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isReset</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="OptionManager_8cs_source.html">OptionManager.cs</a> の <a class="el" href="OptionManager_8cs_source.html#l00188">188</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a4ce41364015dc645169fd609397548cc">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3">SetScreen</a>(<a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a50d1b9eddbb17590fa09a683231ebb48">Nav</a>.Option4, isReset: isReset);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        }</div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a044c88aa6ff25295277bada06cbc56b5_cgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a044c88aa6ff25295277bada06cbc56b5_cgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a044c88aa6ff25295277bada06cbc56b5_cgraph" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a044c88aa6ff25295277bada06cbc56b5_cgraph">
+<area shape="rect" title=" " alt="" coords="5,71,225,112"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3" title=" " alt="" coords="273,71,464,112"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a82c0d36cd008e231c62b0410f4d2196a" title=" " alt="" coords="512,5,703,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#abb6930c459fc8a9aa8d331dfbc739ba6" title=" " alt="" coords="512,71,703,112"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a385a3ad44bba7369d02aa90cbe07122b" title=" " alt="" coords="512,136,703,177"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a044c88aa6ff25295277bada06cbc56b5_icgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a044c88aa6ff25295277bada06cbc56b5_icgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a044c88aa6ff25295277bada06cbc56b5_icgraph" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a044c88aa6ff25295277bada06cbc56b5_icgraph">
+<area shape="rect" title=" " alt="" coords="531,5,751,47"/>
+<area shape="rect" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a4b862da2a6f4bce5a2683cd0a4e249b8" title=" " alt="" coords="268,5,483,47"/>
+<area shape="rect" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a3a98762af849c9a9722750d6126cd072" title=" " alt="" coords="5,5,220,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a57181cede02f33a7345b39ceafaa0c52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57181cede02f33a7345b39ceafaa0c52">&#9670;&nbsp;</a></span>NavigateToVideo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.UI.Title.Option.OptionManager.NavigateToVideo </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isReset</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="OptionManager_8cs_source.html">OptionManager.cs</a> の <a class="el" href="OptionManager_8cs_source.html#l00168">168</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a4ce41364015dc645169fd609397548cc">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3">SetScreen</a>(<a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a50d1b9eddbb17590fa09a683231ebb48">Nav</a>.Option2, isReset: isReset);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a3725ccb256b1c83707cfae6c10d86911">preference</a>.<a class="code" href="classCore_1_1User_1_1UserPreference.html#a5f43225f7a424396ff8541c6c7d3e040">Load</a>();</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            var user = <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a3725ccb256b1c83707cfae6c10d86911">preference</a>.<a class="code" href="classCore_1_1User_1_1UserPreference.html#afb2b63f6be5bf21bed2541937bdeacb7">GetUserData</a>();</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a333cfb2a7aa334a939d43f106506179f">option2</a>.SetValues(user.fullScreen.value, user.bright.value);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        }</div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a57181cede02f33a7345b39ceafaa0c52_cgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a57181cede02f33a7345b39ceafaa0c52_cgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a57181cede02f33a7345b39ceafaa0c52_cgraph" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a57181cede02f33a7345b39ceafaa0c52_cgraph">
+<area shape="rect" title=" " alt="" coords="5,64,220,105"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html#afb2b63f6be5bf21bed2541937bdeacb7" title=" " alt="" coords="283,5,477,47"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html#a5f43225f7a424396ff8541c6c7d3e040" title=" " alt="" coords="268,71,492,98"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3" title=" " alt="" coords="285,155,475,196"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html#ad7d8fd43df022c849becc33dcb537bbc" title=" " alt="" coords="549,5,742,47"/>
+<area shape="rect" href="classCore_1_1User_1_1DataManager.html#af52e53e411c9340934ddc84b957c4a07" title=" " alt="" coords="540,71,751,98"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a82c0d36cd008e231c62b0410f4d2196a" title=" " alt="" coords="550,123,741,164"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#abb6930c459fc8a9aa8d331dfbc739ba6" title=" " alt="" coords="550,188,741,229"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a385a3ad44bba7369d02aa90cbe07122b" title=" " alt="" coords="550,253,741,295"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a57181cede02f33a7345b39ceafaa0c52_icgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a57181cede02f33a7345b39ceafaa0c52_icgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a57181cede02f33a7345b39ceafaa0c52_icgraph" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a57181cede02f33a7345b39ceafaa0c52_icgraph">
+<area shape="rect" title=" " alt="" coords="531,5,745,47"/>
+<area shape="rect" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a4b862da2a6f4bce5a2683cd0a4e249b8" title=" " alt="" coords="268,5,483,47"/>
+<area shape="rect" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a3a98762af849c9a9722750d6126cd072" title=" " alt="" coords="5,5,220,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab6c94aecc37db655cd818e66bd9aba16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6c94aecc37db655cd818e66bd9aba16">&#9670;&nbsp;</a></span>Select()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void Module.UI.Title.Option.OptionManager.Select </td>
+          <td>(</td>
+          <td class="paramtype">Vector2&#160;</td>
+          <td class="paramname"><em>direction</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a361aea255401b1286eaa51bcc6eeaab8">Core.Utility.UI.Navigation.UIManager</a>を再実装しています。</p>
+
+<p class="definition"> <a class="el" href="OptionManager_8cs_source.html">OptionManager.cs</a> の <a class="el" href="OptionManager_8cs_source.html#l00055">55</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4b862da2a6f4bce5a2683cd0a4e249b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b862da2a6f4bce5a2683cd0a4e249b8">&#9670;&nbsp;</a></span>SetNavigation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.UI.Title.Option.OptionManager.SetNavigation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="OptionManager_8cs_source.html">OptionManager.cs</a> の <a class="el" href="OptionManager_8cs_source.html#l00084">84</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a4ce41364015dc645169fd609397548cc">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a349ca79afa6722d45b5dc9f72195297b">OnCancel</a> += _ =&gt;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keywordflow">switch</span> (<a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a4ce41364015dc645169fd609397548cc">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a66fb20844af6cbb1b759cbf564ee4e37">GetCurrentNav</a>())</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                    <span class="keywordflow">case</span> <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a50d1b9eddbb17590fa09a683231ebb48">Nav</a>.Option1:</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                        <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a06c683c99de08bcf61e7adf9e23d9eb7">OnBack</a>?.Invoke();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                        <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a4ce41364015dc645169fd609397548cc">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3">SetScreen</a>(<a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a50d1b9eddbb17590fa09a683231ebb48">Nav</a>.Option1);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            };</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a83caac7834317c9758981f1382198146">option1</a>.OnClick += nav =&gt;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="keywordflow">switch</span> (nav)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                    <span class="keywordflow">case</span> Option1Manager.Nav.Video:</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                        <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a57181cede02f33a7345b39ceafaa0c52">NavigateToVideo</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                    <span class="keywordflow">case</span> Option1Manager.Nav.Audio:</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                        <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#ab4921ad28e64daad0a466b5b241ce6c9">NavigateToAudio</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                    <span class="keywordflow">case</span> Option1Manager.Nav.KeyConfig:</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                        <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a044c88aa6ff25295277bada06cbc56b5">NavigateToKeyConfig</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            };</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a83caac7834317c9758981f1382198146">option1</a>.OnBack += () =&gt; { <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a06c683c99de08bcf61e7adf9e23d9eb7">OnBack</a>?.Invoke(); };</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a333cfb2a7aa334a939d43f106506179f">option2</a>.OnFullScreen += isOn =&gt;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                var data = <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a3725ccb256b1c83707cfae6c10d86911">preference</a>.<a class="code" href="classCore_1_1User_1_1UserPreference.html#afb2b63f6be5bf21bed2541937bdeacb7">GetUserData</a>();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                data.<a class="code" href="classCore_1_1User_1_1UserData.html#a4a77609029c7b27349ec2bc14d478467">fullScreen</a>.<a class="code" href="classCore_1_1User_1_1KeyValue.html#ac797beb1dd4fa1b3be8bd353c06404aa">value</a> = isOn;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a3725ccb256b1c83707cfae6c10d86911">preference</a>.<a class="code" href="classCore_1_1User_1_1UserPreference.html#aa66ec9afce25a257043f55d8fce077f0">SetUserData</a>(data);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                Screen.fullScreen = isOn;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            };</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a333cfb2a7aa334a939d43f106506179f">option2</a>.OnBrightness += value =&gt;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                var data = <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a3725ccb256b1c83707cfae6c10d86911">preference</a>.<a class="code" href="classCore_1_1User_1_1UserPreference.html#afb2b63f6be5bf21bed2541937bdeacb7">GetUserData</a>();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                data.<a class="code" href="classCore_1_1User_1_1UserData.html#a5bc95d47efc3210052e2d33ac4af8b7d">bright</a>.<a class="code" href="classCore_1_1User_1_1KeyValue.html#ac797beb1dd4fa1b3be8bd353c06404aa">value</a> = (int)value;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a3725ccb256b1c83707cfae6c10d86911">preference</a>.<a class="code" href="classCore_1_1User_1_1UserPreference.html#aa66ec9afce25a257043f55d8fce077f0">SetUserData</a>(data);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            };</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a333cfb2a7aa334a939d43f106506179f">option2</a>.OnBack += () =&gt;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a3725ccb256b1c83707cfae6c10d86911">preference</a>.<a class="code" href="classCore_1_1User_1_1UserPreference.html#a3367839d7ebd1ed567a3fe23804fc80a">Save</a>();</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a4ce41364015dc645169fd609397548cc">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3">SetScreen</a>(<a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a50d1b9eddbb17590fa09a683231ebb48">Nav</a>.Option1);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            };</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a16b53d11bc419684c3795e220b8dbae6">option3</a>.<a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html#a4ab31d08eeb14b9f5c7463e74f58024d">OnVolumeChanged</a> += (nav, f) =&gt;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                var volume = (int)f;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                <span class="keywordflow">switch</span> (nav)</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                {</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                    <span class="keywordflow">case</span> <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html">Option3Manager</a>.<a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html#aaca83d1229b70addb98ccdc2d36da5e8">Nav</a>.Master:</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                        <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a3725ccb256b1c83707cfae6c10d86911">preference</a>.<a class="code" href="classCore_1_1User_1_1UserPreference.html#a27ca81bf3b5972254f54c713538456f3">SetMasterVolume</a>(volume);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                    <span class="keywordflow">case</span> <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html">Option3Manager</a>.<a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html#aaca83d1229b70addb98ccdc2d36da5e8">Nav</a>.Music:</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                        <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a3725ccb256b1c83707cfae6c10d86911">preference</a>.<a class="code" href="classCore_1_1User_1_1UserPreference.html#a162ae9913bcf71dfbfd93e706e8c858b">SetMusicVolume</a>(volume);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                    <span class="keywordflow">case</span> <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html">Option3Manager</a>.<a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html#aaca83d1229b70addb98ccdc2d36da5e8">Nav</a>.Effect:</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                        <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a3725ccb256b1c83707cfae6c10d86911">preference</a>.<a class="code" href="classCore_1_1User_1_1UserPreference.html#a5f26f61d12db081ae8a38a23bbce5d82">SetEffectVolume</a>(volume);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            };</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a16b53d11bc419684c3795e220b8dbae6">option3</a>.<a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html#a4f5562cb29a71624d2462e03f7bcea57">OnBack</a> += () =&gt;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a3725ccb256b1c83707cfae6c10d86911">preference</a>.<a class="code" href="classCore_1_1User_1_1UserPreference.html#a3367839d7ebd1ed567a3fe23804fc80a">Save</a>();</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a4ce41364015dc645169fd609397548cc">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3">SetScreen</a>(<a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a50d1b9eddbb17590fa09a683231ebb48">Nav</a>.Option1);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            };</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a0572371e2d8d8ad0a2db5867a2d37ce4">option4</a>.<a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1Option4_1_1Option4Manager.html#a63cb60fee5b42840af98f8052ec2c0c8">OnBack</a> += () =&gt;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a3725ccb256b1c83707cfae6c10d86911">preference</a>.<a class="code" href="classCore_1_1User_1_1UserPreference.html#a3367839d7ebd1ed567a3fe23804fc80a">Save</a>();</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a4ce41364015dc645169fd609397548cc">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3">SetScreen</a>(<a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a50d1b9eddbb17590fa09a683231ebb48">Nav</a>.Option1);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            };</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1User_1_1KeyValue_html_ac797beb1dd4fa1b3be8bd353c06404aa"><div class="ttname"><a href="classCore_1_1User_1_1KeyValue.html#ac797beb1dd4fa1b3be8bd353c06404aa">Core.User.KeyValue.value</a></div><div class="ttdeci">TValue value</div><div class="ttdef"><b>Definition:</b> <a href="UserSetting_8cs_source.html#l00011">UserSetting.cs:11</a></div></div>
+<div class="ttc" id="aclassCore_1_1User_1_1UserData_html_a4a77609029c7b27349ec2bc14d478467"><div class="ttname"><a href="classCore_1_1User_1_1UserData.html#a4a77609029c7b27349ec2bc14d478467">Core.User.UserData.fullScreen</a></div><div class="ttdeci">KeyValue&lt; string, bool &gt; fullScreen</div><div class="ttdef"><b>Definition:</b> <a href="UserSetting_8cs_source.html#l00030">UserSetting.cs:30</a></div></div>
+<div class="ttc" id="aclassCore_1_1User_1_1UserData_html_a5bc95d47efc3210052e2d33ac4af8b7d"><div class="ttname"><a href="classCore_1_1User_1_1UserData.html#a5bc95d47efc3210052e2d33ac4af8b7d">Core.User.UserData.bright</a></div><div class="ttdeci">KeyValue&lt; string, int &gt; bright</div><div class="ttdef"><b>Definition:</b> <a href="UserSetting_8cs_source.html#l00031">UserSetting.cs:31</a></div></div>
+<div class="ttc" id="aclassCore_1_1User_1_1UserPreference_html_a162ae9913bcf71dfbfd93e706e8c858b"><div class="ttname"><a href="classCore_1_1User_1_1UserPreference.html#a162ae9913bcf71dfbfd93e706e8c858b">Core.User.UserPreference.SetMusicVolume</a></div><div class="ttdeci">void SetMusicVolume(int vol)</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00053">UserPreference.cs:53</a></div></div>
+<div class="ttc" id="aclassCore_1_1User_1_1UserPreference_html_a27ca81bf3b5972254f54c713538456f3"><div class="ttname"><a href="classCore_1_1User_1_1UserPreference.html#a27ca81bf3b5972254f54c713538456f3">Core.User.UserPreference.SetMasterVolume</a></div><div class="ttdeci">void SetMasterVolume(int vol)</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00046">UserPreference.cs:46</a></div></div>
+<div class="ttc" id="aclassCore_1_1User_1_1UserPreference_html_a3367839d7ebd1ed567a3fe23804fc80a"><div class="ttname"><a href="classCore_1_1User_1_1UserPreference.html#a3367839d7ebd1ed567a3fe23804fc80a">Core.User.UserPreference.Save</a></div><div class="ttdeci">void Save()</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00089">UserPreference.cs:89</a></div></div>
+<div class="ttc" id="aclassCore_1_1User_1_1UserPreference_html_a5f26f61d12db081ae8a38a23bbce5d82"><div class="ttname"><a href="classCore_1_1User_1_1UserPreference.html#a5f26f61d12db081ae8a38a23bbce5d82">Core.User.UserPreference.SetEffectVolume</a></div><div class="ttdeci">void SetEffectVolume(int vol)</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00060">UserPreference.cs:60</a></div></div>
+<div class="ttc" id="aclassCore_1_1User_1_1UserPreference_html_aa66ec9afce25a257043f55d8fce077f0"><div class="ttname"><a href="classCore_1_1User_1_1UserPreference.html#aa66ec9afce25a257043f55d8fce077f0">Core.User.UserPreference.SetUserData</a></div><div class="ttdeci">void SetUserData(UserData data)</div><div class="ttdef"><b>Definition:</b> <a href="UserPreference_8cs_source.html#l00041">UserPreference.cs:41</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html_a349ca79afa6722d45b5dc9f72195297b"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a349ca79afa6722d45b5dc9f72195297b">Core.Utility.UI.Navigation.Navigation.OnCancel</a></div><div class="ttdeci">Action&lt; InputAction.CallbackContext &gt; OnCancel</div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00066">Navigation.cs:66</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html_a66fb20844af6cbb1b759cbf564ee4e37"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a66fb20844af6cbb1b759cbf564ee4e37">Core.Utility.UI.Navigation.Navigation.GetCurrentNav</a></div><div class="ttdeci">T GetCurrentNav()</div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00135">Navigation.cs:135</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager_html"><div class="ttname"><a href="classModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html">Module.UI.Title.Option.Option3.Option3Manager</a></div><div class="ttdef"><b>Definition:</b> <a href="Option3Manager_8cs_source.html#l00010">Option3Manager.cs:11</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager_html_a4ab31d08eeb14b9f5c7463e74f58024d"><div class="ttname"><a href="classModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html#a4ab31d08eeb14b9f5c7463e74f58024d">Module.UI.Title.Option.Option3.Option3Manager.OnVolumeChanged</a></div><div class="ttdeci">Action&lt; Nav, float &gt; OnVolumeChanged</div><div class="ttdef"><b>Definition:</b> <a href="Option3Manager_8cs_source.html#l00121">Option3Manager.cs:121</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager_html_a4f5562cb29a71624d2462e03f7bcea57"><div class="ttname"><a href="classModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html#a4f5562cb29a71624d2462e03f7bcea57">Module.UI.Title.Option.Option3.Option3Manager.OnBack</a></div><div class="ttdeci">Action OnBack</div><div class="ttdef"><b>Definition:</b> <a href="Option3Manager_8cs_source.html#l00119">Option3Manager.cs:119</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager_html_aaca83d1229b70addb98ccdc2d36da5e8"><div class="ttname"><a href="classModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html#aaca83d1229b70addb98ccdc2d36da5e8">Module.UI.Title.Option.Option3.Option3Manager.Nav</a></div><div class="ttdeci">Nav</div><div class="ttdef"><b>Definition:</b> <a href="Option3Manager_8cs_source.html#l00012">Option3Manager.cs:13</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1Option4_1_1Option4Manager_html_a63cb60fee5b42840af98f8052ec2c0c8"><div class="ttname"><a href="classModule_1_1UI_1_1Title_1_1Option_1_1Option4_1_1Option4Manager.html#a63cb60fee5b42840af98f8052ec2c0c8">Module.UI.Title.Option.Option4.Option4Manager.OnBack</a></div><div class="ttdeci">Action OnBack</div><div class="ttdef"><b>Definition:</b> <a href="Option4Manager_8cs_source.html#l00034">Option4Manager.cs:34</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_html_a044c88aa6ff25295277bada06cbc56b5"><div class="ttname"><a href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a044c88aa6ff25295277bada06cbc56b5">Module.UI.Title.Option.OptionManager.NavigateToKeyConfig</a></div><div class="ttdeci">void NavigateToKeyConfig(bool isReset)</div><div class="ttdef"><b>Definition:</b> <a href="OptionManager_8cs_source.html#l00188">OptionManager.cs:188</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_html_a06c683c99de08bcf61e7adf9e23d9eb7"><div class="ttname"><a href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a06c683c99de08bcf61e7adf9e23d9eb7">Module.UI.Title.Option.OptionManager.OnBack</a></div><div class="ttdeci">Action OnBack</div><div class="ttdef"><b>Definition:</b> <a href="OptionManager_8cs_source.html#l00082">OptionManager.cs:82</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_html_a57181cede02f33a7345b39ceafaa0c52"><div class="ttname"><a href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a57181cede02f33a7345b39ceafaa0c52">Module.UI.Title.Option.OptionManager.NavigateToVideo</a></div><div class="ttdeci">void NavigateToVideo(bool isReset)</div><div class="ttdef"><b>Definition:</b> <a href="OptionManager_8cs_source.html#l00168">OptionManager.cs:168</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_html_ab4921ad28e64daad0a466b5b241ce6c9"><div class="ttname"><a href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#ab4921ad28e64daad0a466b5b241ce6c9">Module.UI.Title.Option.OptionManager.NavigateToAudio</a></div><div class="ttdeci">void NavigateToAudio(bool isReset)</div><div class="ttdef"><b>Definition:</b> <a href="OptionManager_8cs_source.html#l00176">OptionManager.cs:176</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a4b862da2a6f4bce5a2683cd0a4e249b8_cgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a4b862da2a6f4bce5a2683cd0a4e249b8_cgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a4b862da2a6f4bce5a2683cd0a4e249b8_cgraph" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a4b862da2a6f4bce5a2683cd0a4e249b8_cgraph">
+<area shape="rect" title=" " alt="" coords="5,312,220,353"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a66fb20844af6cbb1b759cbf564ee4e37" title=" " alt="" coords="283,5,478,47"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html#afb2b63f6be5bf21bed2541937bdeacb7" title=" " alt="" coords="558,64,751,105"/>
+<area shape="rect" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#ab4921ad28e64daad0a466b5b241ce6c9" title=" " alt="" coords="273,188,488,229"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3" title=" " alt="" coords="559,279,750,320"/>
+<area shape="rect" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a044c88aa6ff25295277bada06cbc56b5" title=" " alt="" coords="271,253,491,295"/>
+<area shape="rect" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a57181cede02f33a7345b39ceafaa0c52" title=" " alt="" coords="273,123,488,164"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html#a3367839d7ebd1ed567a3fe23804fc80a" title=" " alt="" coords="268,370,493,397"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html#a5f26f61d12db081ae8a38a23bbce5d82" title=" " alt="" coords="284,421,477,463"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html#a27ca81bf3b5972254f54c713538456f3" title=" " alt="" coords="284,487,477,528"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html#a162ae9913bcf71dfbfd93e706e8c858b" title=" " alt="" coords="284,552,477,593"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html#aa66ec9afce25a257043f55d8fce077f0" title=" " alt="" coords="284,617,477,659"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html#a5f43225f7a424396ff8541c6c7d3e040" title=" " alt="" coords="543,130,767,157"/>
+<area shape="rect" href="classModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html#ab3ea0a44c5e8d0b8cfe2fa6e60e48408" title=" " alt="" coords="541,188,768,229"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html#ad7d8fd43df022c849becc33dcb537bbc" title=" " alt="" coords="825,83,1018,124"/>
+<area shape="rect" href="classCore_1_1User_1_1DataManager.html#af52e53e411c9340934ddc84b957c4a07" title=" " alt="" coords="816,31,1027,58"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a82c0d36cd008e231c62b0410f4d2196a" title=" " alt="" coords="826,344,1017,385"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#abb6930c459fc8a9aa8d331dfbc739ba6" title=" " alt="" coords="826,409,1017,451"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a385a3ad44bba7369d02aa90cbe07122b" title=" " alt="" coords="826,279,1017,320"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SliderController.html#aaa432987f6826599520dd8136a6dcc04" title=" " alt="" coords="824,148,1019,189"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SliderController.html#a36047529a89aa635a6a413b9e8be49c4" title=" " alt="" coords="824,213,1019,255"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SliderController.html#aedd67b85e8bbf4c13362f18c5634b8f7" title=" " alt="" coords="1075,181,1269,223"/>
+<area shape="rect" href="classCore_1_1User_1_1DataManager.html#a88d5a82ec500270fbb46991faca71a87" title=" " alt="" coords="549,370,761,397"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a4b862da2a6f4bce5a2683cd0a4e249b8_icgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a4b862da2a6f4bce5a2683cd0a4e249b8_icgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a4b862da2a6f4bce5a2683cd0a4e249b8_icgraph" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a4b862da2a6f4bce5a2683cd0a4e249b8_icgraph">
+<area shape="rect" title=" " alt="" coords="268,5,483,47"/>
+<area shape="rect" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a3a98762af849c9a9722750d6126cd072" title=" " alt="" coords="5,5,220,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6cc26aadaaeadef14f4c9d0ab0231bd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cc26aadaaeadef14f4c9d0ab0231bd0">&#9670;&nbsp;</a></span>SetPreference()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.UI.Title.Option.OptionManager.SetPreference </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classCore_1_1User_1_1UserPreference.html">UserPreference</a>&#160;</td>
+          <td class="paramname"><em>manager</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="OptionManager_8cs_source.html">OptionManager.cs</a> の <a class="el" href="OptionManager_8cs_source.html#l00163">163</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a3725ccb256b1c83707cfae6c10d86911">preference</a> = manager;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        }</div>
+</div><!-- fragment --><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a6cc26aadaaeadef14f4c9d0ab0231bd0_icgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a6cc26aadaaeadef14f4c9d0ab0231bd0_icgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a6cc26aadaaeadef14f4c9d0ab0231bd0_icgraph" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_a6cc26aadaaeadef14f4c9d0ab0231bd0_icgraph">
+<area shape="rect" title=" " alt="" coords="877,5,1092,47"/>
+<area shape="rect" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a16e83604fe699aae078ae32e23be358b" title=" " alt="" coords="557,5,829,47"/>
+<area shape="rect" href="classGameMain_1_1Router_1_1GameRouter.html#a63d701fc5b40d5a043f111c829d2fad0" title=" " alt="" coords="281,5,509,47"/>
+<area shape="rect" href="classGameMain_1_1Router_1_1GameRouter.html#a5e7d40861c1fb449ad17bf47137e74b7" title=" " alt="" coords="5,5,233,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="acf213c9e00eb3e77b65bb83289329a09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf213c9e00eb3e77b65bb83289329a09">&#9670;&nbsp;</a></span>bar</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SimpleUnderBarController.html">SimpleUnderBarController</a> Module.UI.Title.Option.OptionManager.bar</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="OptionManager_8cs_source.html">OptionManager.cs</a> の <a class="el" href="OptionManager_8cs_source.html#l00022">22</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4ce41364015dc645169fd609397548cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ce41364015dc645169fd609397548cc">&#9670;&nbsp;</a></span>navigation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Navigation</a>&lt;<a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a50d1b9eddbb17590fa09a683231ebb48">Nav</a>&gt; Module.UI.Title.Option.OptionManager.navigation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="OptionManager_8cs_source.html">OptionManager.cs</a> の <a class="el" href="OptionManager_8cs_source.html#l00024">24</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a83caac7834317c9758981f1382198146"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83caac7834317c9758981f1382198146">&#9670;&nbsp;</a></span>option1</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Option1Manager Module.UI.Title.Option.OptionManager.option1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="OptionManager_8cs_source.html">OptionManager.cs</a> の <a class="el" href="OptionManager_8cs_source.html#l00017">17</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a333cfb2a7aa334a939d43f106506179f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a333cfb2a7aa334a939d43f106506179f">&#9670;&nbsp;</a></span>option2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Option2Manager Module.UI.Title.Option.OptionManager.option2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="OptionManager_8cs_source.html">OptionManager.cs</a> の <a class="el" href="OptionManager_8cs_source.html#l00018">18</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a16b53d11bc419684c3795e220b8dbae6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16b53d11bc419684c3795e220b8dbae6">&#9670;&nbsp;</a></span>option3</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html">Option3Manager</a> Module.UI.Title.Option.OptionManager.option3</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="OptionManager_8cs_source.html">OptionManager.cs</a> の <a class="el" href="OptionManager_8cs_source.html#l00019">19</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0572371e2d8d8ad0a2db5867a2d37ce4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0572371e2d8d8ad0a2db5867a2d37ce4">&#9670;&nbsp;</a></span>option4</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1Option4_1_1Option4Manager.html">Option4Manager</a> Module.UI.Title.Option.OptionManager.option4</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="OptionManager_8cs_source.html">OptionManager.cs</a> の <a class="el" href="OptionManager_8cs_source.html#l00020">20</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3725ccb256b1c83707cfae6c10d86911"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3725ccb256b1c83707cfae6c10d86911">&#9670;&nbsp;</a></span>preference</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCore_1_1User_1_1UserPreference.html">UserPreference</a> Module.UI.Title.Option.OptionManager.preference</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="OptionManager_8cs_source.html">OptionManager.cs</a> の <a class="el" href="OptionManager_8cs_source.html#l00026">26</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">イベント詳解</h2>
+<a id="a06c683c99de08bcf61e7adf9e23d9eb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06c683c99de08bcf61e7adf9e23d9eb7">&#9670;&nbsp;</a></span>OnBack</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Action Module.UI.Title.Option.OptionManager.OnBack</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="OptionManager_8cs_source.html">OptionManager.cs</a> の <a class="el" href="OptionManager_8cs_source.html#l00082">82</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>src/Assets/Scripts/Module/UI/Title/Option/<a class="el" href="OptionManager_8cs_source.html">OptionManager.cs</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

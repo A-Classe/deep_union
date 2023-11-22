@@ -1,0 +1,964 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>release control: Module.UI.InGame.InGameUIManager クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">release control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceModule.html">Module</a></li><li class="navelem"><a class="el" href="namespaceModule_1_1UI.html">UI</a></li><li class="navelem"><a class="el" href="namespaceModule_1_1UI_1_1InGame.html">InGame</a></li><li class="navelem"><a class="el" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html">InGameUIManager</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#events">イベント</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classModule_1_1UI_1_1InGame_1_1InGameUIManager-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">Module.UI.InGame.InGameUIManager クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Module.UI.InGame.InGameUIManager の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1InGame_1_1InGameUIManager__inherit__graph.png" border="0" usemap="#aModule_8UI_8InGame_8InGameUIManager_inherit__map" alt="Inheritance graph"/></div>
+<map name="aModule_8UI_8InGame_8InGameUIManager_inherit__map" id="aModule_8UI_8InGame_8InGameUIManager_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,131,275,413"/>
+<area shape="rect" title=" " alt="" coords="78,5,202,83"/>
+</map>
+</div>
+<div class="dynheader">
+Module.UI.InGame.InGameUIManager 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1InGame_1_1InGameUIManager__coll__graph.png" border="0" usemap="#aModule_8UI_8InGame_8InGameUIManager_coll__map" alt="Collaboration graph"/></div>
+<map name="aModule_8UI_8InGame_8InGameUIManager_coll__map" id="aModule_8UI_8InGame_8InGameUIManager_coll__map">
+<area shape="rect" title=" " alt="" coords="765,1403,1034,1612"/>
+<area shape="rect" title=" " alt="" coords="5,293,129,371"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SimpleUnderBarController.html" title=" " alt="" coords="62,631,257,811"/>
+<area shape="rect" href="classCore_1_1Scenes_1_1SceneChanger.html" title="シーン間を遷移する時に必ず使う パラメーターもここで管理" alt="" coords="2128,1050,2327,1259"/>
+<area shape="rect" href="structCore_1_1Model_1_1Scene_1_1GameResult.html" title=" " alt="" coords="2508,661,2731,782"/>
+<area shape="rect" href="classCore_1_1User_1_1StageData.html" title=" " alt="" coords="2755,683,2913,760"/>
+<area shape="rect" href="interfaceCore_1_1User_1_1IDefaultable.html" title=" " alt="" coords="2629,293,2829,371"/>
+<area shape="rect" href="classCore_1_1User_1_1Dict.html" title=" " alt="" coords="2853,271,3023,393"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html" title=" " alt="" coords="2350,969,2550,1340"/>
+<area shape="rect" href="classModule_1_1UI_1_1InGame_1_1Pause_1_1PauseManager.html" title=" " alt="" coords="281,646,507,797"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html" title=" " alt="" coords="1135,264,1256,400"/>
+<area shape="rect" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html" title=" " alt="" coords="1497,1043,1712,1267"/>
+<area shape="rect" title=" " alt="" coords="2043,624,2270,819"/>
+<area shape="rect" href="classModule_1_1UI_1_1Title_1_1Option_1_1Option3_1_1Option3Manager.html" title=" " alt="" coords="1793,639,2019,804"/>
+<area shape="rect" title=" " alt="" coords="1241,646,1467,797"/>
+<area shape="rect" href="classModule_1_1UI_1_1Title_1_1Option_1_1Option4_1_1Option4Manager.html" title=" " alt="" coords="1491,661,1718,782"/>
+<area shape="rect" href="classModule_1_1UI_1_1InGame_1_1InGame_1_1InGameManager.html" title=" " alt="" coords="531,536,763,907"/>
+<area shape="rect" href="classModule_1_1UI_1_1InGame_1_1GameOver_1_1GameOverManager.html" title="ゲーム中のGameOverUI" alt="" coords="789,1065,1009,1245"/>
+<area shape="rect" title=" " alt="" coords="1118,57,1273,134"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1FadeInOutButton.html" title=" " alt="" coords="775,257,970,407"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1ToggleController.html" title=" " alt="" coords="2070,249,2265,415"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1SliderController.html" title=" " alt="" coords="1851,242,2046,422"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1AnimateObject.html" title=" " alt="" coords="531,293,745,371"/>
+<area shape="rect" href="classModule_1_1UI_1_1InGame_1_1Pause_1_1PauseCursor.html" title=" " alt="" coords="281,286,507,378"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html" title=" " alt="" coords="273,5,515,185"/>
+<area shape="rect" href="classCore_1_1User_1_1UserPreference.html" title="データ保存の中継クラス 絶対にこれを介して保存する" alt="" coords="2294,558,2483,885"/>
+<area shape="rect" href="classCore_1_1User_1_1DataManager.html" title=" " alt="" coords="2300,235,2477,429"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Component_1_1Cursor_1_1CursorController.html" title=" " alt="" coords="1414,242,1643,422"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html" title=" " alt="" coords="928,536,1119,907"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a16e83604fe699aae078ae32e23be358b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a16e83604fe699aae078ae32e23be358b">StartGame</a> (<a class="el" href="classCore_1_1User_1_1UserPreference.html">UserPreference</a> preference)</td></tr>
+<tr class="separator:a16e83604fe699aae078ae32e23be358b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73a710d91a968650c94d5f36ac74aad1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a73a710d91a968650c94d5f36ac74aad1">StartPause</a> ()</td></tr>
+<tr class="separator:a73a710d91a968650c94d5f36ac74aad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8936f4ff90ed4997c8ca4438ec4cb4c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a8936f4ff90ed4997c8ca4438ec4cb4c1">SetGameOver</a> ()</td></tr>
+<tr class="separator:a8936f4ff90ed4997c8ca4438ec4cb4c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42e0bdc26e0936b69c4097fab0908c7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a42e0bdc26e0936b69c4097fab0908c7f">SetSceneChanger</a> (<a class="el" href="classCore_1_1Scenes_1_1SceneChanger.html">SceneChanger</a> scene)</td></tr>
+<tr class="separator:a42e0bdc26e0936b69c4097fab0908c7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7b3726f8fd650989d335a73fbaa2d57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#ac7b3726f8fd650989d335a73fbaa2d57">UpdateStageProgress</a> (int value)</td></tr>
+<tr class="separator:ac7b3726f8fd650989d335a73fbaa2d57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade7b1f61545ed95a608933c0cc9186dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#ade7b1f61545ed95a608933c0cc9186dc">SetHp</a> (short current, short? max=null)</td></tr>
+<tr class="separator:ade7b1f61545ed95a608933c0cc9186dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0daa3b7b65d3fa777b14822382e9a461"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a0daa3b7b65d3fa777b14822382e9a461">SetWorkerCount</a> (uint value, uint? max=null)</td></tr>
+<tr class="separator:a0daa3b7b65d3fa777b14822382e9a461"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade331c13c20fa41517fd3217bc60384f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#ade331c13c20fa41517fd3217bc60384f">SetResourceCount</a> (uint current, uint? max=null)</td></tr>
+<tr class="separator:ade331c13c20fa41517fd3217bc60384f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="events"></a>
+イベント</h2></td></tr>
+<tr class="memitem:a067d651d5e955121c8f1d9d3d782708c"><td class="memItemLeft" align="right" valign="top">Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a067d651d5e955121c8f1d9d3d782708c">OnGameInactive</a></td></tr>
+<tr class="separator:a067d651d5e955121c8f1d9d3d782708c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e1128a61e6466025753f8f3c2dfab8f"><td class="memItemLeft" align="right" valign="top">Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a9e1128a61e6466025753f8f3c2dfab8f">OnGameActive</a></td></tr>
+<tr class="separator:a9e1128a61e6466025753f8f3c2dfab8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a7231887eab33e2031491eefd7c279aba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a7231887eab33e2031491eefd7c279aba">Awake</a> ()</td></tr>
+<tr class="separator:a7231887eab33e2031491eefd7c279aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8728926a48ee84c122b6072c60c2189"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#ae8728926a48ee84c122b6072c60c2189">Start</a> ()</td></tr>
+<tr class="separator:ae8728926a48ee84c122b6072c60c2189"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:ae2020b45660ef912ed2f0809ccb71adb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classModule_1_1UI_1_1InGame_1_1InGame_1_1InGameManager.html">InGameManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#ae2020b45660ef912ed2f0809ccb71adb">inGameManager</a></td></tr>
+<tr class="separator:ae2020b45660ef912ed2f0809ccb71adb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dd2e136218d0f2b63b1f7a2c310b8ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classModule_1_1UI_1_1InGame_1_1GameOver_1_1GameOverManager.html">GameOverManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a2dd2e136218d0f2b63b1f7a2c310b8ed">gameOverManager</a></td></tr>
+<tr class="separator:a2dd2e136218d0f2b63b1f7a2c310b8ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76bcf7bad2da5ab1c15795d68c284dae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classModule_1_1UI_1_1InGame_1_1Pause_1_1PauseManager.html">PauseManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a76bcf7bad2da5ab1c15795d68c284dae">pauseManager</a></td></tr>
+<tr class="separator:a76bcf7bad2da5ab1c15795d68c284dae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c3fb80c5c42ebe879857a03f2a5d4f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html">OptionManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a7c3fb80c5c42ebe879857a03f2a5d4f6">optionManager</a></td></tr>
+<tr class="separator:a7c3fb80c5c42ebe879857a03f2a5d4f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d7f1a556bbcd17bf2f9aaca4c0d2aa3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Navigation</a>&lt; <a class="el" href="namespaceModule_1_1UI_1_1InGame.html#aab9a8ee0a0e99ed8d553cd78860607e5">InGameNav</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a2d7f1a556bbcd17bf2f9aaca4c0d2aa3">navigation</a></td></tr>
+<tr class="separator:a2d7f1a556bbcd17bf2f9aaca4c0d2aa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f5474449e751c74069d40409f0fff46"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCore_1_1Scenes_1_1SceneChanger.html">SceneChanger</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a7f5474449e751c74069d40409f0fff46">sceneChanger</a></td></tr>
+<tr class="separator:a7f5474449e751c74069d40409f0fff46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="InGameUIManager_8cs_source.html">InGameUIManager.cs</a> の <a class="el" href="InGameUIManager_8cs_source.html#l00014">14</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="a7231887eab33e2031491eefd7c279aba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7231887eab33e2031491eefd7c279aba">&#9670;&nbsp;</a></span>Awake()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.UI.InGame.InGameUIManager.Awake </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InGameUIManager_8cs_source.html">InGameUIManager.cs</a> の <a class="el" href="InGameUIManager_8cs_source.html#l00024">24</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a2d7f1a556bbcd17bf2f9aaca4c0d2aa3">navigation</a> = <span class="keyword">new</span> <a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Navigation&lt;InGameNav&gt;</a>(</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <span class="keyword">new</span> Dictionary&lt;InGameNav, UIManager&gt;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                    { <a class="code" href="namespaceModule_1_1UI_1_1InGame.html#aab9a8ee0a0e99ed8d553cd78860607e5">InGameNav</a>.InGame, <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#ae2020b45660ef912ed2f0809ccb71adb">inGameManager</a> },</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                    { <a class="code" href="namespaceModule_1_1UI_1_1InGame.html#aab9a8ee0a0e99ed8d553cd78860607e5">InGameNav</a>.GameOver, <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a2dd2e136218d0f2b63b1f7a2c310b8ed">gameOverManager</a> },</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                    { <a class="code" href="namespaceModule_1_1UI_1_1InGame.html#aab9a8ee0a0e99ed8d553cd78860607e5">InGameNav</a>.Option, <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a7c3fb80c5c42ebe879857a03f2a5d4f6">optionManager</a> },</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                    { <a class="code" href="namespaceModule_1_1UI_1_1InGame.html#aab9a8ee0a0e99ed8d553cd78860607e5">InGameNav</a>.Pause, <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a76bcf7bad2da5ab1c15795d68c284dae">pauseManager</a> }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            );</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Core.Utility.UI.Navigation.Navigation&lt; InGameNav &gt;</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_html_a2d7f1a556bbcd17bf2f9aaca4c0d2aa3"><div class="ttname"><a href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a2d7f1a556bbcd17bf2f9aaca4c0d2aa3">Module.UI.InGame.InGameUIManager.navigation</a></div><div class="ttdeci">Navigation&lt; InGameNav &gt; navigation</div><div class="ttdef"><b>Definition:</b> <a href="InGameUIManager_8cs_source.html#l00020">InGameUIManager.cs:20</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_html_a2dd2e136218d0f2b63b1f7a2c310b8ed"><div class="ttname"><a href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a2dd2e136218d0f2b63b1f7a2c310b8ed">Module.UI.InGame.InGameUIManager.gameOverManager</a></div><div class="ttdeci">GameOverManager gameOverManager</div><div class="ttdef"><b>Definition:</b> <a href="InGameUIManager_8cs_source.html#l00017">InGameUIManager.cs:17</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_html_a76bcf7bad2da5ab1c15795d68c284dae"><div class="ttname"><a href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a76bcf7bad2da5ab1c15795d68c284dae">Module.UI.InGame.InGameUIManager.pauseManager</a></div><div class="ttdeci">PauseManager pauseManager</div><div class="ttdef"><b>Definition:</b> <a href="InGameUIManager_8cs_source.html#l00018">InGameUIManager.cs:18</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_html_a7c3fb80c5c42ebe879857a03f2a5d4f6"><div class="ttname"><a href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a7c3fb80c5c42ebe879857a03f2a5d4f6">Module.UI.InGame.InGameUIManager.optionManager</a></div><div class="ttdeci">OptionManager optionManager</div><div class="ttdef"><b>Definition:</b> <a href="InGameUIManager_8cs_source.html#l00019">InGameUIManager.cs:19</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_html_ae2020b45660ef912ed2f0809ccb71adb"><div class="ttname"><a href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#ae2020b45660ef912ed2f0809ccb71adb">Module.UI.InGame.InGameUIManager.inGameManager</a></div><div class="ttdeci">InGameManager inGameManager</div><div class="ttdef"><b>Definition:</b> <a href="InGameUIManager_8cs_source.html#l00016">InGameUIManager.cs:16</a></div></div>
+<div class="ttc" id="anamespaceModule_1_1UI_1_1InGame_html_aab9a8ee0a0e99ed8d553cd78860607e5"><div class="ttname"><a href="namespaceModule_1_1UI_1_1InGame.html#aab9a8ee0a0e99ed8d553cd78860607e5">Module.UI.InGame.InGameNav</a></div><div class="ttdeci">InGameNav</div><div class="ttdef"><b>Definition:</b> <a href="InGameUIManager_8cs_source.html#l00139">InGameUIManager.cs:140</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8936f4ff90ed4997c8ca4438ec4cb4c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8936f4ff90ed4997c8ca4438ec4cb4c1">&#9670;&nbsp;</a></span>SetGameOver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.UI.InGame.InGameUIManager.SetGameOver </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InGameUIManager_8cs_source.html">InGameUIManager.cs</a> の <a class="el" href="InGameUIManager_8cs_source.html#l00104">104</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a2d7f1a556bbcd17bf2f9aaca4c0d2aa3">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3">SetScreen</a>(<a class="code" href="namespaceModule_1_1UI_1_1InGame.html#aab9a8ee0a0e99ed8d553cd78860607e5">InGameNav</a>.GameOver, isReset: <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a067d651d5e955121c8f1d9d3d782708c">OnGameInactive</a>?.Invoke();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html_a4cf4005df3073cc3ee23a45a59eb38f3"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3">Core.Utility.UI.Navigation.Navigation.SetScreen</a></div><div class="ttdeci">void SetScreen(T nav, bool isAnimate=true, bool isReset=false)</div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00068">Navigation.cs:68</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_html_a067d651d5e955121c8f1d9d3d782708c"><div class="ttname"><a href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a067d651d5e955121c8f1d9d3d782708c">Module.UI.InGame.InGameUIManager.OnGameInactive</a></div><div class="ttdeci">Action OnGameInactive</div><div class="ttdef"><b>Definition:</b> <a href="InGameUIManager_8cs_source.html#l00087">InGameUIManager.cs:87</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1InGame_1_1InGameUIManager_a8936f4ff90ed4997c8ca4438ec4cb4c1_cgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a8936f4ff90ed4997c8ca4438ec4cb4c1_cgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a8936f4ff90ed4997c8ca4438ec4cb4c1_cgraph" id="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a8936f4ff90ed4997c8ca4438ec4cb4c1_cgraph">
+<area shape="rect" title=" " alt="" coords="5,71,277,112"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3" title=" " alt="" coords="325,71,516,112"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a82c0d36cd008e231c62b0410f4d2196a" title=" " alt="" coords="564,5,755,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#abb6930c459fc8a9aa8d331dfbc739ba6" title=" " alt="" coords="564,71,755,112"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a385a3ad44bba7369d02aa90cbe07122b" title=" " alt="" coords="564,136,755,177"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1InGame_1_1InGameUIManager_a8936f4ff90ed4997c8ca4438ec4cb4c1_icgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a8936f4ff90ed4997c8ca4438ec4cb4c1_icgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a8936f4ff90ed4997c8ca4438ec4cb4c1_icgraph" id="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a8936f4ff90ed4997c8ca4438ec4cb4c1_icgraph">
+<area shape="rect" title=" " alt="" coords="567,5,839,47"/>
+<area shape="rect" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#a91bb114b22f1ebe23b254f8f8c59b8b4" title=" " alt="" coords="268,5,519,47"/>
+<area shape="rect" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#ab885465781c3d79bdd0d51c3060d6a68" title=" " alt="" coords="5,5,220,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ade7b1f61545ed95a608933c0cc9186dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade7b1f61545ed95a608933c0cc9186dc">&#9670;&nbsp;</a></span>SetHp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.UI.InGame.InGameUIManager.SetHp </td>
+          <td>(</td>
+          <td class="paramtype">short&#160;</td>
+          <td class="paramname"><em>current</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">short?&#160;</td>
+          <td class="paramname"><em>max</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InGameUIManager_8cs_source.html">InGameUIManager.cs</a> の <a class="el" href="InGameUIManager_8cs_source.html#l00120">120</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keywordflow">if</span> (max.HasValue)</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#ae2020b45660ef912ed2f0809ccb71adb">inGameManager</a>.<a class="code" href="classModule_1_1UI_1_1InGame_1_1InGame_1_1InGameManager.html#a86683998b0e65a22db6424dcce41d18a">SetHp</a>((uint)current, (uint)max.Value);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#ae2020b45660ef912ed2f0809ccb71adb">inGameManager</a>.<a class="code" href="classModule_1_1UI_1_1InGame_1_1InGame_1_1InGameManager.html#a86683998b0e65a22db6424dcce41d18a">SetHp</a>((uint)current);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1UI_1_1InGame_1_1InGame_1_1InGameManager_html_a86683998b0e65a22db6424dcce41d18a"><div class="ttname"><a href="classModule_1_1UI_1_1InGame_1_1InGame_1_1InGameManager.html#a86683998b0e65a22db6424dcce41d18a">Module.UI.InGame.InGame.InGameManager.SetHp</a></div><div class="ttdeci">void SetHp(uint current, uint? max=null)</div><div class="ttdef"><b>Definition:</b> <a href="InGameManager_8cs_source.html#l00056">InGameManager.cs:56</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1InGame_1_1InGameUIManager_ade7b1f61545ed95a608933c0cc9186dc_cgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_ade7b1f61545ed95a608933c0cc9186dc_cgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_ade7b1f61545ed95a608933c0cc9186dc_cgraph" id="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_ade7b1f61545ed95a608933c0cc9186dc_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,277,47"/>
+<area shape="rect" href="classModule_1_1UI_1_1InGame_1_1InGame_1_1InGameManager.html#a86683998b0e65a22db6424dcce41d18a" title=" " alt="" coords="325,5,528,47"/>
+<area shape="rect" href="classModule_1_1UI_1_1InGame_1_1InGame_1_1InGameManager.html#a8eb072ac20446e5ff37f482a0fe0ed03" title=" " alt="" coords="576,5,792,47"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1InGame_1_1InGameUIManager_ade7b1f61545ed95a608933c0cc9186dc_icgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_ade7b1f61545ed95a608933c0cc9186dc_icgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_ade7b1f61545ed95a608933c0cc9186dc_icgraph" id="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_ade7b1f61545ed95a608933c0cc9186dc_icgraph">
+<area shape="rect" title=" " alt="" coords="268,5,540,47"/>
+<area shape="rect" href="classModule_1_1Player_1_1Controller_1_1PlayerStatusUpdater.html#ab885465781c3d79bdd0d51c3060d6a68" title=" " alt="" coords="5,5,220,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ade331c13c20fa41517fd3217bc60384f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade331c13c20fa41517fd3217bc60384f">&#9670;&nbsp;</a></span>SetResourceCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.UI.InGame.InGameUIManager.SetResourceCount </td>
+          <td>(</td>
+          <td class="paramtype">uint&#160;</td>
+          <td class="paramname"><em>current</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint?&#160;</td>
+          <td class="paramname"><em>max</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InGameUIManager_8cs_source.html">InGameUIManager.cs</a> の <a class="el" href="InGameUIManager_8cs_source.html#l00133">133</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#ae2020b45660ef912ed2f0809ccb71adb">inGameManager</a>.<a class="code" href="classModule_1_1UI_1_1InGame_1_1InGame_1_1InGameManager.html#ac2ea3361ea4bc94c70b88d681621604b">SetResource</a>(current, max);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1UI_1_1InGame_1_1InGame_1_1InGameManager_html_ac2ea3361ea4bc94c70b88d681621604b"><div class="ttname"><a href="classModule_1_1UI_1_1InGame_1_1InGame_1_1InGameManager.html#ac2ea3361ea4bc94c70b88d681621604b">Module.UI.InGame.InGame.InGameManager.SetResource</a></div><div class="ttdeci">void SetResource(uint current, uint? max=null)</div><div class="ttdef"><b>Definition:</b> <a href="InGameManager_8cs_source.html#l00091">InGameManager.cs:91</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1InGame_1_1InGameUIManager_ade331c13c20fa41517fd3217bc60384f_cgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_ade331c13c20fa41517fd3217bc60384f_cgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_ade331c13c20fa41517fd3217bc60384f_cgraph" id="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_ade331c13c20fa41517fd3217bc60384f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,277,47"/>
+<area shape="rect" href="classModule_1_1UI_1_1InGame_1_1InGame_1_1InGameManager.html#ac2ea3361ea4bc94c70b88d681621604b" title=" " alt="" coords="325,5,540,47"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1InGame_1_1InGameUIManager_ade331c13c20fa41517fd3217bc60384f_icgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_ade331c13c20fa41517fd3217bc60384f_icgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_ade331c13c20fa41517fd3217bc60384f_icgraph" id="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_ade331c13c20fa41517fd3217bc60384f_icgraph">
+<area shape="rect" title=" " alt="" coords="280,5,552,47"/>
+<area shape="rect" href="classGameMain_1_1Presenter_1_1Resource_1_1ResourcePresenter.html#a4685bda8b42b7e9304433b7352608255" title=" " alt="" coords="5,5,232,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a42e0bdc26e0936b69c4097fab0908c7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42e0bdc26e0936b69c4097fab0908c7f">&#9670;&nbsp;</a></span>SetSceneChanger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.UI.InGame.InGameUIManager.SetSceneChanger </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classCore_1_1Scenes_1_1SceneChanger.html">SceneChanger</a>&#160;</td>
+          <td class="paramname"><em>scene</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InGameUIManager_8cs_source.html">InGameUIManager.cs</a> の <a class="el" href="InGameUIManager_8cs_source.html#l00110">110</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a7f5474449e751c74069d40409f0fff46">sceneChanger</a> = scene;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_html_a7f5474449e751c74069d40409f0fff46"><div class="ttname"><a href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a7f5474449e751c74069d40409f0fff46">Module.UI.InGame.InGameUIManager.sceneChanger</a></div><div class="ttdeci">SceneChanger sceneChanger</div><div class="ttdef"><b>Definition:</b> <a href="InGameUIManager_8cs_source.html#l00022">InGameUIManager.cs:22</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1InGame_1_1InGameUIManager_a42e0bdc26e0936b69c4097fab0908c7f_icgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a42e0bdc26e0936b69c4097fab0908c7f_icgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a42e0bdc26e0936b69c4097fab0908c7f_icgraph" id="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a42e0bdc26e0936b69c4097fab0908c7f_icgraph">
+<area shape="rect" title=" " alt="" coords="557,5,829,47"/>
+<area shape="rect" href="classGameMain_1_1Router_1_1GameRouter.html#a63d701fc5b40d5a043f111c829d2fad0" title=" " alt="" coords="281,5,509,47"/>
+<area shape="rect" href="classGameMain_1_1Router_1_1GameRouter.html#a5e7d40861c1fb449ad17bf47137e74b7" title=" " alt="" coords="5,5,233,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0daa3b7b65d3fa777b14822382e9a461"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0daa3b7b65d3fa777b14822382e9a461">&#9670;&nbsp;</a></span>SetWorkerCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.UI.InGame.InGameUIManager.SetWorkerCount </td>
+          <td>(</td>
+          <td class="paramtype">uint&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint?&#160;</td>
+          <td class="paramname"><em>max</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InGameUIManager_8cs_source.html">InGameUIManager.cs</a> の <a class="el" href="InGameUIManager_8cs_source.html#l00128">128</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#ae2020b45660ef912ed2f0809ccb71adb">inGameManager</a>.<a class="code" href="classModule_1_1UI_1_1InGame_1_1InGame_1_1InGameManager.html#abe97447268f8f21f05870e713451cf6e">SetWorkerCount</a>(value, max);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1UI_1_1InGame_1_1InGame_1_1InGameManager_html_abe97447268f8f21f05870e713451cf6e"><div class="ttname"><a href="classModule_1_1UI_1_1InGame_1_1InGame_1_1InGameManager.html#abe97447268f8f21f05870e713451cf6e">Module.UI.InGame.InGame.InGameManager.SetWorkerCount</a></div><div class="ttdeci">void SetWorkerCount(uint value, uint? max=null)</div><div class="ttdef"><b>Definition:</b> <a href="InGameManager_8cs_source.html#l00108">InGameManager.cs:108</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1InGame_1_1InGameUIManager_a0daa3b7b65d3fa777b14822382e9a461_cgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a0daa3b7b65d3fa777b14822382e9a461_cgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a0daa3b7b65d3fa777b14822382e9a461_cgraph" id="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a0daa3b7b65d3fa777b14822382e9a461_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,277,54"/>
+<area shape="rect" href="classModule_1_1UI_1_1InGame_1_1InGame_1_1InGameManager.html#abe97447268f8f21f05870e713451cf6e" title=" " alt="" coords="325,13,563,54"/>
+<area shape="rect" href="classModule_1_1UI_1_1InGame_1_1InGame_1_1InGameManager.html#ac6586bd980286511aed8fbdbe500dd9d" title=" " alt="" coords="611,5,883,61"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1InGame_1_1InGameUIManager_a0daa3b7b65d3fa777b14822382e9a461_icgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a0daa3b7b65d3fa777b14822382e9a461_icgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a0daa3b7b65d3fa777b14822382e9a461_icgraph" id="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a0daa3b7b65d3fa777b14822382e9a461_icgraph">
+<area shape="rect" title=" " alt="" coords="1660,84,1932,125"/>
+<area shape="rect" href="classModule_1_1Working_1_1WorkerAgent.html#a23c69a44602994e48b296750cd6b12de" title=" " alt="" coords="1393,51,1612,92"/>
+<area shape="rect" href="classModule_1_1Working_1_1WorkerAgent.html#a07f3675e0362a63ca989b52922429a06" title=" " alt="" coords="1393,116,1612,157"/>
+<area shape="rect" href="classModule_1_1Working_1_1WorkerAgent.html#afdb86e95ada63760e4b3b88f0e0949e8" title="Workerを指定数追加します" alt="" coords="836,13,1079,39"/>
+<area shape="rect" href="classModule_1_1Working_1_1WorkerAgent.html#a75ae9aedff81481c03a6462a98bbc26f" title="外部からのWorkerを追加します" alt="" coords="848,84,1067,125"/>
+<area shape="rect" href="classModule_1_1Working_1_1WorkerAgent.html#a06954ac8011fd776ddb5b3d6993cccd1" title="Workerを指定数削除します" alt="" coords="1127,51,1345,92"/>
+<area shape="rect" href="classModule_1_1Working_1_1Factory_1_1WorkerSpawner.html#a1c8bb78f6e100da276a5fc2de0daba45" title="指定した数のワーカーをスポーンします" alt="" coords="560,5,785,47"/>
+<area shape="rect" href="classGameMain_1_1Router_1_1GameRouter.html#abbd3a3d9f9f75b1e925c09f59c2c9a27" title="workerのセットアップ" alt="" coords="281,5,509,47"/>
+<area shape="rect" href="classGameMain_1_1Router_1_1GameRouter.html#a5e7d40861c1fb449ad17bf47137e74b7" title=" " alt="" coords="5,5,233,47"/>
+<area shape="rect" href="classModule_1_1Extension_1_1Task_1_1IncreaseWorkerTask.html#a8c33ffef090ca70f2dd1b37536d761f2" title=" " alt="" coords="557,84,788,125"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae8728926a48ee84c122b6072c60c2189"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8728926a48ee84c122b6072c60c2189">&#9670;&nbsp;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.UI.InGame.InGameUIManager.Start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InGameUIManager_8cs_source.html">InGameUIManager.cs</a> の <a class="el" href="InGameUIManager_8cs_source.html#l00037">37</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a2dd2e136218d0f2b63b1f7a2c310b8ed">gameOverManager</a>.<a class="code" href="classModule_1_1UI_1_1InGame_1_1GameOver_1_1GameOverManager.html#a611452b9ae21034c65065b0e2428bbc5">OnSelect</a> += () =&gt;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a2d7f1a556bbcd17bf2f9aaca4c0d2aa3">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca">SetActive</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a7f5474449e751c74069d40409f0fff46">sceneChanger</a>.<a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#af08ac60f8a2e4c2b96a23c6b75a5e571">LoadTitle</a>(<a class="code" href="namespaceCore_1_1Scenes.html#a1e1c8a1558c71b62f20f51134e14efaf">TitleNavigation</a>.StageSelect);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            };</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a2dd2e136218d0f2b63b1f7a2c310b8ed">gameOverManager</a>.<a class="code" href="classModule_1_1UI_1_1InGame_1_1GameOver_1_1GameOverManager.html#ae1baeafe115a4793bab0b3cde23286ff">OnRetry</a> += () =&gt;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a2d7f1a556bbcd17bf2f9aaca4c0d2aa3">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca">SetActive</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a7f5474449e751c74069d40409f0fff46">sceneChanger</a>.<a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#ae1f13dd24adf1d7d150f53b4ff5780fc">LoadInGame</a>(<a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a7f5474449e751c74069d40409f0fff46">sceneChanger</a>.<a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#ab0951b78403f9c5f53fbbc941a1e1bb0">GetInGame</a>());</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            };</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a7c3fb80c5c42ebe879857a03f2a5d4f6">optionManager</a>.<a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a06c683c99de08bcf61e7adf9e23d9eb7">OnBack</a> += () =&gt;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a2d7f1a556bbcd17bf2f9aaca4c0d2aa3">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca">SetActive</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a2d7f1a556bbcd17bf2f9aaca4c0d2aa3">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3">SetScreen</a>(<a class="code" href="namespaceModule_1_1UI_1_1InGame.html#aab9a8ee0a0e99ed8d553cd78860607e5">InGameNav</a>.Pause);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            };</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a76bcf7bad2da5ab1c15795d68c284dae">pauseManager</a>.<a class="code" href="classModule_1_1UI_1_1InGame_1_1Pause_1_1PauseManager.html#a99ecc8734a52cbf9b8ac4d9e45737bd8">OnClick</a> += nav =&gt;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keywordflow">switch</span> (nav)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                    <span class="keywordflow">case</span> <a class="code" href="classModule_1_1UI_1_1InGame_1_1Pause_1_1PauseManager.html">PauseManager</a>.<a class="code" href="classModule_1_1UI_1_1InGame_1_1Pause_1_1PauseManager.html#ac3f3051162126f603e581c015acd8d03">Nav</a>.Resume:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                        <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a2d7f1a556bbcd17bf2f9aaca4c0d2aa3">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca">SetActive</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                        <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a2d7f1a556bbcd17bf2f9aaca4c0d2aa3">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3">SetScreen</a>(<a class="code" href="namespaceModule_1_1UI_1_1InGame.html#aab9a8ee0a0e99ed8d553cd78860607e5">InGameNav</a>.InGame);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                        <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a9e1128a61e6466025753f8f3c2dfab8f">OnGameActive</a>?.Invoke();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    <span class="keywordflow">case</span> <a class="code" href="classModule_1_1UI_1_1InGame_1_1Pause_1_1PauseManager.html">PauseManager</a>.<a class="code" href="classModule_1_1UI_1_1InGame_1_1Pause_1_1PauseManager.html#ac3f3051162126f603e581c015acd8d03">Nav</a>.Option:</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a2d7f1a556bbcd17bf2f9aaca4c0d2aa3">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3">SetScreen</a>(<a class="code" href="namespaceModule_1_1UI_1_1InGame.html#aab9a8ee0a0e99ed8d553cd78860607e5">InGameNav</a>.Option, isReset: <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a2d7f1a556bbcd17bf2f9aaca4c0d2aa3">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca">SetActive</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                        <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a067d651d5e955121c8f1d9d3d782708c">OnGameInactive</a>?.Invoke();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    <span class="keywordflow">case</span> <a class="code" href="classModule_1_1UI_1_1InGame_1_1Pause_1_1PauseManager.html">PauseManager</a>.<a class="code" href="classModule_1_1UI_1_1InGame_1_1Pause_1_1PauseManager.html#ac3f3051162126f603e581c015acd8d03">Nav</a>.Restart:</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a2d7f1a556bbcd17bf2f9aaca4c0d2aa3">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca">SetActive</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                        <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a7f5474449e751c74069d40409f0fff46">sceneChanger</a>.<a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#ae1f13dd24adf1d7d150f53b4ff5780fc">LoadInGame</a>(<a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a7f5474449e751c74069d40409f0fff46">sceneChanger</a>.<a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#ab0951b78403f9c5f53fbbc941a1e1bb0">GetInGame</a>());</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                    <span class="keywordflow">case</span> <a class="code" href="classModule_1_1UI_1_1InGame_1_1Pause_1_1PauseManager.html">PauseManager</a>.<a class="code" href="classModule_1_1UI_1_1InGame_1_1Pause_1_1PauseManager.html#ac3f3051162126f603e581c015acd8d03">Nav</a>.Exit:</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a2d7f1a556bbcd17bf2f9aaca4c0d2aa3">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca">SetActive</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                        <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a7f5474449e751c74069d40409f0fff46">sceneChanger</a>.<a class="code" href="classCore_1_1Scenes_1_1SceneChanger.html#af08ac60f8a2e4c2b96a23c6b75a5e571">LoadTitle</a>(<a class="code" href="namespaceCore_1_1Scenes.html#a1e1c8a1558c71b62f20f51134e14efaf">TitleNavigation</a>.StageSelect);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                        <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentOutOfRangeException(nameof(nav), nav, <span class="keyword">null</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            };</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a2d7f1a556bbcd17bf2f9aaca4c0d2aa3">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca">SetActive</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
+<div class="ttc" id="aclassCore_1_1Scenes_1_1SceneChanger_html_ab0951b78403f9c5f53fbbc941a1e1bb0"><div class="ttname"><a href="classCore_1_1Scenes_1_1SceneChanger.html#ab0951b78403f9c5f53fbbc941a1e1bb0">Core.Scenes.SceneChanger.GetInGame</a></div><div class="ttdeci">StageData.Stage GetInGame()</div><div class="ttdef"><b>Definition:</b> <a href="SceneChanger_8cs_source.html#l00072">SceneChanger.cs:72</a></div></div>
+<div class="ttc" id="aclassCore_1_1Scenes_1_1SceneChanger_html_ae1f13dd24adf1d7d150f53b4ff5780fc"><div class="ttname"><a href="classCore_1_1Scenes_1_1SceneChanger.html#ae1f13dd24adf1d7d150f53b4ff5780fc">Core.Scenes.SceneChanger.LoadInGame</a></div><div class="ttdeci">bool LoadInGame(StageData.Stage routeNav)</div><div class="ttdoc">:TODO 引数見て、各stageに遷移</div><div class="ttdef"><b>Definition:</b> <a href="SceneChanger_8cs_source.html#l00056">SceneChanger.cs:56</a></div></div>
+<div class="ttc" id="aclassCore_1_1Scenes_1_1SceneChanger_html_af08ac60f8a2e4c2b96a23c6b75a5e571"><div class="ttname"><a href="classCore_1_1Scenes_1_1SceneChanger.html#af08ac60f8a2e4c2b96a23c6b75a5e571">Core.Scenes.SceneChanger.LoadTitle</a></div><div class="ttdeci">bool LoadTitle(TitleNavigation routeNav=TitleNavigation.Title)</div><div class="ttdoc">タイトル画面への遷移</div><div class="ttdef"><b>Definition:</b> <a href="SceneChanger_8cs_source.html#l00033">SceneChanger.cs:33</a></div></div>
+<div class="ttc" id="aclassCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation_html_a710a31240ad99f5ee1d11eb6c4f32eca"><div class="ttname"><a href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca">Core.Utility.UI.Navigation.Navigation.SetActive</a></div><div class="ttdeci">void SetActive(bool value)</div><div class="ttdef"><b>Definition:</b> <a href="Navigation_8cs_source.html#l00140">Navigation.cs:140</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1InGame_1_1GameOver_1_1GameOverManager_html_a611452b9ae21034c65065b0e2428bbc5"><div class="ttname"><a href="classModule_1_1UI_1_1InGame_1_1GameOver_1_1GameOverManager.html#a611452b9ae21034c65065b0e2428bbc5">Module.UI.InGame.GameOver.GameOverManager.OnSelect</a></div><div class="ttdeci">Action OnSelect</div><div class="ttdef"><b>Definition:</b> <a href="GameOverManager_8cs_source.html#l00101">GameOverManager.cs:101</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1InGame_1_1GameOver_1_1GameOverManager_html_ae1baeafe115a4793bab0b3cde23286ff"><div class="ttname"><a href="classModule_1_1UI_1_1InGame_1_1GameOver_1_1GameOverManager.html#ae1baeafe115a4793bab0b3cde23286ff">Module.UI.InGame.GameOver.GameOverManager.OnRetry</a></div><div class="ttdeci">Action OnRetry</div><div class="ttdef"><b>Definition:</b> <a href="GameOverManager_8cs_source.html#l00103">GameOverManager.cs:103</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_html_a9e1128a61e6466025753f8f3c2dfab8f"><div class="ttname"><a href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a9e1128a61e6466025753f8f3c2dfab8f">Module.UI.InGame.InGameUIManager.OnGameActive</a></div><div class="ttdeci">Action OnGameActive</div><div class="ttdef"><b>Definition:</b> <a href="InGameUIManager_8cs_source.html#l00088">InGameUIManager.cs:88</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1InGame_1_1Pause_1_1PauseManager_html"><div class="ttname"><a href="classModule_1_1UI_1_1InGame_1_1Pause_1_1PauseManager.html">Module.UI.InGame.Pause.PauseManager</a></div><div class="ttdef"><b>Definition:</b> <a href="PauseManager_8cs_source.html#l00009">PauseManager.cs:10</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1InGame_1_1Pause_1_1PauseManager_html_a99ecc8734a52cbf9b8ac4d9e45737bd8"><div class="ttname"><a href="classModule_1_1UI_1_1InGame_1_1Pause_1_1PauseManager.html#a99ecc8734a52cbf9b8ac4d9e45737bd8">Module.UI.InGame.Pause.PauseManager.OnClick</a></div><div class="ttdeci">Action&lt; Nav &gt; OnClick</div><div class="ttdef"><b>Definition:</b> <a href="PauseManager_8cs_source.html#l00095">PauseManager.cs:95</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1InGame_1_1Pause_1_1PauseManager_html_ac3f3051162126f603e581c015acd8d03"><div class="ttname"><a href="classModule_1_1UI_1_1InGame_1_1Pause_1_1PauseManager.html#ac3f3051162126f603e581c015acd8d03">Module.UI.InGame.Pause.PauseManager.Nav</a></div><div class="ttdeci">Nav</div><div class="ttdef"><b>Definition:</b> <a href="PauseManager_8cs_source.html#l00011">PauseManager.cs:12</a></div></div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_html_a06c683c99de08bcf61e7adf9e23d9eb7"><div class="ttname"><a href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a06c683c99de08bcf61e7adf9e23d9eb7">Module.UI.Title.Option.OptionManager.OnBack</a></div><div class="ttdeci">Action OnBack</div><div class="ttdef"><b>Definition:</b> <a href="OptionManager_8cs_source.html#l00082">OptionManager.cs:82</a></div></div>
+<div class="ttc" id="anamespaceCore_1_1Scenes_html_a1e1c8a1558c71b62f20f51134e14efaf"><div class="ttname"><a href="namespaceCore_1_1Scenes.html#a1e1c8a1558c71b62f20f51134e14efaf">Core.Scenes.TitleNavigation</a></div><div class="ttdeci">TitleNavigation</div><div class="ttdef"><b>Definition:</b> <a href="TitleNavigation_8cs_source.html#l00003">TitleNavigation.cs:4</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1InGame_1_1InGameUIManager_ae8728926a48ee84c122b6072c60c2189_cgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_ae8728926a48ee84c122b6072c60c2189_cgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_ae8728926a48ee84c122b6072c60c2189_cgraph" id="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_ae8728926a48ee84c122b6072c60c2189_cgraph">
+<area shape="rect" title=" " alt="" coords="5,136,277,177"/>
+<area shape="rect" href="classCore_1_1Scenes_1_1SceneChanger.html#ab0951b78403f9c5f53fbbc941a1e1bb0" title=" " alt="" coords="325,5,528,47"/>
+<area shape="rect" href="classCore_1_1Scenes_1_1SceneChanger.html#ae1f13dd24adf1d7d150f53b4ff5780fc" title=":TODO 引数見て、各stageに遷移" alt="" coords="325,71,528,112"/>
+<area shape="rect" href="classCore_1_1Scenes_1_1SceneChanger.html#af08ac60f8a2e4c2b96a23c6b75a5e571" title="タイトル画面への遷移" alt="" coords="325,136,528,177"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca" title=" " alt="" coords="331,201,522,243"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3" title=" " alt="" coords="331,267,522,308"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a82c0d36cd008e231c62b0410f4d2196a" title=" " alt="" coords="576,201,767,243"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#abb6930c459fc8a9aa8d331dfbc739ba6" title=" " alt="" coords="576,267,767,308"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a385a3ad44bba7369d02aa90cbe07122b" title=" " alt="" coords="576,332,767,373"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a16e83604fe699aae078ae32e23be358b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16e83604fe699aae078ae32e23be358b">&#9670;&nbsp;</a></span>StartGame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.UI.InGame.InGameUIManager.StartGame </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classCore_1_1User_1_1UserPreference.html">UserPreference</a>&#160;</td>
+          <td class="paramname"><em>preference</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InGameUIManager_8cs_source.html">InGameUIManager.cs</a> の <a class="el" href="InGameUIManager_8cs_source.html#l00090">90</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a7c3fb80c5c42ebe879857a03f2a5d4f6">optionManager</a>.<a class="code" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a6cc26aadaaeadef14f4c9d0ab0231bd0">SetPreference</a>(preference);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a2d7f1a556bbcd17bf2f9aaca4c0d2aa3">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca">SetActive</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a2d7f1a556bbcd17bf2f9aaca4c0d2aa3">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3">SetScreen</a>(<a class="code" href="namespaceModule_1_1UI_1_1InGame.html#aab9a8ee0a0e99ed8d553cd78860607e5">InGameNav</a>.InGame);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1UI_1_1Title_1_1Option_1_1OptionManager_html_a6cc26aadaaeadef14f4c9d0ab0231bd0"><div class="ttname"><a href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a6cc26aadaaeadef14f4c9d0ab0231bd0">Module.UI.Title.Option.OptionManager.SetPreference</a></div><div class="ttdeci">void SetPreference(UserPreference manager)</div><div class="ttdef"><b>Definition:</b> <a href="OptionManager_8cs_source.html#l00163">OptionManager.cs:163</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1InGame_1_1InGameUIManager_a16e83604fe699aae078ae32e23be358b_cgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a16e83604fe699aae078ae32e23be358b_cgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a16e83604fe699aae078ae32e23be358b_cgraph" id="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a16e83604fe699aae078ae32e23be358b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,71,277,112"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca" title=" " alt="" coords="337,5,528,47"/>
+<area shape="rect" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html#a6cc26aadaaeadef14f4c9d0ab0231bd0" title=" " alt="" coords="325,71,540,112"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3" title=" " alt="" coords="337,136,528,177"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a82c0d36cd008e231c62b0410f4d2196a" title=" " alt="" coords="588,71,779,112"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#abb6930c459fc8a9aa8d331dfbc739ba6" title=" " alt="" coords="588,136,779,177"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a385a3ad44bba7369d02aa90cbe07122b" title=" " alt="" coords="588,201,779,243"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1InGame_1_1InGameUIManager_a16e83604fe699aae078ae32e23be358b_icgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a16e83604fe699aae078ae32e23be358b_icgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a16e83604fe699aae078ae32e23be358b_icgraph" id="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a16e83604fe699aae078ae32e23be358b_icgraph">
+<area shape="rect" title=" " alt="" coords="557,5,829,47"/>
+<area shape="rect" href="classGameMain_1_1Router_1_1GameRouter.html#a63d701fc5b40d5a043f111c829d2fad0" title=" " alt="" coords="281,5,509,47"/>
+<area shape="rect" href="classGameMain_1_1Router_1_1GameRouter.html#a5e7d40861c1fb449ad17bf47137e74b7" title=" " alt="" coords="5,5,233,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a73a710d91a968650c94d5f36ac74aad1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73a710d91a968650c94d5f36ac74aad1">&#9670;&nbsp;</a></span>StartPause()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.UI.InGame.InGameUIManager.StartPause </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InGameUIManager_8cs_source.html">InGameUIManager.cs</a> の <a class="el" href="InGameUIManager_8cs_source.html#l00097">97</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a2d7f1a556bbcd17bf2f9aaca4c0d2aa3">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca">SetActive</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a2d7f1a556bbcd17bf2f9aaca4c0d2aa3">navigation</a>.<a class="code" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3">SetScreen</a>(<a class="code" href="namespaceModule_1_1UI_1_1InGame.html#aab9a8ee0a0e99ed8d553cd78860607e5">InGameNav</a>.Pause, isReset: <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#a067d651d5e955121c8f1d9d3d782708c">OnGameInactive</a>?.Invoke();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1InGame_1_1InGameUIManager_a73a710d91a968650c94d5f36ac74aad1_cgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a73a710d91a968650c94d5f36ac74aad1_cgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a73a710d91a968650c94d5f36ac74aad1_cgraph" id="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a73a710d91a968650c94d5f36ac74aad1_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,277,80"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a710a31240ad99f5ee1d11eb6c4f32eca" title=" " alt="" coords="325,5,516,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html#a4cf4005df3073cc3ee23a45a59eb38f3" title=" " alt="" coords="325,71,516,112"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a82c0d36cd008e231c62b0410f4d2196a" title=" " alt="" coords="564,5,755,47"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#abb6930c459fc8a9aa8d331dfbc739ba6" title=" " alt="" coords="564,71,755,112"/>
+<area shape="rect" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1UIManager.html#a385a3ad44bba7369d02aa90cbe07122b" title=" " alt="" coords="564,136,755,177"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1InGame_1_1InGameUIManager_a73a710d91a968650c94d5f36ac74aad1_icgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a73a710d91a968650c94d5f36ac74aad1_icgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a73a710d91a968650c94d5f36ac74aad1_icgraph" id="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_a73a710d91a968650c94d5f36ac74aad1_icgraph">
+<area shape="rect" title=" " alt="" coords="557,5,829,47"/>
+<area shape="rect" href="classGameMain_1_1Router_1_1GameRouter.html#a63d701fc5b40d5a043f111c829d2fad0" title=" " alt="" coords="281,5,509,47"/>
+<area shape="rect" href="classGameMain_1_1Router_1_1GameRouter.html#a5e7d40861c1fb449ad17bf47137e74b7" title=" " alt="" coords="5,5,233,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac7b3726f8fd650989d335a73fbaa2d57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7b3726f8fd650989d335a73fbaa2d57">&#9670;&nbsp;</a></span>UpdateStageProgress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Module.UI.InGame.InGameUIManager.UpdateStageProgress </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InGameUIManager_8cs_source.html">InGameUIManager.cs</a> の <a class="el" href="InGameUIManager_8cs_source.html#l00115">115</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <a class="code" href="classModule_1_1UI_1_1InGame_1_1InGameUIManager.html#ae2020b45660ef912ed2f0809ccb71adb">inGameManager</a>.<a class="code" href="classModule_1_1UI_1_1InGame_1_1InGame_1_1InGameManager.html#a09b66cdaf2fe7819d6f3402b4f3fa3d4">SetStageProgress</a>((uint)value);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        }</div>
+<div class="ttc" id="aclassModule_1_1UI_1_1InGame_1_1InGame_1_1InGameManager_html_a09b66cdaf2fe7819d6f3402b4f3fa3d4"><div class="ttname"><a href="classModule_1_1UI_1_1InGame_1_1InGame_1_1InGameManager.html#a09b66cdaf2fe7819d6f3402b4f3fa3d4">Module.UI.InGame.InGame.InGameManager.SetStageProgress</a></div><div class="ttdeci">void SetStageProgress(uint value)</div><div class="ttdef"><b>Definition:</b> <a href="InGameManager_8cs_source.html#l00086">InGameManager.cs:86</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1InGame_1_1InGameUIManager_ac7b3726f8fd650989d335a73fbaa2d57_cgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_ac7b3726f8fd650989d335a73fbaa2d57_cgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_ac7b3726f8fd650989d335a73fbaa2d57_cgraph" id="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_ac7b3726f8fd650989d335a73fbaa2d57_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,277,47"/>
+<area shape="rect" href="classModule_1_1UI_1_1InGame_1_1InGame_1_1InGameManager.html#a09b66cdaf2fe7819d6f3402b4f3fa3d4" title=" " alt="" coords="325,5,572,47"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModule_1_1UI_1_1InGame_1_1InGameUIManager_ac7b3726f8fd650989d335a73fbaa2d57_icgraph.png" border="0" usemap="#aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_ac7b3726f8fd650989d335a73fbaa2d57_icgraph" alt=""/></div>
+<map name="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_ac7b3726f8fd650989d335a73fbaa2d57_icgraph" id="aclassModule_1_1UI_1_1InGame_1_1InGameUIManager_ac7b3726f8fd650989d335a73fbaa2d57_icgraph">
+<area shape="rect" title=" " alt="" coords="308,5,580,47"/>
+<area shape="rect" href="classGameMain_1_1Router_1_1GameRouter.html#ae9c832c5700740c01263be5026d8a658" title=" " alt="" coords="5,13,260,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a2dd2e136218d0f2b63b1f7a2c310b8ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dd2e136218d0f2b63b1f7a2c310b8ed">&#9670;&nbsp;</a></span>gameOverManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classModule_1_1UI_1_1InGame_1_1GameOver_1_1GameOverManager.html">GameOverManager</a> Module.UI.InGame.InGameUIManager.gameOverManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InGameUIManager_8cs_source.html">InGameUIManager.cs</a> の <a class="el" href="InGameUIManager_8cs_source.html#l00017">17</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae2020b45660ef912ed2f0809ccb71adb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2020b45660ef912ed2f0809ccb71adb">&#9670;&nbsp;</a></span>inGameManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classModule_1_1UI_1_1InGame_1_1InGame_1_1InGameManager.html">InGameManager</a> Module.UI.InGame.InGameUIManager.inGameManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InGameUIManager_8cs_source.html">InGameUIManager.cs</a> の <a class="el" href="InGameUIManager_8cs_source.html#l00016">16</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2d7f1a556bbcd17bf2f9aaca4c0d2aa3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d7f1a556bbcd17bf2f9aaca4c0d2aa3">&#9670;&nbsp;</a></span>navigation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCore_1_1Utility_1_1UI_1_1Navigation_1_1Navigation.html">Navigation</a>&lt;<a class="el" href="namespaceModule_1_1UI_1_1InGame.html#aab9a8ee0a0e99ed8d553cd78860607e5">InGameNav</a>&gt; Module.UI.InGame.InGameUIManager.navigation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InGameUIManager_8cs_source.html">InGameUIManager.cs</a> の <a class="el" href="InGameUIManager_8cs_source.html#l00020">20</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7c3fb80c5c42ebe879857a03f2a5d4f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c3fb80c5c42ebe879857a03f2a5d4f6">&#9670;&nbsp;</a></span>optionManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classModule_1_1UI_1_1Title_1_1Option_1_1OptionManager.html">OptionManager</a> Module.UI.InGame.InGameUIManager.optionManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InGameUIManager_8cs_source.html">InGameUIManager.cs</a> の <a class="el" href="InGameUIManager_8cs_source.html#l00019">19</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a76bcf7bad2da5ab1c15795d68c284dae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76bcf7bad2da5ab1c15795d68c284dae">&#9670;&nbsp;</a></span>pauseManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classModule_1_1UI_1_1InGame_1_1Pause_1_1PauseManager.html">PauseManager</a> Module.UI.InGame.InGameUIManager.pauseManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InGameUIManager_8cs_source.html">InGameUIManager.cs</a> の <a class="el" href="InGameUIManager_8cs_source.html#l00018">18</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7f5474449e751c74069d40409f0fff46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f5474449e751c74069d40409f0fff46">&#9670;&nbsp;</a></span>sceneChanger</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCore_1_1Scenes_1_1SceneChanger.html">SceneChanger</a> Module.UI.InGame.InGameUIManager.sceneChanger</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InGameUIManager_8cs_source.html">InGameUIManager.cs</a> の <a class="el" href="InGameUIManager_8cs_source.html#l00022">22</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">イベント詳解</h2>
+<a id="a9e1128a61e6466025753f8f3c2dfab8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e1128a61e6466025753f8f3c2dfab8f">&#9670;&nbsp;</a></span>OnGameActive</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Action Module.UI.InGame.InGameUIManager.OnGameActive</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InGameUIManager_8cs_source.html">InGameUIManager.cs</a> の <a class="el" href="InGameUIManager_8cs_source.html#l00088">88</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a067d651d5e955121c8f1d9d3d782708c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a067d651d5e955121c8f1d9d3d782708c">&#9670;&nbsp;</a></span>OnGameInactive</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Action Module.UI.InGame.InGameUIManager.OnGameInactive</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InGameUIManager_8cs_source.html">InGameUIManager.cs</a> の <a class="el" href="InGameUIManager_8cs_source.html#l00087">87</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>src/Assets/Scripts/Module/UI/InGame/<a class="el" href="InGameUIManager_8cs_source.html">InGameUIManager.cs</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

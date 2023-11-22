@@ -84,31 +84,28 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classCore_1_1Input_1_1SingletonMonoBehaviour.html#afccff2d4016cc7b8ce5ca7a5941ade91">instance</a> == <span class="keyword">null</span>)</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                    <a class="code" href="classCore_1_1Input_1_1SingletonMonoBehaviour.html#afccff2d4016cc7b8ce5ca7a5941ade91">instance</a> = FindObjectOfType&lt;T&gt;(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="classCore_1_1Input_1_1SingletonMonoBehaviour.html#afccff2d4016cc7b8ce5ca7a5941ade91">instance</a> == <span class="keyword">null</span>)</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                    {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                        <a class="code" href="namespaceDebug.html">Debug</a>.LogError(typeof(T) + <span class="stringliteral">&quot; をアタッチしているGameObjectはありません&quot;</span>);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                    }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classCore_1_1Input_1_1SingletonMonoBehaviour.html#afccff2d4016cc7b8ce5ca7a5941ade91">instance</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classCore_1_1Input_1_1SingletonMonoBehaviour.html#ae7c9fbcd00cb5496587ed5a026bf7cde">   30</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classCore_1_1Input_1_1SingletonMonoBehaviour.html#ae7c9fbcd00cb5496587ed5a026bf7cde">Awake</a>()</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">if</span> (<span class="keyword">this</span> != <a class="code" href="classCore_1_1Input_1_1SingletonMonoBehaviour.html#abe9d85521c1adf0cc8870497504118ae">Instance</a>)</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                Destroy(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            DontDestroyOnLoad(this.gameObject);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="classCore_1_1Input_1_1SingletonMonoBehaviour.html#afccff2d4016cc7b8ce5ca7a5941ade91">instance</a> == <span class="keyword">null</span>) <a class="code" href="namespaceDebug.html">Debug</a>.LogError(typeof(T) + <span class="stringliteral">&quot; をアタッチしているGameObjectはありません&quot;</span>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classCore_1_1Input_1_1SingletonMonoBehaviour.html#afccff2d4016cc7b8ce5ca7a5941ade91">instance</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classCore_1_1Input_1_1SingletonMonoBehaviour.html#ae7c9fbcd00cb5496587ed5a026bf7cde">   27</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classCore_1_1Input_1_1SingletonMonoBehaviour.html#ae7c9fbcd00cb5496587ed5a026bf7cde">Awake</a>()</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">if</span> (<span class="keyword">this</span> != <a class="code" href="classCore_1_1Input_1_1SingletonMonoBehaviour.html#abe9d85521c1adf0cc8870497504118ae">Instance</a>)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                Destroy(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            DontDestroyOnLoad(gameObject);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
 <div class="ttc" id="aclassCore_1_1Input_1_1SingletonMonoBehaviour_html"><div class="ttname"><a href="classCore_1_1Input_1_1SingletonMonoBehaviour.html">Core.Input.SingletonMonoBehaviour</a></div><div class="ttdoc">MonoBehaviourをシングルトン化するクラス</div><div class="ttdef"><b>Definition:</b> <a href="SingletonMonobehaviour_8cs_source.html#l00009">SingletonMonobehaviour.cs:10</a></div></div>
 <div class="ttc" id="aclassCore_1_1Input_1_1SingletonMonoBehaviour_html_abe9d85521c1adf0cc8870497504118ae"><div class="ttname"><a href="classCore_1_1Input_1_1SingletonMonoBehaviour.html#abe9d85521c1adf0cc8870497504118ae">Core.Input.SingletonMonoBehaviour.Instance</a></div><div class="ttdeci">static T Instance</div><div class="ttdef"><b>Definition:</b> <a href="SingletonMonobehaviour_8cs_source.html#l00013">SingletonMonobehaviour.cs:14</a></div></div>
-<div class="ttc" id="aclassCore_1_1Input_1_1SingletonMonoBehaviour_html_ae7c9fbcd00cb5496587ed5a026bf7cde"><div class="ttname"><a href="classCore_1_1Input_1_1SingletonMonoBehaviour.html#ae7c9fbcd00cb5496587ed5a026bf7cde">Core.Input.SingletonMonoBehaviour.Awake</a></div><div class="ttdeci">virtual void Awake()</div><div class="ttdef"><b>Definition:</b> <a href="SingletonMonobehaviour_8cs_source.html#l00030">SingletonMonobehaviour.cs:30</a></div></div>
+<div class="ttc" id="aclassCore_1_1Input_1_1SingletonMonoBehaviour_html_ae7c9fbcd00cb5496587ed5a026bf7cde"><div class="ttname"><a href="classCore_1_1Input_1_1SingletonMonoBehaviour.html#ae7c9fbcd00cb5496587ed5a026bf7cde">Core.Input.SingletonMonoBehaviour.Awake</a></div><div class="ttdeci">virtual void Awake()</div><div class="ttdef"><b>Definition:</b> <a href="SingletonMonobehaviour_8cs_source.html#l00027">SingletonMonobehaviour.cs:27</a></div></div>
 <div class="ttc" id="aclassCore_1_1Input_1_1SingletonMonoBehaviour_html_afccff2d4016cc7b8ce5ca7a5941ade91"><div class="ttname"><a href="classCore_1_1Input_1_1SingletonMonoBehaviour.html#afccff2d4016cc7b8ce5ca7a5941ade91">Core.Input.SingletonMonoBehaviour.instance</a></div><div class="ttdeci">static T instance</div><div class="ttdef"><b>Definition:</b> <a href="SingletonMonobehaviour_8cs_source.html#l00011">SingletonMonobehaviour.cs:11</a></div></div>
 <div class="ttc" id="anamespaceCore_1_1Input_html"><div class="ttname"><a href="namespaceCore_1_1Input.html">Core.Input</a></div><div class="ttdef"><b>Definition:</b> <a href="InputActionAssetProfile_8cs_source.html#l00004">InputActionAssetProfile.cs:5</a></div></div>
 <div class="ttc" id="anamespaceDebug_html"><div class="ttname"><a href="namespaceDebug.html">Debug</a></div><div class="ttdef"><b>Definition:</b> <a href="AssetKeys_8cs_source.html#l00002">AssetKeys.cs:3</a></div></div>

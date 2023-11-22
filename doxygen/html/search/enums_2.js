@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ingamenav_2071',['InGameNav',['../namespaceUI_1_1InGame.html#a4e73ab501ed736761bd92a191abec44d',1,'UI::InGame']]]
+  ['ingamenav_2314',['InGameNav',['../namespaceModule_1_1UI_1_1InGame.html#aab9a8ee0a0e99ed8d553cd78860607e5',1,'Module::UI::InGame']]]
 ];

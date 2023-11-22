@@ -120,9 +120,10 @@ Core.Utility.Player.PlayerUtility 連携図</div>
 <div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="structCore_1_1Model_1_1Player_1_1PlayerInitModel.html">PlayerInitModel</a></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                speed = param.PlayerSpeed</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            };</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        }</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                accel = param.MoveAccelaration,</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                maxSpeed = param.MaxSpeed</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            };</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        }</div>
 <div class="ttc" id="astructCore_1_1Model_1_1Player_1_1PlayerInitModel_html"><div class="ttname"><a href="structCore_1_1Model_1_1Player_1_1PlayerInitModel.html">Core.Model.Player.PlayerInitModel</a></div><div class="ttdef"><b>Definition:</b> <a href="PlayerModel_8cs_source.html#l00005">PlayerModel.cs:6</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -151,15 +152,15 @@ Core.Utility.Player.PlayerUtility 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="PlayerUtility_8cs_source.html">PlayerUtility.cs</a> の <a class="el" href="PlayerUtility_8cs_source.html#l00016">16</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="structCore_1_1Model_1_1Player_1_1PlayerStatusModel.html">PlayerStatusModel</a></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                hp = (short)param.HitPoint,</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                maxHp = (<span class="keywordtype">short</span>)param.HitPoint</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            };</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
-<div class="ttc" id="astructCore_1_1Model_1_1Player_1_1PlayerStatusModel_html"><div class="ttname"><a href="structCore_1_1Model_1_1Player_1_1PlayerStatusModel.html">Core.Model.Player.PlayerStatusModel</a></div><div class="ttdef"><b>Definition:</b> <a href="PlayerModel_8cs_source.html#l00013">PlayerModel.cs:14</a></div></div>
+<p class="definition"> <a class="el" href="PlayerUtility_8cs_source.html">PlayerUtility.cs</a> の <a class="el" href="PlayerUtility_8cs_source.html#l00017">17</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="structCore_1_1Model_1_1Player_1_1PlayerStatusModel.html">PlayerStatusModel</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                hp = (short)param.HitPoint,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                maxHp = (<span class="keywordtype">short</span>)param.HitPoint</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            };</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
+<div class="ttc" id="astructCore_1_1Model_1_1Player_1_1PlayerStatusModel_html"><div class="ttname"><a href="structCore_1_1Model_1_1Player_1_1PlayerStatusModel.html">Core.Model.Player.PlayerStatusModel</a></div><div class="ttdef"><b>Definition:</b> <a href="PlayerModel_8cs_source.html#l00014">PlayerModel.cs:15</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

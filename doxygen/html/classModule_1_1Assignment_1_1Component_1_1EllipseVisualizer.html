@@ -144,36 +144,37 @@ Module.Assignment.Component.EllipseVisualizer 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="EllipseVisualizer_8cs_source.html">EllipseVisualizer.cs</a> の <a class="el" href="EllipseVisualizer_8cs_source.html#l00021">21</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            Gizmos.color = Color.green;</div>
+<p class="definition"> <a class="el" href="EllipseVisualizer_8cs_source.html">EllipseVisualizer.cs</a> の <a class="el" href="EllipseVisualizer_8cs_source.html#l00016">16</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            Gizmos.color = Color.green;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            var angleStep = 2f * Mathf.PI / <a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#ac1c00d0f7e7eef049a55684d14c8fc01">debugResolution</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            var center = transform.position;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            var xRadius = <a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#a1baff0cf1ddf9c987a0fc0b33aadd73b">ellipseData</a>.<a class="code" href="structModule_1_1Assignment_1_1Utility_1_1EllipseData.html#a58998b39b949145bd739d665bd6a8581">Size</a>.x * 0.5f;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            var yRadius = <a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#a1baff0cf1ddf9c987a0fc0b33aadd73b">ellipseData</a>.<a class="code" href="structModule_1_1Assignment_1_1Utility_1_1EllipseData.html#a58998b39b949145bd739d665bd6a8581">Size</a>.y * 0.5f;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            var angleStep = 2f * Mathf.PI / <a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#ac1c00d0f7e7eef049a55684d14c8fc01">debugResolution</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            var center = transform.position;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            var xRadius = <a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#a1baff0cf1ddf9c987a0fc0b33aadd73b">ellipseData</a>.<a class="code" href="structModule_1_1Assignment_1_1Utility_1_1EllipseData.html#a58998b39b949145bd739d665bd6a8581">Size</a>.x * 0.5f;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            var yRadius = <a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#a1baff0cf1ddf9c987a0fc0b33aadd73b">ellipseData</a>.<a class="code" href="structModule_1_1Assignment_1_1Utility_1_1EllipseData.html#a58998b39b949145bd739d665bd6a8581">Size</a>.y * 0.5f;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            Quaternion rotation = Quaternion.AngleAxis(<a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#a1baff0cf1ddf9c987a0fc0b33aadd73b">ellipseData</a>.<a class="code" href="structModule_1_1Assignment_1_1Utility_1_1EllipseData.html#ac18b82f3b707356303d8c863b1e30d3c">Rotation</a>, Vector3.up);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            Vector3 startPoint = center + <span class="keyword">new</span> Vector3(Mathf.Cos(0f) * xRadius, <a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#af1ffcdd477eced58c05179bbe30e115d">debugHeight</a>, Mathf.Sin(0f) * yRadius);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= <a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#ac1c00d0f7e7eef049a55684d14c8fc01">debugResolution</a>; i++)</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="keywordtype">float</span> angle = i * angleStep;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                Vector3 endPoint = center + <span class="keyword">new</span> Vector3(Mathf.Cos(angle) * xRadius, <a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#af1ffcdd477eced58c05179bbe30e115d">debugHeight</a>, Mathf.Sin(angle) * yRadius);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                Gizmos.DrawLine(Rotate(startPoint), Rotate(endPoint));</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                startPoint = endPoint;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            Vector3 Rotate(Vector3 point)</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">return</span> rotation * (point - center) + center;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            var rotation = Quaternion.AngleAxis(<a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#a1baff0cf1ddf9c987a0fc0b33aadd73b">ellipseData</a>.<a class="code" href="structModule_1_1Assignment_1_1Utility_1_1EllipseData.html#ac18b82f3b707356303d8c863b1e30d3c">Rotation</a>, Vector3.up);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            var startPoint = center + <span class="keyword">new</span> Vector3(Mathf.Cos(0f) * xRadius, <a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#af1ffcdd477eced58c05179bbe30e115d">debugHeight</a>, Mathf.Sin(0f) * yRadius);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">for</span> (var i = 1; i &lt;= <a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#ac1c00d0f7e7eef049a55684d14c8fc01">debugResolution</a>; i++)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                var angle = i * angleStep;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                var endPoint =</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                    center + <span class="keyword">new</span> Vector3(Mathf.Cos(angle) * xRadius, <a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#af1ffcdd477eced58c05179bbe30e115d">debugHeight</a>, Mathf.Sin(angle) * yRadius);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                Gizmos.DrawLine(Rotate(startPoint), Rotate(endPoint));</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                startPoint = endPoint;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            Vector3 Rotate(Vector3 point)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keywordflow">return</span> rotation * (point - center) + center;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
 <div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1EllipseVisualizer_html_a1baff0cf1ddf9c987a0fc0b33aadd73b"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#a1baff0cf1ddf9c987a0fc0b33aadd73b">Module.Assignment.Component.EllipseVisualizer.ellipseData</a></div><div class="ttdeci">EllipseData ellipseData</div><div class="ttdef"><b>Definition:</b> <a href="EllipseVisualizer_8cs_source.html#l00014">EllipseVisualizer.cs:14</a></div></div>
 <div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1EllipseVisualizer_html_ac1c00d0f7e7eef049a55684d14c8fc01"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#ac1c00d0f7e7eef049a55684d14c8fc01">Module.Assignment.Component.EllipseVisualizer.debugResolution</a></div><div class="ttdeci">int debugResolution</div><div class="ttdef"><b>Definition:</b> <a href="EllipseVisualizer_8cs_source.html#l00012">EllipseVisualizer.cs:12</a></div></div>
 <div class="ttc" id="aclassModule_1_1Assignment_1_1Component_1_1EllipseVisualizer_html_af1ffcdd477eced58c05179bbe30e115d"><div class="ttname"><a href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#af1ffcdd477eced58c05179bbe30e115d">Module.Assignment.Component.EllipseVisualizer.debugHeight</a></div><div class="ttdeci">float debugHeight</div><div class="ttdef"><b>Definition:</b> <a href="EllipseVisualizer_8cs_source.html#l00011">EllipseVisualizer.cs:11</a></div></div>
-<div class="ttc" id="astructModule_1_1Assignment_1_1Utility_1_1EllipseData_html_a58998b39b949145bd739d665bd6a8581"><div class="ttname"><a href="structModule_1_1Assignment_1_1Utility_1_1EllipseData.html#a58998b39b949145bd739d665bd6a8581">Module.Assignment.Utility.EllipseData.Size</a></div><div class="ttdeci">readonly float2 Size</div><div class="ttdef"><b>Definition:</b> <a href="EllipseData_8cs_source.html#l00012">EllipseData.cs:12</a></div></div>
-<div class="ttc" id="astructModule_1_1Assignment_1_1Utility_1_1EllipseData_html_ac18b82f3b707356303d8c863b1e30d3c"><div class="ttname"><a href="structModule_1_1Assignment_1_1Utility_1_1EllipseData.html#ac18b82f3b707356303d8c863b1e30d3c">Module.Assignment.Utility.EllipseData.Rotation</a></div><div class="ttdeci">readonly float Rotation</div><div class="ttdef"><b>Definition:</b> <a href="EllipseData_8cs_source.html#l00013">EllipseData.cs:13</a></div></div>
+<div class="ttc" id="astructModule_1_1Assignment_1_1Utility_1_1EllipseData_html_a58998b39b949145bd739d665bd6a8581"><div class="ttname"><a href="structModule_1_1Assignment_1_1Utility_1_1EllipseData.html#a58998b39b949145bd739d665bd6a8581">Module.Assignment.Utility.EllipseData.Size</a></div><div class="ttdeci">readonly float2 Size</div><div class="ttdef"><b>Definition:</b> <a href="EllipseData_8cs_source.html#l00013">EllipseData.cs:13</a></div></div>
+<div class="ttc" id="astructModule_1_1Assignment_1_1Utility_1_1EllipseData_html_ac18b82f3b707356303d8c863b1e30d3c"><div class="ttname"><a href="structModule_1_1Assignment_1_1Utility_1_1EllipseData.html#ac18b82f3b707356303d8c863b1e30d3c">Module.Assignment.Utility.EllipseData.Rotation</a></div><div class="ttdeci">readonly float Rotation</div><div class="ttdef"><b>Definition:</b> <a href="EllipseData_8cs_source.html#l00012">EllipseData.cs:12</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -201,10 +202,10 @@ Module.Assignment.Component.EllipseVisualizer 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="EllipseVisualizer_8cs_source.html">EllipseVisualizer.cs</a> の <a class="el" href="EllipseVisualizer_8cs_source.html#l00016">16</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            this.ellipseData = <a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#a1baff0cf1ddf9c987a0fc0b33aadd73b">ellipseData</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div>
+<p class="definition"> <a class="el" href="EllipseVisualizer_8cs_source.html">EllipseVisualizer.cs</a> の <a class="el" href="EllipseVisualizer_8cs_source.html#l00043">43</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            this.ellipseData = <a class="code" href="classModule_1_1Assignment_1_1Component_1_1EllipseVisualizer.html#a1baff0cf1ddf9c987a0fc0b33aadd73b">ellipseData</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
 </div><!-- fragment --><div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
