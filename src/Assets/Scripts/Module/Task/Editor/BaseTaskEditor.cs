@@ -6,9 +6,9 @@ namespace Module.Task.Editor
     [CustomEditor(typeof(BaseTask), true)]
     public class BaseTaskEditor : UnityEditor.Editor
     {
-        bool foldGeneral = false;
-        bool foldDebug = false;
-        bool foldMain = false;
+        private bool foldDebug;
+        private bool foldGeneral;
+        private bool foldMain;
 
         public override void OnInspectorGUI()
         {
@@ -27,8 +27,8 @@ namespace Module.Task.Editor
             foldGeneral = Foldout("General Settings", foldGeneral);
             if (foldGeneral)
             {
-                SerializedProperty mw = serializedObject.FindProperty("mw");
-                SerializedProperty acceptAttacks = serializedObject.FindProperty("acceptAttacks");
+                var mw = serializedObject.FindProperty("mw");
+                var acceptAttacks = serializedObject.FindProperty("acceptAttacks");
 
                 mw.intValue = EditorGUILayout.IntField("MonoWork", mw.intValue);
                 mw.intValue = Mathf.Clamp(mw.intValue, 1, int.MaxValue);
@@ -41,10 +41,7 @@ namespace Module.Task.Editor
         {
             EditorGUILayout.Space();
             foldMain = Foldout("Main Settings", foldMain);
-            if (foldMain)
-            {
-                DrawDefaultProperty();
-            }
+            if (foldMain) DrawDefaultProperty();
         }
 
         private void DrawDebugSettings()
@@ -53,9 +50,9 @@ namespace Module.Task.Editor
             foldDebug = Foldout("Debug View", foldDebug);
             if (foldDebug)
             {
-                SerializedProperty state = serializedObject.FindProperty("state");
-                SerializedProperty currentProgress = serializedObject.FindProperty("currentProgress");
-                SerializedProperty currentWorkerCount = serializedObject.FindProperty("currentWorkerCount");
+                var state = serializedObject.FindProperty("state");
+                var currentProgress = serializedObject.FindProperty("currentProgress");
+                var currentWorkerCount = serializedObject.FindProperty("currentWorkerCount");
 
                 EditorGUILayout.LabelField("タスクの状態", ((TaskState)state.enumValueFlag).ToString());
                 EditorGUILayout.LabelField("進捗率", $"{currentProgress.floatValue * 100f}%");
@@ -65,18 +62,13 @@ namespace Module.Task.Editor
 
         private void DrawDefaultProperty()
         {
-            SerializedProperty iterator = serializedObject.GetIterator();
+            var iterator = serializedObject.GetIterator();
 
             //既に表示してるやつはスキップ
-            for (int i = 0; i < 6; i++)
-            {
-                iterator.NextVisible(true);
-            }
+            for (var i = 0; i < 6; i++) iterator.NextVisible(true);
 
-            for (bool enterChildren = true; iterator.NextVisible(enterChildren); enterChildren = false)
-            {
+            for (var enterChildren = true; iterator.NextVisible(enterChildren); enterChildren = false)
                 EditorGUILayout.PropertyField(iterator, true);
-            }
         }
 
         private static bool Foldout(string title, bool display)
@@ -94,10 +86,7 @@ namespace Module.Task.Editor
             var e = Event.current;
 
             var toggleRect = new Rect(rect.x + 4f, rect.y + 2f, 13f, 13f);
-            if (e.type == EventType.Repaint)
-            {
-                EditorStyles.foldout.Draw(toggleRect, false, false, display, false);
-            }
+            if (e.type == EventType.Repaint) EditorStyles.foldout.Draw(toggleRect, false, false, display, false);
 
             if (e.type == EventType.MouseDown && rect.Contains(e.mousePosition))
             {

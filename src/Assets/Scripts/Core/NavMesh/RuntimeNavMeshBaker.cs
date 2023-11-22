@@ -27,7 +27,7 @@ namespace Core.NavMesh
 
         public async UniTask Bake()
         {
-            NavMeshData navMeshData = navMeshSurface.navMeshData;
+            var navMeshData = navMeshSurface.navMeshData;
             await navMeshSurface.UpdateNavMesh(navMeshData);
         }
     }

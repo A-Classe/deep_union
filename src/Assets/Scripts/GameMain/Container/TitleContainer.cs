@@ -1,9 +1,10 @@
 ﻿using Core.User;
-using UI.Title.Credit;
-using UI.Title.Option;
-using UI.Title.Quit;
-using UI.Title.StageSelect;
-using UI.Title.Title;
+using GameMain.Router;
+using Module.UI.Title.Credit;
+using Module.UI.Title.Option;
+using Module.UI.Title.Quit;
+using Module.UI.Title.StageSelect;
+using Module.UI.Title.Title;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;

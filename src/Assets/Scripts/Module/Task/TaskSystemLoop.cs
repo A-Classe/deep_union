@@ -9,8 +9,8 @@ namespace Module.Task
     /// </summary>
     public class TaskSystemLoop : IStartable, ITickable
     {
-        private readonly ITaskSystem[] taskSystems;
         private readonly IObjectResolver container;
+        private readonly ITaskSystem[] taskSystems;
 
         [Inject]
         public TaskSystemLoop(IObjectResolver container)
@@ -22,10 +22,7 @@ namespace Module.Task
         public void Start()
         {
             //タスクの初期化
-            foreach (var taskSystem in taskSystems)
-            {
-                taskSystem.Initialize(container);
-            }
+            foreach (var taskSystem in taskSystems) taskSystem.Initialize(container);
         }
 
         public void Tick()

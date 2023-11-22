@@ -11,7 +11,15 @@ namespace Core.Utility.UI.Component
         [SerializeField] private Slider slider;
         [SerializeField] private TextMeshProUGUI text;
 
+        [NonSerialized] public RectTransform rectTransform;
+
         public float Value => slider.value;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            rectTransform = GetComponent<RectTransform>();
+        }
 
         public void SetValue(float value)
         {
@@ -28,19 +36,7 @@ namespace Core.Utility.UI.Component
         private void Set(float value)
         {
             slider.value = value;
-            if (text != null)
-            {
-                text.text = ((int)value).ToString();
-            }
+            if (text != null) text.text = ((int)value).ToString();
         }
-        
-        [NonSerialized] public RectTransform rectTransform;
-
-        protected override void Awake()
-        {
-            base.Awake();
-            rectTransform = GetComponent<RectTransform>();
-        }
-
     }
 }

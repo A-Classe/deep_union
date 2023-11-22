@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Core.Utility.UI.Component
 {
-    public class FadeInOutButton: AnimationBehaviour
+    public class FadeInOutButton : AnimationBehaviour
     {
         [NonSerialized] public RectTransform rectTransform;
 
@@ -24,18 +24,18 @@ namespace Core.Utility.UI.Component
         {
             Animation(
                 this.FadeIn(Easings.Default(0.2f)),
-                new AnimationListener()
+                new AnimationListener
                 {
                     OnFinished = onFinished
                 }
             );
         }
-        
+
         private void FadeOut(Action onFinished)
         {
             Animation(
                 this.FadeOut(Easings.Default(0.2f)),
-                new AnimationListener()
+                new AnimationListener
                 {
                     OnFinished = onFinished
                 }
@@ -43,12 +43,11 @@ namespace Core.Utility.UI.Component
         }
 
         /// <summary>
-        /// とりあえずで公開しとく
+        ///     とりあえずで公開しとく
         /// </summary>
         public void InAnimation(ContentTransform a, AnimationListener listener)
         {
             Animation(a, listener);
         }
-        
     }
 }

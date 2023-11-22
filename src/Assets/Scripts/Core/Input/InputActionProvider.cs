@@ -6,35 +6,32 @@ using UnityEngine.InputSystem;
 namespace Core.Input
 {
     /// <summary>
-    /// 登録解除不要なInputActionを提供するクラス
+    ///     登録解除不要なInputActionを提供するクラス
     /// </summary>
     public class InputActionProvider : SingletonMonoBehaviour<InputActionProvider>
     {
         [SerializeField] private InputActionAsset inputActionAsset;
-        private readonly List<InputEvent> inputEvents = new List<InputEvent>();
+        private readonly List<InputEvent> inputEvents = new();
 
         private void Start()
         {
             inputActionAsset.Enable();
         }
 
+        private void OnDestroy()
+        {
+            foreach (var inputEvent in inputEvents) inputEvent.Clear();
+        }
+
         public InputEvent CreateEvent(Guid guid)
         {
-            InputAction inputAction = inputActionAsset.FindAction(guid);
+            var inputAction = inputActionAsset.FindAction(guid);
             Debug.Assert(inputAction != null);
 
-            InputEvent inputEvent = new InputEvent(inputAction);
+            var inputEvent = new InputEvent(inputAction);
             inputEvents.Add(inputEvent);
 
             return inputEvent;
-        }
-
-        private void OnDestroy()
-        {
-            foreach (InputEvent inputEvent in inputEvents)
-            {
-                inputEvent.Clear();
-            }
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Editor
         public static void Remove()
         {
             var objs = Resources.FindObjectsOfTypeAll<GameObject>();
-            int count = objs.Sum(GameObjectUtility.RemoveMonoBehavioursWithMissingScript);
+            var count = objs.Sum(GameObjectUtility.RemoveMonoBehavioursWithMissingScript);
             Debug.Log($"Removed {count} missing scripts");
         }
     }

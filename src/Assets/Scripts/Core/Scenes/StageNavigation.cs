@@ -11,7 +11,7 @@ namespace Core.Scenes
         Stage5,
         Back
     }
-    
+
     public static class StageNavEx
     {
         public static StageData.Stage ToStage(this StageNavigation nav)
