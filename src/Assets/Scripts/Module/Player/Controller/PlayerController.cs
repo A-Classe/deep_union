@@ -2,6 +2,7 @@ using System;
 using GameMain.Presenter;
 using Module.Player.State;
 using UnityEngine;
+using Wanna.DebugEx;
 
 namespace Module.Player.Controller
 {

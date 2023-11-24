@@ -27,7 +27,6 @@ namespace GameMain.Router
     /// </summary>
     public class GameRouter : IStartable, ITickable, IDisposable
     {
-        private readonly CameraController cameraController;
         private readonly GameParam gameParam;
         private readonly LeaderAssignableArea leaderAssignableArea;
 
@@ -60,7 +59,6 @@ namespace GameMain.Router
             WorkerSpawner workerSpawner,
             WorkerController workerController,
             PlayerController playerController,
-            CameraController cameraController,
             StageProgressObserver progressObserver,
             RuntimeNavMeshBaker runtimeNavMeshBaker,
             TaskActivator taskActivator,
@@ -77,7 +75,6 @@ namespace GameMain.Router
             this.gameParam = gameParam;
 
             this.playerController = playerController;
-            this.cameraController = cameraController;
             this.workerController = workerController;
 
             this.progressObserver = progressObserver;
@@ -145,11 +142,6 @@ namespace GameMain.Router
             playerController.PlayerStart();
             playerController.SetState(PlayerState.Go);
 
-            cameraController.SetFollowTarget(playerController.transform);
-            cameraController.SetState(CameraState.Follow);
-
-            workerController.SetCamera(cameraController.GetCamera());
-
             uiManager.OnGameInactive += OnCallGameInactive;
             uiManager.OnGameActive += OnCallGameActive;
         }
@@ -184,14 +176,12 @@ namespace GameMain.Router
         {
             workerController.SetPlayed(false);
             playerController.SetState(PlayerState.Pause);
-            cameraController.SetState(CameraState.Idle);
         }
 
         private void OnCallGameActive()
         {
             workerController.SetPlayed(true);
             playerController.SetState(PlayerState.Go);
-            cameraController.SetState(CameraState.Follow);
         }
     }
 }

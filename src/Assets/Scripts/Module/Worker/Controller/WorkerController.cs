@@ -13,6 +13,7 @@ namespace Module.Working.Controller
 
         [SerializeField] private Transform target;
         [SerializeField] private Rigidbody rig;
+        [SerializeField] private bool isUpdatePlayerOffset;
         private float beforeZ;
 
         private InputEvent controlEvent;
@@ -28,6 +29,7 @@ namespace Module.Working.Controller
             controlEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Control);
             isPlaying = true;
             beforeZ = target.position.z;
+            followCamera = Camera.main;
         }
 
         private void Update()
@@ -58,7 +60,10 @@ namespace Module.Working.Controller
 
             rig.position = Clamp(nextPos);
 
-            UpdatePlayerOffset();
+            if (isUpdatePlayerOffset)
+            {
+                UpdatePlayerOffset();
+            }
         }
 
         private void UpdatePlayerOffset()
@@ -90,11 +95,6 @@ namespace Module.Working.Controller
             worldPoint.y = nextPosition.y;
 
             return worldPoint;
-        }
-
-        public void SetCamera(Camera cam)
-        {
-            followCamera = cam;
         }
 
         public void SetPlayed(bool value)

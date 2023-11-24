@@ -38,7 +38,6 @@ namespace GameMain.Container
         [SerializeField] private SpawnParam spawnParam;
         [SerializeField] private WorkerController workerController;
         [SerializeField] private PlayerController playerController;
-        [SerializeField] private CameraController cameraController;
         [SerializeField] private GoalPoint goalPoint;
         [SerializeField] private TaskProgressPool progressPool;
         [SerializeField] private PlayerStatusVisualizer playerStatusVisualizer;
@@ -77,7 +76,6 @@ namespace GameMain.Container
             builder.RegisterInstance(spawnParam);
             builder.RegisterInstance(workerController);
             builder.RegisterInstance(playerController);
-            builder.RegisterInstance(cameraController);
             builder.RegisterInstance(goalPoint);
             builder.RegisterInstance(progressPool);
             builder.RegisterInstance(leaderAssignableArea);
