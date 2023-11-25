@@ -53,12 +53,7 @@ namespace Module.Working.Controller
             }
 
             rig.velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
-
-            var nextPos = rig.position + velocity * Time.fixedDeltaTime;
-
-            if (!InViewport(nextPos)) rig.velocity = Vector3.zero;
-
-            rig.position = Clamp(nextPos);
+            rig.position += velocity * Time.fixedDeltaTime;
 
             if (isUpdatePlayerOffset)
             {
@@ -71,30 +66,6 @@ namespace Module.Working.Controller
             rig.position += new Vector3(0f, 0f, target.position.z - beforeZ);
 
             beforeZ = target.position.z;
-        }
-
-        private bool InViewport(Vector3 worldPoint)
-        {
-            var inViewport = followCamera.WorldToViewportPoint(worldPoint);
-
-            return inViewport.x is > 0 and < 1 &&
-                   inViewport.y is > 0 and < 1 &&
-                   inViewport.z > 0;
-        }
-
-
-        private Vector3 Clamp(Vector3 nextPosition)
-        {
-            var viewportPoint = followCamera.WorldToViewportPoint(nextPosition);
-
-            // オブジェクトの位置が画面外に出ないようにクランプ
-            viewportPoint.x = Mathf.Clamp01(viewportPoint.x);
-            viewportPoint.y = Mathf.Clamp01(viewportPoint.y);
-
-            var worldPoint = followCamera.ViewportToWorldPoint(viewportPoint);
-            worldPoint.y = nextPosition.y;
-
-            return worldPoint;
         }
 
         public void SetPlayed(bool value)
