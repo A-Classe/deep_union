@@ -786,8 +786,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3517807995307944587}
   - component: {fileID: 4638216132182515816}
+  - component: {fileID: 7932023954867362986}
   - component: {fileID: 3517807995307944588}
-  m_Layer: 0
+  - component: {fileID: 8856132849690496738}
+  m_Layer: 16
   m_Name: Worker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -829,7 +831,34 @@ MonoBehaviour:
   - {fileID: 8788843966102197578}
   - {fileID: 1616506015283080929}
   - {fileID: 4595129260345674312}
+  workerRandomizer: {fileID: 7932023954867362986}
   animator: {fileID: 44649153341351246}
+--- !u!114 &7932023954867362986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3517807995307944583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d2e1b5501f8423883b9a295d462cd43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedRange:
+    min: 11
+    max: 18
+  accelerationRange:
+    min: 15
+    max: 25
+  heightRange:
+    min: 0.8
+    max: 3.5
+  changeIntervalSpeedRange:
+    min: 2
+    max: 4
+  navMeshAgent: {fileID: 3517807995307944588}
+  bodyTransform: {fileID: 6192038577375338894}
 --- !u!195 &3517807995307944588
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -843,8 +872,8 @@ NavMeshAgent:
   m_Speed: 15
   m_Acceleration: 100
   avoidancePriority: 50
-  m_AngularSpeed: 1200
-  m_StoppingDistance: 0.01
+  m_AngularSpeed: 400
+  m_StoppingDistance: 0.02
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -852,6 +881,19 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 0
+--- !u!135 &8856132849690496738
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3517807995307944583}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3648834227815630987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,7 +1322,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6192038577375338894}
   - component: {fileID: 44649153341351246}
-  - component: {fileID: 7450286666525781053}
   - component: {fileID: 4944604238229071984}
   m_Layer: 16
   m_Name: worker
@@ -1329,19 +1370,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!135 &7450286666525781053
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6819957179933047604}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.4090551
-  m_Center: {x: 0, y: -0.47, z: 0}
 --- !u!205 &4944604238229071984
 LODGroup:
   m_ObjectHideFlags: 0

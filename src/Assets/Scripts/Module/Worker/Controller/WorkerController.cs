@@ -18,7 +18,6 @@ namespace Module.Working.Controller
 
         private InputEvent controlEvent;
 
-        private Camera followCamera;
         private Vector2 input;
 
         private bool isPlaying;
@@ -29,7 +28,6 @@ namespace Module.Working.Controller
             controlEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Control);
             isPlaying = true;
             beforeZ = target.position.z;
-            followCamera = Camera.main;
         }
 
         private void Update()
@@ -47,8 +45,8 @@ namespace Module.Working.Controller
             {
                 var forward = target.forward * input.y;
                 var right = target.right * input.x;
-                var dir = (forward + right).normalized;
-                var vel = dir * (controlSpeed * Time.fixedDeltaTime);
+                var controlDir = (forward + right).normalized;
+                var vel = controlDir * (controlSpeed * Time.fixedDeltaTime);
                 velocity += new Vector3(vel.x, 0, vel.z);
             }
 

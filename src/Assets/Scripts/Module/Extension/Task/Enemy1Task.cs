@@ -198,8 +198,7 @@ namespace Module.Extension.Task
                 }
 
                 //Damage to worker
-                if (workerDamagedCount < workerDamageCount && obj.parent != null &&
-                    obj.parent.TryGetComponent(out Worker worker))
+                if (workerDamagedCount < workerDamageCount && obj.TryGetComponent(out Worker worker))
                 {
                     if (worker.IsLocked)
                         continue;
