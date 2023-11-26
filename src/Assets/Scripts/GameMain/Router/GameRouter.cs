@@ -7,9 +7,8 @@ using Core.Scenes;
 using Core.User;
 using GameMain.Presenter;
 using Module.Assignment.Component;
+using Module.GameSetting;
 using Module.Player;
-using Module.Player.Camera;
-using Module.Player.Camera.State;
 using Module.Player.Controller;
 using Module.Player.State;
 using Module.Task;
@@ -51,6 +50,8 @@ namespace GameMain.Router
         private readonly WorkerController workerController;
 
         private readonly WorkerSpawner workerSpawner;
+        
+        private readonly AudioMixerController audioMixerController;
 
         [Inject]
         public GameRouter(
@@ -68,7 +69,8 @@ namespace GameMain.Router
             UserPreference preference,
             PlayerStatus playerStatus,
             ResourceContainer resourceContainer,
-            WorkerAgent workerAgent
+            WorkerAgent workerAgent,
+            AudioMixerController audioMixerController
         )
         {
             this.spawnParam = spawnParam;
@@ -95,6 +97,8 @@ namespace GameMain.Router
             this.resourceContainer = resourceContainer;
 
             this.workerAgent = workerAgent;
+            
+            this.audioMixerController = audioMixerController;
         }
 
         public void Dispose()
@@ -149,7 +153,7 @@ namespace GameMain.Router
         private void InitScene()
         {
             uiManager.SetSceneChanger(sceneChanger);
-            uiManager.StartGame(preference);
+            uiManager.StartGame(preference, audioMixerController);
 
             progressObserver.OnCompleted += () =>
             {

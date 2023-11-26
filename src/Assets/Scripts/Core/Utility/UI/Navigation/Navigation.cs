@@ -13,19 +13,19 @@ namespace Core.Utility.UI.Navigation
         /// <summary>
         ///     押し続けるたびに減らす感覚
         /// </summary>
-        private const float IntervalIncrement = 0.05f;
+        private const float IntervalIncrement = 0.08f;
 
         /// <summary>
         ///     初回の呼び出し感覚
         /// </summary>
-        private const float StartInterval = 0.6f;
+        private const float StartInterval = 0.5f;
 
         private readonly InputEvent cancelEvent;
         private readonly InputEvent clickEvent;
         private readonly Dictionary<T, UIManager> managers;
 
         /// <summary>
-        ///     最小の呼び出し感覚
+        ///     最小の呼び出し間隔
         /// </summary>
         private readonly float minInterval = 0.1f;
 
@@ -96,7 +96,7 @@ namespace Core.Utility.UI.Navigation
         private void OnMove(Vector2 input)
         {
             if (!IsActive) return;
-
+   
             currentTime += Time.deltaTime;
             // ReSharper disable once CompareOfFloatsByEqualityOperator
             if (initialInterval == StartInterval && currentTime == 0f && current != null) current.Select(input);

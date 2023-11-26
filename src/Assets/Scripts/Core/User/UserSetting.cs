@@ -28,10 +28,10 @@ namespace Core.User
         public static readonly Expression<Func<UserData, object>> MusicVol = data => data.musicVolume;
         public static readonly Expression<Func<UserData, object>> EffectVol = data => data.effectVolume;
         public KeyValue<string, bool> fullScreen = new("fullScreen", true);
-        public KeyValue<string, int> bright = new("brightVal", 0);
-        public KeyValue<string, int> masterVolume = new("masterVol", 0);
-        public KeyValue<string, int> musicVolume = new("musicVol", 0);
-        public KeyValue<string, int> effectVolume = new("musicVol", 0);
+        public KeyValue<string, int> bright = new("brightVal", 50);
+        public KeyValue<string, int> masterVolume = new("masterVol", 50);
+        public KeyValue<string, int> musicVolume = new("musicVol", 50);
+        public KeyValue<string, int> effectVolume = new("musicVol", 50);
         public KeyValue<string, bool> isFirst = new("isFirst", false);
 
         public UserData DefaultInstance()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Core.Scenes;
 using Core.User;
 using Core.Utility.UI.Navigation;
+using Module.GameSetting;
 using Module.UI.Title.Credit;
 using Module.UI.Title.Option;
 using Module.UI.Title.Quit;
@@ -28,6 +29,8 @@ namespace GameMain.Router
         private readonly SceneChanger sceneChanger;
         private readonly StageSelectManager stageSelect;
         private readonly TitleManager title;
+        
+        private readonly AudioMixerController audioMixerController;
 
         [Inject]
         public TitleRouter(
@@ -37,7 +40,8 @@ namespace GameMain.Router
             CreditManager creditManager,
             StageSelectManager stageSelectManager,
             UserPreference dataManager,
-            SceneChanger sceneChanger
+            SceneChanger sceneChanger,
+            AudioMixerController audioMixerController
         )
         {
             title = titleManager;
@@ -46,9 +50,16 @@ namespace GameMain.Router
             credit = creditManager;
             stageSelect = stageSelectManager;
             this.sceneChanger = sceneChanger;
+            
+            this.audioMixerController = audioMixerController;
 
             data = dataManager;
-            option.SetPreference(data);
+            option.SetPreference(data, this.audioMixerController);
+            UserData userData = data.GetUserData();
+            this.audioMixerController.SetMasterVolume(userData.masterVolume.value / 100f);
+            this.audioMixerController.SetBGMVolume(userData.musicVolume.value / 100f);
+            this.audioMixerController.SetSEVolume(userData.effectVolume.value / 100f);
+            
             var initialManagers = new Dictionary<TitleNavigation, UIManager>
             {
                 { TitleNavigation.Title, title },

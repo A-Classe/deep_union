@@ -1,7 +1,9 @@
 using Core.Scenes;
 using Debug;
 using GameMain.Presenter;
+using Module.GameSetting;
 using UnityEngine;
+using UnityEngine.Audio;
 using VContainer;
 using VContainer.Unity;
 
@@ -10,6 +12,7 @@ namespace GameMain.Container
     public class RootContainer : LifetimeScope
     {
         [SerializeField] private GameParam gameParam;
+        [SerializeField] private AudioMixer mixer;
 
         protected override void Configure(IContainerBuilder builder)
         {
@@ -17,6 +20,7 @@ namespace GameMain.Container
 
             builder.RegisterInstance(gameParam);
             builder.RegisterInstance(new SceneChanger());
+            builder.RegisterInstance(new AudioMixerController(mixer));
         }
     }
 }

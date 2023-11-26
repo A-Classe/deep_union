@@ -4,6 +4,7 @@ using AnimationPro.RunTime;
 using Core.User;
 using Core.Utility.UI.Component;
 using Core.Utility.UI.Navigation;
+using Module.GameSetting;
 using Module.UI.Title.Option.Option1;
 using Module.UI.Title.Option.Option2;
 using Module.UI.Title.Option.Option3;
@@ -24,6 +25,8 @@ namespace Module.UI.Title.Option
         private Navigation<Nav> navigation;
 
         private UserPreference preference;
+
+        private AudioMixerController audioMixerController;
 
         protected override void Awake()
         {
@@ -50,6 +53,11 @@ namespace Module.UI.Title.Option
             bar.AnimateIn();
 
             if (isReset) navigation.SetScreen(Nav.Option1, isReset: true);
+        }
+
+        private void Update()
+        {
+            navigation.Tick();
         }
 
         public override void Select(Vector2 direction)
@@ -131,12 +139,15 @@ namespace Module.UI.Title.Option
                 switch (nav)
                 {
                     case Option3Manager.Nav.Master:
+                        audioMixerController.SetMasterVolume(volume / 100f);
                         preference.SetMasterVolume(volume);
                         break;
                     case Option3Manager.Nav.Music:
+                        audioMixerController.SetBGMVolume(volume / 100f);
                         preference.SetMusicVolume(volume);
                         break;
                     case Option3Manager.Nav.Effect:
+                        audioMixerController.SetSEVolume(volume / 100f);
                         preference.SetEffectVolume(volume);
                         break;
                 }
@@ -153,9 +164,10 @@ namespace Module.UI.Title.Option
             };
         }
 
-        public void SetPreference(UserPreference manager)
+        public void SetPreference(UserPreference manager, AudioMixerController controller)
         {
             preference = manager;
+            audioMixerController = controller;
         }
 
         private void NavigateToVideo(bool isReset)

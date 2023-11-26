@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Core.Scenes;
 using Core.User;
 using Core.Utility.UI.Navigation;
+using Module.GameSetting;
 using Module.UI.InGame.GameOver;
 using Module.UI.InGame.InGame;
 using Module.UI.InGame.Pause;
@@ -87,9 +88,9 @@ namespace Module.UI.InGame
         public event Action OnGameInactive;
         public event Action OnGameActive;
 
-        public void StartGame(UserPreference preference)
+        public void StartGame(UserPreference preference, AudioMixerController controller)
         {
-            optionManager.SetPreference(preference);
+            optionManager.SetPreference(preference, controller);
             navigation.SetActive(true);
             navigation.SetScreen(InGameNav.InGame);
         }
