@@ -2,13 +2,11 @@ using Core.User;
 
 namespace Core.Scenes
 {
+    
     public enum StageNavigation
     {
+        Tutorial,
         Stage1,
-        Stage2,
-        Stage3,
-        Stage4,
-        Stage5,
         Back
     }
 
@@ -19,10 +17,7 @@ namespace Core.Scenes
             return nav switch
             {
                 StageNavigation.Stage1 => StageData.Stage.Stage1,
-                StageNavigation.Stage2 => StageData.Stage.Stage2,
-                StageNavigation.Stage3 => StageData.Stage.Stage3,
-                StageNavigation.Stage4 => StageData.Stage.Stage4,
-                StageNavigation.Stage5 => StageData.Stage.Stage5,
+                StageNavigation.Tutorial => StageData.Stage.Tutorial,
                 _ => StageData.Stage.Stage1
             };
         }

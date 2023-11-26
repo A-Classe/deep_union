@@ -45,11 +45,8 @@ namespace Core.User
         [Serializable]
         public enum Stage
         {
-            Stage1,
-            Stage2,
-            Stage3,
-            Stage4,
-            Stage5
+            Tutorial,
+            Stage1
         }
 
         public Dict<Stage, uint> stage = new();

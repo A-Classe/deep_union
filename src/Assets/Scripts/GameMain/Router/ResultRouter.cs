@@ -63,7 +63,7 @@ namespace GameMain.Router
             {
                 /* todo: 次のステージに飛ばす　*/
                 var currentStage = (StageData.Stage)result.stageCode;
-                if (currentStage != StageData.Stage.Stage5)
+                if (currentStage != StageData.Stage.Stage1)
                 {
                     navigation.SetActive(false);
                     sceneChanger.LoadInGame(currentStage + 1);
@@ -79,11 +79,8 @@ namespace GameMain.Router
             resultManager.OnRetry += () =>
             {
                 var currentStage = (StageData.Stage)result.stageCode;
-                if (currentStage != StageData.Stage.Stage5)
-                {
-                    navigation.SetActive(false);
-                    sceneChanger.LoadInGame(currentStage);
-                }
+                navigation.SetActive(false);
+                sceneChanger.LoadInGame(currentStage);
             };
         }
 
