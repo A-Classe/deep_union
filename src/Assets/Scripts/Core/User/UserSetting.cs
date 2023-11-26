@@ -32,6 +32,7 @@ namespace Core.User
         public KeyValue<string, int> masterVolume = new("masterVol", 0);
         public KeyValue<string, int> musicVolume = new("musicVol", 0);
         public KeyValue<string, int> effectVolume = new("musicVol", 0);
+        public KeyValue<string, bool> isFirst = new("isFirst", false);
 
         public UserData DefaultInstance()
         {
@@ -56,6 +57,7 @@ namespace Core.User
             return new StageData();
         }
     }
+    
 
 
     [Serializable]

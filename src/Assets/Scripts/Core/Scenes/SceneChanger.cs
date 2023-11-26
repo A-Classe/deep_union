@@ -13,7 +13,9 @@ namespace Core.Scenes
     public class SceneChanger
     {
         private const string TitleRoute = "Scenes/Other/Titles_Test";
-        private const string InGameRoute = "Scenes/Stages/Stage/Stage";
+        private const string InGameRoute = "Scenes/Stages/Stage1/Stage1";
+        // :todo チュートリアル用のシーンを用意する
+        private const string TutorialRoute = "Scenes/Stages/Stage1/Stage1";
         private const string ResultRoute = "Scenes/Other/Result_Test";
 
         [CanBeNull] private string currentRoute;
@@ -58,6 +60,12 @@ namespace Core.Scenes
             try
             {
                 inGameRoute = routeNav;
+                // if (inGameRoute == StageData.Stage.Tutorial)
+                // {
+                //     SceneManager.LoadScene(TutorialRoute);
+                //     currentRoute = TutorialRoute;
+                //     return true;
+                // }
                 SceneManager.LoadScene(InGameRoute);
                 currentRoute = InGameRoute;
                 return true;

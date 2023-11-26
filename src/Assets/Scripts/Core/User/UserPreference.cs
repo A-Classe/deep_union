@@ -63,6 +63,18 @@ namespace Core.User
             data.effectVolume.value = vol;
             dataManager.Set(data);
         }
+        
+        public void CompletedFirst()
+        {
+            var data = dataManager.Get<UserData>();
+            data.isFirst.value = true;
+            dataManager.Set(data);
+        }
+        
+        public bool GetIsFirst()
+        {
+            return dataManager.Get<UserData>().isFirst.value;
+        }
 
         public Dictionary<StageData.Stage, uint> GetStageData()
         {

@@ -17,13 +17,11 @@ namespace Module.UI.Title.Option.Option2
     {
         public enum Nav
         {
-            FullScreen,
             Brightness,
             Back
         }
 
         [SerializeField] private CursorController<Nav> cursor;
-        [SerializeField] private ToggleController fullScreen;
         [SerializeField] private SliderController bright;
         [SerializeField] private FadeInOutButton back;
 
@@ -31,18 +29,17 @@ namespace Module.UI.Title.Option.Option2
 
         private void Start()
         {
-            cursor.AddPoint(Nav.FullScreen, fullScreen.rectTransform);
             cursor.AddPoint(Nav.Brightness, bright.rectTransform);
             cursor.AddPoint(Nav.Back, back.rectTransform);
-            current = Nav.FullScreen;
+            current = Nav.Brightness;
 
-            SetState(Nav.FullScreen);
+            SetState(Nav.Brightness);
         }
 
         public override void Initialized(ContentTransform content, bool isReset = false)
         {
             base.Initialized(content, isReset);
-            if (isReset) SetState(Nav.FullScreen);
+            if (isReset) SetState(Nav.Brightness);
         }
 
         /// <summary>
@@ -54,13 +51,9 @@ namespace Module.UI.Title.Option.Option2
             if (!current.HasValue) return;
             switch (current.Value)
             {
-                case Nav.FullScreen:
-                    OnFullScreenChanged(!fullScreen.IsOn);
-                    break;
                 case Nav.Brightness:
                     break;
                 case Nav.Back:
-                    OnFullScreen?.Invoke(fullScreen.IsOn);
                     OnBrightness?.Invoke(bright.Value);
                     back.OnPlay(() => OnBack?.Invoke());
                     break;
@@ -75,14 +68,13 @@ namespace Module.UI.Title.Option.Option2
             {
                 if (current == Nav.Brightness)
                     OnBrightnessValueChanged(direction.x);
-                else if (current == Nav.FullScreen) OnFullScreenChanged(!fullScreen.IsOn);
 
                 return;
             }
 
             if (!current.HasValue)
             {
-                SetState(Nav.FullScreen);
+                SetState(Nav.Brightness);
                 return;
             }
 
@@ -92,7 +84,7 @@ namespace Module.UI.Title.Option.Option2
             {
                 // 上向きの入力
                 case > 0:
-                    if (current.Value == Nav.FullScreen) return;
+                    if (current.Value == Nav.Brightness) return;
                     nextNav = current.Value - 1;
                     break;
                 // 下向きの入力
@@ -111,14 +103,11 @@ namespace Module.UI.Title.Option.Option2
 
         public event Action<float> OnBrightness;
 
-        public event Action<bool> OnFullScreen;
-
-        public void SetValues(bool fullscreen, int brightVal)
+        public void SetValues(int brightVal)
         {
             // initialize
             bright.Setup(100f, 0f, 70f);
 
-            fullScreen.SetState(fullscreen);
             bright.SetValue(brightVal);
         }
 
@@ -133,11 +122,6 @@ namespace Module.UI.Title.Option.Option2
         {
             var value = bright.Value + val;
             bright.SetValue(value);
-        }
-
-        private void OnFullScreenChanged(bool isOn)
-        {
-            fullScreen.SetState(isOn);
         }
     }
 }

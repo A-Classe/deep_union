@@ -112,13 +112,6 @@ namespace Module.UI.Title.Option
             };
             option1.OnBack += () => { OnBack?.Invoke(); };
 
-            option2.OnFullScreen += isOn =>
-            {
-                var data = preference.GetUserData();
-                data.fullScreen.value = isOn;
-                preference.SetUserData(data);
-                Screen.fullScreen = isOn;
-            };
             option2.OnBrightness += value =>
             {
                 var data = preference.GetUserData();
@@ -170,7 +163,7 @@ namespace Module.UI.Title.Option
             navigation.SetScreen(Nav.Option2, isReset: isReset);
             preference.Load();
             var user = preference.GetUserData();
-            option2.SetValues(user.fullScreen.value, user.bright.value);
+            option2.SetValues(user.bright.value);
         }
 
         private void NavigateToAudio(bool isReset)

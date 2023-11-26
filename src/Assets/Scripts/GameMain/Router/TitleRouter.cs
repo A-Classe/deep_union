@@ -151,8 +151,16 @@ namespace GameMain.Router
         private void NavigateToPlay(bool isReset)
         {
             data.Load();
-            navigation.SetScreen(TitleNavigation.StageSelect, isReset: isReset);
-            stageSelect.SetScores(data.GetStageData());
+            if (!data.GetIsFirst())
+            {
+                sceneChanger.LoadInGame(StageData.Stage.Tutorial);
+            }
+            else
+            {
+                navigation.SetScreen(TitleNavigation.StageSelect, isReset: isReset);
+                stageSelect.SetScores(data.GetStageData());
+            }
+           
         }
 
         private void NavigateToCredit(bool isReset)
