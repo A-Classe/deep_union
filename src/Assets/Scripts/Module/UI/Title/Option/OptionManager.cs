@@ -95,6 +95,7 @@ namespace Module.UI.Title.Option
         {
             navigation.OnCancel += _ =>
             {
+                preference.Save();
                 switch (navigation.GetCurrentNav())
                 {
                     case Nav.Option1:

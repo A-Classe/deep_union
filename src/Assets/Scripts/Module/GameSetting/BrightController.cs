@@ -28,7 +28,6 @@ namespace Module.GameSetting
         /// <param name="value">0.0~1.0</param>
         public void SetBrightness(float value)
         {
-            Debug.Log(value);
             if (value < 0.0f || value > 1.0f) return;
             if (globalVolume.profile.TryGet(out ColorAdjustments colorAdjustments))
             {

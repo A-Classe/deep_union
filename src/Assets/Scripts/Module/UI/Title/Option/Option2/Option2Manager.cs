@@ -106,7 +106,7 @@ namespace Module.UI.Title.Option.Option2
         public void SetValues(int brightVal)
         {
             // initialize
-            bright.Setup(10f, 0f, 6f);
+            bright.Setup(10f, 0f, brightVal);
 
             bright.SetValue(brightVal);
         }
