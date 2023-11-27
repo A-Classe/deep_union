@@ -56,9 +56,9 @@ namespace GameMain.Router
             data = dataManager;
             option.SetPreference(data, this.audioMixerController);
             UserData userData = data.GetUserData();
-            this.audioMixerController.SetMasterVolume(userData.masterVolume.value / 100f);
-            this.audioMixerController.SetBGMVolume(userData.musicVolume.value / 100f);
-            this.audioMixerController.SetSEVolume(userData.effectVolume.value / 100f);
+            this.audioMixerController.SetMasterVolume(userData.masterVolume.value / 10f);
+            this.audioMixerController.SetBGMVolume(userData.musicVolume.value / 10f);
+            this.audioMixerController.SetSEVolume(userData.effectVolume.value / 10f);
             
             var initialManagers = new Dictionary<TitleNavigation, UIManager>
             {

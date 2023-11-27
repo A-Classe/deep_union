@@ -27,6 +27,8 @@ namespace Module.UI.Title.Option
         private UserPreference preference;
 
         private AudioMixerController audioMixerController;
+        
+        public event Action<float> OnBrightness; 
 
         protected override void Awake()
         {
@@ -125,6 +127,7 @@ namespace Module.UI.Title.Option
                 var data = preference.GetUserData();
                 data.bright.value = (int)value;
                 preference.SetUserData(data);
+                OnBrightness?.Invoke(value);
             };
 
             option2.OnBack += () =>

@@ -67,7 +67,7 @@ namespace Module.UI.Title.Option.Option2
             if (Math.Abs(direction.x) > Math.Abs(direction.y))
             {
                 if (current == Nav.Brightness)
-                    OnBrightnessValueChanged(direction.x);
+                    OnBrightnessValueChanged(direction.x > 0 ? 1 : -1);
 
                 return;
             }
@@ -106,7 +106,7 @@ namespace Module.UI.Title.Option.Option2
         public void SetValues(int brightVal)
         {
             // initialize
-            bright.Setup(100f, 0f, 70f);
+            bright.Setup(10f, 0f, 6f);
 
             bright.SetValue(brightVal);
         }
@@ -118,10 +118,11 @@ namespace Module.UI.Title.Option.Option2
             cursor.SetPoint(setNav);
         }
 
-        private void OnBrightnessValueChanged(float val)
+        private void OnBrightnessValueChanged(int val)
         {
             var value = bright.Value + val;
             bright.SetValue(value);
+            OnBrightness?.Invoke(value);
         }
     }
 }

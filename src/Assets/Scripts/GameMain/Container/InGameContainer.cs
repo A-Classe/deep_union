@@ -12,6 +12,7 @@ using GameMain.Router;
 using Module.Assignment.Component;
 using Module.Assignment.System;
 using Module.Extension.UI;
+using Module.GameSetting;
 using Module.Player;
 using Module.Player.Camera;
 using Module.Player.Controller;
@@ -23,6 +24,7 @@ using Module.Working.Controller;
 using Module.Working.Factory;
 using UnityDebugSheet.Runtime.Core.Scripts;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.Serialization;
 using VContainer;
 using VContainer.Unity;
@@ -44,6 +46,8 @@ namespace GameMain.Container
         [SerializeField] private DebugSheet debugSheet;
 
         [SerializeField] private InGameUIManager inGameUIManager;
+        
+        [SerializeField] private BrightController brightController;
 
         [FormerlySerializedAs("leaderAssignEvent")] [SerializeField]
         private LeaderAssignableArea leaderAssignableArea;
@@ -83,6 +87,7 @@ namespace GameMain.Container
             builder.RegisterInstance(new PlayerStatus(gameParam.ConvertToStatus()));
             builder.RegisterInstance(playerStatusVisualizer);
             builder.RegisterInstance(debugSheet);
+            builder.RegisterInstance(brightController);
 
             builder.RegisterBuildCallback(container =>
             {

@@ -21,6 +21,8 @@ namespace Module.UI.InGame
         private Navigation<InGameNav> navigation;
 
         private SceneChanger sceneChanger;
+        
+        private BrightController brightController;
 
         private void Awake()
         {
@@ -81,6 +83,11 @@ namespace Module.UI.InGame
                         throw new ArgumentOutOfRangeException(nameof(nav), nav, null);
                 }
             };
+            
+            optionManager.OnBrightness += value =>
+            {
+                brightController.SetBrightness(value / 10f);
+            };
 
             navigation.SetActive(true);
         }
@@ -134,6 +141,11 @@ namespace Module.UI.InGame
         public void SetResourceCount(uint current, uint? max = null)
         {
             inGameManager.SetResource(current, max);
+        }
+        
+        public void SetBrightnessController(BrightController controller)
+        {
+            brightController = controller;
         }
     }
 

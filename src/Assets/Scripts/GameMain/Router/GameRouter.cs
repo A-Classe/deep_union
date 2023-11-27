@@ -52,6 +52,8 @@ namespace GameMain.Router
         private readonly WorkerSpawner workerSpawner;
         
         private readonly AudioMixerController audioMixerController;
+        
+        private readonly BrightController brightController;
 
         [Inject]
         public GameRouter(
@@ -70,7 +72,8 @@ namespace GameMain.Router
             PlayerStatus playerStatus,
             ResourceContainer resourceContainer,
             WorkerAgent workerAgent,
-            AudioMixerController audioMixerController
+            AudioMixerController audioMixerController,
+            BrightController brightController
         )
         {
             this.spawnParam = spawnParam;
@@ -99,6 +102,8 @@ namespace GameMain.Router
             this.workerAgent = workerAgent;
             
             this.audioMixerController = audioMixerController;
+            
+            this.brightController = brightController;
         }
 
         public void Dispose()
@@ -173,6 +178,11 @@ namespace GameMain.Router
             {
                 if (playerController.GetState() != PlayerState.Pause) uiManager.StartPause();
             };
+            
+            preference.Load();
+            UserData data = preference.GetUserData();
+            brightController.SetBrightness(data.bright.value / 10f);
+            uiManager.SetBrightnessController(brightController);
         }
 
         // HPが0になった時 or オプション画面で
