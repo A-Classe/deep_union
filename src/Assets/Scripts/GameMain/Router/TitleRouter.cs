@@ -17,8 +17,6 @@ namespace GameMain.Router
 {
     internal class TitleRouter : IStartable
     {
-        private readonly CreditManager credit;
-
         private readonly UserPreference data;
 
         private readonly Navigation<TitleNavigation> navigation;
@@ -29,8 +27,6 @@ namespace GameMain.Router
         private readonly SceneChanger sceneChanger;
         private readonly StageSelectManager stageSelect;
         private readonly TitleManager title;
-        
-        private readonly AudioMixerController audioMixerController;
 
         [Inject]
         public TitleRouter(
@@ -47,25 +43,22 @@ namespace GameMain.Router
             title = titleManager;
             quit = quitManager;
             option = optionManager;
-            credit = creditManager;
             stageSelect = stageSelectManager;
             this.sceneChanger = sceneChanger;
-            
-            this.audioMixerController = audioMixerController;
 
             data = dataManager;
-            option.SetPreference(data, this.audioMixerController);
+            option.SetPreference(data, audioMixerController);
             UserData userData = data.GetUserData();
-            this.audioMixerController.SetMasterVolume(userData.masterVolume.value / 10f);
-            this.audioMixerController.SetBGMVolume(userData.musicVolume.value / 10f);
-            this.audioMixerController.SetSEVolume(userData.effectVolume.value / 10f);
+            audioMixerController.SetMasterVolume(userData.masterVolume.value / 10f);
+            audioMixerController.SetBGMVolume(userData.musicVolume.value / 10f);
+            audioMixerController.SetSEVolume(userData.effectVolume.value / 10f);
             
             var initialManagers = new Dictionary<TitleNavigation, UIManager>
             {
                 { TitleNavigation.Title, title },
                 { TitleNavigation.Quit, quit },
                 { TitleNavigation.Option, option },
-                { TitleNavigation.Credit, credit },
+                { TitleNavigation.Credit, creditManager },
                 { TitleNavigation.StageSelect, stageSelect }
             };
             navigation = new Navigation<TitleNavigation>(initialManagers);
@@ -132,8 +125,10 @@ namespace GameMain.Router
         /// <param name="nav">選んだステージ</param>
         private void StageSelected(StageNavigation nav)
         {
-            if (!sceneChanger.LoadInGame(nav.ToStage()))
+            if (!sceneChanger.LoadBeforeMovieInGame(nav.ToStage()))
+            {
                 throw new NotImplementedException("not found navigation : " + nav);
+            }
             navigation.SetActive(false);
         }
 
@@ -164,7 +159,7 @@ namespace GameMain.Router
             data.Load();
             if (!data.GetIsFirst())
             {
-                sceneChanger.LoadInGame(StageData.Stage.Tutorial);
+                sceneChanger.LoadBeforeMovieInGame(StageData.Stage.Tutorial);
             }
             else
             {
