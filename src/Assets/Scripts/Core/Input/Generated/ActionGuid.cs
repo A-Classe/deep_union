@@ -21,6 +21,7 @@ namespace Core.Input
        public readonly Guid Move = new Guid("dfe40a5f-6c4e-4a89-bb42-c59fdfa6c029");
        public readonly Guid Rotate = new Guid("ac8d6d16-519b-4e2c-94e7-b37afd5385d0");
        public readonly Guid RotateCamera = new Guid("256433bb-f35a-40bb-934a-669219aa375a");
+       public readonly Guid AnyKey = new Guid("776c61ae-9e14-4dbd-bec7-fe841e22d4fe");
     }
 
     public class Title

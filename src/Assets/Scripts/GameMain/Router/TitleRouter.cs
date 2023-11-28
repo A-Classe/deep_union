@@ -159,7 +159,7 @@ namespace GameMain.Router
             data.Load();
             if (!data.GetIsFirst())
             {
-                sceneChanger.LoadBeforeMovieInGame(StageData.Stage.Tutorial);
+                sceneChanger.LoadInGame(StageData.Stage.Tutorial);
             }
             else
             {
