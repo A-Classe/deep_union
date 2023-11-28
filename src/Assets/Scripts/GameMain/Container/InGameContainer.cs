@@ -41,7 +41,6 @@ namespace GameMain.Container
         [SerializeField] private GoalPoint goalPoint;
         [SerializeField] private TaskProgressPool progressPool;
         [SerializeField] private PlayerStatusVisualizer playerStatusVisualizer;
-        [SerializeField] private DebugSheet debugSheet;
 
         [SerializeField] private InGameUIManager inGameUIManager;
 
@@ -57,7 +56,6 @@ namespace GameMain.Container
             builder.RegisterEntryPoint<ProgressBarSwitcher>();
             builder.RegisterEntryPoint<ResourcePresenter>();
             builder.RegisterEntryPoint<WorkerPresenter>();
-            builder.RegisterEntryPoint<SceneDebugTool>();
             builder.RegisterEntryPoint<LeaderPresenter>();
             builder.RegisterEntryPoint<AssignmentSystem>();
             builder.RegisterEntryPoint<PlayerStatusUpdater>();
@@ -82,7 +80,6 @@ namespace GameMain.Container
             builder.RegisterInstance(inGameUIManager);
             builder.RegisterInstance(new PlayerStatus(gameParam.ConvertToStatus()));
             builder.RegisterInstance(playerStatusVisualizer);
-            builder.RegisterInstance(debugSheet);
 
             builder.RegisterBuildCallback(container =>
             {

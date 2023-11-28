@@ -4,7 +4,6 @@ namespace GameMain.Presenter
 {
     public class GameParam : ScriptableObject
     {
-        public bool EnableDebugger;
         [Header("移動加速度")] public float MoveAccelaration = 1f;
         [Header("速度制限")] public float MinSpeed = 1f;
         public float MaxSpeed = 1f;
