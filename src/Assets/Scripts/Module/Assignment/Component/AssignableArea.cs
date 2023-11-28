@@ -45,6 +45,7 @@ namespace Module.Assignment.Component
         public EllipseData EllipseData => new(transform.position, size * factor, rotation);
 
         public IReadOnlyList<Worker> AssignedWorkers => assignedWorkers;
+        public IReadOnlyList<AssignPoint> AssignPoints => assignPoints;
 
         private void Awake()
         {
