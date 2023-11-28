@@ -16,10 +16,6 @@ namespace Module.GameSetting
         private void Awake()
         {
             globalVolume = GetComponent<Volume>();
-            if (globalVolume.profile.TryGet(out ColorAdjustments colorAdjustments))
-            {
-                Debug.Log(colorAdjustments.postExposure.value);
-            }
         }
 
         /// <summary>

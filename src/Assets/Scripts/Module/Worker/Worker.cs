@@ -19,6 +19,7 @@ namespace Module.Working
         [SerializeField] private bool initialized;
         [SerializeField] private float deathDuration;
         [SerializeField] private Renderer[] cutOffRenderers;
+        [SerializeField] private WorkerRandomizer workerRandomizer;
 
         public Animator animator;
 
@@ -47,7 +48,6 @@ namespace Module.Working
             foreach (var state in workerStates) state.Dispose();
         }
 
-
         public async UniTaskVoid Initialize()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
@@ -65,15 +65,23 @@ namespace Module.Working
             var materials = cutOffRenderers.Select(renderer => renderer.materials);
 
             foreach (var rendMaterial in materials)
-            foreach (var material in rendMaterial)
-                cutOffMaterials.Add(material);
+            {
+                foreach (var material in rendMaterial)
+                    cutOffMaterials.Add(material);
+            }
 
-
-            navMeshAgent.enabled = true;
-            await UniTask.WaitUntil(() => navMeshAgent.isOnNavMesh,
-                cancellationToken: this.GetCancellationTokenOnDestroy());
+            await SetUpNavMesh();
 
             initialized = true;
+        }
+
+        private async UniTask SetUpNavMesh()
+        {
+            workerRandomizer.SetUp();
+            navMeshAgent.enabled = true;
+
+            await UniTask.WaitUntil(() => navMeshAgent.isOnNavMesh,
+                cancellationToken: this.GetCancellationTokenOnDestroy());
         }
 
         /// <summary>
@@ -117,10 +125,12 @@ namespace Module.Working
         {
             SetLockState(false);
             gameObject.SetActive(true);
+            workerRandomizer.Enable();
         }
 
         public async UniTaskVoid Disable()
         {
+            workerRandomizer.Disable();
             SetLockState(true);
 
             await DeathCutoff(this.GetCancellationTokenOnDestroy());
