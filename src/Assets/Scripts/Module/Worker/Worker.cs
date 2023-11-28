@@ -150,6 +150,11 @@ namespace Module.Working
             }
         }
 
+        public void Teleport(Vector3 position)
+        {
+            navMeshAgent.Warp(position);
+        }
+
         public void Dispose()
         {
             foreach (var state in workerStates) state.Dispose();

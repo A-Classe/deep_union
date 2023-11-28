@@ -8,6 +8,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Serialization;
+using Wanna.DebugEx;
 
 namespace Module.Assignment.Component
 {
@@ -17,6 +18,7 @@ namespace Module.Assignment.Component
     public class AssignableArea : MonoBehaviour
     {
         private static readonly int IntensityKey = Shader.PropertyToID("_Intensity");
+        [SerializeField] private bool isAssignable = true;
         [SerializeField] private DecalProjector lightProjector;
 
         [FormerlySerializedAs("ellipseCollider")] [SerializeField]
@@ -100,7 +102,7 @@ namespace Module.Assignment.Component
                 //DebugEx.LogWarning("登録できるAssignPointはありません！");
             }
 
-            return assignPoints.Count > 0;
+            return isAssignable && assignPoints.Count > 0;
         }
 
         private Transform GetNearestAssignPoint(Vector3 target)
