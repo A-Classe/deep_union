@@ -30,12 +30,6 @@ namespace Module.UI.Title.Stats
 
         private Nav? current;
 
-        public override void Initialized(ContentTransform content, bool isReset = false)
-        {
-            base.Initialized(content, isReset);
-            
-        }
-
         private void Start()
         {
             cursor.AddPoint(Nav.Quit, quit.rectTransform);

@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Core.Model.User;
 using Firebase.Database;
 using Firebase.Extensions;
 using UnityEngine;
@@ -46,7 +50,10 @@ namespace Core.User.API
             reference = FirebaseDatabase.DefaultInstance.RootReference;
             // Debug.Log(reference);
             userData = preference.GetUserData();
-            WriteNewUser();
+            if (userData.uuid.value == "")
+            {
+                WriteNewUser();
+            }
         }
         public void Start()
         {
@@ -55,19 +62,19 @@ namespace Core.User.API
 
         private void WriteNewUser()
         {
-            if (userData.uuid.value == "")
-            {
-                userData.uuid.value = System.Guid.NewGuid().ToString();
-                Debug.Log("generate UUID: " + userData.uuid.value);
-                preference.SetUserData(userData);
-                preference.Save();
-                preference.Load();
-                userData = preference.GetUserData();
-            }
-
-            SetName(userData.name.value);
-            SetStageScore(StageData.Stage.Stage1, 3000);
-            GetAllData();
+       
+            userData.uuid.value = System.Guid.NewGuid().ToString();
+            Debug.Log("generate UUID: " + userData.uuid.value);
+            preference.SetUserData(userData);
+            preference.Save();
+            preference.Load();
+            userData = preference.GetUserData();
+            // SetName(userData.name.value);
+            // SetStageScore(StageData.Stage.Stage1, 3000);
+            // GetAllData((r) =>
+            // {
+            //     Debug.Log(r);
+            // });
         }
 
         private DatabaseReference GetUserRef()
@@ -90,35 +97,54 @@ namespace Core.User.API
             GetUserRef().Child(Stage).Child(stage.ToString()).SetValueAsync(score);
         }
 
-        public void GetAllData()
+        public void GetAllData(Action<Ranking> OnCallback)
         {
+            
             GetDbRef()
-                .GetValueAsync().ContinueWithOnMainThread(task => {
+                .GetValueAsync()
+                .ContinueWithOnMainThread(task => {
                     if (task.IsFaulted) {
                         // Handle the error...
                         Debug.Log(task);
                     }
                     else if (task.IsCompleted) {
-                        DataSnapshot snapshot = task.Result;
-                        // Do something with snapshot...
-                        foreach (var VARIABLE in snapshot.Children)
+                        try
                         {
-                            if (VARIABLE.Key == Uuid) continue;
-                            
-                            Debug.Log("UUID: " + VARIABLE.Key);
-                            foreach (var value in VARIABLE.Children)
+                            Ranking ranking = new Ranking();
+                            ranking.users = new List<RankingUser>();
+                            DataSnapshot snapshot = task.Result;
+                            // Do something with snapshot...
+                            foreach (var userData in snapshot.Children)
                             {
-                                if (value.Key == Name)
+                                if (userData.Key == Uuid) continue;
+                                RankingUser user = new RankingUser();
+                                // UUID: string
+                                user.ID = userData.Key;
+                                user.Stages = new();
+                                foreach (var parameters in userData.Children)
                                 {
-                                    Debug.Log(value.Key + ":" + value.Value);
-                                } else if (value.Key == Stage)
-                                {
-                                    foreach (var child in value.Children)
+                                    if (parameters.Key == Name)
                                     {
-                                        Debug.Log(child.Key + ":" + child.Value);
+                                        // Name: string
+                                        user.Name = parameters.Value.ToString();
+                                    } else if (parameters.Key == Stage)
+                                    {
+                                        foreach (var stages in parameters.Children)
+                                        {
+                                            // Map <Stage: string to Score: int>
+                                            StageData.Stage stg = (StageData.Stage)Enum.Parse(typeof(StageData.Stage), stages.Key);
+                                            user.Stages[stg] = int.Parse(stages.Value.ToString());
+                                        }
                                     }
                                 }
+                                ranking.users.Add(user);
                             }
+                            
+                            OnCallback?.Invoke(ranking);
+                        }
+                        catch (Exception e)
+                        {
+                            Debug.Log(e.ToString());
                         }
                     }
                 });

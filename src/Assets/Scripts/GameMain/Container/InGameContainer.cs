@@ -65,9 +65,7 @@ namespace GameMain.Container
             builder.RegisterEntryPoint<LeaderPresenter>();
             builder.RegisterEntryPoint<AssignmentSystem>();
             builder.RegisterEntryPoint<PlayerStatusUpdater>();
-
-            builder.Register<FirebaseAccessor>(Lifetime.Singleton);
-            builder.Register<UserPreference>(Lifetime.Singleton);
+            
             builder.Register<WorkerSpawner>(Lifetime.Singleton);
             builder.Register<WorkerAgent>(Lifetime.Singleton);
             builder.Register<StageProgressObserver>(Lifetime.Singleton);

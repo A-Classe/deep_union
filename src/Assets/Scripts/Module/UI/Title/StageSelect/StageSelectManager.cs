@@ -16,6 +16,7 @@ namespace Module.UI.Title.StageSelect
 
         [SerializeField] private CursorController<StageNavigation> cursor;
         [SerializeField] private StageButton stage1;
+        [SerializeField] private FadeInOutButton stage1Ranking;
         [SerializeField] private StageButton tutorial;
         [SerializeField] private FadeInOutButton back;
 
@@ -24,6 +25,7 @@ namespace Module.UI.Title.StageSelect
         private void Start()
         {
             cursor.AddPoint(StageNavigation.Stage1, stage1.rectTransform);
+            cursor.AddPoint(StageNavigation.Stage1Ranking, stage1Ranking.rectTransform);
             cursor.AddPoint(StageNavigation.Tutorial, tutorial.rectTransform);
             cursor.AddPoint(StageNavigation.Back, back.rectTransform);
             current = StageNavigation.Stage1;
@@ -53,6 +55,9 @@ namespace Module.UI.Title.StageSelect
                     break;
                 case StageNavigation.Tutorial:
                     OnStage?.Invoke(StageNavigation.Tutorial);
+                    break;
+                case StageNavigation.Stage1Ranking:
+                    OnRanking?.Invoke(StageData.Stage.Stage1);
                     break;
                 case StageNavigation.Back:
                     back.OnPlay(() => OnBack?.Invoke());
@@ -105,6 +110,8 @@ namespace Module.UI.Title.StageSelect
         public event Action OnBack;
 
         public event Action<StageNavigation> OnStage;
+
+        public event Action<StageData.Stage> OnRanking; 
 
         public void SetScores(Dictionary<StageData.Stage, uint> scores)
         {

@@ -7,6 +7,7 @@ namespace Core.Scenes
     {
         Tutorial,
         Stage1,
+        Stage1Ranking,
         Back
     }
 

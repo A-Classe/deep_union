@@ -23,6 +23,8 @@ namespace GameMain.Container
             builder.RegisterInstance(gameParam);
             builder.RegisterInstance(new SceneChanger());
             builder.RegisterInstance(new AudioMixerController(mixer));
+            builder.Register<FirebaseAccessor>(Lifetime.Singleton);
+            builder.Register<UserPreference>(Lifetime.Singleton);
         }
     }
 }

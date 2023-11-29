@@ -8,5 +8,6 @@ namespace Core.Scenes
         Credit,
         StageSelect,
         Stats,
+        Ranking
     }
 }

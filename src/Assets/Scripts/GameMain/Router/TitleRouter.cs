@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using Core.Scenes;
 using Core.User;
+using Core.User.API;
 using Core.Utility.UI.Navigation;
 using Module.GameSetting;
 using Module.UI.Title.Credit;
 using Module.UI.Title.Option;
 using Module.UI.Title.Quit;
+using Module.UI.Title.Ranking;
 using Module.UI.Title.StageSelect;
 using Module.UI.Title.Stats;
 using Module.UI.Title.Title;
@@ -29,6 +31,9 @@ namespace GameMain.Router
         private readonly StageSelectManager stageSelect;
         private readonly TitleManager title;
         private readonly StatsManager statsManager;
+        private readonly FirebaseAccessor accessor;
+        private readonly RankingManager rankingManager;
+        
 
         [Inject]
         public TitleRouter(
@@ -40,7 +45,9 @@ namespace GameMain.Router
             StatsManager statsManager,
             UserPreference dataManager,
             SceneChanger sceneChanger,
-            AudioMixerController audioMixerController
+            AudioMixerController audioMixerController,
+            FirebaseAccessor firebaseAccessor,
+            RankingManager rankingManager
         )
         {
             title = titleManager;
@@ -49,6 +56,8 @@ namespace GameMain.Router
             stageSelect = stageSelectManager;
             this.sceneChanger = sceneChanger;
             this.statsManager = statsManager;
+            accessor = firebaseAccessor;
+            this.rankingManager = rankingManager;
 
             data = dataManager;
             option.SetPreference(data, audioMixerController);
@@ -64,7 +73,8 @@ namespace GameMain.Router
                 { TitleNavigation.Option, option },
                 { TitleNavigation.Credit, creditManager },
                 { TitleNavigation.StageSelect, stageSelect },
-                { TitleNavigation.Stats, statsManager }
+                { TitleNavigation.Stats, statsManager },
+                { TitleNavigation.Ranking, rankingManager }
             };
             navigation = new Navigation<TitleNavigation>(initialManagers);
         }
@@ -72,6 +82,7 @@ namespace GameMain.Router
 
         public void Start()
         {
+            
             SetNavigation();
 
             var route = sceneChanger.GetTitle();
@@ -90,6 +101,10 @@ namespace GameMain.Router
             /* デバッグ用 */
             // data.Delete();
             data.Load();
+            accessor.GetAllData((ranking) =>
+            {
+                rankingManager.SetRanking(ranking, data.GetUserData().uuid.value);
+            });
         }
 
 
@@ -123,7 +138,12 @@ namespace GameMain.Router
 
             stageSelect.OnStage += StageSelected;
             stageSelect.OnBack += NavigateToTitle;
+            stageSelect.OnRanking += NavigateToRanking;
             statsManager.OnBack += NavigateToTitle;
+            rankingManager.OnBack += () =>
+            {
+                NavigateToPlay(false);
+            };
         }
 
         /// <summary>
@@ -191,6 +211,12 @@ namespace GameMain.Router
         private void NavigateToQuit(bool isReset)
         {
             navigation.SetScreen(TitleNavigation.Quit, isReset: isReset);
+        }
+
+        private void NavigateToRanking(StageData.Stage stage)
+        {
+            rankingManager.SetStage(stage);
+            navigation.SetScreen(TitleNavigation.Ranking);
         }
 
         private void NavigateToOption(bool isReset)
