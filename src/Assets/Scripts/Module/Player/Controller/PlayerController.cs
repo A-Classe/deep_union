@@ -6,13 +6,6 @@ using Wanna.DebugEx;
 
 namespace Module.Player.Controller
 {
-    [Serializable]
-    public class MovementSetting
-    {
-        public float MoveResistance;
-        public float RotateResistance;
-    }
-
     /// <summary>
     ///     プレイヤーの操作に関するクラス
     /// </summary>
@@ -20,8 +13,8 @@ namespace Module.Player.Controller
     {
         [SerializeField] private Rigidbody rig;
         [SerializeField] private MovementSetting setting;
-        private IPlayerState currentState;
         [NonSerialized] public GameParam gameParam;
+        private IPlayerState currentState;
         private Vector3? startPosition;
 
         private IPlayerState[] states;
