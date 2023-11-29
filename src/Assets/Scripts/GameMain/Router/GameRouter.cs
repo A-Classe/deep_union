@@ -6,6 +6,7 @@ using Core.Model.User;
 using Core.NavMesh;
 using Core.Scenes;
 using Core.User;
+using Core.User.API;
 using Core.User.Recorder;
 using GameMain.Presenter;
 using Module.Assignment.Component;
@@ -60,6 +61,7 @@ namespace GameMain.Router
         private readonly EventBroker eventBroker;
 
         private readonly GameActionRecorder recorder;
+        private readonly FirebaseAccessor db;
 
         [Inject]
         public GameRouter(
@@ -81,7 +83,8 @@ namespace GameMain.Router
             AudioMixerController audioMixerController,
             BrightController brightController,
             EventBroker eventBroker,
-            GameActionRecorder recorder
+            GameActionRecorder recorder,
+            FirebaseAccessor db
         )
         {
             this.spawnParam = spawnParam;
@@ -116,6 +119,8 @@ namespace GameMain.Router
             this.eventBroker = eventBroker;
 
             this.recorder = recorder;
+
+            this.db = db;
         }
 
         public void Dispose()
@@ -194,6 +199,8 @@ namespace GameMain.Router
             
             eventBroker.Clear();
             eventBroker.SendEvent(new GamePlay().Event());
+            
+            // db.
         }
 
         // HPが0になった時 or オプション画面で

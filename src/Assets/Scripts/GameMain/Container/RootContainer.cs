@@ -1,4 +1,6 @@
 using Core.Scenes;
+using Core.User;
+using Core.User.API;
 using Debug;
 using GameMain.Presenter;
 using Module.GameSetting;

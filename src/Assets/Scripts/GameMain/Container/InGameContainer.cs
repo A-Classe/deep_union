@@ -2,6 +2,7 @@
 using System.Linq;
 using Core.NavMesh;
 using Core.User;
+using Core.User.API;
 using Core.User.Recorder;
 using Core.Utility;
 using Core.Utility.Player;
@@ -65,6 +66,8 @@ namespace GameMain.Container
             builder.RegisterEntryPoint<AssignmentSystem>();
             builder.RegisterEntryPoint<PlayerStatusUpdater>();
 
+            builder.Register<FirebaseAccessor>(Lifetime.Singleton);
+            builder.Register<UserPreference>(Lifetime.Singleton);
             builder.Register<WorkerSpawner>(Lifetime.Singleton);
             builder.Register<WorkerAgent>(Lifetime.Singleton);
             builder.Register<StageProgressObserver>(Lifetime.Singleton);
@@ -73,7 +76,6 @@ namespace GameMain.Container
             builder.Register<WorkerAssigner>(Lifetime.Singleton);
             builder.Register<WorkerReleaser>(Lifetime.Singleton);
             builder.Register<TaskActivator>(Lifetime.Singleton);
-            builder.Register<UserPreference>(Lifetime.Singleton);
             builder.Register<EventBroker>(Lifetime.Singleton);
             builder.Register<GameActionRecorder>(Lifetime.Singleton);
 

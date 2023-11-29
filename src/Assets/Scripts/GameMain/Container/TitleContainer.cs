@@ -1,4 +1,5 @@
 ﻿using Core.User;
+using Core.User.API;
 using GameMain.Router;
 using Module.UI.Title.Credit;
 using Module.UI.Title.Option;
@@ -24,7 +25,7 @@ namespace GameMain.Container
         protected override void Configure(IContainerBuilder builder)
         {
             builder.RegisterEntryPoint<TitleRouter>();
-
+            builder.RegisterEntryPoint<FirebaseAccessor>();
             builder.Register<UserPreference>(Lifetime.Singleton);
 
             builder.RegisterInstance(title);

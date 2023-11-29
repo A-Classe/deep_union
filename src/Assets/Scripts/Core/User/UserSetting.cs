@@ -33,6 +33,9 @@ namespace Core.User
         public KeyValue<string, int> effectVolume = new("musicVol", 10);
         public KeyValue<string, bool> isFirst = new("isFirst", false);
 
+        public KeyValue<string, string> uuid = new("uuid", "");
+        public KeyValue<string, string> name = new("name", "Guest");
+
         public UserData DefaultInstance()
         {
             return new UserData();
