@@ -65,11 +65,15 @@ namespace Core.User
             dataManager.Set(data);
         }
         
+        /// <summary>
+        /// 例外的にここだけ必須でセーブしておく
+        /// </summary>
         public void CompletedFirst()
         {
             var data = dataManager.Get<UserData>();
             data.isFirst.value = true;
             dataManager.Set(data);
+            Save();
         }
         
         public bool GetIsFirst()

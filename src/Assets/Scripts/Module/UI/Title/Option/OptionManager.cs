@@ -143,15 +143,15 @@ namespace Module.UI.Title.Option
                 switch (nav)
                 {
                     case Option3Manager.Nav.Master:
-                        audioMixerController.SetMasterVolume(volume / 100f);
+                        audioMixerController.SetMasterVolume(volume / 10f);
                         preference.SetMasterVolume(volume);
                         break;
                     case Option3Manager.Nav.Music:
-                        audioMixerController.SetBGMVolume(volume / 100f);
+                        audioMixerController.SetBGMVolume(volume / 10f);
                         preference.SetMusicVolume(volume);
                         break;
                     case Option3Manager.Nav.Effect:
-                        audioMixerController.SetSEVolume(volume / 100f);
+                        audioMixerController.SetSEVolume(volume / 10f);
                         preference.SetEffectVolume(volume);
                         break;
                 }

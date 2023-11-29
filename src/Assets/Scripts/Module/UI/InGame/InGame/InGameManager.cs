@@ -72,8 +72,15 @@ namespace Module.UI.InGame.InGame
             sliderHp.value = current;
             var currentValue = current / (float)maxHpValue;
 
-            gaugeHpBackground.color = ChangeColor(minHpHSV, maxHpHSV, currentValue);
-            handleBackground.color = ChangeColor(minHpHSV, maxHpHSV, currentValue);
+            if (gaugeHpBackground != null)
+            {
+                gaugeHpBackground.color = ChangeColor(minHpHSV, maxHpHSV, currentValue);
+            }
+
+            if (handleBackground != null)
+            {
+                handleBackground.color = ChangeColor(minHpHSV, maxHpHSV, currentValue);
+            }
         }
 
         private Color ChangeColor(Vector3 min, Vector3 max, float value)

@@ -132,6 +132,7 @@ namespace GameMain.Router
         /// <param name="nav">選んだステージ</param>
         private void StageSelected(StageNavigation nav)
         {
+            navigation.SetScreen(TitleNavigation.Title, isAnimate: false);
             if (!sceneChanger.LoadBeforeMovieInGame(nav.ToStage()))
             {
                 throw new NotImplementedException("not found navigation : " + nav);

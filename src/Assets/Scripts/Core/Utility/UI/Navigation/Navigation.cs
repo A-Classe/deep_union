@@ -48,7 +48,7 @@ namespace Core.Utility.UI.Navigation
             clickEvent.Started += OnClick;
 
             cancelEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.Title.Cancel);
-            cancelEvent.Canceled += ctx =>
+            cancelEvent.Started += ctx =>
             {
                 if (!IsActive) return;
                 OnCancel?.Invoke(ctx);
@@ -67,6 +67,7 @@ namespace Core.Utility.UI.Navigation
 
         public void SetScreen(T nav, bool isAnimate = true, bool isReset = false)
         {
+            
             if (!IsActive) return;
 
             if (current == null)
@@ -78,7 +79,7 @@ namespace Core.Utility.UI.Navigation
             if (isAnimate)
                 current.Finished(current.GetContext().FadeOut(Easings.Default(0.3f)), () => { NavigateWith(nav); });
             else
-                NavigateWith(nav);
+                current.Finished(current.GetContext().SlideTo(new Vector2(0f, 0f), Easings.Default(0.1f)), () => { NavigateWith(nav); });
 
             void NavigateWith(T n)
             {
