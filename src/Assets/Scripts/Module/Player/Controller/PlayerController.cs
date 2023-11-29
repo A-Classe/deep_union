@@ -1,7 +1,9 @@
 using System;
+using System.Linq;
 using GameMain.Presenter;
 using Module.Player.State;
 using UnityEngine;
+using UnityEngine.AI;
 using Wanna.DebugEx;
 
 namespace Module.Player.Controller
@@ -12,33 +14,40 @@ namespace Module.Player.Controller
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private Rigidbody rig;
-        [SerializeField] private MovementSetting setting;
-        [NonSerialized] public GameParam gameParam;
+        [SerializeField] private NavMeshAgent navMeshAgent;
+        [SerializeField] private FollowPin followPin;
+
+        [Header("ピンを追従してない状態の移動設定")]
+        [SerializeField]
+        private MovementSetting setting;
+
         private IPlayerState currentState;
         private Vector3? startPosition;
 
         private IPlayerState[] states;
-
-        private void FixedUpdate()
-        {
-            StateUpdate();
-        }
 
         public event Action<PlayerState> OnStateChanged;
 
         /// <summary>
         ///     objectの初期化
         /// </summary>
-        private void Initialize()
+        private void Awake()
         {
+            followPin.OnArrived += () => SetState(PlayerState.Auto);
+            
             states = new IPlayerState[]
             {
-                new WaitState(),
-                new GoState(this, rig, setting),
-                new PauseState(rig)
+                new PauseState(rig, setting),
+                new AutoState(rig, setting),
+                new FollowToPinState(rig, navMeshAgent, followPin)
             };
 
             SetState(PlayerState.Pause);
+        }
+
+        private void FixedUpdate()
+        {
+            StateUpdate();
         }
 
         /// <summary>
@@ -46,26 +55,24 @@ namespace Module.Player.Controller
         /// </summary>
         private void StateUpdate()
         {
-            currentState.Update();
+            currentState.FixedUpdate();
         }
 
         public void SetState(PlayerState state)
         {
-            currentState = state switch
+            try
             {
-                PlayerState.Wait => states[0],
-                PlayerState.Go => states[1],
-                PlayerState.Pause => states[2],
-                _ => null
-            };
-
-            OnStateChanged?.Invoke(state);
-        }
-
-        public void InitParam(GameParam gameParam)
-        {
-            this.gameParam = gameParam;
-            Initialize();
+                currentState?.Stop();
+                currentState = states.First(item => item.GetState() == state);
+                currentState.Start();
+                OnStateChanged?.Invoke(state);
+            }
+            catch (Exception e)
+            {
+                DebugEx.LogError("ステートが存在しません!");
+                DebugEx.LogException(e);
+                throw;
+            }
         }
 
         /// <summary>

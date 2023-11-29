@@ -22,7 +22,7 @@ namespace GameMain.Presenter
         {
             playerController.OnStateChanged += state =>
             {
-                leaderAssignableArea.SetWorldMovingActive(state == PlayerState.Go);
+                leaderAssignableArea.SetWorldMovingActive(state != PlayerState.Pause);
             };
         }
     }
