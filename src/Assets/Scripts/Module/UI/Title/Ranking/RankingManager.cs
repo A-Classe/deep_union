@@ -73,7 +73,6 @@ namespace Module.UI.Title.Ranking
             lists.Add(rankingRow3);
             lists.Add(rankingRow4);
             lists.Add(rankingRow5);
-            Debug.Log(lists.Count);
             List<RankingUser> currents = rankings[stage];
             for (var i = 0; i < currents.Count; i++)
             {
