@@ -8,6 +8,7 @@ using Module.UI.Title.Credit;
 using Module.UI.Title.Option;
 using Module.UI.Title.Quit;
 using Module.UI.Title.StageSelect;
+using Module.UI.Title.Stats;
 using Module.UI.Title.Title;
 using UnityEditor;
 using VContainer;
@@ -27,6 +28,7 @@ namespace GameMain.Router
         private readonly SceneChanger sceneChanger;
         private readonly StageSelectManager stageSelect;
         private readonly TitleManager title;
+        private readonly StatsManager statsManager;
 
         [Inject]
         public TitleRouter(
@@ -35,6 +37,7 @@ namespace GameMain.Router
             OptionManager optionManager,
             CreditManager creditManager,
             StageSelectManager stageSelectManager,
+            StatsManager statsManager,
             UserPreference dataManager,
             SceneChanger sceneChanger,
             AudioMixerController audioMixerController
@@ -45,6 +48,7 @@ namespace GameMain.Router
             option = optionManager;
             stageSelect = stageSelectManager;
             this.sceneChanger = sceneChanger;
+            this.statsManager = statsManager;
 
             data = dataManager;
             option.SetPreference(data, audioMixerController);
@@ -59,7 +63,8 @@ namespace GameMain.Router
                 { TitleNavigation.Quit, quit },
                 { TitleNavigation.Option, option },
                 { TitleNavigation.Credit, creditManager },
-                { TitleNavigation.StageSelect, stageSelect }
+                { TitleNavigation.StageSelect, stageSelect },
+                { TitleNavigation.Stats, statsManager }
             };
             navigation = new Navigation<TitleNavigation>(initialManagers);
         }
@@ -96,6 +101,7 @@ namespace GameMain.Router
             title.OnOption += () => { NavigateToOption(true); };
             title.OnCredit += () => { NavigateToCredit(true); };
             title.OnPlay += () => { NavigateToPlay(true); };
+            title.OnStats += () => { NavigateToStats(); };
 
             quit.OnClick += isQuit =>
             {
@@ -117,6 +123,7 @@ namespace GameMain.Router
 
             stageSelect.OnStage += StageSelected;
             stageSelect.OnBack += NavigateToTitle;
+            statsManager.OnBack += NavigateToTitle;
         }
 
         /// <summary>
@@ -172,6 +179,12 @@ namespace GameMain.Router
         private void NavigateToCredit(bool isReset)
         {
             navigation.SetScreen(TitleNavigation.Credit, isReset: isReset);
+        }
+
+        private void NavigateToStats()
+        {
+            statsManager.SetReports(data.GetReport());
+            navigation.SetScreen(TitleNavigation.Stats);
         }
 
         private void NavigateToQuit(bool isReset)

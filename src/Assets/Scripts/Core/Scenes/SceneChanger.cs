@@ -38,6 +38,8 @@ namespace Core.Scenes
 
         private TitleNavigation route = TitleNavigation.Title;
 
+        public event Action OnBeforeChangeScene;
+
         /// <summary>
         ///     タイトル画面への遷移
         /// </summary>
@@ -45,6 +47,7 @@ namespace Core.Scenes
         /// <returns>遷移できなければfalseを返す</returns>
         public bool LoadTitle(TitleNavigation routeNav = TitleNavigation.Title)
         {
+            OnBeforeChangeScene?.Invoke();
             route = routeNav;
             SceneManager.LoadScene(TitleRoute);
             currentRoute = TitleRoute;
@@ -70,6 +73,7 @@ namespace Core.Scenes
         {
             try
             {
+                OnBeforeChangeScene?.Invoke();
                 inGameRoute = routeNav;
                 // if (inGameRoute == StageData.Stage.Tutorial)
                 // {
@@ -103,6 +107,7 @@ namespace Core.Scenes
             GameResult param
         )
         {
+            OnBeforeChangeScene?.Invoke();
             results = param;
             SceneManager.LoadScene(ResultRoute);
             currentRoute = ResultRoute;
@@ -119,12 +124,13 @@ namespace Core.Scenes
         {
             try
             {
+                OnBeforeChangeScene?.Invoke();
                 next = Route.InGame;
                 inGameRoute = routeNav;
                 SceneManager.LoadScene(BeforeInGameRoute);
                 return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
@@ -134,12 +140,13 @@ namespace Core.Scenes
         {
             try
             {
+                OnBeforeChangeScene?.Invoke();
                 next = Route.Result;
                 currentResult = result;
                 SceneManager.LoadScene(AfterInGameRoute);
                 return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
@@ -163,7 +170,7 @@ namespace Core.Scenes
                 }
                 return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }

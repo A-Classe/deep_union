@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq.Expressions;
+using Core.Model.User;
 using UnityEngine;
 
 namespace Core.User
@@ -111,6 +112,16 @@ namespace Core.User
         private string GetFilePath()
         {
             return Path.Combine(SaveDirPath, saveFilePath);
+        }
+
+        public Report GetReport()
+        {
+            return dataManager.Get<Report>();
+        }
+
+        public void SetReport(Report reporter)
+        {
+            dataManager.Set(reporter);
         }
     }
 }

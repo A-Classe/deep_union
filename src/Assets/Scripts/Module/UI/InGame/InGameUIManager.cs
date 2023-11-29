@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Core.Scenes;
 using Core.User;
+using Core.User.Recorder;
 using Core.Utility.UI.Navigation;
 using Module.GameSetting;
 using Module.UI.InGame.GameOver;
@@ -24,6 +25,8 @@ namespace Module.UI.InGame
         
         private BrightController brightController;
 
+        public event Action OnNeedReport;
+
         private void Awake()
         {
             navigation = new Navigation<InGameNav>(
@@ -41,6 +44,7 @@ namespace Module.UI.InGame
         {
             gameOverManager.OnSelect += () =>
             {
+                OnNeedReport?.Invoke();
                 navigation.SetActive(false);
                 sceneChanger.LoadTitle(TitleNavigation.StageSelect);
             };

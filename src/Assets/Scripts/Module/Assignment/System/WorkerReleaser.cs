@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
+using Core.Model.User;
+using Core.User.Recorder;
 using Module.Assignment.Component;
 using Module.Assignment.Utility;
 using Module.Working;
@@ -12,12 +14,19 @@ namespace Module.Assignment.System
         private readonly LeaderAssignableArea leaderAssignableArea;
         private readonly Worker[] releaseWorkerCache;
 
+        private readonly EventBroker eventBroker;
+
         private IReadOnlyList<AssignableArea> activeAreas;
 
         [Inject]
-        public WorkerReleaser(LeaderAssignableArea leaderAssignableArea)
+        public WorkerReleaser(
+            LeaderAssignableArea leaderAssignableArea,
+            EventBroker eventBroker
+        )
         {
             this.leaderAssignableArea = leaderAssignableArea;
+
+            this.eventBroker = eventBroker;
 
             releaseWorkerCache = new Worker[64];
         }
@@ -56,6 +65,7 @@ namespace Module.Assignment.System
                     {
                         activeArea.RemoveWorker(worker);
                         leaderArea.AddWorker(worker);
+                        eventBroker.SendEvent(new ReleaseEvent().Event());
                     }
                 }
             }

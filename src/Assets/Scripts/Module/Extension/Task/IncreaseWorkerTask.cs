@@ -53,7 +53,7 @@ namespace Module.Extension.Task
                 worker.SetLockState(false);
                 workerAgent.AddActiveWorker(worker);
 
-                leaderAssignableArea.AssignableArea.AddWorker(worker);
+                leaderAssignableArea.AssignableArea.AddWorker(worker, AssignableArea.WorkerEventType.Create);
                 worker.transform.SetParent(spawnPoint.transform);
             }
 

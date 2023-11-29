@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using Core.Model.User;
 using UnityEngine;
 
 namespace Core.User
@@ -22,12 +23,10 @@ namespace Core.User
     [Serializable]
     public class UserData : IDefaultable<UserData>
     {
-        public static readonly Expression<Func<UserData, object>> FullScreen = data => data.fullScreen;
         public static readonly Expression<Func<UserData, object>> BrightVal = data => data.bright;
         public static readonly Expression<Func<UserData, object>> MasterVol = data => data.masterVolume;
         public static readonly Expression<Func<UserData, object>> MusicVol = data => data.musicVolume;
         public static readonly Expression<Func<UserData, object>> EffectVol = data => data.effectVolume;
-        public KeyValue<string, bool> fullScreen = new("fullScreen", true);
         public KeyValue<string, int> bright = new("brightVal", 6);
         public KeyValue<string, int> masterVolume = new("masterVol", 6);
         public KeyValue<string, int> musicVolume = new("musicVol", 10);

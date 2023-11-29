@@ -84,7 +84,7 @@ namespace Core.Utility.UI.Navigation
             {
                 current = managers[n];
                 currentNav = n;
-                if (current == null) throw new NotImplementedException();
+                if (current == null) throw new NotImplementedException(n.ToString());
                 if (isAnimate)
                     current.Initialized(current.GetContext().FadeIn(Easings.Default(0.3f)), isReset);
                 else

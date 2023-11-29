@@ -2,6 +2,7 @@
 using System.Linq;
 using Core.NavMesh;
 using Core.User;
+using Core.User.Recorder;
 using Core.Utility;
 using Core.Utility.Player;
 using Debug;
@@ -14,7 +15,6 @@ using Module.Assignment.System;
 using Module.Extension.UI;
 using Module.GameSetting;
 using Module.Player;
-using Module.Player.Camera;
 using Module.Player.Controller;
 using Module.Task;
 using Module.UI.HUD;
@@ -24,7 +24,6 @@ using Module.Working.Controller;
 using Module.Working.Factory;
 using UnityDebugSheet.Runtime.Core.Scripts;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.Serialization;
 using VContainer;
 using VContainer.Unity;
@@ -75,6 +74,8 @@ namespace GameMain.Container
             builder.Register<WorkerReleaser>(Lifetime.Singleton);
             builder.Register<TaskActivator>(Lifetime.Singleton);
             builder.Register<UserPreference>(Lifetime.Singleton);
+            builder.Register<EventBroker>(Lifetime.Singleton);
+            builder.Register<GameActionRecorder>(Lifetime.Singleton);
 
             builder.RegisterInstance(spawnPoint);
             builder.RegisterInstance(spawnParam);

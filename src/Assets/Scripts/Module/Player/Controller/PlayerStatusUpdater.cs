@@ -1,5 +1,7 @@
 using System;
 using System.Threading;
+using Core.Model.User;
+using Core.User.Recorder;
 using Cysharp.Threading.Tasks;
 using GameMain.Presenter;
 using Module.UI.InGame;
@@ -19,18 +21,22 @@ namespace Module.Player.Controller
         private readonly CancellationTokenSource cTokenSource;
         private short maxHp;
 
+        private readonly EventBroker eventBroker;
+
         [Inject]
         public PlayerStatusUpdater(
             PlayerStatus playerStatus,
             GameParam gameParam,
             PlayerStatusVisualizer statusVisualizer,
-            InGameUIManager uiManager
+            InGameUIManager uiManager,
+            EventBroker eventBroker
         )
         {
             this.playerStatus = playerStatus;
             this.gameParam = gameParam;
             this.statusVisualizer = statusVisualizer;
             this.uiManager = uiManager;
+            this.eventBroker = eventBroker;
 
             cTokenSource = new CancellationTokenSource();
         }
@@ -67,6 +73,7 @@ namespace Module.Player.Controller
 
         private void OnCallHpZero()
         {
+            eventBroker.SendEvent(new GameOver().Event());
             uiManager.SetGameOver();
         }
     }

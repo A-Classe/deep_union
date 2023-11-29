@@ -2,9 +2,11 @@
 using System.GameProgress;
 using Core.Input;
 using Core.Model.Scene;
+using Core.Model.User;
 using Core.NavMesh;
 using Core.Scenes;
 using Core.User;
+using Core.User.Recorder;
 using GameMain.Presenter;
 using Module.Assignment.Component;
 using Module.GameSetting;
@@ -55,6 +57,10 @@ namespace GameMain.Router
         
         private readonly BrightController brightController;
 
+        private readonly EventBroker eventBroker;
+
+        private readonly GameActionRecorder recorder;
+
         [Inject]
         public GameRouter(
             SpawnParam spawnParam,
@@ -73,7 +79,9 @@ namespace GameMain.Router
             ResourceContainer resourceContainer,
             WorkerAgent workerAgent,
             AudioMixerController audioMixerController,
-            BrightController brightController
+            BrightController brightController,
+            EventBroker eventBroker,
+            GameActionRecorder recorder
         )
         {
             this.spawnParam = spawnParam;
@@ -104,6 +112,10 @@ namespace GameMain.Router
             this.audioMixerController = audioMixerController;
             
             this.brightController = brightController;
+
+            this.eventBroker = eventBroker;
+
+            this.recorder = recorder;
         }
 
         public void Dispose()
@@ -121,6 +133,7 @@ namespace GameMain.Router
             InitPlayer();
 
             InitScene();
+      
         }
 
         public void Tick()
@@ -160,29 +173,24 @@ namespace GameMain.Router
             uiManager.SetSceneChanger(sceneChanger);
             uiManager.StartGame(preference, audioMixerController);
 
-            progressObserver.OnCompleted += () =>
-            {
-                sceneChanger.LoadResult(
-                    new GameResult
-                    {
-                        Hp = playerStatus.Hp,
-                        Resource = resourceContainer.ResourceCount,
-                        stageCode = (int)sceneChanger.GetInGame(),
-                        WorkerCount = workerAgent.WorkerCount()
-                    }
-                );
-            };
+            // Game Clear
+            progressObserver.OnCompleted += OnGameClear;
 
             var escEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.ESC);
             escEvent.Canceled += _ =>
             {
                 if (playerController.GetState() != PlayerState.Pause) uiManager.StartPause();
             };
+
+            sceneChanger.OnBeforeChangeScene += SaveReport;
             
             preference.Load();
             UserData data = preference.GetUserData();
             brightController.SetBrightness(data.bright.value / 10f);
             uiManager.SetBrightnessController(brightController);
+            
+            eventBroker.Clear();
+            eventBroker.SendEvent(new GamePlay().Event());
         }
 
         // HPが0になった時 or オプション画面で
@@ -196,6 +204,28 @@ namespace GameMain.Router
         {
             workerController.SetPlayed(true);
             playerController.SetState(PlayerState.Go);
+        }
+
+        private void OnGameClear()
+        {
+            eventBroker.SendEvent(new GameClear().Event());
+            sceneChanger.LoadResult(
+                new GameResult
+                {
+                    Hp = playerStatus.Hp,
+                    Resource = resourceContainer.ResourceCount,
+                    stageCode = (int)sceneChanger.GetInGame(),
+                    WorkerCount = workerAgent.WorkerCount()
+                }
+            );
+        }
+
+        private void SaveReport()
+        {
+            Report current = recorder.GenerateReport();
+            Report data = preference.GetReport();
+            preference.SetReport(data + current);
+            preference.Save();
         }
     }
 }

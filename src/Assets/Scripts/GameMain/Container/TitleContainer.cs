@@ -4,6 +4,7 @@ using Module.UI.Title.Credit;
 using Module.UI.Title.Option;
 using Module.UI.Title.Quit;
 using Module.UI.Title.StageSelect;
+using Module.UI.Title.Stats;
 using Module.UI.Title.Title;
 using UnityEngine;
 using VContainer;
@@ -18,6 +19,7 @@ namespace GameMain.Container
         [SerializeField] private OptionManager option;
         [SerializeField] private CreditManager credit;
         [SerializeField] private StageSelectManager stageSelect;
+        [SerializeField] private StatsManager statsManager;
 
         protected override void Configure(IContainerBuilder builder)
         {
@@ -30,6 +32,7 @@ namespace GameMain.Container
             builder.RegisterInstance(option);
             builder.RegisterInstance(credit);
             builder.RegisterInstance(stageSelect);
+            builder.RegisterInstance(statsManager);
         }
     }
 }
