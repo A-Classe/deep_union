@@ -136,9 +136,6 @@ namespace GameMain.Router
         /// </summary>
         private void InitPlayer()
         {
-            playerController.PlayerStart();
-            playerController.SetState(PlayerState.Auto);
-
             uiManager.OnGameInactive += OnCallGameInactive;
             uiManager.OnGameActive += OnCallGameActive;
         }

@@ -22,7 +22,6 @@ namespace Module.Player.Controller
         private MovementSetting setting;
 
         private IPlayerState currentState;
-        private Vector3? startPosition;
 
         private IPlayerState[] states;
 
@@ -34,6 +33,7 @@ namespace Module.Player.Controller
         private void Awake()
         {
             followPin.OnArrived += () => SetState(PlayerState.Auto);
+            followPin.OnPinned += () => SetState(PlayerState.FollowToPin);
             
             states = new IPlayerState[]
             {
@@ -73,14 +73,6 @@ namespace Module.Player.Controller
                 DebugEx.LogException(e);
                 throw;
             }
-        }
-
-        /// <summary>
-        ///     ゲーム開始時に実行する
-        /// </summary>
-        public void PlayerStart()
-        {
-            if (startPosition.HasValue) transform.position = startPosition.Value;
         }
 
         /// <summary>

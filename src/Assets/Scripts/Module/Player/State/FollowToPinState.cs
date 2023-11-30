@@ -1,6 +1,7 @@
 using Module.Player.Controller;
 using UnityEngine;
 using UnityEngine.AI;
+using Wanna.DebugEx;
 
 namespace Module.Player.State
 {
@@ -26,6 +27,7 @@ namespace Module.Player.State
         {
             rig.velocity = Vector3.zero;
             navMeshAgent.enabled = true;
+            navMeshAgent.ResetPath();
         }
 
         public void Stop()
@@ -40,8 +42,12 @@ namespace Module.Player.State
 
             navMeshAgent.SetDestination(followPin.GetPosition());
 
+            if (navMeshAgent.pathPending)
+                return;
+
             if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
             {
+                DebugEx.Log("Arrived");
                 followPin.ArriveToPin();
             }
         }
