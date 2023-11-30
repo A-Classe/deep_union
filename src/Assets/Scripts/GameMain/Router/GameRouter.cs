@@ -219,6 +219,7 @@ namespace GameMain.Router
         private void OnGameClear()
         {
             eventBroker.SendEvent(new GameClear().Event());
+            SaveReport();
             sceneChanger.LoadResult(
                 new GameResult
                 {

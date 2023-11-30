@@ -92,8 +92,9 @@ namespace Core.User.API
             GetUserRef().Child(Name).SetValueAsync(name);
         }
 
-        public void SetStageScore(StageData.Stage stage, int score)
+        public void SetStageScore(StageData.Stage stage, uint score)
         {
+            Debug.Log(stage.ToString() + "==" + score);
             GetUserRef().Child(Stage).Child(stage.ToString()).SetValueAsync(score);
         }
 

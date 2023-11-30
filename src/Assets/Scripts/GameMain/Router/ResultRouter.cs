@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Core.Model.Scene;
 using Core.Scenes;
 using Core.User;
+using Core.User.API;
 using Core.Utility.UI.Navigation;
 using Module.UI.Result;
 using VContainer;
@@ -20,11 +21,14 @@ namespace GameMain.Router
 
         private GameResult result;
 
+        private readonly FirebaseAccessor db;
+
         [Inject]
         public ResultRouter(
             UserPreference userPreference,
             SceneChanger sceneChanger,
-            ResultManager resultManager
+            ResultManager resultManager,
+            FirebaseAccessor db
         )
         {
             this.userPreference = userPreference;
@@ -32,6 +36,8 @@ namespace GameMain.Router
             this.sceneChanger = sceneChanger;
 
             this.resultManager = resultManager;
+
+            this.db = db;
 
             // setup navigation
             navigation = new Navigation<Nav>(
@@ -55,6 +61,7 @@ namespace GameMain.Router
             userPreference.Load();
             userPreference.SetStageData((StageData.Stage)result.stageCode, result.GetScore());
             userPreference.Save();
+            db.SetStageScore((StageData.Stage)result.stageCode, result.GetScore());
         }
 
         private void SetNavigation()

@@ -101,9 +101,28 @@ namespace GameMain.Router
             /* デバッグ用 */
             // data.Delete();
             data.Load();
+            rankingManager.OnChangedName += name =>
+            {
+                UnityEngine.Debug.Log(name);
+                accessor.SetName(name);
+                UserData userData = data.GetUserData();
+                userData.name.value = name;
+                data.SetUserData(userData);
+                data.Save();
+                ReloadRanking();
+            };
+        }
+
+        private void ReloadRanking()
+        {
+            data.Load();
+            UserData userData = data.GetUserData();
+                
+            rankingManager.SetName(userData.name.value);
             accessor.GetAllData((ranking) =>
             {
                 rankingManager.SetRanking(ranking, data.GetUserData().uuid.value);
+                rankingManager.Reload();
             });
         }
 
@@ -216,6 +235,8 @@ namespace GameMain.Router
         private void NavigateToRanking(StageData.Stage stage)
         {
             rankingManager.SetStage(stage);
+            ReloadRanking();
+            rankingManager.Reload();
             navigation.SetScreen(TitleNavigation.Ranking);
         }
 

@@ -6,7 +6,9 @@ using Core.User.API;
 using Core.Utility.UI.Component;
 using Core.Utility.UI.Component.Cursor;
 using Core.Utility.UI.Navigation;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Module.UI.Title.Ranking
 {
@@ -14,11 +16,14 @@ namespace Module.UI.Title.Ranking
     {
         public enum Nav
         {
-            Quit
+            Input,
+            Quit,
         }
 
         [SerializeField] private CursorController<Nav> cursor;
         [SerializeField] private FadeInOutButton quit;
+        [SerializeField] private TMP_InputField inputName;
+        [SerializeField] private FadeInOutButton input;
         [SerializeField] private RankingRow rankingRow1;
         [SerializeField] private RankingRow rankingRow2;
         [SerializeField] private RankingRow rankingRow3;
@@ -32,17 +37,34 @@ namespace Module.UI.Title.Ranking
 
         private Nav? current;
 
+        public event Action<string> OnChangedName;
+
         private void Start()
         {
             cursor.AddPoint(Nav.Quit, quit.rectTransform);
+            cursor.AddPoint(Nav.Input, input.rectTransform);
             current = Nav.Quit;
 
             SetState(Nav.Quit); 
         }
 
+        private string currentName = "";
         public override void Clicked()
         {
-            OnBack?.Invoke();
+            switch (current)
+            {
+                case Nav.Quit:
+                    OnBack?.Invoke();
+                    break;
+                case Nav.Input:
+                    if (currentName != inputName.text)
+                    {
+                        OnChangedName?.Invoke(inputName.text);
+                        inputName.text = currentName;
+                    }
+                    inputName.Select();
+                    break;
+            }
         }
 
         public override void Select(Vector2 direction)
@@ -52,7 +74,26 @@ namespace Module.UI.Title.Ranking
                 SetState(Nav.Quit);
                 return;
             }
-            
+            if(inputName.isFocused) return;
+            Nav nextNav;
+
+            switch (direction.y)
+            {
+                // 上向きの入力
+                case > 0:
+                    if (current.Value == Nav.Input) return;
+                    nextNav = current.Value - 1;
+                    break;
+                // 下向きの入力
+                case < 0:
+                    if (current.Value == Nav.Quit) return;
+                    nextNav = current.Value + 1;
+                    break;
+                default:
+                    return; // Y軸の入力がない場合、何もしない
+            }
+
+            SetState(nextNav);
         }
 
 
@@ -63,39 +104,24 @@ namespace Module.UI.Title.Ranking
         {
             current = setNav;
             cursor.SetPoint(setNav);
+            inputName.DeactivateInputField();
+            if (currentName != inputName.text)
+            {
+                OnChangedName?.Invoke(inputName.text);
+                inputName.text = currentName;
+            }
         }
 
+        private StageData.Stage currentStage;
         public void SetStage(StageData.Stage stage)
         {
-            lists.Clear();
-            lists.Add(rankingRow1);
-            lists.Add(rankingRow2);
-            lists.Add(rankingRow3);
-            lists.Add(rankingRow4);
-            lists.Add(rankingRow5);
-            List<RankingUser> currents = rankings[stage];
-            for (var i = 0; i < currents.Count; i++)
-            {
-                if (currents[i].ID == userId)
-                {
-                    SetRankingRef(myRankingRow, i + 1, currents[i], stage);
-                }
-                if (i > lists.Count - 1) return;
-                SetRankingRef(lists[i], i + 1, currents[i], stage);
-            }
-            for (var i = currents.Count; i < lists.Count; i++)
-            {
-                SetRankingRef(
-                    lists[i], 
-                    i + 1, 
-                    new RankingUser{
-                        ID = "",
-                        Name = "",
-                        Stages = new()
-                    },
-                    stage
-                );
-            }
+            currentStage = stage;
+        }
+
+        public void SetName(string name)
+        {
+            currentName = name;
+            inputName.text = name;
         }
 
         private void SetRankingRef(RankingRow row, int rank, RankingUser user, StageData.Stage stage)
@@ -105,6 +131,7 @@ namespace Module.UI.Title.Ranking
         }
 
         private string userId;
+        
 
         public void SetRanking(Core.User.API.Ranking ranking, string userId)
         {
@@ -135,6 +162,44 @@ namespace Module.UI.Title.Ranking
             //     }
             //     Debug.Log(data);
             // }
+        }
+
+        public void Reload()
+        {
+            lists.Clear();
+            lists.Add(rankingRow1);
+            lists.Add(rankingRow2);
+            lists.Add(rankingRow3);
+            lists.Add(rankingRow4);
+            lists.Add(rankingRow5);
+            for (var i = 0; i < lists.Count; i++)
+            {
+                SetRankingRef(
+                    lists[i], 
+                    i + 1, 
+                    new RankingUser{
+                        ID = "",
+                        Name = "",
+                        Stages = new()
+                    },
+                    currentStage
+                );
+            }
+            if (!rankings.ContainsKey(currentStage))
+            {
+                return;
+            }
+
+            List<RankingUser> currents = rankings[currentStage];
+            for (var i = 0; i < currents.Count; i++)
+            {
+                if (currents[i].ID == userId)
+                {
+                    SetRankingRef(myRankingRow, i + 1, currents[i], currentStage);
+                }
+                if (i > lists.Count - 1) return;
+                SetRankingRef(lists[i], i + 1, currents[i], currentStage);
+            }
         }
     }
 }

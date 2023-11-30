@@ -2,6 +2,7 @@ using System;
 using Core.Model.Scene;
 using Core.User;
 using JetBrains.Annotations;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Core.Scenes
@@ -75,6 +76,7 @@ namespace Core.Scenes
             {
                 OnBeforeChangeScene?.Invoke();
                 inGameRoute = routeNav;
+                Debug.Log(inGameRoute);
                 // if (inGameRoute == StageData.Stage.Tutorial)
                 // {
                 //     SceneManager.LoadScene(TutorialRoute);
