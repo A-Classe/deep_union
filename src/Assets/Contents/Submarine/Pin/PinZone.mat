@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8874486113129362559
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 5
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -20,12 +7,12 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: "\u30DE\u30C6\u30EA\u30A2\u30EB.005"
-  m_Shader: {fileID: -6465566751694194690, guid: 72310fa569343124f8bb55a63f3ed933,
+  m_Name: PinZone
+  m_Shader: {fileID: -6465566751694194690, guid: 9d87eba43b534914b97ec40558d12f84,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 1
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -103,38 +90,43 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _GlossMapScale: 1
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
-    - _LifeColorTime: 0.01999998
-    - _LifeLineSpeed: 0.5
+    - _GlossMapScale: 0
+    - _Glossiness: 0
+    - _GlossyReflections: 0
     - _Metallic: 0
-    - _Mode: 0
-    - _Noise: 0
-    - _NoiseAddScale: 3.35
     - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _PolygonNum: 10
-    - _PolygonRadius: 0
-    - _PolygonSize: 1
+    - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Rotate: 90
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _StepTime: 8.13
     - _Surface: 0
-    - _UVSec: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
+    - _ZoneStep: 0.63
+    - _ZoneWave: 5.89
+    - _Zonetime: 2
     m_Colors:
-    - _BaseColor: {r: 0, g: 0.9063317, b: 0.20718095, a: 1}
-    - _Color: {r: 0, g: 0.9063317, b: 0.20718092, a: 1}
-    - _EmissionColor: {r: 0, g: 20, b: 0, a: 20}
-    - _LightColor: {r: 0.26454648, g: 1, b: 0.081760935, a: 0}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _UV_Size: {r: 3, g: 1, b: 0, a: 0}
+    - _ZoneColor: {r: 0, g: 0.5, b: 1, a: 0}
+    - _ZoneColor2: {r: 0, g: 0.56544495, b: 1, a: 0}
   m_BuildTextureStacks: []
+--- !u!114 &6644378263406521936
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
