@@ -6,6 +6,9 @@ using Wanna.DebugEx;
 
 namespace Module.Player.State
 {
+    /// <summary>
+    /// 潜水艦がピンを追いかけるステート
+    /// </summary>
     internal class FollowToPinState : IPlayerState
     {
         private readonly Rigidbody rig;

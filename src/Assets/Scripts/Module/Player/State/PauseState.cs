@@ -28,7 +28,10 @@ namespace Module.Player.State
 
         public void FixedUpdate()
         {
+            //徐々に減速しながら停止
             currentSpeed -= movementSetting.Resistance * Time.fixedDeltaTime;
+            
+            //速度制限
             currentSpeed = Mathf.Clamp(currentSpeed, movementSetting.MinSpeed, movementSetting.MaxSpeed);
 
             rigidbody.velocity = rigidbody.transform.forward * currentSpeed;
