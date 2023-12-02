@@ -3463,6 +3463,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2005738136, guid: a9e893c375aaf4541bf60405b51adc86, type: 3}
+      propertyPath: m_Height
+      value: 4.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 2005738136, guid: a9e893c375aaf4541bf60405b51adc86, type: 3}
+      propertyPath: m_Radius
+      value: 0.8677158
+      objectReference: {fileID: 0}
+    - target: {fileID: 2005738136, guid: a9e893c375aaf4541bf60405b51adc86, type: 3}
+      propertyPath: m_Center.y
+      value: 2.044263
+      objectReference: {fileID: 0}
     - target: {fileID: 3593286806322266379, guid: a9e893c375aaf4541bf60405b51adc86,
         type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
@@ -3531,7 +3543,7 @@ PrefabInstance:
     - target: {fileID: 8011763557642929957, guid: a9e893c375aaf4541bf60405b51adc86,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.94
+      value: -0.153
       objectReference: {fileID: 0}
     - target: {fileID: 8011763557642929957, guid: a9e893c375aaf4541bf60405b51adc86,
         type: 3}
@@ -3572,6 +3584,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011763557642929962, guid: a9e893c375aaf4541bf60405b51adc86,
+        type: 3}
+      propertyPath: followPin
+      value: 
+      objectReference: {fileID: 714723295}
+    - target: {fileID: 8902170815617025866, guid: a9e893c375aaf4541bf60405b51adc86,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.223
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3357333012936393954, guid: a9e893c375aaf4541bf60405b51adc86, type: 3}
@@ -7945,6 +7967,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64dae455b8c7a9f468a7cc438028391e, type: 3}
+--- !u!114 &714723295 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 714723296, guid: 64dae455b8c7a9f468a7cc438028391e,
+    type: 3}
+  m_PrefabInstance: {fileID: 714723294}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ee082a9d5a4b6eabeeafac59e094f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &727273506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18082,19 +18116,19 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1754462954}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 1.5
+  m_Acceleration: 5
   avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_AngularSpeed: 30
+  m_StoppingDistance: 0.01
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
+  m_Height: 2.96
+  m_BaseOffset: 0.38
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1001 &2017578557

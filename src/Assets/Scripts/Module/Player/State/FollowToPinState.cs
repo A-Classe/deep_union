@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using Module.Player.Controller;
 using UnityEngine;
 using UnityEngine.AI;
@@ -23,10 +24,13 @@ namespace Module.Player.State
             return PlayerState.FollowToPin;
         }
 
-        public void Start()
+        public async void Start()
         {
             rig.velocity = Vector3.zero;
             navMeshAgent.enabled = true;
+
+            await UniTask.WaitWhile(() => navMeshAgent.pathStatus == NavMeshPathStatus.PathInvalid);
+            
             navMeshAgent.ResetPath();
         }
 
