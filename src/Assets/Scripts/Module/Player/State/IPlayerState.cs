@@ -4,6 +4,8 @@ namespace Module.Player.State
     {
         public PlayerState GetState();
 
-        public void Update();
+        public void Start();
+        public void Stop();
+        public void FixedUpdate();
     }
 }

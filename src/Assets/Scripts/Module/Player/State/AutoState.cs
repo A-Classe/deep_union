@@ -1,14 +1,24 @@
+using System;
 using UnityEngine;
 
 namespace Module.Player.State
 {
-    public class PauseState : IPlayerState
+    [Serializable]
+    public class MovementSetting
+    {
+        public float MinSpeed;
+        public float MaxSpeed;
+        public float Acceleralation;
+        public float Resistance;
+    }
+
+    public class AutoState : IPlayerState
     {
         private readonly Rigidbody rigidbody;
         private readonly MovementSetting movementSetting;
         private float currentSpeed;
 
-        public PauseState(Rigidbody rigidbody, MovementSetting movementSetting)
+        public AutoState(Rigidbody rigidbody, MovementSetting movementSetting)
         {
             this.rigidbody = rigidbody;
             this.movementSetting = movementSetting;
@@ -16,7 +26,7 @@ namespace Module.Player.State
 
         public PlayerState GetState()
         {
-            return PlayerState.Pause;
+            return PlayerState.Auto;
         }
 
         public void Start()
@@ -28,7 +38,7 @@ namespace Module.Player.State
 
         public void FixedUpdate()
         {
-            currentSpeed -= movementSetting.Resistance * Time.fixedDeltaTime;
+            currentSpeed += movementSetting.Acceleralation * Time.fixedDeltaTime;
             currentSpeed = Mathf.Clamp(currentSpeed, movementSetting.MinSpeed, movementSetting.MaxSpeed);
 
             rigidbody.velocity = rigidbody.transform.forward * currentSpeed;

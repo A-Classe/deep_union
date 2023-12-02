@@ -27,7 +27,6 @@ namespace GameMain.Router
     /// </summary>
     public class GameRouter : IStartable, ITickable, IDisposable
     {
-        private readonly GameParam gameParam;
         private readonly LeaderAssignableArea leaderAssignableArea;
 
         private readonly PlayerController playerController;
@@ -72,7 +71,6 @@ namespace GameMain.Router
         )
         {
             this.spawnParam = spawnParam;
-            this.gameParam = gameParam;
 
             this.playerController = playerController;
             this.workerController = workerController;
@@ -138,10 +136,6 @@ namespace GameMain.Router
         /// </summary>
         private void InitPlayer()
         {
-            playerController.InitParam(gameParam);
-            playerController.PlayerStart();
-            playerController.SetState(PlayerState.Go);
-
             uiManager.OnGameInactive += OnCallGameInactive;
             uiManager.OnGameActive += OnCallGameActive;
         }
@@ -181,7 +175,7 @@ namespace GameMain.Router
         private void OnCallGameActive()
         {
             workerController.SetPlayed(true);
-            playerController.SetState(PlayerState.Go);
+            playerController.SetState(PlayerState.Auto);
         }
     }
 }
