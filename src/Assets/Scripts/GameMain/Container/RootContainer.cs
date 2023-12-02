@@ -18,8 +18,6 @@ namespace GameMain.Container
 
         protected override void Configure(IContainerBuilder builder)
         {
-            if (gameParam.EnableDebugger) builder.RegisterEntryPoint<RootDebugTool>();
-
             builder.RegisterInstance(gameParam);
             builder.RegisterInstance(new SceneChanger());
             builder.RegisterInstance(new AudioMixerController(mixer));
