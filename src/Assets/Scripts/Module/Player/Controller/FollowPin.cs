@@ -3,6 +3,7 @@ using System.Threading;
 using Core.Input;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.InputSystem;
 using Wanna.DebugEx;
 
@@ -64,9 +65,11 @@ namespace Module.Player.Controller
         {
             if (Physics.Raycast(pinOrigin.position, Vector3.down, out RaycastHit hit, 100f, groundLayer))
             {
-                pinPosition = hit.point;
+                bool valid = NavMesh.SamplePosition(hit.point, out NavMeshHit hitInfo, 100f, NavMesh.AllAreas);
+                pinPosition = hitInfo.position;
                 OnPinned?.Invoke();
                 DebugEx.Log("ピンしました");
+                DebugEx.Log(valid);
                 DebugEx.Log(pinPosition);
             }
         }
