@@ -13,6 +13,7 @@ namespace Module.UI.Title.Title
             Start,
             Option,
             Credit,
+            Stats,
             Quit
         }
 
@@ -20,6 +21,7 @@ namespace Module.UI.Title.Title
         [SerializeField] private FadeInOutButton start;
         [SerializeField] private FadeInOutButton option;
         [SerializeField] private FadeInOutButton credit;
+        [SerializeField] private FadeInOutButton stats;
         [SerializeField] private FadeInOutButton quit;
 
         private Nav? current;
@@ -29,6 +31,7 @@ namespace Module.UI.Title.Title
             cursor.AddPoint(Nav.Start, start.rectTransform);
             cursor.AddPoint(Nav.Option, option.rectTransform);
             cursor.AddPoint(Nav.Credit, credit.rectTransform);
+            cursor.AddPoint(Nav.Stats, stats.rectTransform);
             cursor.AddPoint(Nav.Quit, quit.rectTransform);
             current = Nav.Start;
 
@@ -48,6 +51,9 @@ namespace Module.UI.Title.Title
                     break;
                 case Nav.Credit:
                     credit.OnPlay(() => OnCredit?.Invoke());
+                    break;
+                case Nav.Stats:
+                    stats.OnPlay(() => OnStats?.Invoke());
                     break;
                 case Nav.Quit:
                     quit.OnPlay(() => OnQuit?.Invoke());
@@ -93,6 +99,7 @@ namespace Module.UI.Title.Title
 
         public event Action OnQuit;
 
+        public event Action OnStats;
 
         public event Action OnPlay;
 

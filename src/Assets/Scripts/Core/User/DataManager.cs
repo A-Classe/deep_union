@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq.Expressions;
+using Core.Model.User;
 using UnityEngine;
 
 namespace Core.User

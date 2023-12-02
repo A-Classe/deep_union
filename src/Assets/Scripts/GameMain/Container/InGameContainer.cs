@@ -2,6 +2,8 @@
 using System.Linq;
 using Core.NavMesh;
 using Core.User;
+using Core.User.API;
+using Core.User.Recorder;
 using Core.Utility;
 using Core.Utility.Player;
 using Debug;
@@ -12,8 +14,8 @@ using GameMain.Router;
 using Module.Assignment.Component;
 using Module.Assignment.System;
 using Module.Extension.UI;
+using Module.GameSetting;
 using Module.Player;
-using Module.Player.Camera;
 using Module.Player.Controller;
 using Module.Task;
 using Module.UI.HUD;
@@ -43,6 +45,8 @@ namespace GameMain.Container
         [SerializeField] private PlayerStatusVisualizer playerStatusVisualizer;
 
         [SerializeField] private InGameUIManager inGameUIManager;
+        
+        [SerializeField] private BrightController brightController;
 
         [FormerlySerializedAs("leaderAssignEvent")] [SerializeField]
         private LeaderAssignableArea leaderAssignableArea;
@@ -59,7 +63,7 @@ namespace GameMain.Container
             builder.RegisterEntryPoint<LeaderPresenter>();
             builder.RegisterEntryPoint<AssignmentSystem>();
             builder.RegisterEntryPoint<PlayerStatusUpdater>();
-
+            
             builder.Register<WorkerSpawner>(Lifetime.Singleton);
             builder.Register<WorkerAgent>(Lifetime.Singleton);
             builder.Register<StageProgressObserver>(Lifetime.Singleton);
@@ -68,7 +72,8 @@ namespace GameMain.Container
             builder.Register<WorkerAssigner>(Lifetime.Singleton);
             builder.Register<WorkerReleaser>(Lifetime.Singleton);
             builder.Register<TaskActivator>(Lifetime.Singleton);
-            builder.Register<UserPreference>(Lifetime.Singleton);
+            builder.Register<EventBroker>(Lifetime.Singleton);
+            builder.Register<GameActionRecorder>(Lifetime.Singleton);
 
             builder.RegisterInstance(spawnPoint);
             builder.RegisterInstance(spawnParam);
@@ -80,6 +85,7 @@ namespace GameMain.Container
             builder.RegisterInstance(inGameUIManager);
             builder.RegisterInstance(new PlayerStatus(gameParam.ConvertToStatus()));
             builder.RegisterInstance(playerStatusVisualizer);
+            builder.RegisterInstance(brightController);
 
             builder.RegisterBuildCallback(container =>
             {
