@@ -178,7 +178,7 @@ namespace GameMain.Router
             var escEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.ESC);
             escEvent.Canceled += _ =>
             {
-                if (playerController.GetState() != PlayerState.Pause) uiManager.StartPause();
+                uiManager.StartPause();
             };
 
             sceneChanger.OnBeforeChangeScene += SaveReport;

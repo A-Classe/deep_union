@@ -976,6 +976,17 @@ PrefabInstance:
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5833763942906623443, guid: 1c30f8f62917049cd939964359edfdb3,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
+        type: 2}
+    - target: {fileID: 5833763942906623443, guid: 1c30f8f62917049cd939964359edfdb3,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 8952535317564709671, guid: 1c30f8f62917049cd939964359edfdb3,
         type: 3}
       propertyPath: m_Name
@@ -1162,13 +1173,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 954926956}
-  Time: 4
-  Tag: Worker
-  HideObj:
-  - {fileID: 1762288039}
-  - {fileID: 401633661}
-  - {fileID: 1891352546}
-  - {fileID: 157227793}
+  time: 3
+  detectTag: Player
+  hideObj: []
 --- !u!114 &157227797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1182,13 +1189,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 1198932061}
-  Time: 4
-  Tag: Worker
-  HideObj:
-  - {fileID: 1762288039}
-  - {fileID: 401633661}
-  - {fileID: 1891352546}
-  - {fileID: 157227793}
+  time: 3
+  detectTag: Player
+  hideObj: []
 --- !u!23 &157227798
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2044,44 +2047,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 241675937, guid: a9e893c375aaf4541bf60405b51adc86, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1438512251561401665, guid: a9e893c375aaf4541bf60405b51adc86,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3955535855055402310, guid: a9e893c375aaf4541bf60405b51adc86,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5297267695786997401, guid: a9e893c375aaf4541bf60405b51adc86,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5429057529329387181, guid: a9e893c375aaf4541bf60405b51adc86,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6954659891467201361, guid: a9e893c375aaf4541bf60405b51adc86,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8011763557642929953, guid: a9e893c375aaf4541bf60405b51adc86,
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8011763557642929953, guid: a9e893c375aaf4541bf60405b51adc86,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8011763557642929957, guid: a9e893c375aaf4541bf60405b51adc86,
         type: 3}
@@ -2140,9 +2109,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8011763557642929962, guid: a9e893c375aaf4541bf60405b51adc86,
         type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: followPin
+      value: 
+      objectReference: {fileID: 1027211777}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9e893c375aaf4541bf60405b51adc86, type: 3}
 --- !u!114 &241675932 stripped
@@ -2152,7 +2121,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 241675931}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de86188d99074df4af44ac11d661c012, type: 3}
   m_Name: 
@@ -2424,10 +2393,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 168888989}
-  Time: 3
-  Tag: Worker
-  HideObj:
-  - {fileID: 268236095}
+  time: 3
+  detectTag: Player
+  hideObj: []
 --- !u!1001 &272692512
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3327,13 +3295,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 954926956}
-  Time: 4
-  Tag: Worker
-  HideObj:
-  - {fileID: 1762288039}
-  - {fileID: 401633661}
-  - {fileID: 1891352546}
-  - {fileID: 157227793}
+  time: 3
+  detectTag: Player
+  hideObj: []
 --- !u!23 &401633666
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3397,13 +3361,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 1198932061}
-  Time: 4
-  Tag: Worker
-  HideObj:
-  - {fileID: 1762288039}
-  - {fileID: 401633661}
-  - {fileID: 1891352546}
-  - {fileID: 157227793}
+  time: 3
+  detectTag: Player
+  hideObj: []
 --- !u!1001 &404045714
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4021,10 +3981,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 377106681}
-  Time: 3
-  Tag: Worker
-  HideObj:
-  - {fileID: 459076631}
+  time: 3
+  detectTag: Player
+  hideObj: []
 --- !u!65 &459076634
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4986,8 +4945,8 @@ MonoBehaviour:
   goalPoint: {fileID: 1473537254}
   progressPool: {fileID: 1339084536}
   playerStatusVisualizer: {fileID: 2005738134}
-  debugSheet: {fileID: 652649744}
   inGameUIManager: {fileID: 149019584}
+  brightController: {fileID: 1172888603}
   leaderAssignableArea: {fileID: 241940335}
 --- !u!4 &568759993
 Transform:
@@ -5315,9 +5274,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayText: {fileID: 776758568}
-  Time: 2.5
-  Tag: Worker
-  HideObj: {fileID: 611817965}
+  time: 3
+  detectTag: Worker
+  hideObj: {fileID: 0}
 --- !u!65 &611817968
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5875,20 +5834,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageToDisplay: {fileID: 29690644}
   displayDelay: 3
-  Time: 3
-  HideObj: {fileID: 0}
---- !u!114 &652649744 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4669662424169538526, guid: d734dd73d3ba5af4fad585dc2c0eac45,
-    type: 3}
-  m_PrefabInstance: {fileID: 555381376}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e8881c41cf8aa34cbaac690a6e56432, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  time: 3
+  hideObj: {fileID: 0}
 --- !u!4 &655587562 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2426057070339949791, guid: 954ce7a3342e3a44dbe101d01ff15041,
@@ -6343,7 +6290,7 @@ PrefabInstance:
     - target: {fileID: 9191752624270989848, guid: 64dae455b8c7a9f468a7cc438028391e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.2650003
+      value: 4.925
       objectReference: {fileID: 0}
     - target: {fileID: 9191752624270989848, guid: 64dae455b8c7a9f468a7cc438028391e,
         type: 3}
@@ -6483,7 +6430,7 @@ PrefabInstance:
     - target: {fileID: 9191752624670590977, guid: 64dae455b8c7a9f468a7cc438028391e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.2650003
+      value: 4.925
       objectReference: {fileID: 0}
     - target: {fileID: 9191752624670590977, guid: 64dae455b8c7a9f468a7cc438028391e,
         type: 3}
@@ -7595,10 +7542,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 1994500505}
-  Time: 6
-  Tag: Worker
-  HideObj:
-  - {fileID: 809331748}
+  time: 3
+  detectTag: Player
+  hideObj: []
 --- !u!65 &809331751
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9180,6 +9126,18 @@ Transform:
   m_Father: {fileID: 822273645154314217}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1027211777 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 714723296, guid: 64dae455b8c7a9f468a7cc438028391e,
+    type: 3}
+  m_PrefabInstance: {fileID: 714723294}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ee082a9d5a4b6eabeeafac59e094f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1030358144 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2426057070339949791, guid: 954ce7a3342e3a44dbe101d01ff15041,
@@ -10183,6 +10141,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1172888602}
   - component: {fileID: 1172888601}
+  - component: {fileID: 1172888603}
   m_Layer: 0
   m_Name: GlobalVolume
   m_TagString: Untagged
@@ -10222,6 +10181,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1172888603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172888600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a483f27a87f2489ab41083ebebf681b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1173362169 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4158856496861557901, guid: 28c08b8eeca41404f86efbb41869cb75,
@@ -12403,10 +12374,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 455200909}
-  Time: 4
-  Tag: Worker
-  HideObj:
-  - {fileID: 1389557155}
+  time: 3
+  detectTag: Player
+  hideObj: []
 --- !u!1001 &1400154679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14427,9 +14397,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayText: {fileID: 1741802281}
-  Time: 5
-  Tag: Worker
-  HideObj: {fileID: 1741802279}
+  time: 3
+  detectTag: Player
+  hideObj: {fileID: 0}
 --- !u!1001 &1662334995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14709,10 +14679,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 827238330}
-  Time: 3
-  Tag: Worker
-  HideObj:
-  - {fileID: 1675817276}
+  time: 3
+  detectTag: Worker
+  hideObj: []
 --- !u!65 &1675817283
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15220,13 +15189,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 954926956}
-  Time: 4
-  Tag: Worker
-  HideObj:
-  - {fileID: 1762288039}
-  - {fileID: 401633661}
-  - {fileID: 1891352546}
-  - {fileID: 157227793}
+  time: 3
+  detectTag: Player
+  hideObj: []
 --- !u!114 &1762288043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15240,13 +15205,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 1198932061}
-  Time: 4
-  Tag: Worker
-  HideObj:
-  - {fileID: 1762288039}
-  - {fileID: 401633661}
-  - {fileID: 1891352546}
-  - {fileID: 157227793}
+  time: 3
+  detectTag: Player
+  hideObj: []
 --- !u!23 &1762288044
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16238,13 +16199,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 954926956}
-  Time: 4
-  Tag: Worker
-  HideObj:
-  - {fileID: 1762288039}
-  - {fileID: 401633661}
-  - {fileID: 1891352546}
-  - {fileID: 157227793}
+  time: 3
+  detectTag: Player
+  hideObj: []
 --- !u!23 &1891352551
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16321,13 +16278,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 1198932061}
-  Time: 4
-  Tag: Worker
-  HideObj:
-  - {fileID: 1762288039}
-  - {fileID: 401633661}
-  - {fileID: 1891352546}
-  - {fileID: 157227793}
+  time: 3
+  detectTag: Player
+  hideObj: []
 --- !u!1001 &1894437056
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17067,7 +17020,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 241675931}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 910c4663d8b46e941afd3fc971d356e9, type: 3}
   m_Name: 
@@ -17120,10 +17073,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 568863910}
-  Time: 5
-  Tag: Worker
-  HideObj:
-  - {fileID: 2020195974}
+  time: 3
+  detectTag: Player
+  hideObj: []
 --- !u!65 &2020195977
 BoxCollider:
   m_ObjectHideFlags: 0
