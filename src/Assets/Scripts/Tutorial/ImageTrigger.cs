@@ -6,7 +6,7 @@ public class ImageTrigger : MonoBehaviour
     public RawImage rawImage; // RawImageコンポーネントを使用する
     [SerializeField] private float Time = 3.0f;//デフォルトは3秒
     [SerializeField] private string Tag = "Player";
-    [SerializeField] private GameObject HideObj = null;
+    [SerializeField] private GameObject[] HideObj;
 
     private void Start()
     {
@@ -26,6 +26,9 @@ public class ImageTrigger : MonoBehaviour
     private void HideImage()
     {
         rawImage.enabled = false; // 画像を非表示にする
-        HideObj.SetActive(false);
+        foreach (GameObject obj in HideObj)
+        {
+            Destroy(obj);
+        }
     }
 }
