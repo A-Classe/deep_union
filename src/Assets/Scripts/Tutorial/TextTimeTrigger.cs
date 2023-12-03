@@ -1,34 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class TextTimeTrigger : MonoBehaviour
 {
-
-    public TextMeshProUGUI displayText; // TextƒRƒ“ƒ|[ƒlƒ“ƒg‚ğg—p‚·‚é
+    public TextMeshProUGUI displayText; // Textã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’ä½¿ç”¨ã™ã‚‹
     [SerializeField] private float displayDelay = 5.0f;
-    [SerializeField] private float Time = 3.0f;//ƒfƒtƒHƒ‹ƒg‚Í3•b
-    [SerializeField] private GameObject HideObj = null;
+    [SerializeField] private float time = 3.0f;//ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯3ç§’
+    [SerializeField] private GameObject hideObj = null;
 
 
     private void Start()
     {
-        displayText.enabled = false; // ŠJn‚ÉƒeƒLƒXƒg‚ğ”ñ•\¦‚É‚·‚é
+        displayText.enabled = false; // é–‹å§‹æ™‚ã«ãƒ†ã‚­ã‚¹ãƒˆã‚’éè¡¨ç¤ºã«ã™ã‚‹
 
-        Invoke("ShowText", displayDelay);
+        Invoke(nameof(ShowText), displayDelay);
     }
 
     private void ShowText()
     {
-        displayText.enabled = true; // ƒeƒLƒXƒg‚ğ•\¦‚·‚é
-        Invoke("HideText", Time);
+        displayText.enabled = true; // ãƒ†ã‚­ã‚¹ãƒˆã‚’è¡¨ç¤ºã™ã‚‹
+        Invoke(nameof(HideText), time);
     }
 
     private void HideText()
     {
-        displayText.enabled = false; // ƒeƒLƒXƒg‚ğ”ñ•\¦‚É‚·‚é
-        HideObj.SetActive(false);
+        displayText.enabled = false; // ãƒ†ã‚­ã‚¹ãƒˆã‚’éè¡¨ç¤ºã«ã™ã‚‹
+        hideObj.SetActive(false);
     }
 }

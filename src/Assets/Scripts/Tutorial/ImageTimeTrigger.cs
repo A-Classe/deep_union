@@ -1,33 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ImageTimeTrigger : MonoBehaviour
 {
     [SerializeField] private RawImage imageToDisplay;
-    [SerializeField] private float displayDelay = 5f;// •\¦‚Ü‚Å‚Ì’x‰„ŠÔi•bj
-    [SerializeField] private float Time = 3.0f;
-    [SerializeField] private GameObject HideObj = null;
+    [SerializeField] private float displayDelay = 5f;// è¡¨ç¤ºã¾ã§ã®é…å»¶æ™‚é–“ï¼ˆç§’ï¼‰
+    [SerializeField] private float time = 3.0f;
+    [SerializeField] private GameObject hideObj = null;
 
     private void Start()
     {
-        // ƒQ[ƒ€ŠJn‚É”ñ•\¦‚É‚·‚é
+        // ã‚²ãƒ¼ãƒ é–‹å§‹æ™‚ã«éè¡¨ç¤ºã«ã™ã‚‹
         imageToDisplay.enabled = false;
 
-        // ˆê’èŠÔ‚ªŒo‰ß‚µ‚½‚ç‰æ‘œ‚ğ•\¦‚·‚é
-        Invoke("DisplayImage", displayDelay);      
+        // ä¸€å®šæ™‚é–“ãŒçµŒéã—ãŸã‚‰ç”»åƒã‚’è¡¨ç¤ºã™ã‚‹
+        Invoke(nameof(DisplayImage), displayDelay);      
     }
 
     private void DisplayImage()
     {
-        // ‰æ‘œ‚ğ•\¦‚·‚é
+        // ç”»åƒã‚’è¡¨ç¤ºã™ã‚‹
         imageToDisplay.enabled = true;
-        Invoke("HideImage", Time); // Time•bŒã‚ÉHideImageƒƒ\ƒbƒh‚ğŒÄ‚Ô
+        Invoke(nameof(HideImage), time); // Timeç§’å¾Œã«HideImageãƒ¡ã‚½ãƒƒãƒ‰ã‚’å‘¼ã¶
     }
     private void HideImage()
     {
-        imageToDisplay.enabled = false; // ‰æ‘œ‚ğ”ñ•\¦‚É‚·‚é
-        HideObj.SetActive(false);
+        imageToDisplay.enabled = false; // ç”»åƒã‚’éè¡¨ç¤ºã«ã™ã‚‹
+        hideObj.SetActive(false);
     }   
 }

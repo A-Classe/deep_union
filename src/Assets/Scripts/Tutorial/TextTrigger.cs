@@ -1,37 +1,36 @@
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class TextTrigger : MonoBehaviour
 {
-    public TextMeshProUGUI displayText; // TextƒRƒ“ƒ|[ƒlƒ“ƒg‚ğg—p‚·‚é
-    [SerializeField] private float Time = 3.0f;//ƒfƒtƒHƒ‹ƒg‚Í3•b
-    [SerializeField] private string Tag = "Player";
-    [SerializeField] private GameObject HideObj = null;
+    public TextMeshProUGUI displayText; // Textã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’ä½¿ç”¨ã™ã‚‹
+    [SerializeField] private float time = 3.0f;//ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯3ç§’
+    [SerializeField] private string detectTag = "Player";
+    [SerializeField] private GameObject hideObj = null;
 
 
     private void Start()
     {
-        displayText.enabled = false; // ŠJn‚ÉƒeƒLƒXƒg‚ğ”ñ•\¦‚É‚·‚é
+        displayText.enabled = false; // é–‹å§‹æ™‚ã«ãƒ†ã‚­ã‚¹ãƒˆã‚’éè¡¨ç¤ºã«ã™ã‚‹
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(Tag))
+        if (other.CompareTag(detectTag))
         {
-            ShowText(); // ƒvƒŒƒCƒ„[‚ªƒGƒŠƒA‚É“ü‚Á‚Ä‚¨‚èAƒeƒLƒXƒg‚ª‚Ü‚¾•\¦‚³‚ê‚Ä‚¢‚È‚¢ê‡‚Í•\¦‚·‚é
-            Invoke("HideText", Time); // Time•bŒã‚É”ñ•\¦‚É‚·‚é
+            ShowText(); // ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒã‚¨ãƒªã‚¢ã«å…¥ã£ã¦ãŠã‚Šã€ãƒ†ã‚­ã‚¹ãƒˆãŒã¾ã è¡¨ç¤ºã•ã‚Œã¦ã„ãªã„å ´åˆã¯è¡¨ç¤ºã™ã‚‹
+            Invoke(nameof(HideText), time); // Timeç§’å¾Œã«éè¡¨ç¤ºã«ã™ã‚‹
         }
     }
 
     private void ShowText()
     {
-        displayText.enabled = true; // ƒeƒLƒXƒg‚ğ•\¦‚·‚é
+        displayText.enabled = true; // ãƒ†ã‚­ã‚¹ãƒˆã‚’è¡¨ç¤ºã™ã‚‹
     }
 
     private void HideText()
     {
-        displayText.enabled = false; // ƒeƒLƒXƒg‚ğ”ñ•\¦‚É‚·‚é
-        HideObj.SetActive(false);
+        displayText.enabled = false; // ãƒ†ã‚­ã‚¹ãƒˆã‚’éè¡¨ç¤ºã«ã™ã‚‹
+        hideObj.SetActive(false);
     }
 }
