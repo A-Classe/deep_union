@@ -70,8 +70,8 @@ namespace Module.Assignment.Component
             ellipseVisualizer.SetEllipse(ellipseData);
         }
 
-        public event Action<Worker> OnWorkerEnter;
-        public event Action<Worker> OnWorkerExit;
+        public event Action<Worker, WorkerEventType> OnWorkerEnter;
+        public event Action<Worker, WorkerEventType> OnWorkerExit;
 
         private void SetLightSize()
         {
@@ -129,24 +129,35 @@ namespace Module.Assignment.Component
             return nearestPoint.transform;
         }
 
-        public void AddWorker(Worker worker)
+        public enum WorkerEventType
+        {
+            Create,
+            Destroy,
+            Default
+        }
+        public void AddWorker(Worker worker, WorkerEventType type = WorkerEventType.Default)
         {
             var assignPoint = GetNearestAssignPoint(worker.transform.position);
 
             worker.SetFollowTarget(transform, assignPoint.transform);
             assignedWorkers.Add(worker);
-            OnWorkerEnter?.Invoke(worker);
+            OnWorkerEnter?.Invoke(worker, type);
 
-            worker.OnDead += RemoveWorker;
+            worker.OnDead += DeadWorker;
         }
 
-        public void RemoveWorker(Worker worker)
+        private void DeadWorker(Worker worker)
+        {
+            RemoveWorker(worker, WorkerEventType.Destroy);
+        }
+
+        public void RemoveWorker(Worker worker, WorkerEventType type = WorkerEventType.Default)
         {
             assignedWorkers.Remove(worker);
-            OnWorkerExit?.Invoke(worker);
+            OnWorkerExit?.Invoke(worker, type);
             ReleaseAssignPoint(worker.Target);
 
-            worker.OnDead -= RemoveWorker;
+            worker.OnDead -= DeadWorker;
         }
 
         private void SetEnableAssignPointDebug(bool enable)

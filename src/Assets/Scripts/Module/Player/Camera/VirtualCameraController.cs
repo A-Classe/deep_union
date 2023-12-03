@@ -19,7 +19,7 @@ namespace Module.Player.Camera
             rotateEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.RotateCamera);
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
             float delta = rotateEvent.ReadValue<float>() * speed;
 
@@ -28,7 +28,7 @@ namespace Module.Player.Camera
                 isRotating = true;
                 
                 //加速する
-                angularVelocity += delta * speed * Time.fixedDeltaTime;
+                angularVelocity += delta * speed * Time.deltaTime;
                 
                 //最大速度にクランプ
                 angularVelocity = Mathf.Clamp(angularVelocity, -maxSpeed, maxSpeed);
@@ -36,7 +36,7 @@ namespace Module.Player.Camera
             else if (isRotating)
             {
                 //キーが押されていない間は減衰させる
-                angularVelocity = Mathf.Lerp(angularVelocity, 0f, dampingSpeed * Time.fixedDeltaTime);
+                angularVelocity = Mathf.Lerp(angularVelocity, 0f, dampingSpeed * Time.deltaTime);
 
                 //一定速度以下になったら回転終了
                 if (Mathf.Abs(angularVelocity) < 0.1f)
@@ -46,7 +46,7 @@ namespace Module.Player.Camera
                 }
             }
 
-            followTarget.Rotate(Vector3.up, angularVelocity * Time.fixedDeltaTime);
+            followTarget.Rotate(Vector3.up, angularVelocity * Time.deltaTime);
         }
     }
 }

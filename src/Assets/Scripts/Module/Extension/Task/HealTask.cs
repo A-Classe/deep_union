@@ -43,7 +43,7 @@ namespace Module.Extension.Task
             }
         }
 
-        private void OnCollisionEnter(Collision other)
+        private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("Player"))
             {
@@ -66,7 +66,7 @@ namespace Module.Extension.Task
 
             ForceComplete();
 
-            assignableArea.OnWorkerEnter += async _ =>
+            assignableArea.OnWorkerEnter += async (_, _) =>
             {
                 if (WorkerCount >= minWorkerCount)
                 {
@@ -75,7 +75,7 @@ namespace Module.Extension.Task
                 }
             };
 
-            assignableArea.OnWorkerExit += _ =>
+            assignableArea.OnWorkerExit += (_, _) =>
             {
                 if (WorkerCount < minWorkerCount)
                     navMeshAgent.enabled = false;

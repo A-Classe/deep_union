@@ -1,8 +1,11 @@
 using System.Collections.Generic;
+using Core.Model.User;
+using Core.User.Recorder;
 using Module.Assignment.Component;
 using Module.Assignment.Utility;
 using Module.Working;
 using Unity.Burst;
+using UnityEngine;
 using VContainer;
 using Wanna.DebugEx;
 
@@ -14,12 +17,19 @@ namespace Module.Assignment.System
         private readonly Worker[] assignWorkerCache;
         private readonly LeaderAssignableArea leaderAssignableArea;
 
+        private readonly EventBroker eventBroker;
+
         private IReadOnlyList<AssignableArea> activeAreas;
 
         [Inject]
-        public WorkerAssigner(LeaderAssignableArea leaderAssignableArea)
+        public WorkerAssigner(
+            LeaderAssignableArea leaderAssignableArea,
+            EventBroker eventBroker
+        )
         {
             this.leaderAssignableArea = leaderAssignableArea;
+
+            this.eventBroker = eventBroker;
 
             assignWorkerCache = new Worker[128];
         }
@@ -65,6 +75,7 @@ namespace Module.Assignment.System
                     {
                         leaderAssignableArea.AssignableArea.RemoveWorker(worker);
                         activeArea.AddWorker(worker);
+                        eventBroker.SendEvent(new AssignEvent().Event());
                     }
                 }
             }

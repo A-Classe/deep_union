@@ -6,6 +6,8 @@ namespace Core.Scenes
         Option,
         Quit,
         Credit,
-        StageSelect
+        StageSelect,
+        Stats,
+        Ranking
     }
 }

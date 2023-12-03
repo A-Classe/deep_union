@@ -76,15 +76,15 @@ namespace Module.UI.Title.Option.Option3
                 switch (current)
                 {
                     case Nav.Master:
-                        master.SetValue(master.Value + direction.x);
+                        master.SetValue(master.Value + (direction.x > 0 ? 1 : -1));
                         OnVolumeChanged?.Invoke(Nav.Master, master.Value);
                         break;
                     case Nav.Music:
-                        music.SetValue(music.Value + direction.x);
+                        music.SetValue(music.Value + (direction.x > 0 ? 1 : -1));
                         OnVolumeChanged?.Invoke(Nav.Music, music.Value);
                         break;
                     case Nav.Effect:
-                        effect.SetValue(effect.Value + direction.x);
+                        effect.SetValue(effect.Value + (direction.x > 0 ? 1 : -1));
                         OnVolumeChanged?.Invoke(Nav.Effect, effect.Value);
                         break;
                     case Nav.Back:
@@ -123,9 +123,9 @@ namespace Module.UI.Title.Option.Option3
         public void SetValues(int masterVol, int musicVol, int effectVol)
         {
             // initialize
-            master.Setup(100f, 0f, 70f);
-            music.Setup(100f, 0f, 70f);
-            effect.Setup(100f, 0f, 70f);
+            master.Setup(10f, 0f, 6f);
+            music.Setup(10f, 0f, 10f);
+            effect.Setup(10f, 0f, 10f);
 
             master.SetValue(masterVol);
             music.SetValue(musicVol);

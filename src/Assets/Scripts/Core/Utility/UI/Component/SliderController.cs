@@ -23,6 +23,7 @@ namespace Core.Utility.UI.Component
 
         public void SetValue(float value)
         {
+            if (value < slider.minValue || value > slider.maxValue) return;
             Set(value);
         }
 
