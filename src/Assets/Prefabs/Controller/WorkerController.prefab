@@ -27,8 +27,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9191752624270989843}
-  m_LocalRotation: {x: 0.33370236, y: -0, z: -0, w: 0.9426785}
-  m_LocalPosition: {x: 0.04, y: 4.835, z: -4.46}
+  m_LocalRotation: {x: 0.3437604, y: -3e-45, z: 1e-45, w: 0.9390574}
+  m_LocalPosition: {x: 0.04, y: 4.835, z: -4.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -273,7 +273,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9191752624670590983}
-  m_LocalRotation: {x: 0.3437604, y: -3e-45, z: 1e-45, w: 0.9390574}
+  m_LocalRotation: {x: 0.3437604, y: 1e-45, z: -1e-45, w: 0.9390574}
   m_LocalPosition: {x: 0.04, y: 4.835, z: -4.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -360,6 +360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9191752624852349592}
   - component: {fileID: 9191752624852349593}
+  - component: {fileID: 6557424792070458555}
   m_Layer: 0
   m_Name: WorkerController
   m_TagString: Untagged
@@ -401,6 +402,23 @@ MonoBehaviour:
   speed: 28.17
   dampingSpeed: 4.19
   maxSpeed: 78.2
+--- !u!114 &6557424792070458555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9191752624852349599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ee082a9d5a4b6eabeeafac59e094f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pinOrigin: {fileID: 9191752623537322796}
+  pinDuration: 2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8192
 --- !u!1001 &8942126007961985880
 PrefabInstance:
   m_ObjectHideFlags: 0
