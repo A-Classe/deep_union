@@ -27,6 +27,7 @@ namespace GameMain.Router
 
         private readonly OptionManager option;
         private readonly QuitManager quit;
+        private readonly CreditManager credit;
         private readonly SceneChanger sceneChanger;
         private readonly StageSelectManager stageSelect;
         private readonly TitleManager title;
@@ -53,6 +54,7 @@ namespace GameMain.Router
             title = titleManager;
             quit = quitManager;
             option = optionManager;
+            credit = creditManager;
             stageSelect = stageSelectManager;
             this.sceneChanger = sceneChanger;
             this.statsManager = statsManager;
@@ -154,6 +156,8 @@ namespace GameMain.Router
                 }
             };
             option.OnBack += NavigateToTitle;
+
+            credit.OnCreditFinished += OnCanceled;
 
             stageSelect.OnStage += StageSelected;
             stageSelect.OnBack += NavigateToTitle;
