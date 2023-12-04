@@ -36,7 +36,6 @@ namespace Core.Utility.UI.Component
                 currentTime = 0f;
             }
             State = !isVisible;
-            UpdateSlider();
         }
 
         public void UpdateHoldTime(float delta)

@@ -8,6 +8,7 @@ using Module.Task;
 using UnityEngine;
 using UnityEngine.AI;
 using VContainer;
+using Wanna.DebugEx;
 
 namespace Module.Extension.Task
 {
