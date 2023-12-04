@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Core.Input;
+using Core.User.Recorder;
 using Module.Assignment.Component;
 using Module.Task;
 using VContainer;
@@ -15,11 +16,16 @@ namespace Module.Assignment.System
         private readonly TaskActivator taskActivator;
         private readonly WorkerAssigner workerAssigner;
         private readonly WorkerReleaser workerReleaser;
+        private readonly EventBroker eventBroker;
         private AssignState assignState = AssignState.Idle;
 
         [Inject]
-        public AssignmentSystem(WorkerAssigner workerAssigner, WorkerReleaser workerReleaser,
-            TaskActivator taskActivator)
+        public AssignmentSystem(
+            WorkerAssigner workerAssigner, 
+            WorkerReleaser workerReleaser,
+            TaskActivator taskActivator,
+            EventBroker eventBroker
+        )
         {
             this.workerAssigner = workerAssigner;
             this.workerReleaser = workerReleaser;

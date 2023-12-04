@@ -2,14 +2,16 @@
 using System.GameProgress;
 using Core.Input;
 using Core.Model.Scene;
+using Core.Model.User;
 using Core.NavMesh;
 using Core.Scenes;
 using Core.User;
+using Core.User.API;
+using Core.User.Recorder;
 using GameMain.Presenter;
 using Module.Assignment.Component;
+using Module.GameSetting;
 using Module.Player;
-using Module.Player.Camera;
-using Module.Player.Camera.State;
 using Module.Player.Controller;
 using Module.Player.State;
 using Module.Task;
@@ -50,6 +52,15 @@ namespace GameMain.Router
         private readonly WorkerController workerController;
 
         private readonly WorkerSpawner workerSpawner;
+        
+        private readonly AudioMixerController audioMixerController;
+        
+        private readonly BrightController brightController;
+
+        private readonly EventBroker eventBroker;
+
+        private readonly GameActionRecorder recorder;
+        private readonly FirebaseAccessor db;
 
         [Inject]
         public GameRouter(
@@ -67,7 +78,12 @@ namespace GameMain.Router
             UserPreference preference,
             PlayerStatus playerStatus,
             ResourceContainer resourceContainer,
-            WorkerAgent workerAgent
+            WorkerAgent workerAgent,
+            AudioMixerController audioMixerController,
+            BrightController brightController,
+            EventBroker eventBroker,
+            GameActionRecorder recorder,
+            FirebaseAccessor db
         )
         {
             this.spawnParam = spawnParam;
@@ -93,6 +109,16 @@ namespace GameMain.Router
             this.resourceContainer = resourceContainer;
 
             this.workerAgent = workerAgent;
+            
+            this.audioMixerController = audioMixerController;
+            
+            this.brightController = brightController;
+
+            this.eventBroker = eventBroker;
+
+            this.recorder = recorder;
+
+            this.db = db;
         }
 
         public void Dispose()
@@ -110,6 +136,7 @@ namespace GameMain.Router
             InitPlayer();
 
             InitScene();
+            
         }
 
         public void Tick()
@@ -143,26 +170,31 @@ namespace GameMain.Router
         private void InitScene()
         {
             uiManager.SetSceneChanger(sceneChanger);
-            uiManager.StartGame(preference);
+            uiManager.StartGame(preference, audioMixerController);
 
-            progressObserver.OnCompleted += () =>
-            {
-                sceneChanger.LoadResult(
-                    new GameResult
-                    {
-                        Hp = playerStatus.Hp,
-                        Resource = resourceContainer.ResourceCount,
-                        stageCode = (int)sceneChanger.GetInGame(),
-                        WorkerCount = workerAgent.WorkerCount()
-                    }
-                );
-            };
+            // Game Clear
+            progressObserver.OnCompleted += OnGameClear;
 
             var escEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.ESC);
             escEvent.Canceled += _ =>
             {
                 if (playerController.GetState() != PlayerState.Pause) uiManager.StartPause();
             };
+
+            sceneChanger.OnBeforeChangeScene += SaveReport;
+            
+            preference.Load();
+            
+            preference.CompletedFirst();
+            
+            UserData data = preference.GetUserData();
+            brightController.SetBrightness(data.bright.value / 10f);
+            uiManager.SetBrightnessController(brightController);
+            
+            eventBroker.Clear();
+            eventBroker.SendEvent(new GamePlay().Event());
+            
+            // db.
         }
 
         // HPが0になった時 or オプション画面で
@@ -176,6 +208,29 @@ namespace GameMain.Router
         {
             workerController.SetPlayed(true);
             playerController.SetState(PlayerState.Auto);
+        }
+
+        private void OnGameClear()
+        {
+            eventBroker.SendEvent(new GameClear().Event());
+            SaveReport();
+            sceneChanger.LoadResult(
+                new GameResult
+                {
+                    Hp = playerStatus.Hp,
+                    Resource = resourceContainer.ResourceCount,
+                    stageCode = (int)sceneChanger.GetInGame(),
+                    WorkerCount = workerAgent.WorkerCount()
+                }
+            );
+        }
+
+        private void SaveReport()
+        {
+            Report current = recorder.GenerateReport();
+            Report data = preference.GetReport();
+            preference.SetReport(data + current);
+            preference.Save();
         }
     }
 }

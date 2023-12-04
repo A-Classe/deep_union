@@ -12,6 +12,9 @@ namespace Module.Player.State
         public float Resistance;
     }
 
+    /// <summary>
+    /// 自動航行のステート
+    /// </summary>
     public class AutoState : IPlayerState
     {
         private readonly Rigidbody rigidbody;
@@ -38,7 +41,10 @@ namespace Module.Player.State
 
         public void FixedUpdate()
         {
+            //徐々に加速
             currentSpeed += movementSetting.Acceleralation * Time.fixedDeltaTime;
+            
+            //速度制限
             currentSpeed = Mathf.Clamp(currentSpeed, movementSetting.MinSpeed, movementSetting.MaxSpeed);
 
             rigidbody.velocity = rigidbody.transform.forward * currentSpeed;

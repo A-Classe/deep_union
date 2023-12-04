@@ -45,6 +45,7 @@ namespace Module.Working
 
         private void OnDestroy()
         {
+            DebugEx.Log("a");
             foreach (var state in workerStates) state.Dispose();
         }
 

@@ -15,6 +15,7 @@ namespace Module.Player.Controller
     {
         [SerializeField] private Rigidbody rig;
         [SerializeField] private NavMeshAgent navMeshAgent;
+        [SerializeField] private NavMeshObstacle navMeshObstacle;
         [SerializeField] private FollowPin followPin;
 
         [Header("ピンを追従してない状態の移動設定")]
@@ -34,12 +35,12 @@ namespace Module.Player.Controller
         {
             followPin.OnArrived += () => SetState(PlayerState.Auto);
             followPin.OnPinned += () => SetState(PlayerState.FollowToPin);
-            
+
             states = new IPlayerState[]
             {
                 new PauseState(rig, setting),
                 new AutoState(rig, setting),
-                new FollowToPinState(rig, navMeshAgent, followPin)
+                new FollowToPinState(rig, navMeshAgent, navMeshObstacle, followPin)
             };
 
             SetState(PlayerState.Pause);
