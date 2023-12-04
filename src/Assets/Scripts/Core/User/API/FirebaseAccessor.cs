@@ -57,7 +57,23 @@ namespace Core.User.API
         }
         public void Start()
         {
- 
+            FirebaseDatabase.DefaultInstance.GetReference(".info/connected").ValueChanged += (sender, args) => {
+                if (args.DatabaseError != null) {
+                    Debug.LogError(args.DatabaseError.Message);
+                    return;
+                }
+
+                if (args.Snapshot.Value is bool connected && connected)
+                {
+                    // データベースに接続されている
+                    Debug.Log("Connected");
+                }
+                else
+                {
+                    // データベースに接続されていない
+                    Debug.Log("Disconnected");
+                }
+            };
         }
 
         private void WriteNewUser()
@@ -69,12 +85,6 @@ namespace Core.User.API
             preference.Save();
             preference.Load();
             userData = preference.GetUserData();
-            // SetName(userData.name.value);
-            // SetStageScore(StageData.Stage.Stage1, 3000);
-            // GetAllData((r) =>
-            // {
-            //     Debug.Log(r);
-            // });
         }
 
         private DatabaseReference GetUserRef()
@@ -100,19 +110,25 @@ namespace Core.User.API
 
         public void GetAllData(Action<Ranking> OnCallback)
         {
-            
+            Ranking ranking = new Ranking();
+            ranking.users = new List<RankingUser>();
+            if (Application.internetReachability == NetworkReachability.NotReachable)
+            {
+                Debug.Log("Not Connection Network");
+                OnCallback?.Invoke(ranking);
+            }
             GetDbRef()
                 .GetValueAsync()
                 .ContinueWithOnMainThread(task => {
-                    if (task.IsFaulted) {
+                    if (task.IsFaulted || task.IsCanceled) {
                         // Handle the error...
+                        Debug.Log("catch Error:");
                         Debug.Log(task);
+                        OnCallback?.Invoke(ranking);
                     }
                     else if (task.IsCompleted) {
                         try
                         {
-                            Ranking ranking = new Ranking();
-                            ranking.users = new List<RankingUser>();
                             DataSnapshot snapshot = task.Result;
                             // Do something with snapshot...
                             foreach (var userData in snapshot.Children)
