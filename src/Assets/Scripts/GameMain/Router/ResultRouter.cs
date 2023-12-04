@@ -4,6 +4,7 @@ using Core.Scenes;
 using Core.User;
 using Core.User.API;
 using Core.Utility.UI.Navigation;
+using Module.Extension.UI;
 using Module.UI.Result;
 using VContainer;
 using VContainer.Unity;
@@ -18,6 +19,8 @@ namespace GameMain.Router
 
         private readonly SceneChanger sceneChanger;
         private readonly UserPreference userPreference;
+        
+        private readonly VideoPlayerControllerExt videoPlayer;
 
         private GameResult result;
 
@@ -28,7 +31,8 @@ namespace GameMain.Router
             UserPreference userPreference,
             SceneChanger sceneChanger,
             ResultManager resultManager,
-            FirebaseAccessor db
+            FirebaseAccessor db,
+            VideoPlayerControllerExt videoPlayer
         )
         {
             this.userPreference = userPreference;
@@ -38,6 +42,8 @@ namespace GameMain.Router
             this.resultManager = resultManager;
 
             this.db = db;
+
+            this.videoPlayer = videoPlayer;
 
             // setup navigation
             navigation = new Navigation<Nav>(
@@ -62,6 +68,7 @@ namespace GameMain.Router
             userPreference.SetStageData((StageData.Stage)result.stageCode, result.GetScore());
             userPreference.Save();
             db.SetStageScore((StageData.Stage)result.stageCode, result.GetScore());
+            videoPlayer.Play();
         }
 
         private void SetNavigation()
