@@ -157,7 +157,7 @@ namespace GameMain.Router
             };
             option.OnBack += NavigateToTitle;
 
-            credit.OnCreditFinished += OnCanceled;
+            credit.OnCreditFinished += NavigateToTitle;
 
             stageSelect.OnStage += StageSelected;
             stageSelect.OnBack += NavigateToTitle;

@@ -19,8 +19,14 @@ namespace Module.UI.Title.Credit
         private void Start()
         {
             anyKeyEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.AnyKey);
-            scrollable.OnScrollFinished += OnCreditFinished;
-            holdVisual.OnHoldFinished += OnCreditFinished;
+            scrollable.OnScrollFinished += () =>
+            {
+                OnCreditFinished?.Invoke();
+            };
+            holdVisual.OnHoldFinished += () =>
+            {
+                OnCreditFinished?.Invoke();
+            };
         }
 
         public override void Initialized(ContentTransform content, bool isReset = false)
