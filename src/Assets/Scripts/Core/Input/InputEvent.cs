@@ -27,8 +27,6 @@ namespace Core.Input
 
         private void OnStarted(InputAction.CallbackContext ctx)
         {
-            DebugEx.Log($"{inputAction.name} = {inputAction.enabled}");
-
             Started?.Invoke(ctx);
         }
 

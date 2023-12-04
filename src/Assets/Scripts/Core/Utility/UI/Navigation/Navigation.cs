@@ -98,7 +98,7 @@ namespace Core.Utility.UI.Navigation
         {
             if (!IsActive) return;
    
-            currentTime += Time.deltaTime;
+            currentTime += Time.unscaledDeltaTime;
             // ReSharper disable once CompareOfFloatsByEqualityOperator
             if (initialInterval == StartInterval && currentTime == 0f && current != null) current.Select(input);
             if (currentTime < initialInterval) return; // 一定の間隔が経過していない場合、何もしない

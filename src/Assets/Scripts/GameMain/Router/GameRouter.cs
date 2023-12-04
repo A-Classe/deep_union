@@ -20,6 +20,7 @@ using Module.UI.InGame;
 using Module.Working;
 using Module.Working.Controller;
 using Module.Working.Factory;
+using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
@@ -197,8 +198,8 @@ namespace GameMain.Router
             
             eventBroker.Clear();
             eventBroker.SendEvent(new GamePlay().Event());
-            
-            // db.
+
+            OnCallGameActive();
         }
 
         // HPが0になった時 or オプション画面で
