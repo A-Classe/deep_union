@@ -198,6 +198,8 @@ namespace GameMain.Router
                     break;
                 case TitleNavigation.Option:
                     break;
+                case TitleNavigation.Credit:
+                    break;
                 default:
                     NavigateToTitle();
                     break;
