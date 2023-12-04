@@ -15,19 +15,21 @@ namespace Module.Player.Controller
     public class FollowPin : MonoBehaviour
     {
         [SerializeField] private Transform pinOrigin;
+        [SerializeField] private Transform pinObject;
         [SerializeField] private float pinDuration;
+        [SerializeField] private Vector3 pinOffset;
         [SerializeField] private LayerMask groundLayer;
 
         /// <summary>
         /// 潜水艦がピンに到達したときのイベント
         /// </summary>
         public event Action OnArrived;
-        
+
         /// <summary>
         /// ピンを差したときのイベント
         /// </summary>
         public event Action OnPinned;
-        
+
         private InputEvent pinEvent;
         private Vector3 pinPosition;
         private bool isPinning;
@@ -38,6 +40,8 @@ namespace Module.Player.Controller
             pinEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Pin);
             pinEvent.Started += OnPinPushed;
             pinEvent.Canceled += OnPinReleased;
+
+            pinObject.gameObject.SetActive(false);
         }
 
         private void OnPinPushed(InputAction.CallbackContext obj)
@@ -69,25 +73,37 @@ namespace Module.Player.Controller
             if (isPinning)
             {
                 isPinning = false;
-                DetectPinPosition();
+                bool isHit = DetectPinPosition();
+
+                if (isHit)
+                {
+                    pinObject.SetParent(null);
+                    pinObject.position = pinOrigin.position + pinOffset;
+                    pinObject.gameObject.SetActive(true);
+                }
             }
         }
 
-        private void DetectPinPosition()
+        private bool DetectPinPosition()
         {
+            bool isHit = Physics.Raycast(pinOrigin.position, Vector3.down, out RaycastHit hitInfo, 100f, groundLayer);
+
             //真下にレイを飛ばして判定
-            if (Physics.Raycast(pinOrigin.position, Vector3.down, out RaycastHit hit, 100f, groundLayer))
+            if (isHit)
             {
                 //真下の点から一番近いNavMeshの点を取得
-                NavMesh.SamplePosition(hit.point, out NavMeshHit hitInfo, 100f, NavMesh.AllAreas);
-                
-                pinPosition = hitInfo.position;
+                NavMesh.SamplePosition(hitInfo.point, out NavMeshHit sampleInfo, 100f, NavMesh.AllAreas);
+
+                pinPosition = sampleInfo.position;
                 OnPinned?.Invoke();
             }
+
+            return isHit;
         }
 
         public void ArriveToPin()
         {
+            pinObject.gameObject.SetActive(false);
             OnArrived?.Invoke();
         }
 
