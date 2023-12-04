@@ -1173,9 +1173,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 954926956}
-  time: 3
-  detectTag: Player
-  hideObj: []
+  Time: 3
+  Tag: Player
+  HideObj: []
 --- !u!114 &157227797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1189,9 +1189,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 1198932061}
-  time: 3
-  detectTag: Player
-  hideObj: []
+  Time: 3
+  Tag: Player
+  HideObj: []
 --- !u!23 &157227798
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2393,9 +2393,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 168888989}
-  time: 3
-  detectTag: Player
-  hideObj: []
+  Time: 3
+  Tag: Player
+  HideObj: []
 --- !u!1001 &272692512
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3295,9 +3295,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 954926956}
-  time: 3
-  detectTag: Player
-  hideObj: []
+  Time: 3
+  Tag: Player
+  HideObj: []
 --- !u!23 &401633666
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3361,9 +3361,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 1198932061}
-  time: 3
-  detectTag: Player
-  hideObj: []
+  Time: 3
+  Tag: Player
+  HideObj: []
 --- !u!1001 &404045714
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3981,9 +3981,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 377106681}
-  time: 3
-  detectTag: Player
-  hideObj: []
+  Time: 3
+  Tag: Player
+  HideObj: []
 --- !u!65 &459076634
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4914,6 +4914,7 @@ GameObject:
   m_Component:
   - component: {fileID: 568759993}
   - component: {fileID: 568759992}
+  - component: {fileID: 568759994}
   m_Layer: 0
   m_Name: Container
   m_TagString: Untagged
@@ -4963,6 +4964,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &568759994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568759991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5296fa4be297924ea38f74f94227d1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentReference:
+    TypeName: 
+  autoRun: 1
+  autoInjectGameObjects: []
 --- !u!1 &568863908
 GameObject:
   m_ObjectHideFlags: 0
@@ -5274,9 +5291,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayText: {fileID: 776758568}
-  time: 3
-  detectTag: Worker
-  hideObj: {fileID: 0}
+  Time: 3
+  Tag: Player
+  HideObj: {fileID: 0}
 --- !u!65 &611817968
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5834,8 +5851,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageToDisplay: {fileID: 29690644}
   displayDelay: 3
-  time: 3
-  hideObj: {fileID: 0}
+  Time: 3
+  HideObj: {fileID: 0}
 --- !u!4 &655587562 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2426057070339949791, guid: 954ce7a3342e3a44dbe101d01ff15041,
@@ -7542,9 +7559,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 1994500505}
-  time: 3
-  detectTag: Player
-  hideObj: []
+  Time: 3
+  Tag: Player
+  HideObj: []
 --- !u!65 &809331751
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12374,9 +12391,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 455200909}
-  time: 3
-  detectTag: Player
-  hideObj: []
+  Time: 3
+  Tag: Player
+  HideObj: []
 --- !u!1001 &1400154679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14397,9 +14414,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayText: {fileID: 1741802281}
-  time: 3
-  detectTag: Player
-  hideObj: {fileID: 0}
+  Time: 3
+  Tag: Player
+  HideObj: {fileID: 0}
 --- !u!1001 &1662334995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14679,9 +14696,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 827238330}
-  time: 3
-  detectTag: Worker
-  hideObj: []
+  Time: 3
+  Tag: Player
+  HideObj: []
 --- !u!65 &1675817283
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15189,9 +15206,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 954926956}
-  time: 3
-  detectTag: Player
-  hideObj: []
+  Time: 3
+  Tag: Player
+  HideObj: []
 --- !u!114 &1762288043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15205,9 +15222,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 1198932061}
-  time: 3
-  detectTag: Player
-  hideObj: []
+  Time: 3
+  Tag: Player
+  HideObj: []
 --- !u!23 &1762288044
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16199,9 +16216,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 954926956}
-  time: 3
-  detectTag: Player
-  hideObj: []
+  Time: 3
+  Tag: Player
+  HideObj: []
 --- !u!23 &1891352551
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16278,9 +16295,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 1198932061}
-  time: 3
-  detectTag: Player
-  hideObj: []
+  Time: 3
+  Tag: Player
+  HideObj: []
 --- !u!1001 &1894437056
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17073,9 +17090,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 568863910}
-  time: 3
-  detectTag: Player
-  hideObj: []
+  Time: 3
+  Tag: Player
+  HideObj: []
 --- !u!65 &2020195977
 BoxCollider:
   m_ObjectHideFlags: 0

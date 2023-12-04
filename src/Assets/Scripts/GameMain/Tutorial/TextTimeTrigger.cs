@@ -7,28 +7,28 @@ using UnityEngine.UI;
 public class TextTimeTrigger : MonoBehaviour
 {
 
-    public TextMeshProUGUI displayText; // TextƒRƒ“ƒ|[ƒlƒ“ƒg‚ğg—p‚·‚é
+    public TextMeshProUGUI displayText; // Textã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’ä½¿ç”¨ã™ã‚‹
     [SerializeField] private float displayDelay = 5.0f;
-    [SerializeField] private float Time = 3.0f;//ƒfƒtƒHƒ‹ƒg‚Í3•b
+    [SerializeField] private float Time = 3.0f;//ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯3ç§’
     [SerializeField] private GameObject HideObj = null;
 
 
     private void Start()
     {
-        displayText.enabled = false; // ŠJn‚ÉƒeƒLƒXƒg‚ğ”ñ•\¦‚É‚·‚é
+        displayText.enabled = false; // é–‹å§‹æ™‚ã«ãƒ†ã‚­ã‚¹ãƒˆã‚’éè¡¨ç¤ºã«ã™ã‚‹
 
         Invoke("ShowText", displayDelay);
     }
 
     private void ShowText()
     {
-        displayText.enabled = true; // ƒeƒLƒXƒg‚ğ•\¦‚·‚é
+        displayText.enabled = true; // ãƒ†ã‚­ã‚¹ãƒˆã‚’è¡¨ç¤ºã™ã‚‹
         Invoke("HideText", Time);
     }
 
     private void HideText()
     {
-        displayText.enabled = false; // ƒeƒLƒXƒg‚ğ”ñ•\¦‚É‚·‚é
+        displayText.enabled = false; // ãƒ†ã‚­ã‚¹ãƒˆã‚’éè¡¨ç¤ºã«ã™ã‚‹
         HideObj.SetActive(false);
     }
 }

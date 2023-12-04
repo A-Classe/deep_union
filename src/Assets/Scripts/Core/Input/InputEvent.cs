@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using UnityEngine.InputSystem;
+using Wanna.DebugEx;
 
 namespace Core.Input
 {
@@ -25,6 +27,8 @@ namespace Core.Input
 
         private void OnStarted(InputAction.CallbackContext ctx)
         {
+            DebugEx.Log($"{inputAction.name} = {inputAction.enabled}");
+
             Started?.Invoke(ctx);
         }
 
@@ -52,6 +56,11 @@ namespace Core.Input
             Started = null;
             Performed = null;
             Canceled = null;
+        }
+
+        public InputAction GetInputAction()
+        {
+            return inputAction;
         }
     }
 }

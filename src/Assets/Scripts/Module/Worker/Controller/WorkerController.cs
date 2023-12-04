@@ -20,13 +20,10 @@ namespace Module.Working.Controller
 
         private Vector2 input;
 
-        private bool isPlaying;
-
         private void Awake()
         {
             //入力イベントの生成
             controlEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Control);
-            isPlaying = true;
             beforeZ = target.position.z;
         }
 
@@ -37,8 +34,6 @@ namespace Module.Working.Controller
 
         private void FixedUpdate()
         {
-            if (!isPlaying) return;
-
             var velocity = rig.velocity;
 
             if (input != Vector2.zero)
@@ -64,11 +59,6 @@ namespace Module.Working.Controller
             rig.position += new Vector3(0f, 0f, target.position.z - beforeZ);
 
             beforeZ = target.position.z;
-        }
-
-        public void SetPlayed(bool value)
-        {
-            isPlaying = value;
         }
     }
 }

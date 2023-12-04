@@ -18,7 +18,7 @@ namespace Module.UI.Title.Credit
         
         private void Start()
         {
-            anyKeyEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.AnyKey);
+            anyKeyEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.UI.AnyKey);
             scrollable.OnScrollFinished += () =>
             {
                 OnCreditFinished?.Invoke();

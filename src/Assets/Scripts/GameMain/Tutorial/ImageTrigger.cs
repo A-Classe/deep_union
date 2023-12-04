@@ -3,29 +3,29 @@ using UnityEngine.UI;
 
 public class ImageTrigger : MonoBehaviour
 {
-    public RawImage rawImage; // RawImageƒRƒ“ƒ|[ƒlƒ“ƒg‚ğg—p‚·‚é
-    [SerializeField] private float Time = 3.0f;//ƒfƒtƒHƒ‹ƒg‚Í3•b
+    public RawImage rawImage; // RawImageã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’ä½¿ç”¨ã™ã‚‹
+    [SerializeField] private float Time = 3.0f;//ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯3ç§’
     [SerializeField] private string Tag = "Player";
     [SerializeField] private GameObject[] HideObj;
 
     private void Start()
     {
-        rawImage.enabled = false; // ŠJn‚É‰æ‘œ‚ğ”ñ•\¦‚É‚·‚é
+        rawImage.enabled = false; // é–‹å§‹æ™‚ã«ç”»åƒã‚’éè¡¨ç¤ºã«ã™ã‚‹
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(Tag))
         {
-            rawImage.enabled = true; // ‰æ‘œ‚ğ•\¦‚·‚é
-            Invoke("HideImage", Time); // Time•bŒã‚ÉHideImageƒƒ\ƒbƒh‚ğŒÄ‚Ô
+            rawImage.enabled = true; // ç”»åƒã‚’è¡¨ç¤ºã™ã‚‹
+            Invoke("HideImage", Time); // Timeç§’å¾Œã«HideImageãƒ¡ã‚½ãƒƒãƒ‰ã‚’å‘¼ã¶
         }
     }
 
 
     private void HideImage()
     {
-        rawImage.enabled = false; // ‰æ‘œ‚ğ”ñ•\¦‚É‚·‚é
+        rawImage.enabled = false; // ç”»åƒã‚’éè¡¨ç¤ºã«ã™ã‚‹
         foreach (GameObject obj in HideObj)
         {
             Destroy(obj);

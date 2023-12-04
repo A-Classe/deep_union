@@ -10,6 +10,7 @@ using Core.User.API;
 using Core.User.Recorder;
 using GameMain.Presenter;
 using Module.Assignment.Component;
+using Module.GameManagement;
 using Module.GameSetting;
 using Module.Player;
 using Module.Player.Controller;
@@ -61,6 +62,7 @@ namespace GameMain.Router
 
         private readonly GameActionRecorder recorder;
         private readonly FirebaseAccessor db;
+        private readonly TimeManager timeManager;
 
         [Inject]
         public GameRouter(
@@ -83,7 +85,8 @@ namespace GameMain.Router
             BrightController brightController,
             EventBroker eventBroker,
             GameActionRecorder recorder,
-            FirebaseAccessor db
+            FirebaseAccessor db,
+            TimeManager timeManager
         )
         {
             this.spawnParam = spawnParam;
@@ -119,6 +122,7 @@ namespace GameMain.Router
             this.recorder = recorder;
 
             this.db = db;
+            this.timeManager = timeManager;
         }
 
         public void Dispose()
@@ -175,7 +179,7 @@ namespace GameMain.Router
             // Game Clear
             progressObserver.OnCompleted += OnGameClear;
 
-            var escEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.ESC);
+            var escEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.UI.ESC);
             escEvent.Canceled += _ =>
             {
                 uiManager.StartPause();
@@ -200,13 +204,13 @@ namespace GameMain.Router
         // HPが0になった時 or オプション画面で
         private void OnCallGameInactive()
         {
-            workerController.SetPlayed(false);
+            timeManager.Pause();
             playerController.SetState(PlayerState.Pause);
         }
 
         private void OnCallGameActive()
         {
-            workerController.SetPlayed(true);
+            timeManager.Resume();
             playerController.SetState(PlayerState.Auto);
         }
 

@@ -30,7 +30,7 @@ namespace GameMain.Router
             this.holdVisual = holdVisual;
             this.holdVisual.OnHoldFinished += ChangeNextScene;
             
-            anyKeyEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.AnyKey);
+            anyKeyEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.UI.AnyKey);
         }
         public void Start()
         {

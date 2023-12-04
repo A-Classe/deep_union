@@ -33,24 +33,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ESC",
-                    "type": "Button",
-                    "id": "472655fd-8b18-4875-aae9-5b33d2815fc3",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Move",
-                    "type": "Value",
-                    "id": "dfe40a5f-6c4e-4a89-bb42-c59fdfa6c029",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
                     "name": "Rotate",
                     "type": "Value",
                     "id": "ac8d6d16-519b-4e2c-94e7-b37afd5385d0",
@@ -72,15 +54,6 @@
                     "name": "Pin",
                     "type": "Button",
                     "id": "12fd1722-f330-4b84-838b-e3c90872bdf1",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "AnyKey",
-                    "type": "Button",
-                    "id": "776c61ae-9e14-4dbd-bec7-fe841e22d4fe",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -210,72 +183,6 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "dbf0a5cc-8a37-426f-a853-3d86a14223f5",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ESC",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d876c732-09e3-4678-a7a4-7c7e761cc254",
-                    "path": "<Gamepad>/start",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ESC",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "Keyboard",
-                    "id": "2b9b8f44-29dc-483d-b4cc-2ca838d2519c",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "25501436-f06d-42af-94b7-8e512cd332cd",
-                    "path": "<Keyboard>/downArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "0f5cd30d-7a06-43a3-be0d-1f4dfc7f8d1d",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "05700c58-7638-4f3d-9161-2e9503159127",
-                    "path": "<Gamepad>/rightStick/y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
                     "name": "Keyboard",
                     "id": "017df36b-8692-46ec-bd2a-3cfeea498e14",
                     "path": "1DAxis",
@@ -398,7 +305,66 @@
                 },
                 {
                     "name": "",
-                    "id": "ad1730c8-d7ed-456b-93a7-21733286aaa3",
+                    "id": "f9826d00-b99b-41ff-98b2-01218f8c97f5",
+                    "path": "<Mouse>/middleButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pin",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "0fa35982-73dc-47d0-b231-17c1627f06ce",
+            "actions": [
+                {
+                    "name": "ESC",
+                    "type": "Button",
+                    "id": "da8332c5-02d5-45f1-b6b0-0d90291ad325",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "AnyKey",
+                    "type": "Button",
+                    "id": "a16801dd-890d-46af-9e2a-3c325560ec23",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "813f92c3-e7ad-4b01-a12b-5e3e3ad27a3c",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ESC",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f654c838-99e9-4869-9fbd-e23142dfec88",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ESC",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "864948b7-df28-44b9-bb48-aca621764ef3",
                     "path": "<Keyboard>/anyKey",
                     "interactions": "",
                     "processors": "",
@@ -409,18 +375,7 @@
                 },
                 {
                     "name": "",
-                    "id": "f9826d00-b99b-41ff-98b2-01218f8c97f5",
-                    "path": "<Mouse>/middleButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Pin",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a2196f5d-7d46-4a33-a385-9d8db12fd12c",
+                    "id": "7abfde7f-837f-4243-abbe-2f12d487eb80",
                     "path": "<Gamepad>/*",
                     "interactions": "",
                     "processors": "",

@@ -3,6 +3,7 @@ using Core.User;
 using Core.User.API;
 using Debug;
 using GameMain.Presenter;
+using Module.GameManagement;
 using Module.GameSetting;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -23,6 +24,7 @@ namespace GameMain.Container
             builder.RegisterInstance(new AudioMixerController(mixer));
             builder.Register<FirebaseAccessor>(Lifetime.Singleton);
             builder.Register<UserPreference>(Lifetime.Singleton);
+            builder.Register<TimeManager>(Lifetime.Singleton);
         }
     }
 }
