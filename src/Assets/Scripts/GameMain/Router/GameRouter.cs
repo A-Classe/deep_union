@@ -19,6 +19,7 @@ using Module.UI.InGame;
 using Module.Working;
 using Module.Working.Controller;
 using Module.Working.Factory;
+using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
@@ -193,19 +194,21 @@ namespace GameMain.Router
             
             eventBroker.Clear();
             eventBroker.SendEvent(new GamePlay().Event());
-            
-            // db.
+
+            OnCallGameActive();
         }
 
         // HPが0になった時 or オプション画面で
         private void OnCallGameInactive()
         {
+            Time.timeScale = 0f;
             workerController.SetPlayed(false);
             playerController.SetState(PlayerState.Pause);
         }
 
         private void OnCallGameActive()
         {
+            Time.timeScale = 1f;
             workerController.SetPlayed(true);
             playerController.SetState(PlayerState.Auto);
         }

@@ -76,10 +76,14 @@ namespace Module.UI.InGame
                         OnGameInactive?.Invoke();
                         break;
                     case PauseManager.Nav.Restart:
+                        OnGameActive?.Invoke();
+                        OnNeedReport?.Invoke();
                         navigation.SetActive(false);
                         sceneChanger.LoadInGame(sceneChanger.GetInGame());
                         break;
                     case PauseManager.Nav.Exit:
+                        OnGameActive?.Invoke();
+                        OnNeedReport?.Invoke();
                         navigation.SetActive(false);
                         sceneChanger.LoadTitle(TitleNavigation.StageSelect);
                         break;
