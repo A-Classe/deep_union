@@ -8,14 +8,18 @@ namespace Module.Working
 {
     public class WorkerRandomizer : MonoBehaviour
     {
-        [Header("速度のランダム範囲")]
-        [SerializeField] private RandomValueFloat speedRange;
+        [Header("速度のランダム範囲")] [SerializeField] private RandomValueFloat speedRange;
+
         [Header("加速度のランダム範囲")]
-        [SerializeField] private RandomValueFloat accelerationRange;
-        [Header("高さのランダム範囲")]
-        [SerializeField] private RandomValueFloat heightRange;
+        [SerializeField]
+        private RandomValueFloat accelerationRange;
+
+        [Header("高さのランダム範囲")] [SerializeField] private RandomValueFloat heightRange;
+
         [Header("速度変化インターバルのランダム範囲")]
-        [SerializeField] private RandomValueFloat changeIntervalSpeedRange;
+        [SerializeField]
+        private RandomValueFloat changeIntervalSpeedRange;
+
         [SerializeField] private NavMeshAgent navMeshAgent;
         [SerializeField] private Transform bodyTransform;
 
@@ -34,9 +38,12 @@ namespace Module.Working
 
         private async UniTask ChangeSpeedLoop()
         {
-            while (!activeCancellationTokenSource.IsCancellationRequested)
+            CancellationToken destroyCanceller = this.GetCancellationTokenOnDestroy();
+
+            while (!activeCancellationTokenSource.IsCancellationRequested && !destroyCanceller.IsCancellationRequested)
             {
-                await UniTask.Delay(TimeSpan.FromSeconds(changeIntervalSpeedRange.MakeValue()));
+                TimeSpan waitDuration = TimeSpan.FromSeconds(changeIntervalSpeedRange.MakeValue());
+                await UniTask.Delay(waitDuration, cancellationToken: destroyCanceller);
 
                 navMeshAgent.speed = speedRange.MakeValue();
                 navMeshAgent.acceleration = accelerationRange.MakeValue();
