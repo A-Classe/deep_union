@@ -22,7 +22,7 @@ namespace Module.Assignment.System
 
         [Inject]
         public AssignmentSystem(
-            WorkerAssigner workerAssigner, 
+            WorkerAssigner workerAssigner,
             WorkerReleaser workerReleaser,
             TaskActivator taskActivator,
             EventBroker eventBroker
@@ -36,13 +36,25 @@ namespace Module.Assignment.System
             assignEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Assign);
             releaseEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Release);
 
-            assignEvent.Started += _ => { assignState = AssignState.Assign; };
+            assignEvent.Started += _ =>
+            {
+                assignState = AssignState.Assign;
+            };
 
-            assignEvent.Canceled += _ => { assignState = AssignState.Idle; };
+            assignEvent.Canceled += _ =>
+            {
+                assignState = AssignState.Idle;
+            };
 
-            releaseEvent.Started += _ => { assignState = AssignState.Release; };
+            releaseEvent.Started += _ =>
+            {
+                assignState = AssignState.Release;
+            };
 
-            releaseEvent.Canceled += _ => { assignState = AssignState.Idle; };
+            releaseEvent.Canceled += _ =>
+            {
+                assignState = AssignState.Idle;
+            };
 
             taskActivator.OnTaskCreated += SetActiveAreas;
         }
@@ -97,9 +109,6 @@ namespace Module.Assignment.System
             workerReleaser.SetActiveAreas(activeAreas);
         }
 
-        private void OnTaskCompleted(BaseTask task)
-        {
-            workerReleaser.ReleaseAllWorkers(task.GetComponentInChildren<AssignableArea>());
-        }
+        private void OnTaskCompleted(BaseTask task) { }
     }
 }

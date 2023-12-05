@@ -19,9 +19,6 @@ namespace Module.Extension.Task
 {
     public class Enemy1Task : BaseTask
     {
-        private static readonly int IsWalking = Animator.StringToHash("IsWalking");
-        private static readonly int CanBomb = Animator.StringToHash("CanBomb");
-        private static readonly int BodyColor = Shader.PropertyToID("_Color");
         [Header("爆破ダメージ")] [SerializeField] private uint attackPoint;
         [SerializeField] private uint attackPointToOtherTask;
         [SerializeField] private int workerDamageCount;
@@ -30,26 +27,14 @@ namespace Module.Extension.Task
         [SerializeField] private LayerMask damageLayer;
         [SerializeField] private float damageRangeFixOffset;
         [SerializeField] private bool showExplodeRange;
-
-        [Header("ダメージとスケールの比例関数")] [SerializeField]
-        private AnimationCurve damageScaleCurve;
-
-        [Header("ダメージと点滅の比例関数")] [SerializeField]
-        private AnimationCurve damageBlinkCurve;
-
+   
         [SerializeField] private SimpleAgent simpleAgent;
-        [SerializeField] private DecalProjector decalProjector;
         [SerializeField] private AssignableArea assignableArea;
-        [SerializeField] private Animator animator;
         [SerializeField] private Transform scaleBody;
         [SerializeField] private Transform explodeEffectSphere;
-        [SerializeField] private Renderer bodyRenderer;
-        [SerializeField] private BombEffectEvent bombEffectEvent;
-        [SerializeField] private Color blinkColor;
+
         private Vector3 adsorptionOffset;
         private Transform adsorptionTarget;
-        private Tween blinkTween;
-        private Material bodyMaterial;
         private List<Collider> damageBufferList;
         private Vector3 initialScale;
 
@@ -74,16 +59,6 @@ namespace Module.Extension.Task
             }
         }
 
-        private void OnDrawGizmos()
-        {
-            if (!showExplodeRange)
-                return;
-
-            var origin = explodeEffectSphere.position;
-            var radius = transform.localScale.x * explodeEffectSphere.localScale.x * damageRangeFixOffset;
-            Gizmos.color = new Color(1f, 0f, 0f, 0.4f);
-            Gizmos.DrawSphere(origin, radius);
-        }
 
         private void OnTriggerEnter(Collider other)
         {
@@ -122,19 +97,6 @@ namespace Module.Extension.Task
             OnProgressChanged += UpdateBlinkColor;
         }
 
-        private void UpdateBlinkColor(float progress)
-        {
-            if (blinkTween == null)
-                blinkTween = bodyMaterial.DOColor(blinkColor, BodyColor, 1f).SetLoops(-1, LoopType.Yoyo).Play();
-
-            blinkTween.timeScale = damageBlinkCurve.Evaluate(progress);
-        }
-
-        private void UpdateScale(float progress)
-        {
-            scaleBody.localScale = initialScale * damageScaleCurve.Evaluate(progress);
-        }
-
         protected override void OnComplete()
         {
             if (isAdsorption)
@@ -144,7 +106,8 @@ namespace Module.Extension.Task
             SetDetection(false);
             assignableArea.enabled = false;
 
-            ExplodeSequence().Forget();
+            ForceComplete();
+            Disable();
         }
 
         private async UniTaskVoid ExplodeSequence()
@@ -227,6 +190,17 @@ namespace Module.Extension.Task
             decalProjector.enabled = true;
             simpleAgent.SetActive(true);
             navMeshBaker?.Bake().Forget();
+        }
+
+        private void OnDrawGizmos()
+        {
+            if (!showExplodeRange)
+                return;
+
+            var origin = explodeEffectSphere.position;
+            var radius = transform.localScale.x * explodeEffectSphere.localScale.x * damageRangeFixOffset;
+            Gizmos.color = new Color(1f, 0f, 0f, 0.4f);
+            Gizmos.DrawSphere(origin, radius);
         }
     }
 }
