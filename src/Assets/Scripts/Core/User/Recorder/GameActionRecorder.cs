@@ -11,7 +11,7 @@ namespace Core.User.Recorder
 
         private readonly LinkedList<GameEvent> events = new();
 
-        private readonly bool printLog = false;
+        private readonly bool printLog = true;
 
         public event Action<GameEvent> OnAnyEvent;
 

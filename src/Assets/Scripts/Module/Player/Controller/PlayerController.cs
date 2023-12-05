@@ -73,6 +73,7 @@ namespace Module.Player.Controller
                 currentState = states.First(item => item.GetState() == state);
                 currentState.Start();
                 OnStateChanged?.Invoke(state);
+                DebugEx.Log(state);
             }
             catch (Exception e)
             {
