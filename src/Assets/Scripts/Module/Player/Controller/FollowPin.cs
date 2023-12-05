@@ -16,6 +16,7 @@ namespace Module.Player.Controller
     {
         [SerializeField] private Transform pinOrigin;
         [SerializeField] private Transform pinObject;
+        [SerializeField] private Transform pinAssist;
         [SerializeField] private float pinDuration;
         [SerializeField] private Vector3 pinOffset;
         [SerializeField] private LayerMask groundLayer;
@@ -42,6 +43,7 @@ namespace Module.Player.Controller
             pinEvent.Canceled += OnPinReleased;
 
             pinObject.gameObject.SetActive(false);
+            pinAssist.gameObject.SetActive(false);
         }
 
         private void OnPinPushed(InputAction.CallbackContext obj)
@@ -51,6 +53,7 @@ namespace Module.Player.Controller
 
             //長押し待機
             isPinning = true;
+            pinAssist.gameObject.SetActive(true);
             SequencePin().Forget();
         }
 
@@ -60,6 +63,7 @@ namespace Module.Player.Controller
                 return;
 
             isPinning = false;
+            pinAssist.gameObject.SetActive(false);
         }
 
         private async UniTaskVoid SequencePin()
@@ -77,6 +81,8 @@ namespace Module.Player.Controller
 
                 if (isHit)
                 {
+                    pinAssist.gameObject.SetActive(false);
+
                     pinObject.SetParent(null);
                     pinObject.position = pinOrigin.position + pinOffset;
                     pinObject.gameObject.SetActive(true);
