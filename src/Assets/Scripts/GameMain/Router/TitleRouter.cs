@@ -113,19 +113,28 @@ namespace GameMain.Router
                 data.Save();
                 ReloadRanking();
             };
+            rankingManager.OnNeedLoad += ReloadRanking;
         }
 
         private void ReloadRanking()
         {
-            data.Load();
-            UserData userData = data.GetUserData();
-                
-            rankingManager.SetName(userData.name.value);
-            accessor.GetAllData((ranking) =>
+            try
             {
-                rankingManager.SetRanking(ranking, data.GetUserData().uuid.value);
-                rankingManager.Reload();
-            });
+                data.Load();
+                UserData userData = data.GetUserData();
+                
+                rankingManager.SetName(userData.name.value);
+                accessor.GetAllData((ranking) =>
+                {
+                    rankingManager.SetRanking(ranking, data.GetUserData().uuid.value);
+                    rankingManager.Reload();
+                });
+            }
+            catch (Exception e)
+            {
+                UnityEngine.Debug.Log(e);
+                throw;
+            }
         }
 
 

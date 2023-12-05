@@ -69,7 +69,7 @@ namespace Module.Working.State
 
         private bool IsArrived()
         {
-            return navMeshAgent != null && navMeshAgent.remainingDistance == 0f;
+            return navMeshAgent.isActiveAndEnabled && navMeshAgent != null && navMeshAgent.remainingDistance == 0f;
         }
     }
 }
