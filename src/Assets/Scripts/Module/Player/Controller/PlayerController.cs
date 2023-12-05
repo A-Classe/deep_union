@@ -27,6 +27,10 @@ namespace Module.Player.Controller
         private IPlayerState[] states;
 
         public event Action<PlayerState> OnStateChanged;
+        
+        public event Action<float> OnMoveDistance; 
+        
+        private Vector3 lastPosition = Vector3.zero;
 
         /// <summary>
         ///     objectの初期化
@@ -50,6 +54,7 @@ namespace Module.Player.Controller
         private void FixedUpdate()
         {
             StateUpdate();
+            SendLog();
         }
 
         /// <summary>
@@ -85,6 +90,18 @@ namespace Module.Player.Controller
         public PlayerState GetState()
         {
             return currentState.GetState();
+        }
+        
+        
+        private void SendLog()
+        {
+            if (lastPosition != Vector3.zero)
+            {
+                float distance = Vector3.Distance(lastPosition, transform.position);
+                if (Math.Abs(distance) < 0.001f) return;
+                OnMoveDistance?.Invoke(distance);
+            }
+            lastPosition = transform.position;
         }
     }
 }

@@ -42,7 +42,7 @@ namespace Core.Scenes
             {
                 // 上向きの入力
                 case > 0:
-                    nextNav = nav switch
+                    nextNav = nextNav switch
                     {
                         StageNavigation.Back => StageNavigation.Stage1,
                         StageNavigation.Stage1 => StageNavigation.Tutorial,

@@ -1,3 +1,4 @@
+using System;
 using Core.Input;
 using UnityEngine;
 
@@ -19,6 +20,11 @@ namespace Module.Working.Controller
         private InputEvent controlEvent;
 
         private Vector2 input;
+
+        
+        private Vector3 lastPosition = Vector3.zero;
+        
+        public event Action<float> OnMoveDistance; 
 
         private void Awake()
         {
@@ -52,6 +58,7 @@ namespace Module.Working.Controller
             {
                 UpdatePlayerOffset();
             }
+            SendLog();
         }
 
         private void UpdatePlayerOffset()
@@ -59,6 +66,17 @@ namespace Module.Working.Controller
             rig.position += new Vector3(0f, 0f, target.position.z - beforeZ);
 
             beforeZ = target.position.z;
+        }
+
+        private void SendLog()
+        {
+            if (lastPosition != Vector3.zero)
+            {
+                float distance = Vector3.Distance(lastPosition, transform.position);
+                if (Math.Abs(distance) < 0.001f) return;
+                OnMoveDistance?.Invoke(distance);
+            }
+            lastPosition = transform.position;
         }
     }
 }

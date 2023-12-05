@@ -16,6 +16,8 @@ namespace Module.UI.Title.Credit
 
         private InputEvent anyKeyEvent;
         
+        private bool isFinished = false;
+        
         private void Start()
         {
             anyKeyEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.UI.AnyKey);
@@ -25,6 +27,8 @@ namespace Module.UI.Title.Credit
             };
             holdVisual.OnHoldFinished += () =>
             {
+                if (isFinished) return;
+                isFinished = true;
                 OnCreditFinished?.Invoke();
             };
         }
@@ -34,6 +38,7 @@ namespace Module.UI.Title.Credit
             base.Initialized(content, isReset);
             holdVisual.SetVisible(true);
             scrollable.Play();
+            isFinished = false;
         }
 
         private void Update()

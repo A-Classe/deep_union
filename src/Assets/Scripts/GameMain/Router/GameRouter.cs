@@ -170,6 +170,16 @@ namespace GameMain.Router
         {
             uiManager.OnGameInactive += OnCallGameInactive;
             uiManager.OnGameActive += OnCallGameActive;
+
+            playerController.OnMoveDistance += distance =>
+            {
+                eventBroker.SendEvent(new MovePlayer(Math.Abs(distance)).Event());
+            };
+            
+            workerController.OnMoveDistance += distance =>
+            {
+                eventBroker.SendEvent(new MoveWorkers(Math.Abs(distance)).Event());
+            };
         }
 
         private void InitScene()
