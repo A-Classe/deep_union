@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using Wanna.DebugEx;
 
 namespace Module.Working.State
 {
