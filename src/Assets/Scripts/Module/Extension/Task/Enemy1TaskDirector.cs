@@ -1,4 +1,5 @@
 ﻿using System;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -23,17 +24,22 @@ namespace Module.Extension.Task
         [SerializeField] private Animator animator;
         [SerializeField] private Renderer bodyRenderer;
         [SerializeField] private BombEffectEvent bombEffectEvent;
+        [SerializeField] private Transform scaleBody;
         [SerializeField] private Color blinkColor;
+        [SerializeField] private float disableBodyDelay;
         
         private Tween blinkTween;
         private Material bodyMaterial;
+        private Vector3 initialScale;
 
         private void Start()
         {
-            
+            bodyMaterial = bodyRenderer.material;
+            decalProjector.enabled = false;
+            initialScale = transform.localScale;
         }
 
-        private void UpdateBlinkColor(float progress)
+        public void UpdateBlinkColor(float progress)
         {
             if (blinkTween == null)
                 blinkTween = bodyMaterial.DOColor(blinkColor, BodyColor, 1f).SetLoops(-1, LoopType.Yoyo).Play();
@@ -41,10 +47,31 @@ namespace Module.Extension.Task
             blinkTween.timeScale = damageBlinkCurve.Evaluate(progress);
         }
         
-        
-        private void UpdateScale(float progress)
+        public void UpdateScale(float progress)
         {
             scaleBody.localScale = initialScale * damageScaleCurve.Evaluate(progress);
+        }
+
+        public void EnableMovingState()
+        {
+            animator.SetBool(IsWalking, true);
+            decalProjector.enabled = true;
+        }
+
+        public async UniTask AnimateExplode()
+        {
+            //爆破モーション開始
+            animator.SetBool(IsWalking, false);
+            animator.SetTrigger(CanBomb);
+            
+            await UniTask.Delay(TimeSpan.FromSeconds(disableBodyDelay));
+
+            animator.gameObject.SetActive(false);
+        }
+
+        public async UniTask EffectExplode()
+        {
+            await bombEffectEvent.Bomb();
         }
     }
 }

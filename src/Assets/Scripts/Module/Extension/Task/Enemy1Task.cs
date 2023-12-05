@@ -20,23 +20,21 @@ namespace Module.Extension.Task
     public class Enemy1Task : BaseTask
     {
         [Header("爆破ダメージ")] [SerializeField] private uint attackPoint;
+        [Header("爆破するまでの時間")] [SerializeField] private float explodeLimit;
         [SerializeField] private uint attackPointToOtherTask;
         [SerializeField] private int workerDamageCount;
-        [SerializeField] private float explodeStartWaitTime;
-        [SerializeField] private float disableBodyDelay;
         [SerializeField] private LayerMask damageLayer;
         [SerializeField] private float damageRangeFixOffset;
         [SerializeField] private bool showExplodeRange;
-   
+
         [SerializeField] private SimpleAgent simpleAgent;
         [SerializeField] private AssignableArea assignableArea;
-        [SerializeField] private Transform scaleBody;
         [SerializeField] private Transform explodeEffectSphere;
+        [SerializeField] private Enemy1TaskDirector director;
 
         private Vector3 adsorptionOffset;
         private Transform adsorptionTarget;
         private List<Collider> damageBufferList;
-        private Vector3 initialScale;
 
         private bool isAdsorption;
         private RuntimeNavMeshBaker navMeshBaker;
@@ -45,6 +43,24 @@ namespace Module.Extension.Task
 
         private Transform playerTarget;
         private Collider[] workerDamageBuffer;
+
+        public event Action OnBomb;
+
+        public override void Initialize(IObjectResolver container)
+        {
+            playerController = container.Resolve<PlayerController>();
+            playerStatus = container.Resolve<PlayerStatus>();
+            navMeshBaker = container.Resolve<RuntimeNavMeshBaker>();
+            workerDamageBuffer = new Collider[128];
+            damageBufferList = new List<Collider>();
+
+            simpleAgent.SetActive(false);
+
+            OnProgressChanged += director.UpdateScale;
+            OnProgressChanged += director.UpdateBlinkColor;
+
+            CountdownExplode().Forget();
+        }
 
         private void Update()
         {
@@ -59,7 +75,6 @@ namespace Module.Extension.Task
             }
         }
 
-
         private void OnTriggerEnter(Collider other)
         {
             if (isAdsorption)
@@ -67,35 +82,29 @@ namespace Module.Extension.Task
 
             if (other.gameObject.CompareTag("Player"))
             {
-                adsorptionTarget = other.transform;
-                adsorptionOffset = transform.position - adsorptionTarget.position;
-                isAdsorption = true;
-                simpleAgent.SetActive(false);
-                assignableArea.enabled = false;
-
-                SetDetection(false);
-                ExplodeSequence().Forget();
+                Explode(other.transform);
             }
         }
 
-        public event Action OnBomb;
-
-        public override void Initialize(IObjectResolver container)
+        private async UniTaskVoid CountdownExplode()
         {
-            playerController = container.Resolve<PlayerController>();
-            playerStatus = container.Resolve<PlayerStatus>();
-            navMeshBaker = container.Resolve<RuntimeNavMeshBaker>();
-            bodyMaterial = bodyRenderer.material;
-            workerDamageBuffer = new Collider[128];
-            damageBufferList = new List<Collider>();
-            initialScale = transform.localScale;
+            await UniTask.Delay(TimeSpan.FromSeconds(explodeLimit));
 
-            decalProjector.enabled = false;
-            simpleAgent.SetActive(false);
-
-            OnProgressChanged += UpdateScale;
-            OnProgressChanged += UpdateBlinkColor;
+            Explode(transform);
         }
+
+        private void Explode(Transform target)
+        {
+            adsorptionTarget = target.transform;
+            adsorptionOffset = transform.position - adsorptionTarget.position;
+            isAdsorption = true;
+            simpleAgent.SetActive(false);
+            assignableArea.enabled = false;
+
+            SetDetection(false);
+            ExplodeSequence().Forget();
+        }
+
 
         protected override void OnComplete()
         {
@@ -106,22 +115,19 @@ namespace Module.Extension.Task
             SetDetection(false);
             assignableArea.enabled = false;
 
+            //完了したら削除
             ForceComplete();
             Disable();
         }
 
         private async UniTaskVoid ExplodeSequence()
         {
-            //爆破モーション開始
-            animator.SetBool(IsWalking, false);
-            animator.SetTrigger(CanBomb);
-            await UniTask.Delay(TimeSpan.FromSeconds(explodeStartWaitTime));
-
-            DisableBody().Forget();
+            await director.AnimateExplode();
 
             //爆破エフェクト開始
             OnBomb?.Invoke();
-            await bombEffectEvent.Bomb();
+
+            await director.EffectExplode();
 
             DetectExplosionArea();
             Damage();
@@ -130,12 +136,6 @@ namespace Module.Extension.Task
             Disable();
         }
 
-        private async UniTaskVoid DisableBody()
-        {
-            await UniTask.Delay(TimeSpan.FromSeconds(disableBodyDelay));
-
-            animator.gameObject.SetActive(false);
-        }
 
         private void DetectExplosionArea()
         {
@@ -186,8 +186,7 @@ namespace Module.Extension.Task
 
         public void ForceEnable()
         {
-            animator.SetBool(IsWalking, true);
-            decalProjector.enabled = true;
+            director.EnableMovingState();
             simpleAgent.SetActive(true);
             navMeshBaker?.Bake().Forget();
         }
