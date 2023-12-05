@@ -443,9 +443,12 @@ MonoBehaviour:
   workerDamageCount: 10
   damageLayer:
     serializedVersion: 2
-    m_Bits: 65600
+    m_Bits: 65728
   damageRangeFixOffset: 1.52
   showExplodeRange: 0
+  dropCountMin: 3
+  dropCountMax: 5
+  dropSpreadForce: 1000
   simpleAgent: {fileID: 2049491016}
   assignableArea: {fileID: 2024057765428732289}
   explodeEffectSphere: {fileID: 3187036564300092110}
@@ -467,21 +470,21 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
+      value: 1.0114001
+      inSlope: 1.017438
+      outSlope: 1.017438
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
+      value: 2.0288382
+      inSlope: 1.017438
+      outSlope: 1.017438
       tangentMode: 34
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

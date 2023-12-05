@@ -11,7 +11,6 @@ namespace Module.Assignment.System
 {
     public class AssignmentSystem : ITickable, IStartable
     {
-        private readonly List<AssignableArea> activeAreas;
         private readonly InputEvent assignEvent;
         private readonly InputEvent releaseEvent;
         private readonly TaskActivator taskActivator;
@@ -25,17 +24,17 @@ namespace Module.Assignment.System
             WorkerAssigner workerAssigner,
             WorkerReleaser workerReleaser,
             TaskActivator taskActivator,
+            ActiveAreaCollector activeAreaCollector,
             EventBroker eventBroker
         )
         {
             this.workerAssigner = workerAssigner;
             this.workerReleaser = workerReleaser;
             this.taskActivator = taskActivator;
-            activeAreas = new List<AssignableArea>();
 
             assignEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Assign);
             releaseEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Release);
-
+            
             assignEvent.Started += _ =>
             {
                 assignState = AssignState.Assign;
@@ -55,8 +54,6 @@ namespace Module.Assignment.System
             {
                 assignState = AssignState.Idle;
             };
-
-            taskActivator.OnTaskCreated += SetActiveAreas;
         }
 
         public void Start()
@@ -76,39 +73,5 @@ namespace Module.Assignment.System
                     break;
             }
         }
-
-        private void SetActiveAreas()
-        {
-            //タスクのアサインエリアを登録
-            foreach (var task in taskActivator.GetActiveTasks())
-            {
-                var assignableArea = task.GetComponentInChildren<AssignableArea>();
-                assignableArea.enabled = true;
-                activeAreas.Add(assignableArea);
-
-                task.OnCompleted += OnTaskCompleted;
-            }
-
-            taskActivator.OnTaskActivated += task =>
-            {
-                var assignableArea = task.GetComponentInChildren<AssignableArea>();
-                assignableArea.enabled = true;
-                activeAreas.Add(assignableArea);
-
-                task.OnCompleted += OnTaskCompleted;
-            };
-
-            taskActivator.OnTaskDeactivated += task =>
-            {
-                activeAreas[0].enabled = false;
-                OnTaskCompleted(task);
-                activeAreas.RemoveAt(0);
-            };
-
-            workerAssigner.SetActiveAreas(activeAreas);
-            workerReleaser.SetActiveAreas(activeAreas);
-        }
-
-        private void OnTaskCompleted(BaseTask task) { }
     }
 }

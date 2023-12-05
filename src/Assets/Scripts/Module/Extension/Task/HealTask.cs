@@ -9,6 +9,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using VContainer;
 using Wanna.DebugEx;
+using Random = UnityEngine.Random;
 
 namespace Module.Extension.Task
 {
@@ -16,6 +17,7 @@ namespace Module.Extension.Task
     {
         [SerializeField] private NavMeshAgent navMeshAgent;
         [SerializeField] private AssignableArea assignableArea;
+        [SerializeField] private Rigidbody rig;
         [SerializeField] private Collider collision;
         [SerializeField] private uint addHp;
         [SerializeField] private float moveSpeed;
@@ -27,6 +29,8 @@ namespace Module.Extension.Task
 
         private PlayerController playerController;
         private PlayerStatus playerStatus;
+
+        public event Action<HealTask> OnCollected;
 
         private void Update()
         {
@@ -51,6 +55,7 @@ namespace Module.Extension.Task
                 collideObj.SetActive(false);
                 healObj.SetActive(false);
                 WaitSound().Forget();
+                OnCollected?.Invoke(this);
             }
         }
 
@@ -73,8 +78,13 @@ namespace Module.Extension.Task
             assignableArea.OnWorkerExit += (_, _) =>
             {
                 if (WorkerCount < minWorkerCount)
+                {
                     navMeshAgent.enabled = false;
+                }
             };
+
+            navMeshAgent.updatePosition = false;
+            navMeshAgent.updateRotation = false;
         }
 
         //仮でヒール音を待機
@@ -83,6 +93,12 @@ namespace Module.Extension.Task
             await UniTask.Delay(TimeSpan.FromSeconds(1f));
 
             Disable();
+        }
+
+        public void Spread(float force)
+        {
+            Vector2 forceDir = Random.insideUnitCircle * force;
+            rig.AddForce(forceDir.x, 0f, forceDir.y);
         }
     }
 }

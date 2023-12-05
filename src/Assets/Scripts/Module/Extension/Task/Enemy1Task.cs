@@ -14,6 +14,8 @@ using Module.Working;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using VContainer;
+using Wanna.DebugEx;
+using Random = UnityEngine.Random;
 
 namespace Module.Extension.Task
 {
@@ -27,6 +29,10 @@ namespace Module.Extension.Task
         [SerializeField] private float damageRangeFixOffset;
         [SerializeField] private bool showExplodeRange;
 
+        [SerializeField] private int dropCountMin;
+        [SerializeField] private int dropCountMax;
+        [SerializeField] private float dropSpreadForce;
+
         [SerializeField] private SimpleAgent simpleAgent;
         [SerializeField] private AssignableArea assignableArea;
         [SerializeField] private Transform explodeEffectSphere;
@@ -38,6 +44,7 @@ namespace Module.Extension.Task
 
         private bool isAdsorption;
         private RuntimeNavMeshBaker navMeshBaker;
+        private HealTaskPool healTaskPool;
         private PlayerController playerController;
         private PlayerStatus playerStatus;
 
@@ -51,6 +58,7 @@ namespace Module.Extension.Task
             playerController = container.Resolve<PlayerController>();
             playerStatus = container.Resolve<PlayerStatus>();
             navMeshBaker = container.Resolve<RuntimeNavMeshBaker>();
+            healTaskPool = container.Resolve<HealTaskPool>();
             workerDamageBuffer = new Collider[128];
             damageBufferList = new List<Collider>();
 
@@ -58,8 +66,6 @@ namespace Module.Extension.Task
 
             OnProgressChanged += director.UpdateScale;
             OnProgressChanged += director.UpdateBlinkColor;
-
-            CountdownExplode().Forget();
         }
 
         private void Update()
@@ -89,7 +95,6 @@ namespace Module.Extension.Task
         private async UniTaskVoid CountdownExplode()
         {
             await UniTask.Delay(TimeSpan.FromSeconds(explodeLimit));
-
             Explode(transform);
         }
 
@@ -115,9 +120,23 @@ namespace Module.Extension.Task
             SetDetection(false);
             assignableArea.enabled = false;
 
+            Drop();
+
             //完了したら削除
             ForceComplete();
             Disable();
+        }
+
+        private void Drop()
+        {
+            Span<HealTask> tasks = healTaskPool.Get(Random.Range(dropCountMin, dropCountMax + 1));
+
+            foreach (HealTask task in tasks)
+            {
+                task.Enable();
+                task.transform.position = transform.position;
+                task.Spread(dropSpreadForce);
+            }
         }
 
         private async UniTaskVoid ExplodeSequence()
@@ -189,6 +208,8 @@ namespace Module.Extension.Task
             director.EnableMovingState();
             simpleAgent.SetActive(true);
             navMeshBaker?.Bake().Forget();
+
+            CountdownExplode().Forget();
         }
 
         private void OnDrawGizmos()
