@@ -24,10 +24,5 @@ namespace Module.Working
             //鳴らす
             //audioSource.PlayOneShot();
         }
-
-        public void SetVolume(float volume)
-        {
-            audioSource.volume = volume;
-        }
     }
 }
