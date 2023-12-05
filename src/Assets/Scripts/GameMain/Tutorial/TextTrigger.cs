@@ -4,15 +4,15 @@ using Cysharp.Threading.Tasks;
 using GameMain.Tutorial;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+
 using Wanna.DebugEx;
 
 public class TextTrigger : MonoBehaviour
 {
-    public TextMeshProUGUI displayText; // Textコンポーネントを使用する
+    public RawImage displayText; // Textコンポーネントを使用する
     [SerializeField] private float time = 3.0f; //デフォルトは3秒
     [SerializeField] private string triggerTag = "Player";
-    [SerializeField] private GameObject hideObj = null;
+    [SerializeField] private GameObject[] hideObj = null;
 
     private void Start()
     {
@@ -36,6 +36,9 @@ public class TextTrigger : MonoBehaviour
     private void HideText()
     {
         displayText.enabled = false; // テキストを非表示にする
-        hideObj.SetActive(false);
+        foreach (GameObject obj in hideObj)
+        {
+            Destroy(obj);
+        }
     }
 }
