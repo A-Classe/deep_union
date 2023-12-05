@@ -16,14 +16,17 @@ namespace Module.UI.Title.Ranking
     {
         public enum Nav
         {
+            Reload,
             Input,
             Quit,
         }
 
         [SerializeField] private CursorController<Nav> cursor;
         [SerializeField] private FadeInOutButton quit;
-        [SerializeField] private TMP_InputField inputName;
         [SerializeField] private FadeInOutButton input;
+        [SerializeField] private ValidButton reload;
+        
+        [SerializeField] private TMP_InputField inputName;
         [SerializeField] private RankingRow rankingRow1;
         [SerializeField] private RankingRow rankingRow2;
         [SerializeField] private RankingRow rankingRow3;
@@ -39,8 +42,11 @@ namespace Module.UI.Title.Ranking
 
         public event Action<string> OnChangedName;
 
+        public event Action OnNeedLoad;
+
         private void Start()
         {
+            cursor.AddPoint(Nav.Reload, reload.rectTransform);
             cursor.AddPoint(Nav.Quit, quit.rectTransform);
             cursor.AddPoint(Nav.Input, input.rectTransform);
             current = Nav.Quit;
@@ -55,6 +61,13 @@ namespace Module.UI.Title.Ranking
             {
                 case Nav.Quit:
                     OnBack?.Invoke();
+                    break;
+                case Nav.Reload:
+                    if (!reload.IsValid)
+                    {
+                        reload.SetValidVisual(true);
+                        OnNeedLoad?.Invoke();
+                    }
                     break;
                 case Nav.Input:
                     if (currentName != inputName.text)
@@ -81,7 +94,7 @@ namespace Module.UI.Title.Ranking
             {
                 // 上向きの入力
                 case > 0:
-                    if (current.Value == Nav.Input) return;
+                    if (current.Value == Nav.Reload) return;
                     nextNav = current.Value - 1;
                     break;
                 // 下向きの入力
@@ -166,6 +179,7 @@ namespace Module.UI.Title.Ranking
 
         public void Reload()
         {
+            reload.SetValidVisual(false);
             lists.Clear();
             lists.Add(rankingRow1);
             lists.Add(rankingRow2);
