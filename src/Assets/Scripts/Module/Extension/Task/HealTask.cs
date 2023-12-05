@@ -22,14 +22,11 @@ namespace Module.Extension.Task
         [SerializeField] private int minWorkerCount;
         [SerializeField] private int maxWorkerCount;
 
-        [SerializeField] private AudioSource audioSource;
-        [SerializeField] private AudioClip HealSound;
         [SerializeField] private GameObject collideObj;
         [SerializeField] private GameObject healObj;
 
         private PlayerController playerController;
         private PlayerStatus playerStatus;
-        private RuntimeNavMeshBaker runtimeNavMeshBaker;
 
         private void Update()
         {
@@ -51,7 +48,6 @@ namespace Module.Extension.Task
                 playerStatus.AddHp(addHp);
                 ForceComplete();
 
-                audioSource.PlayOneShot(HealSound);
                 collideObj.SetActive(false);
                 healObj.SetActive(false);
                 WaitSound().Forget();
@@ -62,16 +58,14 @@ namespace Module.Extension.Task
         {
             collision.gameObject.layer = LayerMask.NameToLayer("Detection");
             playerController = container.Resolve<PlayerController>();
-            runtimeNavMeshBaker = container.Resolve<RuntimeNavMeshBaker>();
             playerStatus = container.Resolve<PlayerStatus>();
 
             ForceComplete();
 
-            assignableArea.OnWorkerEnter += async (_, _) =>
+            assignableArea.OnWorkerEnter += (_, _) =>
             {
                 if (WorkerCount >= minWorkerCount)
                 {
-                    await runtimeNavMeshBaker.Bake();
                     navMeshAgent.enabled = true;
                 }
             };
@@ -81,22 +75,6 @@ namespace Module.Extension.Task
                 if (WorkerCount < minWorkerCount)
                     navMeshAgent.enabled = false;
             };
-
-            AdjustNavMesh().Forget();
-        }
-
-        private async UniTaskVoid AdjustNavMesh()
-        {
-            //手動更新のため無効化
-            navMeshAgent.updateRotation = false;
-            navMeshAgent.updatePosition = false;
-            navMeshAgent.enabled = true;
-
-            await UniTask.WaitUntil(() => navMeshAgent.isOnNavMesh,
-                cancellationToken: this.GetCancellationTokenOnDestroy());
-            await runtimeNavMeshBaker.Bake();
-
-            navMeshAgent.enabled = false;
         }
 
         //仮でヒール音を待機
