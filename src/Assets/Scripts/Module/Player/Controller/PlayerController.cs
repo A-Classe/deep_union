@@ -38,7 +38,8 @@ namespace Module.Player.Controller
 
             states = new IPlayerState[]
             {
-                new PauseState(rig, setting),
+                new PauseState(rig),
+                new StopState(rig, setting),
                 new AutoState(rig, setting),
                 new FollowToPinState(rig, navMeshAgent, navMeshObstacle, followPin)
             };
@@ -67,6 +68,7 @@ namespace Module.Player.Controller
                 currentState = states.First(item => item.GetState() == state);
                 currentState.Start();
                 OnStateChanged?.Invoke(state);
+                DebugEx.Log(state);
             }
             catch (Exception e)
             {

@@ -11,6 +11,11 @@ namespace Module.Player.State
         Pause,
             
         /// <summary>
+        ///     ゲーム上の停止
+        /// </summary>
+        Stop,
+            
+        /// <summary>
         ///     ピンに追従する
         /// </summary>
         FollowToPin,

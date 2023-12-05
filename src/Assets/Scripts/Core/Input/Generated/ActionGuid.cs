@@ -29,6 +29,7 @@ namespace Core.Input
        public readonly Guid MapId = new Guid("0fa35982-73dc-47d0-b231-17c1627f06ce");
        public readonly Guid ESC = new Guid("da8332c5-02d5-45f1-b6b0-0d90291ad325");
        public readonly Guid AnyKey = new Guid("a16801dd-890d-46af-9e2a-3c325560ec23");
+       public readonly Guid Confirm = new Guid("afdfbdb8-c936-4a9d-a61a-9ea47fe65141");
     }
 
     public class Title

@@ -23,7 +23,6 @@ namespace Module.GameManagement
 
         public void Resume()
         {
-            return;
             Time.timeScale = 1;
             inGameActionMap.Enable();
         }

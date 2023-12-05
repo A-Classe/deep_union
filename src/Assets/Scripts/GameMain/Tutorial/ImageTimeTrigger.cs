@@ -16,14 +16,14 @@ public class ImageTimeTrigger : MonoBehaviour
         imageToDisplay.enabled = false;
 
         // 一定時間が経過したら画像を表示する
-        Invoke("DisplayImage", displayDelay);      
+        Invoke(nameof(DisplayImage), displayDelay);      
     }
 
     private void DisplayImage()
     {
         // 画像を表示する
         imageToDisplay.enabled = true;
-        Invoke("HideImage", Time); // Time秒後にHideImageメソッドを呼ぶ
+        Invoke(nameof(HideImage), Time); // Time秒後にHideImageメソッドを呼ぶ
     }
     private void HideImage()
     {

@@ -13,7 +13,6 @@ namespace GameMain.Container
         protected override void Configure(IContainerBuilder builder)
         {
             builder.RegisterEntryPoint<TutorialSequencer>();
-            
         }
     }
 }

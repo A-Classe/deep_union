@@ -5,13 +5,12 @@ namespace Module.Player.State
     public class PauseState : IPlayerState
     {
         private readonly Rigidbody rigidbody;
-        private readonly MovementSetting movementSetting;
-        private float currentSpeed;
+        private Vector3 velocity;
+        private Vector3 angularVelocity;
 
-        public PauseState(Rigidbody rigidbody, MovementSetting movementSetting)
+        public PauseState(Rigidbody rigidbody)
         {
             this.rigidbody = rigidbody;
-            this.movementSetting = movementSetting;
         }
 
         public PlayerState GetState()
@@ -21,20 +20,18 @@ namespace Module.Player.State
 
         public void Start()
         {
-            currentSpeed = rigidbody.velocity.magnitude;
+            velocity = rigidbody.velocity;
+            angularVelocity = rigidbody.angularVelocity;
+            rigidbody.isKinematic = true;
         }
 
-        public void Stop() { }
-
-        public void FixedUpdate()
+        public void Stop()
         {
-            //徐々に減速しながら停止
-            currentSpeed -= movementSetting.Resistance * Time.fixedDeltaTime;
-            
-            //速度制限
-            currentSpeed = Mathf.Clamp(currentSpeed, movementSetting.MinSpeed, movementSetting.MaxSpeed);
-
-            rigidbody.velocity = rigidbody.transform.forward * currentSpeed;
+            rigidbody.velocity = velocity;
+            rigidbody.angularVelocity = angularVelocity;
+            rigidbody.isKinematic = false;
         }
+
+        public void FixedUpdate() { }
     }
 }

@@ -1,3 +1,7 @@
+using System;
+using Core.Input;
+using Cysharp.Threading.Tasks;
+using GameMain.Tutorial;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -6,10 +10,9 @@ using Wanna.DebugEx;
 public class TextTrigger : MonoBehaviour
 {
     public TextMeshProUGUI displayText; // Textコンポーネントを使用する
-    [SerializeField] private float Time = 3.0f;//デフォルトは3秒
-    [SerializeField] private string Tag = "Player";
-    [SerializeField] private GameObject HideObj = null;
-
+    [SerializeField] private float time = 3.0f; //デフォルトは3秒
+    [SerializeField] private string triggerTag = "Player";
+    [SerializeField] private GameObject hideObj = null;
 
     private void Start()
     {
@@ -18,11 +21,10 @@ public class TextTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        DebugEx.Log(other.name);
-        if (other.CompareTag(Tag))
+        if (other.CompareTag(triggerTag))
         {
             ShowText(); // プレイヤーがエリアに入っており、テキストがまだ表示されていない場合は表示する
-            Invoke("HideText", Time); // Time秒後に非表示にする
+            Invoke(nameof(HideText), time);
         }
     }
 
@@ -34,6 +36,6 @@ public class TextTrigger : MonoBehaviour
     private void HideText()
     {
         displayText.enabled = false; // テキストを非表示にする
-        HideObj.SetActive(false);
+        hideObj.SetActive(false);
     }
 }
