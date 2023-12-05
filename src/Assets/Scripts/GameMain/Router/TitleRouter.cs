@@ -251,7 +251,6 @@ namespace GameMain.Router
         {
             rankingManager.SetStage(stage);
             ReloadRanking();
-            rankingManager.Reload();
             navigation.SetScreen(TitleNavigation.Ranking);
         }
 

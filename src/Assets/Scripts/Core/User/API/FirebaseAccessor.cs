@@ -92,6 +92,7 @@ namespace Core.User.API
             {
                 Debug.Log("Not Connection Network");
                 OnCallback?.Invoke(ranking);
+                return;
             }
             try
             {

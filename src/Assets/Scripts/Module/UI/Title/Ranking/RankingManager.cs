@@ -33,6 +33,7 @@ namespace Module.UI.Title.Ranking
         [SerializeField] private RankingRow rankingRow4;
         [SerializeField] private RankingRow rankingRow5;
         [SerializeField] private RankingRow myRankingRow;
+        [SerializeField] private PopupWindow popupWindow;
 
         private List<RankingRow> lists = new();
 
@@ -51,12 +52,17 @@ namespace Module.UI.Title.Ranking
             cursor.AddPoint(Nav.Input, input.rectTransform);
             current = Nav.Quit;
 
-            SetState(Nav.Quit); 
+            SetState(Nav.Quit);
         }
 
         private string currentName = "";
         public override void Clicked()
         {
+            if (popupWindow.IsVisible)
+            {
+                popupWindow.SetVisible(false);
+                return;
+            }
             switch (current)
             {
                 case Nav.Quit:
@@ -65,8 +71,7 @@ namespace Module.UI.Title.Ranking
                 case Nav.Reload:
                     if (!reload.IsValid)
                     {
-                        rankings.Clear();
-                        Reload();
+                        Clear();
                         reload.SetValidVisual(true);
                         OnNeedLoad?.Invoke();
                     }
@@ -84,6 +89,10 @@ namespace Module.UI.Title.Ranking
 
         public override void Select(Vector2 direction)
         {
+            if (popupWindow.IsVisible)
+            {
+                popupWindow.SetVisible(false);
+            }
             if (!current.HasValue)
             {
                 SetState(Nav.Quit);
@@ -201,8 +210,9 @@ namespace Module.UI.Title.Ranking
                     currentStage
                 );
             }
-            if (!rankings.ContainsKey(currentStage))
+            if (!rankings.ContainsKey(currentStage) || rankings.Count == 0)
             {
+                popupWindow.SetVisible(true);
                 return;
             }
 
@@ -215,6 +225,31 @@ namespace Module.UI.Title.Ranking
                 }
                 if (i > lists.Count - 1) return;
                 SetRankingRef(lists[i], i + 1, currents[i], currentStage);
+            }
+        }
+        
+        private void Clear()
+        {
+            rankings.Clear();
+            reload.SetValidVisual(false);
+            lists.Clear();
+            lists.Add(rankingRow1);
+            lists.Add(rankingRow2);
+            lists.Add(rankingRow3);
+            lists.Add(rankingRow4);
+            lists.Add(rankingRow5);
+            for (var i = 0; i < lists.Count; i++)
+            {
+                SetRankingRef(
+                    lists[i], 
+                    i + 1, 
+                    new RankingUser{
+                        ID = "",
+                        Name = "",
+                        Stages = new()
+                    },
+                    currentStage
+                );
             }
         }
     }
