@@ -36,6 +36,11 @@ namespace Module.Player.Controller
         private bool isPinning;
         private CancellationTokenSource combinedCanceller;
 
+        private readonly PinAssistantVisualizer assistVisualizer;
+        private static readonly float gradationMax = 1.5f;
+        private static readonly float maxTime = 2.0f;
+        private float pushingTime = 0f;
+
         private void Start()
         {
             pinEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Pin);
@@ -53,6 +58,8 @@ namespace Module.Player.Controller
 
             //長押し待機
             isPinning = true;
+            pushingTime += Time.deltaTime;
+            assistVisualizer.setGradationRate(gradationMax - Mathf.Lerp(0, maxTime, pushingTime));
             pinAssist.gameObject.SetActive(true);
             SequencePin().Forget();
         }
@@ -63,6 +70,8 @@ namespace Module.Player.Controller
                 return;
 
             isPinning = false;
+            assistVisualizer.setGradationRate(gradationMax);
+            pushingTime = 0f;
             pinAssist.gameObject.SetActive(false);
         }
 
