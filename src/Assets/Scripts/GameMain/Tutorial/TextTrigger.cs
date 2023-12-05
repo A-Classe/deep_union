@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Wanna.DebugEx;
 
 public class TextTrigger : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class TextTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        DebugEx.Log(other.name);
         if (other.CompareTag(Tag))
         {
             ShowText(); // プレイヤーがエリアに入っており、テキストがまだ表示されていない場合は表示する
