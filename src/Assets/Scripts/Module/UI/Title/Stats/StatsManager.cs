@@ -70,8 +70,8 @@ namespace Module.UI.Title.Stats
             release.text = report.releaseCount.ToString();
             addWorker.text = report.addWorkerCount.ToString();
             delWorker.text = report.delWorkerCount.ToString();
-            movePlayer.text = report.movePlayerDistance.ToString();
-            moveWorkers.text = report.moveWorkersDistance.ToString();
+            movePlayer.text = ((int)report.movePlayerDistance).ToString();
+            moveWorkers.text = ((int)report.moveWorkersDistance).ToString();
             play.text = report.gamePlayCount.ToString();
             clear.text = report.gameClear.ToString();
             gameOver.text = report.gameOver.ToString();

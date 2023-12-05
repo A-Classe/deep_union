@@ -56,7 +56,7 @@ namespace Core.Model.User
             Distance
         }
 
-        MovePlayer(float distance)
+        public MovePlayer(float distance)
         {
             param.Add(ParamType.Distance.ToString(), distance);
         }
@@ -75,7 +75,7 @@ namespace Core.Model.User
             Distance
         }
 
-        MoveWorkers(float distance)
+        public MoveWorkers(float distance)
         {
             param.Add(ParamType.Distance.ToString(), distance);
         }
