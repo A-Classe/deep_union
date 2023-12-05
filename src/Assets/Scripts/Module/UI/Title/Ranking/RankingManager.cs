@@ -65,6 +65,8 @@ namespace Module.UI.Title.Ranking
                 case Nav.Reload:
                     if (!reload.IsValid)
                     {
+                        rankings.Clear();
+                        Reload();
                         reload.SetValidVisual(true);
                         OnNeedLoad?.Invoke();
                     }

@@ -38,6 +38,7 @@ namespace Core.Utility.UI.Component
         public void SetValidVisual(bool isActive)
         {
             grey.SetActive(isActive);
+            transform.rotation = Quaternion.identity;
         }
     }
 }
