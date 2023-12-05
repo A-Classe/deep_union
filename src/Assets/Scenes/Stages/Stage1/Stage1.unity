@@ -3463,10 +3463,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2005738140, guid: a9e893c375aaf4541bf60405b51adc86, type: 3}
-      propertyPath: avoidancePriority
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 8011763557642929953, guid: a9e893c375aaf4541bf60405b51adc86,
         type: 3}
       propertyPath: m_Name
@@ -3527,16 +3523,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8011763557642929962, guid: a9e893c375aaf4541bf60405b51adc86,
-        type: 3}
-      propertyPath: followPin
-      value: 
-      objectReference: {fileID: 714723295}
-    - target: {fileID: 8011763557642929962, guid: a9e893c375aaf4541bf60405b51adc86,
-        type: 3}
-      propertyPath: navMeshObstacle
-      value: 
-      objectReference: {fileID: 2005738145}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9e893c375aaf4541bf60405b51adc86, type: 3}
 --- !u!114 &241675932 stripped
@@ -3545,7 +3531,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 241675931}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754462954}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de86188d99074df4af44ac11d661c012, type: 3}
@@ -7858,22 +7844,22 @@ PrefabInstance:
     - target: {fileID: 9191752624270989848, guid: 64dae455b8c7a9f468a7cc438028391e,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1e-45
+      value: 3e-45
       objectReference: {fileID: 0}
     - target: {fileID: 9191752624270989848, guid: 64dae455b8c7a9f468a7cc438028391e,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9191752624670590977, guid: 64dae455b8c7a9f468a7cc438028391e,
-        type: 3}
-      propertyPath: m_LocalRotation.y
       value: -1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 9191752624670590977, guid: 64dae455b8c7a9f468a7cc438028391e,
         type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 3e-45
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191752624670590977, guid: 64dae455b8c7a9f468a7cc438028391e,
+        type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 9191752624852349592, guid: 64dae455b8c7a9f468a7cc438028391e,
         type: 3}
@@ -7937,18 +7923,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64dae455b8c7a9f468a7cc438028391e, type: 3}
---- !u!114 &714723295 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 714723296, guid: 64dae455b8c7a9f468a7cc438028391e,
-    type: 3}
-  m_PrefabInstance: {fileID: 714723294}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1ee082a9d5a4b6eabeeafac59e094f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &727273506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16450,12 +16424,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1c05297bf1a4f54e815c1a20146fde7, type: 3}
---- !u!1 &1754462954 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8011763557642929953, guid: a9e893c375aaf4541bf60405b51adc86,
-    type: 3}
-  m_PrefabInstance: {fileID: 241675931}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1759046488
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18081,28 +18049,12 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 241675931}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754462954}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 910c4663d8b46e941afd3fc971d356e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!208 &2005738145
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754462954}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.9, y: 0.665, z: 1.765}
-  m_MoveThreshold: 1
-  m_Carve: 1
-  m_CarveOnlyStationary: 0
-  m_Center: {x: 0, y: 1.99, z: -0.46}
-  m_TimeToStationary: 0.1
 --- !u!1001 &2017578557
 PrefabInstance:
   m_ObjectHideFlags: 0
