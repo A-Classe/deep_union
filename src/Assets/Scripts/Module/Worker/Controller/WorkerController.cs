@@ -1,6 +1,8 @@
 using System;
 using Core.Input;
+using Module.Player;
 using UnityEngine;
+using Wanna.DebugEx;
 
 namespace Module.Working.Controller
 {
@@ -11,8 +13,11 @@ namespace Module.Working.Controller
     {
         [Header("移動速度")] [SerializeField] private float controlSpeed;
         [Header("最大速度")] [SerializeField] private float maxSpeed;
+        [Header("移動制限")] [SerializeField] private float moveLimitRange;
+        [SerializeField] private float fixMultiplier;
 
         [SerializeField] private Transform target;
+        [SerializeField] private SonarVisualizer sonarVisualizer;
         [SerializeField] private Rigidbody rig;
         [SerializeField] private bool isUpdatePlayerOffset;
         private float beforeZ;
@@ -21,16 +26,19 @@ namespace Module.Working.Controller
 
         private Vector2 input;
 
-        
+
         private Vector3 lastPosition = Vector3.zero;
-        
-        public event Action<float> OnMoveDistance; 
+
+        public event Action<float> OnMoveDistance;
 
         private void Awake()
         {
             //入力イベントの生成
             controlEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Control);
             beforeZ = target.position.z;
+
+            DebugEx.Assert(sonarVisualizer != null, "sonarVisualizerがアタッチされていません");
+            sonarVisualizer.SetSize(moveLimitRange);
         }
 
         private void Update()
@@ -52,12 +60,18 @@ namespace Module.Working.Controller
             }
 
             rig.velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
-            rig.position += velocity * Time.fixedDeltaTime;
+
+            Vector3 position = rig.position;
+            Vector3 sonarPosition = sonarVisualizer.transform.position;
+            position += velocity * Time.fixedDeltaTime;
+            position = sonarPosition + Vector3.ClampMagnitude(position - sonarPosition, moveLimitRange * fixMultiplier);
+            rig.position = position;
 
             if (isUpdatePlayerOffset)
             {
                 UpdatePlayerOffset();
             }
+
             SendLog();
         }
 
@@ -76,6 +90,7 @@ namespace Module.Working.Controller
                 if (Math.Abs(distance) < 0.001f) return;
                 OnMoveDistance?.Invoke(distance);
             }
+
             lastPosition = transform.position;
         }
     }
