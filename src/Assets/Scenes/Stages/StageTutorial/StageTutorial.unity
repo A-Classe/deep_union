@@ -4986,6 +4986,7 @@ MonoBehaviour:
   playerController: {fileID: 241675932}
   goalPoint: {fileID: 1473537254}
   progressPool: {fileID: 1339084536}
+  healTaskPool: {fileID: 0}
   playerStatusVisualizer: {fileID: 2005738134}
   inGameUIManager: {fileID: 149019584}
   brightController: {fileID: 1172888603}
@@ -6321,25 +6322,35 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Worker
       objectReference: {fileID: 0}
+    - target: {fileID: 9191752623537322787, guid: 64dae455b8c7a9f468a7cc438028391e,
+        type: 3}
+      propertyPath: moveLimitRange
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191752623537322787, guid: 64dae455b8c7a9f468a7cc438028391e,
+        type: 3}
+      propertyPath: sonarVisualizer
+      value: 
+      objectReference: {fileID: 1610454620}
     - target: {fileID: 9191752624270989848, guid: 64dae455b8c7a9f468a7cc438028391e,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000016157781
+      value: 0.000000016157777
       objectReference: {fileID: 0}
     - target: {fileID: 9191752624270989848, guid: 64dae455b8c7a9f468a7cc438028391e,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000005914873
+      value: -0.000000005914872
       objectReference: {fileID: 0}
     - target: {fileID: 9191752624670590977, guid: 64dae455b8c7a9f468a7cc438028391e,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000016157781
+      value: 0.000000016157777
       objectReference: {fileID: 0}
     - target: {fileID: 9191752624670590977, guid: 64dae455b8c7a9f468a7cc438028391e,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000005914873
+      value: -0.000000005914872
       objectReference: {fileID: 0}
     - target: {fileID: 9191752624852349592, guid: 64dae455b8c7a9f468a7cc438028391e,
         type: 3}
@@ -13645,6 +13656,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1894437056}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1610454620 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1868857603724377976, guid: a9e893c375aaf4541bf60405b51adc86,
+    type: 3}
+  m_PrefabInstance: {fileID: 241675931}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1842cbab065aeed4a946395ba54be438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1615917239 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6312745183291091768, guid: fb440e88f928c8a4dba9a45af5b5b8de,
