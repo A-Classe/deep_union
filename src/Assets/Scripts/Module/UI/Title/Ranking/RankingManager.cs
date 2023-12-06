@@ -16,20 +16,24 @@ namespace Module.UI.Title.Ranking
     {
         public enum Nav
         {
+            Reload,
             Input,
             Quit,
         }
 
         [SerializeField] private CursorController<Nav> cursor;
         [SerializeField] private FadeInOutButton quit;
-        [SerializeField] private TMP_InputField inputName;
         [SerializeField] private FadeInOutButton input;
+        [SerializeField] private ValidButton reload;
+        
+        [SerializeField] private TMP_InputField inputName;
         [SerializeField] private RankingRow rankingRow1;
         [SerializeField] private RankingRow rankingRow2;
         [SerializeField] private RankingRow rankingRow3;
         [SerializeField] private RankingRow rankingRow4;
         [SerializeField] private RankingRow rankingRow5;
         [SerializeField] private RankingRow myRankingRow;
+        [SerializeField] private PopupWindow popupWindow;
 
         private List<RankingRow> lists = new();
 
@@ -39,22 +43,38 @@ namespace Module.UI.Title.Ranking
 
         public event Action<string> OnChangedName;
 
+        public event Action OnNeedLoad;
+
         private void Start()
         {
+            cursor.AddPoint(Nav.Reload, reload.rectTransform);
             cursor.AddPoint(Nav.Quit, quit.rectTransform);
             cursor.AddPoint(Nav.Input, input.rectTransform);
             current = Nav.Quit;
 
-            SetState(Nav.Quit); 
+            SetState(Nav.Quit);
         }
 
         private string currentName = "";
         public override void Clicked()
         {
+            if (popupWindow.IsVisible)
+            {
+                popupWindow.SetVisible(false);
+                return;
+            }
             switch (current)
             {
                 case Nav.Quit:
                     OnBack?.Invoke();
+                    break;
+                case Nav.Reload:
+                    if (!reload.IsValid)
+                    {
+                        Clear();
+                        reload.SetValidVisual(true);
+                        OnNeedLoad?.Invoke();
+                    }
                     break;
                 case Nav.Input:
                     if (currentName != inputName.text)
@@ -69,6 +89,10 @@ namespace Module.UI.Title.Ranking
 
         public override void Select(Vector2 direction)
         {
+            if (popupWindow.IsVisible)
+            {
+                popupWindow.SetVisible(false);
+            }
             if (!current.HasValue)
             {
                 SetState(Nav.Quit);
@@ -81,7 +105,7 @@ namespace Module.UI.Title.Ranking
             {
                 // 上向きの入力
                 case > 0:
-                    if (current.Value == Nav.Input) return;
+                    if (current.Value == Nav.Reload) return;
                     nextNav = current.Value - 1;
                     break;
                 // 下向きの入力
@@ -166,6 +190,7 @@ namespace Module.UI.Title.Ranking
 
         public void Reload()
         {
+            reload.SetValidVisual(false);
             lists.Clear();
             lists.Add(rankingRow1);
             lists.Add(rankingRow2);
@@ -185,8 +210,9 @@ namespace Module.UI.Title.Ranking
                     currentStage
                 );
             }
-            if (!rankings.ContainsKey(currentStage))
+            if (!rankings.ContainsKey(currentStage) || rankings.Count == 0)
             {
+                popupWindow.SetVisible(true);
                 return;
             }
 
@@ -199,6 +225,31 @@ namespace Module.UI.Title.Ranking
                 }
                 if (i > lists.Count - 1) return;
                 SetRankingRef(lists[i], i + 1, currents[i], currentStage);
+            }
+        }
+        
+        private void Clear()
+        {
+            rankings.Clear();
+            reload.SetValidVisual(false);
+            lists.Clear();
+            lists.Add(rankingRow1);
+            lists.Add(rankingRow2);
+            lists.Add(rankingRow3);
+            lists.Add(rankingRow4);
+            lists.Add(rankingRow5);
+            for (var i = 0; i < lists.Count; i++)
+            {
+                SetRankingRef(
+                    lists[i], 
+                    i + 1, 
+                    new RankingUser{
+                        ID = "",
+                        Name = "",
+                        Stages = new()
+                    },
+                    currentStage
+                );
             }
         }
     }
