@@ -45,7 +45,7 @@ namespace Module.Extension.Task
             }
         }
 
-        private void OnTriggerEnter(Collider other)
+        private async void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("Player"))
             {
@@ -54,7 +54,7 @@ namespace Module.Extension.Task
 
                 collideObj.SetActive(false);
                 healObj.SetActive(false);
-                WaitSound().Forget();
+                await WaitSound();
                 OnCollected?.Invoke(this);
             }
         }
@@ -88,11 +88,9 @@ namespace Module.Extension.Task
         }
 
         //仮でヒール音を待機
-        private async UniTaskVoid WaitSound()
+        private async UniTask WaitSound()
         {
             await UniTask.Delay(TimeSpan.FromSeconds(1f));
-
-            Disable();
         }
 
         public void Spread(float force)

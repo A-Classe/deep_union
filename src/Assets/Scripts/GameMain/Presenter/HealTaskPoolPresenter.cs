@@ -8,10 +8,10 @@ namespace GameMain.Presenter
     public class HealTaskPoolPresenter : IInitializable
     {
         [Inject]
-        public HealTaskPoolPresenter(HealTaskPool healTaskPool, ActiveAreaCollector areaCollector)
+        public HealTaskPoolPresenter(HealTaskPool healTaskPool, TaskActivator taskActivator)
         {
-            healTaskPool.OnHealTaskDrop += areaCollector.ActivateArea;
-            healTaskPool.OnHealTaskCollected += areaCollector.DeactivateArea;
+            healTaskPool.OnHealTaskDrop += taskActivator.ForceActivate;
+            healTaskPool.OnHealTaskCollected += taskActivator.ForceDeactivate;
         }
 
         public void Initialize() { }

@@ -50,11 +50,16 @@ namespace Module.Task
             OnTaskInitialized?.Invoke(tasks.AsMemory(head, tail + 1));
         }
 
+        public ReadOnlySpan<BaseTask> GetAllTasks()
+        {
+            return tasks.AsSpan();
+        }
+
         public void Tick()
         {
             //カメラ内オブジェクトの検出
             DetectInsideTask();
-            
+
             //カメラ外オブジェクトの検出
             DetectOutisideTask();
         }
@@ -133,6 +138,18 @@ namespace Module.Task
             }
 
             return isOutside;
+        }
+
+        public void ForceActivate(BaseTask task)
+        {
+            task.Enable();
+            OnTaskActivated?.Invoke(task);
+        }
+
+        public void ForceDeactivate(BaseTask task)
+        {
+            OnTaskDeactivated?.Invoke(task);
+            task.Disable();
         }
 
         private bool IsInsideCamera(Vector3 taskPos)

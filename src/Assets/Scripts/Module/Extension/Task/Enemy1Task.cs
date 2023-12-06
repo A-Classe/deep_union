@@ -133,7 +133,6 @@ namespace Module.Extension.Task
 
             foreach (HealTask task in tasks)
             {
-                task.Enable();
                 task.transform.position = transform.position;
                 task.Spread(dropSpreadForce);
             }

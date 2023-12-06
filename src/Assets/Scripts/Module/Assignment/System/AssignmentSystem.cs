@@ -63,9 +63,9 @@ namespace Module.Assignment.System
         public void Start()
         {
             //タスク完了時のコールバックを登録
-            taskActivator.OnTaskInitialized += initializedTasks =>
+            taskActivator.OnTaskInitialized += _ =>
             {
-                foreach (var task in initializedTasks.Span)
+                foreach (var task in taskActivator.GetAllTasks())
                 {
                     task.OnCompleted += OnTaskCompleted;
                 }
@@ -93,7 +93,6 @@ namespace Module.Assignment.System
         {
             //完了したら自動的に子機に戻す
             workerReleaser.ReleaseAllWorkers(task.GetComponentInChildren<AssignableArea>());
-            task.OnCompleted -= OnTaskCompleted;
         }
     }
 }
