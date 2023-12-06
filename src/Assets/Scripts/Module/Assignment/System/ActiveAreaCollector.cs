@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Module.Assignment.Component;
 using Module.Task;
@@ -27,13 +28,13 @@ namespace Module.Assignment.System
 
             activeAreas = new List<AssignableArea>();
 
-            taskActivator.OnTaskCreated += SetActiveAreas;
+            taskActivator.OnTaskInitialized += SetActiveAreas;
         }
 
-        private void SetActiveAreas()
+        private void SetActiveAreas(ReadOnlyMemory<BaseTask> initializedTasks)
         {
             //タスクのアサインエリアを登録
-            foreach (var task in taskActivator.GetActiveTasks())
+            foreach (var task in initializedTasks.Span)
             {
                 ActivateArea(task);
             }

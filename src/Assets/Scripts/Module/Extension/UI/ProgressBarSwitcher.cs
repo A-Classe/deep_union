@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Module.Task;
 using Module.UI.HUD;
@@ -23,7 +24,19 @@ namespace Module.Extension.UI
             this.taskActivator = taskActivator;
             activeViews = new Dictionary<BaseTask, TaskProgressView>(64);
 
-            this.taskActivator.OnTaskCreated += Initialize;
+            this.taskActivator.OnTaskInitialized += Initialize;
+        }
+
+        private void Initialize(ReadOnlyMemory<BaseTask> initializedTasks)
+        {
+            foreach (var task in initializedTasks.Span)
+            {
+                OnTaskActivated(task);
+            }
+
+            //ゲーム開始時に画面内に存在するタスクの進捗バー表示
+            taskActivator.OnTaskActivated += OnTaskActivated;
+            taskActivator.OnTaskDeactivated += OnTaskDeactivated;
         }
 
         public void Tick()
@@ -43,18 +56,6 @@ namespace Module.Extension.UI
                 view.ManagedUpdate();
                 view.SetProgress(task.Progress);
             }
-        }
-
-        private void Initialize()
-        {
-            foreach (var task in taskActivator.GetActiveTasks())
-            {
-                OnTaskActivated(task);
-            }
-
-            //ゲーム開始時に画面内に存在するタスクの進捗バー表示
-            taskActivator.OnTaskActivated += OnTaskActivated;
-            taskActivator.OnTaskDeactivated += OnTaskDeactivated;
         }
 
         private void OnTaskActivated(BaseTask task)

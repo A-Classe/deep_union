@@ -9,6 +9,9 @@ using Wanna.DebugEx;
 
 namespace Module.Assignment.System
 {
+    /// <summary>
+    /// アサイン機能のループ処理を管理するクラス
+    /// </summary>
     public class AssignmentSystem : ITickable, IStartable
     {
         private readonly InputEvent assignEvent;
@@ -32,9 +35,10 @@ namespace Module.Assignment.System
             this.workerReleaser = workerReleaser;
             this.taskActivator = taskActivator;
 
+            //入力イベントの登録
             assignEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Assign);
             releaseEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Release);
-            
+
             assignEvent.Started += _ =>
             {
                 assignState = AssignState.Assign;
@@ -58,6 +62,17 @@ namespace Module.Assignment.System
 
         public void Start()
         {
+            //タスク完了時のコールバックを登録
+            taskActivator.OnTaskInitialized += initializedTasks =>
+            {
+                foreach (var task in initializedTasks.Span)
+                {
+                    task.OnCompleted += OnTaskCompleted;
+                }
+            };
+
+            taskActivator.OnTaskDeactivated += OnTaskCompleted;
+
             taskActivator.Start();
         }
 
@@ -72,6 +87,13 @@ namespace Module.Assignment.System
                     workerReleaser.Update();
                     break;
             }
+        }
+
+        private void OnTaskCompleted(BaseTask task)
+        {
+            //完了したら自動的に子機に戻す
+            workerReleaser.ReleaseAllWorkers(task.GetComponentInChildren<AssignableArea>());
+            task.OnCompleted -= OnTaskCompleted;
         }
     }
 }

@@ -27,13 +27,13 @@ namespace Module.Task
             head = 0;
         }
 
-        public event Action OnTaskCreated;
+        public event Action<ReadOnlyMemory<BaseTask>> OnTaskInitialized;
         public event Action<BaseTask> OnTaskActivated;
         public event Action<BaseTask> OnTaskDeactivated;
 
         public void Start()
         {
-            //最初のカメラ内の有効タスクの探索
+            //最初のカメラ内の有効タスクの検出
             for (int i = tasks.Length - 1; i >= 0; i--)
             {
                 BaseTask task = tasks[i];
@@ -47,12 +47,7 @@ namespace Module.Task
                 task.Disable();
             }
 
-            OnTaskCreated?.Invoke();
-        }
-
-        public ReadOnlySpan<BaseTask> GetActiveTasks()
-        {
-            return tasks.AsSpan(head, tail + 1);
+            OnTaskInitialized?.Invoke(tasks.AsMemory(head, tail + 1));
         }
 
         public void Tick()
