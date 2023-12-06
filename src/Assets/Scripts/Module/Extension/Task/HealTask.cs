@@ -9,6 +9,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using VContainer;
 using Wanna.DebugEx;
+using Random = UnityEngine.Random;
 
 namespace Module.Extension.Task
 {
@@ -16,20 +17,20 @@ namespace Module.Extension.Task
     {
         [SerializeField] private NavMeshAgent navMeshAgent;
         [SerializeField] private AssignableArea assignableArea;
+        [SerializeField] private Rigidbody rig;
         [SerializeField] private Collider collision;
         [SerializeField] private uint addHp;
         [SerializeField] private float moveSpeed;
         [SerializeField] private int minWorkerCount;
         [SerializeField] private int maxWorkerCount;
 
-        [SerializeField] private AudioSource audioSource;
-        [SerializeField] private AudioClip HealSound;
         [SerializeField] private GameObject collideObj;
         [SerializeField] private GameObject healObj;
 
         private PlayerController playerController;
         private PlayerStatus playerStatus;
-        private RuntimeNavMeshBaker runtimeNavMeshBaker;
+
+        public event Action<HealTask> OnCollected;
 
         private void Update()
         {
@@ -51,10 +52,10 @@ namespace Module.Extension.Task
                 playerStatus.AddHp(addHp);
                 ForceComplete();
 
-                audioSource.PlayOneShot(HealSound);
                 collideObj.SetActive(false);
                 healObj.SetActive(false);
                 WaitSound().Forget();
+                OnCollected?.Invoke(this);
             }
         }
 
@@ -62,16 +63,14 @@ namespace Module.Extension.Task
         {
             collision.gameObject.layer = LayerMask.NameToLayer("Detection");
             playerController = container.Resolve<PlayerController>();
-            runtimeNavMeshBaker = container.Resolve<RuntimeNavMeshBaker>();
             playerStatus = container.Resolve<PlayerStatus>();
 
             ForceComplete();
 
-            assignableArea.OnWorkerEnter += async (_, _) =>
+            assignableArea.OnWorkerEnter += (_, _) =>
             {
                 if (WorkerCount >= minWorkerCount)
                 {
-                    await runtimeNavMeshBaker.Bake();
                     navMeshAgent.enabled = true;
                 }
             };
@@ -79,24 +78,13 @@ namespace Module.Extension.Task
             assignableArea.OnWorkerExit += (_, _) =>
             {
                 if (WorkerCount < minWorkerCount)
+                {
                     navMeshAgent.enabled = false;
+                }
             };
 
-            AdjustNavMesh().Forget();
-        }
-
-        private async UniTaskVoid AdjustNavMesh()
-        {
-            //手動更新のため無効化
-            navMeshAgent.updateRotation = false;
             navMeshAgent.updatePosition = false;
-            navMeshAgent.enabled = true;
-
-            await UniTask.WaitUntil(() => navMeshAgent.isOnNavMesh,
-                cancellationToken: this.GetCancellationTokenOnDestroy());
-            await runtimeNavMeshBaker.Bake();
-
-            navMeshAgent.enabled = false;
+            navMeshAgent.updateRotation = false;
         }
 
         //仮でヒール音を待機
@@ -105,6 +93,12 @@ namespace Module.Extension.Task
             await UniTask.Delay(TimeSpan.FromSeconds(1f));
 
             Disable();
+        }
+
+        public void Spread(float force)
+        {
+            Vector2 forceDir = Random.insideUnitCircle * force;
+            rig.AddForce(forceDir.x, 0f, forceDir.y);
         }
     }
 }
