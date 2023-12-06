@@ -8,7 +8,6 @@ using Core.Utility.UI.Component.Cursor;
 using Core.Utility.UI.Navigation;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Module.UI.Title.Ranking
 {
@@ -53,6 +52,7 @@ namespace Module.UI.Title.Ranking
             current = Nav.Quit;
 
             SetState(Nav.Quit);
+            Clear();
         }
 
         private string currentName = "";

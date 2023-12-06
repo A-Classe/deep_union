@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Core.Scenes;
 using Core.User;
 using Core.User.API;
+using Core.Utility;
 using Core.Utility.UI.Navigation;
 using Module.GameSetting;
 using Module.UI.Title.Credit;
@@ -79,6 +80,7 @@ namespace GameMain.Router
                 { TitleNavigation.Ranking, rankingManager }
             };
             navigation = new Navigation<TitleNavigation>(initialManagers);
+            
         }
 
 
@@ -126,8 +128,11 @@ namespace GameMain.Router
                 rankingManager.SetName(userData.name.value);
                 accessor.GetAllData((ranking) =>
                 {
-                    rankingManager.SetRanking(ranking, data.GetUserData().uuid.value);
-                    rankingManager.Reload();
+                    MainThreadDispatcher.Instance.Enqueue(() =>
+                    {
+                        rankingManager.SetRanking(ranking, data.GetUserData().uuid.value);
+                        rankingManager.Reload();
+                    });
                 });
             }
             catch (Exception e)
@@ -185,7 +190,11 @@ namespace GameMain.Router
         private void StageSelected(StageNavigation nav)
         {
             navigation.SetScreen(TitleNavigation.Title, isAnimate: false);
-            if (!sceneChanger.LoadBeforeMovieInGame(nav.ToStage()))
+            if (nav == StageNavigation.Tutorial)
+            {
+                sceneChanger.LoadInGame(StageData.Stage.Tutorial);
+            }
+            else if (!sceneChanger.LoadBeforeMovieInGame(nav.ToStage()))
             {
                 throw new NotImplementedException("not found navigation : " + nav);
             }
