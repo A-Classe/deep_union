@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Module.Assignment.Component;
 using Module.Task;
 using VContainer;
+using Wanna.DebugEx;
 
 namespace Module.Assignment.System
 {
@@ -33,26 +35,42 @@ namespace Module.Assignment.System
             //タスクのアサインエリアを登録
             foreach (var task in taskActivator.GetActiveTasks())
             {
-                ActiveArea(task);
+                ActivateArea(task);
             }
 
-            taskActivator.OnTaskActivated += ActiveArea;
-
-            taskActivator.OnTaskDeactivated += task =>
-            {
-                activeAreas[0].enabled = false;
-                activeAreas.RemoveAt(0);
-            };
+            taskActivator.OnTaskActivated += ActivateArea;
+            taskActivator.OnTaskDeactivated += DeactivateArea;
 
             workerAssigner.SetActiveAreas(activeAreas);
             workerReleaser.SetActiveAreas(activeAreas);
         }
 
-        public void ActiveArea(BaseTask baseTask)
+        public void ActivateArea(BaseTask baseTask)
         {
             var assignableArea = baseTask.GetComponentInChildren<AssignableArea>();
             assignableArea.enabled = true;
-            activeAreas.Add(assignableArea);
+
+            bool found = activeAreas.Any(area => area == assignableArea);
+            DebugEx.Assert(!found, "タスクを重複して追加することは出来ません");
+
+            if (!found)
+            {
+                activeAreas.Add(assignableArea);
+            }
+        }
+
+        public void DeactivateArea(BaseTask baseTask)
+        {
+            var assignableArea = baseTask.GetComponentInChildren<AssignableArea>();
+            assignableArea.enabled = false;
+
+            int index = activeAreas.IndexOf(assignableArea);
+            DebugEx.Assert(index != -1, "存在しないタスクを削除することは出来ません");
+
+            if (index != -1)
+            {
+                activeAreas.RemoveAt(index);
+            }
         }
     }
 }

@@ -10,7 +10,8 @@ namespace GameMain.Presenter
         [Inject]
         public HealTaskPoolPresenter(HealTaskPool healTaskPool, ActiveAreaCollector areaCollector)
         {
-            healTaskPool.OnHealTaskDrop += areaCollector.ActiveArea;
+            healTaskPool.OnHealTaskDrop += areaCollector.ActivateArea;
+            healTaskPool.OnHealTaskCollected += areaCollector.DeactivateArea;
         }
 
         public void Initialize() { }

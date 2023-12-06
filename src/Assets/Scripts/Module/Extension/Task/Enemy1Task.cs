@@ -100,8 +100,8 @@ namespace Module.Extension.Task
 
         private void Explode(Transform target)
         {
-            adsorptionTarget = target.transform;
-            adsorptionOffset = transform.position - adsorptionTarget.position;
+            adsorptionTarget = target;
+            adsorptionOffset = transform.position - target.position;
             isAdsorption = true;
             simpleAgent.SetActive(false);
             assignableArea.enabled = false;

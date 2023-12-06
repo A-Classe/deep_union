@@ -9,7 +9,7 @@ OcclusionCullingSettings:
     smallestHole: 0.25
     backfaceThreshold: 50
   m_SceneGUID: 6d5a55a8fe5623c42969b4c06acebebf
-  m_OcclusionCullingData: {fileID: 36300000, guid: 1dcb44880e69627428c3d7cfba730cc2,
+  m_OcclusionCullingData: {fileID: 36300000, guid: 47351782b5356824dab81611a1d435c8,
     type: 2}
 --- !u!104 &2
 RenderSettings:
@@ -7570,6 +7570,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 9191752623537322787, guid: 64dae455b8c7a9f468a7cc438028391e,
         type: 3}
+      propertyPath: moveLimitRange
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191752623537322787, guid: 64dae455b8c7a9f468a7cc438028391e,
+        type: 3}
       propertyPath: sonarVisualizer
       value: 
       objectReference: {fileID: 1569104127}
@@ -7582,6 +7587,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 1e-45
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191752624270989855, guid: 64dae455b8c7a9f468a7cc438028391e,
+        type: 3}
+      propertyPath: far clip plane
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191752624670590976, guid: 64dae455b8c7a9f468a7cc438028391e,
+        type: 3}
+      propertyPath: m_Lens.FarClipPlane
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 9191752624670590977, guid: 64dae455b8c7a9f468a7cc438028391e,
         type: 3}
@@ -13073,6 +13088,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy1TaskNormal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5604095329755063910, guid: 67fb4b287e9140d40abe893511616d2c,
+        type: 3}
+      propertyPath: showExplodeRange
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67fb4b287e9140d40abe893511616d2c, type: 3}
