@@ -53,6 +53,9 @@ namespace Module.Extension.Task
 
         public event Action OnBomb;
 
+        private float progressTime;
+        private bool IsMoving;
+
         public override void Initialize(IObjectResolver container)
         {
             playerController = container.Resolve<PlayerController>();
@@ -66,6 +69,9 @@ namespace Module.Extension.Task
 
             OnProgressChanged += director.UpdateScale;
             OnProgressChanged += director.UpdateBlinkColor;
+
+            progressTime= 0.0f;
+            IsMoving = false;
         }
 
         private void Update()
@@ -78,6 +84,15 @@ namespace Module.Extension.Task
             else
             {
                 simpleAgent.Move(playerController.transform.position);
+            }
+
+            if(IsMoving)
+            {
+                progressTime += Time.deltaTime;
+                var ratio = progressTime / explodeLimit;
+
+                director.UpdateScale(ratio);
+                director.UpdateBlinkColor(ratio);
             }
         }
 
@@ -207,6 +222,8 @@ namespace Module.Extension.Task
             director.EnableMovingState();
             simpleAgent.SetActive(true);
             navMeshBaker?.Bake().Forget();
+
+            IsMoving = true;
 
             CountdownExplode().Forget();
         }
