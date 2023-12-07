@@ -9,9 +9,11 @@ using Wanna.DebugEx;
 
 namespace Module.Assignment.System
 {
+    /// <summary>
+    /// アサイン機能のループ処理を管理するクラス
+    /// </summary>
     public class AssignmentSystem : ITickable, IStartable
     {
-        private readonly List<AssignableArea> activeAreas;
         private readonly InputEvent assignEvent;
         private readonly InputEvent releaseEvent;
         private readonly TaskActivator taskActivator;
@@ -22,33 +24,55 @@ namespace Module.Assignment.System
 
         [Inject]
         public AssignmentSystem(
-            WorkerAssigner workerAssigner, 
+            WorkerAssigner workerAssigner,
             WorkerReleaser workerReleaser,
             TaskActivator taskActivator,
+            ActiveAreaCollector activeAreaCollector,
             EventBroker eventBroker
         )
         {
             this.workerAssigner = workerAssigner;
             this.workerReleaser = workerReleaser;
             this.taskActivator = taskActivator;
-            activeAreas = new List<AssignableArea>();
 
+            //入力イベントの登録
             assignEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Assign);
             releaseEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Release);
 
-            assignEvent.Started += _ => { assignState = AssignState.Assign; };
+            assignEvent.Started += _ =>
+            {
+                assignState = AssignState.Assign;
+            };
 
-            assignEvent.Canceled += _ => { assignState = AssignState.Idle; };
+            assignEvent.Canceled += _ =>
+            {
+                assignState = AssignState.Idle;
+            };
 
-            releaseEvent.Started += _ => { assignState = AssignState.Release; };
+            releaseEvent.Started += _ =>
+            {
+                assignState = AssignState.Release;
+            };
 
-            releaseEvent.Canceled += _ => { assignState = AssignState.Idle; };
-
-            taskActivator.OnTaskCreated += SetActiveAreas;
+            releaseEvent.Canceled += _ =>
+            {
+                assignState = AssignState.Idle;
+            };
         }
 
         public void Start()
         {
+            //タスク完了時のコールバックを登録
+            taskActivator.OnTaskInitialized += _ =>
+            {
+                foreach (var task in taskActivator.GetAllTasks())
+                {
+                    task.OnCompleted += OnTaskCompleted;
+                }
+            };
+
+            taskActivator.OnTaskDeactivated += OnTaskCompleted;
+
             taskActivator.Start();
         }
 
@@ -65,40 +89,9 @@ namespace Module.Assignment.System
             }
         }
 
-        private void SetActiveAreas()
-        {
-            //タスクのアサインエリアを登録
-            foreach (var task in taskActivator.GetActiveTasks())
-            {
-                var assignableArea = task.GetComponentInChildren<AssignableArea>();
-                assignableArea.enabled = true;
-                activeAreas.Add(assignableArea);
-
-                task.OnCompleted += OnTaskCompleted;
-            }
-
-            taskActivator.OnTaskActivated += task =>
-            {
-                var assignableArea = task.GetComponentInChildren<AssignableArea>();
-                assignableArea.enabled = true;
-                activeAreas.Add(assignableArea);
-
-                task.OnCompleted += OnTaskCompleted;
-            };
-
-            taskActivator.OnTaskDeactivated += task =>
-            {
-                activeAreas[0].enabled = false;
-                OnTaskCompleted(task);
-                activeAreas.RemoveAt(0);
-            };
-
-            workerAssigner.SetActiveAreas(activeAreas);
-            workerReleaser.SetActiveAreas(activeAreas);
-        }
-
         private void OnTaskCompleted(BaseTask task)
         {
+            //完了したら自動的に子機に戻す
             workerReleaser.ReleaseAllWorkers(task.GetComponentInChildren<AssignableArea>());
         }
     }

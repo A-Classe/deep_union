@@ -2,7 +2,6 @@ using System;
 using Core.Model.Scene;
 using Core.User;
 using JetBrains.Annotations;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Core.Scenes
@@ -23,9 +22,9 @@ namespace Core.Scenes
         private Route next;
         
         private const string TitleRoute = "Scenes/Other/Titles_Test";
-        private const string InGameRoute = "Scenes/Stages/Stage1/Stage1";
+        private const string InGameRoute = "Scenes/Stages/Stage1hara/Stage1hara";
         // :todo チュートリアル用のシーンを用意する
-        private const string TutorialRoute = "Scenes/Stages/Stage1/Stage1";
+        private const string TutorialRoute = "Scenes/Stages/StageTutorial/StageTutorial";
         private const string ResultRoute = "Scenes/Other/Result_Test";
         private const string BeforeInGameRoute = "Scenes/Other/BeforeInGame";
         private const string AfterInGameRoute = "Scenes/Other/BeforeInGame";
@@ -76,15 +75,13 @@ namespace Core.Scenes
             {
                 OnBeforeChangeScene?.Invoke();
                 inGameRoute = routeNav;
-                Debug.Log(inGameRoute);
-                // if (inGameRoute == StageData.Stage.Tutorial)
-                // {
-                //     SceneManager.LoadScene(TutorialRoute);
-                //     currentRoute = TutorialRoute;
-                //     return true;
-                // }
-                SceneManager.LoadScene(InGameRoute);
-                currentRoute = InGameRoute;
+                currentRoute = inGameRoute switch
+                {
+                    StageData.Stage.Stage1 => InGameRoute,
+                    StageData.Stage.Tutorial => TutorialRoute,
+                    _ => InGameRoute
+                };
+                SceneManager.LoadScene(currentRoute);
                 return true;
             }
             catch (Exception)

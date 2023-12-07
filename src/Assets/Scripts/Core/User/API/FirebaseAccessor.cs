@@ -1,5 +1,8 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 using Firebase.Database;
 using Firebase.Extensions;
 using UnityEngine;
@@ -45,7 +48,6 @@ namespace Core.User.API
             this.preference = preference;
             preference.Load();
             reference = FirebaseDatabase.DefaultInstance.RootReference;
-            // Debug.Log(reference);
             userData = preference.GetUserData();
             if (userData.uuid.value == "")
             {
@@ -84,64 +86,92 @@ namespace Core.User.API
             GetUserRef().Child(Stage).Child(stage.ToString()).SetValueAsync(score);
         }
 
-        public void GetAllData(Action<Ranking> OnCallback)
+        public void GetAllData(Action<Ranking> callback)
         {
-            Ranking ranking = new Ranking();
-            ranking.users = new List<RankingUser>();
+            // sec
+            int timeoutSeconds = 10;
+            Ranking ranking = new Ranking
+            {
+                users = new List<RankingUser>()
+            };
+
             if (Application.internetReachability == NetworkReachability.NotReachable)
             {
                 Debug.Log("Not Connection Network");
-                OnCallback?.Invoke(ranking);
+                callback?.Invoke(ranking);
                 return;
             }
+
             try
             {
-                GetDbRef().GetValueAsync().ContinueWithOnMainThread(task => {
-                    if (task.IsFaulted || task.IsCanceled)
+                CancellationTokenSource cts = new CancellationTokenSource();
+                Task.Run(async () =>
+                {
+
+                    var databaseTask = GetDbRef().GetValueAsync();
+                    var delayTask = Task.Delay(TimeSpan.FromSeconds(timeoutSeconds), cts.Token);
+
+                    var completedTask = await Task.WhenAny(databaseTask, delayTask);
+
+                    if (completedTask == delayTask && !databaseTask.IsCompleted)
                     {
-                        // Handle the error...
-                        Debug.Log("catch Error:");
-                        Debug.Log(task);
-                        OnCallback?.Invoke(ranking);
-                    } else if (task.IsCompleted) {
-                        Debug.Log("is completed");
-                        DataSnapshot snapshot = task.Result;
-                        // Do something with snapshot...
-                        foreach (var userData in snapshot.Children)
+                        Debug.Log("Operation timed out");
+                        cts.Cancel();
+                        callback?.Invoke(ranking);
+                        return;
+                    }
+                    cts.Cancel();
+
+                    if (databaseTask.IsFaulted || databaseTask.IsCanceled)
+                    {
+                        Debug.Log("Error in database operation");
+                        callback?.Invoke(ranking);
+                        return;
+                    }
+
+                    Debug.Log("Database operation completed");
+                    DataSnapshot snapshot = databaseTask.Result;
+                    foreach (var userData in snapshot.Children)
+                    {
+                        if (userData.Key == Uuid) continue;
+                        RankingUser user = new RankingUser();
+                        // UUID: string
+                        user.ID = userData.Key;
+                        user.Stages = new();
+                        foreach (var parameters in userData.Children)
                         {
-                            if (userData.Key == Uuid) continue;
-                            RankingUser user = new RankingUser();
-                            // UUID: string
-                            user.ID = userData.Key;
-                            user.Stages = new();
-                            foreach (var parameters in userData.Children)
+                            if (parameters.Key == Name)
                             {
-                                if (parameters.Key == Name)
+                                // Name: string
+                                user.Name = parameters.Value.ToString();
+                            } else if (parameters.Key == Stage)
+                            {
+                                foreach (var stages in parameters.Children)
                                 {
-                                    // Name: string
-                                    user.Name = parameters.Value.ToString();
-                                } else if (parameters.Key == Stage)
-                                {
-                                    foreach (var stages in parameters.Children)
-                                    {
-                                        // Map <Stage: string to Score: int>
-                                        StageData.Stage stg = (StageData.Stage)Enum.Parse(typeof(StageData.Stage), stages.Key);
-                                        user.Stages[stg] = int.Parse(stages.Value.ToString());
-                                    }
+                                    // Map <Stage: string to Score: int>
+                                    StageData.Stage stg = (StageData.Stage)Enum.Parse(typeof(StageData.Stage), stages.Key);
+                                    user.Stages[stg] = int.Parse(stages.Value.ToString());
                                 }
                             }
-                            ranking.users.Add(user);
                         }
+                        ranking.users.Add(user);
                     }
-                    OnCallback?.Invoke(ranking);
-                });     
-            }   
+                    callback?.Invoke(ranking);
+                }, cts.Token).ContinueWith(task =>
+                {
+                    if (task.IsFaulted)
+                    {
+                        // 何らかのエラーが発生した場合の処理
+                        Debug.Log(task.Exception);
+                    }
+                    cts.Dispose();
+                }, cts.Token);
+            } 
             catch (Exception e)
             {
                 Debug.Log(e.ToString());
                 throw;
             }
         }
-        
     }
 }

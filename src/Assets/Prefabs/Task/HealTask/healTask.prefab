@@ -43,7 +43,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.9680271
+  m_Radius: 1.27
   m_Center: {x: 0, y: 1.5241749, z: 0}
 --- !u!1 &11699557729879083
 GameObject:
@@ -775,13 +775,12 @@ MonoBehaviour:
   currentWorkerCount: 0
   navMeshAgent: {fileID: 1703818973}
   assignableArea: {fileID: 8177856091316181010}
+  rig: {fileID: 0}
   collision: {fileID: 1715140342}
   addHp: 10
   moveSpeed: 3.5
   minWorkerCount: 5
   maxWorkerCount: 30
-  audioSource: {fileID: 6981878997597987576}
-  HealSound: {fileID: 8300000, guid: 8719ca82af1819344a43042355c08743, type: 3}
   collideObj: {fileID: 1689977097}
   healObj: {fileID: 9184461193990643031}
 --- !u!195 &1703818973
@@ -980,6 +979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86741824de2f411286f8f151edfe8c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAssignable: 1
   lightProjector: {fileID: 2094165392034516240}
   ellipseVisualizer: {fileID: 1341522716374464683}
   intensity: 0.5
