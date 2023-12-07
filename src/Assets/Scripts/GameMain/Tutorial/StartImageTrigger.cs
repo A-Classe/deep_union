@@ -35,12 +35,13 @@ public class StartImageTrigger : MonoBehaviour, ITutorialTrigger
 
     private async void OnTriggerEnter(Collider other)
     {
-        await Task.Delay(waitTime);//0.7秒後に表示する
-
+        
         if (other.CompareTag(Tag))
         {
-            rawImage.enabled = true; // 画像を表示する
             OnShowText?.Invoke();
+            await Task.Delay(waitTime);//0.7秒後に表示する
+            rawImage.enabled = true; // 画像を表示する
+            
         }
     }
 
