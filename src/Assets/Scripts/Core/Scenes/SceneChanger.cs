@@ -27,7 +27,7 @@ namespace Core.Scenes
         private const string TutorialRoute = "Scenes/Stages/StageTutorial/StageTutorial";
         private const string ResultRoute = "Scenes/Other/Result_Test";
         private const string BeforeInGameRoute = "Scenes/Other/BeforeInGame";
-        private const string AfterInGameRoute = "Scenes/Other/BeforeInGame";
+        private const string AfterInGameRoute = "Scenes/Other/AfterInGame";
 
         [CanBeNull] private string currentRoute;
 
