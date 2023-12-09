@@ -1,5 +1,6 @@
 using System;
 using Core.User;
+using UnityEngine;
 
 namespace Core.Scenes
 {
@@ -37,7 +38,6 @@ namespace Core.Scenes
             }
 
             StageNavigation nextNav = nav.ToBase();
-            
             switch (y)
             {
                 // 上向きの入力
@@ -51,7 +51,7 @@ namespace Core.Scenes
                     break;
                 // 下向きの入力
                 case < 0:
-                    nextNav = nav switch
+                    nextNav = nextNav switch
                     {
                         StageNavigation.Tutorial => StageNavigation.Stage1,
                         StageNavigation.Stage1 => StageNavigation.Back,
@@ -59,7 +59,6 @@ namespace Core.Scenes
                     };
                     break;
             }
-
             return nextNav;
         }
 

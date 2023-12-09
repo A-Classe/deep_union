@@ -1,6 +1,7 @@
 ﻿using Core.User;
 using Core.User.API;
 using GameMain.Router;
+using Module.Extension.System;
 using Module.UI.Title.Credit;
 using Module.UI.Title.Option;
 using Module.UI.Title.Quit;
@@ -27,6 +28,7 @@ namespace GameMain.Container
         protected override void Configure(IContainerBuilder builder)
         {
             builder.RegisterEntryPoint<TitleRouter>();
+            builder.RegisterEntryPoint<DebugControl>();
 
             builder.RegisterInstance(title);
             builder.RegisterInstance(quit);

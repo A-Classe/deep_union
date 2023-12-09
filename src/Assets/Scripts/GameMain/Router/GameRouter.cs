@@ -141,7 +141,6 @@ namespace GameMain.Router
             InitPlayer();
 
             InitScene();
-            
         }
 
         public void Tick()
@@ -201,6 +200,7 @@ namespace GameMain.Router
             preference.Load();
             
             preference.CompletedFirst();
+            preference.Save();
             
             UserData data = preference.GetUserData();
             brightController.SetBrightness(data.bright.value / 10f);
@@ -229,15 +229,22 @@ namespace GameMain.Router
         {
             eventBroker.SendEvent(new GameClear().Event());
             SaveReport();
-            sceneChanger.LoadResult(
-                new GameResult
-                {
-                    Hp = playerStatus.Hp,
-                    Resource = resourceContainer.ResourceCount,
-                    stageCode = (int)sceneChanger.GetInGame(),
-                    WorkerCount = workerAgent.WorkerCount()
-                }
-            );
+            var result = new GameResult
+            {
+                Hp = playerStatus.Hp,
+                Resource = resourceContainer.ResourceCount,
+                stageCode = (int)sceneChanger.GetInGame(),
+                WorkerCount = workerAgent.WorkerCount()
+            };
+            if (sceneChanger.GetInGame() == StageData.Stage.Tutorial)
+            {
+                sceneChanger.LoadResult(result);
+            }
+            else
+            {
+                sceneChanger.LoadAfterMovieInGame(result);
+            }
+            
         }
 
         private void SaveReport()

@@ -76,6 +76,18 @@ namespace Core.User
             Save();
         }
         
+        /// <summary>
+        /// デバッグ用
+        /// todo: そのうち消したい
+        /// </summary>
+        public void ResetIsFirst()
+        {
+            var data = dataManager.Get<UserData>();
+            data.isFirst.value = false;
+            dataManager.Set(data);
+            Save();
+        }
+        
         public bool GetIsFirst()
         {
             return dataManager.Get<UserData>().isFirst.value;

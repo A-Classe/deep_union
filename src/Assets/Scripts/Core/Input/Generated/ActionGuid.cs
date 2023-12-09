@@ -30,6 +30,7 @@ namespace Core.Input
        public readonly Guid ESC = new Guid("da8332c5-02d5-45f1-b6b0-0d90291ad325");
        public readonly Guid AnyKey = new Guid("a16801dd-890d-46af-9e2a-3c325560ec23");
        public readonly Guid Confirm = new Guid("afdfbdb8-c936-4a9d-a61a-9ea47fe65141");
+       public readonly Guid DebugQ = new Guid("bdd8f648-a4ad-45e6-8973-f8e053f9cb51");
     }
 
     public class Title

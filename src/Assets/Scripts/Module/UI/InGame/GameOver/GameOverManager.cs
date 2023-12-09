@@ -85,11 +85,11 @@ namespace Module.UI.InGame.GameOver
             {
                 // 上向きの入力
                 case > 0:
-                    nextNav = current.Value == Nav.StageSelect ? Nav.Retry : Nav.StageSelect;
+                    nextNav = Nav.Retry;
                     break;
                 // 下向きの入力
                 case < 0:
-                    nextNav = current.Value == Nav.Retry ? Nav.StageSelect : Nav.Retry;
+                    nextNav = Nav.StageSelect;
                     break;
                 default:
                     return; // Y軸の入力がない場合、何もしない
