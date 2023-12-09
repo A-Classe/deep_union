@@ -231,6 +231,7 @@ namespace GameMain.Router
             if (!data.GetIsFirst())
             {
                 sceneChanger.LoadInGame(StageData.Stage.Tutorial);
+                navigation.SetActive(false);
             }
             else
             {

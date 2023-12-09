@@ -141,7 +141,6 @@ namespace GameMain.Router
             InitPlayer();
 
             InitScene();
-            
         }
 
         public void Tick()
@@ -201,6 +200,7 @@ namespace GameMain.Router
             preference.Load();
             
             preference.CompletedFirst();
+            preference.Save();
             
             UserData data = preference.GetUserData();
             brightController.SetBrightness(data.bright.value / 10f);

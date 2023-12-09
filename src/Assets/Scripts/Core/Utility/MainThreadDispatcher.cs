@@ -24,7 +24,7 @@ namespace Core.Utility
         {
             if (_instance != null)
             {
-                Debug.LogError("Another instance of MainThreadDispatcher already exists.");
+             //   Debug.LogError("Another instance of MainThreadDispatcher already exists.");
                 Destroy(this);
                 return;
             }
