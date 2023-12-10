@@ -133,6 +133,8 @@ namespace Module.Working
             workerRandomizer.Disable();
             SetLockState(true);
 
+            animator.SetBool(Animator.StringToHash("Dead"), true);
+
             await DeathCutoff(this.GetCancellationTokenOnDestroy());
 
             gameObject.SetActive(false);

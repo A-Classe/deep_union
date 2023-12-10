@@ -121,9 +121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb47a18d3c58c594ab3cf6e60f0d078a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poisonDamage: 5
-  playerDamageInterval: 1
-  workerDamageInterval: 1
+  poisonDamage: 1
+  playerDamageInterval: 0.5
+  workerDamageInterval: 0.8
   disappearDuration: 4
   moveOffset: 2
   poisonCreatureTasks:
@@ -868,6 +868,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3317649472400045224, guid: 442da039d7a981f4cb3270ba9aab7d8c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 442da039d7a981f4cb3270ba9aab7d8c, type: 3}
+--- !u!95 &17050063037064882 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5345583560733689653, guid: 442da039d7a981f4cb3270ba9aab7d8c,
+    type: 3}
+  m_PrefabInstance: {fileID: 5337822309368193415}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7212912285606565161 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3317649472400045230, guid: 442da039d7a981f4cb3270ba9aab7d8c,
@@ -897,6 +903,8 @@ MonoBehaviour:
   state: 0
   currentProgress: 0
   currentWorkerCount: 0
+  animator: {fileID: 17050063037064882}
+  DeadAnimationTime: 4
 --- !u!1001 &5337822309437866962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1192,6 +1200,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3317649472400045224, guid: 442da039d7a981f4cb3270ba9aab7d8c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 442da039d7a981f4cb3270ba9aab7d8c, type: 3}
+--- !u!95 &17050062966228199 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5345583560733689653, guid: 442da039d7a981f4cb3270ba9aab7d8c,
+    type: 3}
+  m_PrefabInstance: {fileID: 5337822309437866962}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7212912285673174904 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3317649472400045226, guid: 442da039d7a981f4cb3270ba9aab7d8c,
@@ -1215,6 +1229,8 @@ MonoBehaviour:
   state: 0
   currentProgress: 0
   currentWorkerCount: 0
+  animator: {fileID: 17050062966228199}
+  DeadAnimationTime: 4
 --- !u!4 &7212912285673174908 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3317649472400045230, guid: 442da039d7a981f4cb3270ba9aab7d8c,

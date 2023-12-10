@@ -192,6 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86741824de2f411286f8f151edfe8c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAssignable: 1
   lightProjector: {fileID: 8098748993846654083}
   ellipseVisualizer: {fileID: 9220410865847075128}
   intensity: 0
@@ -388,6 +389,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3317649472400045230}
   - component: {fileID: 2049491017}
+  - component: {fileID: 352627640122060890}
   - component: {fileID: 2049491016}
   - component: {fileID: 2049491015}
   - component: {fileID: 1639914516561481880}
@@ -436,32 +438,50 @@ MonoBehaviour:
   currentProgress: 0
   currentWorkerCount: 0
   attackPoint: 10
+  explodeLimit: 5
   attackPointToOtherTask: 0
   workerDamageCount: 10
-  explodeStartWaitTime: 1.5
-  disableBodyDelay: 0.3
   damageLayer:
     serializedVersion: 2
-    m_Bits: 65600
+    m_Bits: 65728
   damageRangeFixOffset: 1.52
   showExplodeRange: 0
+  dropCountMin: 3
+  dropCountMax: 5
+  dropSpreadForce: 1000
+  simpleAgent: {fileID: 2049491016}
+  assignableArea: {fileID: 2024057765428732289}
+  explodeEffectSphere: {fileID: 3187036564300092110}
+  director: {fileID: 352627640122060890}
+--- !u!114 &352627640122060890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3317649472400045226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30d58762af4348e1991ed124099d09f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   damageScaleCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.009567261
-      value: 0.9945984
-      inSlope: 1.0129055
-      outSlope: 1.0129055
+      time: 0
+      value: 1.0134358
+      inSlope: 0.9798657
+      outSlope: 0.9798657
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.9968262
-      value: 1.9945984
-      inSlope: 1.0129055
-      outSlope: 1.0129055
+      time: 1
+      value: 1.9933015
+      inSlope: 0.9798657
+      outSlope: 0.9798657
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -482,10 +502,10 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.98898315
-      value: 4.9865646
-      inSlope: 2
-      outSlope: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -493,15 +513,14 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  simpleAgent: {fileID: 2049491016}
   decalProjector: {fileID: 8098748993846654083}
-  assignableArea: {fileID: 2024057765428732289}
   animator: {fileID: 438860061}
-  scaleBody: {fileID: 3317649472400045230}
-  explodeEffectSphere: {fileID: 3187036564300092110}
   bodyRenderer: {fileID: 5439021869963031775}
   bombEffectEvent: {fileID: 2143752221}
-  blinkColor: {r: 1, g: 0.1462264, b: 0.1462264, a: 1}
+  scaleBody: {fileID: 3317649472400045230}
+  blinkColor: {r: 1, g: 0.09119487, b: 0.09119487, a: 1}
+  disableBodyDelay: 1.8
+  deadAnimTime: 1.5
 --- !u!114 &2049491016
 MonoBehaviour:
   m_ObjectHideFlags: 0

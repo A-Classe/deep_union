@@ -42,6 +42,7 @@ namespace GameMain.Container
         [SerializeField] private PlayerController playerController;
         [SerializeField] private GoalPoint goalPoint;
         [SerializeField] private TaskProgressPool progressPool;
+        [SerializeField] private HealTaskPool healTaskPool;
         [SerializeField] private PlayerStatusVisualizer playerStatusVisualizer;
 
         [SerializeField] private InGameUIManager inGameUIManager;
@@ -63,6 +64,7 @@ namespace GameMain.Container
             builder.RegisterEntryPoint<LeaderPresenter>();
             builder.RegisterEntryPoint<AssignmentSystem>();
             builder.RegisterEntryPoint<PlayerStatusUpdater>();
+            builder.RegisterEntryPoint<HealTaskPoolPresenter>();
             
             builder.Register<WorkerSpawner>(Lifetime.Singleton);
             builder.Register<WorkerAgent>(Lifetime.Singleton);
@@ -74,8 +76,10 @@ namespace GameMain.Container
             builder.Register<TaskActivator>(Lifetime.Singleton);
             builder.Register<EventBroker>(Lifetime.Singleton);
             builder.Register<GameActionRecorder>(Lifetime.Singleton);
+            builder.Register<ActiveAreaCollector>(Lifetime.Singleton);
 
             builder.RegisterInstance(spawnPoint);
+            builder.RegisterInstance(healTaskPool);
             builder.RegisterInstance(spawnParam);
             builder.RegisterInstance(workerController);
             builder.RegisterInstance(playerController);

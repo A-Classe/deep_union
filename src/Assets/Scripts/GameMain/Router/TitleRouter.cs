@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Core.Scenes;
 using Core.User;
 using Core.User.API;
+using Core.Utility;
 using Core.Utility.UI.Navigation;
 using Module.GameSetting;
 using Module.UI.Title.Credit;
@@ -79,6 +80,7 @@ namespace GameMain.Router
                 { TitleNavigation.Ranking, rankingManager }
             };
             navigation = new Navigation<TitleNavigation>(initialManagers);
+            
         }
 
 
@@ -113,19 +115,31 @@ namespace GameMain.Router
                 data.Save();
                 ReloadRanking();
             };
+            rankingManager.OnNeedLoad += ReloadRanking;
         }
 
         private void ReloadRanking()
         {
-            data.Load();
-            UserData userData = data.GetUserData();
-                
-            rankingManager.SetName(userData.name.value);
-            accessor.GetAllData((ranking) =>
+            try
             {
-                rankingManager.SetRanking(ranking, data.GetUserData().uuid.value);
-                rankingManager.Reload();
-            });
+                data.Load();
+                UserData userData = data.GetUserData();
+                
+                rankingManager.SetName(userData.name.value);
+                accessor.GetAllData((ranking) =>
+                {
+                    MainThreadDispatcher.Instance.Enqueue(() =>
+                    {
+                        rankingManager.SetRanking(ranking, data.GetUserData().uuid.value);
+                        rankingManager.Reload();
+                    });
+                });
+            }
+            catch (Exception e)
+            {
+                UnityEngine.Debug.Log(e);
+                throw;
+            }
         }
 
 
@@ -176,7 +190,11 @@ namespace GameMain.Router
         private void StageSelected(StageNavigation nav)
         {
             navigation.SetScreen(TitleNavigation.Title, isAnimate: false);
-            if (!sceneChanger.LoadBeforeMovieInGame(nav.ToStage()))
+            if (nav == StageNavigation.Tutorial)
+            {
+                sceneChanger.LoadInGame(StageData.Stage.Tutorial);
+            }
+            else if (!sceneChanger.LoadBeforeMovieInGame(nav.ToStage()))
             {
                 throw new NotImplementedException("not found navigation : " + nav);
             }
@@ -213,6 +231,7 @@ namespace GameMain.Router
             if (!data.GetIsFirst())
             {
                 sceneChanger.LoadInGame(StageData.Stage.Tutorial);
+                navigation.SetActive(false);
             }
             else
             {
@@ -242,7 +261,6 @@ namespace GameMain.Router
         {
             rankingManager.SetStage(stage);
             ReloadRanking();
-            rankingManager.Reload();
             navigation.SetScreen(TitleNavigation.Ranking);
         }
 

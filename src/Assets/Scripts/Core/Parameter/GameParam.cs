@@ -17,6 +17,5 @@ namespace GameMain.Presenter
         public int HitPoint = 100;
 
         public float ActivateTaskRange = 1f;
-        public float DeactivateTaskRange;
     }
 }

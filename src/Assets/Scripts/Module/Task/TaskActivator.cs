@@ -3,6 +3,7 @@ using System.Linq;
 using GameMain.Presenter;
 using UnityEngine;
 using VContainer;
+using Wanna.DebugEx;
 
 namespace Module.Task
 {
@@ -23,80 +24,137 @@ namespace Module.Task
 
             var camZ = mainCamera.transform.position.z;
             tasks = TaskUtil.FindSceneTasks<BaseTask>().OrderBy(task => task.transform.position.z - camZ).ToArray();
-            tail = tasks.Length - 1;
+            head = 0;
         }
 
-        public event Action OnTaskCreated;
+        public event Action<ReadOnlyMemory<BaseTask>> OnTaskInitialized;
         public event Action<BaseTask> OnTaskActivated;
         public event Action<BaseTask> OnTaskDeactivated;
 
         public void Start()
         {
-            foreach (var task in tasks)
-                if (IsPassed(task.transform.position))
+            //最初のカメラ内の有効タスクの検出
+            for (int i = tasks.Length - 1; i >= 0; i--)
+            {
+                BaseTask task = tasks[i];
+
+                if (IsInsideCamera(task.transform.position))
                 {
-                    task.Disable();
-                    head++;
-                }
-                else if (IsAhead(task.transform.position))
-                {
-                    task.Disable();
-                    tail--;
+                    tail = i - 1;
+                    break;
                 }
 
-            OnTaskCreated?.Invoke();
+                task.Disable();
+            }
+
+            OnTaskInitialized?.Invoke(tasks.AsMemory(head, tail + 1));
         }
 
-        public ReadOnlySpan<BaseTask> GetActiveTasks()
+        public ReadOnlySpan<BaseTask> GetAllTasks()
         {
-            return tasks.AsSpan(head, tail);
+            return tasks.AsSpan();
         }
 
         public void Tick()
         {
-            //最も近いタスクと遠いタスクのカメラ外検知
-            UpdateHead();
-            UpdateTail();
+            //カメラ内オブジェクトの検出
+            DetectInsideTask();
+
+            //カメラ外オブジェクトの検出
+            DetectOutisideTask();
         }
 
-        private void UpdateHead()
+        private void DetectInsideTask()
         {
-            if (head >= tasks.Length)
-                return;
-
-            var task = tasks[head];
-
-            if (IsPassed(task.transform.position))
+            if (tail + 1 < tasks.Length)
             {
-                OnTaskDeactivated?.Invoke(task);
-                task.Disable();
-                head++;
+                BaseTask task = tasks[tail + 1];
+                bool isInside = TryEnableTask(task);
+
+                if (isInside)
+                {
+                    tail++;
+                }
+            }
+
+            if (head - 1 >= 0)
+            {
+                BaseTask task = tasks[head - 1];
+                bool isInside = TryEnableTask(task);
+
+                if (isInside)
+                {
+                    head--;
+                }
             }
         }
 
-        private void UpdateTail()
+        private void DetectOutisideTask()
         {
-            if (tail >= tasks.Length)
-                return;
+            if (tail < tasks.Length)
+            {
+                BaseTask task = tasks[tail];
+                bool isOutside = TryDisableTask(task);
 
-            var task = tasks[tail];
+                if (isOutside)
+                {
+                    tail--;
+                }
+            }
 
-            if (!IsAhead(task.transform.position))
+            if (head >= 0)
+            {
+                BaseTask task = tasks[head];
+                bool isOutside = TryDisableTask(task);
+
+                if (isOutside)
+                {
+                    head++;
+                }
+            }
+        }
+
+        private bool TryEnableTask(BaseTask task)
+        {
+            bool isInside = IsInsideCamera(task.transform.position);
+
+            if (isInside)
             {
                 task.Enable();
                 OnTaskActivated?.Invoke(task);
-                tail++;
             }
+
+            return isInside;
         }
 
-        private bool IsAhead(Vector3 taskPos)
+        private bool TryDisableTask(BaseTask task)
         {
-            return taskPos.z - mainCamera.transform.position.z > gameParam.ActivateTaskRange;
+            bool isOutside = !IsInsideCamera(task.transform.position);
+
+            if (isOutside)
+            {
+                OnTaskDeactivated?.Invoke(task);
+                task.Disable();
+            }
+
+            return isOutside;
         }
 
-        private bool IsPassed(Vector3 taskPos)
+        public void ForceActivate(BaseTask task)
         {
-            return mainCamera.transform.position.z - taskPos.z > gameParam.DeactivateTaskRange;
+            task.Enable();
+            OnTaskActivated?.Invoke(task);
+        }
+
+        public void ForceDeactivate(BaseTask task)
+        {
+            OnTaskDeactivated?.Invoke(task);
+            task.Disable();
+        }
+
+        private bool IsInsideCamera(Vector3 taskPos)
+        {
+            return Mathf.Abs(taskPos.z - mainCamera.transform.position.z) <= gameParam.ActivateTaskRange;
         }
     }
 }

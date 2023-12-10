@@ -11,19 +11,20 @@ namespace Core.Utility.UI.Component
         public override ContentTransform EnterTransform { get; set; }
         public override ContentTransform ExitTransform { get; set; }
         
-        private readonly float delaySec = 0.3f;
+        private readonly float ExitDelaySec = 0.3f;
+        private readonly float EnterDelaySec = 0.6f;
 
         public bool IsVisible => !State;
 
-        private readonly float holdFinishedTimeSec = 3.0f;
+        private readonly float holdFinishedTimeSec = 2.0f;
         private float currentTime = 0.0f;
 
         public event Action OnHoldFinished;
 
         private void Start()
         {
-            EnterTransform = this.FadeOut(Easings.Default(delaySec));
-            ExitTransform = this.FadeIn( Easings.Default(delaySec));
+            EnterTransform = this.FadeOut(Easings.QuartIn(EnterDelaySec));
+            ExitTransform = this.FadeIn( Easings.Default(ExitDelaySec));
             visualSlider.minValue = 0.0f;
             visualSlider.maxValue = 1.0f;
             State = true;

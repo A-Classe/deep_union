@@ -1,16 +1,16 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
-using Core.Model.User;
 using Firebase.Database;
 using Firebase.Extensions;
 using UnityEngine;
 using VContainer;
-using VContainer.Unity;
 
 namespace Core.User.API
 {
-    public class FirebaseAccessor : IStartable
+    public class FirebaseAccessor
     {
         private DatabaseReference reference;
 
@@ -48,38 +48,16 @@ namespace Core.User.API
             this.preference = preference;
             preference.Load();
             reference = FirebaseDatabase.DefaultInstance.RootReference;
-            // Debug.Log(reference);
             userData = preference.GetUserData();
             if (userData.uuid.value == "")
             {
                 WriteNewUser();
             }
         }
-        public void Start()
-        {
-            FirebaseDatabase.DefaultInstance.GetReference(".info/connected").ValueChanged += (sender, args) => {
-                if (args.DatabaseError != null) {
-                    Debug.LogError(args.DatabaseError.Message);
-                    return;
-                }
-
-                if (args.Snapshot.Value is bool connected && connected)
-                {
-                    // データベースに接続されている
-                    Debug.Log("Connected");
-                }
-                else
-                {
-                    // データベースに接続されていない
-                    Debug.Log("Disconnected");
-                }
-            };
-        }
-
         private void WriteNewUser()
         {
        
-            userData.uuid.value = System.Guid.NewGuid().ToString();
+            userData.uuid.value = Guid.NewGuid().ToString();
             Debug.Log("generate UUID: " + userData.uuid.value);
             preference.SetUserData(userData);
             preference.Save();
@@ -108,64 +86,92 @@ namespace Core.User.API
             GetUserRef().Child(Stage).Child(stage.ToString()).SetValueAsync(score);
         }
 
-        public void GetAllData(Action<Ranking> OnCallback)
+        public void GetAllData(Action<Ranking> callback)
         {
-            Ranking ranking = new Ranking();
-            ranking.users = new List<RankingUser>();
+            // sec
+            int timeoutSeconds = 10;
+            Ranking ranking = new Ranking
+            {
+                users = new List<RankingUser>()
+            };
+
             if (Application.internetReachability == NetworkReachability.NotReachable)
             {
                 Debug.Log("Not Connection Network");
-                OnCallback?.Invoke(ranking);
+                callback?.Invoke(ranking);
+                return;
             }
-            GetDbRef()
-                .GetValueAsync()
-                .ContinueWithOnMainThread(task => {
-                    if (task.IsFaulted || task.IsCanceled) {
-                        // Handle the error...
-                        Debug.Log("catch Error:");
-                        Debug.Log(task);
-                        OnCallback?.Invoke(ranking);
+
+            try
+            {
+                CancellationTokenSource cts = new CancellationTokenSource();
+                Task.Run(async () =>
+                {
+
+                    var databaseTask = GetDbRef().GetValueAsync();
+                    var delayTask = Task.Delay(TimeSpan.FromSeconds(timeoutSeconds), cts.Token);
+
+                    var completedTask = await Task.WhenAny(databaseTask, delayTask);
+
+                    if (completedTask == delayTask && !databaseTask.IsCompleted)
+                    {
+                        Debug.Log("Operation timed out");
+                        cts.Cancel();
+                        callback?.Invoke(ranking);
+                        return;
                     }
-                    else if (task.IsCompleted) {
-                        try
+                    cts.Cancel();
+
+                    if (databaseTask.IsFaulted || databaseTask.IsCanceled)
+                    {
+                        Debug.Log("Error in database operation");
+                        callback?.Invoke(ranking);
+                        return;
+                    }
+
+                    Debug.Log("Database operation completed");
+                    DataSnapshot snapshot = databaseTask.Result;
+                    foreach (var userData in snapshot.Children)
+                    {
+                        if (userData.Key == Uuid) continue;
+                        RankingUser user = new RankingUser();
+                        // UUID: string
+                        user.ID = userData.Key;
+                        user.Stages = new();
+                        foreach (var parameters in userData.Children)
                         {
-                            DataSnapshot snapshot = task.Result;
-                            // Do something with snapshot...
-                            foreach (var userData in snapshot.Children)
+                            if (parameters.Key == Name)
                             {
-                                if (userData.Key == Uuid) continue;
-                                RankingUser user = new RankingUser();
-                                // UUID: string
-                                user.ID = userData.Key;
-                                user.Stages = new();
-                                foreach (var parameters in userData.Children)
+                                // Name: string
+                                user.Name = parameters.Value.ToString();
+                            } else if (parameters.Key == Stage)
+                            {
+                                foreach (var stages in parameters.Children)
                                 {
-                                    if (parameters.Key == Name)
-                                    {
-                                        // Name: string
-                                        user.Name = parameters.Value.ToString();
-                                    } else if (parameters.Key == Stage)
-                                    {
-                                        foreach (var stages in parameters.Children)
-                                        {
-                                            // Map <Stage: string to Score: int>
-                                            StageData.Stage stg = (StageData.Stage)Enum.Parse(typeof(StageData.Stage), stages.Key);
-                                            user.Stages[stg] = int.Parse(stages.Value.ToString());
-                                        }
-                                    }
+                                    // Map <Stage: string to Score: int>
+                                    StageData.Stage stg = (StageData.Stage)Enum.Parse(typeof(StageData.Stage), stages.Key);
+                                    user.Stages[stg] = int.Parse(stages.Value.ToString());
                                 }
-                                ranking.users.Add(user);
                             }
-                            
-                            OnCallback?.Invoke(ranking);
                         }
-                        catch (Exception e)
-                        {
-                            Debug.Log(e.ToString());
-                        }
+                        ranking.users.Add(user);
                     }
-                });
+                    callback?.Invoke(ranking);
+                }, cts.Token).ContinueWith(task =>
+                {
+                    if (task.IsFaulted)
+                    {
+                        // 何らかのエラーが発生した場合の処理
+                        Debug.Log(task.Exception);
+                    }
+                    cts.Dispose();
+                }, cts.Token);
+            } 
+            catch (Exception e)
+            {
+                Debug.Log(e.ToString());
+                throw;
+            }
         }
-        
     }
 }
