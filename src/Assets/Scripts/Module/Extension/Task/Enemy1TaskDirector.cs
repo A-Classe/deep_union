@@ -10,6 +10,7 @@ namespace Module.Extension.Task
     {
         private static readonly int IsWalking = Animator.StringToHash("IsWalking");
         private static readonly int CanBomb = Animator.StringToHash("CanBomb");
+        private static readonly int IsDead = Animator.StringToHash("IsDead");
         private static readonly int BodyColor = Shader.PropertyToID("_Color");
 
         [Header("ダメージとスケールの比例関数")]
@@ -27,6 +28,7 @@ namespace Module.Extension.Task
         [SerializeField] private Transform scaleBody;
         [SerializeField] private Color blinkColor;
         [SerializeField] private float disableBodyDelay;
+        [SerializeField] private float deadAnimTime;
         
         private Tween blinkTween;
         private Material bodyMaterial;
@@ -65,6 +67,17 @@ namespace Module.Extension.Task
             animator.SetTrigger(CanBomb);
             
             await UniTask.Delay(TimeSpan.FromSeconds(disableBodyDelay));
+
+            animator.gameObject.SetActive(false);
+        }
+
+        public async UniTask DeadAnimation()
+        {
+            //死亡モーション開始
+            animator.SetBool(IsWalking, false);
+            animator.SetBool(IsDead, true);
+
+            await UniTask.Delay(TimeSpan.FromSeconds(deadAnimTime));
 
             animator.gameObject.SetActive(false);
         }
