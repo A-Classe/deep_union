@@ -126,7 +126,7 @@ namespace Module.Extension.Task
         }
 
 
-        protected override void OnComplete()
+        protected override async void OnComplete()
         {
             if (isAdsorption)
                 return;
@@ -134,6 +134,8 @@ namespace Module.Extension.Task
             isAdsorption = true;
             SetDetection(false);
             assignableArea.enabled = false;
+
+            await director.DeadAnimation();
 
             Drop();
 
