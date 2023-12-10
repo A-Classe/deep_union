@@ -56,6 +56,7 @@ namespace Module.Extension.Task
                 healObj.SetActive(false);
                 await WaitSound();
                 OnCollected?.Invoke(this);
+                Disable();
             }
         }
 
