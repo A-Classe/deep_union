@@ -14,7 +14,7 @@ public class HealTaskPool : MonoBehaviour
     private void Start()
     {
         taskPool = new Queue<HealTask>(GetComponentsInChildren<HealTask>(true));
-        returnCache = new HealTask[16];
+        returnCache = new HealTask[64];
     }
 
     public Span<HealTask> Get(int count)
