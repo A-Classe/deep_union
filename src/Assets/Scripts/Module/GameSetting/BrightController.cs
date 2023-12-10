@@ -9,7 +9,7 @@ namespace Module.GameSetting
     {
         private Volume globalVolume;
         
-        private readonly float exposureDefault = 1.18f;
+        [SerializeField] private float exposureDefault = 1.18f;
         private readonly float exposureMin = -7.0f;
         private readonly float exposureMax = 4.0f;
 
