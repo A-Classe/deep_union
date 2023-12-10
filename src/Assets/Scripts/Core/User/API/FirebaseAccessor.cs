@@ -37,14 +37,15 @@ namespace Core.User.API
         private const string Name = "Name";
 
         private const string Stage = "Stage";
-        
-        
+
+        private const bool disabled = true;
 
         [Inject]
         public FirebaseAccessor(
             UserPreference preference
         )
         {
+            if (disabled) return;
             this.preference = preference;
             preference.Load();
             reference = FirebaseDatabase.DefaultInstance.RootReference;
@@ -77,11 +78,13 @@ namespace Core.User.API
 
         public void SetName(string name)
         {
+            if (disabled) return;
             GetUserRef().Child(Name).SetValueAsync(name);
         }
 
         public void SetStageScore(StageData.Stage stage, uint score)
         {
+            if (disabled) return;
             Debug.Log(stage.ToString() + "==" + score);
             GetUserRef().Child(Stage).Child(stage.ToString()).SetValueAsync(score);
         }
@@ -102,6 +105,10 @@ namespace Core.User.API
                 return;
             }
 
+            if (disabled)
+            {
+                callback?.Invoke(ranking);   
+            }
             try
             {
                 CancellationTokenSource cts = new CancellationTokenSource();
