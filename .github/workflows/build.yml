@@ -30,6 +30,7 @@ jobs:
           projectPath: ./src
           unityVersion: 2021.3.23f1
       - uses: actions/upload-artifact@v3
+        if: always()
         with:
           name: Build-${{ matrix.targetPlatform }}
           path: build/${{ matrix.targetPlatform }}
