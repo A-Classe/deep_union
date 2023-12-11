@@ -11,6 +11,7 @@ namespace Module.Working
     public class WorkerSoundPlayer : MonoBehaviour
     {
         private AudioSource audioSource;
+        [SerializeField] private AudioClip assignSound;
 
         private void Start()
         {
@@ -25,7 +26,7 @@ namespace Module.Working
         public void Play()
         {
             //鳴らす
-            //audioSource.PlayOneShot();
+            audioSource.PlayOneShot(assignSound);
         }
     }
 }
