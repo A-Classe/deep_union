@@ -110,6 +110,10 @@ namespace Module.Extension.Task
         private async UniTaskVoid CountdownExplode()
         {
             await UniTask.Delay(TimeSpan.FromSeconds(explodeLimit));
+
+            if (isAdsorption)
+                return;
+            
             Explode(transform);
         }
 
@@ -133,6 +137,7 @@ namespace Module.Extension.Task
 
             isAdsorption = true;
             SetDetection(false);
+            simpleAgent.SetActive(false);
             assignableArea.enabled = false;
 
             await director.DeadAnimation();

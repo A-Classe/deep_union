@@ -20,7 +20,7 @@ namespace Module.Extension.Task
         [Header("ダメージと点滅の比例関数")]
         [SerializeField]
         private AnimationCurve damageBlinkCurve;
-        
+
         [SerializeField] private DecalProjector decalProjector;
         [SerializeField] private Animator animator;
         [SerializeField] private Renderer bodyRenderer;
@@ -29,7 +29,7 @@ namespace Module.Extension.Task
         [SerializeField] private Color blinkColor;
         [SerializeField] private float disableBodyDelay;
         [SerializeField] private float deadAnimTime;
-        
+
         private Tween blinkTween;
         private Material bodyMaterial;
         private Vector3 initialScale;
@@ -48,7 +48,7 @@ namespace Module.Extension.Task
 
             blinkTween.timeScale = damageBlinkCurve.Evaluate(progress);
         }
-        
+
         public void UpdateScale(float progress)
         {
             scaleBody.localScale = initialScale * damageScaleCurve.Evaluate(progress);
@@ -64,8 +64,9 @@ namespace Module.Extension.Task
         {
             //爆破モーション開始
             animator.SetBool(IsWalking, false);
-            animator.SetTrigger(CanBomb);
-            
+            animator.SetBool(CanBomb, true);
+
+
             await UniTask.Delay(TimeSpan.FromSeconds(disableBodyDelay));
 
             animator.gameObject.SetActive(false);
