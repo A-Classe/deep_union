@@ -11,7 +11,7 @@ public class TextTrigger : MonoBehaviour
 {
     public RawImage displayText; // Textコンポーネントを使用する
     [SerializeField] private float time = 3.0f; //デフォルトは3秒
-    [SerializeField] private string triggerTag = "Player";
+    [SerializeField] private string[] triggerTag = null;
     [SerializeField] private GameObject[] hideObj = null;
 
     private void Start()
@@ -21,7 +21,7 @@ public class TextTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(triggerTag))
+        if (other.CompareTag(triggerTag[0]) || other.CompareTag(triggerTag[1]))
         {
             ShowText(); // プレイヤーがエリアに入っており、テキストがまだ表示されていない場合は表示する
             Invoke(nameof(HideText), time);
