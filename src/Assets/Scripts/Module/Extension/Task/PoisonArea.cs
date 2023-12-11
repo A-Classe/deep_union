@@ -44,7 +44,7 @@ namespace Module.Extension.Task
         {
             if (other.CompareTag("Player"))
                 isPlayerEnter = true;
-            else if (other.transform.parent != null && other.transform.parent.TryGetComponent(out Worker worker))
+            else if (other.TryGetComponent(out Worker worker))
                 workers.Add(worker);
         }
 
@@ -52,7 +52,7 @@ namespace Module.Extension.Task
         {
             if (other.CompareTag("Player"))
                 isPlayerEnter = false;
-            else if (other.transform.parent != null && other.transform.parent.TryGetComponent(out Worker worker))
+            else if (other.TryGetComponent(out Worker worker))
                 workers.Remove(worker);
         }
 

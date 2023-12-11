@@ -5,6 +5,8 @@ namespace Module.Player.State
     public class PauseState : IPlayerState
     {
         private readonly Rigidbody rigidbody;
+        private Vector3 velocity;
+        private Vector3 angularVelocity;
 
         public PauseState(Rigidbody rigidbody)
         {
@@ -16,9 +18,20 @@ namespace Module.Player.State
             return PlayerState.Pause;
         }
 
-        public void Update()
+        public void Start()
         {
-            if (rigidbody.velocity != Vector3.zero) rigidbody.velocity = Vector3.zero;
+            velocity = rigidbody.velocity;
+            angularVelocity = rigidbody.angularVelocity;
+            rigidbody.isKinematic = true;
         }
+
+        public void Stop()
+        {
+            rigidbody.velocity = velocity;
+            rigidbody.angularVelocity = angularVelocity;
+            rigidbody.isKinematic = false;
+        }
+
+        public void FixedUpdate() { }
     }
 }

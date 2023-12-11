@@ -2,7 +2,9 @@ using System.Collections.Generic;
 using Core.Model.Scene;
 using Core.Scenes;
 using Core.User;
+using Core.User.API;
 using Core.Utility.UI.Navigation;
+using Module.Extension.UI;
 using Module.UI.Result;
 using VContainer;
 using VContainer.Unity;
@@ -17,14 +19,20 @@ namespace GameMain.Router
 
         private readonly SceneChanger sceneChanger;
         private readonly UserPreference userPreference;
+        
+        private readonly VideoPlayerControllerExt videoPlayer;
 
         private GameResult result;
+
+        private readonly FirebaseAccessor db;
 
         [Inject]
         public ResultRouter(
             UserPreference userPreference,
             SceneChanger sceneChanger,
-            ResultManager resultManager
+            ResultManager resultManager,
+            FirebaseAccessor db,
+            VideoPlayerControllerExt videoPlayer
         )
         {
             this.userPreference = userPreference;
@@ -32,6 +40,10 @@ namespace GameMain.Router
             this.sceneChanger = sceneChanger;
 
             this.resultManager = resultManager;
+
+            this.db = db;
+
+            this.videoPlayer = videoPlayer;
 
             // setup navigation
             navigation = new Navigation<Nav>(
@@ -55,6 +67,8 @@ namespace GameMain.Router
             userPreference.Load();
             userPreference.SetStageData((StageData.Stage)result.stageCode, result.GetScore());
             userPreference.Save();
+            db.SetStageScore((StageData.Stage)result.stageCode, result.GetScore());
+            videoPlayer.Play();
         }
 
         private void SetNavigation()
@@ -63,7 +77,7 @@ namespace GameMain.Router
             {
                 /* todo: 次のステージに飛ばす　*/
                 var currentStage = (StageData.Stage)result.stageCode;
-                if (currentStage != StageData.Stage.Stage5)
+                if (currentStage != StageData.Stage.Stage1)
                 {
                     navigation.SetActive(false);
                     sceneChanger.LoadInGame(currentStage + 1);
@@ -79,11 +93,8 @@ namespace GameMain.Router
             resultManager.OnRetry += () =>
             {
                 var currentStage = (StageData.Stage)result.stageCode;
-                if (currentStage != StageData.Stage.Stage5)
-                {
-                    navigation.SetActive(false);
-                    sceneChanger.LoadInGame(currentStage);
-                }
+                navigation.SetActive(false);
+                sceneChanger.LoadInGame(currentStage);
             };
         }
 

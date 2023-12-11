@@ -16,10 +16,8 @@ namespace Module.UI.Title.StageSelect
 
         [SerializeField] private CursorController<StageNavigation> cursor;
         [SerializeField] private StageButton stage1;
-        [SerializeField] private StageButton stage2;
-        [SerializeField] private StageButton stage3;
-        [SerializeField] private StageButton stage4;
-        [SerializeField] private StageButton stage5;
+        [SerializeField] private FadeInOutButton stage1Ranking;
+        [SerializeField] private StageButton tutorial;
         [SerializeField] private FadeInOutButton back;
 
         private StageNavigation? current;
@@ -27,10 +25,8 @@ namespace Module.UI.Title.StageSelect
         private void Start()
         {
             cursor.AddPoint(StageNavigation.Stage1, stage1.rectTransform);
-            cursor.AddPoint(StageNavigation.Stage2, stage2.rectTransform);
-            cursor.AddPoint(StageNavigation.Stage3, stage3.rectTransform);
-            cursor.AddPoint(StageNavigation.Stage4, stage4.rectTransform);
-            cursor.AddPoint(StageNavigation.Stage5, stage5.rectTransform);
+            cursor.AddPoint(StageNavigation.Stage1Ranking, stage1Ranking.rectTransform);
+            cursor.AddPoint(StageNavigation.Tutorial, tutorial.rectTransform);
             cursor.AddPoint(StageNavigation.Back, back.rectTransform);
             current = StageNavigation.Stage1;
 
@@ -57,17 +53,11 @@ namespace Module.UI.Title.StageSelect
                 case StageNavigation.Stage1:
                     OnStage?.Invoke(StageNavigation.Stage1);
                     break;
-                case StageNavigation.Stage2:
-                    OnStage?.Invoke(StageNavigation.Stage2);
+                case StageNavigation.Tutorial:
+                    OnStage?.Invoke(StageNavigation.Tutorial);
                     break;
-                case StageNavigation.Stage3:
-                    OnStage?.Invoke(StageNavigation.Stage3);
-                    break;
-                case StageNavigation.Stage4:
-                    OnStage?.Invoke(StageNavigation.Stage4);
-                    break;
-                case StageNavigation.Stage5:
-                    OnStage?.Invoke(StageNavigation.Stage5);
+                case StageNavigation.Stage1Ranking:
+                    OnRanking?.Invoke(StageData.Stage.Stage1);
                     break;
                 case StageNavigation.Back:
                     back.OnPlay(() => OnBack?.Invoke());
@@ -85,33 +75,7 @@ namespace Module.UI.Title.StageSelect
                 return;
             }
 
-            StageNavigation nextNav;
-
-            switch (direction.y)
-            {
-                // 上向きの入力
-                case > 0:
-                    //if(current.Value == StageNavigation.Stage1)
-                    //{
-                    //    return;
-                    //}
-                    //nextNav = current.Value - 1;
-                    //アルファ用
-                    nextNav = StageNavigation.Stage1;
-                    break;
-                // 下向きの入力
-                case < 0:
-                    //if(current.Value == StageNavigation.Back)
-                    //{
-                    //    return;
-                    //}
-                    //nextNav = current.Value + 1;
-                    //アルファ用
-                    nextNav = StageNavigation.Back;
-                    break;
-                default:
-                    return; // Y軸の入力がない場合、何もしない
-            }
+            StageNavigation nextNav = current.Value.Move(direction.x, direction.y);
 
             SetState(nextNav);
         }
@@ -125,27 +89,19 @@ namespace Module.UI.Title.StageSelect
 
         public event Action<StageNavigation> OnStage;
 
+        public event Action<StageData.Stage> OnRanking; 
+
         public void SetScores(Dictionary<StageData.Stage, uint> scores)
         {
             foreach (var keyValuePair in scores)
+            {
                 switch (keyValuePair.Key)
                 {
                     case StageData.Stage.Stage1:
                         stage1.SetScore(keyValuePair.Value);
                         break;
-                    case StageData.Stage.Stage2:
-                        stage2.SetScore(keyValuePair.Value);
-                        break;
-                    case StageData.Stage.Stage3:
-                        stage3.SetScore(keyValuePair.Value);
-                        break;
-                    case StageData.Stage.Stage4:
-                        stage4.SetScore(keyValuePair.Value);
-                        break;
-                    case StageData.Stage.Stage5:
-                        stage4.SetScore(keyValuePair.Value);
-                        break;
                 }
+            }
         }
 
 

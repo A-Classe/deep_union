@@ -121,8 +121,12 @@ namespace Core.Input.Editor
         {
             var builder = new StringBuilder();
 
+            builder.Append($"       public readonly Guid MapId = new Guid(\"{actionMap.id}\");\n");
+
             foreach (var inputAction in actionMap)
+            {
                 builder.Append($"       public readonly Guid {inputAction.name} = new Guid(\"{inputAction.id}\");\n");
+            }
 
             //最後の改行は削除
             builder.Remove(builder.Length - 1, 1);

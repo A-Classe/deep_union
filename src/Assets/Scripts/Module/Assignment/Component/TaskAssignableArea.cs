@@ -22,13 +22,13 @@ namespace Module.Assignment.Component
             assignableArea.OnWorkerExit += RemoveWorker;
         }
 
-        private void AddWorker(Worker worker)
+        private void AddWorker(Worker worker, AssignableArea.WorkerEventType _)
         {
             worker.SetWorkerState(WorkerState.Working);
             baseTask.WorkerCount += 1;
         }
 
-        private void RemoveWorker(Worker worker)
+        private void RemoveWorker(Worker worker, AssignableArea.WorkerEventType _)
         {
             baseTask.WorkerCount -= 1;
         }

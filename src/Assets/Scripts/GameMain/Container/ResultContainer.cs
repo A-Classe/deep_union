@@ -1,5 +1,6 @@
 using Core.User;
 using GameMain.Router;
+using Module.Extension.UI;
 using Module.UI.Result;
 using UnityEngine;
 using VContainer;
@@ -10,6 +11,7 @@ namespace GameMain.Container
     public class ResultContainer : LifetimeScope
     {
         [SerializeField] private ResultManager resultManager;
+        [SerializeField] private VideoPlayerControllerExt videoPlayer;
 
         protected override void Configure(IContainerBuilder builder)
         {
@@ -18,6 +20,7 @@ namespace GameMain.Container
             builder.Register<UserPreference>(Lifetime.Singleton);
 
             builder.RegisterInstance(resultManager);
+            builder.RegisterInstance(videoPlayer);
         }
     }
 }

@@ -6,18 +6,23 @@ namespace Module.Player.State
     public enum PlayerState
     {
         /// <summary>
-        ///     進行中の停止状態
-        /// </summary>
-        Wait,
-
-        /// <summary>
-        ///     プレイ中
-        /// </summary>
-        Go,
-
-        /// <summary>
         ///     システム上の停止
         /// </summary>
-        Pause
+        Pause,
+            
+        /// <summary>
+        ///     ゲーム上の停止
+        /// </summary>
+        Stop,
+            
+        /// <summary>
+        ///     ピンに追従する
+        /// </summary>
+        FollowToPin,
+
+        /// <summary>
+        ///     自動航行
+        /// </summary>
+        Auto,
     }
 }

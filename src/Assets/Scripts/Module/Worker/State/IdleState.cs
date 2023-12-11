@@ -6,6 +6,7 @@ namespace Module.Working.State
     {
         private static readonly int IsFollowing = Animator.StringToHash("Following");
         private static readonly int IsWorking = Animator.StringToHash("Working");
+        private static readonly int IsDead = Animator.StringToHash("Dead");
 
         // ReSharper disable once NotAccessedField.Local
         private readonly Worker worker;
@@ -23,6 +24,7 @@ namespace Module.Working.State
         {
             workerAnimator.SetBool(IsFollowing, false);
             workerAnimator.SetBool(IsWorking, false);
+            workerAnimator.SetBool(IsDead, false);
         }
 
         public void OnStop()

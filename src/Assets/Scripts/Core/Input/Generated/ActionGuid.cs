@@ -9,21 +9,33 @@ namespace Core.Input
     public static class ActionGuid
     {
        public static readonly InGame InGame = new InGame();
+       public static readonly UI UI = new UI();
        public static readonly Title Title = new Title();
     }
 
     public class InGame
     {
+       public readonly Guid MapId = new Guid("ac672b18-4489-4d89-b8a1-c692c8626ad3");
        public readonly Guid Control = new Guid("4b5abd4e-9db5-4537-bcbb-09b065d8f69c");
        public readonly Guid Assign = new Guid("22d85c45-cf1a-422d-acb8-7b1768215f89");
        public readonly Guid Release = new Guid("d5850a10-c25d-48a6-920c-80db9074d4c4");
-       public readonly Guid ESC = new Guid("472655fd-8b18-4875-aae9-5b33d2815fc3");
-       public readonly Guid Move = new Guid("dfe40a5f-6c4e-4a89-bb42-c59fdfa6c029");
        public readonly Guid Rotate = new Guid("ac8d6d16-519b-4e2c-94e7-b37afd5385d0");
+       public readonly Guid RotateCamera = new Guid("256433bb-f35a-40bb-934a-669219aa375a");
+       public readonly Guid Pin = new Guid("12fd1722-f330-4b84-838b-e3c90872bdf1");
+    }
+
+    public class UI
+    {
+       public readonly Guid MapId = new Guid("0fa35982-73dc-47d0-b231-17c1627f06ce");
+       public readonly Guid ESC = new Guid("da8332c5-02d5-45f1-b6b0-0d90291ad325");
+       public readonly Guid AnyKey = new Guid("a16801dd-890d-46af-9e2a-3c325560ec23");
+       public readonly Guid Confirm = new Guid("afdfbdb8-c936-4a9d-a61a-9ea47fe65141");
+       public readonly Guid DebugQ = new Guid("bdd8f648-a4ad-45e6-8973-f8e053f9cb51");
     }
 
     public class Title
     {
+       public readonly Guid MapId = new Guid("18866af5-f93f-4170-92f6-9f811ef67eaa");
        public readonly Guid Click = new Guid("b9ad4076-5aac-4827-8a94-57c3dd139f17");
        public readonly Guid Move = new Guid("708c54d3-5590-4475-bbd6-f07e8a050432");
        public readonly Guid Cancel = new Guid("04599d92-9045-4c43-b931-fc5bd9f7b4cb");

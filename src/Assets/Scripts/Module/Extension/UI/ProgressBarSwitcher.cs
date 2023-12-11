@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 using Module.Task;
 using Module.UI.HUD;
 using VContainer;
 using VContainer.Unity;
+using Wanna.DebugEx;
 
 namespace Module.Extension.UI
 {
@@ -11,7 +13,7 @@ namespace Module.Extension.UI
     /// </summary>
     public class ProgressBarSwitcher : ITickable
     {
-        private readonly Queue<(BaseTask task, TaskProgressView view)> activeViews;
+        private readonly Dictionary<BaseTask, TaskProgressView> activeViews;
         private readonly TaskActivator taskActivator;
         private readonly TaskProgressPool taskProgressPool;
 
@@ -20,49 +22,52 @@ namespace Module.Extension.UI
         {
             this.taskProgressPool = taskProgressPool;
             this.taskActivator = taskActivator;
-            activeViews = new Queue<(BaseTask task, TaskProgressView view)>();
+            activeViews = new Dictionary<BaseTask, TaskProgressView>(64);
 
-            this.taskActivator.OnTaskCreated += Initialize;
+            this.taskActivator.OnTaskInitialized += Initialize;
         }
 
-        public void Tick()
+        private void Initialize(ReadOnlyMemory<BaseTask> initializedTasks)
         {
-            foreach (var element in activeViews)
+            foreach (var task in initializedTasks.Span)
             {
-                if (!element.view.IsEnabled)
-                    continue;
-
-                //タスクが終了したら非表示にする
-                if (element.task.State == TaskState.Completed)
-                {
-                    element.view.Disable();
-                    continue;
-                }
-
-                element.view.ManagedUpdate();
-                element.view.SetProgress(element.task.Progress);
+                OnTaskActivated(task);
             }
-        }
-
-        public void Initialize()
-        {
-            foreach (var task in taskActivator.GetActiveTasks()) OnTaskActivated(task);
 
             //ゲーム開始時に画面内に存在するタスクの進捗バー表示
             taskActivator.OnTaskActivated += OnTaskActivated;
             taskActivator.OnTaskDeactivated += OnTaskDeactivated;
         }
 
+        public void Tick()
+        {
+            foreach ((BaseTask task, TaskProgressView view) in activeViews)
+            {
+                if (!view.IsEnabled)
+                    continue;
+
+                //タスクが終了したら非表示にする
+                if (task.State == TaskState.Completed)
+                {
+                    view.Disable();
+                    continue;
+                }
+
+                view.ManagedUpdate();
+                view.SetProgress(task.Progress);
+            }
+        }
+
         private void OnTaskActivated(BaseTask task)
         {
             var view = taskProgressPool.GetProgressView(task.transform);
-            activeViews.Enqueue((task, view));
+            activeViews.Add(task, view);
         }
 
         private void OnTaskDeactivated(BaseTask task)
         {
-            var element = activeViews.Dequeue();
-            taskProgressPool.ReleaseProgressView(element.view);
+            taskProgressPool.ReleaseProgressView(activeViews[task]);
+            activeViews.Remove(task);
         }
     }
 }

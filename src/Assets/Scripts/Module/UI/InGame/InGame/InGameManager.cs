@@ -1,6 +1,7 @@
 using System;
 using AnimationPro.RunTime;
 using Core.Utility.UI;
+using Core.Utility.UI.Component;
 using Core.Utility.UI.Navigation;
 using TMPro;
 using UnityEngine;
@@ -30,7 +31,7 @@ namespace Module.UI.InGame.InGame
         [SerializeField] private Image gaugeRes;
 
         // workers
-        [SerializeField] private TextMeshProUGUI currentWorkers;
+        [SerializeField] private PopupText currentWorkers;
         [SerializeField] private AnimateObject workersIcon;
         [SerializeField] private float startOffsetY; // -205
         [SerializeField] private float endOffsetY; // -37
@@ -71,8 +72,15 @@ namespace Module.UI.InGame.InGame
             sliderHp.value = current;
             var currentValue = current / (float)maxHpValue;
 
-            gaugeHpBackground.color = ChangeColor(minHpHSV, maxHpHSV, currentValue);
-            handleBackground.color = ChangeColor(minHpHSV, maxHpHSV, currentValue);
+            if (gaugeHpBackground != null)
+            {
+                gaugeHpBackground.color = ChangeColor(minHpHSV, maxHpHSV, currentValue);
+            }
+
+            if (handleBackground != null)
+            {
+                handleBackground.color = ChangeColor(minHpHSV, maxHpHSV, currentValue);
+            }
         }
 
         private Color ChangeColor(Vector3 min, Vector3 max, float value)
@@ -113,7 +121,7 @@ namespace Module.UI.InGame.InGame
 
             if (value > maxWorkersValue.Value) return;
 
-            currentWorkers.text = value.ToString();
+            currentWorkers.SetTextIsUp(value.ToString());
 
 
             UpdateWorkersMoviePosition(value);

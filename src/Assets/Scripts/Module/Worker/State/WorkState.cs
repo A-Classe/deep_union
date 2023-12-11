@@ -2,6 +2,7 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
+using Wanna.DebugEx;
 
 namespace Module.Working.State
 {
@@ -68,7 +69,9 @@ namespace Module.Working.State
 
         private bool IsArrived()
         {
-            return navMeshAgent != null && navMeshAgent.remainingDistance == 0f;
+            return navMeshAgent != null &&
+                   navMeshAgent.pathStatus != NavMeshPathStatus.PathInvalid &&
+                   navMeshAgent.remainingDistance == 0f;
         }
     }
 }

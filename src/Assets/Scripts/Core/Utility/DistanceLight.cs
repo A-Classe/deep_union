@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
@@ -21,7 +22,9 @@ namespace Core.Utility
 
         private async UniTaskVoid AdjustLODQuality()
         {
-            while (!this.GetCancellationTokenOnDestroy().IsCancellationRequested)
+            CancellationToken destroyCanceller = this.GetCancellationTokenOnDestroy();
+            
+            while (!destroyCanceller.IsCancellationRequested)
             {
                 var squareDistanceFromCamera = (camTransform.position - transform.position).sqrMagnitude;
 
@@ -36,7 +39,7 @@ namespace Core.Utility
                     isDisappeared = true;
                 }
 
-                await UniTask.Delay(TimeSpan.FromSeconds(updateInterval));
+                await UniTask.Delay(TimeSpan.FromSeconds(updateInterval), cancellationToken: destroyCanceller);
             }
         }
     }

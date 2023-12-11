@@ -4,10 +4,12 @@ using System.Linq;
 using Core.Utility;
 using Module.Assignment.Utility;
 using Module.Working;
+using Module.Working.State;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Serialization;
+using Wanna.DebugEx;
 
 namespace Module.Assignment.Component
 {
@@ -17,6 +19,7 @@ namespace Module.Assignment.Component
     public class AssignableArea : MonoBehaviour
     {
         private static readonly int IntensityKey = Shader.PropertyToID("_Intensity");
+        [SerializeField] private bool isAssignable = true;
         [SerializeField] private DecalProjector lightProjector;
 
         [FormerlySerializedAs("ellipseCollider")] [SerializeField]
@@ -45,6 +48,7 @@ namespace Module.Assignment.Component
         public EllipseData EllipseData => new(transform.position, size * factor, rotation);
 
         public IReadOnlyList<Worker> AssignedWorkers => assignedWorkers;
+        public IReadOnlyList<AssignPoint> AssignPoints => assignPoints;
 
         private void Awake()
         {
@@ -67,8 +71,8 @@ namespace Module.Assignment.Component
             ellipseVisualizer.SetEllipse(ellipseData);
         }
 
-        public event Action<Worker> OnWorkerEnter;
-        public event Action<Worker> OnWorkerExit;
+        public event Action<Worker, WorkerEventType> OnWorkerEnter;
+        public event Action<Worker, WorkerEventType> OnWorkerExit;
 
         private void SetLightSize()
         {
@@ -99,7 +103,7 @@ namespace Module.Assignment.Component
                 //DebugEx.LogWarning("登録できるAssignPointはありません！");
             }
 
-            return assignPoints.Count > 0;
+            return isAssignable && assignPoints.Count > 0;
         }
 
         private Transform GetNearestAssignPoint(Vector3 target)
@@ -126,24 +130,35 @@ namespace Module.Assignment.Component
             return nearestPoint.transform;
         }
 
-        public void AddWorker(Worker worker)
+        public enum WorkerEventType
+        {
+            Create,
+            Destroy,
+            Default
+        }
+        public void AddWorker(Worker worker, WorkerEventType type = WorkerEventType.Default)
         {
             var assignPoint = GetNearestAssignPoint(worker.transform.position);
 
             worker.SetFollowTarget(transform, assignPoint.transform);
             assignedWorkers.Add(worker);
-            OnWorkerEnter?.Invoke(worker);
+            OnWorkerEnter?.Invoke(worker, type);
 
-            worker.OnDead += RemoveWorker;
+            worker.OnDead += DeadWorker;
         }
 
-        public void RemoveWorker(Worker worker)
+        private void DeadWorker(Worker worker)
+        {
+            RemoveWorker(worker, WorkerEventType.Destroy);
+        }
+
+        public void RemoveWorker(Worker worker, WorkerEventType type = WorkerEventType.Default)
         {
             assignedWorkers.Remove(worker);
-            OnWorkerExit?.Invoke(worker);
+            OnWorkerExit?.Invoke(worker, type);
             ReleaseAssignPoint(worker.Target);
 
-            worker.OnDead -= RemoveWorker;
+            worker.OnDead -= DeadWorker;
         }
 
         private void SetEnableAssignPointDebug(bool enable)

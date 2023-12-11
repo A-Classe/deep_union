@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using Core.Scenes;
 using Core.User;
+using Core.User.Recorder;
 using Core.Utility.UI.Navigation;
+using Module.GameSetting;
 using Module.UI.InGame.GameOver;
 using Module.UI.InGame.InGame;
 using Module.UI.InGame.Pause;
@@ -20,6 +22,10 @@ namespace Module.UI.InGame
         private Navigation<InGameNav> navigation;
 
         private SceneChanger sceneChanger;
+        
+        private BrightController brightController;
+
+        public event Action OnNeedReport;
 
         private void Awake()
         {
@@ -38,6 +44,7 @@ namespace Module.UI.InGame
         {
             gameOverManager.OnSelect += () =>
             {
+                OnNeedReport?.Invoke();
                 navigation.SetActive(false);
                 sceneChanger.LoadTitle(TitleNavigation.StageSelect);
             };
@@ -69,16 +76,25 @@ namespace Module.UI.InGame
                         OnGameInactive?.Invoke();
                         break;
                     case PauseManager.Nav.Restart:
+                        OnGameActive?.Invoke();
+                        OnNeedReport?.Invoke();
                         navigation.SetActive(false);
                         sceneChanger.LoadInGame(sceneChanger.GetInGame());
                         break;
                     case PauseManager.Nav.Exit:
+                        OnGameActive?.Invoke();
+                        OnNeedReport?.Invoke();
                         navigation.SetActive(false);
                         sceneChanger.LoadTitle(TitleNavigation.StageSelect);
                         break;
                     default:
                         throw new ArgumentOutOfRangeException(nameof(nav), nav, null);
                 }
+            };
+            
+            optionManager.OnBrightness += value =>
+            {
+                brightController.SetBrightness(value / 10f);
             };
 
             navigation.SetActive(true);
@@ -87,9 +103,9 @@ namespace Module.UI.InGame
         public event Action OnGameInactive;
         public event Action OnGameActive;
 
-        public void StartGame(UserPreference preference)
+        public void StartGame(UserPreference preference, AudioMixerController controller)
         {
-            optionManager.SetPreference(preference);
+            optionManager.SetPreference(preference, controller);
             navigation.SetActive(true);
             navigation.SetScreen(InGameNav.InGame);
         }
@@ -133,6 +149,11 @@ namespace Module.UI.InGame
         public void SetResourceCount(uint current, uint? max = null)
         {
             inGameManager.SetResource(current, max);
+        }
+        
+        public void SetBrightnessController(BrightController controller)
+        {
+            brightController = controller;
         }
     }
 

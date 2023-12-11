@@ -40,11 +40,11 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1689977097}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.6
+  m_Center: {x: 0, y: 1.5241749, z: 0}
 --- !u!1 &11699557729879083
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,7 +746,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8798224403364023010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.123807, y: 31.88284, z: 136.14084}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -775,13 +775,12 @@ MonoBehaviour:
   currentWorkerCount: 0
   navMeshAgent: {fileID: 1703818973}
   assignableArea: {fileID: 8177856091316181010}
+  rig: {fileID: 0}
   collision: {fileID: 1715140342}
   addHp: 10
-  moveSpeed: 5
-  minWorkerCount: 10
+  moveSpeed: 3.5
+  minWorkerCount: 5
   maxWorkerCount: 30
-  audioSource: {fileID: 6981878997597987576}
-  HealSound: {fileID: 8300000, guid: 8719ca82af1819344a43042355c08743, type: 3}
   collideObj: {fileID: 1689977097}
   healObj: {fileID: 9184461193990643031}
 --- !u!195 &1703818973
@@ -831,7 +830,8 @@ AudioSource:
   m_GameObject: {fileID: 8798224403364023010}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1342477709620417728, guid: 0c662644607e14a5aa5369dddfb14770,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.452
@@ -979,6 +979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86741824de2f411286f8f151edfe8c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAssignable: 1
   lightProjector: {fileID: 2094165392034516240}
   ellipseVisualizer: {fileID: 1341522716374464683}
   intensity: 0.5
@@ -1070,6 +1071,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8106131013788965581}
     m_Modifications:
+    - target: {fileID: 7063238309233763302, guid: 2eb294e81f9f5754896e8b324a83a7eb,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7548171
+      objectReference: {fileID: 0}
+    - target: {fileID: 7063238309233763302, guid: 2eb294e81f9f5754896e8b324a83a7eb,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7548171
+      objectReference: {fileID: 0}
+    - target: {fileID: 7063238309233763302, guid: 2eb294e81f9f5754896e8b324a83a7eb,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7548171
+      objectReference: {fileID: 0}
+    - target: {fileID: 8428981004130967510, guid: 2eb294e81f9f5754896e8b324a83a7eb,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 9184461192326743529, guid: 2eb294e81f9f5754896e8b324a83a7eb,
         type: 3}
       propertyPath: m_Name

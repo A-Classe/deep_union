@@ -45,8 +45,8 @@ namespace Module.Extension.Task
             var controller = obj.GetComponent<PlayerController>();
             if (controller == null) return;
 
-            controller.SetState(PlayerState.Wait);
-            onComplete = () => controller.SetState(PlayerState.Go);
+            controller.SetState(PlayerState.FollowToPin);
+            onComplete = () => controller.SetState(PlayerState.Auto);
         }
 
         public override void Initialize(IObjectResolver container)
