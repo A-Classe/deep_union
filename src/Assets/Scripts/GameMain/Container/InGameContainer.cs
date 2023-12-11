@@ -4,6 +4,7 @@ using Core.NavMesh;
 using Core.User.Recorder;
 using Core.Utility;
 using Core.Utility.Player;
+using Debug;
 using GameMain.Presenter;
 using GameMain.Presenter.Resource;
 using GameMain.Presenter.Working;
@@ -74,6 +75,7 @@ namespace GameMain.Container
             builder.Register<EventBroker>(Lifetime.Singleton);
             builder.Register<GameActionRecorder>(Lifetime.Singleton);
             builder.Register<ActiveAreaCollector>(Lifetime.Singleton);
+            builder.Register<DebugGameClear>(Lifetime.Singleton);
 
             builder.RegisterInstance(spawnPoint);
             builder.RegisterInstance(healTaskPool);
