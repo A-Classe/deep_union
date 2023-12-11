@@ -8,6 +8,7 @@ using Core.Scenes;
 using Core.User;
 using Core.User.API;
 using Core.User.Recorder;
+using Debug;
 using GameMain.Presenter;
 using Module.Assignment.Component;
 using Module.GameManagement;
@@ -54,9 +55,9 @@ namespace GameMain.Router
         private readonly WorkerController workerController;
 
         private readonly WorkerSpawner workerSpawner;
-        
+
         private readonly AudioMixerController audioMixerController;
-        
+
         private readonly BrightController brightController;
 
         private readonly EventBroker eventBroker;
@@ -64,6 +65,7 @@ namespace GameMain.Router
         private readonly GameActionRecorder recorder;
         private readonly FirebaseAccessor db;
         private readonly TimeManager timeManager;
+        private readonly DebugGameClear debugGameClear;
 
         [Inject]
         public GameRouter(
@@ -87,7 +89,8 @@ namespace GameMain.Router
             EventBroker eventBroker,
             GameActionRecorder recorder,
             FirebaseAccessor db,
-            TimeManager timeManager
+            TimeManager timeManager,
+            DebugGameClear debugGameClear
         )
         {
             this.spawnParam = spawnParam;
@@ -113,9 +116,9 @@ namespace GameMain.Router
             this.resourceContainer = resourceContainer;
 
             this.workerAgent = workerAgent;
-            
+
             this.audioMixerController = audioMixerController;
-            
+
             this.brightController = brightController;
 
             this.eventBroker = eventBroker;
@@ -124,6 +127,7 @@ namespace GameMain.Router
 
             this.db = db;
             this.timeManager = timeManager;
+            this.debugGameClear = debugGameClear;
         }
 
         public void Dispose()
@@ -134,7 +138,7 @@ namespace GameMain.Router
         public void Start()
         {
             Application.targetFrameRate = 60;
-            
+
             runtimeNavMeshBaker.Build();
             progressObserver.Start().Forget();
 
@@ -176,7 +180,7 @@ namespace GameMain.Router
             {
                 eventBroker.SendEvent(new MovePlayer(Math.Abs(distance)).Event());
             };
-            
+
             workerController.OnMoveDistance += distance =>
             {
                 eventBroker.SendEvent(new MoveWorkers(Math.Abs(distance)).Event());
@@ -190,6 +194,7 @@ namespace GameMain.Router
 
             // Game Clear
             progressObserver.OnCompleted += OnGameClear;
+            debugGameClear.OnGameClearRequested += OnGameClear;
 
             var escEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.UI.ESC);
             escEvent.Canceled += _ =>
@@ -198,16 +203,16 @@ namespace GameMain.Router
             };
 
             sceneChanger.OnBeforeChangeScene += SaveReport;
-            
+
             preference.Load();
-            
+
             preference.CompletedFirst();
             preference.Save();
-            
+
             UserData data = preference.GetUserData();
             brightController.SetBrightness(data.bright.value / 10f);
             uiManager.SetBrightnessController(brightController);
-            
+
             eventBroker.Clear();
             eventBroker.SendEvent(new GamePlay().Event());
 
@@ -246,7 +251,6 @@ namespace GameMain.Router
             {
                 sceneChanger.LoadAfterMovieInGame(result);
             }
-            
         }
 
         private void SaveReport()

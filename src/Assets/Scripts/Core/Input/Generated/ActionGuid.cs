@@ -11,6 +11,7 @@ namespace Core.Input
        public static readonly InGame InGame = new InGame();
        public static readonly UI UI = new UI();
        public static readonly Title Title = new Title();
+       public static readonly DebugKey DebugKey = new DebugKey();
     }
 
     public class InGame
@@ -39,5 +40,11 @@ namespace Core.Input
        public readonly Guid Click = new Guid("b9ad4076-5aac-4827-8a94-57c3dd139f17");
        public readonly Guid Move = new Guid("708c54d3-5590-4475-bbd6-f07e8a050432");
        public readonly Guid Cancel = new Guid("04599d92-9045-4c43-b931-fc5bd9f7b4cb");
+    }
+
+    public class DebugKey
+    {
+       public readonly Guid MapId = new Guid("1a02f54e-c789-4a5e-abbc-eafbe1628a09");
+       public readonly Guid GameClear = new Guid("ee4a7f18-fac1-40af-90a2-ebb84a7eddb0");
     }
 }
