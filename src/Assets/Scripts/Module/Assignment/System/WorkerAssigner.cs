@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Core.Model.User;
 using Core.User.Recorder;
@@ -20,6 +21,8 @@ namespace Module.Assignment.System
         private readonly EventBroker eventBroker;
 
         private IReadOnlyList<AssignableArea> activeAreas;
+
+        public event Action OnAssign;
 
         [Inject]
         public WorkerAssigner(
@@ -76,6 +79,7 @@ namespace Module.Assignment.System
                         leaderAssignableArea.AssignableArea.RemoveWorker(worker);
                         activeArea.AddWorker(worker);
                         eventBroker.SendEvent(new AssignEvent().Event());
+                        OnAssign?.Invoke();
                     }
                 }
             }

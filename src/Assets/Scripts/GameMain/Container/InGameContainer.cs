@@ -1,12 +1,9 @@
 ﻿using System.GameProgress;
 using System.Linq;
 using Core.NavMesh;
-using Core.User;
-using Core.User.API;
 using Core.User.Recorder;
 using Core.Utility;
 using Core.Utility.Player;
-using Debug;
 using GameMain.Presenter;
 using GameMain.Presenter.Resource;
 using GameMain.Presenter.Working;
@@ -23,7 +20,6 @@ using Module.UI.InGame;
 using Module.Working;
 using Module.Working.Controller;
 using Module.Working.Factory;
-using UnityDebugSheet.Runtime.Core.Scripts;
 using UnityEngine;
 using UnityEngine.Serialization;
 using VContainer;
@@ -42,6 +38,7 @@ namespace GameMain.Container
         [SerializeField] private PlayerController playerController;
         [SerializeField] private GoalPoint goalPoint;
         [SerializeField] private TaskProgressPool progressPool;
+        [SerializeField] private WorkerSoundPlayer workerSoundPlayer;
         [SerializeField] private HealTaskPool healTaskPool;
         [SerializeField] private PlayerStatusVisualizer playerStatusVisualizer;
 
@@ -87,6 +84,7 @@ namespace GameMain.Container
             builder.RegisterInstance(progressPool);
             builder.RegisterInstance(leaderAssignableArea);
             builder.RegisterInstance(inGameUIManager);
+            builder.RegisterInstance(workerSoundPlayer);
             builder.RegisterInstance(new PlayerStatus(gameParam.ConvertToStatus()));
             builder.RegisterInstance(playerStatusVisualizer);
             builder.RegisterInstance(brightController);

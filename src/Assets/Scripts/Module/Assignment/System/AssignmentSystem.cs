@@ -3,6 +3,7 @@ using Core.Input;
 using Core.User.Recorder;
 using Module.Assignment.Component;
 using Module.Task;
+using Module.Working;
 using VContainer;
 using VContainer.Unity;
 using Wanna.DebugEx;
@@ -27,6 +28,7 @@ namespace Module.Assignment.System
             WorkerAssigner workerAssigner,
             WorkerReleaser workerReleaser,
             TaskActivator taskActivator,
+            WorkerSoundPlayer workerAudioPlayer,
             ActiveAreaCollector activeAreaCollector,
             EventBroker eventBroker
         )
@@ -58,6 +60,8 @@ namespace Module.Assignment.System
             {
                 assignState = AssignState.Idle;
             };
+
+            workerAssigner.OnAssign += workerAudioPlayer.Play;
         }
 
         public void Start()

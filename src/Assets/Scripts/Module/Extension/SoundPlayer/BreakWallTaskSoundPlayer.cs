@@ -26,7 +26,7 @@ namespace Module.Extension.SoundPlayer
         private void OnTaskCanceled(BaseTask _)
         {
             // なっている音を止める
-            AudioSource.Stop();
+            //AudioSource.Stop();
         }
 
         private void OnTaskCompleted(BaseTask _)
