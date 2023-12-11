@@ -133,6 +133,8 @@ namespace GameMain.Router
 
         public void Start()
         {
+            Application.targetFrameRate = 60;
+            
             runtimeNavMeshBaker.Build();
             progressObserver.Start().Forget();
 
