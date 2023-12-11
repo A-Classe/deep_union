@@ -17,15 +17,16 @@ jobs:
           lfs: true
       - uses: actions/cache@v3
         with:
-          path: Library
+          path: src/Library
           key: Library-${{ matrix.targetPlatform }}
           restore-keys: Library-
-      - uses: game-ci/unity-builder@v3
+      - uses: game-ci/unity-builder@v4
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
+          customImage: 'windows-2021.3.23f1-universal-windows-platform-3.0.0'
           targetPlatform: ${{ matrix.targetPlatform }}
           projectPath: src
           unityVersion: 2021.3.23f1
