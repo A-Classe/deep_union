@@ -13,7 +13,7 @@ namespace Debug
         [Inject]
         public DebugGameClear()
         {
-            gameClearEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.Cheat.GameClear);
+            gameClearEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.DebugKey.GameClear);
             gameClearEvent.Started += GameClear;
         }
 
