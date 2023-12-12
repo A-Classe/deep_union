@@ -61,7 +61,8 @@ namespace Module.Assignment.System
                 assignState = AssignState.Idle;
             };
 
-            workerAssigner.OnAssign += workerAudioPlayer.Play;
+            workerAssigner.OnAssign += workerAudioPlayer.PlayOnAssign;
+            workerReleaser.OnRelease += workerAudioPlayer.PlayOnRelease;
         }
 
         public void Start()

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -15,7 +16,8 @@ namespace Module.Working
         [SerializeField] private AudioClip assignSound;
         [SerializeField] private float minPlayInterval;
         [SerializeField] private float maxQueueCount;
-        private int scheduledCount;
+        
+        private readonly Queue<AudioClip> clipQueue = new Queue<AudioClip>(64);
 
         private void Start()
         {
@@ -32,35 +34,45 @@ namespace Module.Working
         private async UniTaskVoid PlayLoop()
         {
             CancellationToken canceller = this.GetCancellationTokenOnDestroy();
-            
+
             while (!canceller.IsCancellationRequested)
             {
                 //なにかスケジュールされるまで待機
-                await UniTask.WaitUntil(() => scheduledCount > 0, cancellationToken: canceller);
+                await UniTask.WaitUntil(() => clipQueue.Count > 0, cancellationToken: canceller);
 
-                audioSource.PlayOneShot(assignSound);
-                scheduledCount--;
+                audioSource.PlayOneShot(clipQueue.Dequeue());
 
                 //次の再生まで待機
                 await UniTask.Delay(TimeSpan.FromSeconds(minPlayInterval), cancellationToken: canceller);
             }
         }
 
-        public void Play()
+        public void PlayOnAssign()
+        {
+            PlayCore(assignSound);
+        }
+
+        public void PlayOnRelease()
+        {
+            //リリース用に変える
+            PlayCore(assignSound);
+        }
+
+        private void PlayCore(AudioClip audioClip)
         {
             //最大待機量を超えたら再生しない
-            if (scheduledCount >= maxQueueCount)
+            if (clipQueue.Count >= maxQueueCount)
                 return;
-            
+
             //再生中じゃないときはそのまま再生
             if (!audioSource.isPlaying)
             {
-                audioSource.PlayOneShot(assignSound);
+                audioSource.PlayOneShot(audioClip);
                 return;
             }
 
             //スケジュールする
-            scheduledCount++;
+            clipQueue.Enqueue(audioClip);
         }
     }
 }
