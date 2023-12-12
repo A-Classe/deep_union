@@ -14,11 +14,8 @@ namespace Module.Extension.Task
         {
             animator.gameObject.SetActive(true);
             animator.Play(Bomb1);
-            DebugEx.Log("Explode Start");
 
             await UniTask.WaitUntil(() => isBombEffectStop);
-
-            DebugEx.Log("Explode ENd");
         }
 
         public void OnBombEffectStopEvent()

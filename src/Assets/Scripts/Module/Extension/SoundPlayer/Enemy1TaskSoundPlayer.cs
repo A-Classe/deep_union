@@ -27,7 +27,7 @@ namespace Module.Extension.SoundPlayer
         private void OnBomb()
         {
             // ������������炷
-            //AudioSource.PlayOneShot(BombSound);
+            AudioSource.PlayOneShot(BombSound);
         }
     }
 }
