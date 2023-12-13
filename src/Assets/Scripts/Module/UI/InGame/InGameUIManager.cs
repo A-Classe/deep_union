@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using Core.Model.Minimap;
 using Core.Scenes;
 using Core.User;
+using Core.User.Recorder;
 using Core.Utility.UI.Navigation;
+using Module.GameSetting;
 using Module.UI.InGame.GameOver;
 using Module.UI.InGame.InGame;
 using Module.UI.InGame.Pause;
@@ -21,7 +23,7 @@ namespace Module.UI.InGame
         private Navigation<InGameNav> navigation;
 
         private SceneChanger sceneChanger;
-        
+
         public event Action OnGameInactive;
         public event Action OnGameActive;
         
@@ -30,6 +32,10 @@ namespace Module.UI.InGame
             Main,
             Minimap
         }
+        private BrightController brightController;
+
+        public event Action OnNeedReport;
+
 
         private State state = State.Main;
         
@@ -50,6 +56,7 @@ namespace Module.UI.InGame
         {
             gameOverManager.OnSelect += () =>
             {
+                OnNeedReport?.Invoke();
                 navigation.SetActive(false);
                 sceneChanger.LoadTitle(TitleNavigation.StageSelect);
             };
@@ -81,10 +88,14 @@ namespace Module.UI.InGame
                         OnGameInactive?.Invoke();
                         break;
                     case PauseManager.Nav.Restart:
+                        OnGameActive?.Invoke();
+                        OnNeedReport?.Invoke();
                         navigation.SetActive(false);
                         sceneChanger.LoadInGame(sceneChanger.GetInGame());
                         break;
                     case PauseManager.Nav.Exit:
+                        OnGameActive?.Invoke();
+                        OnNeedReport?.Invoke();
                         navigation.SetActive(false);
                         sceneChanger.LoadTitle(TitleNavigation.StageSelect);
                         break;
@@ -92,12 +103,18 @@ namespace Module.UI.InGame
                         throw new ArgumentOutOfRangeException(nameof(nav), nav, null);
                 }
             };
+
             inGameManager.OnMinimapClick += () =>
             {
                 inGameManager.SetMiniView();
                 navigation.SetActive(true);
                 state = State.Main;
                 OnGameActive?.Invoke();
+            };
+
+            optionManager.OnBrightness += value =>
+            {
+                brightController.SetBrightness(value / 10f);
             };
 
             navigation.OnCancel += _ =>
@@ -108,9 +125,10 @@ namespace Module.UI.InGame
             navigation.SetActive(true);
         }
 
-        public void StartGame(UserPreference preference)
+
+        public void StartGame(UserPreference preference, AudioMixerController controller)
         {
-            optionManager.SetPreference(preference);
+            optionManager.SetPreference(preference, controller);
             navigation.SetActive(true);
             navigation.SetScreen(InGameNav.InGame);
         }
@@ -167,7 +185,12 @@ namespace Module.UI.InGame
         {
             inGameManager.SetMinimapParam(data);
         }
+
         
+        public void SetBrightnessController(BrightController controller)
+        {
+            brightController = controller;
+        }
     }
 
     public enum InGameNav

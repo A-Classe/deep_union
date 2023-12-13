@@ -21,7 +21,6 @@ namespace Module.Extension.Task
         [SerializeField] private float duration = 2;
         [SerializeField] private Renderer sphereRenderer;
         [SerializeField] private ParticleSystem floorParticle;
-        private Material fresnelMaterial;
         private LeaderAssignableArea leaderAssignableArea;
         private SpawnPoint spawnPoint;
         private Material waveMaterial;
@@ -42,7 +41,6 @@ namespace Module.Extension.Task
 
             var materials = sphereRenderer.materials;
             waveMaterial = materials[0];
-            fresnelMaterial = materials[1];
         }
 
         protected override void OnComplete()
@@ -55,12 +53,11 @@ namespace Module.Extension.Task
                 worker.SetLockState(false);
                 workerAgent.AddActiveWorker(worker);
 
-                leaderAssignableArea.AssignableArea.AddWorker(worker);
+                leaderAssignableArea.AssignableArea.AddWorker(worker, AssignableArea.WorkerEventType.Create);
                 worker.transform.SetParent(spawnPoint.transform);
             }
 
             waveMaterial.DOFloat(maxCutOfHeight, CutOfHeightKey, duration).Play();
-            fresnelMaterial.DOFloat(maxCutOfHeight, CutOfHeightKey, duration).Play();
             floorParticle.Stop();
         }
     }

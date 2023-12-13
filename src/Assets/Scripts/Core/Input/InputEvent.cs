@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using UnityEngine.InputSystem;
+using Wanna.DebugEx;
 
 namespace Core.Input
 {
@@ -52,6 +54,11 @@ namespace Core.Input
             Started = null;
             Performed = null;
             Canceled = null;
+        }
+
+        public InputAction GetInputAction()
+        {
+            return inputAction;
         }
     }
 }

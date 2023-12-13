@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Wanna.DebugEx;
 
 namespace Core.Input
 {
@@ -32,6 +33,11 @@ namespace Core.Input
             inputEvents.Add(inputEvent);
 
             return inputEvent;
+        }
+
+        public InputActionMap GetActionMap(Guid guid)
+        {
+            return inputActionAsset.FindActionMap(guid);
         }
     }
 }

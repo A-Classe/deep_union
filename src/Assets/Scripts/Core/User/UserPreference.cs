@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq.Expressions;
+using Core.Model.User;
 using UnityEngine;
 
 namespace Core.User
@@ -63,6 +64,34 @@ namespace Core.User
             data.effectVolume.value = vol;
             dataManager.Set(data);
         }
+        
+        /// <summary>
+        /// 例外的にここだけ必須でセーブしておく
+        /// </summary>
+        public void CompletedFirst()
+        {
+            var data = dataManager.Get<UserData>();
+            data.isFirst.value = true;
+            dataManager.Set(data);
+            Save();
+        }
+        
+        /// <summary>
+        /// デバッグ用
+        /// todo: そのうち消したい
+        /// </summary>
+        public void ResetIsFirst()
+        {
+            var data = dataManager.Get<UserData>();
+            data.isFirst.value = false;
+            dataManager.Set(data);
+            Save();
+        }
+        
+        public bool GetIsFirst()
+        {
+            return dataManager.Get<UserData>().isFirst.value;
+        }
 
         public Dictionary<StageData.Stage, uint> GetStageData()
         {
@@ -99,6 +128,16 @@ namespace Core.User
         private string GetFilePath()
         {
             return Path.Combine(SaveDirPath, saveFilePath);
+        }
+
+        public Report GetReport()
+        {
+            return dataManager.Get<Report>();
+        }
+
+        public void SetReport(Report reporter)
+        {
+            dataManager.Set(reporter);
         }
     }
 }

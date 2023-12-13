@@ -2,11 +2,16 @@
 using System.Collections.Generic;
 using Core.Scenes;
 using Core.User;
+using Core.User.API;
+using Core.Utility;
 using Core.Utility.UI.Navigation;
+using Module.GameSetting;
 using Module.UI.Title.Credit;
 using Module.UI.Title.Option;
 using Module.UI.Title.Quit;
+using Module.UI.Title.Ranking;
 using Module.UI.Title.StageSelect;
+using Module.UI.Title.Stats;
 using Module.UI.Title.Title;
 using UnityEditor;
 using VContainer;
@@ -16,8 +21,6 @@ namespace GameMain.Router
 {
     internal class TitleRouter : IStartable
     {
-        private readonly CreditManager credit;
-
         private readonly UserPreference data;
 
         private readonly Navigation<TitleNavigation> navigation;
@@ -25,9 +28,14 @@ namespace GameMain.Router
 
         private readonly OptionManager option;
         private readonly QuitManager quit;
+        private readonly CreditManager credit;
         private readonly SceneChanger sceneChanger;
         private readonly StageSelectManager stageSelect;
         private readonly TitleManager title;
+        private readonly StatsManager statsManager;
+        private readonly FirebaseAccessor accessor;
+        private readonly RankingManager rankingManager;
+        
 
         [Inject]
         public TitleRouter(
@@ -36,8 +44,12 @@ namespace GameMain.Router
             OptionManager optionManager,
             CreditManager creditManager,
             StageSelectManager stageSelectManager,
+            StatsManager statsManager,
             UserPreference dataManager,
-            SceneChanger sceneChanger
+            SceneChanger sceneChanger,
+            AudioMixerController audioMixerController,
+            FirebaseAccessor firebaseAccessor,
+            RankingManager rankingManager
         )
         {
             title = titleManager;
@@ -46,23 +58,35 @@ namespace GameMain.Router
             credit = creditManager;
             stageSelect = stageSelectManager;
             this.sceneChanger = sceneChanger;
+            this.statsManager = statsManager;
+            accessor = firebaseAccessor;
+            this.rankingManager = rankingManager;
 
             data = dataManager;
-            option.SetPreference(data);
+            option.SetPreference(data, audioMixerController);
+            UserData userData = data.GetUserData();
+            audioMixerController.SetMasterVolume(userData.masterVolume.value / 10f);
+            audioMixerController.SetBGMVolume(userData.musicVolume.value / 10f);
+            audioMixerController.SetSEVolume(userData.effectVolume.value / 10f);
+            
             var initialManagers = new Dictionary<TitleNavigation, UIManager>
             {
                 { TitleNavigation.Title, title },
                 { TitleNavigation.Quit, quit },
                 { TitleNavigation.Option, option },
-                { TitleNavigation.Credit, credit },
-                { TitleNavigation.StageSelect, stageSelect }
+                { TitleNavigation.Credit, creditManager },
+                { TitleNavigation.StageSelect, stageSelect },
+                { TitleNavigation.Stats, statsManager },
+                { TitleNavigation.Ranking, rankingManager }
             };
             navigation = new Navigation<TitleNavigation>(initialManagers);
+            
         }
 
 
         public void Start()
         {
+            
             SetNavigation();
 
             var route = sceneChanger.GetTitle();
@@ -81,6 +105,41 @@ namespace GameMain.Router
             /* デバッグ用 */
             // data.Delete();
             data.Load();
+            rankingManager.OnChangedName += name =>
+            {
+                UnityEngine.Debug.Log(name);
+                accessor.SetName(name);
+                UserData userData = data.GetUserData();
+                userData.name.value = name;
+                data.SetUserData(userData);
+                data.Save();
+                ReloadRanking();
+            };
+            rankingManager.OnNeedLoad += ReloadRanking;
+        }
+
+        private void ReloadRanking()
+        {
+            try
+            {
+                data.Load();
+                UserData userData = data.GetUserData();
+                
+                rankingManager.SetName(userData.name.value);
+                accessor.GetAllData((ranking) =>
+                {
+                    MainThreadDispatcher.Instance.Enqueue(() =>
+                    {
+                        rankingManager.SetRanking(ranking, data.GetUserData().uuid.value);
+                        rankingManager.Reload();
+                    });
+                });
+            }
+            catch (Exception e)
+            {
+                UnityEngine.Debug.Log(e);
+                throw;
+            }
         }
 
 
@@ -92,6 +151,7 @@ namespace GameMain.Router
             title.OnOption += () => { NavigateToOption(true); };
             title.OnCredit += () => { NavigateToCredit(true); };
             title.OnPlay += () => { NavigateToPlay(true); };
+            title.OnStats += () => { NavigateToStats(); };
 
             quit.OnClick += isQuit =>
             {
@@ -111,8 +171,16 @@ namespace GameMain.Router
             };
             option.OnBack += NavigateToTitle;
 
+            credit.OnCreditFinished += NavigateToTitle;
+
             stageSelect.OnStage += StageSelected;
             stageSelect.OnBack += NavigateToTitle;
+            stageSelect.OnRanking += NavigateToRanking;
+            statsManager.OnBack += NavigateToTitle;
+            rankingManager.OnBack += () =>
+            {
+                NavigateToPlay(false);
+            };
         }
 
         /// <summary>
@@ -121,8 +189,15 @@ namespace GameMain.Router
         /// <param name="nav">選んだステージ</param>
         private void StageSelected(StageNavigation nav)
         {
-            if (!sceneChanger.LoadInGame(nav.ToStage()))
+            navigation.SetScreen(TitleNavigation.Title, isAnimate: false);
+            if (nav == StageNavigation.Tutorial)
+            {
+                sceneChanger.LoadInGame(StageData.Stage.Tutorial);
+            }
+            else if (!sceneChanger.LoadBeforeMovieInGame(nav.ToStage()))
+            {
                 throw new NotImplementedException("not found navigation : " + nav);
+            }
             navigation.SetActive(false);
         }
 
@@ -141,6 +216,8 @@ namespace GameMain.Router
                     break;
                 case TitleNavigation.Option:
                     break;
+                case TitleNavigation.Credit:
+                    break;
                 default:
                     NavigateToTitle();
                     break;
@@ -151,8 +228,17 @@ namespace GameMain.Router
         private void NavigateToPlay(bool isReset)
         {
             data.Load();
-            navigation.SetScreen(TitleNavigation.StageSelect, isReset: isReset);
-            stageSelect.SetScores(data.GetStageData());
+            if (!data.GetIsFirst())
+            {
+                sceneChanger.LoadInGame(StageData.Stage.Tutorial);
+                navigation.SetActive(false);
+            }
+            else
+            {
+                navigation.SetScreen(TitleNavigation.StageSelect, isReset: isReset);
+                stageSelect.SetScores(data.GetStageData());
+            }
+           
         }
 
         private void NavigateToCredit(bool isReset)
@@ -160,9 +246,22 @@ namespace GameMain.Router
             navigation.SetScreen(TitleNavigation.Credit, isReset: isReset);
         }
 
+        private void NavigateToStats()
+        {
+            statsManager.SetReports(data.GetReport());
+            navigation.SetScreen(TitleNavigation.Stats);
+        }
+
         private void NavigateToQuit(bool isReset)
         {
             navigation.SetScreen(TitleNavigation.Quit, isReset: isReset);
+        }
+
+        private void NavigateToRanking(StageData.Stage stage)
+        {
+            rankingManager.SetStage(stage);
+            ReloadRanking();
+            navigation.SetScreen(TitleNavigation.Ranking);
         }
 
         private void NavigateToOption(bool isReset)

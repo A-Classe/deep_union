@@ -1,7 +1,7 @@
 ﻿using System.GameProgress;
 using System.Linq;
 using Core.NavMesh;
-using Core.User;
+using Core.User.Recorder;
 using Core.Utility;
 using Core.Utility.Player;
 using Debug;
@@ -12,8 +12,8 @@ using GameMain.Router;
 using Module.Assignment.Component;
 using Module.Assignment.System;
 using Module.Extension.UI;
+using Module.GameSetting;
 using Module.Player;
-using Module.Player.Camera;
 using Module.Player.Controller;
 using Module.Task;
 using Module.UI.HUD;
@@ -23,7 +23,6 @@ using Module.Minimap;
 using Module.Working;
 using Module.Working.Controller;
 using Module.Working.Factory;
-using UnityDebugSheet.Runtime.Core.Scripts;
 using UnityEngine;
 using UnityEngine.Serialization;
 using VContainer;
@@ -40,17 +39,15 @@ namespace GameMain.Container
         [SerializeField] private SpawnParam spawnParam;
         [SerializeField] private WorkerController workerController;
         [SerializeField] private PlayerController playerController;
-        [SerializeField] private CameraController cameraController;
         [SerializeField] private GoalPoint goalPoint;
         [SerializeField] private TaskProgressPool progressPool;
+        [SerializeField] private WorkerSoundPlayer workerSoundPlayer;
+        [SerializeField] private HealTaskPool healTaskPool;
         [SerializeField] private PlayerStatusVisualizer playerStatusVisualizer;
-        [SerializeField] private DebugSheet debugSheet;
-
         [SerializeField] private InGameUIManager inGameUIManager;
         [SerializeField] private MinimapController minimapController;
-
-        [FormerlySerializedAs("leaderAssignEvent")] [SerializeField]
-        private LeaderAssignableArea leaderAssignableArea;
+        [SerializeField] private BrightController brightController;
+        [SerializeField] private LeaderAssignableArea leaderAssignableArea;
 
 
         protected override void Configure(IContainerBuilder builder)
@@ -61,11 +58,11 @@ namespace GameMain.Container
             builder.RegisterEntryPoint<ProgressBarSwitcher>();
             builder.RegisterEntryPoint<ResourcePresenter>();
             builder.RegisterEntryPoint<WorkerPresenter>();
-            builder.RegisterEntryPoint<SceneDebugTool>();
             builder.RegisterEntryPoint<LeaderPresenter>();
             builder.RegisterEntryPoint<AssignmentSystem>();
             builder.RegisterEntryPoint<PlayerStatusUpdater>();
-
+            builder.RegisterEntryPoint<HealTaskPoolPresenter>();
+            
             builder.Register<WorkerSpawner>(Lifetime.Singleton);
             builder.Register<WorkerAgent>(Lifetime.Singleton);
             builder.Register<StageProgressObserver>(Lifetime.Singleton);
@@ -74,22 +71,26 @@ namespace GameMain.Container
             builder.Register<WorkerAssigner>(Lifetime.Singleton);
             builder.Register<WorkerReleaser>(Lifetime.Singleton);
             builder.Register<TaskActivator>(Lifetime.Singleton);
-            builder.Register<UserPreference>(Lifetime.Singleton);
             builder.Register<MiniMapBuilder>(Lifetime.Singleton);
+            builder.Register<EventBroker>(Lifetime.Singleton);
+            builder.Register<GameActionRecorder>(Lifetime.Singleton);
+            builder.Register<ActiveAreaCollector>(Lifetime.Singleton);
+            builder.Register<DebugGameClear>(Lifetime.Singleton);
 
             builder.RegisterInstance(spawnPoint);
+            builder.RegisterInstance(healTaskPool);
             builder.RegisterInstance(spawnParam);
             builder.RegisterInstance(workerController);
             builder.RegisterInstance(playerController);
-            builder.RegisterInstance(cameraController);
             builder.RegisterInstance(goalPoint);
             builder.RegisterInstance(progressPool);
             builder.RegisterInstance(leaderAssignableArea);
             builder.RegisterInstance(inGameUIManager);
+            builder.RegisterInstance(workerSoundPlayer);
             builder.RegisterInstance(new PlayerStatus(gameParam.ConvertToStatus()));
             builder.RegisterInstance(playerStatusVisualizer);
-            builder.RegisterInstance(debugSheet);
             builder.RegisterInstance(minimapController);
+            builder.RegisterInstance(brightController);
 
             builder.RegisterBuildCallback(container =>
             {

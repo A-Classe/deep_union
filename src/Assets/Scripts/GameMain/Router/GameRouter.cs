@@ -2,15 +2,19 @@
 using System.GameProgress;
 using Core.Input;
 using Core.Model.Scene;
+using Core.Model.User;
 using Core.NavMesh;
 using Core.Scenes;
 using Core.User;
+using Core.User.API;
+using Core.User.Recorder;
+using Debug;
 using GameMain.Presenter;
 using Module.Assignment.Component;
 using Module.Minimap;
+using Module.GameManagement;
+using Module.GameSetting;
 using Module.Player;
-using Module.Player.Camera;
-using Module.Player.Camera.State;
 using Module.Player.Controller;
 using Module.Player.State;
 using Module.Task;
@@ -18,6 +22,7 @@ using Module.UI.InGame;
 using Module.Working;
 using Module.Working.Controller;
 using Module.Working.Factory;
+using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
@@ -28,8 +33,6 @@ namespace GameMain.Router
     /// </summary>
     public class GameRouter : IStartable, ITickable, IDisposable
     {
-        private readonly CameraController cameraController;
-        private readonly GameParam gameParam;
         private readonly LeaderAssignableArea leaderAssignableArea;
 
         private readonly PlayerController playerController;
@@ -56,6 +59,18 @@ namespace GameMain.Router
 
         private readonly MiniMapBuilder miniMapBuilder;
 
+        private readonly AudioMixerController audioMixerController;
+
+        private readonly BrightController brightController;
+
+        private readonly EventBroker eventBroker;
+
+        private readonly GameActionRecorder recorder;
+        private readonly FirebaseAccessor db;
+        private readonly TimeManager timeManager;
+        private readonly DebugGameClear debugGameClear;
+
+
         [Inject]
         public GameRouter(
             SpawnParam spawnParam,
@@ -63,7 +78,6 @@ namespace GameMain.Router
             WorkerSpawner workerSpawner,
             WorkerController workerController,
             PlayerController playerController,
-            CameraController cameraController,
             StageProgressObserver progressObserver,
             RuntimeNavMeshBaker runtimeNavMeshBaker,
             TaskActivator taskActivator,
@@ -74,14 +88,19 @@ namespace GameMain.Router
             PlayerStatus playerStatus,
             ResourceContainer resourceContainer,
             WorkerAgent workerAgent,
-            MiniMapBuilder miniMapBuilder
+            MiniMapBuilder miniMapBuilder,
+            AudioMixerController audioMixerController,
+            BrightController brightController,
+            EventBroker eventBroker,
+            GameActionRecorder recorder,
+            FirebaseAccessor db,
+            TimeManager timeManager,
+            DebugGameClear debugGameClear
         )
         {
             this.spawnParam = spawnParam;
-            this.gameParam = gameParam;
 
             this.playerController = playerController;
-            this.cameraController = cameraController;
             this.workerController = workerController;
 
             this.progressObserver = progressObserver;
@@ -104,6 +123,20 @@ namespace GameMain.Router
             this.workerAgent = workerAgent;
 
             this.miniMapBuilder = miniMapBuilder;
+
+            this.audioMixerController = audioMixerController;
+
+            this.brightController = brightController;
+
+            this.eventBroker = eventBroker;
+
+            this.recorder = recorder;
+
+            this.db = db;
+
+            this.timeManager = timeManager;
+
+            this.debugGameClear = debugGameClear;
         }
 
         public void Dispose()
@@ -113,6 +146,8 @@ namespace GameMain.Router
 
         public void Start()
         {
+            Application.targetFrameRate = 60;
+
             runtimeNavMeshBaker.Build();
             progressObserver.Start().Forget();
             
@@ -158,41 +193,33 @@ namespace GameMain.Router
         /// </summary>
         private void InitPlayer()
         {
-            playerController.InitParam(gameParam);
-            playerController.PlayerStart();
-            playerController.SetState(PlayerState.Go);
-
-            cameraController.SetFollowTarget(playerController.transform);
-            cameraController.SetState(CameraState.Follow);
-
-            workerController.SetCamera(cameraController.GetCamera());
-
             uiManager.OnGameInactive += OnCallGameInactive;
             uiManager.OnGameActive += OnCallGameActive;
+
+            playerController.OnMoveDistance += distance =>
+            {
+                eventBroker.SendEvent(new MovePlayer(Math.Abs(distance)).Event());
+            };
+
+            workerController.OnMoveDistance += distance =>
+            {
+                eventBroker.SendEvent(new MoveWorkers(Math.Abs(distance)).Event());
+            };
         }
 
         private void InitScene()
         {
             uiManager.SetSceneChanger(sceneChanger);
-            uiManager.StartGame(preference);
+            uiManager.StartGame(preference, audioMixerController);
 
-            progressObserver.OnCompleted += () =>
-            {
-                sceneChanger.LoadResult(
-                    new GameResult
-                    {
-                        Hp = playerStatus.Hp,
-                        Resource = resourceContainer.ResourceCount,
-                        stageCode = (int)sceneChanger.GetInGame(),
-                        WorkerCount = workerAgent.WorkerCount()
-                    }
-                );
-            };
+            // Game Clear
+            progressObserver.OnCompleted += OnGameClear;
+            debugGameClear.OnGameClearRequested += OnGameClear;
 
-            var escEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.ESC);
+            var escEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.UI.ESC);
             escEvent.Canceled += _ =>
             {
-                if (playerController.GetState() != PlayerState.Pause) uiManager.StartPause();
+                uiManager.StartPause();
             };
 
             var minimapEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.MiniMap);
@@ -203,21 +230,64 @@ namespace GameMain.Router
                     uiManager.StartMinimap();
                 }
             };
+            sceneChanger.OnBeforeChangeScene += SaveReport;
+
+            preference.Load();
+
+            preference.CompletedFirst();
+            preference.Save();
+
+            UserData data = preference.GetUserData();
+            brightController.SetBrightness(data.bright.value / 10f);
+            uiManager.SetBrightnessController(brightController);
+
+            eventBroker.Clear();
+            eventBroker.SendEvent(new GamePlay().Event());
+
+            OnCallGameActive();
+
         }
 
         // HPが0になった時 or オプション画面で
         private void OnCallGameInactive()
         {
-            workerController.SetPlayed(false);
+            timeManager.Pause();
             playerController.SetState(PlayerState.Pause);
-            cameraController.SetState(CameraState.Idle);
         }
 
         private void OnCallGameActive()
         {
-            workerController.SetPlayed(true);
-            playerController.SetState(PlayerState.Go);
-            cameraController.SetState(CameraState.Follow);
+            timeManager.Resume();
+            playerController.SetState(PlayerState.Auto);
+        }
+
+        private void OnGameClear()
+        {
+            eventBroker.SendEvent(new GameClear().Event());
+            SaveReport();
+            var result = new GameResult
+            {
+                Hp = playerStatus.Hp,
+                Resource = resourceContainer.ResourceCount,
+                stageCode = (int)sceneChanger.GetInGame(),
+                WorkerCount = workerAgent.WorkerCount()
+            };
+            if (sceneChanger.GetInGame() == StageData.Stage.Tutorial)
+            {
+                sceneChanger.LoadResult(result);
+            }
+            else
+            {
+                sceneChanger.LoadAfterMovieInGame(result);
+            }
+        }
+
+        private void SaveReport()
+        {
+            Report current = recorder.GenerateReport();
+            Report data = preference.GetReport();
+            preference.SetReport(data + current);
+            preference.Save();
         }
     }
 }

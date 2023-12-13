@@ -13,19 +13,19 @@ namespace Core.Utility.UI.Navigation
         /// <summary>
         ///     押し続けるたびに減らす感覚
         /// </summary>
-        private const float IntervalIncrement = 0.05f;
+        private const float IntervalIncrement = 0.08f;
 
         /// <summary>
         ///     初回の呼び出し感覚
         /// </summary>
-        private const float StartInterval = 0.6f;
+        private const float StartInterval = 0.5f;
 
         private readonly InputEvent cancelEvent;
         private readonly InputEvent clickEvent;
         private readonly Dictionary<T, UIManager> managers;
 
         /// <summary>
-        ///     最小の呼び出し感覚
+        ///     最小の呼び出し間隔
         /// </summary>
         private readonly float minInterval = 0.1f;
 
@@ -48,7 +48,7 @@ namespace Core.Utility.UI.Navigation
             clickEvent.Started += OnClick;
 
             cancelEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.Title.Cancel);
-            cancelEvent.Canceled += ctx =>
+            cancelEvent.Started += ctx =>
             {
                 if (!IsActive) return;
                 OnCancel?.Invoke(ctx);
@@ -67,6 +67,7 @@ namespace Core.Utility.UI.Navigation
 
         public void SetScreen(T nav, bool isAnimate = true, bool isReset = false)
         {
+            
             if (!IsActive) return;
 
             if (current == null)
@@ -78,13 +79,13 @@ namespace Core.Utility.UI.Navigation
             if (isAnimate)
                 current.Finished(current.GetContext().FadeOut(Easings.Default(0.3f)), () => { NavigateWith(nav); });
             else
-                NavigateWith(nav);
+                current.Finished(current.GetContext().SlideTo(new Vector2(0f, 0f), Easings.Default(0.1f)), () => { NavigateWith(nav); });
 
             void NavigateWith(T n)
             {
                 current = managers[n];
                 currentNav = n;
-                if (current == null) throw new NotImplementedException();
+                if (current == null) throw new NotImplementedException(n.ToString());
                 if (isAnimate)
                     current.Initialized(current.GetContext().FadeIn(Easings.Default(0.3f)), isReset);
                 else
@@ -96,8 +97,8 @@ namespace Core.Utility.UI.Navigation
         private void OnMove(Vector2 input)
         {
             if (!IsActive) return;
-
-            currentTime += Time.deltaTime;
+   
+            currentTime += Time.unscaledDeltaTime;
             // ReSharper disable once CompareOfFloatsByEqualityOperator
             if (initialInterval == StartInterval && currentTime == 0f && current != null) current.Select(input);
             if (currentTime < initialInterval) return; // 一定の間隔が経過していない場合、何もしない

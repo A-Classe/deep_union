@@ -14,6 +14,7 @@ namespace Module.UI.HUD
 
         private Camera cam;
         private Transform target;
+        private static readonly Vector3 OutSideCamera = new Vector3(1000000f, 1000000f, 0f);
 
         public bool IsEnabled => gameObject.activeSelf;
 
@@ -32,10 +33,20 @@ namespace Module.UI.HUD
             var targetPos = target.position;
             var camPos = cam.transform.position;
 
+            //カメラ上のスクリーン座標を取得
             var xSign = Mathf.Sign(targetPos.x - camPos.x);
             var screenPoint = cam.WorldToScreenPoint(targetPos + new Vector3(xSign * offset.x, offset.y, offset.z));
+
+            //カメラの後ろにいるときは遠くに飛ばす
+            if (screenPoint.z <= 0f)
+            {
+                transform.position = OutSideCamera;
+                return;
+            }
+            
             transform.position = screenPoint;
 
+            //距離に応じてスケール
             var distance = Vector3.Distance(targetPos, camPos);
             transform.localScale = Vector3.one / distance * scaleOffset;
         }
