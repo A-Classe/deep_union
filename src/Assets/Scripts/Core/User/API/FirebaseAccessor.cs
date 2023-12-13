@@ -1,20 +1,20 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Firebase.Database;
-using Firebase.Extensions;
 using UnityEngine;
 using VContainer;
+// ReSharper disable HeuristicUnreachableCode
+#pragma warning disable CS0162 // Unreachable code detected
 
 namespace Core.User.API
 {
     public class FirebaseAccessor
     {
-        private DatabaseReference reference;
+        private readonly DatabaseReference reference;
 
-        private UserPreference preference;
+        private readonly UserPreference preference;
 
         private UserData userData;
 
@@ -38,7 +38,8 @@ namespace Core.User.API
 
         private const string Stage = "Stage";
 
-        private const bool disabled = true;
+        // ReSharper disable once InconsistentNaming
+        private const bool disabled = false;
 
         [Inject]
         public FirebaseAccessor(
@@ -85,7 +86,7 @@ namespace Core.User.API
         public void SetStageScore(StageData.Stage stage, uint score)
         {
             if (disabled) return;
-            Debug.Log(stage.ToString() + "==" + score);
+            Debug.Log(stage + "==" + score);
             GetUserRef().Child(Stage).Child(stage.ToString()).SetValueAsync(score);
         }
 
@@ -138,14 +139,14 @@ namespace Core.User.API
 
                     Debug.Log("Database operation completed");
                     DataSnapshot snapshot = databaseTask.Result;
-                    foreach (var userData in snapshot.Children)
+                    foreach (var dataSnapshot in snapshot.Children)
                     {
-                        if (userData.Key == Uuid) continue;
+                        if (dataSnapshot.Key == Uuid) continue;
                         RankingUser user = new RankingUser();
                         // UUID: string
-                        user.ID = userData.Key;
+                        user.ID = dataSnapshot.Key;
                         user.Stages = new();
-                        foreach (var parameters in userData.Children)
+                        foreach (var parameters in dataSnapshot.Children)
                         {
                             if (parameters.Key == Name)
                             {
