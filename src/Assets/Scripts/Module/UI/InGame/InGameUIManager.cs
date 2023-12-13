@@ -148,9 +148,12 @@ namespace Module.UI.InGame
 
         public void StartMinimap()
         {
-            state = State.Minimap;
-            inGameManager.SetFocusView();
-            OnGameInactive?.Invoke();
+            if (state == State.Main)
+            {
+                state = State.Minimap;
+                inGameManager.SetFocusView();
+                OnGameInactive?.Invoke();
+            }
         }
 
         public void SetSceneChanger(SceneChanger scene)

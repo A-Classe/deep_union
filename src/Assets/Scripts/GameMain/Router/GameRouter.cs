@@ -223,7 +223,7 @@ namespace GameMain.Router
             };
 
             var minimapEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.MiniMap);
-            minimapEvent.Canceled += _ =>
+            minimapEvent.Started += _ =>
             {
                 if (playerController.GetState() != PlayerState.Pause)
                 {

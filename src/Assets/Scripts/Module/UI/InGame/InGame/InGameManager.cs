@@ -53,12 +53,15 @@ namespace Module.UI.InGame.InGame
 
         public override void Select(Vector2 direction)
         {
-            OnMinimapClick?.Invoke();
+            // if (minimapController.GetState() == MinimapState.Focus)
+            // {
+            //     minimapController.InputDirection(direction);
+            // }
         }
 
         public override void Clicked()
         {
-            // NOP.
+            OnMinimapClick?.Invoke();
         }
 
         public void SetHp(uint current, uint? max = null)
