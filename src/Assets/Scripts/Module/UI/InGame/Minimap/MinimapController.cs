@@ -16,10 +16,8 @@ namespace Module.UI.InGame.Minimap
         // }
 
         [SerializeField] private RectTransform rootUI;
-        
-        [SerializeField] private RectTransform mapRenderer;
 
-        [SerializeField] private RectTransform mapMovable;
+        [SerializeField] private RectTransform mapRenderer;
         
         [SerializeField] private RectTransform leaderRenderer;
         
@@ -66,23 +64,6 @@ namespace Module.UI.InGame.Minimap
         {
             DisableFocusView();
             // mapのbottomをrootのbottomに合わせる
-            var pos = rootUI.position;
-            pos.y -= (rootUI.rect.height / 2f) * rootUI.localScale.y;
-            pos.x = mapRenderer.position.x;
-            pos.y += (mapRenderer.rect.height / 2f) * mapRenderer.localScale.y;
-            mapRenderer.position = pos;
-
-
-            mapDefaultPos = pos;
-            Vector3 viewPortValue = renderCamera.WorldToViewportPoint(leader.transform.position);
-            pos.y -= viewPortValue.y * (mapRenderer.rect.height * mapRenderer.localScale.y);
-            Vector3 mapPos = mapRenderer.position;
-            mapPos.y = pos.y;
-            leaderRenderer.position = mapPos;
-            AlignToBaseUIWithScale(mapRenderer, leaderRenderer, viewPortValue.x, viewPortValue.y);
-            
-            viewPortValue = renderCamera.WorldToViewportPoint(player.transform.position);
-            AlignToBaseUIWithScale(mapRenderer, playerRenderer, viewPortValue.x, viewPortValue.y);
         }
 
         private Vector3 lastMovePosition = Vector3.zero;
@@ -96,41 +77,29 @@ namespace Module.UI.InGame.Minimap
 
         private void UpdateInCamera()
         {
-            Vector3 pos = rootUI.position;
-            pos.y -= (rootUI.rect.height / 2f) * rootUI.localScale.y;
-            pos.x = mapRenderer.position.x;
-            pos.y += (mapRenderer.rect.height / 2f) * mapRenderer.localScale.y;
-            mapRenderer.position = pos;
 
-
-            mapDefaultPos = pos;
-            pos = mapDefaultPos;
             Vector3 viewPortValue = renderCamera.WorldToViewportPoint(leader.transform.position);
-            pos.y -= viewPortValue.y * (mapRenderer.rect.height * mapRenderer.localScale.y);
-            Vector3 mapPos = mapRenderer.position;
-            mapPos.y = pos.y;
-            mapRenderer.position = mapPos;
 
             Vector3 baseMinWorld = rootUI.position + new Vector3(
-                (-rootUI.rect.width * rootUI.localScale.x) / 2,
-                (-rootUI.rect.height * rootUI.localScale.y) / 2, 
+                (-rootUI.rect.width) / 2 * rootUI.localScale.x,
+                (-rootUI.rect.height) / 2 * rootUI.localScale.y, 
                 0
             );
 
             Vector3 targetPosition = baseMinWorld + new Vector3(
-                (rootUI.rect.width * rootUI.localScale.x) / 2,
-                (mapRenderer.rect.height * mapRenderer.localScale.y) / 2 - (mapRenderer.rect.height * mapRenderer.localScale.y) *
-                (viewPortValue.y + inputPositionY),
+                (rootUI.rect.width) * viewPortValue.x * rootUI.localScale.x,
+                (mapRenderer.rect.height / 2 -
+                 mapRenderer.rect.height * (viewPortValue.y + inputPositionY)) * rootUI.localScale.y * mapRenderer.localScale.y,
                 0
             );
 
             // ターゲットUIの位置を設定
             mapRenderer.position = targetPosition;
             lastMovePosition = leader.transform.position;
-            AlignToBaseUIWithScale(mapRenderer, leaderRenderer, viewPortValue.x, viewPortValue.y);
+            AlignToBaseUIWithScale(mapRenderer, leaderRenderer, viewPortValue);
                 
             viewPortValue = renderCamera.WorldToViewportPoint(player.transform.position);
-            AlignToBaseUIWithScale(mapRenderer, playerRenderer, viewPortValue.x, viewPortValue.y);
+            AlignToBaseUIWithScale(mapRenderer, playerRenderer, viewPortValue);
         }
 
 
@@ -198,18 +167,21 @@ namespace Module.UI.InGame.Minimap
             targetUI.position = new Vector3(targetUI.position.x, basePosition.y - baseHeightHalf - targetHeightHalf, targetUI.position.z);
         }
 
-        private void AlignToBaseUIWithScale(RectTransform baseUI, RectTransform targetUI, float xPercent, float yPercent)
+        private void AlignToBaseUIWithScale(RectTransform baseUI, RectTransform targetUI, Vector2 viewPortValue)
         {
-
-            Vector3 baseMinLocal = baseUI.position + new Vector3(
-                (-baseUI.rect.width * baseUI.localScale.x) / 2,
-                (-baseUI.rect.height * baseUI.localScale.y) / 2, 
+            Vector3 baseMinWorld = rootUI.position + new Vector3(
+                (-rootUI.rect.width) / 2 * rootUI.localScale.x,
+                (-rootUI.rect.height) / 2 * rootUI.localScale.y, 
                 0
             );
 
-            Vector3 targetLocalPosition = baseMinLocal + new Vector3(baseUI.rect.width * baseUI.localScale.x * xPercent, baseUI.rect.height * baseUI.localScale.y * yPercent, 0);
+            Vector3 targetPosition = baseMinWorld + new Vector3(
+                (rootUI.rect.width) * viewPortValue.x * rootUI.localScale.x,
+                (baseUI.rect.height * (-inputPositionY) * mapRenderer.localScale.y + targetUI.rect.height / 2 - viewPortValue.y * baseUI.rect.height * mapRenderer.localScale.y) * rootUI.localScale.y,
+                0
+            );
             
-            targetUI.position = targetLocalPosition;
+            targetUI.position = targetPosition;
         }
     }
 }
