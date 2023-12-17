@@ -36,6 +36,8 @@ namespace Core.Utility.UI.Navigation
         private float currentTime;
         private float initialInterval = StartInterval;
 
+        private bool isNavigate;
+
         public Navigation(Dictionary<T, UIManager> initialManagers)
         {
             managers = initialManagers;
@@ -67,9 +69,9 @@ namespace Core.Utility.UI.Navigation
 
         public void SetScreen(T nav, bool isAnimate = true, bool isReset = false)
         {
-            
-            if (!IsActive) return;
+            if (!IsActive || isNavigate) return;
 
+            isNavigate = true;
             if (current == null)
             {
                 NavigateWith(nav);
@@ -91,6 +93,7 @@ namespace Core.Utility.UI.Navigation
                 else
                     current.Initialized(current.GetContext().SlideTo(new Vector2(0, 0), Easings.Default(0.1f)),
                         isReset);
+                isNavigate = false;
             }
         }
 
