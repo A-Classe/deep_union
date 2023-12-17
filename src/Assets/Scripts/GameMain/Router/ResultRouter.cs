@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Core.Model.Scene;
 using Core.Scenes;
@@ -80,7 +81,8 @@ namespace GameMain.Router
                 if (currentStage != StageData.Stage.Stage1)
                 {
                     navigation.SetActive(false);
-                    sceneChanger.LoadInGame(currentStage + 1);
+                    StageData.Stage next = currentStage + 1;
+                    ToStage(next);
                 }
             };
             resultManager.OnSelect += () =>
@@ -96,6 +98,18 @@ namespace GameMain.Router
                 navigation.SetActive(false);
                 sceneChanger.LoadInGame(currentStage);
             };
+        }
+
+        private void ToStage(StageData.Stage stage)
+        {
+            if (stage == StageData.Stage.Tutorial)
+            {
+                sceneChanger.LoadInGame(StageData.Stage.Tutorial);
+            }
+            else if (!sceneChanger.LoadBeforeMovieInGame(stage))
+            {
+                throw new NotImplementedException("not found navigation : " + stage);
+            }
         }
 
         private enum Nav
