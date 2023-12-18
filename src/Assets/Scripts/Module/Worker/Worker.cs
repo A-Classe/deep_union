@@ -25,6 +25,7 @@ namespace Module.Working
 
         private IWorkerState currentState;
         private readonly int cutOffId = Shader.PropertyToID("_CutOffHeight");
+        private readonly int deadId = Animator.StringToHash("Dead");
         private List<Material> cutOffMaterials;
         private NavMeshAgent navMeshAgent;
         private IWorkerState[] workerStates;
@@ -133,7 +134,7 @@ namespace Module.Working
             workerRandomizer.Disable();
             SetLockState(true);
 
-            animator.SetBool(Animator.StringToHash("Dead"), true);
+            animator.SetBool(deadId, true);
 
             await DeathCutoff(this.GetCancellationTokenOnDestroy());
 
@@ -149,7 +150,7 @@ namespace Module.Working
 
             while (!cancellationToken.IsCancellationRequested)
             {
-                currentValue = Mathf.Lerp(12f, 0f, Mathf.InverseLerp(0f, deathDuration, currentTime));
+                currentValue = Mathf.Lerp(-1f, 2f, Mathf.InverseLerp(0f, deathDuration, currentTime));
 
                 foreach (var material in cutOffMaterials) material.SetFloat(cutOffId, currentValue);
 

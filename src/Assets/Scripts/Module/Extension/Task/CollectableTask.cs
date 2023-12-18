@@ -19,7 +19,7 @@ namespace Module.Extension.Task
         [SerializeField] private GameParam gameParam;
         [SerializeField] private AssignableArea assignableArea;
         [SerializeField] private GameObject resourceItem;
-        [SerializeField] private float targetOffset = 3f;
+        [SerializeField] private Vector3 targetOffset;
         [SerializeField] private int resourceCount;
         private CancellationTokenSource collectCanceller;
         private PlayerController playerController;
@@ -95,7 +95,7 @@ namespace Module.Extension.Task
 
             var rig = item.GetComponent<Rigidbody>();
             var target = playerController.transform.position;
-            target.z += targetOffset;
+            target += targetOffset;
             var velocity = CalculateForce(item.transform.position, target, 45f);
             rig.AddForce(velocity * rig.mass, ForceMode.Impulse);
         }
