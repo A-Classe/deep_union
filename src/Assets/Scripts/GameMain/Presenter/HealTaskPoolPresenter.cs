@@ -11,7 +11,6 @@ namespace GameMain.Presenter
         public HealTaskPoolPresenter(HealTaskPool healTaskPool, TaskActivator taskActivator)
         {
             healTaskPool.OnHealTaskDrop += taskActivator.ForceActivate;
-            healTaskPool.OnHealTaskCollected += taskActivator.ForceDeactivate;
         }
 
         public void Initialize() { }

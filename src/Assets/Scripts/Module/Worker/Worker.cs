@@ -162,6 +162,11 @@ namespace Module.Working
             }
         }
 
+        public void SetAvoidPlayer(bool enabled)
+        {
+            // navMeshAgent.
+        }
+
         public void Teleport(Vector3 position)
         {
             navMeshAgent.Warp(position);

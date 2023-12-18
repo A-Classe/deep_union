@@ -46,7 +46,7 @@ namespace Module.Assignment.System
             workerReleaser.SetActiveAreas(activeAreas);
         }
 
-        public void ActivateArea(BaseTask baseTask)
+        private void ActivateArea(BaseTask baseTask)
         {
             var assignableArea = baseTask.GetComponentInChildren<AssignableArea>();
             assignableArea.enabled = true;
@@ -60,7 +60,7 @@ namespace Module.Assignment.System
             }
         }
 
-        public void DeactivateArea(BaseTask baseTask)
+        private void DeactivateArea(BaseTask baseTask)
         {
             var assignableArea = baseTask.GetComponentInChildren<AssignableArea>();
             assignableArea.enabled = false;

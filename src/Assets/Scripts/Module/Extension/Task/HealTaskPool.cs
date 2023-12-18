@@ -9,7 +9,6 @@ public class HealTaskPool : MonoBehaviour
     private HealTask[] returnCache;
 
     public event Action<HealTask> OnHealTaskDrop;
-    public event Action<HealTask> OnHealTaskCollected;
 
     private void Start()
     {
@@ -35,10 +34,9 @@ public class HealTaskPool : MonoBehaviour
         return returnCache.AsSpan(0, count);
     }
 
-    public void Return(HealTask healTask)
+    private void Return(HealTask healTask)
     {
         healTask.OnCollected -= Return;
         taskPool.Enqueue(healTask);
-        OnHealTaskCollected?.Invoke(healTask);
     }
 }

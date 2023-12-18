@@ -61,7 +61,7 @@ namespace Module.Task
             DetectInsideTask();
 
             //カメラ外オブジェクトの検出
-            DetectOutisideTask();
+            DetectOutsideTask();
         }
 
         private void DetectInsideTask()
@@ -89,7 +89,7 @@ namespace Module.Task
             }
         }
 
-        private void DetectOutisideTask()
+        private void DetectOutsideTask()
         {
             if (tail < tasks.Length)
             {

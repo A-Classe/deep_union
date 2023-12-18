@@ -29,9 +29,10 @@ namespace Module.Extension.Task
 
         private PlayerController playerController;
         private PlayerStatus playerStatus;
+        private TaskActivator taskActivator;
 
         public event Action<HealTask> OnCollected;
-
+        
         private void Update()
         {
             if (navMeshAgent.enabled && WorkerCount >= minWorkerCount)
@@ -54,9 +55,11 @@ namespace Module.Extension.Task
 
                 collideObj.SetActive(false);
                 healObj.SetActive(false);
+                
                 await WaitSound();
+                
                 OnCollected?.Invoke(this);
-                Disable();
+                taskActivator.ForceDeactivate(this);
             }
         }
 
@@ -65,6 +68,7 @@ namespace Module.Extension.Task
             collision.gameObject.layer = LayerMask.NameToLayer("Detection");
             playerController = container.Resolve<PlayerController>();
             playerStatus = container.Resolve<PlayerStatus>();
+            taskActivator = container.Resolve<TaskActivator>();
 
             ForceComplete();
 
@@ -91,7 +95,9 @@ namespace Module.Extension.Task
         //仮でヒール音を待機
         private async UniTask WaitSound()
         {
+            DebugEx.Log("WaitSoundStart");
             await UniTask.Delay(TimeSpan.FromSeconds(1f));
+            DebugEx.Log("WaitSoundEnd");
         }
 
         public void Spread(float force)
