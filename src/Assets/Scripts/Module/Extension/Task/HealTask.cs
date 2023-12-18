@@ -95,9 +95,7 @@ namespace Module.Extension.Task
         //仮でヒール音を待機
         private async UniTask WaitSound()
         {
-            DebugEx.Log("WaitSoundStart");
             await UniTask.Delay(TimeSpan.FromSeconds(1f));
-            DebugEx.Log("WaitSoundEnd");
         }
 
         public void Spread(float force)

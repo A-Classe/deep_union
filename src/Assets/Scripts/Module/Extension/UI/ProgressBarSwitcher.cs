@@ -66,6 +66,9 @@ namespace Module.Extension.UI
 
         private void OnTaskDeactivated(BaseTask task)
         {
+            if (!activeViews.ContainsKey(task))
+                return;
+            
             taskProgressPool.ReleaseProgressView(activeViews[task]);
             activeViews.Remove(task);
         }

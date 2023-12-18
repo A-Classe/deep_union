@@ -49,29 +49,27 @@ namespace Module.Assignment.System
         private void ActivateArea(BaseTask baseTask)
         {
             var assignableArea = baseTask.GetComponentInChildren<AssignableArea>();
-            assignableArea.enabled = true;
-
             bool found = activeAreas.Any(area => area == assignableArea);
-            DebugEx.Assert(!found, "タスクを重複して追加することは出来ません");
 
-            if (!found)
-            {
-                activeAreas.Add(assignableArea);
-            }
+            //見つかったら重複回避のため終了
+            if (found)
+                return;
+
+            assignableArea.enabled = true;
+            activeAreas.Add(assignableArea);
         }
 
         private void DeactivateArea(BaseTask baseTask)
         {
             var assignableArea = baseTask.GetComponentInChildren<AssignableArea>();
-            assignableArea.enabled = false;
-
             int index = activeAreas.IndexOf(assignableArea);
-            DebugEx.Assert(index != -1, "存在しないタスクを削除することは出来ません");
 
-            if (index != -1)
-            {
-                activeAreas.RemoveAt(index);
-            }
+            //存在しなかったら終了
+            if (index == -1)
+                return;
+
+            assignableArea.enabled = false;
+            activeAreas.RemoveAt(index);
         }
     }
 }
