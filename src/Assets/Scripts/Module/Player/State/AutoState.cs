@@ -15,7 +15,7 @@ namespace Module.Player.State
 
         [Header("回避設定")] public float DetectOffset = 1f;
         public float DetectDistance;
-        public float AvoidRotation;
+        public float AvoidSpeed;
         public LayerMask DetectLayerMask;
     }
 
@@ -64,13 +64,12 @@ namespace Module.Player.State
             Vector3 position = rigidbody.position + new Vector3(0f, movementSetting.DetectOffset, 0f);
             Vector3 forward = rigidbody.transform.forward;
 
-            DebugEx.DrawLine(position, position + forward * movementSetting.DetectDistance, Color.red, 0.5f);
-
+            //正面にレイを飛ばして壁を判定
             if (Physics.Raycast(position, forward, out RaycastHit hitInfo, movementSetting.DetectDistance, movementSetting.DetectLayerMask.value))
             {
-                float t = -(Mathf.Sign(hitInfo.point.x) * (1 - Mathf.Abs(hitInfo.point.x)));
-                DebugEx.Log(Vector3.up * (movementSetting.AvoidRotation * t));
-                rigidbody.angularVelocity = Vector3.up * (movementSetting.AvoidRotation * t);
+                //壁を避ける角速度を算出
+                float angle = Vector3.Angle(forward, Vector3.Reflect(forward, hitInfo.normal)) * Time.fixedDeltaTime;
+                rigidbody.angularVelocity = Vector3.up * (-angle * movementSetting.AvoidSpeed);
             }
         }
     }
