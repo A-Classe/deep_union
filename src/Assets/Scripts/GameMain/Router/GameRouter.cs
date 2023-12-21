@@ -165,7 +165,10 @@ namespace GameMain.Router
         {
             var addedWorkers = workerSpawner.Spawn(spawnParam.SpawnCount);
 
-            foreach (var worker in addedWorkers) leaderAssignableArea.AssignableArea.AddWorker(worker);
+            foreach (var worker in addedWorkers)
+            {
+                leaderAssignableArea.AssignableArea.AddWorker(worker);
+            }
         }
 
         /// <summary>

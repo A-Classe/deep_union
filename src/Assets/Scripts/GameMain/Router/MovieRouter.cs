@@ -8,15 +8,16 @@ using VContainer.Unity;
 
 namespace GameMain.Router
 {
-    public class MovieRouter: IStartable, ITickable
+    public class MovieRouter : IStartable, ITickable
     {
         private readonly VideoPlayerController videoController;
 
         private readonly SceneChanger sceneChanger;
-        
+
         private readonly HoldVisibleObject holdVisual;
-        
-        private InputEvent anyKeyEvent;
+
+        private readonly InputEvent anyKeyEvent;
+
         [Inject]
         public MovieRouter(
             SceneChanger sceneChanger,
@@ -29,13 +30,13 @@ namespace GameMain.Router
 
             this.holdVisual = holdVisual;
             this.holdVisual.OnHoldFinished += ChangeNextScene;
-            
+
             anyKeyEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.UI.AnyKey);
         }
+
         public void Start()
         {
             videoController.Play(ChangeNextScene);
-            
         }
 
         private void ChangeNextScene()
@@ -50,8 +51,8 @@ namespace GameMain.Router
             {
                 holdVisual.UpdateHoldTime(Time.deltaTime);
             }
+
             holdVisual.SetVisible(value > 0);
-            
         }
     }
 }

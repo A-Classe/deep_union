@@ -35,7 +35,7 @@ namespace GameMain.Router
         private readonly StatsManager statsManager;
         private readonly FirebaseAccessor accessor;
         private readonly RankingManager rankingManager;
-        
+
 
         [Inject]
         public TitleRouter(
@@ -68,7 +68,7 @@ namespace GameMain.Router
             audioMixerController.SetMasterVolume(userData.masterVolume.value / 10f);
             audioMixerController.SetBGMVolume(userData.musicVolume.value / 10f);
             audioMixerController.SetSEVolume(userData.effectVolume.value / 10f);
-            
+
             var initialManagers = new Dictionary<TitleNavigation, UIManager>
             {
                 { TitleNavigation.Title, title },
@@ -80,13 +80,11 @@ namespace GameMain.Router
                 { TitleNavigation.Ranking, rankingManager }
             };
             navigation = new Navigation<TitleNavigation>(initialManagers);
-            
         }
 
 
         public void Start()
         {
-            
             SetNavigation();
 
             var route = sceneChanger.GetTitle();
@@ -124,9 +122,9 @@ namespace GameMain.Router
             {
                 data.Load();
                 UserData userData = data.GetUserData();
-                
+
                 rankingManager.SetName(userData.name.value);
-                accessor.GetAllData((ranking) =>
+                accessor.GetAllData(ranking =>
                 {
                     MainThreadDispatcher.Instance.Enqueue(() =>
                     {
@@ -145,13 +143,31 @@ namespace GameMain.Router
 
         private void SetNavigation()
         {
-            navigation.OnCancel += _ => { OnCanceled(); };
+            navigation.OnCancel += _ =>
+            {
+                OnCanceled();
+            };
 
-            title.OnQuit += () => { NavigateToQuit(true); };
-            title.OnOption += () => { NavigateToOption(true); };
-            title.OnCredit += () => { NavigateToCredit(true); };
-            title.OnPlay += () => { NavigateToPlay(true); };
-            title.OnStats += () => { NavigateToStats(); };
+            title.OnQuit += () =>
+            {
+                NavigateToQuit(true);
+            };
+            title.OnOption += () =>
+            {
+                NavigateToOption(true);
+            };
+            title.OnCredit += () =>
+            {
+                NavigateToCredit(true);
+            };
+            title.OnPlay += () =>
+            {
+                NavigateToPlay(true);
+            };
+            title.OnStats += () =>
+            {
+                NavigateToStats();
+            };
 
             quit.OnClick += isQuit =>
             {
@@ -189,7 +205,7 @@ namespace GameMain.Router
         /// <param name="nav">選んだステージ</param>
         private void StageSelected(StageNavigation nav)
         {
-            navigation.SetScreen(TitleNavigation.Title, isAnimate: false);
+            navigation.SetScreen(TitleNavigation.Title, false);
             if (nav == StageNavigation.Tutorial)
             {
                 sceneChanger.LoadInGame(StageData.Stage.Tutorial);
@@ -198,6 +214,7 @@ namespace GameMain.Router
             {
                 throw new NotImplementedException("not found navigation : " + nav);
             }
+
             navigation.SetActive(false);
         }
 
@@ -238,7 +255,6 @@ namespace GameMain.Router
                 navigation.SetScreen(TitleNavigation.StageSelect, isReset: isReset);
                 stageSelect.SetScores(data.GetStageData());
             }
-           
         }
 
         private void NavigateToCredit(bool isReset)

@@ -2,7 +2,6 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
-using Wanna.DebugEx;
 
 namespace Module.Working.State
 {
@@ -43,7 +42,9 @@ namespace Module.Working.State
         public void Update()
         {
             if (navMeshAgent.pathStatus != NavMeshPathStatus.PathInvalid)
+            {
                 navMeshAgent.SetDestination(worker.Target.position);
+            }
         }
 
         public void Dispose()

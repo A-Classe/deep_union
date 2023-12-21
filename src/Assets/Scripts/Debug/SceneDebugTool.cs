@@ -37,7 +37,10 @@ namespace Debug
                 icon: Resources.Load<Sprite>(AssetKeys.Resources.Icon.Model));
             debugToolPage.AddPageLinkButton<PlayerDebugPage>("Player",
                 icon: Resources.Load<Sprite>(AssetKeys.Resources.Icon.CharacterViewer),
-                onLoad: data => { data.page.SetUp(resourceContainer, leaderAssignableArea); });
+                onLoad: data =>
+                {
+                    data.page.SetUp(resourceContainer, leaderAssignableArea);
+                });
 
             debugToolPage.Reload();
         }

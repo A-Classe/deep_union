@@ -28,8 +28,6 @@ namespace Module.Extension.SoundPlayer
             //AudioSource.Stop();
         }
 
-        private void OnTaskCompleted(BaseTask _)
-        {
-        }
+        private void OnTaskCompleted(BaseTask _) { }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Concurrent;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ namespace Core.Utility
     public class MainThreadDispatcher : MonoBehaviour
     {
         private static MainThreadDispatcher _instance;
-        private readonly ConcurrentQueue<System.Action> _actions = new ConcurrentQueue<System.Action>();
+        private readonly ConcurrentQueue<Action> _actions = new();
 
         public static MainThreadDispatcher Instance
         {
@@ -16,6 +17,7 @@ namespace Core.Utility
                 {
                     Debug.LogError("MainThreadDispatcher instance not found. Ensure it is initialized in the scene.");
                 }
+
                 return _instance;
             }
         }
@@ -24,13 +26,13 @@ namespace Core.Utility
         {
             if (_instance != null)
             {
-             //   Debug.LogError("Another instance of MainThreadDispatcher already exists.");
+                //   Debug.LogError("Another instance of MainThreadDispatcher already exists.");
                 Destroy(this);
                 return;
             }
 
             _instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(gameObject);
         }
 
 
@@ -42,7 +44,7 @@ namespace Core.Utility
             }
         }
 
-        public void Enqueue(System.Action action)
+        public void Enqueue(Action action)
         {
             _actions.Enqueue(action);
         }

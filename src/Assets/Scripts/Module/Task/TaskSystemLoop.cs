@@ -22,7 +22,10 @@ namespace Module.Task
         public void Start()
         {
             //タスクの初期化
-            foreach (var taskSystem in taskSystems) taskSystem.Initialize(container);
+            foreach (var taskSystem in taskSystems)
+            {
+                taskSystem.Initialize(container);
+            }
         }
 
         public void Tick()
@@ -33,7 +36,9 @@ namespace Module.Task
             foreach (var taskSystem in taskSystems)
             {
                 if (taskSystem.State != TaskState.InProgress)
+                {
                     continue;
+                }
 
                 taskSystem.TaskSystemUpdate(delta);
             }

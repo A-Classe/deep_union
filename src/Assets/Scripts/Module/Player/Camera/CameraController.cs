@@ -31,7 +31,11 @@ namespace Module.Player.Camera
 
         private void LateUpdate()
         {
-            if (followTarget == null || currentState.GetState() == CameraState.Idle) return;
+            if (followTarget == null || currentState.GetState() == CameraState.Idle)
+            {
+                return;
+            }
+
             var angleInRadians = followAngle * Mathf.Deg2Rad;
 
             var y = depth * Math.Sin(angleInRadians);
@@ -84,9 +88,7 @@ namespace Module.Player.Camera
             };
         }
 
-        public void InitParam()
-        {
-        }
+        public void InitParam() { }
 
         public void SetFollowTarget(Transform player)
         {

@@ -50,7 +50,10 @@ namespace Module.UI.InGame.GameOver
             base.Initialized(content, isReset);
             bar.AnimateIn();
 
-            if (isReset) SetState(Nav.Retry);
+            if (isReset)
+            {
+                SetState(Nav.Retry);
+            }
         }
 
         /// <summary>
@@ -59,7 +62,11 @@ namespace Module.UI.InGame.GameOver
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public override void Clicked()
         {
-            if (!current.HasValue) return;
+            if (!current.HasValue)
+            {
+                return;
+            }
+
             switch (current.Value)
             {
                 case Nav.Retry:

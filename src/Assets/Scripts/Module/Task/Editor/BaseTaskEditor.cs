@@ -41,7 +41,10 @@ namespace Module.Task.Editor
         {
             EditorGUILayout.Space();
             foldMain = Foldout("Main Settings", foldMain);
-            if (foldMain) DrawDefaultProperty();
+            if (foldMain)
+            {
+                DrawDefaultProperty();
+            }
         }
 
         private void DrawDebugSettings()
@@ -65,10 +68,15 @@ namespace Module.Task.Editor
             var iterator = serializedObject.GetIterator();
 
             //既に表示してるやつはスキップ
-            for (var i = 0; i < 6; i++) iterator.NextVisible(true);
+            for (var i = 0; i < 6; i++)
+            {
+                iterator.NextVisible(true);
+            }
 
             for (var enterChildren = true; iterator.NextVisible(enterChildren); enterChildren = false)
+            {
                 EditorGUILayout.PropertyField(iterator, true);
+            }
         }
 
         private static bool Foldout(string title, bool display)
@@ -86,7 +94,10 @@ namespace Module.Task.Editor
             var e = Event.current;
 
             var toggleRect = new Rect(rect.x + 4f, rect.y + 2f, 13f, 13f);
-            if (e.type == EventType.Repaint) EditorStyles.foldout.Draw(toggleRect, false, false, display, false);
+            if (e.type == EventType.Repaint)
+            {
+                EditorStyles.foldout.Draw(toggleRect, false, false, display, false);
+            }
 
             if (e.type == EventType.MouseDown && rect.Contains(e.mousePosition))
             {

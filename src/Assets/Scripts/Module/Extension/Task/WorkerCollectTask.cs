@@ -1,13 +1,10 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using Module.Assignment.Component;
 using Module.Task;
 using Module.Working;
 using Module.Working.State;
 using UnityEngine;
 using VContainer;
-using Wanna.DebugEx;
 
 namespace Module.Extension.Task
 {
@@ -16,7 +13,7 @@ namespace Module.Extension.Task
         [SerializeField] private AssignableArea assignableArea;
         [SerializeField] private Transform assignPointsParent;
         private WorkerAgent workerAgent;
-        
+
         public override void Initialize(IObjectResolver container)
         {
             workerAgent = container.Resolve<WorkerAgent>();
@@ -36,8 +33,8 @@ namespace Module.Extension.Task
                 Vector3 position = assignPoint.transform.position;
                 workers[i].Teleport(position);
             }
-            
-            
+
+
             foreach (Worker worker in workers)
             {
                 assignableArea.AddWorker(worker);

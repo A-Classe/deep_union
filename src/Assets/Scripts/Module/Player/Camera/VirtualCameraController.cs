@@ -26,10 +26,10 @@ namespace Module.Player.Camera
             if (delta != 0f)
             {
                 isRotating = true;
-                
+
                 //加速する
                 angularVelocity += delta * speed * Time.deltaTime;
-                
+
                 //最大速度にクランプ
                 angularVelocity = Mathf.Clamp(angularVelocity, -maxSpeed, maxSpeed);
             }

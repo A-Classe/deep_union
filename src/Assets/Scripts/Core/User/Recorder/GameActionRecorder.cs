@@ -8,7 +8,6 @@ namespace Core.User.Recorder
     // ReSharper disable once ClassNeverInstantiated.Global
     public class GameActionRecorder
     {
-
         private readonly LinkedList<GameEvent> events = new();
 
         private readonly bool printLog = false;
@@ -26,10 +25,11 @@ namespace Core.User.Recorder
                 {
                     value += "{ " + keyValuePair.Key + ":: " + keyValuePair.Value + "}, ";
                 }
+
                 Debug.Log("==== " + gameEvent.EventType + " ====\n" + value + "\n" + "==== " + gameEvent.EventType + " ====");
             }
         }
-        
+
         public Report GenerateReport()
         {
             return Report.GenerateToEvents(events);
@@ -42,6 +42,4 @@ namespace Core.User.Recorder
 
         // 必要に応じてその他のメソッド
     }
-
-
 }

@@ -20,13 +20,14 @@ namespace Module.Extension.SoundPlayer
             Task = GetComponent<T>();
             AudioSource = GetComponent<AudioSource>();
 
-            if (AudioSource == null) DebugEx.LogError($"{gameObject.name}にAudioSourceがアタッチされていません");
+            if (AudioSource == null)
+            {
+                DebugEx.LogError($"{gameObject.name}にAudioSourceがアタッチされていません");
+            }
 
             OnStart();
         }
 
-        protected virtual void OnStart()
-        {
-        }
+        protected virtual void OnStart() { }
     }
 }

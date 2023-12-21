@@ -59,7 +59,6 @@ namespace Core.User
             return new StageData();
         }
     }
-    
 
 
     [Serializable]
@@ -68,9 +67,7 @@ namespace Core.User
         public List<string> keys = new();
         public List<string> values = new();
 
-        public SerializableDictionary()
-        {
-        }
+        public SerializableDictionary() { }
 
         public SerializableDictionary(Dictionary<string, string> dict)
         {
@@ -84,7 +81,11 @@ namespace Core.User
         public Dictionary<string, string> ToDictionary()
         {
             var dict = new Dictionary<string, string>();
-            for (var i = 0; i < Mathf.Min(keys.Count, values.Count); i++) dict[keys[i]] = values[i];
+            for (var i = 0; i < Mathf.Min(keys.Count, values.Count); i++)
+            {
+                dict[keys[i]] = values[i];
+            }
+
             return dict;
         }
     }
@@ -118,7 +119,9 @@ namespace Core.User
 
             var cnt = keys.Count <= vals.Count ? keys.Count : vals.Count;
             for (var i = 0; i < cnt; ++i)
+            {
                 this[keys[i]] = vals[i];
+            }
         }
     }
 }

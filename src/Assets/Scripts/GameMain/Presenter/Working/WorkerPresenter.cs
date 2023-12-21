@@ -10,9 +10,7 @@ namespace GameMain.Presenter.Working
     public class WorkerPresenter : IInitializable
     {
         [Inject]
-        public WorkerPresenter()
-        {
-        }
+        public WorkerPresenter() { }
 
         public void Initialize()
         {

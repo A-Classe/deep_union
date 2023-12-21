@@ -35,13 +35,25 @@ namespace Module.Assignment.Component
 
             defaultIntensity = assignableArea.Intensity;
 
-            assignEvent.Started += _ => { assignableArea.SetLightIntensity(gameParam.AssignIntensity); };
+            assignEvent.Started += _ =>
+            {
+                assignableArea.SetLightIntensity(gameParam.AssignIntensity);
+            };
 
-            assignEvent.Canceled += _ => { assignableArea.SetLightIntensity(defaultIntensity); };
+            assignEvent.Canceled += _ =>
+            {
+                assignableArea.SetLightIntensity(defaultIntensity);
+            };
 
-            releaseEvent.Started += _ => { assignableArea.SetLightIntensity(gameParam.ReleaseIntensity); };
+            releaseEvent.Started += _ =>
+            {
+                assignableArea.SetLightIntensity(gameParam.ReleaseIntensity);
+            };
 
-            releaseEvent.Canceled += _ => { assignableArea.SetLightIntensity(defaultIntensity); };
+            releaseEvent.Canceled += _ =>
+            {
+                assignableArea.SetLightIntensity(defaultIntensity);
+            };
         }
 
         /// <summary>
@@ -65,7 +77,10 @@ namespace Module.Assignment.Component
         {
             isWorldMoving = enable;
 
-            foreach (var worker in assignableArea.AssignedWorkers) worker.IsWorldMoving = enable;
+            foreach (var worker in assignableArea.AssignedWorkers)
+            {
+                worker.IsWorldMoving = enable;
+            }
         }
     }
 }

@@ -16,13 +16,9 @@ namespace Module.Extension.SoundPlayer
             Task.OnCompleted += OnTaskCompleted;
         }
 
-        private void OnTaskStarted(BaseTask _)
-        {
-        }
+        private void OnTaskStarted(BaseTask _) { }
 
-        private void OnTaskCanceled(BaseTask _)
-        {
-        }
+        private void OnTaskCanceled(BaseTask _) { }
 
         private void OnTaskCompleted(BaseTask _)
         {

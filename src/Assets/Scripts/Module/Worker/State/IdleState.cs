@@ -27,16 +27,10 @@ namespace Module.Working.State
             workerAnimator.SetBool(IsDead, false);
         }
 
-        public void OnStop()
-        {
-        }
+        public void OnStop() { }
 
-        public void Update()
-        {
-        }
+        public void Update() { }
 
-        public void Dispose()
-        {
-        }
+        public void Dispose() { }
     }
 }

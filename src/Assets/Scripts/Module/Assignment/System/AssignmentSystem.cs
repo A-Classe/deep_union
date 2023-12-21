@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Core.Input;
 using Core.User.Recorder;
 using Module.Assignment.Component;
@@ -6,12 +5,11 @@ using Module.Task;
 using Module.Working;
 using VContainer;
 using VContainer.Unity;
-using Wanna.DebugEx;
 
 namespace Module.Assignment.System
 {
     /// <summary>
-    /// アサイン機能のループ処理を管理するクラス
+    ///     アサイン機能のループ処理を管理するクラス
     /// </summary>
     public class AssignmentSystem : ITickable, IStartable
     {

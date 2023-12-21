@@ -1,5 +1,4 @@
 using System;
-using AnimationPro.RunTime;
 using Core.Model.User;
 using Core.Utility.UI.Component;
 using Core.Utility.UI.Component.Cursor;
@@ -9,7 +8,7 @@ using UnityEngine;
 
 namespace Module.UI.Title.Stats
 {
-    public class StatsManager: UIManager
+    public class StatsManager : UIManager
     {
         public enum Nav
         {
@@ -36,7 +35,6 @@ namespace Module.UI.Title.Stats
             current = Nav.Quit;
 
             SetState(Nav.Quit);
-           
         }
 
         public override void Clicked()
@@ -49,9 +47,7 @@ namespace Module.UI.Title.Stats
             if (!current.HasValue)
             {
                 SetState(Nav.Quit);
-                return;
             }
-            
         }
 
 

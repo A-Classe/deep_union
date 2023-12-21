@@ -10,7 +10,8 @@ namespace Module.Assignment.Component
     {
         [SerializeField] private AssignableArea assignableArea;
 
-        [Header("進捗を0%とした時の明るさ")] [SerializeField]
+        [Header("進捗を0%とした時の明るさ")]
+        [SerializeField]
         private float maxIntensity = 0.5f;
 
         private BaseTask task;
@@ -25,7 +26,10 @@ namespace Module.Assignment.Component
             {
                 assignableArea.SetLightIntensity(maxIntensity - maxIntensity * progress);
 
-                if (progress >= 1f) assignableArea.enabled = false;
+                if (progress >= 1f)
+                {
+                    assignableArea.enabled = false;
+                }
             };
         }
     }

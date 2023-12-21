@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
 using UnityEngine.InputSystem;
-using Wanna.DebugEx;
 
 namespace Core.Input
 {

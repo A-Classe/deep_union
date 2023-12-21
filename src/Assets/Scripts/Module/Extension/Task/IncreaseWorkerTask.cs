@@ -13,7 +13,8 @@ namespace Module.Extension.Task
     {
         private static readonly int CutOfHeightKey = Shader.PropertyToID("_CutOfHeight");
 
-        [Header("増やすワーカーのリスト")] [SerializeField]
+        [Header("増やすワーカーのリスト")]
+        [SerializeField]
         private List<Worker> imprisonedWorkers;
 
 
@@ -48,7 +49,9 @@ namespace Module.Extension.Task
             foreach (var worker in imprisonedWorkers)
             {
                 if (!leaderAssignableArea.AssignableArea.CanAssign())
+                {
                     return;
+                }
 
                 worker.SetLockState(false);
                 workerAgent.AddActiveWorker(worker);

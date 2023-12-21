@@ -1,18 +1,12 @@
-using System;
-using Core.Input;
-using Cysharp.Threading.Tasks;
-using GameMain.Tutorial;
 using UnityEngine;
 using UnityEngine.UI;
-
-using Wanna.DebugEx;
 
 public class TextTrigger : MonoBehaviour
 {
     public RawImage displayText; // Textコンポーネントを使用する
     [SerializeField] private float time = 3.0f; //デフォルトは3秒
-    [SerializeField] private string[] triggerTag = null;
-    [SerializeField] private GameObject[] hideObj = null;
+    [SerializeField] private string[] triggerTag;
+    [SerializeField] private GameObject[] hideObj;
 
     private void Start()
     {

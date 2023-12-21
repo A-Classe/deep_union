@@ -4,7 +4,6 @@ using System.Linq;
 using Module.Assignment.Component;
 using Module.Task;
 using VContainer;
-using Wanna.DebugEx;
 
 namespace Module.Assignment.System
 {
@@ -53,7 +52,9 @@ namespace Module.Assignment.System
 
             //見つかったら重複回避のため終了
             if (found)
+            {
                 return;
+            }
 
             assignableArea.enabled = true;
             activeAreas.Add(assignableArea);
@@ -66,7 +67,9 @@ namespace Module.Assignment.System
 
             //存在しなかったら終了
             if (index == -1)
+            {
                 return;
+            }
 
             assignableArea.enabled = false;
             activeAreas.RemoveAt(index);

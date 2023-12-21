@@ -40,7 +40,9 @@ namespace Editor
         private static void OnCompileScripts()
         {
             if (!GeneratingFlagHolder.instance.IsGenerating)
+            {
                 return;
+            }
 
             LayerMask taskLayer = LayerMask.NameToLayer("Task");
 
@@ -65,14 +67,18 @@ namespace Editor
             foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
             {
                 foreach (var type in assembly.GetTypes())
+                {
                     if (type.Name == GeneratingFlagHolder.instance.ClassName)
                     {
                         generatedType = type;
                         break;
                     }
+                }
 
                 if (generatedType != null)
+                {
                     break;
+                }
             }
 
             return generatedType;

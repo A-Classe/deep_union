@@ -26,7 +26,10 @@ namespace Core.User
 
         private void EnsureDirectoryExists()
         {
-            if (!Directory.Exists(SaveDirPath)) Directory.CreateDirectory(SaveDirPath);
+            if (!Directory.Exists(SaveDirPath))
+            {
+                Directory.CreateDirectory(SaveDirPath);
+            }
         }
 
         public void Load()
@@ -64,9 +67,9 @@ namespace Core.User
             data.effectVolume.value = vol;
             dataManager.Set(data);
         }
-        
+
         /// <summary>
-        /// 例外的にここだけ必須でセーブしておく
+        ///     例外的にここだけ必須でセーブしておく
         /// </summary>
         public void CompletedFirst()
         {
@@ -75,10 +78,10 @@ namespace Core.User
             dataManager.Set(data);
             Save();
         }
-        
+
         /// <summary>
-        /// デバッグ用
-        /// todo: そのうち消したい
+        ///     デバッグ用
+        ///     todo: そのうち消したい
         /// </summary>
         public void ResetIsFirst()
         {
@@ -87,7 +90,7 @@ namespace Core.User
             dataManager.Set(data);
             Save();
         }
-        
+
         public bool GetIsFirst()
         {
             return dataManager.Get<UserData>().isFirst.value;

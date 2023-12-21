@@ -14,7 +14,10 @@ namespace Debug
 
         private void Update()
         {
-            foreach (var observeData in taskObserveButtons) observeData.UpdatedData();
+            foreach (var observeData in taskObserveButtons)
+            {
+                observeData.UpdatedData();
+            }
 
             RefreshData();
         }
@@ -35,7 +38,10 @@ namespace Debug
                 buttonCell.OnLoad += page =>
                 {
                     var debugPage = page.page as TaskStatsPage;
-                    if (debugPage != null) debugPage.SetUp(baseTask);
+                    if (debugPage != null)
+                    {
+                        debugPage.SetUp(baseTask);
+                    }
                 };
 
                 var id = AddItem("TaskPageLinkButtonCell", buttonCell);

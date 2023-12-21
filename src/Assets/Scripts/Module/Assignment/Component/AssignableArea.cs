@@ -4,12 +4,10 @@ using System.Linq;
 using Core.Utility;
 using Module.Assignment.Utility;
 using Module.Working;
-using Module.Working.State;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Serialization;
-using Wanna.DebugEx;
 
 namespace Module.Assignment.Component
 {
@@ -22,12 +20,14 @@ namespace Module.Assignment.Component
         [SerializeField] private bool isAssignable = true;
         [SerializeField] private DecalProjector lightProjector;
 
-        [FormerlySerializedAs("ellipseCollider")] [SerializeField]
+        [FormerlySerializedAs("ellipseCollider")]
+        [SerializeField]
         private EllipseVisualizer ellipseVisualizer;
 
         [SerializeField] private float intensity;
 
-        [Header("回転させる場合はこっちをいじる！")] [SerializeField]
+        [Header("回転させる場合はこっちをいじる！")]
+        [SerializeField]
         private float rotation;
 
         [SerializeField] private float2 size;
@@ -109,7 +109,9 @@ namespace Module.Assignment.Component
         private Transform GetNearestAssignPoint(Vector3 target)
         {
             if (assignPoints.Count == 0)
+            {
                 return null;
+            }
 
             var minDistance = float.MaxValue;
             AssignPoint nearestPoint = null;
@@ -136,6 +138,7 @@ namespace Module.Assignment.Component
             Destroy,
             Default
         }
+
         public void AddWorker(Worker worker, WorkerEventType type = WorkerEventType.Default)
         {
             var assignPoint = GetNearestAssignPoint(worker.transform.position);
@@ -170,7 +173,9 @@ namespace Module.Assignment.Component
             foreach (var assignPoint in assignPoints)
             {
                 if (assignPoint == null)
+                {
                     return;
+                }
 
                 assignPoint.enabled = enable;
             }

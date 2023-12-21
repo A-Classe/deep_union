@@ -23,7 +23,11 @@ namespace Core.Utility.UI.Component
 
         public void SetValue(float value)
         {
-            if (value < slider.minValue || value > slider.maxValue) return;
+            if (value < slider.minValue || value > slider.maxValue)
+            {
+                return;
+            }
+
             Set(value);
         }
 
@@ -37,7 +41,10 @@ namespace Core.Utility.UI.Component
         private void Set(float value)
         {
             slider.value = value;
-            if (text != null) text.text = ((int)value).ToString();
+            if (text != null)
+            {
+                text.text = ((int)value).ToString();
+            }
         }
     }
 }

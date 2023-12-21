@@ -1,6 +1,4 @@
 namespace Core.Utility
 {
-    public interface IInjectable
-    {
-    }
+    public interface IInjectable { }
 }

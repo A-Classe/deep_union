@@ -11,13 +11,13 @@ namespace Module.UI.Title.Credit
     {
         [SerializeField] private ScrollContent scrollable;
         [SerializeField] private HoldVisibleObject holdVisual;
-        
+
         public event Action OnCreditFinished;
 
         private InputEvent anyKeyEvent;
-        
-        private bool isFinished = false;
-        
+
+        private bool isFinished;
+
         private void Start()
         {
             anyKeyEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.UI.AnyKey);
@@ -27,7 +27,11 @@ namespace Module.UI.Title.Credit
             };
             holdVisual.OnHoldFinished += () =>
             {
-                if (isFinished) return;
+                if (isFinished)
+                {
+                    return;
+                }
+
                 isFinished = true;
                 OnCreditFinished?.Invoke();
             };
@@ -43,12 +47,17 @@ namespace Module.UI.Title.Credit
 
         private void Update()
         {
-            if (!scrollable.IsEnable) return;
+            if (!scrollable.IsEnable)
+            {
+                return;
+            }
+
             float value = anyKeyEvent.ReadValue<float>();
             if (holdVisual.IsVisible == value > 0 && holdVisual.IsVisible)
             {
                 holdVisual.UpdateHoldTime(Time.deltaTime);
             }
+
             holdVisual.SetVisible(value > 0);
         }
     }

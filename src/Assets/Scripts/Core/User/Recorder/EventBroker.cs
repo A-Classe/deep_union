@@ -4,11 +4,12 @@ using VContainer;
 namespace Core.User.Recorder
 {
     /// <summary>
-    /// ゲーム内イベント送信するクラス
+    ///     ゲーム内イベント送信するクラス
     /// </summary>
     public class EventBroker
     {
         private readonly GameActionRecorder recorder;
+
         [Inject]
         public EventBroker(
             GameActionRecorder recorder

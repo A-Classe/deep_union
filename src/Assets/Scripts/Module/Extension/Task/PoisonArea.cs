@@ -43,17 +43,25 @@ namespace Module.Extension.Task
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
+            {
                 isPlayerEnter = true;
+            }
             else if (other.TryGetComponent(out Worker worker))
+            {
                 workers.Add(worker);
+            }
         }
 
         private void OnTriggerExit(Collider other)
         {
             if (other.CompareTag("Player"))
+            {
                 isPlayerEnter = false;
+            }
             else if (other.TryGetComponent(out Worker worker))
+            {
                 workers.Remove(worker);
+            }
         }
 
         [Inject]
@@ -62,7 +70,10 @@ namespace Module.Extension.Task
             this.playerStatus = playerStatus;
             cTokenSource = new CancellationTokenSource();
 
-            foreach (var creatureTask in poisonCreatureTasks) creatureTask.OnCompleted += OnPoisonCreatureKilled;
+            foreach (var creatureTask in poisonCreatureTasks)
+            {
+                creatureTask.OnCompleted += OnPoisonCreatureKilled;
+            }
 
             PlayerDamageLoop(cTokenSource.Token).Forget();
             WorkerDamageLoop(cTokenSource.Token).Forget();
@@ -77,7 +88,10 @@ namespace Module.Extension.Task
                 poisonWaterArea.DOLocalMoveZ(moveOffset, disappearDuration).Play();
                 poisonWaterArea.DOScaleY(0f, disappearDuration)
                     .Play()
-                    .OnComplete(() => { gameObject.SetActive(false); });
+                    .OnComplete(() =>
+                    {
+                        gameObject.SetActive(false);
+                    });
 
                 toxicEffect1.Stop();
                 toxicEffect2.Stop();
@@ -93,7 +107,10 @@ namespace Module.Extension.Task
         {
             while (!cancellationToken.IsCancellationRequested)
             {
-                if (isPlayerEnter) playerStatus.RemoveHp(poisonDamage);
+                if (isPlayerEnter)
+                {
+                    playerStatus.RemoveHp(poisonDamage);
+                }
 
                 await UniTask.Delay(TimeSpan.FromSeconds(playerDamageInterval), cancellationToken: cancellationToken);
             }
@@ -110,7 +127,10 @@ namespace Module.Extension.Task
                     var worker = workers[index];
                     workers.RemoveAt(index);
 
-                    if (!worker.IsLocked) worker.Kill();
+                    if (!worker.IsLocked)
+                    {
+                        worker.Kill();
+                    }
                 }
 
                 await UniTask.Delay(TimeSpan.FromSeconds(workerDamageInterval), cancellationToken: cancellationToken);

@@ -2,7 +2,5 @@
 
 namespace Module.UI.Title.Option.Option2
 {
-    internal class Option2Cursor : CursorController<Option2Manager.Nav>
-    {
-    }
+    internal class Option2Cursor : CursorController<Option2Manager.Nav> { }
 }

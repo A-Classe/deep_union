@@ -39,7 +39,10 @@ namespace Module.UI.Title.Option.Option1
         public override void Initialized(ContentTransform content, bool isReset = false)
         {
             base.Initialized(content, isReset);
-            if (isReset) SetState(Nav.Video);
+            if (isReset)
+            {
+                SetState(Nav.Video);
+            }
         }
 
         /// <summary>
@@ -48,7 +51,11 @@ namespace Module.UI.Title.Option.Option1
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public override void Clicked()
         {
-            if (!current.HasValue) return;
+            if (!current.HasValue)
+            {
+                return;
+            }
+
             switch (current.Value)
             {
                 case Nav.Video:
@@ -82,12 +89,20 @@ namespace Module.UI.Title.Option.Option1
             {
                 // 上向きの入力
                 case > 0:
-                    if (current.Value == Nav.Video) return;
+                    if (current.Value == Nav.Video)
+                    {
+                        return;
+                    }
+
                     nextNav = current.Value - 1;
                     break;
                 // 下向きの入力
                 case < 0:
-                    if (current.Value == Nav.Back) return;
+                    if (current.Value == Nav.Back)
+                    {
+                        return;
+                    }
+
                     nextNav = current.Value + 1;
                     break;
                 default:

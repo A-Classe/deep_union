@@ -47,17 +47,21 @@ namespace Module.Assignment.System
             {
                 //範囲同士の円形判定を行い、計算が必要な範囲を絞る
                 if (!CollisionUtil.IsCollideCircle(leaderEllipse, activeArea.EllipseData))
+                {
                     continue;
+                }
 
                 var cacheCount = 0;
 
                 foreach (var worker in activeArea.AssignedWorkers)
+                {
                     if (CollisionUtil.InEllipse(worker.transform.position, leaderArea.EllipseData))
                     {
                         //イテレート中はコレクション変更できないので一旦キャッシュ
                         releaseWorkerCache[cacheCount] = worker;
                         cacheCount++;
                     }
+                }
 
                 for (var i = 0; i < cacheCount; i++)
                 {
@@ -79,12 +83,14 @@ namespace Module.Assignment.System
             var workers = assignableArea.AssignedWorkers.ToArray();
 
             foreach (var worker in workers)
+            {
                 if (leaderAssignableArea.AssignableArea.CanAssign())
                 {
                     assignableArea.RemoveWorker(worker);
                     leaderAssignableArea.AssignableArea.AddWorker(worker);
                     OnRelease?.Invoke();
                 }
+            }
         }
     }
 }

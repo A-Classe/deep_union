@@ -41,7 +41,10 @@ namespace Core.Utility
         {
             var index = list.IndexOf(item);
 
-            if (startIndex <= index && index <= startIndex + Count) return index - startIndex;
+            if (startIndex <= index && index <= startIndex + Count)
+            {
+                return index - startIndex;
+            }
 
             return -1;
         }
@@ -83,7 +86,10 @@ namespace Core.Utility
                     break;
                 default:
                     for (var i = 0; i < Count; i++)
+                    {
                         array[i] = list[i + startIndex];
+                    }
+
                     break;
             }
         }
@@ -118,14 +124,14 @@ namespace Core.Utility
                 current = default;
             }
 
-            public void Dispose()
-            {
-            }
+            public void Dispose() { }
 
             public bool MoveNext()
             {
                 if ((uint)index >= (uint)list.Count)
+                {
                     return MoveNextRare();
+                }
 
                 current = list[index];
 

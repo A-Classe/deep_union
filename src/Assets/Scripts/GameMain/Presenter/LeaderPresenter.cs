@@ -16,7 +16,7 @@ namespace GameMain.Presenter
 
         [Inject]
         public LeaderPresenter(
-            PlayerController playerController, 
+            PlayerController playerController,
             LeaderAssignableArea leaderAssignableArea,
             EventBroker eventBroker
         )

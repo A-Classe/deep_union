@@ -6,7 +6,6 @@ using Module.Assignment.Component;
 using Module.Assignment.Utility;
 using Module.Working;
 using Unity.Burst;
-using UnityEngine;
 using VContainer;
 using Wanna.DebugEx;
 
@@ -53,11 +52,14 @@ namespace Module.Assignment.System
                 //範囲同士の円形判定を行い、計算が必要な範囲を絞る
                 if (!activeArea.enabled ||
                     !CollisionUtil.IsCollideCircle(leaderArea.EllipseData, activeArea.EllipseData))
+                {
                     continue;
+                }
 
                 var cacheCount = 0;
 
                 foreach (var worker in leaderWorkers)
+                {
                     if (CollisionUtil.InEllipse(worker.transform.position, activeArea.EllipseData))
                     {
                         if (cacheCount >= assignWorkerCache.Length)
@@ -69,6 +71,7 @@ namespace Module.Assignment.System
                         assignWorkerCache[cacheCount] = worker;
                         cacheCount++;
                     }
+                }
 
                 for (var i = 0; i < cacheCount; i++)
                 {

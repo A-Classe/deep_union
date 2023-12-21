@@ -37,12 +37,19 @@ namespace Module.UI.Title.Quit
             base.Initialized(content, isReset);
             bar.AnimateIn();
 
-            if (isReset) SetState(Nav.No);
+            if (isReset)
+            {
+                SetState(Nav.No);
+            }
         }
 
         public override void Clicked()
         {
-            if (!current.HasValue) return;
+            if (!current.HasValue)
+            {
+                return;
+            }
+
             switch (current.Value)
             {
                 case Nav.Yes:
@@ -69,12 +76,20 @@ namespace Module.UI.Title.Quit
             switch (direction.y)
             {
                 case > 0:
-                    if (current.Value == Nav.Yes) return;
+                    if (current.Value == Nav.Yes)
+                    {
+                        return;
+                    }
+
                     nextNav = Nav.Yes;
                     break;
 
                 case < 0:
-                    if (current.Value == Nav.No) return;
+                    if (current.Value == Nav.No)
+                    {
+                        return;
+                    }
+
                     nextNav = Nav.No;
                     break;
 
@@ -87,7 +102,10 @@ namespace Module.UI.Title.Quit
 
         public override void Finished(ContentTransform content, Action onFinished)
         {
-            bar.AnimateOut(() => { base.Finished(content, onFinished); });
+            bar.AnimateOut(() =>
+            {
+                base.Finished(content, onFinished);
+            });
         }
 
         public event Action<bool> OnClick;

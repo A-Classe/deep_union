@@ -39,14 +39,22 @@ namespace Module.Working
         private void Update()
         {
             if (!initialized)
+            {
                 return;
+            }
 
-            if (navMeshAgent.pathStatus != NavMeshPathStatus.PathInvalid) currentState?.Update();
+            if (navMeshAgent.pathStatus != NavMeshPathStatus.PathInvalid)
+            {
+                currentState?.Update();
+            }
         }
 
         private void OnDestroy()
         {
-            foreach (var state in workerStates) state.Dispose();
+            foreach (var state in workerStates)
+            {
+                state.Dispose();
+            }
         }
 
         public async UniTaskVoid Initialize()
@@ -68,7 +76,9 @@ namespace Module.Working
             foreach (var rendMaterial in materials)
             {
                 foreach (var material in rendMaterial)
+                {
                     cutOffMaterials.Add(material);
+                }
             }
 
             await SetUpNavMesh();
@@ -152,10 +162,15 @@ namespace Module.Working
             {
                 currentValue = Mathf.Lerp(-1f, 2f, Mathf.InverseLerp(0f, deathDuration, currentTime));
 
-                foreach (var material in cutOffMaterials) material.SetFloat(cutOffId, currentValue);
+                foreach (var material in cutOffMaterials)
+                {
+                    material.SetFloat(cutOffId, currentValue);
+                }
 
                 if (currentTime > deathDuration)
+                {
                     return;
+                }
 
                 currentTime += Time.fixedDeltaTime;
 
@@ -175,7 +190,10 @@ namespace Module.Working
 
         public void Dispose()
         {
-            foreach (var state in workerStates) state.Dispose();
+            foreach (var state in workerStates)
+            {
+                state.Dispose();
+            }
 
             Destroy(gameObject);
         }

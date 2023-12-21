@@ -50,7 +50,9 @@ namespace Module.Extension.Task
 
                 if (state == TaskState.Completed)
                     //完了時は余ったリソースも送る(仕様としては例外的)
+                {
                     SendResource();
+                }
             }
         }
 

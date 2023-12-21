@@ -29,13 +29,13 @@ namespace Core.Model.User
             {
                 return value;
             }
+
             return null;
         }
-        
+
         public Dictionary<string, object> GetParameters()
         {
             return parameters;
         }
-        
     }
 }

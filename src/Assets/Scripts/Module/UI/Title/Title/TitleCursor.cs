@@ -2,7 +2,5 @@
 
 namespace Module.UI.Title.Title
 {
-    internal class TitleCursor : CursorController<TitleManager.Nav>
-    {
-    }
+    internal class TitleCursor : CursorController<TitleManager.Nav> { }
 }

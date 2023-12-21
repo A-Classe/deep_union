@@ -10,7 +10,9 @@ namespace Editor
         public static void ForceCleanupNavMesh()
         {
             if (Application.isPlaying)
+            {
                 return;
+            }
 
             NavMesh.RemoveAllNavMeshData();
         }

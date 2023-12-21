@@ -1,6 +1,5 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
-using Wanna.DebugEx;
 
 namespace Module.Extension.Task
 {

@@ -11,7 +11,7 @@ public class StartImageTrigger : MonoBehaviour, ITutorialTrigger
     [SerializeField] private float Time = 3.0f; //デフォルトは3秒
     [SerializeField] private string Tag = "Player";
     [SerializeField] private GameObject[] HideObj;
-    private int waitTime = 800;//1000=1sec
+    private readonly int waitTime = 800; //1000=1sec
 
     public event Action OnShowText;
     public event Action OnHideText;
@@ -35,13 +35,11 @@ public class StartImageTrigger : MonoBehaviour, ITutorialTrigger
 
     private async void OnTriggerEnter(Collider other)
     {
-        
         if (other.CompareTag(Tag))
         {
             OnShowText?.Invoke();
-            await Task.Delay(waitTime);//0.7秒後に表示する
+            await Task.Delay(waitTime); //0.7秒後に表示する
             rawImage.enabled = true; // 画像を表示する
-            
         }
     }
 

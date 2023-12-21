@@ -38,7 +38,10 @@ namespace Module.UI.Title.StageSelect
             base.Initialized(content, isReset);
             bar.AnimateIn();
 
-            if (isReset) SetState(StageNavigation.Stage1);
+            if (isReset)
+            {
+                SetState(StageNavigation.Stage1);
+            }
         }
 
         /// <summary>
@@ -47,7 +50,11 @@ namespace Module.UI.Title.StageSelect
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public override void Clicked()
         {
-            if (!current.HasValue) return;
+            if (!current.HasValue)
+            {
+                return;
+            }
+
             switch (current.Value)
             {
                 case StageNavigation.Stage1:
@@ -82,14 +89,17 @@ namespace Module.UI.Title.StageSelect
 
         public override void Finished(ContentTransform content, Action onFinished)
         {
-            bar.AnimateOut(() => { base.Finished(content, onFinished); });
+            bar.AnimateOut(() =>
+            {
+                base.Finished(content, onFinished);
+            });
         }
 
         public event Action OnBack;
 
         public event Action<StageNavigation> OnStage;
 
-        public event Action<StageData.Stage> OnRanking; 
+        public event Action<StageData.Stage> OnRanking;
 
         public void SetScores(Dictionary<StageData.Stage, uint> scores)
         {

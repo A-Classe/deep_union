@@ -7,7 +7,7 @@ using VContainer.Unity;
 
 namespace GameMain.Container
 {
-    public class MovieContainer: LifetimeScope
+    public class MovieContainer : LifetimeScope
     {
         [SerializeField] private VideoPlayerController videoPlayer;
         [SerializeField] private HoldVisibleObject holdVisibleObject;

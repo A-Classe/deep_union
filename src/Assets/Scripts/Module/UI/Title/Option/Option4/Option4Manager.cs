@@ -12,9 +12,7 @@ namespace Module.UI.Title.Option.Option4
             OnBack?.Invoke();
         }
 
-        public override void Select(Vector2 direction)
-        {
-        }
+        public override void Select(Vector2 direction) { }
 
         public override void Finished(ContentTransform content, Action onFinished)
         {

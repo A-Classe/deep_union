@@ -29,7 +29,10 @@ namespace Core.User
 
         public void Delete(string filePath)
         {
-            if (File.Exists(filePath)) File.Delete(filePath);
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+            }
         }
 
         public void Reset<T>() where T : IDefaultable<T>, new()
@@ -50,10 +53,16 @@ namespace Core.User
         public T Get<T>() where T : IDefaultable<T>, new()
         {
             var key = typeof(T).ToString();
-            if (dataStorage.TryGetValue(key, out var value)) return JsonUtility.FromJson<T>(value);
+            if (dataStorage.TryGetValue(key, out var value))
+            {
+                return JsonUtility.FromJson<T>(value);
+            }
 
             if (typeof(IDefaultable<T>).IsAssignableFrom(typeof(T)))
+            {
                 return ((IDefaultable<T>)Activator.CreateInstance(typeof(T))).DefaultInstance();
+            }
+
             return new T();
         }
 
@@ -84,9 +93,15 @@ namespace Core.User
         {
             public static string GetFieldName<T>(Expression<Func<T, object>> selector)
             {
-                if (selector.Body is MemberExpression member) return member.Member.Name;
+                if (selector.Body is MemberExpression member)
+                {
+                    return member.Member.Name;
+                }
+
                 if (selector.Body is UnaryExpression unary && unary.Operand is MemberExpression unaryMember)
+                {
                     return unaryMember.Member.Name;
+                }
 
                 throw new ArgumentException("Not a property or field", nameof(selector));
             }

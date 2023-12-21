@@ -10,7 +10,9 @@ namespace Module.Assignment.Component
         private void OnDrawGizmos()
         {
             if (!enabled)
+            {
                 return;
+            }
 
             Gizmos.color = Color.red;
             Gizmos.DrawSphere(transform.position, 0.25f);

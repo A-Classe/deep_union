@@ -19,7 +19,10 @@ namespace Core.Utility
 
         public static void InsertRange<T>(this List<T> list, int index, ReadOnlySpan<T> span)
         {
-            if (list is null) throw new ArgumentNullException();
+            if (list is null)
+            {
+                throw new ArgumentNullException();
+            }
 
             static void EnsureCapacity(List<T> original, ListDummy<T> dummy, int min)
             {
@@ -33,21 +36,34 @@ namespace Core.Utility
                     const int
                         maxArrayLength =
                             0X7FEFFFFF; // This size is compatible with Array.MaxArrayLength. (This is internal)
-                    if ((uint)newCapacity > maxArrayLength) newCapacity = maxArrayLength;
-                    if (newCapacity < min) newCapacity = min;
+                    if ((uint)newCapacity > maxArrayLength)
+                    {
+                        newCapacity = maxArrayLength;
+                    }
+
+                    if (newCapacity < min)
+                    {
+                        newCapacity = min;
+                    }
+
                     original.Capacity = newCapacity;
                 }
             }
 
             var dummyList = Unsafe.As<ListDummy<T>>(list);
-            if ((uint)index > (uint)dummyList._size) throw new ArgumentOutOfRangeException();
+            if ((uint)index > (uint)dummyList._size)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
 
             var count = span.Length;
             if (count > 0)
             {
                 EnsureCapacity(list, dummyList, dummyList._size + count);
                 if (index < dummyList._size)
+                {
                     Array.Copy(dummyList._items, index, dummyList._items, index + count, dummyList._size - index);
+                }
 
                 span.CopyTo(dummyList._items.AsSpan(index));
                 dummyList._size += count;
@@ -70,9 +86,7 @@ namespace Core.Utility
         internal object _syncRoot = default!;
 #endif
 
-            private ListDummy()
-            {
-            }
+            private ListDummy() { }
         }
     }
 }

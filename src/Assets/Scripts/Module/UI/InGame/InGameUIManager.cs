@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using Core.Scenes;
 using Core.User;
-using Core.User.Recorder;
 using Core.Utility.UI.Navigation;
 using Module.GameSetting;
 using Module.UI.InGame.GameOver;
@@ -22,7 +21,7 @@ namespace Module.UI.InGame
         private Navigation<InGameNav> navigation;
 
         private SceneChanger sceneChanger;
-        
+
         private BrightController brightController;
 
         public event Action OnNeedReport;
@@ -91,7 +90,7 @@ namespace Module.UI.InGame
                         throw new ArgumentOutOfRangeException(nameof(nav), nav, null);
                 }
             };
-            
+
             optionManager.OnBrightness += value =>
             {
                 brightController.SetBrightness(value / 10f);
@@ -136,9 +135,13 @@ namespace Module.UI.InGame
         public void SetHp(short current, short? max = null)
         {
             if (max.HasValue)
+            {
                 inGameManager.SetHp((uint)current, (uint)max.Value);
+            }
             else
+            {
                 inGameManager.SetHp((uint)current);
+            }
         }
 
         public void SetWorkerCount(uint value, uint? max = null)
@@ -150,7 +153,7 @@ namespace Module.UI.InGame
         {
             inGameManager.SetResource(current, max);
         }
-        
+
         public void SetBrightnessController(BrightController controller)
         {
             brightController = controller;

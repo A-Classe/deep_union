@@ -14,6 +14,5 @@ namespace Core.User.API
         public string Name;
 
         public Dictionary<StageData.Stage, int> Stages;
-        
     }
 }

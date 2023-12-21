@@ -39,7 +39,10 @@ namespace Module.UI.Title.Option.Option2
         public override void Initialized(ContentTransform content, bool isReset = false)
         {
             base.Initialized(content, isReset);
-            if (isReset) SetState(Nav.Brightness);
+            if (isReset)
+            {
+                SetState(Nav.Brightness);
+            }
         }
 
         /// <summary>
@@ -48,7 +51,11 @@ namespace Module.UI.Title.Option.Option2
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public override void Clicked()
         {
-            if (!current.HasValue) return;
+            if (!current.HasValue)
+            {
+                return;
+            }
+
             switch (current.Value)
             {
                 case Nav.Brightness:
@@ -67,7 +74,9 @@ namespace Module.UI.Title.Option.Option2
             if (Math.Abs(direction.x) > Math.Abs(direction.y))
             {
                 if (current == Nav.Brightness)
+                {
                     OnBrightnessValueChanged(direction.x > 0 ? 1 : -1);
+                }
 
                 return;
             }
@@ -84,12 +93,20 @@ namespace Module.UI.Title.Option.Option2
             {
                 // 上向きの入力
                 case > 0:
-                    if (current.Value == Nav.Brightness) return;
+                    if (current.Value == Nav.Brightness)
+                    {
+                        return;
+                    }
+
                     nextNav = current.Value - 1;
                     break;
                 // 下向きの入力
                 case < 0:
-                    if (current.Value == Nav.Back) return;
+                    if (current.Value == Nav.Back)
+                    {
+                        return;
+                    }
+
                     nextNav = current.Value + 1;
                     break;
                 default:

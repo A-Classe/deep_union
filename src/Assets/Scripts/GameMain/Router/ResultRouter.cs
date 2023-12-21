@@ -20,7 +20,7 @@ namespace GameMain.Router
 
         private readonly SceneChanger sceneChanger;
         private readonly UserPreference userPreference;
-        
+
         private readonly VideoPlayerControllerExt videoPlayer;
 
         private GameResult result;

@@ -87,7 +87,11 @@ namespace Module.Working.Controller
             if (lastPosition != Vector3.zero)
             {
                 float distance = Vector3.Distance(lastPosition, transform.position);
-                if (Math.Abs(distance) < 0.001f) return;
+                if (Math.Abs(distance) < 0.001f)
+                {
+                    return;
+                }
+
                 OnMoveDistance?.Invoke(distance);
             }
 

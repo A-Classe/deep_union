@@ -12,7 +12,7 @@ namespace Module.Working
 
         public float MakeValue()
         {
-           return Random.Range(min, max);
+            return Random.Range(min, max);
         }
     }
 }

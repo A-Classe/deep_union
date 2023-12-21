@@ -6,13 +6,13 @@ using VContainer.Unity;
 
 namespace Module.Extension.System
 {
-    public class DebugControl: IStartable
+    public class DebugControl : IStartable
     {
-
-        private float lastUpdateTime = 0f;
-        private int inputCount = 0;
+        private float lastUpdateTime;
+        private int inputCount;
 
         private readonly UserPreference preference;
+
         [Inject]
         public DebugControl(
             UserPreference preference
@@ -24,14 +24,15 @@ namespace Module.Extension.System
         public void Start()
         {
             var deleteKeyEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.UI.DebugQ);
-            
+
             deleteKeyEvent.Started += _ =>
             {
                 float current = Time.time;
                 if (lastUpdateTime + 1f < current)
                 {
-                    inputCount = 0;   
+                    inputCount = 0;
                 }
+
                 inputCount++;
                 lastUpdateTime = Time.time;
                 if (inputCount > 5)
@@ -41,7 +42,6 @@ namespace Module.Extension.System
                     preference.ResetIsFirst();
                     preference.Load();
                     Debug.Log("userData delete & created");
-                    
                 }
             };
         }

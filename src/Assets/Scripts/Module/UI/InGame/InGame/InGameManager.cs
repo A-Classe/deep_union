@@ -64,9 +64,15 @@ namespace Module.UI.InGame.InGame
                 sliderHp.minValue = 0;
             }
 
-            if (!maxHpValue.HasValue) throw new Exception();
+            if (!maxHpValue.HasValue)
+            {
+                throw new Exception();
+            }
 
-            if (current > maxHpValue.Value) return;
+            if (current > maxHpValue.Value)
+            {
+                return;
+            }
 
             currentHp.text = current.ToString();
             sliderHp.value = current;
@@ -104,9 +110,15 @@ namespace Module.UI.InGame.InGame
                 maxRes.text = max.Value.ToString();
             }
 
-            if (!maxResValue.HasValue) throw new Exception();
+            if (!maxResValue.HasValue)
+            {
+                throw new Exception();
+            }
 
-            if (current > maxResValue.Value) return;
+            if (current > maxResValue.Value)
+            {
+                return;
+            }
 
             currentRes.text = current.ToString();
             var rate = (float)current / maxResValue.Value;
@@ -115,11 +127,20 @@ namespace Module.UI.InGame.InGame
 
         public void SetWorkerCount(uint value, uint? max = null)
         {
-            if (max.HasValue) maxWorkersValue = max.Value;
+            if (max.HasValue)
+            {
+                maxWorkersValue = max.Value;
+            }
 
-            if (!maxWorkersValue.HasValue) throw new Exception();
+            if (!maxWorkersValue.HasValue)
+            {
+                throw new Exception();
+            }
 
-            if (value > maxWorkersValue.Value) return;
+            if (value > maxWorkersValue.Value)
+            {
+                return;
+            }
 
             currentWorkers.SetTextIsUp(value.ToString());
 
@@ -130,7 +151,11 @@ namespace Module.UI.InGame.InGame
         // set position background raw image 
         private void UpdateWorkersMoviePosition(uint value)
         {
-            if (!maxWorkersValue.HasValue || !workersIcon.rectTransform) return;
+            if (!maxWorkersValue.HasValue || !workersIcon.rectTransform)
+            {
+                return;
+            }
+
             var position = workersIcon.rectTransform.localPosition;
             var offsetRate = endOffsetY - startOffsetY;
             var updatePositionY = startOffsetY + offsetRate * ((float)value / maxWorkersValue.Value);

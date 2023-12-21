@@ -14,7 +14,7 @@ namespace Module.UI.HUD
 
         private Camera cam;
         private Transform target;
-        private static readonly Vector3 OutSideCamera = new Vector3(1000000f, 1000000f, 0f);
+        private static readonly Vector3 OutSideCamera = new(1000000f, 1000000f, 0f);
 
         public bool IsEnabled => gameObject.activeSelf;
 
@@ -43,7 +43,7 @@ namespace Module.UI.HUD
                 transform.position = OutSideCamera;
                 return;
             }
-            
+
             transform.position = screenPoint;
 
             //距離に応じてスケール

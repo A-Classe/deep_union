@@ -19,7 +19,11 @@ namespace Core.Utility.UI.Component
 
         public void SetScore(uint score)
         {
-            if (text == null) return;
+            if (text == null)
+            {
+                return;
+            }
+
             text.text = score.ToString();
         }
     }

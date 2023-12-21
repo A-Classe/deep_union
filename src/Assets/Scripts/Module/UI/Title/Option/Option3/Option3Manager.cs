@@ -40,7 +40,10 @@ namespace Module.UI.Title.Option.Option3
         public override void Initialized(ContentTransform content, bool isReset = false)
         {
             base.Initialized(content, isReset);
-            if (isReset) SetState(Nav.Master);
+            if (isReset)
+            {
+                SetState(Nav.Master);
+            }
         }
 
         /// <summary>
@@ -49,7 +52,11 @@ namespace Module.UI.Title.Option.Option3
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public override void Clicked()
         {
-            if (!current.HasValue) return;
+            if (!current.HasValue)
+            {
+                return;
+            }
+
             switch (current.Value)
             {
                 case Nav.Back:
@@ -101,12 +108,20 @@ namespace Module.UI.Title.Option.Option3
             {
                 // 上向きの入力
                 case > 0:
-                    if (current.Value == Nav.Master) return;
+                    if (current.Value == Nav.Master)
+                    {
+                        return;
+                    }
+
                     nextNav = current.Value - 1;
                     break;
                 // 下向きの入力
                 case < 0:
-                    if (current.Value == Nav.Back) return;
+                    if (current.Value == Nav.Back)
+                    {
+                        return;
+                    }
+
                     nextNav = current.Value + 1;
                     break;
                 default:

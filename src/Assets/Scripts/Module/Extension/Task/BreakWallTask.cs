@@ -18,7 +18,8 @@ namespace Module.Extension.Task
         /// <summary>
         ///     progressに応じて0,1.. lastのGameObject.activeを切り替える
         /// </summary>
-        [SerializeField] private GameObject[] types;
+        [SerializeField]
+        private GameObject[] types;
 
         /// <summary>
         ///     表示中のobjectIndex
@@ -38,12 +39,18 @@ namespace Module.Extension.Task
         /// <param name="other">hitしたgameObject</param>
         private void OnTriggerEnter(Collider other)
         {
-            if (!other.gameObject.CompareTag("Player")) return;
+            if (!other.gameObject.CompareTag("Player"))
+            {
+                return;
+            }
 
             var obj = other.gameObject;
 
             var controller = obj.GetComponent<PlayerController>();
-            if (controller == null) return;
+            if (controller == null)
+            {
+                return;
+            }
 
             controller.SetState(PlayerState.FollowToPin);
             onComplete = () => controller.SetState(PlayerState.Auto);
@@ -54,7 +61,10 @@ namespace Module.Extension.Task
             navMeshBaker = container.Resolve<RuntimeNavMeshBaker>();
             OnProgressChanged += OnProgress;
 
-            if (types.Length < 1) throw new NotImplementedException();
+            if (types.Length < 1)
+            {
+                throw new NotImplementedException();
+            }
 
             currentIndex = 0;
             UpdateObject();
@@ -94,7 +104,10 @@ namespace Module.Extension.Task
         /// </summary>
         private void UpdateObject()
         {
-            foreach (var type in types) type.SetActive(false);
+            foreach (var type in types)
+            {
+                type.SetActive(false);
+            }
 
             types[currentIndex].SetActive(true);
         }

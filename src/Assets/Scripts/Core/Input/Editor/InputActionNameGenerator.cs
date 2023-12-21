@@ -103,11 +103,16 @@ namespace Core.Input.Editor
         {
             var builder = new StringBuilder();
 
-            if (actionAsset.actionMaps.Count == 0) return builder;
+            if (actionAsset.actionMaps.Count == 0)
+            {
+                return builder;
+            }
 
             foreach (var actionMap in actionAsset.actionMaps)
+            {
                 builder.Append(
                     $"       public static readonly {actionMap.name} {actionMap.name} = new {actionMap.name}();\n");
+            }
 
             //最後の改行は削除
             builder.Remove(builder.Length - 1, 1);

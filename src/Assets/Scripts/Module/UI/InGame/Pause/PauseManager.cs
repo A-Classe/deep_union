@@ -36,7 +36,10 @@ namespace Module.UI.InGame.Pause
         public override void Initialized(ContentTransform content, bool isReset = false)
         {
             base.Initialized(content, isReset);
-            if (isReset) SetState(Nav.Resume);
+            if (isReset)
+            {
+                SetState(Nav.Resume);
+            }
         }
 
         /// <summary>
@@ -45,7 +48,11 @@ namespace Module.UI.InGame.Pause
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public override void Clicked()
         {
-            if (!current.HasValue) return;
+            if (!current.HasValue)
+            {
+                return;
+            }
+
             switch (current.Value)
             {
                 case Nav.Resume:
@@ -77,12 +84,20 @@ namespace Module.UI.InGame.Pause
             {
                 // 上向きの入力
                 case > 0:
-                    if (current.Value == Nav.Resume) return;
+                    if (current.Value == Nav.Resume)
+                    {
+                        return;
+                    }
+
                     nextNav = current.Value - 1;
                     break;
                 // 下向きの入力
                 case < 0:
-                    if (current.Value == Nav.Exit) return;
+                    if (current.Value == Nav.Exit)
+                    {
+                        return;
+                    }
+
                     nextNav = current.Value + 1;
                     break;
                 default:

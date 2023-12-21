@@ -4,9 +4,15 @@ namespace Core.Model.User
 {
     public class EventType
     {
-        protected virtual GameEventType Type() => GameEventType.Default;
+        protected virtual GameEventType Type()
+        {
+            return GameEventType.Default;
+        }
 
-        protected virtual Dictionary<string, object> Parameters() => new();
+        protected virtual Dictionary<string, object> Parameters()
+        {
+            return new Dictionary<string, object>();
+        }
 
         public GameEvent Event()
         {
@@ -15,42 +21,73 @@ namespace Core.Model.User
             return @event;
         }
     }
-    public class AssignEvent: EventType
-    {
-        protected override GameEventType Type() => GameEventType.Assign;
 
-        protected override Dictionary<string, object> Parameters() => new();
+    public class AssignEvent : EventType
+    {
+        protected override GameEventType Type()
+        {
+            return GameEventType.Assign;
+        }
+
+        protected override Dictionary<string, object> Parameters()
+        {
+            return new Dictionary<string, object>();
+        }
     }
-    
-    public class ReleaseEvent: EventType
-    {
-        protected override GameEventType Type() => GameEventType.Release;
 
-        protected override Dictionary<string, object> Parameters() => new();
+    public class ReleaseEvent : EventType
+    {
+        protected override GameEventType Type()
+        {
+            return GameEventType.Release;
+        }
+
+        protected override Dictionary<string, object> Parameters()
+        {
+            return new Dictionary<string, object>();
+        }
     }
-    
-    public class AddWorker: EventType
-    {
-        protected override GameEventType Type() => GameEventType.AddWorker;
 
-        protected override Dictionary<string, object> Parameters() => new();
+    public class AddWorker : EventType
+    {
+        protected override GameEventType Type()
+        {
+            return GameEventType.AddWorker;
+        }
+
+        protected override Dictionary<string, object> Parameters()
+        {
+            return new Dictionary<string, object>();
+        }
     }
-    
-    public class DelWorker: EventType
-    {
-        protected override GameEventType Type() => GameEventType.DelWorker;
 
-        protected override Dictionary<string, object> Parameters() => new();
+    public class DelWorker : EventType
+    {
+        protected override GameEventType Type()
+        {
+            return GameEventType.DelWorker;
+        }
+
+        protected override Dictionary<string, object> Parameters()
+        {
+            return new Dictionary<string, object>();
+        }
     }
-    
-    public class MovePlayer: EventType
-    {
-        protected override GameEventType Type() => GameEventType.MovePlayer;
 
-        protected override Dictionary<string, object> Parameters() => param;
-        
-        private Dictionary<string, object> param = new ();
-        
+    public class MovePlayer : EventType
+    {
+        protected override GameEventType Type()
+        {
+            return GameEventType.MovePlayer;
+        }
+
+        protected override Dictionary<string, object> Parameters()
+        {
+            return param;
+        }
+
+        private readonly Dictionary<string, object> param = new();
+
         public enum ParamType
         {
             Distance
@@ -61,15 +98,21 @@ namespace Core.Model.User
             param.Add(ParamType.Distance.ToString(), distance);
         }
     }
-    
-    public class MoveWorkers: EventType
-    {
-        protected override GameEventType Type() => GameEventType.MoveWorkers;
 
-        protected override Dictionary<string, object> Parameters() => param;
-        
-        private Dictionary<string, object> param = new ();
-        
+    public class MoveWorkers : EventType
+    {
+        protected override GameEventType Type()
+        {
+            return GameEventType.MoveWorkers;
+        }
+
+        protected override Dictionary<string, object> Parameters()
+        {
+            return param;
+        }
+
+        private readonly Dictionary<string, object> param = new();
+
         public enum ParamType
         {
             Distance
@@ -83,22 +126,40 @@ namespace Core.Model.User
 
     public class GamePlay : EventType
     {
-        protected override GameEventType Type() => GameEventType.GamePlay;
+        protected override GameEventType Type()
+        {
+            return GameEventType.GamePlay;
+        }
 
-        protected override Dictionary<string, object> Parameters() => new();
+        protected override Dictionary<string, object> Parameters()
+        {
+            return new Dictionary<string, object>();
+        }
     }
 
     public class GameClear : EventType
     {
-        protected override GameEventType Type() => GameEventType.GameClear;
+        protected override GameEventType Type()
+        {
+            return GameEventType.GameClear;
+        }
 
-        protected override Dictionary<string, object> Parameters() => new();
+        protected override Dictionary<string, object> Parameters()
+        {
+            return new Dictionary<string, object>();
+        }
     }
-    
+
     public class GameOver : EventType
     {
-        protected override GameEventType Type() => GameEventType.GameOver;
+        protected override GameEventType Type()
+        {
+            return GameEventType.GameOver;
+        }
 
-        protected override Dictionary<string, object> Parameters() => new();
+        protected override Dictionary<string, object> Parameters()
+        {
+            return new Dictionary<string, object>();
+        }
     }
 }

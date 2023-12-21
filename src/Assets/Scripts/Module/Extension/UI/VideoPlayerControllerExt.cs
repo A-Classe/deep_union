@@ -3,16 +3,15 @@ using UnityEngine.Video;
 
 namespace Module.Extension.UI
 {
-    
     /// <summary>
-    /// Resultの背景組み込み用
+    ///     Resultの背景組み込み用
     /// </summary>
     [RequireComponent(typeof(VideoPlayer))]
-    public class VideoPlayerControllerExt: MonoBehaviour
+    public class VideoPlayerControllerExt : MonoBehaviour
     {
         private VideoPlayer videoPlayer;
         [SerializeField] private VideoClip[] videoClips;
-        private int currentVideoIndex = 0;
+        private int currentVideoIndex;
 
         private void Awake()
         {
@@ -36,7 +35,10 @@ namespace Module.Extension.UI
 
         private void PlayNextVideo()
         {
-            if (currentVideoIndex >= videoClips.Length) return;
+            if (currentVideoIndex >= videoClips.Length)
+            {
+                return;
+            }
 
             videoPlayer.clip = videoClips[currentVideoIndex];
             videoPlayer.Play();

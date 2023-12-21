@@ -2,7 +2,5 @@
 
 namespace Module.UI.Title.Quit
 {
-    internal class QuitCursor : CursorController<QuitManager.Nav>
-    {
-    }
+    internal class QuitCursor : CursorController<QuitManager.Nav> { }
 }

@@ -44,7 +44,9 @@ namespace Module.Extension.Task
         public void UpdateBlinkColor(float progress)
         {
             if (blinkTween == null)
+            {
                 blinkTween = bodyMaterial.DOColor(blinkColor, BodyColor, 1f).SetLoops(-1, LoopType.Yoyo).Play();
+            }
 
             blinkTween.timeScale = damageBlinkCurve.Evaluate(progress);
         }

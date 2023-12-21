@@ -40,14 +40,18 @@ namespace Debug
             button.onClick.AddListener(() =>
             {
                 if (model.Prefab == null)
+                {
                     DebugSheet.Of(transform)
                         .PushPage(pageType, true, onLoad: x => model.InvokeOnLoad(x.pageId, x.page),
                             titleOverride: model.PageTitleOverride, pageId: model.PageId);
+                }
                 else
+                {
                     DebugSheet.Of(transform)
                         .PushPage(pageType, model.Prefab, true,
                             onLoad: x => model.InvokeOnLoad(x.pageId, x.page),
                             titleOverride: model.PageTitleOverride, pageId: model.PageId);
+                }
             });
 
             // Height

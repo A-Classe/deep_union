@@ -1,10 +1,8 @@
 using System;
 using Core.User;
-using UnityEngine;
 
 namespace Core.Scenes
 {
-    
     public enum StageNavigation
     {
         Tutorial,
@@ -59,6 +57,7 @@ namespace Core.Scenes
                     };
                     break;
             }
+
             return nextNav;
         }
 
@@ -71,7 +70,7 @@ namespace Core.Scenes
                 _ => nav
             };
         }
-        
+
         public static StageNavigation ToBase(this StageNavigation nav)
         {
             return nav switch

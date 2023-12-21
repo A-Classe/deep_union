@@ -37,7 +37,9 @@ namespace System.GameProgress
             await UniTask.WaitUntil(() => Progress >= 1f, cancellationToken: cTokenSource.Token);
 
             if (cTokenSource.IsCancellationRequested)
+            {
                 return;
+            }
 
             OnCompleted?.Invoke();
         }

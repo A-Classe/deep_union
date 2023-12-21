@@ -5,10 +5,10 @@ using UnityEngine.Rendering.Universal;
 namespace Module.GameSetting
 {
     [RequireComponent(typeof(Volume))]
-    public class BrightController: MonoBehaviour
+    public class BrightController : MonoBehaviour
     {
         private Volume globalVolume;
-        
+
         [SerializeField] private float exposureDefault = 1.18f;
         private readonly float exposureMin = -7.0f;
         private readonly float exposureMax = 4.0f;
@@ -19,12 +19,15 @@ namespace Module.GameSetting
         }
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="value">0.0~1.0</param>
         public void SetBrightness(float value)
         {
-            if (value < 0.0f || value > 1.0f) return;
+            if (value < 0.0f || value > 1.0f)
+            {
+                return;
+            }
+
             if (globalVolume.profile.TryGet(out ColorAdjustments colorAdjustments))
             {
                 float remappedValue;
@@ -38,6 +41,7 @@ namespace Module.GameSetting
                     // 0.6から1.0の範囲を exposureDefault から exposureMax にマッピング
                     remappedValue = Remap(value, 0.6f, 1.0f, exposureDefault, exposureMax);
                 }
+
                 colorAdjustments.postExposure.value = remappedValue;
             }
         }

@@ -5,9 +5,10 @@ using UnityEngine.Video;
 namespace Module.Extension.UI
 {
     [RequireComponent(typeof(VideoPlayer))]
-    public class VideoPlayerController: MonoBehaviour
+    public class VideoPlayerController : MonoBehaviour
     {
         private VideoPlayer videoPlayer;
+
         private void Awake()
         {
             videoPlayer = GetComponent<VideoPlayer>();

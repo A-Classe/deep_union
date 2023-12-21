@@ -21,9 +21,7 @@ namespace System.GameProgress
             this.playerController = playerController;
         }
 
-        public void Dispose()
-        {
-        }
+        public void Dispose() { }
 
         public void Initialize()
         {

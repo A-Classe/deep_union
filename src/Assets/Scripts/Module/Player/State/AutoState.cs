@@ -1,7 +1,5 @@
 using System;
 using UnityEngine;
-using Wanna.DebugEx;
-using Debug = System.Diagnostics.Debug;
 
 namespace Module.Player.State
 {
@@ -20,7 +18,7 @@ namespace Module.Player.State
     }
 
     /// <summary>
-    /// 自動航行のステート
+    ///     自動航行のステート
     /// </summary>
     public class AutoState : IPlayerState
     {

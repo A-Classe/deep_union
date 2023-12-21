@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Wanna.DebugEx;
 
 namespace Core.Input
 {
@@ -21,7 +20,10 @@ namespace Core.Input
 
         private void OnDestroy()
         {
-            foreach (var inputEvent in inputEvents) inputEvent.Clear();
+            foreach (var inputEvent in inputEvents)
+            {
+                inputEvent.Clear();
+            }
         }
 
         public InputEvent CreateEvent(Guid guid)

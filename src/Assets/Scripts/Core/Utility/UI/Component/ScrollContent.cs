@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Core.Utility.UI.Component
 {
-    public class ScrollContent: MonoBehaviour
+    public class ScrollContent : MonoBehaviour
     {
         [SerializeField] private RectTransform content;
         private const float ScrollDuration = 10f;
@@ -13,10 +13,8 @@ namespace Core.Utility.UI.Component
 
         public event Action OnScrollFinished;
 
-        private bool isEnable;
-        
-        public bool IsEnable => isEnable;
-        
+        public bool IsEnable { get; private set; }
+
         public void Awake()
         {
             startY = content.anchoredPosition.y;
@@ -27,12 +25,16 @@ namespace Core.Utility.UI.Component
         {
             timer = 0f;
             content.anchoredPosition = new Vector2(content.anchoredPosition.x, startY);
-            isEnable = true;
+            IsEnable = true;
         }
 
         private void FixedUpdate()
         {
-            if (!isEnable) return;
+            if (!IsEnable)
+            {
+                return;
+            }
+
             if (timer < ScrollDuration)
             {
                 timer += Time.deltaTime;
@@ -41,7 +43,7 @@ namespace Core.Utility.UI.Component
             }
             else
             {
-                isEnable = false;
+                IsEnable = false;
                 OnScrollFinished?.Invoke();
             }
         }

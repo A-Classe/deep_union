@@ -30,7 +30,8 @@ namespace GameMain.Container
 {
     public class InGameContainer : LifetimeScope
     {
-        [Header("ここにシーン上のインスタンスを登録")] [SerializeField]
+        [Header("ここにシーン上のインスタンスを登録")]
+        [SerializeField]
         private SpawnPoint spawnPoint;
 
         [SerializeField] private GameParam gameParam;
@@ -44,10 +45,11 @@ namespace GameMain.Container
         [SerializeField] private PlayerStatusVisualizer playerStatusVisualizer;
 
         [SerializeField] private InGameUIManager inGameUIManager;
-        
+
         [SerializeField] private BrightController brightController;
 
-        [FormerlySerializedAs("leaderAssignEvent")] [SerializeField]
+        [FormerlySerializedAs("leaderAssignEvent")]
+        [SerializeField]
         private LeaderAssignableArea leaderAssignableArea;
 
 
@@ -63,7 +65,7 @@ namespace GameMain.Container
             builder.RegisterEntryPoint<AssignmentSystem>();
             builder.RegisterEntryPoint<PlayerStatusUpdater>();
             builder.RegisterEntryPoint<HealTaskPoolPresenter>();
-            
+
             builder.Register<WorkerSpawner>(Lifetime.Singleton);
             builder.Register<WorkerAgent>(Lifetime.Singleton);
             builder.Register<StageProgressObserver>(Lifetime.Singleton);
@@ -97,7 +99,10 @@ namespace GameMain.Container
                     .OfType<IInjectable>()
                     .Select(injectable => (injectable as MonoBehaviour)?.gameObject);
 
-                foreach (var injectable in injectables) container.InjectGameObject(injectable);
+                foreach (var injectable in injectables)
+                {
+                    container.InjectGameObject(injectable);
+                }
             });
         }
     }

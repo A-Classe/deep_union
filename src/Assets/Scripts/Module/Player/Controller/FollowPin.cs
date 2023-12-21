@@ -5,12 +5,11 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
-using Wanna.DebugEx;
 
 namespace Module.Player.Controller
 {
     /// <summary>
-    /// 潜水艦を誘導するピンを操作するクラス
+    ///     潜水艦を誘導するピンを操作するクラス
     /// </summary>
     public class FollowPin : MonoBehaviour
     {
@@ -23,12 +22,12 @@ namespace Module.Player.Controller
         [SerializeField] private LayerMask groundLayer;
 
         /// <summary>
-        /// 潜水艦がピンに到達したときのイベント
+        ///     潜水艦がピンに到達したときのイベント
         /// </summary>
         public event Action OnArrived;
 
         /// <summary>
-        /// ピンを差したときのイベント
+        ///     ピンを差したときのイベント
         /// </summary>
         public event Action OnPinned;
 
@@ -51,7 +50,9 @@ namespace Module.Player.Controller
         private void OnPinPushed(InputAction.CallbackContext obj)
         {
             if (isPinning)
+            {
                 return;
+            }
 
             //長押し待機
             isPinning = true;
@@ -63,7 +64,9 @@ namespace Module.Player.Controller
         private void OnPinReleased(InputAction.CallbackContext obj)
         {
             if (!isPinning)
+            {
                 return;
+            }
 
             isPinning = false;
             assistVisualizer.StopGradation();
@@ -89,7 +92,7 @@ namespace Module.Player.Controller
 
                     pinObject.SetParent(null);
                     pinObject.position = pinOrigin.position + pinOffset;
-                    
+
                     assistVisualizer.StopGradation();
                     pinObject.gameObject.SetActive(true);
                 }
@@ -120,7 +123,7 @@ namespace Module.Player.Controller
         }
 
         /// <summary>
-        /// ピンが指している位置を返します
+        ///     ピンが指している位置を返します
         /// </summary>
         /// <returns>ピンが指している位置</returns>
         public Vector3 GetPosition()

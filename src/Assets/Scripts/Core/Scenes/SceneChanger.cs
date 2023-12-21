@@ -16,13 +16,15 @@ namespace Core.Scenes
         {
             Title,
             InGame,
-            Result,
+            Result
         }
 
         private Route next;
-        
+
         private const string TitleRoute = "Scenes/Other/Titles_Test";
+
         private const string InGameRoute = "Scenes/Stages/Stage1hara/Stage1hara";
+
         // :todo チュートリアル用のシーンを用意する
         private const string TutorialRoute = "Scenes/Stages/StageTutorial/StageTutorial";
         private const string ResultRoute = "Scenes/Other/Result_Test";
@@ -97,6 +99,7 @@ namespace Core.Scenes
         }
 
         private GameResult currentResult;
+
         /// <summary>
         ///     Resultへの遷移
         /// </summary>
@@ -117,8 +120,8 @@ namespace Core.Scenes
         {
             return results;
         }
-        
-        
+
+
         public bool LoadBeforeMovieInGame(StageData.Stage routeNav)
         {
             try
@@ -134,7 +137,7 @@ namespace Core.Scenes
                 return false;
             }
         }
-        
+
         public bool LoadAfterMovieInGame(GameResult result)
         {
             try
@@ -153,7 +156,7 @@ namespace Core.Scenes
 
         public bool Next()
         {
-            try 
+            try
             {
                 switch (next)
                 {
@@ -167,13 +170,13 @@ namespace Core.Scenes
                         LoadInGame(inGameRoute);
                         break;
                 }
+
                 return true;
             }
             catch (Exception)
             {
                 return false;
             }
-            
         }
     }
 }

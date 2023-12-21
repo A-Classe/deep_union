@@ -4,7 +4,6 @@ using System.Linq;
 using Core.NavMesh;
 using Core.Utility;
 using Cysharp.Threading.Tasks;
-using DG.Tweening;
 using Module.Assignment.Component;
 using Module.Extension.System;
 using Module.Player;
@@ -12,9 +11,7 @@ using Module.Player.Controller;
 using Module.Task;
 using Module.Working;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 using VContainer;
-using Wanna.DebugEx;
 using Random = UnityEngine.Random;
 
 namespace Module.Extension.Task
@@ -70,7 +67,7 @@ namespace Module.Extension.Task
             OnProgressChanged += director.UpdateScale;
             OnProgressChanged += director.UpdateBlinkColor;
 
-            progressTime= 0.0f;
+            progressTime = 0.0f;
             IsMoving = false;
         }
 
@@ -86,7 +83,7 @@ namespace Module.Extension.Task
                 simpleAgent.Move(playerController.transform.position);
             }
 
-            if(IsMoving)
+            if (IsMoving)
             {
                 progressTime += Time.deltaTime;
                 var ratio = progressTime / explodeLimit;
@@ -99,7 +96,9 @@ namespace Module.Extension.Task
         private void OnTriggerEnter(Collider other)
         {
             if (isAdsorption)
+            {
                 return;
+            }
 
             if (other.gameObject.CompareTag("Player"))
             {
@@ -112,8 +111,10 @@ namespace Module.Extension.Task
             await UniTask.Delay(TimeSpan.FromSeconds(explodeLimit));
 
             if (isAdsorption)
+            {
                 return;
-            
+            }
+
             Explode(transform);
         }
 
@@ -133,7 +134,9 @@ namespace Module.Extension.Task
         protected override async void OnComplete()
         {
             if (isAdsorption)
+            {
                 return;
+            }
 
             isAdsorption = true;
             SetDetection(false);
@@ -204,7 +207,9 @@ namespace Module.Extension.Task
                 if (workerDamagedCount < workerDamageCount && obj.TryGetComponent(out Worker worker))
                 {
                     if (worker.IsLocked)
+                    {
                         continue;
+                    }
 
                     worker.Kill();
                     workerDamagedCount++;
@@ -214,7 +219,9 @@ namespace Module.Extension.Task
                 if (obj.parent != null && obj.parent.TryGetComponent(out BaseTask baseTask))
                 {
                     if (baseTask == this || !baseTask.AcceptAttacks)
+                    {
                         continue;
+                    }
 
                     baseTask.ForceWork((int)attackPointToOtherTask);
                 }
@@ -238,7 +245,9 @@ namespace Module.Extension.Task
         private void OnDrawGizmos()
         {
             if (!showExplodeRange)
+            {
                 return;
+            }
 
             var origin = explodeEffectSphere.position;
             var radius = transform.localScale.x * explodeEffectSphere.localScale.x * damageRangeFixOffset;

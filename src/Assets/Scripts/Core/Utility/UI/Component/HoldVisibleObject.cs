@@ -5,26 +5,26 @@ using UnityEngine.UI;
 
 namespace Core.Utility.UI.Component
 {
-    public class HoldVisibleObject: SwitchableAnimationBehaviour
+    public class HoldVisibleObject : SwitchableAnimationBehaviour
     {
         [SerializeField] private Slider visualSlider;
         public override ContentTransform EnterTransform { get; set; }
         public override ContentTransform ExitTransform { get; set; }
-        
+
         private readonly float ExitDelaySec = 0.3f;
         private readonly float EnterDelaySec = 0.6f;
 
         public bool IsVisible => !State;
 
         private readonly float holdFinishedTimeSec = 2.0f;
-        private float currentTime = 0.0f;
+        private float currentTime;
 
         public event Action OnHoldFinished;
 
         private void Start()
         {
             EnterTransform = this.FadeOut(Easings.QuartIn(EnterDelaySec));
-            ExitTransform = this.FadeIn( Easings.Default(ExitDelaySec));
+            ExitTransform = this.FadeIn(Easings.Default(ExitDelaySec));
             visualSlider.minValue = 0.0f;
             visualSlider.maxValue = 1.0f;
             State = true;
@@ -36,12 +36,17 @@ namespace Core.Utility.UI.Component
             {
                 currentTime = 0f;
             }
+
             State = !isVisible;
         }
 
         public void UpdateHoldTime(float delta)
         {
-            if (!IsVisible) return;
+            if (!IsVisible)
+            {
+                return;
+            }
+
             currentTime += delta;
             UpdateSlider();
         }
@@ -55,6 +60,5 @@ namespace Core.Utility.UI.Component
                 OnHoldFinished?.Invoke();
             }
         }
-        
     }
 }

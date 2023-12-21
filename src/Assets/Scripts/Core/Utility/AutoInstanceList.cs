@@ -34,16 +34,26 @@ namespace Core.Utility
 
         public void SetList(List<T> list)
         {
-            foreach (var monoBehaviour in list) Add(monoBehaviour);
+            foreach (var monoBehaviour in list)
+            {
+                Add(monoBehaviour);
+            }
         }
 
         private void CheckAndRefillBuffer()
         {
             if (Count <= buffer)
             {
-                if (instancePrefab == null || parentTransform == null) return;
+                if (instancePrefab == null || parentTransform == null)
+                {
+                    return;
+                }
+
                 var itemsToInstantiate = (int)buffer - Count;
-                for (var i = 0; i < itemsToInstantiate; i++) AddToBufferAsync();
+                for (var i = 0; i < itemsToInstantiate; i++)
+                {
+                    AddToBufferAsync();
+                }
             }
         }
 
@@ -80,7 +90,10 @@ namespace Core.Utility
             var instance = Object.Instantiate(instancePrefab, spawn, Quaternion.identity, parentTransform);
             instance.name = "Point_Clone";
             var component = instance.GetComponent<T>();
-            if (component) Add(component);
+            if (component)
+            {
+                Add(component);
+            }
         }
     }
 

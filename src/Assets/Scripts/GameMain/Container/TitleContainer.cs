@@ -1,6 +1,4 @@
-﻿using Core.User;
-using Core.User.API;
-using GameMain.Router;
+﻿using GameMain.Router;
 using Module.Extension.System;
 using Module.UI.Title.Credit;
 using Module.UI.Title.Option;

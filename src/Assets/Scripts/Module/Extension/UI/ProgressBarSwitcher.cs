@@ -4,7 +4,6 @@ using Module.Task;
 using Module.UI.HUD;
 using VContainer;
 using VContainer.Unity;
-using Wanna.DebugEx;
 
 namespace Module.Extension.UI
 {
@@ -44,7 +43,9 @@ namespace Module.Extension.UI
             foreach ((BaseTask task, TaskProgressView view) in activeViews)
             {
                 if (!view.IsEnabled)
+                {
                     continue;
+                }
 
                 //タスクが終了したら非表示にする
                 if (task.State == TaskState.Completed)
@@ -67,8 +68,10 @@ namespace Module.Extension.UI
         private void OnTaskDeactivated(BaseTask task)
         {
             if (!activeViews.ContainsKey(task))
+            {
                 return;
-            
+            }
+
             taskProgressPool.ReleaseProgressView(activeViews[task]);
             activeViews.Remove(task);
         }

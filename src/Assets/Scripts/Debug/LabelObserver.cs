@@ -17,8 +17,11 @@ namespace Debug
             this.getText = getText;
         }
 
-        public static LabelObserver<T> Create(DefaultDebugPageBase pageBase, Func<T, string> getTextFunc,
-            int priority = 0)
+        public static LabelObserver<T> Create(
+            DefaultDebugPageBase pageBase,
+            Func<T, string> getTextFunc,
+            int priority = 0
+        )
         {
             var model = new LabelCellModel(false);
             var cellId = pageBase.AddLabel(model, priority);

@@ -27,8 +27,8 @@ namespace Module.UI.Title.Option
         private UserPreference preference;
 
         private AudioMixerController audioMixerController;
-        
-        public event Action<float> OnBrightness; 
+
+        public event Action<float> OnBrightness;
 
         protected override void Awake()
         {
@@ -54,7 +54,10 @@ namespace Module.UI.Title.Option
             navigation.SetActive(true);
             bar.AnimateIn();
 
-            if (isReset) navigation.SetScreen(Nav.Option1, isReset: true);
+            if (isReset)
+            {
+                navigation.SetScreen(Nav.Option1, isReset: true);
+            }
         }
 
         private void Update()
@@ -62,13 +65,9 @@ namespace Module.UI.Title.Option
             navigation.Tick();
         }
 
-        public override void Select(Vector2 direction)
-        {
-        }
+        public override void Select(Vector2 direction) { }
 
-        public override void Clicked()
-        {
-        }
+        public override void Clicked() { }
 
         public override void Finished(ContentTransform content, Action onFinished)
         {
@@ -121,7 +120,10 @@ namespace Module.UI.Title.Option
                         break;
                 }
             };
-            option1.OnBack += () => { OnBack?.Invoke(); };
+            option1.OnBack += () =>
+            {
+                OnBack?.Invoke();
+            };
 
             option2.OnBrightness += value =>
             {

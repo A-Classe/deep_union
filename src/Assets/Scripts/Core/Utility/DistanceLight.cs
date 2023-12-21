@@ -23,7 +23,7 @@ namespace Core.Utility
         private async UniTaskVoid AdjustLODQuality()
         {
             CancellationToken destroyCanceller = this.GetCancellationTokenOnDestroy();
-            
+
             while (!destroyCanceller.IsCancellationRequested)
             {
                 var squareDistanceFromCamera = (camTransform.position - transform.position).sqrMagnitude;

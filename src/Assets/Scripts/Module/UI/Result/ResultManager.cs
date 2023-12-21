@@ -53,12 +53,19 @@ namespace Module.UI.Result
         {
             base.Initialized(content, isReset);
 
-            if (isReset) SetState(Nav.Next);
+            if (isReset)
+            {
+                SetState(Nav.Next);
+            }
         }
 
         public override void Clicked()
         {
-            if (!current.HasValue) return;
+            if (!current.HasValue)
+            {
+                return;
+            }
+
             switch (current.Value)
             {
                 case Nav.Next:

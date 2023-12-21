@@ -14,11 +14,13 @@ namespace Module.Extension.Task
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
+            {
                 foreach (var enemy1Task in baseTasks)
                 {
                     enemy1Task.ForceEnable();
                     enemy1Task.SetDetection(true);
                 }
+            }
         }
     }
 }

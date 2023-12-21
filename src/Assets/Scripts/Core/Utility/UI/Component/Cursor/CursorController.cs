@@ -23,10 +23,18 @@ namespace Core.Utility.UI.Component.Cursor
 
         public void SetPoint(T key)
         {
-            if (currentPoint.Equals(key) && isInitialize) return;
+            if (currentPoint.Equals(key) && isInitialize)
+            {
+                return;
+            }
+
             isInitialize = true;
 
-            if (!points.Keys.Contains(key)) return;
+            if (!points.Keys.Contains(key))
+            {
+                return;
+            }
+
             currentPoint = key;
             Animated(points[key]);
         }

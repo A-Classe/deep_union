@@ -40,7 +40,11 @@ namespace Module.UI.Title.Title
 
         public override void Clicked()
         {
-            if (!current.HasValue) return;
+            if (!current.HasValue)
+            {
+                return;
+            }
+
             switch (current.Value)
             {
                 case Nav.Start:
@@ -77,12 +81,20 @@ namespace Module.UI.Title.Title
             {
                 // 上向きの入力
                 case > 0:
-                    if (current.Value == Nav.Start) return;
+                    if (current.Value == Nav.Start)
+                    {
+                        return;
+                    }
+
                     nextNav = current.Value - 1;
                     break;
                 // 下向きの入力
                 case < 0:
-                    if (current.Value == Nav.Quit) return;
+                    if (current.Value == Nav.Quit)
+                    {
+                        return;
+                    }
+
                     nextNav = current.Value + 1;
                     break;
                 default:

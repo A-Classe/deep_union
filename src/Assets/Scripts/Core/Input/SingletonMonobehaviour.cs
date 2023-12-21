@@ -17,7 +17,10 @@ namespace Core.Input
                 if (instance == null)
                 {
                     instance = FindObjectOfType<T>(true);
-                    if (instance == null) Debug.LogError(typeof(T) + " をアタッチしているGameObjectはありません");
+                    if (instance == null)
+                    {
+                        Debug.LogError(typeof(T) + " をアタッチしているGameObjectはありません");
+                    }
                 }
 
                 return instance;

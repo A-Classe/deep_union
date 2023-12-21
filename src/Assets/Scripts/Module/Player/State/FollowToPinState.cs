@@ -2,12 +2,11 @@ using Cysharp.Threading.Tasks;
 using Module.Player.Controller;
 using UnityEngine;
 using UnityEngine.AI;
-using Wanna.DebugEx;
 
 namespace Module.Player.State
 {
     /// <summary>
-    /// 潜水艦がピンを追いかけるステート
+    ///     潜水艦がピンを追いかけるステート
     /// </summary>
     internal class FollowToPinState : IPlayerState
     {
@@ -56,13 +55,17 @@ namespace Module.Player.State
         {
             //探索可能になるまで待機
             if (navMeshAgent.pathStatus == NavMeshPathStatus.PathInvalid)
+            {
                 return;
+            }
 
             navMeshAgent.SetDestination(followPin.GetPosition());
 
             //探索完了するまで移動しない
             if (navMeshAgent.pathPending)
+            {
                 return;
+            }
 
             if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
             {

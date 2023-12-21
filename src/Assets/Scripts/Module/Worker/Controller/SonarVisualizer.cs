@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -13,7 +10,7 @@ namespace Module.Player
 
         public void SetSize(float size)
         {
-            sonarEffect.SetFloat("SonarSize", size*fixRate);
+            sonarEffect.SetFloat("SonarSize", size * fixRate);
         }
     }
 }

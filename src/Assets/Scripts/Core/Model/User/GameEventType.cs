@@ -1,12 +1,12 @@
 namespace Core.Model.User
 {
     /// <summary>
-    /// イベントの種類を定義
+    ///     イベントの種類を定義
     /// </summary>
     public enum GameEventType
     {
         Default,
-        
+
         // In Game Event
         Assign,
         Release,
@@ -14,7 +14,7 @@ namespace Core.Model.User
         AddWorker,
         MovePlayer,
         MoveWorkers,
-        
+
         // Sys Event
         GamePlay,
         GameClear,

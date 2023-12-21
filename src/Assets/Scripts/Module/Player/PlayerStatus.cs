@@ -10,9 +10,15 @@ namespace Module.Player
     {
         public PlayerStatus(PlayerStatusModel model)
         {
-            if (model.maxHp.HasValue) MaxHp = model.maxHp.Value;
+            if (model.maxHp.HasValue)
+            {
+                MaxHp = model.maxHp.Value;
+            }
 
-            if (model.hp.HasValue) Hp = model.hp.Value;
+            if (model.hp.HasValue)
+            {
+                Hp = model.hp.Value;
+            }
         }
 
         public short Hp { get; private set; }
@@ -39,10 +45,17 @@ namespace Module.Player
         private void SetHp(short newHp)
         {
             var newer = Math.Clamp(newHp, (short)0, MaxHp);
-            if (Hp == newer) return;
+            if (Hp == newer)
+            {
+                return;
+            }
+
             Hp = newer;
             OnHpChanged?.Invoke(Hp);
-            if (Hp == 0) OnCallHpZero?.Invoke();
+            if (Hp == 0)
+            {
+                OnCallHpZero?.Invoke();
+            }
         }
 
         private static short Parse(uint value)

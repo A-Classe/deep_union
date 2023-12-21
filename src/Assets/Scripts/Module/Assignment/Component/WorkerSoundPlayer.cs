@@ -5,7 +5,6 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Wanna.DebugEx;
 
-
 namespace Module.Working
 {
     [RequireComponent(typeof(AudioSource))]
@@ -16,8 +15,8 @@ namespace Module.Working
         [SerializeField] private AudioClip assignSound;
         [SerializeField] private float minPlayInterval;
         [SerializeField] private float maxQueueCount;
-        
-        private readonly Queue<AudioClip> clipQueue = new Queue<AudioClip>(64);
+
+        private readonly Queue<AudioClip> clipQueue = new(64);
 
         private void Start()
         {
@@ -62,7 +61,9 @@ namespace Module.Working
         {
             //最大待機量を超えたら再生しない
             if (clipQueue.Count >= maxQueueCount)
+            {
                 return;
+            }
 
             //再生中じゃないときはそのまま再生
             if (!audioSource.isPlaying)

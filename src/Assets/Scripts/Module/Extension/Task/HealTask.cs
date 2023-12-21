@@ -1,5 +1,4 @@
 using System;
-using Core.NavMesh;
 using Cysharp.Threading.Tasks;
 using Module.Assignment.Component;
 using Module.Player;
@@ -8,7 +7,6 @@ using Module.Task;
 using UnityEngine;
 using UnityEngine.AI;
 using VContainer;
-using Wanna.DebugEx;
 using Random = UnityEngine.Random;
 
 namespace Module.Extension.Task
@@ -32,7 +30,7 @@ namespace Module.Extension.Task
         private TaskActivator taskActivator;
 
         public event Action<HealTask> OnCollected;
-        
+
         private void Update()
         {
             if (navMeshAgent.enabled && WorkerCount >= minWorkerCount)
@@ -55,9 +53,9 @@ namespace Module.Extension.Task
 
                 collideObj.SetActive(false);
                 healObj.SetActive(false);
-                
+
                 await WaitSound();
-                
+
                 OnCollected?.Invoke(this);
                 taskActivator.ForceDeactivate(this);
             }

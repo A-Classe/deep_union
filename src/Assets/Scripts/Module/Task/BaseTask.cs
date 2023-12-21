@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using VContainer;
-using Wanna.DebugEx;
 
 namespace Module.Task
 {
@@ -55,9 +54,7 @@ namespace Module.Task
         ///     ゲーム開始時の初期化関数
         /// </summary>
         /// <param name="container"></param>
-        public virtual void Initialize(IObjectResolver container)
-        {
-        }
+        public virtual void Initialize(IObjectResolver container) { }
 
         /// <summary>
         ///     Taskの状態を更新するUpdate
@@ -65,7 +62,10 @@ namespace Module.Task
         /// <param name="deltaTime">Time.deltaTime</param>
         void ITaskSystem.TaskSystemUpdate(float deltaTime)
         {
-            if (state != TaskState.Completed && currentWorkerCount != 0f) UpdateProgress(deltaTime);
+            if (state != TaskState.Completed && currentWorkerCount != 0f)
+            {
+                UpdateProgress(deltaTime);
+            }
 
             ManagedUpdate(deltaTime);
         }
@@ -96,9 +96,7 @@ namespace Module.Task
         ///     ゲームの状態によって管理されるUpdate
         /// </summary>
         /// <param name="deltaTime">Time.deltaTime</param>
-        protected virtual void ManagedUpdate(float deltaTime)
-        {
-        }
+        protected virtual void ManagedUpdate(float deltaTime) { }
 
 
         public void ForceWork(int monoWork)
@@ -114,10 +112,16 @@ namespace Module.Task
             var prevProgress = currentProgress;
             currentProgress = Mathf.InverseLerp(0f, mw, currentMw);
 
-            if (currentProgress - prevProgress != 0) OnProgressChanged?.Invoke(currentProgress);
+            if (currentProgress - prevProgress != 0)
+            {
+                OnProgressChanged?.Invoke(currentProgress);
+            }
 
             //進捗が1に到達したら完了
-            if (currentProgress >= 1f) ForceComplete();
+            if (currentProgress >= 1f)
+            {
+                ForceComplete();
+            }
 
             enqueuedMonoWork = 0;
         }
@@ -125,7 +129,9 @@ namespace Module.Task
         private void OnMonoWorkUpdated()
         {
             if (state == TaskState.Completed)
+            {
                 return;
+            }
 
             //作業量が0より大きくなったら開始
             if (prevWorkerCount == 0f && currentWorkerCount > prevWorkerCount)
@@ -158,21 +164,18 @@ namespace Module.Task
             OnCompleted?.Invoke(this);
         }
 
-        protected virtual void OnStart()
-        {
-        }
+        protected virtual void OnStart() { }
 
-        protected virtual void OnCancel()
-        {
-        }
+        protected virtual void OnCancel() { }
 
-        protected virtual void OnComplete()
-        {
-        }
+        protected virtual void OnComplete() { }
 
         public void SetDetection(bool isEnabled)
         {
-            foreach (var col in taskColliders) col.enabled = isEnabled;
+            foreach (var col in taskColliders)
+            {
+                col.enabled = isEnabled;
+            }
         }
 
         public virtual void Enable()

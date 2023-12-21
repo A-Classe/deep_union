@@ -47,7 +47,10 @@ namespace Module.Extension.Task
         /// </summary>
         private void UpdateObject()
         {
-            foreach (var type in types) type.SetActive(false);
+            foreach (var type in types)
+            {
+                type.SetActive(false);
+            }
 
             types[currentIndex].SetActive(true);
         }

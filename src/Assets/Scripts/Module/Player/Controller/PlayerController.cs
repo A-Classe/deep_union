@@ -1,6 +1,5 @@
 using System;
 using System.Linq;
-using GameMain.Presenter;
 using Module.Player.State;
 using UnityEngine;
 using UnityEngine.AI;
@@ -27,9 +26,9 @@ namespace Module.Player.Controller
         private IPlayerState[] states;
 
         public event Action<PlayerState> OnStateChanged;
-        
-        public event Action<float> OnMoveDistance; 
-        
+
+        public event Action<float> OnMoveDistance;
+
         private Vector3 lastPosition = Vector3.zero;
 
         /// <summary>
@@ -90,16 +89,21 @@ namespace Module.Player.Controller
         {
             return currentState.GetState();
         }
-        
-        
+
+
         private void SendLog()
         {
             if (lastPosition != Vector3.zero)
             {
                 float distance = Vector3.Distance(lastPosition, transform.position);
-                if (Math.Abs(distance) < 0.001f) return;
+                if (Math.Abs(distance) < 0.001f)
+                {
+                    return;
+                }
+
                 OnMoveDistance?.Invoke(distance);
             }
+
             lastPosition = transform.position;
         }
     }

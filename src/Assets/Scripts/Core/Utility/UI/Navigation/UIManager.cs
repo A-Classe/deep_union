@@ -13,13 +13,9 @@ namespace Core.Utility.UI.Navigation
             Animation(content);
         }
 
-        public virtual void Select(Vector2 direction)
-        {
-        }
+        public virtual void Select(Vector2 direction) { }
 
-        public virtual void Clicked()
-        {
-        }
+        public virtual void Clicked() { }
 
         public virtual void Finished(ContentTransform content, Action onFinished)
         {

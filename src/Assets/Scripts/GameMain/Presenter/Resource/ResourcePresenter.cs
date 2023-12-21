@@ -29,12 +29,20 @@ namespace GameMain.Presenter.Resource
         public void Initialize()
         {
             foreach (var collectableTask in collectableTasks)
-                collectableTask.OnCollected += count => { resourceContainer.Add(count); };
+            {
+                collectableTask.OnCollected += count =>
+                {
+                    resourceContainer.Add(count);
+                };
+            }
 
             var initialResourceCount =
                 resourceContainer.MaxResourceCount > 0 ? (uint)resourceContainer.MaxResourceCount : 0u;
             uiManager.SetResourceCount(0u, initialResourceCount);
-            resourceContainer.OnResourceChanged += (_, current) => { uiManager.SetResourceCount((uint)current); };
+            resourceContainer.OnResourceChanged += (_, current) =>
+            {
+                uiManager.SetResourceCount((uint)current);
+            };
         }
     }
 }

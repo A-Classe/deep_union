@@ -14,8 +14,6 @@ namespace Module.Player.Camera.State
             return CameraState.Follow;
         }
 
-        public void Update()
-        {
-        }
+        public void Update() { }
     }
 }

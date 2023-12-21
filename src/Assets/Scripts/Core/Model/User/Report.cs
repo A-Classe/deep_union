@@ -4,10 +4,10 @@ using System.Collections.Generic;
 namespace Core.Model.User
 {
     [Serializable]
-    public struct Report: IDefaultable<Report>
+    public struct Report : IDefaultable<Report>
     {
         public uint assignCount;
-        
+
         public uint releaseCount;
 
         public uint addWorkerCount;
@@ -23,7 +23,7 @@ namespace Core.Model.User
         public uint gameClear;
 
         public uint gameOver;
-        
+
         public static Report GenerateToEvents(LinkedList<GameEvent> events)
         {
             Report report = new Report();
