@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Module.Extension.SoundPlayer
 {
-    public class IncreaseTaskSoundPlayer : TaskSoundPlayer<IncreaseWorkerTask> // ��������p������ <>���͑Ώۂ̃^�X�N�̌^
+    public class IncreaseTaskEventTrigger : TaskEventTrigger<IncreaseWorkerTask> // ��������p������ <>���͑Ώۂ̃^�X�N�̌^
     {
         //AudioClip��p�ӂ���
         [SerializeField] private AudioClip CompleteSound;

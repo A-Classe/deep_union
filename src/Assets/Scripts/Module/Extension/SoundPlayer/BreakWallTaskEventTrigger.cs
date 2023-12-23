@@ -4,10 +4,11 @@ using UnityEngine;
 
 namespace Module.Extension.SoundPlayer
 {
-    public class CreateWallTaskSoundPlayer : TaskSoundPlayer<CreateWallTask> // ←これを継承する <>内は対象のタスクの型
+    public class BreakWallTaskEventTrigger : TaskEventTrigger<BreakWallTask> // ←これを継承する <>内は対象のタスクの型
     {
         //AudioClipを用意する
-        [SerializeField] private AudioClip CreateSound;
+        [SerializeField] private AudioClip BreakingSound;
+        [SerializeField] private AudioClip BreakedSound;
 
         protected override void OnStart()
         {
@@ -18,8 +19,8 @@ namespace Module.Extension.SoundPlayer
 
         private void OnTaskStarted(BaseTask _)
         {
-            // 作っている音をループで鳴らす
-            AudioSource.PlayOneShot(CreateSound);
+            // 壊している音をループで鳴らす
+            AudioSource.PlayOneShot(BreakingSound);
         }
 
         private void OnTaskCanceled(BaseTask _)
@@ -28,6 +29,10 @@ namespace Module.Extension.SoundPlayer
             //AudioSource.Stop();
         }
 
-        private void OnTaskCompleted(BaseTask _) { }
+        private void OnTaskCompleted(BaseTask _)
+        {
+            // 壊れた音を一度鳴らす
+            AudioSource.PlayOneShot(BreakedSound);
+        }
     }
 }

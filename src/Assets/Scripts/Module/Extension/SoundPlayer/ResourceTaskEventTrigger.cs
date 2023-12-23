@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Module.Extension.SoundPlayer
 {
-    public class ResourceTaskSoundPlayer : TaskSoundPlayer<ResourceTask> // ←これを継承する <>内は対象のタスクの型
+    public class ResourceTaskEventTrigger : TaskEventTrigger<ResourceTask> // ←これを継承する <>内は対象のタスクの型
     {
         //AudioClipを用意する
         [SerializeField] private AudioClip BreakingSound;
