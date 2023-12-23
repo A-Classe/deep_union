@@ -18,7 +18,7 @@ namespace Module.Extension.SoundPlayer
         [SerializeField] private List<TaskProgressEvent> progressEvents;
         protected AudioSource AudioSource;
         protected T Task;
-        
+
         private List<TaskProgressEvent>.Enumerator currentEvent;
 
         private void Start()
@@ -31,10 +31,13 @@ namespace Module.Extension.SoundPlayer
                 DebugEx.LogError($"{gameObject.name}にAudioSourceがアタッチされていません");
             }
 
-            currentEvent = progressEvents.GetEnumerator();
-            currentEvent.MoveNext();
-            Task.OnProgressChanged += OnTaskProgressChanged;
-            
+            if (progressEvents.Count > 0)
+            {
+                currentEvent = progressEvents.GetEnumerator();
+                currentEvent.MoveNext();
+                Task.OnProgressChanged += OnTaskProgressChanged;
+            }
+
             OnStart();
         }
 
@@ -54,14 +57,14 @@ namespace Module.Extension.SoundPlayer
 
             if (progressEvent.AudioClip != null)
             {
-                AudioSource.PlayOneShot(progressEvent.AudioClip);    
+                AudioSource.PlayOneShot(progressEvent.AudioClip);
             }
-            
+
             if (progressEvent.VisualEffect != null)
             {
                 progressEvent.VisualEffect.Play();
             }
-            
+
             currentEvent.MoveNext();
             OnTaskProgressChanged(progress);
         }
