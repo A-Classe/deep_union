@@ -3070,6 +3070,7 @@ GameObject:
   - component: {fileID: 7966713151430187755}
   - component: {fileID: 6221994685121179338}
   - component: {fileID: 3159998996871287800}
+  - component: {fileID: 711748483563129841}
   - component: {fileID: 4500329028220435995}
   - component: {fileID: 5849297387651860889}
   - component: {fileID: 8262704331253768329}
@@ -3124,6 +3125,18 @@ MonoBehaviour:
   state: 0
   currentProgress: 0
   currentWorkerCount: 0
+--- !u!114 &711748483563129841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4561767915263129148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18bddb485874076aadc4c87547605ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4500329028220435995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3140,7 +3153,7 @@ MonoBehaviour:
   assignableArea: {fileID: 6447237532008037390}
   resourceItem: {fileID: 3375033471867555076, guid: b82b26fa86f837645baec4a1a44b2fec,
     type: 3}
-  targetOffset: 2
+  targetOffset: {x: 0, y: 0, z: 0}
   resourceCount: 10
 --- !u!82 &5849297387651860889
 AudioSource:
@@ -3250,6 +3263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af12c2f68a600e4dbd5f4d8b7289464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  progressEvents: []
   BreakingSound: {fileID: 8300000, guid: e36599ca95a7e16428bae9c738ccaba5, type: 3}
 --- !u!136 &3787350377420408284
 CapsuleCollider:

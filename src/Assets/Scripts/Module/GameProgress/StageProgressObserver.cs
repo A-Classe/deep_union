@@ -16,6 +16,7 @@ namespace System.GameProgress
         private readonly float initDistance;
         private readonly PlayerController playerController;
         private readonly CancellationTokenSource cTokenSource;
+        private bool isDisposed;
 
         [Inject]
         public StageProgressObserver(PlayerController playerController, GoalPoint goalPoint)
@@ -44,10 +45,22 @@ namespace System.GameProgress
             OnCompleted?.Invoke();
         }
 
+        public void ForceComplete()
+        {
+            Cancel();
+            OnCompleted?.Invoke();
+        }
+
         public void Cancel()
         {
-            cTokenSource.Cancel();
-            cTokenSource.Dispose();
+            if (isDisposed)
+            {
+                return;
+            }
+            
+            cTokenSource?.Cancel();
+            cTokenSource?.Dispose();
+            isDisposed = true;
         }
 
         public float GetDistance()

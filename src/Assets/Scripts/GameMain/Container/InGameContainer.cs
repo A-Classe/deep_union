@@ -41,6 +41,7 @@ namespace GameMain.Container
         [SerializeField] private GoalPoint goalPoint;
         [SerializeField] private TaskProgressPool progressPool;
         [SerializeField] private WorkerSoundPlayer workerSoundPlayer;
+        [SerializeField] private GoalTaskCompilationObserver goalTaskCompilation;
         [SerializeField] private HealTaskPool healTaskPool;
         [SerializeField] private PlayerStatusVisualizer playerStatusVisualizer;
 
@@ -65,6 +66,7 @@ namespace GameMain.Container
             builder.RegisterEntryPoint<AssignmentSystem>();
             builder.RegisterEntryPoint<PlayerStatusUpdater>();
             builder.RegisterEntryPoint<HealTaskPoolPresenter>();
+            builder.RegisterEntryPoint<GoalTaskCompilationPresenter>();
 
             builder.Register<WorkerSpawner>(Lifetime.Singleton);
             builder.Register<WorkerAgent>(Lifetime.Singleton);
@@ -92,7 +94,9 @@ namespace GameMain.Container
             builder.RegisterInstance(new PlayerStatus(gameParam.ConvertToStatus()));
             builder.RegisterInstance(playerStatusVisualizer);
             builder.RegisterInstance(brightController);
+            builder.RegisterInstance(goalTaskCompilation);
 
+            //ステージ上のオブジェクトにInjectする
             builder.RegisterBuildCallback(container =>
             {
                 var injectables = FindObjectsByType<Component>(FindObjectsSortMode.None)
