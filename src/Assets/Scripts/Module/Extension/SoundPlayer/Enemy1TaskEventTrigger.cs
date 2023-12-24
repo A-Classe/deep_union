@@ -7,6 +7,7 @@ namespace Module.Extension.SoundPlayer
     public class Enemy1TaskEventTrigger : TaskEventTrigger<Enemy1Task> // ��������p������ <>���͑Ώۂ̃^�X�N�̌^
     {
         //AudioClip��p�ӂ���
+        [SerializeField] private AudioClip DamageSound;
         [SerializeField] private AudioClip BombSound;
 
         protected override void OnStart()

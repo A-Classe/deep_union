@@ -8,6 +8,7 @@ namespace Module.Extension.SoundPlayer
     {
         //AudioClipを用意する
         [SerializeField] private AudioClip BreakingSound;
+        [SerializeField] private AudioClip BreakedSound;
 
         protected override void OnStart()
         {
@@ -24,10 +25,12 @@ namespace Module.Extension.SoundPlayer
 
         private void OnTaskCanceled(BaseTask _)
         {
-            // なっている音を止める
-            //AudioSource.Stop();
+            
         }
 
-        private void OnTaskCompleted(BaseTask _) { }
+        private void OnTaskCompleted(BaseTask _) 
+        {
+            AudioSource.PlayOneShot(BreakedSound);
+        }
     }
 }

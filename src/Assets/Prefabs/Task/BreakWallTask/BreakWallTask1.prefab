@@ -1648,7 +1648,7 @@ MonoBehaviour:
   assignableArea: {fileID: 8025986439681596101}
   resourceItem: {fileID: 3375033471867555076, guid: b82b26fa86f837645baec4a1a44b2fec,
     type: 3}
-  targetOffset: 3
+  targetOffset: {x: 0, y: 0, z: 0}
   resourceCount: 10
 --- !u!114 &584551163192300431
 MonoBehaviour:
@@ -1662,6 +1662,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2760b35aa088a194da0adc84e8df21cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  progressEvents:
+  - progress: 0.33
+    audioClip: {fileID: 8300000, guid: 176590275da6b5f4f95019dd8d812fc6, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.66
+    audioClip: {fileID: 8300000, guid: 176590275da6b5f4f95019dd8d812fc6, type: 3}
+    visualEffect: {fileID: 0}
   BreakingSound: {fileID: 8300000, guid: 176590275da6b5f4f95019dd8d812fc6, type: 3}
   BreakedSound: {fileID: 8300000, guid: bc7beff1030afe241aa039a2d87e4566, type: 3}
 --- !u!54 &6432846725614552389
