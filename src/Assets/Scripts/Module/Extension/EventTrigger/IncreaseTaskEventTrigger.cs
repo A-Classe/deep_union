@@ -2,29 +2,28 @@ using Module.Extension.Task;
 using Module.Task;
 using UnityEngine;
 
-namespace Module.Extension.SoundPlayer
+namespace Module.Extension.EventTrigger
 {
-    public class Enemy1TaskEventTrigger : TaskEventTrigger<Enemy1Task> // ��������p������ <>���͑Ώۂ̃^�X�N�̌^
+    public class IncreaseTaskEventTrigger : TaskEventTrigger<IncreaseWorkerTask> // ��������p������ <>���͑Ώۂ̃^�X�N�̌^
     {
         //AudioClip��p�ӂ���
-        [SerializeField] private AudioClip DamageSound;
-        [SerializeField] private AudioClip BombSound;
+        [SerializeField] private AudioClip CompleteSound;
 
         protected override void OnStart()
         {
             Task.OnStarted += OnTaskStarted;
             Task.OnCanceled += OnTaskCanceled;
-            Task.OnBomb += OnBomb;
+            Task.OnCompleted += OnTaskCompleted;
         }
 
         private void OnTaskStarted(BaseTask _) { }
 
         private void OnTaskCanceled(BaseTask _) { }
 
-        private void OnBomb()
+        private void OnTaskCompleted(BaseTask _)
         {
             // ������������炷
-            AudioSource.PlayOneShot(BombSound);
+            AudioSource.PlayOneShot(CompleteSound);
         }
     }
 }

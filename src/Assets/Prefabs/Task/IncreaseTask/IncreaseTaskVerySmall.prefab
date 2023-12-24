@@ -96,9 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAssignable: 1
   lightProjector: {fileID: 7158169335957205603}
-  ellipseVisualizer: {fileID: 7838267265210189784}
   intensity: 0.4
-  rotation: 0
   size:
     x: 4
     y: 4
@@ -1898,7 +1896,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1950,7 +1948,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c47d620291339b4fb01c02c6117fc7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressEvents: []
+  progressEvents:
+  - progress: 0.5
+    audioClip: {fileID: 8300000, guid: d820e178327d07e4287f39b1dd4c7253, type: 3}
+    visualEffect: {fileID: 0}
   CompleteSound: {fileID: 8300000, guid: 42dec75142aed854d867e84643dc008e, type: 3}
 --- !u!1 &6550055127478761165
 GameObject:

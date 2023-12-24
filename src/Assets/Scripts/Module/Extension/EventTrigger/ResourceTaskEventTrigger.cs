@@ -2,9 +2,9 @@ using Module.Extension.Task;
 using Module.Task;
 using UnityEngine;
 
-namespace Module.Extension.SoundPlayer
+namespace Module.Extension.EventTrigger
 {
-    public class BreakWallTaskEventTrigger : TaskEventTrigger<BreakWallTask> // ←これを継承する <>内は対象のタスクの型
+    public class ResourceTaskEventTrigger : TaskEventTrigger<ResourceTask> // ←これを継承する <>内は対象のタスクの型
     {
         //AudioClipを用意する
         [SerializeField] private AudioClip BreakingSound;
@@ -25,13 +25,11 @@ namespace Module.Extension.SoundPlayer
 
         private void OnTaskCanceled(BaseTask _)
         {
-            // なっている音を止める
-            //AudioSource.Stop();
+            
         }
 
-        private void OnTaskCompleted(BaseTask _)
+        private void OnTaskCompleted(BaseTask _) 
         {
-            // 壊れた音を一度鳴らす
             AudioSource.PlayOneShot(BreakedSound);
         }
     }

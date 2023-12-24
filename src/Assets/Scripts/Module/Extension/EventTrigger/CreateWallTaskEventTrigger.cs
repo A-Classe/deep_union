@@ -2,7 +2,7 @@ using Module.Extension.Task;
 using Module.Task;
 using UnityEngine;
 
-namespace Module.Extension.SoundPlayer
+namespace Module.Extension.EventTrigger
 {
     public class CreateWallTaskEventTrigger : TaskEventTrigger<CreateWallTask> // ←これを継承する <>内は対象のタスクの型
     {

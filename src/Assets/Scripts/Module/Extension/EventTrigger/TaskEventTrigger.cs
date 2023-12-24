@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.VFX;
 using Wanna.DebugEx;
 
-namespace Module.Extension.SoundPlayer
+namespace Module.Extension.EventTrigger
 {
     /// <summary>
     ///     タスクのサウンド機能のベースクラス

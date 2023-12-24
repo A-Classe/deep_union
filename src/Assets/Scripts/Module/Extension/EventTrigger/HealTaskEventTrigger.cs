@@ -2,7 +2,7 @@ using Module.Extension.Task;
 using Module.Task;
 using UnityEngine;
 
-namespace Module.Extension.SoundPlayer
+namespace Module.Extension.EventTrigger
 {
     public class HealTaskEventTrigger : TaskEventTrigger<HealTask> // ��������p������ <>���͑Ώۂ̃^�X�N�̌^
     {

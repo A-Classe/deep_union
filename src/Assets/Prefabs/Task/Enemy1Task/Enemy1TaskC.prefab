@@ -194,9 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAssignable: 1
   lightProjector: {fileID: 8098748993846654083}
-  ellipseVisualizer: {fileID: 9220410865847075128}
   intensity: 0
-  rotation: 0
   size:
     x: 4
     y: 4
@@ -534,7 +532,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rig: {fileID: 2049491015}
+  gravity: {x: 0, y: 0, z: 0}
   speed: 2
+  stoppingDistance: 2
 --- !u!54 &2049491015
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -608,7 +608,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -660,6 +660,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 846188fe0cc41ca42a0128ff140b7d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  progressEvents:
+  - progress: 0.1
+    audioClip: {fileID: 8300000, guid: 0c9e7fa7c7b6dce4c9efcf8cdf7cdbb2, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.2
+    audioClip: {fileID: 8300000, guid: 0c9e7fa7c7b6dce4c9efcf8cdf7cdbb2, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.3
+    audioClip: {fileID: 8300000, guid: 0c9e7fa7c7b6dce4c9efcf8cdf7cdbb2, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.4
+    audioClip: {fileID: 8300000, guid: 0c9e7fa7c7b6dce4c9efcf8cdf7cdbb2, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.5
+    audioClip: {fileID: 8300000, guid: 0c9e7fa7c7b6dce4c9efcf8cdf7cdbb2, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.6
+    audioClip: {fileID: 8300000, guid: 0c9e7fa7c7b6dce4c9efcf8cdf7cdbb2, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.7
+    audioClip: {fileID: 8300000, guid: 0c9e7fa7c7b6dce4c9efcf8cdf7cdbb2, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.8
+    audioClip: {fileID: 8300000, guid: 0c9e7fa7c7b6dce4c9efcf8cdf7cdbb2, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.9
+    audioClip: {fileID: 8300000, guid: 0c9e7fa7c7b6dce4c9efcf8cdf7cdbb2, type: 3}
+    visualEffect: {fileID: 0}
+  DamageSound: {fileID: 0}
   BombSound: {fileID: 8300000, guid: 80310cf687c9f3b468049c70bf3dc667, type: 3}
 --- !u!1 &3317649473019404213
 GameObject:

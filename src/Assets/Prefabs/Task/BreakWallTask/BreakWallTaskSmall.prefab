@@ -1662,7 +1662,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2760b35aa088a194da0adc84e8df21cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressEvents: []
+  progressEvents:
+  - progress: 0.33
+    audioClip: {fileID: 8300000, guid: 176590275da6b5f4f95019dd8d812fc6, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.66
+    audioClip: {fileID: 8300000, guid: 176590275da6b5f4f95019dd8d812fc6, type: 3}
+    visualEffect: {fileID: 0}
   BreakingSound: {fileID: 8300000, guid: 176590275da6b5f4f95019dd8d812fc6, type: 3}
   BreakedSound: {fileID: 8300000, guid: bc7beff1030afe241aa039a2d87e4566, type: 3}
 --- !u!54 &6432846725614552389
@@ -1738,7 +1744,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1918,12 +1924,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAssignable: 1
   lightProjector: {fileID: 220787131287261127}
-  ellipseVisualizer: {fileID: 901167565251115644}
   intensity: 0
-  rotation: 0
   size:
-    x: 32.54
-    y: 8.25
+    x: 20.37
+    y: 7
   factor:
     x: 1
     y: 1
@@ -2156,7 +2160,7 @@ MonoBehaviour:
   m_UVBias: {x: 0, y: 0}
   m_ScaleMode: 0
   m_Offset: {x: 0, y: 0, z: 0}
-  m_Size: {x: 32.54, y: 8.25, z: 10}
+  m_Size: {x: 20.37, y: 7, z: 10}
   m_FadeFactor: 1
 --- !u!1 &8951761217941396636
 GameObject:
