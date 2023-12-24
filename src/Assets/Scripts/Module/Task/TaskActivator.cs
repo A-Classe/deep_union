@@ -62,7 +62,7 @@ namespace Module.Task
             {
                 DebugEx.Log(tasks.AsMemory(head, tail + 1).ToArray().Select(src => src.name));
             }
-            
+
             //カメラ内オブジェクトの検出
             DetectInsideTask();
 
@@ -75,7 +75,7 @@ namespace Module.Task
             if (tail + 1 < tasks.Length)
             {
                 BaseTask task = tasks[tail + 1];
-                bool isInside = TryEnableTask(task);
+                bool isInside = task.OmitActivator || TryEnableTask(task);
 
                 if (isInside)
                 {
@@ -86,7 +86,7 @@ namespace Module.Task
             if (head - 1 >= 0)
             {
                 BaseTask task = tasks[head - 1];
-                bool isInside = TryEnableTask(task);
+                bool isInside = task.OmitActivator || TryEnableTask(task);
 
                 if (isInside)
                 {
@@ -100,7 +100,7 @@ namespace Module.Task
             if (tail < tasks.Length)
             {
                 BaseTask task = tasks[tail];
-                bool isOutside = TryDisableTask(task);
+                bool isOutside = task.OmitActivator || TryDisableTask(task);
 
                 if (isOutside)
                 {
@@ -111,7 +111,7 @@ namespace Module.Task
             if (head >= 0)
             {
                 BaseTask task = tasks[head];
-                bool isOutside = TryDisableTask(task);
+                bool isOutside = task.OmitActivator || TryDisableTask(task);
 
                 if (isOutside)
                 {
@@ -135,7 +135,7 @@ namespace Module.Task
 
         private bool TryDisableTask(BaseTask task)
         {
-            bool isOutside = !IsInsideCamera(task.transform.position);
+            bool isOutside = !task.gameObject.activeSelf || !IsInsideCamera(task.transform.position);
 
             if (isOutside)
             {

@@ -21,12 +21,14 @@ namespace Module.Task
         [SerializeField] private int currentWorkerCount;
         private int enqueuedMonoWork;
         private float prevWorkerCount;
+        protected bool omitActivator;
 
         private List<Collider> taskColliders;
 
         public float Progress => currentProgress;
         public int MonoWork => mw;
         public bool AcceptAttacks => acceptAttacks;
+        public bool OmitActivator => omitActivator;
 
         /// <summary>
         ///     現在割り当てられているワーカー数
