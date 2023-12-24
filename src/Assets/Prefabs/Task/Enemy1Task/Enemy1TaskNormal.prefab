@@ -336,7 +336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2049491017, guid: d5d17bac1ae05b54184d52490f12490a, type: 3}
       propertyPath: mw
-      value: 60
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2049491017, guid: d5d17bac1ae05b54184d52490f12490a, type: 3}
       propertyPath: attackPoint
@@ -474,6 +474,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -1.58
       objectReference: {fileID: 0}
+    - target: {fileID: 7103886995573583912, guid: d5d17bac1ae05b54184d52490f12490a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103886995573583912, guid: d5d17bac1ae05b54184d52490f12490a,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103886995573583912, guid: d5d17bac1ae05b54184d52490f12490a,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8085358702878396855, guid: d5d17bac1ae05b54184d52490f12490a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -531,8 +546,8 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7191993092222456453}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_Material: {fileID: 13400000, guid: 68295a6489f089e43b6276a6ce5ec291, type: 2}
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1.44

@@ -12,6 +12,7 @@ using Module.Task;
 using Module.Working;
 using UnityEngine;
 using VContainer;
+using Wanna.DebugEx;
 using Random = UnityEngine.Random;
 
 namespace Module.Extension.Task
@@ -90,19 +91,6 @@ namespace Module.Extension.Task
 
                 director.UpdateScale(ratio);
                 director.UpdateBlinkColor(ratio);
-            }
-        }
-
-        private void OnTriggerEnter(Collider other)
-        {
-            if (isAdsorption)
-            {
-                return;
-            }
-
-            if (other.gameObject.CompareTag("Player"))
-            {
-                Explode(other.transform);
             }
         }
 

@@ -1,3 +1,4 @@
+using System;
 using Module.Assignment.Utility;
 using UnityEngine;
 
@@ -11,10 +12,16 @@ namespace Module.Assignment.Component
         [SerializeField] private float debugHeight = 1f;
         [SerializeField] private int debugResolution = 50;
 
-        private EllipseData ellipseData;
+        private AssignableArea assignableArea;
+
+        private void OnValidate()
+        {
+            assignableArea = GetComponent<AssignableArea>();
+        }
 
         private void OnDrawGizmos()
         {
+            EllipseData ellipseData = assignableArea.EllipseData;
             Gizmos.color = Color.green;
 
             var angleStep = 2f * Mathf.PI / debugResolution;
@@ -38,11 +45,6 @@ namespace Module.Assignment.Component
             {
                 return rotation * (point - center) + center;
             }
-        }
-
-        public void SetEllipse(EllipseData ellipseData)
-        {
-            this.ellipseData = ellipseData;
         }
     }
 }

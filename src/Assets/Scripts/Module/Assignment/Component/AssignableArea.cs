@@ -7,7 +7,6 @@ using Module.Working;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
-using UnityEngine.Serialization;
 
 namespace Module.Assignment.Component
 {
@@ -20,15 +19,7 @@ namespace Module.Assignment.Component
         [SerializeField] private bool isAssignable = true;
         [SerializeField] private DecalProjector lightProjector;
 
-        [FormerlySerializedAs("ellipseCollider")]
-        [SerializeField]
-        private EllipseVisualizer ellipseVisualizer;
-
         [SerializeField] private float intensity;
-
-        [Header("回転させる場合はこっちをいじる！")]
-        [SerializeField]
-        private float rotation;
 
         [SerializeField] private float2 size;
         [SerializeField] private float2 factor;
@@ -40,15 +31,13 @@ namespace Module.Assignment.Component
         private List<Worker> assignedWorkers;
 
         private AutoInstanceList<AssignPoint> assignPoints;
-        private EllipseData ellipseData;
         private Material lightMaterial;
 
         public float Intensity => intensity;
 
-        public EllipseData EllipseData => new(transform.position, size * factor, rotation);
+        public EllipseData EllipseData => new(transform.position, size * factor, transform.eulerAngles.y);
 
         public IReadOnlyList<Worker> AssignedWorkers => assignedWorkers;
-        public IReadOnlyList<AssignPoint> AssignPoints => assignPoints;
 
         private void Awake()
         {
@@ -68,7 +57,6 @@ namespace Module.Assignment.Component
         {
             SetEnableAssignPointDebug(debugAssignPoints);
             SetLightSize();
-            ellipseVisualizer.SetEllipse(ellipseData);
         }
 
         public event Action<Worker, WorkerEventType> OnWorkerEnter;
@@ -76,12 +64,6 @@ namespace Module.Assignment.Component
 
         private void SetLightSize()
         {
-            ellipseData = new EllipseData(transform.position, size * factor, rotation);
-
-            var eulerAngles = transform.localRotation.eulerAngles;
-            eulerAngles.y = rotation;
-            transform.localRotation = Quaternion.Euler(eulerAngles);
-
             lightProjector.size = new Vector3(size.x, size.y, 10f);
         }
 

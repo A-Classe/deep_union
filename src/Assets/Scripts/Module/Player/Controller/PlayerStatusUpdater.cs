@@ -8,6 +8,7 @@ using Module.UI.InGame;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
+using Wanna.DebugEx;
 
 namespace Module.Player.Controller
 {

@@ -2,7 +2,9 @@ using System;
 using System.Linq;
 using GameMain.Presenter;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using VContainer;
+using Wanna.DebugEx;
 
 namespace Module.Task
 {
@@ -56,6 +58,11 @@ namespace Module.Task
 
         public void Tick()
         {
+            if (Keyboard.current.f3Key.wasPressedThisFrame)
+            {
+                DebugEx.Log(tasks.AsMemory(head, tail + 1).ToArray().Select(src => src.name));
+            }
+            
             //カメラ内オブジェクトの検出
             DetectInsideTask();
 

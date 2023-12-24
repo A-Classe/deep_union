@@ -1235,6 +1235,7 @@ GameObject:
   - component: {fileID: 258810149554083963}
   - component: {fileID: 162304480641247371}
   - component: {fileID: 1863758460}
+  - component: {fileID: 7159157636370364440}
   m_Layer: 6
   m_Name: Leader
   m_TagString: Untagged
@@ -1275,7 +1276,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controlSpeed: 15
   maxSpeed: 30
+  moveLimitRange: 0
+  fixMultiplier: 0
   target: {fileID: 9068736453355740502}
+  sonarVisualizer: {fileID: 0}
   rig: {fileID: 1863758460}
   isUpdatePlayerOffset: 0
 --- !u!65 &162304480641247371
@@ -1307,6 +1311,19 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 116
   m_CollisionDetection: 2
+--- !u!114 &7159157636370364440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258810149554083960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 971e69e9294018d4494e7daf65f0f19d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {fileID: 0}
 --- !u!1 &258810149566771550
 GameObject:
   m_ObjectHideFlags: 0

@@ -194,9 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAssignable: 1
   lightProjector: {fileID: 8098748993846654083}
-  ellipseVisualizer: {fileID: 9220410865847075128}
   intensity: 0
-  rotation: 0
   size:
     x: 4
     y: 4
@@ -534,7 +532,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rig: {fileID: 2049491015}
+  gravity: {x: 0, y: 0, z: 0}
   speed: 2.69
+  stoppingDistance: 2
 --- !u!54 &2049491015
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -660,6 +660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 846188fe0cc41ca42a0128ff140b7d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  progressEvents: []
   BombSound: {fileID: 8300000, guid: 80310cf687c9f3b468049c70bf3dc667, type: 3}
 --- !u!1 &3317649473019404213
 GameObject:
@@ -673,7 +674,7 @@ GameObject:
   - component: {fileID: 3317649473019404169}
   - component: {fileID: 3317649473019404170}
   - component: {fileID: 7103886995573583912}
-  m_Layer: 10
+  m_Layer: 19
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

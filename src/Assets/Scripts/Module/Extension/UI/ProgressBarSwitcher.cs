@@ -61,6 +61,11 @@ namespace Module.Extension.UI
 
         private void OnTaskActivated(BaseTask task)
         {
+            if (activeViews.ContainsKey(task))
+            {
+                return;
+            }
+            
             var view = taskProgressPool.GetProgressView(task.transform);
             activeViews.Add(task, view);
         }

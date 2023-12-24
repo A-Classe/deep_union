@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2442609667339887656}
   - component: {fileID: 7724257355062629001}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Point_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4684249352171633866}
   - component: {fileID: 5781144312181982448}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Point_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8834910144645988660}
   - component: {fileID: 6723396696890250960}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Point_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5497125583058979459}
   - component: {fileID: 6548476781665939694}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Point_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 5414772182594374329}
   - component: {fileID: 2873925554579935101}
   - component: {fileID: 5775983804743035293}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: DetectableArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,12 +227,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAssignable: 1
   lightProjector: {fileID: 4950811710354882306}
-  ellipseVisualizer: {fileID: 5414772182594374329}
   intensity: 0
-  rotation: 0
   size:
-    x: 5
-    y: 5
+    x: 6
+    y: 6
   factor:
     x: 1
     y: 1
@@ -290,7 +288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6732266962639469597}
   - component: {fileID: 8725238444222458374}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Point_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -334,7 +332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2115246866627594464}
   - component: {fileID: 3764019540078782055}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Point_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -377,8 +375,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3317649472400045230}
-  - component: {fileID: 3317649472400045224}
-  m_Layer: 8
+  - component: {fileID: 343082332576453474}
+  m_Layer: 11
   m_Name: PoisonCreature
   m_TagString: Task
   m_Icon: {fileID: 0}
@@ -394,7 +392,7 @@ Transform:
   m_GameObject: {fileID: 3317649472400045226}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.07, y: 0, z: 3.7199998}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.6452, y: 1.6452, z: 1.6452}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3317649473019404212}
@@ -403,7 +401,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3317649472400045224
+--- !u!114 &343082332576453474
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -412,14 +410,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 3317649472400045226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ade7a25f3f2d2df418fc3f372bb6f91f, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e1cacf86d140f046be8ec6754e9f880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mw: 30
+  mw: 10
   acceptAttacks: 0
   state: 0
   currentProgress: 0
   currentWorkerCount: 0
+  animator: {fileID: 5345583560733689653}
+  DeadAnimationTime: 4
 --- !u!1 &3317649473019404213
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 3317649473019404169}
   - component: {fileID: 3317649473019404170}
   - component: {fileID: 7103886995573583912}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -527,7 +527,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2372666819276299144}
   - component: {fileID: 4950811710354882306}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: AreaLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -570,7 +570,7 @@ MonoBehaviour:
   m_UVBias: {x: 0, y: 0}
   m_ScaleMode: 0
   m_Offset: {x: 0, y: 0, z: 0}
-  m_Size: {x: 5, y: 5, z: 10}
+  m_Size: {x: 6, y: 6, z: 10}
   m_FadeFactor: 1
 --- !u!1 &4296362417196297305
 GameObject:
@@ -582,7 +582,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4637098100114794000}
   - component: {fileID: 8961031918744695378}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Point_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -626,7 +626,7 @@ GameObject:
   m_Component:
   - component: {fileID: 410922129542026206}
   - component: {fileID: 8624095355578363243}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Point_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -669,7 +669,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5964892086481583769}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: AssignPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -715,7 +715,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4931888060018013007}
   - component: {fileID: 2590934726342538156}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Point_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -759,7 +759,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9047919563431030173}
   - component: {fileID: 937871250880191841}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Point_09
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -803,7 +803,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9066401204423324892}
   - component: {fileID: 1880128672482050974}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Point_07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -847,7 +847,7 @@ GameObject:
   m_Component:
   - component: {fileID: 934392364515680292}
   - component: {fileID: 6458956213188981257}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Point_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -891,7 +891,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3146410879347364547}
   - component: {fileID: 5515334963909356603}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Point_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -935,7 +935,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4964284755113531958}
   - component: {fileID: 2816974879468629093}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Point_08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1051,10 +1051,20 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 2bf36545964833c4385044f9e65d5df8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -7298098060544071635, guid: 2bf36545964833c4385044f9e65d5df8,
         type: 3}
       propertyPath: m_Layer
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: -7298098060544071635, guid: 2bf36545964833c4385044f9e65d5df8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: -5003435291800927567, guid: 2bf36545964833c4385044f9e65d5df8,
         type: 3}
@@ -1071,25 +1081,75 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.8396854
       objectReference: {fileID: 0}
+    - target: {fileID: -5003435291800927567, guid: 2bf36545964833c4385044f9e65d5df8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.040933326
+      objectReference: {fileID: 0}
+    - target: {fileID: -5003435291800927567, guid: 2bf36545964833c4385044f9e65d5df8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.2598245
+      objectReference: {fileID: 0}
+    - target: {fileID: -5003435291800927567, guid: 2bf36545964833c4385044f9e65d5df8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99769795
+      objectReference: {fileID: 0}
+    - target: {fileID: -5003435291800927567, guid: 2bf36545964833c4385044f9e65d5df8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5003435291800927567, guid: 2bf36545964833c4385044f9e65d5df8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.067814946
+      objectReference: {fileID: 0}
+    - target: {fileID: -5003435291800927567, guid: 2bf36545964833c4385044f9e65d5df8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -7.777
+      objectReference: {fileID: 0}
     - target: {fileID: -4267425209909500052, guid: 2bf36545964833c4385044f9e65d5df8,
         type: 3}
       propertyPath: m_Layer
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: -4267425209909500052, guid: 2bf36545964833c4385044f9e65d5df8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: -3861234494951957394, guid: 2bf36545964833c4385044f9e65d5df8,
         type: 3}
       propertyPath: m_Layer
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: -3861234494951957394, guid: 2bf36545964833c4385044f9e65d5df8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -2144990787317247848, guid: 2bf36545964833c4385044f9e65d5df8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: -2144990787317247848, guid: 2bf36545964833c4385044f9e65d5df8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 235035775646520546, guid: 2bf36545964833c4385044f9e65d5df8,
         type: 3}
       propertyPath: m_Layer
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 235035775646520546, guid: 2bf36545964833c4385044f9e65d5df8,
         type: 3}
-      propertyPath: m_Layer
-      value: 16
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2bf36545964833c4385044f9e65d5df8,
         type: 3}
@@ -1101,30 +1161,60 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2bf36545964833c4385044f9e65d5df8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2361911317555122699, guid: 2bf36545964833c4385044f9e65d5df8,
         type: 3}
       propertyPath: m_Layer
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2361911317555122699, guid: 2bf36545964833c4385044f9e65d5df8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2577681534140339783, guid: 2bf36545964833c4385044f9e65d5df8,
         type: 3}
       propertyPath: m_Layer
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 2577681534140339783, guid: 2bf36545964833c4385044f9e65d5df8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2698275253125951995, guid: 2bf36545964833c4385044f9e65d5df8,
         type: 3}
       propertyPath: m_Layer
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2698275253125951995, guid: 2bf36545964833c4385044f9e65d5df8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5762524630056969310, guid: 2bf36545964833c4385044f9e65d5df8,
         type: 3}
       propertyPath: m_Layer
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 5762524630056969310, guid: 2bf36545964833c4385044f9e65d5df8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5947445232178429439, guid: 2bf36545964833c4385044f9e65d5df8,
         type: 3}
       propertyPath: m_Layer
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5947445232178429439, guid: 2bf36545964833c4385044f9e65d5df8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7162409311570814547, guid: 2bf36545964833c4385044f9e65d5df8,
         type: 3}
