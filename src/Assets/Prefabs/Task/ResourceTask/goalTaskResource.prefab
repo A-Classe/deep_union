@@ -3119,7 +3119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1f15d8838ba9724692024b82ec9dac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mw: 400
+  mw: 1000
   acceptAttacks: 1
   state: 0
   currentProgress: 0
@@ -3140,7 +3140,7 @@ MonoBehaviour:
   assignableArea: {fileID: 6447237532008037390}
   resourceItem: {fileID: 3375033471867555076, guid: b82b26fa86f837645baec4a1a44b2fec,
     type: 3}
-  targetOffset: 2
+  targetOffset: {x: 0, y: 0, z: 0}
   resourceCount: 10
 --- !u!82 &5849297387651860889
 AudioSource:
@@ -3250,7 +3250,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af12c2f68a600e4dbd5f4d8b7289464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  progressEvents:
+  - progress: 0.05
+    audioClip: {fileID: 8300000, guid: e36599ca95a7e16428bae9c738ccaba5, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.1
+    audioClip: {fileID: 8300000, guid: e36599ca95a7e16428bae9c738ccaba5, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.15
+    audioClip: {fileID: 8300000, guid: e36599ca95a7e16428bae9c738ccaba5, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.2
+    audioClip: {fileID: 8300000, guid: e36599ca95a7e16428bae9c738ccaba5, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.25
+    audioClip: {fileID: 8300000, guid: e36599ca95a7e16428bae9c738ccaba5, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.3
+    audioClip: {fileID: 8300000, guid: e36599ca95a7e16428bae9c738ccaba5, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.35
+    audioClip: {fileID: 8300000, guid: e36599ca95a7e16428bae9c738ccaba5, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.4
+    audioClip: {fileID: 8300000, guid: e36599ca95a7e16428bae9c738ccaba5, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.45
+    audioClip: {fileID: 8300000, guid: e36599ca95a7e16428bae9c738ccaba5, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.5
+    audioClip: {fileID: 8300000, guid: e36599ca95a7e16428bae9c738ccaba5, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.55
+    audioClip: {fileID: 8300000, guid: e36599ca95a7e16428bae9c738ccaba5, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.6
+    audioClip: {fileID: 8300000, guid: e36599ca95a7e16428bae9c738ccaba5, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.65
+    audioClip: {fileID: 8300000, guid: e36599ca95a7e16428bae9c738ccaba5, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.7
+    audioClip: {fileID: 8300000, guid: e36599ca95a7e16428bae9c738ccaba5, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.75
+    audioClip: {fileID: 8300000, guid: e36599ca95a7e16428bae9c738ccaba5, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.8
+    audioClip: {fileID: 8300000, guid: e36599ca95a7e16428bae9c738ccaba5, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.85
+    audioClip: {fileID: 8300000, guid: e36599ca95a7e16428bae9c738ccaba5, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.9
+    audioClip: {fileID: 8300000, guid: e36599ca95a7e16428bae9c738ccaba5, type: 3}
+    visualEffect: {fileID: 0}
+  - progress: 0.95
+    audioClip: {fileID: 8300000, guid: e36599ca95a7e16428bae9c738ccaba5, type: 3}
+    visualEffect: {fileID: 0}
   BreakingSound: {fileID: 8300000, guid: e36599ca95a7e16428bae9c738ccaba5, type: 3}
+  BreakedSound: {fileID: 8300000, guid: 48538d22d7ae5be4f8a39a8092e510e2, type: 3}
 --- !u!136 &3787350377420408284
 CapsuleCollider:
   m_ObjectHideFlags: 0
