@@ -1,5 +1,6 @@
 ﻿using System;
 using System.GameProgress;
+using System.Threading;
 using Core.Input;
 using Core.Model.Scene;
 using Core.Model.User;
@@ -152,7 +153,7 @@ namespace GameMain.Router
         public void Tick()
         {
             taskActivator.Tick();
-
+            
             // TODO: ステージの座標と距離感を決める
             var progress = (int)progressObserver.GetDistance();
             uiManager.UpdateStageProgress(progress);

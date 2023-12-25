@@ -2,9 +2,7 @@ using System;
 using System.Linq;
 using GameMain.Presenter;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using VContainer;
-using Wanna.DebugEx;
 
 namespace Module.Task
 {
@@ -13,9 +11,10 @@ namespace Module.Task
         private readonly GameParam gameParam;
         private readonly Camera mainCamera;
         private readonly BaseTask[] tasks;
+        private readonly Memory<BaseTask> tasksHalf1;
+        private readonly Memory<BaseTask> tasksHalf2;
 
-        private int head;
-        private int tail;
+        private bool isFirstFrame = true;
 
         [Inject]
         public TaskActivator(GameParam gameParam)
@@ -24,8 +23,11 @@ namespace Module.Task
             mainCamera = Camera.main;
 
             var camZ = mainCamera.transform.position.z;
+            
+            //タスクを２つに分割する
             tasks = TaskUtil.FindSceneTasks<BaseTask>().OrderBy(task => task.transform.position.z - camZ).ToArray();
-            head = 0;
+            tasksHalf1 = tasks.AsMemory(0, tasks.Length / 2);
+            tasksHalf2 = tasks.AsMemory(tasksHalf1.Length, tasks.Length - tasksHalf1.Length);
         }
 
         public event Action<ReadOnlyMemory<BaseTask>> OnTaskInitialized;
@@ -41,14 +43,12 @@ namespace Module.Task
 
                 if (IsInsideCamera(task.transform.position))
                 {
-                    tail = i - 1;
+                    OnTaskInitialized?.Invoke(tasks.AsMemory(0, i + 1));
                     break;
                 }
 
                 task.Disable();
             }
-
-            OnTaskInitialized?.Invoke(tasks.AsMemory(head, tail + 1));
         }
 
         public ReadOnlySpan<BaseTask> GetAllTasks()
@@ -56,94 +56,45 @@ namespace Module.Task
             return tasks.AsSpan();
         }
 
+        private void ActivationLoop(Span<BaseTask> baseTasks)
+        {
+            foreach (BaseTask task in baseTasks)
+            {
+                if (task.gameObject.activeSelf)
+                {
+                    DisableTask(task);
+                }
+                else
+                {
+                    EnableTask(task);
+                }
+            }
+        }
+
         public void Tick()
         {
-            if (Keyboard.current.f3Key.wasPressedThisFrame)
-            {
-                DebugEx.Log(tasks.AsMemory(head, tail + 1).ToArray().Select(src => src.name));
-            }
-
-            //カメラ内オブジェクトの検出
-            DetectInsideTask();
-
-            //カメラ外オブジェクトの検出
-            DetectOutsideTask();
+            //1フレームで半分のタスクを判定する
+            Span<BaseTask> tasksHalf = isFirstFrame ? tasksHalf1.Span : tasksHalf2.Span; 
+            ActivationLoop(tasksHalf);
+            isFirstFrame = !isFirstFrame;
         }
 
-        private void DetectInsideTask()
+        private void EnableTask(BaseTask task)
         {
-            if (tail + 1 < tasks.Length)
-            {
-                BaseTask task = tasks[tail + 1];
-                bool isInside = task.OmitActivator || TryEnableTask(task);
-
-                if (isInside)
-                {
-                    tail++;
-                }
-            }
-
-            if (head - 1 >= 0)
-            {
-                BaseTask task = tasks[head - 1];
-                bool isInside = task.OmitActivator || TryEnableTask(task);
-
-                if (isInside)
-                {
-                    head--;
-                }
-            }
-        }
-
-        private void DetectOutsideTask()
-        {
-            if (tail < tasks.Length)
-            {
-                BaseTask task = tasks[tail];
-                bool isOutside = task.OmitActivator || TryDisableTask(task);
-
-                if (isOutside)
-                {
-                    tail--;
-                }
-            }
-
-            if (head >= 0)
-            {
-                BaseTask task = tasks[head];
-                bool isOutside = task.OmitActivator || TryDisableTask(task);
-
-                if (isOutside)
-                {
-                    head++;
-                }
-            }
-        }
-
-        private bool TryEnableTask(BaseTask task)
-        {
-            bool isInside = IsInsideCamera(task.transform.position);
-
-            if (isInside)
+            if (IsInsideCamera(task.transform.position))
             {
                 task.Enable();
                 OnTaskActivated?.Invoke(task);
             }
-
-            return isInside;
         }
 
-        private bool TryDisableTask(BaseTask task)
+        private void DisableTask(BaseTask task)
         {
-            bool isOutside = !task.gameObject.activeSelf || !IsInsideCamera(task.transform.position);
-
-            if (isOutside)
+            if (!IsInsideCamera(task.transform.position))
             {
                 OnTaskDeactivated?.Invoke(task);
                 task.Disable();
             }
-
-            return isOutside;
         }
 
         public void ForceActivate(BaseTask task)
