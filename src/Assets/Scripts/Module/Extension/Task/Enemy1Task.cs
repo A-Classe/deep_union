@@ -153,6 +153,8 @@ namespace Module.Extension.Task
 
         private async UniTaskVoid ExplodeSequence()
         {
+            ForceComplete();
+            
             await director.AnimateExplode();
 
             //爆破エフェクト開始
@@ -163,7 +165,6 @@ namespace Module.Extension.Task
             DetectExplosionArea();
             Damage();
 
-            ForceComplete();
             Disable();
         }
 
