@@ -8,6 +8,8 @@ namespace Core.Scenes
         Tutorial,
         Stage1,
         Stage1Ranking,
+        Stage2,
+        Stage2Ranking,
         Back
     }
 
@@ -18,6 +20,7 @@ namespace Core.Scenes
             return nav switch
             {
                 StageNavigation.Stage1 => StageData.Stage.Stage1,
+                StageNavigation.Stage2 => StageData.Stage.Stage2,
                 StageNavigation.Tutorial => StageData.Stage.Tutorial,
                 _ => StageData.Stage.Stage1
             };
@@ -42,7 +45,8 @@ namespace Core.Scenes
                 case > 0:
                     nextNav = nextNav switch
                     {
-                        StageNavigation.Back => StageNavigation.Stage1,
+                        StageNavigation.Back => StageNavigation.Stage2,
+                        StageNavigation.Stage2 => StageNavigation.Stage1,
                         StageNavigation.Stage1 => StageNavigation.Tutorial,
                         _ => nextNav
                     };
@@ -52,7 +56,8 @@ namespace Core.Scenes
                     nextNav = nextNav switch
                     {
                         StageNavigation.Tutorial => StageNavigation.Stage1,
-                        StageNavigation.Stage1 => StageNavigation.Back,
+                        StageNavigation.Stage1 => StageNavigation.Stage2,
+                        StageNavigation.Stage2 => StageNavigation.Back,
                         _ => nextNav
                     };
                     break;
@@ -76,6 +81,7 @@ namespace Core.Scenes
             return nav switch
             {
                 StageNavigation.Stage1Ranking => StageNavigation.Stage1,
+                StageNavigation.Stage2Ranking => StageNavigation.Stage2,
                 _ => nav
             };
         }
@@ -85,6 +91,7 @@ namespace Core.Scenes
             return nav switch
             {
                 StageNavigation.Stage1 => StageNavigation.Stage1Ranking,
+                StageNavigation.Stage2 => StageNavigation.Stage2Ranking,
                 _ => nav
             };
         }

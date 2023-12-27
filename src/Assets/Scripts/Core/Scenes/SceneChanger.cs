@@ -23,10 +23,10 @@ namespace Core.Scenes
 
         private const string TitleRoute = "Scenes/Other/Titles_Test";
 
-        private const string InGameRoute = "Scenes/Stages/Stage1hara/Stage1hara";
-
-        // :todo チュートリアル用のシーンを用意する
+        private const string Stage1Route = "Scenes/Stages/Stage1/Stage1";
+        private const string Stage2Route = "Scenes/Stages/Stage2/Stage2";
         private const string TutorialRoute = "Scenes/Stages/StageTutorial/StageTutorial";
+
         private const string ResultRoute = "Scenes/Other/Result_Test";
         private const string BeforeInGameRoute = "Scenes/Other/BeforeInGame";
         private const string AfterInGameRoute = "Scenes/Other/AfterInGame";
@@ -79,9 +79,10 @@ namespace Core.Scenes
                 inGameRoute = routeNav;
                 currentRoute = inGameRoute switch
                 {
-                    StageData.Stage.Stage1 => InGameRoute,
+                    StageData.Stage.Stage1 => Stage1Route,
+                    StageData.Stage.Stage2 => Stage2Route,
                     StageData.Stage.Tutorial => TutorialRoute,
-                    _ => InGameRoute
+                    _ => Stage1Route
                 };
                 SceneManager.LoadScene(currentRoute);
                 return true;
