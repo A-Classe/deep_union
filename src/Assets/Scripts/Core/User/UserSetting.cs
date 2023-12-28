@@ -49,7 +49,8 @@ namespace Core.User
         public enum Stage
         {
             Tutorial,
-            Stage1
+            Stage1,
+            Stage2
         }
 
         public Dict<Stage, uint> stage = new();

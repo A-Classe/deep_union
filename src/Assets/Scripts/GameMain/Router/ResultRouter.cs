@@ -78,7 +78,7 @@ namespace GameMain.Router
             {
                 /* todo: 次のステージに飛ばす　*/
                 var currentStage = (StageData.Stage)result.stageCode;
-                if (currentStage != StageData.Stage.Stage1)
+                if (currentStage != StageData.Stage.Stage2)
                 {
                     navigation.SetActive(false);
                     StageData.Stage next = currentStage + 1;

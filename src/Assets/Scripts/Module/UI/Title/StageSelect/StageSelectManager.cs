@@ -17,6 +17,8 @@ namespace Module.UI.Title.StageSelect
         [SerializeField] private CursorController<StageNavigation> cursor;
         [SerializeField] private StageButton stage1;
         [SerializeField] private FadeInOutButton stage1Ranking;
+        [SerializeField] private StageButton stage2;
+        [SerializeField] private FadeInOutButton stage2Ranking;
         [SerializeField] private StageButton tutorial;
         [SerializeField] private FadeInOutButton back;
 
@@ -26,6 +28,8 @@ namespace Module.UI.Title.StageSelect
         {
             cursor.AddPoint(StageNavigation.Stage1, stage1.rectTransform);
             cursor.AddPoint(StageNavigation.Stage1Ranking, stage1Ranking.rectTransform);
+            cursor.AddPoint(StageNavigation.Stage2, stage2.rectTransform);
+            cursor.AddPoint(StageNavigation.Stage2Ranking, stage2Ranking.rectTransform);
             cursor.AddPoint(StageNavigation.Tutorial, tutorial.rectTransform);
             cursor.AddPoint(StageNavigation.Back, back.rectTransform);
             current = StageNavigation.Stage1;
@@ -65,6 +69,12 @@ namespace Module.UI.Title.StageSelect
                     break;
                 case StageNavigation.Stage1Ranking:
                     OnRanking?.Invoke(StageData.Stage.Stage1);
+                    break;
+                case StageNavigation.Stage2:
+                    OnStage?.Invoke(StageNavigation.Stage2);
+                    break;
+                case StageNavigation.Stage2Ranking:
+                    OnRanking?.Invoke(StageData.Stage.Stage2);
                     break;
                 case StageNavigation.Back:
                     back.OnPlay(() => OnBack?.Invoke());
@@ -109,6 +119,9 @@ namespace Module.UI.Title.StageSelect
                 {
                     case StageData.Stage.Stage1:
                         stage1.SetScore(keyValuePair.Value);
+                        break;
+                    case StageData.Stage.Stage2:
+                        stage2.SetScore(keyValuePair.Value);
                         break;
                 }
             }
