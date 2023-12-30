@@ -57,6 +57,8 @@ MonoBehaviour:
   - {fileID: 114350483966675229}
   - {fileID: 114350483966675241}
   - {fileID: 114350483966675247}
+  - {fileID: 114350483966675277}
+  - {fileID: 114350483966675279}
   m_UIPosition: {x: 0, y: 0}
   m_UICollapsed: 1
   m_UISuperCollapsed: 0
@@ -166,10 +168,10 @@ MonoBehaviour:
   - title: Decal
     position:
       serializedVersion: 2
-      x: 5089
-      y: 1026.5
-      width: 768
-      height: 1764
+      x: 4918
+      y: 967
+      width: 474
+      height: 1022
     contents:
     - model: {fileID: 114350483966675085}
       id: 0
@@ -183,10 +185,10 @@ MonoBehaviour:
   - title: Particles
     position:
       serializedVersion: 2
-      x: 4212
-      y: 446.5
-      width: 768
-      height: 2134
+      x: 4133
+      y: 959
+      width: 766
+      height: 2205
     contents:
     - model: {fileID: 114350483966675132}
       id: 0
@@ -208,9 +210,9 @@ MonoBehaviour:
   uiBounds:
     serializedVersion: 2
     x: 2367
-    y: 446
-    width: 3490
-    height: 2569
+    y: 471
+    width: 3465
+    height: 2693
 --- !u!114 &114350483966674978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,10 +235,14 @@ MonoBehaviour:
   m_InputSlots: []
   m_OutputSlots: []
   m_Label: Spawn system
-  m_Data: {fileID: 114350483966674979}
+  m_Data: {fileID: 114350483966675280}
   m_InputFlowSlot:
-  - link: []
-  - link: []
+  - link:
+    - context: {fileID: 114350483966675277}
+      slotIndex: 0
+  - link:
+    - context: {fileID: 114350483966675279}
+      slotIndex: 0
   m_OutputFlowSlot:
   - link:
     - context: {fileID: 114350483966674984}
@@ -245,27 +251,6 @@ MonoBehaviour:
   loopCount: 0
   delayBeforeLoop: 0
   delayAfterLoop: 0
---- !u!114 &114350483966674979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f68759077adc0b143b6e1c101e82065e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UIIgnoredErrors: []
-  m_Parent: {fileID: 114350483966674976}
-  m_Children: []
-  m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
-  m_UISuperCollapsed: 0
-  title: 
-  m_Owners:
-  - {fileID: 114350483966674978}
 --- !u!114 &114350483966674980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2289,10 +2274,14 @@ MonoBehaviour:
   m_InputSlots: []
   m_OutputSlots: []
   m_Label: Spawn system
-  m_Data: {fileID: 114350483966675053}
+  m_Data: {fileID: 114350483966675280}
   m_InputFlowSlot:
-  - link: []
-  - link: []
+  - link:
+    - context: {fileID: 114350483966675277}
+      slotIndex: 0
+  - link:
+    - context: {fileID: 114350483966675279}
+      slotIndex: 0
   m_OutputFlowSlot:
   - link:
     - context: {fileID: 114350483966675026}
@@ -2301,27 +2290,6 @@ MonoBehaviour:
   loopCount: 0
   delayBeforeLoop: 0
   delayAfterLoop: 0
---- !u!114 &114350483966675053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f68759077adc0b143b6e1c101e82065e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UIIgnoredErrors: []
-  m_Parent: {fileID: 114350483966674976}
-  m_Children: []
-  m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
-  m_UISuperCollapsed: 0
-  title: 
-  m_Owners:
-  - {fileID: 114350483966675052}
 --- !u!114 &114350483966675054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3101,7 +3069,7 @@ MonoBehaviour:
   - {fileID: 114350483966675271}
   - {fileID: 114350483966675100}
   - {fileID: 114350483966675103}
-  m_UIPosition: {x: 5408, y: 1390.5}
+  m_UIPosition: {x: 4943, y: 1331}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -3829,7 +3797,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 5408, y: 1893}
+  m_UIPosition: {x: 4943, y: 1833}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -3865,16 +3833,20 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 114350483966675113}
-  m_UIPosition: {x: 5408, y: 1085.5}
+  m_UIPosition: {x: 4943, y: 1026}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots: []
   m_Label: Spawn system
-  m_Data: {fileID: 114350483966675112}
+  m_Data: {fileID: 114350483966675280}
   m_InputFlowSlot:
-  - link: []
-  - link: []
+  - link:
+    - context: {fileID: 114350483966675277}
+      slotIndex: 0
+  - link:
+    - context: {fileID: 114350483966675279}
+      slotIndex: 0
   m_OutputFlowSlot:
   - link:
     - context: {fileID: 114350483966675085}
@@ -3883,27 +3855,6 @@ MonoBehaviour:
   loopCount: 0
   delayBeforeLoop: 0
   delayAfterLoop: 0
---- !u!114 &114350483966675112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f68759077adc0b143b6e1c101e82065e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UIIgnoredErrors: []
-  m_Parent: {fileID: 114350483966674976}
-  m_Children: []
-  m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
-  m_UISuperCollapsed: 0
-  title: 
-  m_Owners:
-  - {fileID: 114350483966675111}
 --- !u!114 &114350483966675113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4389,7 +4340,7 @@ MonoBehaviour:
   m_Children:
   - {fileID: 114350483966675147}
   - {fileID: 114350483966675166}
-  m_UIPosition: {x: 4530, y: 810.5}
+  m_UIPosition: {x: 4450, y: 1324}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -5594,7 +5545,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 114350483966675172}
-  m_UIPosition: {x: 4530, y: 1476}
+  m_UIPosition: {x: 4450, y: 1989}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -5996,16 +5947,20 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 114350483966675186}
-  m_UIPosition: {x: 4530, y: 504.5}
+  m_UIPosition: {x: 4450, y: 1018}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots: []
   m_Label: Spawn system
-  m_Data: {fileID: 114350483966675185}
+  m_Data: {fileID: 114350483966675280}
   m_InputFlowSlot:
-  - link: []
-  - link: []
+  - link:
+    - context: {fileID: 114350483966675277}
+      slotIndex: 0
+  - link:
+    - context: {fileID: 114350483966675279}
+      slotIndex: 0
   m_OutputFlowSlot:
   - link:
     - context: {fileID: 114350483966675132}
@@ -6014,27 +5969,6 @@ MonoBehaviour:
   loopCount: 0
   delayBeforeLoop: 0
   delayAfterLoop: 0
---- !u!114 &114350483966675185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f68759077adc0b143b6e1c101e82065e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UIIgnoredErrors: []
-  m_Parent: {fileID: 114350483966674976}
-  m_Children: []
-  m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
-  m_UISuperCollapsed: 0
-  title: 
-  m_Owners:
-  - {fileID: 114350483966675184}
 --- !u!114 &114350483966675186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6150,7 +6084,7 @@ MonoBehaviour:
   - {fileID: 114350483966675206}
   - {fileID: 114350483966675209}
   - {fileID: 114350483966675215}
-  m_UIPosition: {x: 4530, y: 1758}
+  m_UIPosition: {x: 4450, y: 2271}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -7870,7 +7804,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 114350483966675248}
       inputSlot: {fileID: 114350483966675210}
-    position: {x: 4237.667, y: 2194.8335}
+    position: {x: 4158, y: 2708}
     expandedSlots: []
     expanded: 0
 --- !u!114 &114350483966675248
@@ -8635,3 +8569,119 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
   m_Direction: 0
   m_LinkedSlots: []
+--- !u!114 &114350483966675277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2461f61b3c026d54db1951a4e17ab20e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 114350483966674976}
+  m_Children: []
+  m_UIPosition: {x: 3641, y: 471}
+  m_UICollapsed: 0
+  m_UISuperCollapsed: 0
+  m_InputSlots: []
+  m_OutputSlots: []
+  m_Label: 
+  m_Data: {fileID: 114350483966675278}
+  m_InputFlowSlot:
+  - link: []
+  m_OutputFlowSlot:
+  - link:
+    - context: {fileID: 114350483966674978}
+      slotIndex: 0
+    - context: {fileID: 114350483966675052}
+      slotIndex: 0
+    - context: {fileID: 114350483966675184}
+      slotIndex: 0
+    - context: {fileID: 114350483966675111}
+      slotIndex: 0
+  eventName: OnPlay
+--- !u!114 &114350483966675278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f68759077adc0b143b6e1c101e82065e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  title: 
+  m_Owners:
+  - {fileID: 114350483966675277}
+--- !u!114 &114350483966675279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2461f61b3c026d54db1951a4e17ab20e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 114350483966674976}
+  m_Children: []
+  m_UIPosition: {x: 4152, y: 471}
+  m_UICollapsed: 0
+  m_UISuperCollapsed: 0
+  m_InputSlots: []
+  m_OutputSlots: []
+  m_Label: 
+  m_Data: {fileID: 114350483966675280}
+  m_InputFlowSlot:
+  - link: []
+  m_OutputFlowSlot:
+  - link:
+    - context: {fileID: 114350483966675052}
+      slotIndex: 1
+    - context: {fileID: 114350483966674978}
+      slotIndex: 1
+    - context: {fileID: 114350483966675184}
+      slotIndex: 1
+    - context: {fileID: 114350483966675111}
+      slotIndex: 1
+  eventName: OnPlay
+--- !u!114 &114350483966675280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f68759077adc0b143b6e1c101e82065e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  title: 
+  m_Owners:
+  - {fileID: 114350483966675279}
+  - {fileID: 114350483966675052}
+  - {fileID: 114350483966674978}
+  - {fileID: 114350483966675184}
+  - {fileID: 114350483966675111}
