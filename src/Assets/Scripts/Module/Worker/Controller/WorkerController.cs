@@ -30,6 +30,7 @@ namespace Module.Working.Controller
         private Vector3 lastPosition = Vector3.zero;
 
         public event Action<float> OnMoveDistance;
+        public Transform Target => target;
 
         private void Awake()
         {

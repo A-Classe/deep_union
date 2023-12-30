@@ -108,7 +108,7 @@ namespace Module.UI.InGame
             navigation.SetActive(true);
             navigation.SetScreen(InGameNav.InGame);
         }
-
+        
         public void StartPause()
         {
             navigation.SetActive(true);

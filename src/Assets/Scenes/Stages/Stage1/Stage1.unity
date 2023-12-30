@@ -370,6 +370,16 @@ PrefabInstance:
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4809230236313345128, guid: 1c30f8f62917049cd939964359edfdb3,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809230236313345128, guid: 1c30f8f62917049cd939964359edfdb3,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8952535317564709671, guid: 1c30f8f62917049cd939964359edfdb3,
         type: 3}
       propertyPath: m_Name
@@ -1665,6 +1675,7 @@ MonoBehaviour:
   healTaskPool: {fileID: 1704666170}
   playerStatusVisualizer: {fileID: 2005738134}
   inGameUIManager: {fileID: 149019584}
+  compass: {fileID: 783859971}
   brightController: {fileID: 1172888603}
   leaderAssignableArea: {fileID: 241940335}
 --- !u!4 &568759993
@@ -2621,6 +2632,18 @@ Transform:
   m_Father: {fileID: 822273645154314217}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &783859971 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6042329798981465608, guid: 1c30f8f62917049cd939964359edfdb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 149019583}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc9176b82e56bf418ce6e10c857df73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &807754289
 GameObject:
   m_ObjectHideFlags: 0

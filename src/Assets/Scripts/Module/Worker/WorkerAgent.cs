@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Core.Utility;
 using Module.UI.InGame;
+using Module.Working.Factory;
 using UnityEngine;
 using UnityEngine.Pool;
 using VContainer;
@@ -15,7 +16,6 @@ namespace Module.Working
     /// </summary>
     public class WorkerAgent
     {
-        private const int workersCapacity = 128;
         private readonly List<Worker> activeWorkers;
 
         private readonly InGameUIManager uiManager;
@@ -24,7 +24,8 @@ namespace Module.Working
 
         [Inject]
         public WorkerAgent(
-            InGameUIManager uiManager
+            InGameUIManager uiManager,
+            SpawnParam spawnParam
         )
         {
             this.uiManager = uiManager;
@@ -35,12 +36,12 @@ namespace Module.Working
                 OnWorkerGet,
                 OnWorkerRelease,
                 OnWorkerDestroy,
-                defaultCapacity: workersCapacity);
+                defaultCapacity: spawnParam.SpawnCapacity);
 
-            activeWorkers = new List<Worker>(workersCapacity);
+            activeWorkers = new List<Worker>(spawnParam.SpawnCapacity);
             workerPrefab = Resources.Load<GameObject>("Worker");
 
-            uiManager.SetWorkerCount(0u, workersCapacity);
+            uiManager.SetWorkerCount(0u, (uint)spawnParam.SpawnCapacity);
         }
 
         public ReadOnlySpan<Worker> ActiveWorkers => activeWorkers.AsSpan();
