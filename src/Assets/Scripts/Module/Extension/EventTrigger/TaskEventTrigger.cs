@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Module.Task;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.VFX;
 using Wanna.DebugEx;
 
@@ -15,6 +16,9 @@ namespace Module.Extension.EventTrigger
     [DisallowMultipleComponent]
     public abstract class TaskEventTrigger<T> : MonoBehaviour where T : BaseTask
     {
+        [SerializeField] private UnityEvent onTaskStarted;
+        [SerializeField] private UnityEvent onTaskCanceled;
+        [SerializeField] private UnityEvent onTaskCompleted;
         [SerializeField] private List<TaskProgressEvent> progressEvents;
         protected AudioSource AudioSource;
         protected T Task;
@@ -38,6 +42,10 @@ namespace Module.Extension.EventTrigger
                 Task.OnProgressChanged += OnTaskProgressChanged;
             }
 
+            Task.OnStarted += _ => onTaskStarted.Invoke();
+            Task.OnCanceled += _ => onTaskCanceled.Invoke();
+            Task.OnCompleted += _ => onTaskCompleted.Invoke();
+            
             OnStart();
         }
 

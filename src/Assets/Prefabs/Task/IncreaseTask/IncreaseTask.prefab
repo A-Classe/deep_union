@@ -96,9 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAssignable: 1
   lightProjector: {fileID: 7158169335957205603}
-  ellipseVisualizer: {fileID: 7838267265210189784}
   intensity: 0.4
-  rotation: 0
   size:
     x: 4
     y: 4
@@ -1826,6 +1824,7 @@ Transform:
   - {fileID: 1341387373}
   - {fileID: 1287424460729808932}
   - {fileID: 340766840}
+  - {fileID: 6296259530469673458}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1976,6 +1975,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c47d620291339b4fb01c02c6117fc7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onTaskStarted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5317355436713041509}
+        m_TargetAssemblyTypeName: UnityEngine.VFX.VisualEffect, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onTaskCanceled:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5317355436713041509}
+        m_TargetAssemblyTypeName: UnityEngine.VFX.VisualEffect, UnityEngine
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onTaskCompleted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5317355436713041509}
+        m_TargetAssemblyTypeName: UnityEngine.VFX.VisualEffect, UnityEngine
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   progressEvents:
   - progress: 0
     audioClip: {fileID: 8300000, guid: d820e178327d07e4287f39b1dd4c7253, type: 3}
@@ -2464,6 +2508,87 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 975a22c026a24b7cbbf0add76ea91ddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &2740405992707885179
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6115247442029969143}
+    m_Modifications:
+    - target: {fileID: 5522110974521405789, guid: a06af31b99af5cb4a9a6d2e3e44056d6,
+        type: 3}
+      propertyPath: m_Name
+      value: BasicRandomHitImpact3.0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171550713141559689, guid: a06af31b99af5cb4a9a6d2e3e44056d6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171550713141559689, guid: a06af31b99af5cb4a9a6d2e3e44056d6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171550713141559689, guid: a06af31b99af5cb4a9a6d2e3e44056d6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.057
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171550713141559689, guid: a06af31b99af5cb4a9a6d2e3e44056d6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171550713141559689, guid: a06af31b99af5cb4a9a6d2e3e44056d6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171550713141559689, guid: a06af31b99af5cb4a9a6d2e3e44056d6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171550713141559689, guid: a06af31b99af5cb4a9a6d2e3e44056d6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171550713141559689, guid: a06af31b99af5cb4a9a6d2e3e44056d6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171550713141559689, guid: a06af31b99af5cb4a9a6d2e3e44056d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171550713141559689, guid: a06af31b99af5cb4a9a6d2e3e44056d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8171550713141559689, guid: a06af31b99af5cb4a9a6d2e3e44056d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a06af31b99af5cb4a9a6d2e3e44056d6, type: 3}
+--- !u!2083052967 &5317355436713041509 stripped
+VisualEffect:
+  m_CorrespondingSourceObject: {fileID: 8056071273705461278, guid: a06af31b99af5cb4a9a6d2e3e44056d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 2740405992707885179}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6296259530469673458 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8171550713141559689, guid: a06af31b99af5cb4a9a6d2e3e44056d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 2740405992707885179}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4814058564313453481
 PrefabInstance:
   m_ObjectHideFlags: 0
