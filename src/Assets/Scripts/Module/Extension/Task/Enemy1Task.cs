@@ -155,8 +155,10 @@ namespace Module.Extension.Task
         {
             ForceComplete();
             
-            await director.AnimateExplode();
+            director.AnimateExplode().Forget();
 
+            await director.WaitExplosion();
+            
             //爆破エフェクト開始
             OnBomb?.Invoke();
 
@@ -164,7 +166,6 @@ namespace Module.Extension.Task
 
             DetectExplosionArea();
             Damage();
-
             Disable();
         }
 

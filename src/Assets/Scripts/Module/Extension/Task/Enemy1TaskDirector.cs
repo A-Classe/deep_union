@@ -28,6 +28,7 @@ namespace Module.Extension.Task
         [SerializeField] private Transform scaleBody;
         [SerializeField] private Color blinkColor;
         [SerializeField] private float disableBodyDelay;
+        [SerializeField] private float waitExplosionDelay;
         [SerializeField] private float deadAnimTime;
 
         private Tween blinkTween;
@@ -68,10 +69,14 @@ namespace Module.Extension.Task
             animator.SetBool(IsWalking, false);
             animator.SetBool(CanBomb, true);
 
-
             await UniTask.Delay(TimeSpan.FromSeconds(disableBodyDelay));
 
             animator.gameObject.SetActive(false);
+        }
+
+        public async UniTask WaitExplosion()
+        {
+            await UniTask.Delay(TimeSpan.FromSeconds(waitExplosionDelay));
         }
 
         public async UniTask DeadAnimation()
