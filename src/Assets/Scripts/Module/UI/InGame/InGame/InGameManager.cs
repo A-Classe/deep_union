@@ -11,10 +11,6 @@ namespace Module.UI.InGame.InGame
 {
     public class InGameManager : UIManager
     {
-        private const float StartOffsetAmount = 0.37f;
-
-        private const float EndOffsetAmount = 0.63f;
-
         // hp
         [SerializeField] private TextMeshProUGUI currentHp;
         [SerializeField] private TextMeshProUGUI maxHp;
@@ -26,9 +22,7 @@ namespace Module.UI.InGame.InGame
         [SerializeField] private TextMeshProUGUI currentProgress;
 
         // resource
-        [SerializeField] private TextMeshProUGUI currentRes;
-        [SerializeField] private TextMeshProUGUI maxRes;
-        [SerializeField] private Image gaugeRes;
+        [SerializeField] private PopupText currentRes;
 
         // workers
         [SerializeField] private PopupText currentWorkers;
@@ -107,7 +101,6 @@ namespace Module.UI.InGame.InGame
             if (max.HasValue)
             {
                 maxResValue = max.Value;
-                maxRes.text = max.Value.ToString();
             }
 
             if (!maxResValue.HasValue)
@@ -120,9 +113,7 @@ namespace Module.UI.InGame.InGame
                 return;
             }
 
-            currentRes.text = current.ToString();
-            var rate = (float)current / maxResValue.Value;
-            gaugeRes.fillAmount = StartOffsetAmount + (EndOffsetAmount - StartOffsetAmount) * rate;
+            currentRes.SetTextIsUp(current.ToString());
         }
 
         public void SetWorkerCount(uint value, uint? max = null)

@@ -25,6 +25,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using VContainer;
 using VContainer.Unity;
+using Compass = Module.GameProgress.Compass;
 
 namespace GameMain.Container
 {
@@ -46,6 +47,7 @@ namespace GameMain.Container
         [SerializeField] private PlayerStatusVisualizer playerStatusVisualizer;
 
         [SerializeField] private InGameUIManager inGameUIManager;
+        [SerializeField] private Compass compass;
 
         [SerializeField] private BrightController brightController;
 
@@ -67,6 +69,7 @@ namespace GameMain.Container
             builder.RegisterEntryPoint<PlayerStatusUpdater>();
             builder.RegisterEntryPoint<HealTaskPoolPresenter>();
             builder.RegisterEntryPoint<GoalTaskCompilationPresenter>();
+            builder.RegisterEntryPoint<CompassPresenter>();
 
             builder.Register<WorkerSpawner>(Lifetime.Singleton);
             builder.Register<WorkerAgent>(Lifetime.Singleton);
@@ -95,6 +98,7 @@ namespace GameMain.Container
             builder.RegisterInstance(playerStatusVisualizer);
             builder.RegisterInstance(brightController);
             builder.RegisterInstance(goalTaskCompilation);
+            builder.RegisterInstance(compass);
 
             //ステージ上のオブジェクトにInjectする
             builder.RegisterBuildCallback(container =>
