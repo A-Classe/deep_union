@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Core.Model.User;
 using UnityEngine;
 
@@ -8,15 +9,15 @@ namespace Core.User.Recorder
     // ReSharper disable once ClassNeverInstantiated.Global
     public class GameActionRecorder
     {
-        private readonly LinkedList<GameEvent> events = new();
+        private readonly LinkedList<string> events = new();
 
         private readonly bool printLog = false;
 
         public event Action<GameEvent> OnAnyEvent;
 
-        public void LogEvent(GameEvent gameEvent)
+        public void AddEvent(GameEvent gameEvent)
         {
-            events.AddLast(gameEvent);
+            events.AddLast(gameEvent.Serialize());
             OnAnyEvent?.Invoke(gameEvent);
             if (printLog)
             {
@@ -32,7 +33,9 @@ namespace Core.User.Recorder
 
         public Report GenerateReport()
         {
-            return Report.GenerateToEvents(events);
+            var evs = events.Select(GameEvent.Deserialize).ToList();
+            var gameEventsLinkedList = new LinkedList<GameEvent>(evs);
+            return Report.GenerateToEvents(gameEventsLinkedList);
         }
 
         public void Clear()
