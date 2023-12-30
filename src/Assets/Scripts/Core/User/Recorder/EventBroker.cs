@@ -20,7 +20,7 @@ namespace Core.User.Recorder
 
         public void SendEvent(GameEvent @event)
         {
-            recorder.LogEvent(@event);
+            recorder.AddEvent(@event);
         }
 
         public void Clear()
