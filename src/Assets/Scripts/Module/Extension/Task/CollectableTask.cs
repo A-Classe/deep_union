@@ -6,6 +6,7 @@ using Module.Assignment.Component;
 using Module.Player.Controller;
 using Module.Task;
 using UnityEngine;
+using Wanna.DebugEx;
 using Random = UnityEngine.Random;
 
 namespace Module.Extension.Task
@@ -19,8 +20,10 @@ namespace Module.Extension.Task
         [SerializeField] private GameParam gameParam;
         [SerializeField] private AssignableArea assignableArea;
         [SerializeField] private GameObject resourceItem;
-        [SerializeField] private Vector3 targetOffset;
         [SerializeField] private int resourceCount;
+        [SerializeField] private Vector3 offset;
+        [SerializeField] private float throwAngle;
+        [SerializeField] private float initialForce;
         private CancellationTokenSource collectCanceller;
         private PlayerController playerController;
 
@@ -93,26 +96,12 @@ namespace Module.Extension.Task
 
             var countCache = resourceCount;
             var itemComponent = item.GetComponent<ResourceItem>();
-            itemComponent.SetCollideEvent(() => OnCollected?.Invoke(countCache));
 
-            var rig = item.GetComponent<Rigidbody>();
-            var target = playerController.transform.position;
-            target += targetOffset;
-            var velocity = CalculateForce(item.transform.position, target, 45f);
-            rig.AddForce(velocity * rig.mass, ForceMode.Impulse);
-        }
-
-        private Vector3 CalculateForce(Vector3 start, Vector3 target, float angle)
-        {
-            var rad = angle * Mathf.Deg2Rad;
-
-            var x = Vector2.Distance(new Vector2(start.x, start.z), new Vector2(target.x, target.z));
-            var y = start.y - target.y;
-
-            var speed = Mathf.Sqrt(-Physics.gravity.y * Mathf.Pow(x, 2) /
-                                   (2 * Mathf.Pow(Mathf.Cos(rad), 2) * (x * Mathf.Tan(rad) + y)));
-
-            return new Vector3(target.x - start.x, x * Mathf.Tan(rad), target.z - start.z).normalized * speed;
+            //初速度を潜水艦の方向で作成
+            Vector3 forward = (playerController.transform.position - item.transform.position).normalized;
+            Vector3 right = Quaternion.Euler(0f, 90f, 0f) * forward;
+            Vector3 initialVelocity = Quaternion.AngleAxis(-throwAngle, right) * forward * initialForce;
+            itemComponent.Throw(playerController.transform, offset, initialVelocity, () => OnCollected?.Invoke(countCache)).Forget();
         }
     }
 }
