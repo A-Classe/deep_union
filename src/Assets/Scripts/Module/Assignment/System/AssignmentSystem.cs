@@ -94,6 +94,11 @@ namespace Module.Assignment.System
 
         private void OnTaskCompleted(BaseTask task)
         {
+            if (task.LockWorkerRelease)
+            {
+                return;
+            }
+            
             //完了したら自動的に子機に戻す
             workerReleaser.ReleaseAllWorkers(task.GetComponentInChildren<AssignableArea>());
         }

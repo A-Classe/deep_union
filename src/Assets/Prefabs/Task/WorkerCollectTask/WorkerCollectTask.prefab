@@ -137,11 +137,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mw: 1
   acceptAttacks: 0
+  lockWorkerRelease: 1
   state: 0
   currentProgress: 0
   currentWorkerCount: 0
   assignableArea: {fileID: 8892956583512720951}
   assignPointsParent: {fileID: 102193846099202734}
+  taskEffect: {fileID: 3870732063854921022}
 --- !u!54 &727247968012650520
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -208,9 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAssignable: 0
   lightProjector: {fileID: 1664164140680696629}
-  ellipseVisualizer: {fileID: 1768155304618944142}
   intensity: 0.63
-  rotation: 0
   size:
     x: 4
     y: 4
@@ -584,6 +584,12 @@ PrefabInstance:
 --- !u!4 &460121523684145252 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7808181137007757028, guid: 244f5051f5ee9ea4b850ad0ae7cac83b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7655720558985002624}
+  m_PrefabAsset: {fileID: 0}
+--- !u!2083052967 &3870732063854921022 stripped
+VisualEffect:
+  m_CorrespondingSourceObject: {fileID: 6884050018341043134, guid: 244f5051f5ee9ea4b850ad0ae7cac83b,
     type: 3}
   m_PrefabInstance: {fileID: 7655720558985002624}
   m_PrefabAsset: {fileID: 0}

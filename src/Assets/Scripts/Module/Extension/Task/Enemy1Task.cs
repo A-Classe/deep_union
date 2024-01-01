@@ -228,7 +228,6 @@ namespace Module.Extension.Task
             navMeshBaker?.Bake().Forget();
 
             IsMoving = true;
-            omitActivator = true;
 
             CountdownExplode().Forget();
         }

@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +16,7 @@ public class TextTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(triggerTag[0]) || other.CompareTag(triggerTag[1]))
+        if (triggerTag.Any(other.CompareTag))
         {
             ShowText(); // プレイヤーがエリアに入っており、テキストがまだ表示されていない場合は表示する
             Invoke(nameof(HideText), time);

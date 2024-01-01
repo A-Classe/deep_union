@@ -1,6 +1,7 @@
 using Core.NavMesh;
 using Cysharp.Threading.Tasks;
 using Module.Task;
+using UnityEngine;
 using VContainer;
 
 namespace Module.Extension.Task
@@ -11,6 +12,7 @@ namespace Module.Extension.Task
     public class ResourceTask : BaseTask
     {
         private RuntimeNavMeshBaker navMeshBaker;
+        [SerializeField] private GameObject[] bodyObjects;
 
         public override void Initialize(IObjectResolver container)
         {
@@ -19,7 +21,11 @@ namespace Module.Extension.Task
 
         protected override void OnComplete()
         {
-            Disable();
+            foreach (GameObject bodyObject in bodyObjects)
+            {
+                bodyObject.SetActive(false);
+            }
+
             navMeshBaker.Bake().Forget();
         }
     }

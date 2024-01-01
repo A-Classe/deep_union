@@ -48,7 +48,7 @@ namespace Module.Extension.UI
                 }
 
                 //タスクが終了したら非表示にする
-                if (task.State == TaskState.Completed)
+                if (task.State == TaskState.Completed || task.State == TaskState.Hide)
                 {
                     view.Disable();
                     continue;

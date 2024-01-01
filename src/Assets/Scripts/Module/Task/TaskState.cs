@@ -7,6 +7,7 @@ namespace Module.Task
     {
         Idle,
         InProgress,
-        Completed
+        Completed,
+        Hide,
     }
 }

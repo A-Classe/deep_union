@@ -60,6 +60,11 @@ namespace Module.Task
         {
             foreach (BaseTask task in baseTasks)
             {
+                if (task.State == TaskState.Completed)
+                {
+                    continue;
+                }
+                
                 if (task.gameObject.activeSelf)
                 {
                     DisableTask(task);

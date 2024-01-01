@@ -29,11 +29,13 @@ namespace Module.Task.Editor
             {
                 var mw = serializedObject.FindProperty("mw");
                 var acceptAttacks = serializedObject.FindProperty("acceptAttacks");
+                var lockWorkerRelease = serializedObject.FindProperty("lockWorkerRelease");
 
                 mw.intValue = EditorGUILayout.IntField("MonoWork", mw.intValue);
                 mw.intValue = Mathf.Clamp(mw.intValue, 1, int.MaxValue);
 
                 acceptAttacks.boolValue = EditorGUILayout.Toggle("AcceptAttacks", acceptAttacks.boolValue);
+                lockWorkerRelease.boolValue = EditorGUILayout.Toggle("LockWorkerRelease", lockWorkerRelease.boolValue);
             }
         }
 

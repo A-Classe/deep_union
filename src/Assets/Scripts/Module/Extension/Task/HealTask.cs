@@ -69,6 +69,7 @@ namespace Module.Extension.Task
             taskActivator = container.Resolve<TaskActivator>();
 
             ForceComplete();
+            ChangeState(TaskState.Hide);
 
             assignableArea.OnWorkerEnter += (_, _) =>
             {

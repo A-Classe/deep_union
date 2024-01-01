@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using VContainer;
+using Wanna.DebugEx;
 
 namespace Module.Task
 {
@@ -14,6 +15,7 @@ namespace Module.Task
     {
         [SerializeField] private int mw;
         [SerializeField] private bool acceptAttacks;
+        [SerializeField] private bool lockWorkerRelease;
 
         [SerializeField] protected TaskState state = TaskState.Idle;
 
@@ -21,14 +23,13 @@ namespace Module.Task
         [SerializeField] private int currentWorkerCount;
         private int enqueuedMonoWork;
         private float prevWorkerCount;
-        protected bool omitActivator;
 
         private List<Collider> taskColliders;
 
         public float Progress => currentProgress;
         public int MonoWork => mw;
         public bool AcceptAttacks => acceptAttacks;
-        public bool OmitActivator => omitActivator;
+        public bool LockWorkerRelease => lockWorkerRelease;
 
         /// <summary>
         ///     現在割り当てられているワーカー数
@@ -152,7 +153,7 @@ namespace Module.Task
         }
 
         // ReSharper disable once ParameterHidesMember
-        private void ChangeState(TaskState state)
+        protected void ChangeState(TaskState state)
         {
             this.state = state;
             OnStateChanged?.Invoke(state);

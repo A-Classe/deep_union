@@ -5553,6 +5553,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1016351049}
     m_Modifications:
+    - target: {fileID: 737818848, guid: a6163af47572d8246ad2fecffd676dc0, type: 3}
+      propertyPath: poisonCreatureTasks.Array.data[1]
+      value: 
+      objectReference: {fileID: 854658496}
     - target: {fileID: 1809895263976331911, guid: a6163af47572d8246ad2fecffd676dc0,
         type: 3}
       propertyPath: m_Name
@@ -6363,22 +6367,22 @@ PrefabInstance:
     - target: {fileID: 9191752624270989848, guid: 64dae455b8c7a9f468a7cc438028391e,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000016157781
+      value: 0.000000016157777
       objectReference: {fileID: 0}
     - target: {fileID: 9191752624270989848, guid: 64dae455b8c7a9f468a7cc438028391e,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000005914873
+      value: -0.000000005914872
       objectReference: {fileID: 0}
     - target: {fileID: 9191752624670590977, guid: 64dae455b8c7a9f468a7cc438028391e,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000016157781
+      value: 0.000000016157777
       objectReference: {fileID: 0}
     - target: {fileID: 9191752624670590977, guid: 64dae455b8c7a9f468a7cc438028391e,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000005914873
+      value: -0.000000005914872
       objectReference: {fileID: 0}
     - target: {fileID: 9191752624852349592, guid: 64dae455b8c7a9f468a7cc438028391e,
         type: 3}
@@ -6926,6 +6930,16 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 5.11
       objectReference: {fileID: 0}
+    - target: {fileID: 2634036694867854275, guid: bac6a99699d1efe47b3d36f154e17771,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602289151344580611, guid: bac6a99699d1efe47b3d36f154e17771,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8074433336903898311, guid: bac6a99699d1efe47b3d36f154e17771,
         type: 3}
       propertyPath: m_Name
@@ -7322,13 +7336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayText: {fileID: 1994500505}
   time: 3
-  triggerTag:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  triggerTag: []
   hideObj:
   - {fileID: 809331748}
 --- !u!4 &812130145 stripped
@@ -7570,6 +7578,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1c05297bf1a4f54e815c1a20146fde7, type: 3}
+--- !u!114 &854658496 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5679354193109152485, guid: a6163af47572d8246ad2fecffd676dc0,
+    type: 3}
+  m_PrefabInstance: {fileID: 640743009}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e1cacf86d140f046be8ec6754e9f880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &861425524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13861,13 +13881,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayText: {fileID: 1083912405}
   time: 3
-  triggerTag:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  triggerTag: []
   hideObj:
   - {fileID: 1648201458}
 --- !u!1001 &1662334995
