@@ -70,6 +70,7 @@ namespace GameMain.Container
             builder.RegisterEntryPoint<HealTaskPoolPresenter>();
             builder.RegisterEntryPoint<GoalTaskCompilationPresenter>();
             builder.RegisterEntryPoint<CompassPresenter>();
+            builder.RegisterEntryPoint<LeaderStatusPresenter>();
 
             builder.Register<WorkerSpawner>(Lifetime.Singleton);
             builder.Register<WorkerAgent>(Lifetime.Singleton);

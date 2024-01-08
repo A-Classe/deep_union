@@ -22,6 +22,8 @@ namespace Module.Working
         private readonly ObjectPool<Worker> workerPool;
         private readonly GameObject workerPrefab;
 
+        public event Action<uint> OnWorkerCountUpdated;
+
         [Inject]
         public WorkerAgent(
             InGameUIManager uiManager,
@@ -118,6 +120,7 @@ namespace Module.Working
         {
             var count = activeWorkers.Count > 0 ? (uint)activeWorkers.Count : 0;
             uiManager.SetWorkerCount(count);
+            OnWorkerCountUpdated?.Invoke(count);
         }
 
         public int WorkerCount()
