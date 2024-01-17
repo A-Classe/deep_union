@@ -21,7 +21,7 @@ namespace Module.Assignment.Component
 
         private void OnDrawGizmos()
         {
-            EllipseData ellipseData = assignableArea.EllipseData;
+            EllipseData ellipseData = assignableArea.AreaShape;
             Gizmos.color = Color.green;
 
             var angleStep = 2f * Mathf.PI / debugResolution;

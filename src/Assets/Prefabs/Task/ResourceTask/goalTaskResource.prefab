@@ -2442,6 +2442,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2166991713669071684}
   - component: {fileID: 6447237532008037390}
+  - component: {fileID: 3617410191553982293}
   - component: {fileID: 6225476216411444169}
   - component: {fileID: 1491264332767805526}
   - component: {fileID: 603837678255185781}
@@ -2482,8 +2483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAssignable: 1
-  lightProjector: {fileID: 1727567261355056550}
-  intensity: 0
+  areaLight: {fileID: 3617410191553982293}
   size:
     x: 24.78
     y: 11.08
@@ -2493,6 +2493,20 @@ MonoBehaviour:
   debugAssignPoints: 1
   assignPointPrefab: {fileID: 0}
   pointParent: {fileID: 0}
+--- !u!114 &3617410191553982293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3765622264124472668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270233b031434011b653be6c94c163c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightProjector: {fileID: 1727567261355056550}
+  intensity: 1
 --- !u!114 &6225476216411444169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2520,6 +2534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assignableArea: {fileID: 6447237532008037390}
+  areaLight: {fileID: 3617410191553982293}
   maxIntensity: 0.5
 --- !u!114 &603837678255185781
 MonoBehaviour:

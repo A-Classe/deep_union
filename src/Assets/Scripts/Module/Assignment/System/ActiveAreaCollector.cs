@@ -7,6 +7,9 @@ using VContainer;
 
 namespace Module.Assignment.System
 {
+    /// <summary>
+    /// 有効化されているエリアを管理するクラス
+    /// </summary>
     public class ActiveAreaCollector
     {
         private readonly WorkerAssigner workerAssigner;

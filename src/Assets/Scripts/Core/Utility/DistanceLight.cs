@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Core.Utility
 {
+    /// <summary>
+    /// カメラからの距離に応じてカメラの有効化を制御するクラス
+    /// </summary>
     public class DistanceLight : MonoBehaviour
     {
         [SerializeField] private Light myLight;
@@ -17,18 +20,19 @@ namespace Core.Utility
         private void Awake()
         {
             camTransform = Camera.main.transform;
-            AdjustLODQuality().Forget();
+            DoLightControl().Forget();
         }
 
-        private async UniTaskVoid AdjustLODQuality()
+        private async UniTaskVoid DoLightControl()
         {
             CancellationToken destroyCanceller = this.GetCancellationTokenOnDestroy();
 
             while (!destroyCanceller.IsCancellationRequested)
             {
-                var squareDistanceFromCamera = (camTransform.position - transform.position).sqrMagnitude;
+                float distanceFromCamera = (camTransform.position - transform.position).sqrMagnitude;
 
-                if (squareDistanceFromCamera <= allowDistance)
+                //指定距離内に入っていたら有効化
+                if (distanceFromCamera <= allowDistance)
                 {
                     myLight.enabled = true;
                     isDisappeared = false;
@@ -39,6 +43,7 @@ namespace Core.Utility
                     isDisappeared = true;
                 }
 
+                //更新間隔を待機
                 await UniTask.Delay(TimeSpan.FromSeconds(updateInterval), cancellationToken: destroyCanceller);
             }
         }

@@ -4,7 +4,6 @@ using Unity.Mathematics;
 
 namespace Module.Assignment.Utility
 {
-    [BurstCompile]
     [Serializable]
     public readonly struct EllipseData
     {

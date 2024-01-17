@@ -13,6 +13,7 @@ namespace Module.Assignment.Component
     public class LeaderAssignableArea : MonoBehaviour
     {
         [SerializeField] private AssignableArea assignableArea;
+        [SerializeField] private AssignableAreaLight areaLight;
         [SerializeField] private GameParam gameParam;
         private InputEvent assignEvent;
         private float defaultIntensity;
@@ -33,26 +34,26 @@ namespace Module.Assignment.Component
             assignEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Assign);
             releaseEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.InGame.Release);
 
-            defaultIntensity = assignableArea.Intensity;
+            defaultIntensity = areaLight.Intensity;
 
             assignEvent.Started += _ =>
             {
-                assignableArea.SetLightIntensity(gameParam.AssignIntensity);
+                areaLight.SetIntensity(gameParam.AssignIntensity);
             };
 
             assignEvent.Canceled += _ =>
             {
-                assignableArea.SetLightIntensity(defaultIntensity);
+                areaLight.SetIntensity(defaultIntensity);
             };
 
             releaseEvent.Started += _ =>
             {
-                assignableArea.SetLightIntensity(gameParam.ReleaseIntensity);
+                areaLight.SetIntensity(gameParam.ReleaseIntensity);
             };
 
             releaseEvent.Canceled += _ =>
             {
-                assignableArea.SetLightIntensity(defaultIntensity);
+                areaLight.SetIntensity(defaultIntensity);
             };
         }
 

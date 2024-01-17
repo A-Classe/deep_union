@@ -6,6 +6,12 @@ namespace Core.Utility
 {
     public static class SpanUtility
     {
+        /// <summary>
+        /// ListをSpanに変換します
+        /// </summary>
+        /// <param name="list"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Span<T> AsSpan<T>(this List<T> list)
         {
