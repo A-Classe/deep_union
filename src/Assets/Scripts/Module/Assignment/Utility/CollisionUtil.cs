@@ -7,6 +7,9 @@ namespace Module.Assignment.Utility
     [BurstCompile]
     public static class CollisionUtil
     {
+        /// <summary>
+        /// 円形判定を行います
+        /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsCollideCircle(in EllipseData ellipseA, in EllipseData ellipseB)
         {
@@ -21,6 +24,9 @@ namespace Module.Assignment.Utility
             return distance <= radiusA * radiusA + radiusB * radiusB;
         }
 
+        /// <summary>
+        /// 楕円判定を行います
+        /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool InEllipse(in float3 pos, in EllipseData ellipseData)
         {

@@ -770,6 +770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mw: 1
   acceptAttacks: 0
+  lockWorkerRelease: 0
   state: 0
   currentProgress: 0
   currentWorkerCount: 0
@@ -929,6 +930,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91864f526e4935049963f20317df67ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onTaskStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  onTaskCanceled:
+    m_PersistentCalls:
+      m_Calls: []
+  onTaskCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  progressEvents: []
   HealSound: {fileID: 8300000, guid: 8719ca82af1819344a43042355c08743, type: 3}
 --- !u!1 &9104331493660101919
 GameObject:
@@ -940,6 +951,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9104331493660101918}
   - component: {fileID: 8177856091316181010}
+  - component: {fileID: 6948100187900806046}
   - component: {fileID: 1341522716374464683}
   - component: {fileID: 689969917440007055}
   m_Layer: 8
@@ -979,10 +991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAssignable: 1
-  lightProjector: {fileID: 2094165392034516240}
-  ellipseVisualizer: {fileID: 1341522716374464683}
-  intensity: 0.5
-  rotation: 0
+  areaLight: {fileID: 6948100187900806046}
   size:
     x: 4
     y: 4
@@ -992,6 +1001,20 @@ MonoBehaviour:
   debugAssignPoints: 1
   assignPointPrefab: {fileID: 0}
   pointParent: {fileID: 0}
+--- !u!114 &6948100187900806046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9104331493660101919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270233b031434011b653be6c94c163c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightProjector: {fileID: 2094165392034516240}
+  intensity: 1
 --- !u!114 &1341522716374464683
 MonoBehaviour:
   m_ObjectHideFlags: 0

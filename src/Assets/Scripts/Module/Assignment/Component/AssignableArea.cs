@@ -15,28 +15,19 @@ namespace Module.Assignment.Component
     /// </summary>
     public class AssignableArea : MonoBehaviour
     {
-        private static readonly int IntensityKey = Shader.PropertyToID("_Intensity");
         [SerializeField] private bool isAssignable = true;
-        [SerializeField] private DecalProjector lightProjector;
-
-        [SerializeField] private float intensity;
+        [SerializeField] AssignableAreaLight areaLight;
 
         [SerializeField] private float2 size;
         [SerializeField] private float2 factor;
         [SerializeField] private bool debugAssignPoints;
-
         [SerializeField] private GameObject assignPointPrefab;
         [SerializeField] private Transform pointParent;
-        private Light areaLight;
-        private List<Worker> assignedWorkers;
-
+        
+        public EllipseData AreaShape => new(transform.position, size * factor, transform.eulerAngles.y);
+        
         private AutoInstanceList<AssignPoint> assignPoints;
-        private Material lightMaterial;
-
-        public float Intensity => intensity;
-
-        public EllipseData EllipseData => new(transform.position, size * factor, transform.eulerAngles.y);
-
+        private List<Worker> assignedWorkers;
         public IReadOnlyList<Worker> AssignedWorkers => assignedWorkers;
 
         private void Awake()
@@ -44,34 +35,16 @@ namespace Module.Assignment.Component
             assignPoints = new AutoInstanceList<AssignPoint>(assignPointPrefab, pointParent, 20, size / 2);
             assignPoints.SetList(GetComponentsInChildren<AssignPoint>().ToList());
             assignedWorkers = new List<Worker>();
-
-            //Decalだと自動で複製されないので新しいインスタンスを作る
-            var newMaterial = new Material(lightProjector.material);
-            lightProjector.material = newMaterial;
-            lightMaterial = newMaterial;
-
-            SetLightIntensity(intensity);
         }
 
         private void OnValidate()
         {
             SetEnableAssignPointDebug(debugAssignPoints);
-            SetLightSize();
+            areaLight.SetLightSize(size);
         }
 
         public event Action<Worker, WorkerEventType> OnWorkerEnter;
         public event Action<Worker, WorkerEventType> OnWorkerExit;
-
-        private void SetLightSize()
-        {
-            lightProjector.size = new Vector3(size.x, size.y, 10f);
-        }
-
-        public void SetLightIntensity(float intensity)
-        {
-            this.intensity = intensity;
-            lightMaterial.SetFloat(IntensityKey, intensity);
-        }
 
         private void ReleaseAssignPoint(Transform assignPoint)
         {
@@ -88,6 +61,11 @@ namespace Module.Assignment.Component
             return isAssignable && assignPoints.Count > 0;
         }
 
+        /// <summary>
+        /// 指定された座標から最も近いアサインポイントを返します。
+        /// </summary>
+        /// <param name="target">指定座標</param>
+        /// <returns>アサインポイントのTransform</returns>
         private Transform GetNearestAssignPoint(Vector3 target)
         {
             if (assignPoints.Count == 0)
@@ -98,6 +76,7 @@ namespace Module.Assignment.Component
             var minDistance = float.MaxValue;
             AssignPoint nearestPoint = null;
 
+            //最短距離を探索
             foreach (var point in assignPoints)
             {
                 var distance = (point.transform.position - target).sqrMagnitude;
@@ -121,6 +100,11 @@ namespace Module.Assignment.Component
             Default
         }
 
+        /// <summary>
+        /// ワーカーをエリアに追加します
+        /// </summary>
+        /// <param name="worker">ワーカー</param>
+        /// <param name="type">ワーカーイベント</param>
         public void AddWorker(Worker worker, WorkerEventType type = WorkerEventType.Default)
         {
             var assignPoint = GetNearestAssignPoint(worker.transform.position);
@@ -129,21 +113,26 @@ namespace Module.Assignment.Component
             assignedWorkers.Add(worker);
             OnWorkerEnter?.Invoke(worker, type);
 
-            worker.OnDead += DeadWorker;
+            worker.OnDead += OnWorkerDead;
         }
 
-        private void DeadWorker(Worker worker)
-        {
-            RemoveWorker(worker, WorkerEventType.Destroy);
-        }
-
+        /// <summary>
+        /// ワーカーをエリアから削除します
+        /// </summary>
+        /// <param name="worker">ワーカー</param>
+        /// <param name="type">ワーカーイベント</param>
         public void RemoveWorker(Worker worker, WorkerEventType type = WorkerEventType.Default)
         {
             assignedWorkers.Remove(worker);
             OnWorkerExit?.Invoke(worker, type);
             ReleaseAssignPoint(worker.Target);
 
-            worker.OnDead -= DeadWorker;
+            worker.OnDead -= OnWorkerDead;
+        }
+
+        private void OnWorkerDead(Worker worker)
+        {
+            RemoveWorker(worker, WorkerEventType.Destroy);
         }
 
         private void SetEnableAssignPointDebug(bool enable)

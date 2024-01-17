@@ -40,13 +40,13 @@ namespace Module.Assignment.System
 
         public void Update()
         {
-            var leaderEllipse = leaderAssignableArea.AssignableArea.EllipseData;
+            var leaderEllipse = leaderAssignableArea.AssignableArea.AreaShape;
             var leaderArea = leaderAssignableArea.AssignableArea;
 
             foreach (var activeArea in activeAreas)
             {
                 //範囲同士の円形判定を行い、計算が必要な範囲を絞る
-                if (!CollisionUtil.IsCollideCircle(leaderEllipse, activeArea.EllipseData))
+                if (!CollisionUtil.IsCollideCircle(leaderEllipse, activeArea.AreaShape))
                 {
                     continue;
                 }
@@ -55,7 +55,7 @@ namespace Module.Assignment.System
 
                 foreach (var worker in activeArea.AssignedWorkers)
                 {
-                    if (CollisionUtil.InEllipse(worker.transform.position, leaderArea.EllipseData))
+                    if (CollisionUtil.InEllipse(worker.transform.position, leaderArea.AreaShape))
                     {
                         //イテレート中はコレクション変更できないので一旦キャッシュ
                         releaseWorkerCache[cacheCount] = worker;

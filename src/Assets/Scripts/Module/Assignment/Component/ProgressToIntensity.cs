@@ -9,6 +9,7 @@ namespace Module.Assignment.Component
     public class ProgressToIntensity : MonoBehaviour
     {
         [SerializeField] private AssignableArea assignableArea;
+        [SerializeField] private AssignableAreaLight areaLight;
 
         [Header("進捗を0%とした時の明るさ")]
         [SerializeField]
@@ -20,11 +21,11 @@ namespace Module.Assignment.Component
         {
             task = transform.parent.GetComponent<BaseTask>();
 
-            assignableArea.SetLightIntensity(maxIntensity - maxIntensity * task.Progress);
+            areaLight.SetIntensity(maxIntensity - maxIntensity * task.Progress);
 
             task.OnProgressChanged += progress =>
             {
-                assignableArea.SetLightIntensity(maxIntensity - maxIntensity * progress);
+                areaLight.SetIntensity(maxIntensity - maxIntensity * progress);
 
                 if (progress >= 1f)
                 {

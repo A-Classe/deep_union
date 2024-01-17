@@ -11,7 +11,6 @@ using Wanna.DebugEx;
 
 namespace Module.Assignment.System
 {
-    [BurstCompile]
     public class WorkerAssigner
     {
         private readonly Worker[] assignWorkerCache;
@@ -51,7 +50,7 @@ namespace Module.Assignment.System
             {
                 //範囲同士の円形判定を行い、計算が必要な範囲を絞る
                 if (!activeArea.enabled ||
-                    !CollisionUtil.IsCollideCircle(leaderArea.EllipseData, activeArea.EllipseData))
+                    !CollisionUtil.IsCollideCircle(leaderArea.AreaShape, activeArea.AreaShape))
                 {
                     continue;
                 }
@@ -60,7 +59,7 @@ namespace Module.Assignment.System
 
                 foreach (var worker in leaderWorkers)
                 {
-                    if (CollisionUtil.InEllipse(worker.transform.position, activeArea.EllipseData))
+                    if (CollisionUtil.InEllipse(worker.transform.position, activeArea.AreaShape))
                     {
                         if (cacheCount >= assignWorkerCache.Length)
                         {

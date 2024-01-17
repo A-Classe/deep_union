@@ -2269,6 +2269,7 @@ GameObject:
   m_Component:
   - component: {fileID: 258810150717580241}
   - component: {fileID: 258810150717580268}
+  - component: {fileID: 7945613735281155606}
   - component: {fileID: 258810150717580243}
   - component: {fileID: 258810150717580242}
   m_Layer: 6
@@ -2308,10 +2309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAssignable: 1
-  lightProjector: {fileID: 258810149752557363}
-  ellipseVisualizer: {fileID: 258810150717580243}
-  intensity: 0.2
-  rotation: 0
+  areaLight: {fileID: 7945613735281155606}
   size:
     x: 4.5
     y: 4.5
@@ -2322,6 +2320,20 @@ MonoBehaviour:
   assignPointPrefab: {fileID: 7108848112424067832, guid: ab86269f9005c43389f807bd6727a4eb,
     type: 3}
   pointParent: {fileID: 258810148703492921}
+--- !u!114 &7945613735281155606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258810150717580240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270233b031434011b653be6c94c163c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightProjector: {fileID: 258810149752557363}
+  intensity: 0.8
 --- !u!114 &258810150717580243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2349,6 +2361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assignableArea: {fileID: 258810150717580268}
+  areaLight: {fileID: 7945613735281155606}
   gameParam: {fileID: 11400000, guid: 7e6f666ad25bfdb4dbed3523c0106175, type: 2}
 --- !u!1 &258810150744296337
 GameObject:

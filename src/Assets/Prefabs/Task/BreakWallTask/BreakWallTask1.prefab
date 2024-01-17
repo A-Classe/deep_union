@@ -1625,6 +1625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mw: 130
   acceptAttacks: 1
+  lockWorkerRelease: 0
   state: 0
   currentProgress: 0
   currentWorkerCount: 0
@@ -1933,6 +1934,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6937383649775685577}
   - component: {fileID: 8025986439681596101}
+  - component: {fileID: 436146479888604986}
   - component: {fileID: 901167565251115644}
   - component: {fileID: 6937383649674706872}
   - component: {fileID: 1696976446214314328}
@@ -1973,8 +1975,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAssignable: 1
-  lightProjector: {fileID: 220787131287261127}
-  intensity: 0
+  areaLight: {fileID: 436146479888604986}
   size:
     x: 32.54
     y: 8.25
@@ -1984,6 +1985,20 @@ MonoBehaviour:
   debugAssignPoints: 1
   assignPointPrefab: {fileID: 0}
   pointParent: {fileID: 0}
+--- !u!114 &436146479888604986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6937383649775685576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270233b031434011b653be6c94c163c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightProjector: {fileID: 220787131287261127}
+  intensity: 1
 --- !u!114 &901167565251115644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2011,6 +2026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assignableArea: {fileID: 8025986439681596101}
+  areaLight: {fileID: 436146479888604986}
   maxIntensity: 0.5
 --- !u!114 &1696976446214314328
 MonoBehaviour:

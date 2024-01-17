@@ -1411,6 +1411,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mw: 30
+  acceptAttacks: 0
+  lockWorkerRelease: 0
   state: 0
   currentProgress: 0
   currentWorkerCount: 0
@@ -1725,6 +1727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4960032174167760712}
   - component: {fileID: 5472176408517036612}
+  - component: {fileID: 8282144614139090073}
   - component: {fileID: 2887524756332604157}
   - component: {fileID: 4960032174469951289}
   - component: {fileID: 5157573424571014199}
@@ -1764,10 +1767,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86741824de2f411286f8f151edfe8c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightProjector: {fileID: 2847260050545073990}
-  ellipseVisualizer: {fileID: 2887524756332604157}
-  intensity: 0.4
-  priority: 0
+  isAssignable: 1
+  areaLight: {fileID: 8282144614139090073}
   size:
     x: 4
     y: 4
@@ -1775,6 +1776,22 @@ MonoBehaviour:
     x: 1
     y: 1
   debugAssignPoints: 1
+  assignPointPrefab: {fileID: 0}
+  pointParent: {fileID: 0}
+--- !u!114 &8282144614139090073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4960032174167760713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270233b031434011b653be6c94c163c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightProjector: {fileID: 2847260050545073990}
+  intensity: 1
 --- !u!114 &2887524756332604157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1801,8 +1818,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08fd352dd79a5a54bb65b949bb927ef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  task: {fileID: 3317649472400045224}
   assignableArea: {fileID: 5472176408517036612}
+  areaLight: {fileID: 8282144614139090073}
   maxIntensity: 0.5
 --- !u!114 &5157573424571014199
 MonoBehaviour:
@@ -1816,7 +1833,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6733f4f739a14b6ba0b7c6bf23d567bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTask: {fileID: 3317649472400045224}
   assignableArea: {fileID: 5472176408517036612}
 --- !u!1 &4984841100625701302
 GameObject:
