@@ -169,8 +169,17 @@ namespace Module.UI.Title.Ranking
 
         private void SetRankingRef(RankingRow row, int rank, RankingUser user, StageData.Stage stage)
         {
-            row.SetRank(rank);
-            row.SetRef(user.Name, user.Stages.GetValueOrDefault(stage, 0));
+            if (user.ID == "")
+            {
+                row.SetRank(rank);
+                row.SetRef("", 0);
+            }
+            else
+            {
+                string username = user.Name == "" ? "Unknown" : user.Name;
+                row.SetRank(rank);
+                row.SetRef(username, user.Stages.GetValueOrDefault(stage, 0));
+            }
         }
 
         private string userId;
@@ -243,19 +252,35 @@ namespace Module.UI.Title.Ranking
             }
 
             List<RankingUser> currents = rankings[currentStage];
+            bool setMine = false;
             for (var i = 0; i < currents.Count; i++)
             {
                 if (currents[i].ID == userId)
                 {
                     SetRankingRef(myRankingRow, i + 1, currents[i], currentStage);
+                    setMine = true;
                 }
 
                 if (i > lists.Count - 1)
                 {
-                    return;
+                    break;
                 }
 
                 SetRankingRef(lists[i], i + 1, currents[i], currentStage);
+            }
+
+            if (!setMine)
+            {
+                SetRankingRef(
+                    myRankingRow, -1,  
+                    new RankingUser
+                    {
+                        ID = "",
+                        Name = "",
+                        Stages = new Dictionary<StageData.Stage, int>()
+                    }, 
+                    currentStage
+                );
             }
         }
 

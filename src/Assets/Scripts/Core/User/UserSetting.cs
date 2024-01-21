@@ -34,7 +34,7 @@ namespace Core.User
         public KeyValue<string, bool> isFirst = new("isFirst", false);
 
         public KeyValue<string, string> uuid = new("uuid", "");
-        public KeyValue<string, string> name = new("name", "Guest");
+        public KeyValue<string, string> name = new("name", "");
 
         public UserData DefaultInstance()
         {
