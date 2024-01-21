@@ -14,8 +14,12 @@ namespace Module.Extension.UI
             videoPlayer = GetComponent<VideoPlayer>();
         }
 
-        public void Play(Action callBack)
+        public void Play(Action callBack, VideoClip clip = null)
         {
+            if (clip != null)
+            {
+                videoPlayer.clip = clip;
+            }
             videoPlayer.Play();
             videoPlayer.loopPointReached += _ =>
             {

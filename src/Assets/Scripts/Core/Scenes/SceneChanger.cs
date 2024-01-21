@@ -25,6 +25,7 @@ namespace Core.Scenes
 
         private const string Stage1Route = "Scenes/Stages/Stage1/Stage1";
         private const string Stage2Route = "Scenes/Stages/Stage2/Stage2";
+        private const string Stage3Route = "Scenes/Stages/Stage3/Stage3";
         private const string TutorialRoute = "Scenes/Stages/StageTutorial/StageTutorial";
 
         private const string ResultRoute = "Scenes/Other/Result_Test";
@@ -81,6 +82,7 @@ namespace Core.Scenes
                 {
                     StageData.Stage.Stage1 => Stage1Route,
                     StageData.Stage.Stage2 => Stage2Route,
+                    StageData.Stage.Stage3 => Stage3Route,
                     StageData.Stage.Tutorial => TutorialRoute,
                     _ => Stage1Route
                 };
@@ -178,6 +180,11 @@ namespace Core.Scenes
             {
                 return false;
             }
+        }
+        
+        public Route GetNext()
+        {
+            return next;
         }
     }
 }

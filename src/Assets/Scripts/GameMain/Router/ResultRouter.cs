@@ -66,9 +66,24 @@ namespace GameMain.Router
             });
 
             userPreference.Load();
-            userPreference.SetStageData((StageData.Stage)result.stageCode, result.GetScore());
-            userPreference.Save();
-            db.SetStageScore((StageData.Stage)result.stageCode, result.GetScore());
+            uint score = result.GetScore();
+            StageData.Stage stage = (StageData.Stage)result.stageCode;
+            // スコアが高ければ or スコアがなければ更新
+            if (userPreference.GetStageData().TryGetValue(stage, out uint currentScore))
+            {
+                if (currentScore < score)
+                {
+                    userPreference.SetStageData(stage, score);
+                    userPreference.Save();
+                    db.SetStageScore(stage, score);
+                }
+            }
+            else
+            {
+                userPreference.SetStageData(stage, score);
+                userPreference.Save();
+                db.SetStageScore(stage, score);
+            }
             videoPlayer.Play();
         }
 
@@ -76,9 +91,8 @@ namespace GameMain.Router
         {
             resultManager.OnNext += () =>
             {
-                /* todo: 次のステージに飛ばす　*/
                 var currentStage = (StageData.Stage)result.stageCode;
-                if (currentStage != StageData.Stage.Stage2)
+                if (currentStage != StageData.Stage.Stage3)
                 {
                     navigation.SetActive(false);
                     StageData.Stage next = currentStage + 1;

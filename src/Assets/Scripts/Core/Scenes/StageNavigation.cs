@@ -10,6 +10,8 @@ namespace Core.Scenes
         Stage1Ranking,
         Stage2,
         Stage2Ranking,
+        Stage3,
+        Stage3Ranking,
         Back
     }
 
@@ -21,6 +23,7 @@ namespace Core.Scenes
             {
                 StageNavigation.Stage1 => StageData.Stage.Stage1,
                 StageNavigation.Stage2 => StageData.Stage.Stage2,
+                StageNavigation.Stage3 => StageData.Stage.Stage3,
                 StageNavigation.Tutorial => StageData.Stage.Tutorial,
                 _ => StageData.Stage.Stage1
             };
@@ -45,7 +48,8 @@ namespace Core.Scenes
                 case > 0:
                     nextNav = nextNav switch
                     {
-                        StageNavigation.Back => StageNavigation.Stage2,
+                        StageNavigation.Back => StageNavigation.Stage3,
+                        StageNavigation.Stage3 => StageNavigation.Stage2,
                         StageNavigation.Stage2 => StageNavigation.Stage1,
                         StageNavigation.Stage1 => StageNavigation.Tutorial,
                         _ => nextNav
@@ -57,7 +61,8 @@ namespace Core.Scenes
                     {
                         StageNavigation.Tutorial => StageNavigation.Stage1,
                         StageNavigation.Stage1 => StageNavigation.Stage2,
-                        StageNavigation.Stage2 => StageNavigation.Back,
+                        StageNavigation.Stage2 => StageNavigation.Stage3,
+                        StageNavigation.Stage3 => StageNavigation.Back,
                         _ => nextNav
                     };
                     break;
@@ -82,6 +87,7 @@ namespace Core.Scenes
             {
                 StageNavigation.Stage1Ranking => StageNavigation.Stage1,
                 StageNavigation.Stage2Ranking => StageNavigation.Stage2,
+                StageNavigation.Stage3Ranking => StageNavigation.Stage3,
                 _ => nav
             };
         }
@@ -92,6 +98,7 @@ namespace Core.Scenes
             {
                 StageNavigation.Stage1 => StageNavigation.Stage1Ranking,
                 StageNavigation.Stage2 => StageNavigation.Stage2Ranking,
+                StageNavigation.Stage3 => StageNavigation.Stage3Ranking,
                 _ => nav
             };
         }

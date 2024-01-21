@@ -50,7 +50,8 @@ namespace Core.User
         {
             Tutorial,
             Stage1,
-            Stage2
+            Stage2,
+            Stage3
         }
 
         public Dict<Stage, uint> stage = new();

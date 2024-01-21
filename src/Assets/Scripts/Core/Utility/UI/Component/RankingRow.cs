@@ -16,7 +16,7 @@ namespace Core.Utility.UI.Component
 
         public void SetRef(string username, int score)
         {
-            nameText.text = username;
+            nameText.text = username == "" ? "Unknown" : username;
             scoreText.text = score.ToString();
         }
     }

@@ -1,8 +1,10 @@
 using Core.Input;
 using Core.Scenes;
+using Core.User;
 using Core.Utility.UI.Component;
 using Module.Extension.UI;
 using UnityEngine;
+using UnityEngine.Video;
 using VContainer;
 using VContainer.Unity;
 
@@ -36,7 +38,16 @@ namespace GameMain.Router
 
         public void Start()
         {
-            videoController.Play(ChangeNextScene);
+            StageData.Stage stage = sceneChanger.GetInGame();
+            if (stage == StageData.Stage.Stage3 && sceneChanger.GetNext() == SceneChanger.Route.Result)
+            {
+                VideoClip clip = Resources.Load<VideoClip>("Animation03sound_0121_2");
+                videoController.Play(ChangeNextScene, clip);
+            }
+            else
+            {
+                videoController.Play(ChangeNextScene);
+            }
         }
 
         private void ChangeNextScene()
@@ -49,7 +60,7 @@ namespace GameMain.Router
             float value = anyKeyEvent.ReadValue<float>();
             if (holdVisual.IsVisible == value > 0 && holdVisual.IsVisible)
             {
-                holdVisual.UpdateHoldTime(Time.deltaTime);
+                holdVisual.UpdateHoldTime(Time.unscaledDeltaTime);
             }
 
             holdVisual.SetVisible(value > 0);

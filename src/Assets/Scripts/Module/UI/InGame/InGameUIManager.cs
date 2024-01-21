@@ -45,12 +45,15 @@ namespace Module.UI.InGame
             {
                 OnNeedReport?.Invoke();
                 navigation.SetActive(false);
+                OnGameActive?.Invoke();
                 sceneChanger.LoadTitle(TitleNavigation.StageSelect);
             };
 
             gameOverManager.OnRetry += () =>
             {
+                OnNeedReport?.Invoke();
                 navigation.SetActive(false);
+                OnGameActive?.Invoke();
                 sceneChanger.LoadInGame(sceneChanger.GetInGame());
             };
 
@@ -157,6 +160,11 @@ namespace Module.UI.InGame
         public void SetBrightnessController(BrightController controller)
         {
             brightController = controller;
+        }
+        
+        public void SetActive(bool value)
+        {
+            navigation.SetActive(value);
         }
     }
 
