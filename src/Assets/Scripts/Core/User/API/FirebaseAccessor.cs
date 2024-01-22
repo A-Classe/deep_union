@@ -164,6 +164,7 @@ namespace Core.User.API
                             // UUID: string
                             user.ID = dataSnapshot.Key;
                             user.Stages = new Dictionary<StageData.Stage, int>();
+                            user.Name = "Unknown";
                             foreach (var parameters in dataSnapshot.Children)
                             {
                                 if (parameters.Key == Name)

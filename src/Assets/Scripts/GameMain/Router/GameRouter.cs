@@ -134,6 +134,8 @@ namespace GameMain.Router
         public void Dispose()
         {
             progressObserver.Cancel();
+            uiManager.SetActive(false);
+            timeManager.Resume();
         }
 
         public void Start()
@@ -260,6 +262,7 @@ namespace GameMain.Router
         private void SaveReport()
         {
             Report current = recorder.GenerateReport();
+            preference.Load();
             Report data = preference.GetReport();
             preference.SetReport(data + current);
             preference.Save();

@@ -105,7 +105,6 @@ namespace GameMain.Router
             data.Load();
             rankingManager.OnChangedName += name =>
             {
-                UnityEngine.Debug.Log(name);
                 accessor.SetName(name);
                 UserData userData = data.GetUserData();
                 userData.name.value = name;
@@ -234,6 +233,9 @@ namespace GameMain.Router
                 case TitleNavigation.Option:
                     break;
                 case TitleNavigation.Credit:
+                    break;
+                case TitleNavigation.Ranking:
+                    NavigateToPlay(true);
                     break;
                 default:
                     NavigateToTitle();

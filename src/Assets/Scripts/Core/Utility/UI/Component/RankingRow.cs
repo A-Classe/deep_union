@@ -11,7 +11,7 @@ namespace Core.Utility.UI.Component
 
         public void SetRank(int rank)
         {
-            rankText.text = rank.ToString();
+            rankText.text = rank == -1 ? "-" : rank.ToString();
         }
 
         public void SetRef(string username, int score)
