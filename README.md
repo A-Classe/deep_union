@@ -1,25 +1,18 @@
-# release_control
-ゲーム制作Aチームの本番リポジトリ
+# DeepUnion
+DeepUnionは大量のキャラクターを操作して、タスクマネジメントを行うゲームです。
 
-[スプリントバックログ](https://github.com/orgs/A-Classe/projects/16)
+### マウス + キーボードの操作方法
+カメラ移動: WASD  
+カメラ右回転: E  
+カメラ左回転: Q  
+タスク割当: 左クリック長押し  
+キャラクター回収: 右クリック長押し  
 
+[ダウンロードリンク](https://github.com/harumas/deep_union/releases/download/v1.0/DeepUnion.zip)
 
-## Setup (デバッグのみであれば不要)
-- commit template
-```
-git config commit.template .commit_template
-```
-- submodule
-```
-git submodule update -i
-```
-
-## Reports
-`Qodana Cloud` and `Doxygen` reports are hosted using Github Pages
-
-#### Code Quality 
-- [Qodana Cloud](https://a-classe.github.io/release_control/qodana/report/index.html)
+<img width="958" alt="image" src="https://github.com/harumas/deep_union/assets/43531665/c1cd99a8-f9f8-4455-b99a-f1c07bfec845">
+<img width="960" alt="image" src="https://github.com/harumas/deep_union/assets/43531665/c89351e1-8fff-428c-82a1-3ed822ca03b2">
 
 
-#### Code Documentation
-- [In generate doxygen](https://a-classe.github.io/deep_union/doxygen/html/index.html)
+### プレイ動画
+https://www.youtube.com/watch?v=U15d287BYy0
