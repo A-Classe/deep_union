@@ -15,6 +15,7 @@ namespace Core.Utility.UI.Component.Cursor
 
         private bool isInitialize;
         private readonly Dictionary<T, RectTransform> points = new();
+        private float scaleFactor;
 
         public void AddPoint(T key, RectTransform rectT)
         {
@@ -41,9 +42,10 @@ namespace Core.Utility.UI.Component.Cursor
 
         private void Animated(RectTransform rect)
         {
+            scaleFactor = GetComponentInParent<Canvas>().scaleFactor;
             var position = rect.position;
-            var leftX = position.x - rect.rect.width / 2f;
-            var rightX = position.x + rect.rect.width / 2f;
+            var leftX = position.x - rect.rect.width * scaleFactor / 2f;
+            var rightX = position.x + rect.rect.width * scaleFactor / 2f;
 
             var leftT = left.transform.position;
             left.OnCancel();
