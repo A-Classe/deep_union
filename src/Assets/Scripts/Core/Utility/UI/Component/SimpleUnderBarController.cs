@@ -26,7 +26,6 @@ namespace Core.Utility.UI.Component
                 rightAnchor.rectTransform.localPosition = fPosRight;
             }
 
-            ;
             iPosLeft = leftAnchor.rectTransform.localPosition;
             fPosLeft = iPosLeft - new Vector3(-bar.rectTransform.rect.size.x / 2f, 0f, 0f);
             iPosRight = rightAnchor.rectTransform.localPosition;
