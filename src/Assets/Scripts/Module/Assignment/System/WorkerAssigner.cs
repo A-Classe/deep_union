@@ -6,6 +6,7 @@ using Module.Assignment.Component;
 using Module.Assignment.Utility;
 using Module.Working;
 using Unity.Burst;
+using UnityEngine;
 using VContainer;
 using Wanna.DebugEx;
 
@@ -44,7 +45,6 @@ namespace Module.Assignment.System
         {
             var leaderArea = leaderAssignableArea.AssignableArea;
             var leaderWorkers = leaderAssignableArea.AssignableArea.AssignedWorkers;
-
 
             foreach (var activeArea in activeAreas)
             {
