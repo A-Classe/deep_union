@@ -67,6 +67,11 @@ namespace Module.Extension.Task
 
                 await WaitForCollectionStep(cancellationToken);
 
+                if (cancellationToken.IsCancellationRequested)
+                {
+                    return;
+                }
+
                 resourceCount += 1;
 
                 if (resourceCount >= gameParam.TemoraryStrageCount)
@@ -102,6 +107,12 @@ namespace Module.Extension.Task
             Vector3 right = Quaternion.Euler(0f, 90f, 0f) * forward;
             Vector3 initialVelocity = Quaternion.AngleAxis(-throwAngle, right) * forward * initialForce;
             itemComponent.Throw(playerController.transform, offset, initialVelocity, () => OnCollected?.Invoke(countCache)).Forget();
+        }
+
+        private void OnDestroy()
+        {
+            collectCanceller?.Cancel();
+            collectCanceller?.Dispose();
         }
     }
 }

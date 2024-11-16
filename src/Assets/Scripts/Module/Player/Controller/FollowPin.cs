@@ -44,7 +44,12 @@ namespace Module.Player.Controller
             pinEvent.Canceled += OnPinReleased;
 
             pinObject.gameObject.SetActive(false);
-            pinAssist.gameObject.SetActive(false);
+        }
+
+        private void OnDestroy()
+        {
+            pinEvent.Started -= OnPinPushed;
+            pinEvent.Canceled -= OnPinReleased;
         }
 
         private void OnPinPushed(InputAction.CallbackContext obj)

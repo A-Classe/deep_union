@@ -31,7 +31,7 @@ namespace Core.Input
         {
             if (this != Instance)
             {
-                Destroy(this);
+                DestroyImmediate(this);
                 return;
             }
 

@@ -66,8 +66,7 @@ namespace Module.Player.Controller
         {
             while (!cancellationToken.IsCancellationRequested)
             {
-                await UniTask.Delay(TimeSpan.FromSeconds(gameParam.DecereseHpSpeed),
-                    cancellationToken: cancellationToken);
+                await UniTask.Delay(TimeSpan.FromSeconds(gameParam.DecereseHpSpeed), cancellationToken: cancellationToken);
                 playerStatus.RemoveHp(gameParam.DecereseHpAmount);
             }
         }

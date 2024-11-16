@@ -23,6 +23,7 @@ using Module.Working;
 using Module.Working.Controller;
 using Module.Working.Factory;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using VContainer;
 using VContainer.Unity;
 
@@ -67,6 +68,8 @@ namespace GameMain.Router
         private readonly FirebaseAccessor db;
         private readonly TimeManager timeManager;
         private readonly DebugGameClear debugGameClear;
+
+        private InputEvent escEvent;
 
         [Inject]
         public GameRouter(
@@ -136,6 +139,7 @@ namespace GameMain.Router
             progressObserver.Cancel();
             uiManager.SetActive(false);
             timeManager.Resume();
+            escEvent.Canceled -= StartPause;
         }
 
         public void Start()
@@ -155,7 +159,7 @@ namespace GameMain.Router
         public void Tick()
         {
             taskActivator.Tick();
-            
+
             // TODO: ステージの座標と距離感を決める
             var progress = (int)progressObserver.GetDistance();
             uiManager.UpdateStageProgress(progress);
@@ -182,15 +186,14 @@ namespace GameMain.Router
             uiManager.OnGameInactive += OnCallGameInactive;
             uiManager.OnGameActive += OnCallGameActive;
 
-            playerController.OnMoveDistance += distance =>
-            {
-                eventBroker.SendEvent(new MovePlayer(Math.Abs(distance)).Event());
-            };
+            playerController.OnMoveDistance += distance => { eventBroker.SendEvent(new MovePlayer(Math.Abs(distance)).Event()); };
 
-            workerController.OnMoveDistance += distance =>
-            {
-                eventBroker.SendEvent(new MoveWorkers(Math.Abs(distance)).Event());
-            };
+            workerController.OnMoveDistance += distance => { eventBroker.SendEvent(new MoveWorkers(Math.Abs(distance)).Event()); };
+        }
+
+        private void StartPause(InputAction.CallbackContext callbackContext)
+        {
+            uiManager.StartPause(); 
         }
 
         private void InitScene()
@@ -202,11 +205,8 @@ namespace GameMain.Router
             progressObserver.OnCompleted += OnGameClear;
             debugGameClear.OnGameClearRequested += OnGameClear;
 
-            var escEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.UI.ESC);
-            escEvent.Canceled += _ =>
-            {
-                uiManager.StartPause();
-            };
+            escEvent = InputActionProvider.Instance.CreateEvent(ActionGuid.UI.ESC);
+            escEvent.Canceled += StartPause;
 
             sceneChanger.OnBeforeChangeScene += SaveReport;
 
